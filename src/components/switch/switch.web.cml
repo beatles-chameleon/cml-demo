@@ -1,0 +1,129 @@
+<template>
+<view class="cml-switch">
+  <view class="cml-switch-wrap" c-bind:tap="changeSwitch">
+  <view class="{{ switchClass }}" style="{{ switchStyle }}">
+    <view class="inner-icon" style="{{ innerStyle }}">
+    </view>
+  </view>
+  <text class="cml-switch-label" >{{ label }}</text>
+  </view>
+</view>
+</template>
+<script>
+class Switch implements SwitchInterface {
+  props = {
+    checked: {
+      type: Boolean,
+      default: false
+    },
+    label: {
+      type: String,
+      default:''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  }
+  data = {
+  }
+
+  computed = {
+    switchStyle () {
+      let style = '';
+      if (this.disabled) {
+        style += 'opacity:0.5;'
+      }
+      return style;
+    },
+    innerStyle () {
+      let style = '';
+      if (this.checked) {
+        style += 'left:38cpx;border:1px solid #fc9153;'
+      } else {
+        style += 'left:-2cpx;border:1px solid #ccc;'
+      }
+      return style;
+    },
+    switchClass () {
+      return this.checked? 'cml-switch-open': 'cml-switch-close';
+    }
+  }
+
+  methods = {
+    changeSwitch () {
+      if (this.disabled) return;
+      this.$cmlEmit('change', {
+        value: !this.checked
+      });
+      this.$cmlEmit('changeevent', {
+        value: !this.checked
+      });
+    }
+  }
+}
+
+export default new Switch();
+</script>
+<style scoped>
+@import "../../assets/css/var.less";
+
+.cml-switch {
+  display:inline-block;
+}
+.cml-switch-wrap {
+  padding:11cpx 0;
+  word-break: break-word;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 1.5;
+  position: relative;
+}
+.cml-switch-open {
+  width:100cpx;
+  height:60cpx;
+  border-radius:60cpx;
+  position:relative;
+  box-sizing: border-box;
+  margin-right: 13cpx;
+  border:1px solid @color-orange;
+  background-color:@color-orange;
+}
+.cml-switch-close {
+  width:100cpx;
+  height:60cpx;
+  border-radius:60cpx;
+  position:relative;
+  border:1px solid @color-light-grey-s;
+  box-sizing: border-box;
+  margin-right: 13cpx;
+  background-color:@color-white;
+}
+.inner-icon {
+  width:60cpx;
+  height:60cpx;
+  background:@color-white;
+  border-radius:30cpx;
+  position:absolute;
+  border:1px solid @color-light-grey-s;
+  box-sizing: border-box;
+  top:-2cpx;
+  left:-2cpx;
+  -webkit-transition: left .4s cubic-bezier(.25,.1,.25,1.28);
+  transition: left .4s cubic-bezier(.25,.1,.25,1.28);
+}
+.cml-switch-label {
+  color:@color-grey;
+  font-weight: 400;
+  font-size: 32cpx;
+}
+</style>
+<script cml-type="json">
+{
+  "web": {
+    "component": true
+  }
+}
+</script>

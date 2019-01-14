@@ -1,0 +1,231 @@
+<template>
+<c-page title="layout演示">
+  <c-scroller height="{{-1}}">
+    <c-header title="{{headerTitle}}" desc="{{headerDesc}}"></c-header>
+    <view class="title"><text >以下是demo</text></view>
+    <!-- 1 -->
+    <view class="container-wrap">
+      <c-container direction="column">
+        <c-head>
+          <view class="container-item">
+            <text>header</text>
+          </view>
+        </c-head>
+        <c-main main-style="{{mainStyle}}">
+          <view class="container-item">
+            <text>main</text>
+          </view>
+        </c-main>
+      </c-container>
+    </view>
+    <!-- 2 -->
+    <view class="container-wrap">
+      <c-container direction="column">
+        <c-head>
+          <view class="container-item">
+            <text>header</text>
+          </view>
+        </c-head>
+        <c-main main-style="{{mainStyle}}">
+          <view class="container-item">
+            <text>main</text>
+          </view>
+        </c-main>
+        <c-foot>
+          <view class="container-item">
+            <text>footer</text>
+          </view>
+        </c-foot>
+      </c-container>
+    </view>
+    <!-- 3 -->
+    <view class="container-wrap">
+      <c-container direction="row">
+        <c-aside aside-style="{{asideStyle}}">
+          <view class="container-item">
+            <text>aside</text>
+          </view>
+        </c-aside>
+        <c-main main-style="{{mainStyle}}" style="flex:1;">
+          <view class="container-item">
+            <text>main</text>
+          </view>
+        </c-main>
+      </c-container>
+    </view>
+    <!-- 4 -->
+    <view class="container-wrap">
+      <c-container direction="column">
+        <c-head>
+          <view class="container-item">
+            <text>header</text>
+          </view>
+        </c-head>
+        <c-container direction="row" style="flex:1;">
+          <c-aside aside-style="{{asideStyle}}">
+            <view class="container-item">
+              <text>aside</text>
+            </view>
+          </c-aside>
+          <c-main main-style="{{mainStyle}}" style="flex:1;">
+            <view class="container-item">
+              <text>main</text>
+            </view>
+          </c-main>
+        </c-container>
+      </c-container>
+    </view>
+    <!-- 5 -->
+    <view class="container-wrap">
+      <c-container direction="column">
+        <c-head>
+          <view class="container-item">
+            <text>header</text>
+          </view>
+        </c-head>
+        <c-container direction="row" style="flex:1;">
+          <c-aside aside-style="{{'height:380cpx'}}">
+            <view class="container-item">
+              <text>aside</text>
+            </view>
+          </c-aside>
+          <c-container direction="column" style="flex:1">
+            <c-main main-style="{{mainStyle}}" style="flex:1;">
+              <view class="container-item">
+                <text>main</text>
+              </view>
+            </c-main>
+            <c-foot>
+              <view class="container-item">
+                <text>foot</text>
+              </view>
+            </c-foot>
+          </c-container>
+        </c-container>
+      </c-container>
+    </view>
+    <!-- 6 -->
+    <view class="container-wrap">
+      <c-container direction="row">
+        <c-aside aside-style="{{'height:380cpx'}}">
+          <view class="container-item">
+              <text>aside</text>
+          </view>
+        </c-aside>
+        <c-container direction="column" style="flex:1;">
+          <c-head>
+            <view class="container-item">
+                <text>header</text>
+              </view>
+          </c-head>
+          <c-main main-style="{{mainStyle}}" style="flex:1;">
+            <view class="container-item">
+                <text>main</text>
+            </view>
+          </c-main>
+        </c-container>
+      </c-container>
+    </view>
+    <!-- 7 -->
+    <view class="container-wrap">
+      <c-container direction="row">
+        <c-aside aside-style="{{'height:460cpx'}}">
+          <view class="container-item">
+              <text>aside</text>
+          </view>
+        </c-aside>
+        <c-container direction="column" style="flex:1;">
+          <c-head>
+            <view class="container-item">
+              <text>header</text>
+            </view>
+          </c-head>
+          <c-main main-style="{{mainStyle}}" style="flex:1;">
+            <view class="container-item">
+                <text>main</text>
+            </view>
+          </c-main>
+          <c-foot>
+            <view class="container-item">
+              <text>footer</text>
+            </view>
+          </c-foot>
+        </c-container>
+      </c-container>
+    </view>
+  </c-scroller>
+</c-page>
+</template>
+<script>
+import cml from 'chameleon-api'
+class CLayout {
+
+  data = {
+    headerTitle:'layout布局',
+    headerDesc:'layout布局',
+    asideStyle:'height:300cpx;',
+    headStyle:'',
+    mainStyle:'height:300cpx',
+    footStyle:''
+  }
+  mounted() {
+  }
+
+}
+export default new CLayout()
+</script>
+<style scoped>
+.container-wrap{
+  padding-bottom:30cpx;
+  padding-left:15cpx;
+  padding-right:15cpx;
+}
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.container-item{
+  flex:1;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  font-size: 28cpx;
+  color: #333;
+}
+.title{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+   line-height: 88cpx;
+  font-size: 28cpx;
+  text-align: center;
+  height: 88cpx;
+  color: #999;
+}
+
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+          "c-page": "/components/page/page",
+          "c-header": "../../components/header/header",
+          "c-container":"/components/layout/container/container",
+          "c-head": "/components/layout/head/head",
+          "c-foot":"/components/layout/foot/foot",
+          "c-main":"/components/layout/main/main",
+          "c-aside":"/components/layout/aside/aside",
+          "c-scroller": "/components/scroller/scroller"
+        }
+    },
+    "wx": {
+        "navigationBarTitleText": "index",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"
+    }
+}
+</script>

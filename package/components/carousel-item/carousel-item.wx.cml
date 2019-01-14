@@ -1,0 +1,11 @@
+<script>
+  class CCarouselItem implements CCarouselItemInterface {}
+  export default new CCarouselItem();
+</script>
+<script cml-type="json">
+{
+  "wx": {
+    "component": true
+  }
+}
+</script>

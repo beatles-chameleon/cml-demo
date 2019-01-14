@@ -1,0 +1,103 @@
+{
+  "mode": "hash",
+  "domain": "https://api.chameleon.com",
+  "routes":[
+    {
+      "url": "/",
+      "path": "/pages/index/index",
+      "name": "首页",
+      "mock": "index.php"
+    },
+    {
+      "name": "list",
+      "url": "/pages/example/list/list",
+      "path": "/pages/example/list/list",
+      "mock": "index.php"
+    },
+    {
+      "name": "scroller",
+      "url": "/pages/example/scroller/scroller",
+      "path": "/pages/example/scroller/scroller",
+      "mock": "index.php"
+    },
+    {
+      "name": "view",
+      "url": "/pages/example/view/view",
+      "path": "/pages/example/view/view",
+      "mock": "index.php"
+    },
+    {
+      "name": "text",
+      "url": "/pages/example/text/text",
+      "path": "/pages/example/text/text",
+      "mock": "index.php"
+    },
+    {
+      "name": "button",
+      "url": "/pages/example/button/button",
+      "path": "/pages/example/button/button",
+      "mock": "index.php"
+    },
+    {
+      "name": "input",
+      "url": "/pages/example/input/input",
+      "path": "/pages/example/input/input",
+      "mock": "index.php"
+    },
+    {
+      "name": "textarea",
+      "url": "/pages/example/textarea/textarea",
+      "path": "/pages/example/textarea/textarea",
+      "mock": "index.php"
+    },
+    {
+      "name": "image",
+      "url": "/pages/example/image/image",
+      "path": "/pages/example/image/image",
+      "mock": "index.php"
+    },
+    {
+      "name": "video",
+      "url": "/pages/example/video/video",
+      "path": "/pages/example/video/video",
+      "mock": "index.php"
+    },
+    {
+      "name": "richtext",
+      "url": "/pages/example/richtext/richtext",
+      "path": "/pages/example/richtext/richtext"
+    },
+    {
+      "name": "switch",
+      "url": "/pages/example/switch/switch",
+      "path": "/pages/example/switch/switch"
+    },
+    {
+      "name": "radio",
+      "url": "/pages/example/radio/radio",
+      "path": "/pages/example/radio/radio"
+    },
+    {
+      "name": "checkbox",
+      "url": "/pages/example/checkbox/checkbox",
+      "path": "/pages/example/checkbox/checkbox"
+    },
+    {
+      "name": "carousel",
+      "url": "/pages/example/carousel/carousel",
+      "path": "/pages/example/carousel/carousel"
+    },
+    {
+      "name": "row",
+      "url": "/pages/example/row/row",
+      "path": "/pages/example/row/row",
+      "mock": "index.php"
+    },
+    {
+      "name": "layout",
+      "url": "/pages/example/layout/layout",
+      "path": "/pages/example/layout/layout",
+      "mock": "index.php"
+    }
+  ]
+}

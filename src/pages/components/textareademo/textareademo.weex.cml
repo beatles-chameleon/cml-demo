@@ -1,0 +1,107 @@
+<template>
+<c-page title="textarea">
+    <view class="page-demo">
+        <c-scroller height="{{-1}}">
+            <view class="input-wrap">
+                <text class="title-text" >focus聚焦</text>
+                <c-textarea placeholder="focus聚焦" focus="{{isfocus}}"  c-bind:blur="bindblurevent"></c-textarea>
+            </view>
+            <view class="input-wrap">
+                <text class="title-text">数据绑定,value:{{inputValue}}</text>
+                <c-textarea placeholder="数据绑定" value="" c-bind:input="inputEvent"></c-textarea>
+            </view>
+            <view class="input-wrap">
+                <text class="title-text">监听input事件,当前事件：{{eventName}}</text>
+                <c-textarea placeholder="监听textarea事件"  c-bind:input="testEvent" c-bind:blur="testEvent" c-bind:focus="testEvent" c-bind:confirm="testEvent"></c-textarea>
+            </view>
+            <view class="input-wrap">
+                <text class="title-text">最大长度是5</text>
+                <c-textarea placeholder="最大长度是5" maxlength="{{5}}" ></c-textarea>
+            </view>
+            <view class="input-wrap">
+                <text class="title-text">禁用textarea</text>
+                <c-textarea placeholder="禁用textarea" disabled="{{true}}" ></c-textarea>
+            </view>
+            <view class="input-wrap">
+                <text class="title-text">键盘右下键按钮done</text>
+                <c-textarea placeholder="键盘右下键按钮done" return-key-type="done" ></c-textarea>
+            </view>
+            <view class="input-wrap">
+                <text class="title-text">placeholderColor web端不支持</text>
+                <c-textarea placeholder="placeholderColor web端不支持" placer-holder-color="#ff0000;" ></c-textarea>
+            </view>
+            <view class="end-item">
+                <text class="title-text">自定义样式</text>
+                <c-textarea placeholder="自定义样式" c-style="color: #00ff00; border: 1px solid #00f;" ></c-textarea>
+            </view>  
+        </c-scroller>
+    </view>
+</c-page>
+</template>
+<script>
+  import cml from 'chameleon-api'
+  class Textarea  implements TextareaInterface  {
+
+  data = {
+    isfocus: false,
+    inputValue: '',
+    eventName: '触发的事件名称',
+  }
+
+  computed = {}
+  watch  = {}
+
+  methods = {
+    inputEvent(e) {    
+      this.inputValue = e.detail.value;      
+    },
+    testEvent(e) {
+      this.eventName = e.type
+    },
+    bindblurevent()  {
+      console.log('blur')
+      this.isfocus = false;      
+    }
+  }
+  mounted() {
+    setTimeout(() => {
+      this.isfocus = true;
+    }, 300);
+  }
+
+  beforeDestroy() {}
+  destroyed() {}
+}
+
+export default new Textarea();
+</script>
+<style scoped>
+.page-demo {
+   background: #f8f8f8;
+   flex: 1;
+   padding: 0 10cpx 30cpx;
+ }
+ .title-text {
+   color: #999;
+   margin: 30cpx 20cpx 10cpx;
+   font-size: 32cpx;
+ }
+ .end-item {
+   margin-bottom: 40cpx;
+   position: relative;
+ }
+.input-wrap  {
+   position: relative;
+ }
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+            "c-page": "/components/page/page",
+            "c-textarea" : "/components/textarea/textarea",
+            "c-scroller": "/components/scroller/scroller"
+        }
+    }
+}
+</script>

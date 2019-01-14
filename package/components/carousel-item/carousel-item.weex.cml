@@ -1,0 +1,17 @@
+<template>
+  <view>
+    <slot />
+  </view>
+</template>
+<script>
+  class CCarouselItem implements CCarouselItemInterface {}
+  export default new CCarouselItem();
+</script>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {
+    }
+  }
+}
+</script>

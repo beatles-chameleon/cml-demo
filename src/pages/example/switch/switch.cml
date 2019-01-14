@@ -1,0 +1,109 @@
+<template>
+<c-page title="switch演示">
+  <c-header title="switch"></c-header>
+    <view class="box">
+      <c-switch
+        checked="{{ switchValue1 }}"
+        label="Switch"
+        c-bind:change="switchChange1"
+        >
+      </c-switch>
+    </view>
+    <view class="title">
+      <text>switch value: {{ switchValue1 }}</text>
+    </view>
+    <view class="box">
+      <c-switch
+        checked="{{ switchValue2 }}"
+        label="Switch"
+        c-bind:change="switchChange2"
+        >
+      </c-switch>
+    </view>
+    <view class="title">
+     <text>switch value: {{ switchValue2 }}</text>
+   </view>
+    <view class="box">
+       <c-switch
+        checked="{{ switchValue3 }}"
+        label="Disabled Switch"
+        disabled="{{true}}"
+        >
+      </c-switch>
+    </view>
+    <view class="title">
+      <text>switch value: {{ switchValue3 }}</text>
+    </view>
+    <view class="box">
+       <c-switch
+        checked="{{ switchValue4 }}"
+        label="Disabled Switch"
+        disabled="{{true}}"
+        >
+      </c-switch>
+    </view>
+    <view class="title">
+      <text>switch value: {{ switchValue4 }}</text>
+    </view>
+</c-page>
+</template>
+<script>
+import cml from "chameleon-api"
+class Switch {
+
+  data = {
+    switchValue1: false,
+    switchValue2: true,
+    switchValue3: false,
+    switchValue4: true
+  }
+
+  computed = {
+  }
+
+  methods = {
+    switchChange1 (e) {
+      this.switchValue1 = e.detail.value
+    },
+    switchChange2 (e) {
+      this.switchValue2 = e.detail.value
+    },
+  }
+
+}
+
+export default new Switch();
+</script>
+<style scoped>
+
+.title {
+  font-size: 38cpx;
+  font-weight: 400;
+  margin: 20cpx 0;
+  padding: 10cpx 30cpx;
+  background: #eee
+}
+.radio-value {
+  font-size: 32cpx;
+}
+.box {
+  margin: 0cpx 50cpx;
+}
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+          "c-page": "/components/page/page",
+          "c-header": "../../components/header/header",
+          "c-switch": "/components/switch/switch"
+        }
+    },
+    "wx": {
+        "navigationBarTitleText": "index",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"
+
+    }
+}
+</script>

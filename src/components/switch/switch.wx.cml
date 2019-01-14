@@ -1,0 +1,61 @@
+<template>
+<view class="{{ disabled?'cml-switch-disabled':'cml-switch' }}">
+  <switch
+    checked="{{ checked }}"
+    disabled="{{ disabled }}"
+    c-bind:change="switchChange"
+    color="#fc9153" />
+    <text class="cml-switch-label" c-if="{{ label }}">{{ label }}</text>
+</view>
+</template>
+<script>
+ class Switch implements SwitchInterface {
+    props = {
+      checked: {
+        type: Boolean,
+        default: false
+      },
+      label: {
+        type: String,
+        default:''
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      }
+    }
+    methods = {
+      switchChange (e) {
+        this.$cmlEmit('change',{
+          value: e.detail.value
+        })
+        this.$cmlEmit('changeevent',{
+          value: e.detail.value
+        })
+      }
+    }
+  }
+
+  export default new Switch();
+
+</script>
+
+<style scoped>
+@import "../../assets/css/var.less";
+.cml-switch-disabled {
+  opacity: 0.5;
+}
+.cml-switch-label {
+  color:@color-grey;
+  font-weight: 400;
+  font-size: 32cpx;
+}
+</style>
+
+<script cml-type="json">
+{
+  "wx": {
+    "component": true
+  }
+}
+</script>

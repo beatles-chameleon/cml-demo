@@ -1,0 +1,26 @@
+<template>
+  <richtext rich-message="{{richData}}"></richtext>
+</template>
+<script>
+
+class Richtext implements RichtextInterface {
+  props = {
+    richData: {
+      type: Object
+    }
+  }
+  }
+
+export default new Richtext();
+</script>
+
+<style scoped>
+</style>
+
+<script cml-type="json">
+{
+  "weex": {
+    "component": true
+  }
+}
+</script>

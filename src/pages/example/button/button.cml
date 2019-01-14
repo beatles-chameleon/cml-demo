@@ -1,0 +1,141 @@
+<template>
+<c-page title="button">
+  <!-- <view class="container"> -->
+    <c-scroller height="{{-1}}">
+      <c-header title="button"></c-header>
+      <view class="section-title">
+        <text class="section-title-text">类型样式</text>
+      </view>
+      <view class="button-list">
+        <text class="button-text">default/blue</text>
+        <c-button c-bind:onclick='testclick'></c-button>
+
+        <text class="button-text">disabled</text>
+        <c-button
+          type="blue"
+          text="确定"
+          disabled="{{true}}"
+          c-bind:onclick='testclick' >
+        </c-button>
+
+        <text class="button-text">orange</text>
+        <c-button
+          type="orange"
+          text="确定"
+          c-bind:onclick='testclick' >
+        </c-button>
+
+        <text class="button-text">red && disabled</text>
+        <c-button
+          type="red"
+          text="确定"
+          disabled="{{true}}"
+          c-bind:onclick='testclick' >
+        </c-button>
+
+        <text class="button-text">green</text>
+        <c-button
+          type="green"
+          text="确定"
+          c-bind:onclick='testclick' >
+        </c-button>
+      </view>
+
+      <view class="section-title">
+        <text class="section-title-text">尺寸</text>
+      </view>
+      <view class="button-list">
+        <text class="button-text">big</text>
+        <c-button c-bind:onclick='testclick' ></c-button>
+
+        <text class="button-text">medium</text>
+        <c-button
+          type="orange"
+          text="确定"
+          size="medium"
+          c-bind:onclick='testclick' >
+        </c-button>
+
+        <text class="button-text">small</text>
+        <c-button
+          type="red"
+          text="确定"
+          size="small"
+          disabled="{{true}}"
+          c-bind:onclick='testclick' >
+        </c-button>
+      </view>
+    </c-scroller>
+  <!-- </view> -->
+</c-page>
+</template>
+<script>
+import cml from 'chameleon-api'
+class Button   {
+  data = {
+    userStyle: ''
+  }
+
+  computed = {}
+  watch  = {}
+  mounted() {
+  }
+  methods = {
+    testclick(e) {
+      let type = e.detail.type
+      cml.showToast({
+        message: type + ' button'
+      })
+    }
+  }
+}
+export default new Button();
+</script>
+<style scoped>
+@import "../../../assets/css/var.less";
+.container {
+  flex: 1;
+  padding-bottom: 60cpx;
+  font-size: 32cpx;
+  background: #f8f8f8;
+}
+.button-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-title {
+  margin-top: 60cpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.section-title-text {
+  color: @color-orange;
+  font-size: @fontsize-large-xx;
+}
+.button-text {
+  display: block;
+  color: @color-light-grey;
+  margin-top: 40cpx;
+  margin-left: 8cpx;
+  margin-bottom: 16cpx;
+}
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+          "c-page": "/components/page/page",
+          "c-header": "../../components/header/header",
+          "c-button": "/components/button/button",
+          "c-scroller": "/components/scroller/scroller"
+        }
+    },
+    "wx": {
+        "navigationBarTitleText": "index",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"     
+    }
+}
+</script>

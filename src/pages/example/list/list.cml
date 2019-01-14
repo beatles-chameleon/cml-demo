@@ -1,0 +1,139 @@
+<template>
+<c-page title="list">
+  <view class="list-eg">
+    <c-list
+        bottom-offset="{{bottomOffset}}"
+        c-bind:scrolltobottom="onBottom"
+        c-bind:onscroll="onScroll"
+        to-element="{{toElement}}"
+        height="{{-1}}"
+      >
+        <cell>
+          <c-header title="list"></c-header>
+        </cell>
+          <cell
+            ref="cell{{i+1}}"
+            class="cell"
+            c-for="{{lists}}"
+            c-for-index="i"
+            c-for-item="item"
+            data-idx="{{i}}"
+          >
+            <view class="panel border-1px" ref="div{{i+1}}"
+           >
+              <text class="text">{{item}}</text>
+            </view>
+          </cell>
+      </c-list>
+  </view>
+</c-page>
+</template>
+<script>
+import cml from 'chameleon-api';
+const LOADMORE_COUNT = 4
+class List {
+
+  data = {
+    listStyle: "",
+    bottomOffset: 20,
+    lists: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    toElement: 'cell1',
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+    onBottom(e) {
+      cml.showToast({
+        message: '加载中...',
+        duration: 800
+      })
+      setTimeout(() => {
+        const length = this.lists.length
+        for (let i = length; i < length + LOADMORE_COUNT; ++i) {
+          this.lists.push(i + 1)
+        }
+      }, 800)
+    },
+    onScroll(e) {
+      console.log(e);
+      // alert(scroll);
+    }
+   }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+    const self = this
+    ;(function polling(ms) {
+      setTimeout(() => {
+        self.toElement = 'cell' + Math.ceil(Math.random() * 8)
+        polling(ms)
+      }, ms)
+    })(3000)
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new List();
+</script>
+<style scoped>
+.list-eg {
+  position: relative;
+  flex: 1;
+  background: #f8f8f8;
+}
+.panel {
+  display: flex;
+  width: 600cpx;
+  height: 300cpx;
+  margin-left: 75cpx;
+  margin-top: 35cpx;
+  margin-bottom: 35cpx;
+  flex-direction: column;
+  justify-content: center;
+  border-style: solid;
+  border-color: rgb(162, 217, 192);
+  background-color: rgba(162, 217, 192, 0.2);
+}
+.text {
+  font-size: 88cpx;
+  text-align: center;
+  color: #41B883;
+  height: 100cpx;
+  line-height: 100cpx;
+}
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+            "c-page": "/components/page/page",
+            "c-header": "../../components/header/header",
+            "c-list": "/components/list/list"
+        }
+    },
+    "wx": {
+        "navigationBarTitleText": "index",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"
+
+    }
+}
+</script>

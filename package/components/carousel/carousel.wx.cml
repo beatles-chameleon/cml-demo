@@ -1,0 +1,41 @@
+<script>
+class CCarousel implements CCarouselInterface {
+  props = {
+    autoplay: {
+      type: Boolean,
+      default: false
+    },
+    interval: {
+      type: Number,
+      default: 5000
+    },
+    current: {
+      type: Number,
+      default: 0
+    },
+    indicatorDots: {
+      type: Boolean,
+      default: false
+    },
+    circular: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
+
+export default new CCarousel();
+
+</script>
+
+<style scoped>
+
+</style>
+
+<script cml-type="json">
+{
+  "wx": {
+    "component": true
+  }
+}
+</script>

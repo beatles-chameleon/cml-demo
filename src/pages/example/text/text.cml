@@ -1,0 +1,116 @@
+<template>
+<c-page title="text">
+  <view class="page-demo">
+    <c-header title="text"></c-header>
+      <view class="text-area">
+        <view c-for="{{addLine}}" c-key="{{item}}">
+          <text class="line-text">{{item}}</text>
+        </view>
+      </view>
+      <view class="btn" c-bind:tap="add"><text class="{{addTextClass}}">add line</text></view>
+      <view class="btn" c-bind:tap="remove"><text class="{{removeTextClass}}">remove line</text></view>
+  </view>
+</c-page>
+</template>
+<script>
+  class Text   {
+
+  data = {
+    allLine: [
+      "chameleon的目标是Write once run everywhere",
+      "chameleon主要特性: ",
+      "1、简洁强大的构建配置",
+      "2、语法统一、快速上手",
+      "3、方便的数据管理方案",
+      "4、差异化方案",
+      "......"
+    ],
+    addLine: []
+  }
+  computed = {
+    addTextClass() {
+      return this.allLine.length === this.addLine.length ? 'disable-text' : 'active-text';
+    },
+    removeTextClass() {
+      return this.addLine.length === 0 ? 'disable-text': 'active-text';
+    }
+  }
+  watch  = {}
+  methods = {
+    add() {
+      if(this.addLine.length >= this.allLine.length) {
+        return;
+      }
+      this.addLine.push(this.allLine[this.addLine.length])
+    },
+    remove() {
+      if(this.addLine.length<=0) {
+        return;
+      }
+      this.addLine.pop();
+    }
+  }
+
+  beforeCreate() {}
+  created() {}
+  beforeMount() {}
+  mounted() {}
+  beforeDestroy() {}
+  destroyed() {}
+}
+
+export default new Text();
+</script>
+<style scoped>
+ .page-demo {
+   background: #F8F8F8;
+   flex: 1;
+ }
+.text-area {
+  margin: 100cpx 50cpx 100cpx;
+  padding: 40cpx;
+  min-height: 300cpx;
+  background-color: #fff;
+  font-size: 30cpx;
+  color: #353535;
+  text-align: center;
+}
+.line-text {
+  font-size: 30cpx;
+  text-align: center;
+}
+.btn {
+  height: 100cpx;
+  width: 600cpx;
+  border-radius: 6cpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30cpx 75cpx;
+  border: 1px solid #999;
+}
+.active-text {
+  color: #000;
+  font-size: 40cpx;
+}
+.disable-text {
+  color: #999;
+  font-size: 40cpx;
+}
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+            "c-page": "/components/page/page",
+            "c-header": "../../components/header/header"
+        }
+    },
+    "wx": {
+        "navigationBarTitleText": "text",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#f8f8f8"
+       
+    }
+}
+</script>

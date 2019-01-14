@@ -1,0 +1,454 @@
+<template>
+  <view class="index-page">
+    <view class="index-body" style="{{bodyComputedStyl}}">
+      <c-scroller height="{{-1}}">
+        <view ref="index-content-wrap" class="index-content-wrap" style="{{computedStyle}}" >
+          <view class="index-item-content">
+            <view class="index-hd">
+              <image class="index-logo" src="{{comLogoSrc}}"></image>
+              <view class="index-desc">
+                <text>以下将展示chameleon自定义组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见chameleon开发文档。</text>
+              </view>
+            </view>
+            <view class="index-bd">
+              <view class="kind-list">
+
+                <view c-for="{{comList}}" c-for-item="item" c-for-index="i">
+                  <view class="{{item.open ? 'kind-list-item-show' : 'kind-list-item'}}">
+                    <view id="{{item.id}}" class="{{item.open ? 'kind-list-item-hd-show' : 'kind-list-item-hd'}}" c-bind:tap="kindToggle">
+                      <view class="kind-list-text">
+                        <text>{{item.name}}</text>
+                      </view>
+                      <image class="kind-list-img" src="{{item.src}}"></image>
+                    </view>
+                    <view class="{{item.open ? 'kind-list-item-bd-show' : 'kind-list-item-bd'}}">
+                      <view class="{{item.open ? 'navigator-box-show' : 'navigator-box'}}">
+                        <view c-for="{{item.pages}}" c-for-item="page" c-for-index="j">
+                          <view data-routepath="{{page.path}}" data-routeurl="{{page.url}}" class="navigator" c-bind:tap="routeTo">
+                            <view class="navigator-text">
+                              <text>{{page.name}}</text>
+                            </view>
+                            <image class="navigator-arrow" src="{{arrowIcon}}"></image>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+
+              </view>
+            </view>
+          </view>
+          <view class="index-item-content">
+            <view class="index-hd">
+              <image class="index-logo" src="{{apiLogoSrc}}"></image>
+              <view class="index-desc">
+                <text>以下将演示chameleon接口能力，具体属性参数详见chameleon开发文档。</text>
+              </view>
+            </view>
+            <view class="index-bd">
+            </view>
+          </view>
+        </view>
+      </c-scroller>
+    </view>
+  </view>
+</template>
+<script>
+import cml from "chameleon-api"
+import routerConfig from '../../router.config.json'
+
+let routes = routerConfig.routes;
+
+let routeObj = {}
+routes.forEach(route => {
+  routeObj[route['name']] = route
+})
+
+class Demo {
+  data = {
+    comList: [
+      {
+        id: "content",
+        name: "基础内容",
+        open: false,
+        pages: [
+          routeObj["text"],
+          // routeObj["richtext"],
+          routeObj["view"]
+        ],
+        src: require(`../../assets/images/component/kind/content.png`)
+      },
+      {
+        id: "view",
+        name: "视图容器",
+        open: false,
+        pages: [
+          routeObj["list"],
+          routeObj["scroller"],
+          routeObj["carousel"]
+        ],
+        src: require(`../../assets/images/component/kind/view.png`)
+      },
+      {
+        id: "layout",
+        name: "布局容器",
+        open: false,
+        pages: [
+          routeObj["row"],
+          routeObj["layout"]
+        ],
+        src: require(`../../assets/images/component/kind/view.png`)
+      },
+      {
+        id: "form",
+        name: "表单组件",
+        open: false,
+        pages: [
+          routeObj["button"],
+          routeObj["input"],
+          routeObj["textarea"],
+          routeObj["switch"],
+          routeObj["radio"],
+          routeObj["checkbox"]
+        ],
+        src: require(`../../assets/images/component/kind/form.png`)
+      },
+      {
+        id: "media",
+        name: "媒体组件",
+        open: false,
+        pages: [
+          routeObj["image"],
+          routeObj["video"]
+        ],
+        src: require(`../../assets/images/component/kind/media.png`)
+      }
+    ],
+    apiList: [
+      {
+        id: "page",
+        name: "界面",
+        open: false,
+        pages: [routeObj["cml.modal"], routeObj["cml.toast"]],
+        src: require(`../../assets/images/api/kind/page.png`)
+      },
+      {
+        id: "network",
+        name: "网络",
+        open: false,
+        pages: [routeObj["cml.post"], routeObj["cml.get"]],
+        src: require(`../../assets/images/api/kind/network.png`)
+      },
+      {
+        id: "storage",
+        name: "数据",
+        open: false,
+        pages: [routeObj["cml.storage"]],
+        src: require(`../../assets/images/api/kind/storage.png`)
+      },
+      {
+        id: "weex",
+        name: "weex端扩展能力",
+        open: false,
+        pages: [routeObj["cml.weex"]],
+        src: require(`../../assets/images/api/kind/device.png`)
+      }
+    ],
+    comLogoSrc: require(`../../assets/images/component/kind/logo.png`),
+    apiLogoSrc: require(`../../assets/images/api/kind/logo.png`),
+    tabList: [
+      {
+        title: "组件",
+        selected: true,
+        iconPath: require(`../../assets/images/index/icon_component.png`),
+        selectedIconPath: require(`../../assets/images/index/icon_component_HL.png`)
+      },
+      {
+        title: "接口",
+        selected: false,
+        iconPath: require(`../../assets/images/index/icon_API.png`),
+        selectedIconPath: require(`../../assets/images/index/icon_API_HL.png`)
+      }
+    ],
+    activeTab: "component",
+    arrowIcon: "https://gw.alicdn.com/tfs/TB11zBUpwMPMeJjy1XbXXcwxVXa-22-22.png"
+  }
+
+  computed = {
+    computedStyle() {
+      let transVal = this.activeTab === "api" ? "-750" : "0";
+      let styl = `transform: translateX(${transVal}cpx);`;
+
+      return styl;
+    },
+    bodyComputedStyl() {
+      let styl = "";
+
+      return styl;
+    }
+  }
+
+  watch  = {
+  }
+
+  methods = {
+    kindToggle (e) {
+      let id = e.currentTarget.id;
+      let list = this.activeTab === "component" ? this.comList : this.apiList;
+
+      for (var i = 0, len = list.length; i < len; ++i) {
+        if (list[i].id == id) {
+          list[i].open = !list[i].open;
+        } else {
+          list[i].open = false;
+        }
+      }
+    },
+    tabItemClick(e) {
+      let tar = e.currentTarget;
+      let dataset = tar.dataset;
+      let index = parseInt(dataset.index);
+
+      this.tabList[index].selected = true;
+      this.tabList[(index + 1) % 2].selected = false;
+
+      this.activeTab = index == 0 ? "component" : "api";
+    },
+    routeTo(e) {
+      let tar = e.currentTarget;
+      let dataset = tar.dataset;
+      let path = dataset.routepath;
+      let url = dataset.routeurl;
+      cml.navigateTo({
+        path: path
+      });
+    }
+  }
+
+  mounted() {
+  }
+}
+
+export default new Demo();
+</script>
+<style scoped>
+.titlebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 750cpx;
+  height: 88cpx;
+  background: #f8f8f8;
+}
+.titlebar-text {
+  font-size: 36cpx;
+  color: #333;
+}
+.index-hd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80cpx;
+}
+.index-bd {
+  padding: 0 30cpx 40cpx;
+}
+.index-ft {
+  padding-bottom: 20cpx;
+  text-align: center;
+}
+.index-logo {
+  width: 86cpx;
+  height: 86cpx;
+}
+.index-desc {
+  text-align: center;
+  margin-top: 20cpx;
+  color: #888888;
+  font-size: 28cpx;
+}
+
+.navigator-box {
+  opacity: 0;
+  position: relative;
+  background-color: #ffffff;
+  line-height: 1.41176471;
+  font-size: 34cpx;
+
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+.navigator-box-show {
+  opacity: 1;
+  position: relative;
+  background-color: #ffffff;
+  line-height: 1.41176471;
+  font-size: 34cpx;
+  transform: translateY(0);
+  transition: 0.3s;
+}
+.navigator {
+  border-top: 1px solid #d8d8d8;
+  padding: 20cpx 0;
+  margin: 0 30cpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navigator-text {
+  flex: 1;
+}
+.navigator-arrow {
+  margin-right: 10cpx;
+  height: 18cpx;
+  width: 18cpx;
+}
+
+.kind-list-item {
+  margin: 20cpx 0;
+  background-color: #ffffff;
+  border-radius: 4cpx;
+  overflow: hidden;
+  height: 120cpx;
+}
+.kind-list-item-show {
+  margin: 20cpx 0;
+  background-color: #ffffff;
+  border-radius: 4cpx;
+  overflow: hidden;
+}
+.kind-list-item-show:first-child {
+  margin-top: 0;
+}
+.kind-list-item:first-child {
+  margin-top: 0;
+}
+.kind-list-text {
+  flex: 1;
+}
+.kind-list-img {
+  width: 60cpx;
+  height: 60cpx;
+}
+.kind-list-item-hd {
+  opacity: 1;
+  padding: 30cpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+.kind-list-item-hd-show {
+  opacity: 0.2;
+  padding: 30cpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+.kind-list-item-bd {
+  height: 0;
+  overflow: hidden;
+}
+.kind-list-item-bd-show {
+  height: auto;
+  overflow: hidden;
+}
+
+.index-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+
+  flex-direction: column;
+
+  background-color: #f8f8f8;
+  font-size: 32cpx;
+  line-height: 1.6;
+}
+
+.index-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex: 1;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.index-content-wrap {
+  width: 1500cpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  transition: 0.3s;
+}
+
+.index-item-content {
+  position: relative;
+  width: 750cpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.index-tab {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 110cpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #fff;
+  border-top: 1cpx solid #ccc;
+  padding-bottom: 0cpx;
+}
+
+.tab-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24cpx;
+  color: #7a7e83;
+}
+
+.tab-item-selected {
+  color: #3cc51f;
+}
+
+.tab-item-icon {
+  width: 60cpx;
+  height: 60cpx;
+}
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+          "c-page": "/components/page/page",
+          "c-scroller": "/components/scroller/scroller"
+        }
+    },
+    "wx": {
+        "navigationBarTitleText": "内置组件库",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"
+
+    }
+}
+</script>

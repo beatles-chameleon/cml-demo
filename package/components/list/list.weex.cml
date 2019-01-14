@@ -1,0 +1,118 @@
+<template>
+  <list
+    class="list-container"
+    ref="c-list"
+    show-scrollbar="true"
+    loadmoreoffset="{{bottomOffset}}"
+    offset-accuracy="10"
+    c-bind:loadmore="onBottom"
+    c-bind:scroll="onScroll"
+    style="{{ wrapperStyle }}"
+  >
+    
+    <slot>
+    </slot>
+  </list>
+</template>
+<script>
+import cml from "chameleon-api"
+import collectSlotRefs from '../../assets/js/mixins/collectSlotRefs/collectSlotRefs'
+
+const dom = weex.requireModule('dom')
+ class List implements ListInterface {
+    mixins = [collectSlotRefs]
+    props = {
+      cstyle: {
+        type: String,
+        default: ''
+      },
+      bottomOffset: {
+        // 距底部/右边多远时（单位px），触发 scrolltolower 事件
+        type: Number,
+        default: 0
+      },
+      toElement: {
+        type: String,
+        default: ''
+      },
+      bounce: {
+        type: Boolean,
+        default: true
+      },
+      height: {
+        type: Number,
+        default: 0
+      }
+    }
+    data = {
+      _slotRefs: {},
+      cmtStyle: ''
+    }
+    watch = {
+      toElement (val) {
+        this.collectSlotRefs(this.$slots.default)
+        let el = this._slotRefs[val]
+        if (Array.isArray(el) && el.length) {
+          el = this._slotRefs[val][0]
+        }
+
+        if (el) {
+          dom.scrollToElement(el, { offset: 0 })
+        }
+      }
+    }
+    computed = {
+      wrapperStyle () {
+        if (this.height >= 0) {
+          return `${this.cstyle};height:${this.height}cpx;`;
+        }
+        if (this.cstyle.indexOf('height') !== -1) {
+          return this.cstyle;
+        }
+        return this.cmtStyle + this.cstyle
+      }
+    }
+    methods = {
+      onScroll(e) {
+        let detail = e.detail;
+        detail.deltaX = detail.deltaX || 0;
+        detail.deltaY = detail.deltaY || 0;
+        this.$cmlEmit('onscroll', detail)
+        this.$cmlEmit('customscroll', detail)
+      },
+      onBottom(e) {
+        this.$cmlEmit('scrolltobottom', e.detail)
+      }
+    }
+    mounted() {
+      setTimeout(async() => {
+        if (!this.height) {
+          console.error('list组件必须传递高度属性')
+          return
+        }
+        if (this.height === -1) {
+          let rectData = await cml.getRect(this.$refs['c-list'], this)
+          let windowRect = await cml.getSystemInfo()
+          let height = windowRect.viewportHeight - rectData.top;
+          this.cmtStyle = `height:${height}cpx;`
+        }
+      }, 200)
+    }
+    
+  }
+
+  export default new List();
+
+</script>
+
+<style scoped>
+
+</style>
+
+<script cml-type="json">
+{
+  "weex": {
+    "component": true
+  }
+}
+</script>

@@ -1,0 +1,20 @@
+{
+  "name": "chameleon-ui-builtin",
+  "version": "0.0.3",
+  "description": "chameleon内置组件库",
+  "scripts": {
+    "build": "cml wx build && cml web build && cml weex build",
+    "publish": "sh ./bin/build.sh && cd package && npm publish",
+    "deploy": "sh deploy.sh weex && sh deploy.sh web"
+  },
+  "author": "Chameleon-Team",
+  "license": "Apache",
+  "email": "ChameleonCore@didiglobal.com",
+  "dependencies": {
+    "better-scroll": "1.13.2",
+    "chameleon-api": "^0.0.13",
+    "chameleon-bridge": "^0.0.10",
+    "chameleon-runtime": "^0.0.2",
+    "chameleon-store": "^0.0.3"
+  }
+}

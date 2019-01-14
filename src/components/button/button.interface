@@ -1,0 +1,55 @@
+<script cml-type="interface">
+type EventDetail = {
+  type: String,
+  disabled: Boolean
+}
+
+type getuserinfoEventDetail = {
+  errMsg: String,
+  rawData: String,
+  signature: String,
+  encryptedData: String,
+  iv: String,
+  userInfo: userInfo
+}
+type userInfo = {
+  nickName: String,
+  avatarUrl: String,
+  gender: Number,
+  country: String,
+  province: String,
+  city: String,
+  language: String
+}
+type getphonenumberEventDetail = {
+  errMsg: String,
+  encryptedData: String,
+  iv: String
+}
+type errorEventDetail = {
+  errMsg: String
+}
+interface ButtonInterface {
+  text: String,
+  size: String,
+  type: String,
+  disabled: Boolean,
+  btnStyle: String,
+  textStyle: String,
+  disabledStyle: String,
+  openType: String,
+  lang: String,
+  sessionFrom: String,
+  sendMessageTitle: String,
+  sendMessagePath: String,
+  sendMessageImg: String,
+  showMessageCard: Boolean,
+  appParameter: String,
+  onclick(eventDetail: EventDetail): void;
+  getuserinfo(eventDetail: getuserinfoEventDetail): void;
+  contact(eventDetail: void): void;
+  getphonenumber(eventDetail: getphonenumberEventDetail): void;
+  error(eventDetail: errorEventDetail): void; 
+  opensetting(eventDetail: void): void; 
+}
+</script>

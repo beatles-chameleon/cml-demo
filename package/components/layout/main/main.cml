@@ -1,0 +1,41 @@
+<template>
+<view class="c-main" style="{{mergeMainStyle}}"> 
+  <slot>  </slot>
+</view>
+</template>
+<script>
+class CMain {
+
+  props = {
+    mainStyle:{
+      type:String,
+      default:''
+    }
+  }
+  data = {
+  }
+  computed = {
+    mergeMainStyle(){
+      return this.mainStyle;
+    }
+  }
+}
+
+export default new CMain()
+</script>
+<style scoped>
+.c-main{
+  display: flex;
+  flex:1;
+  background-color: #e9eef3;
+  color: #333;
+}
+
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "component": true
+    }
+}
+</script>

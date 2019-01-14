@@ -1,0 +1,168 @@
+<template>
+<view class="page">
+  <view  class="navigator-wrap" style="{{barStyle}}">
+    <slot name="titlebar">
+      <view class="ios-shadow" c-if="{{os === 'ios'}}"></view>
+      <view class="navigator-placeholder" style="{{borderStyle}}">
+        <view class="navigator-controls" c-bind:tap="back">
+          <image class="navigator-controls-image" src="{{backIcon}}"></image>
+        </view>
+        <text class="navigator-title">{{title}}</text>
+      </view>
+      <slot name="menu"></slot>
+    </slot>
+  </view>
+  
+  <view class="page-main" style="{{mainStyle}}">
+    <slot></slot>
+  </view>
+</view>
+</template>
+<script>
+import cml from 'chameleon-api';
+class CPage implements CPageInterface {
+  props = {
+    title: {
+      required: true,
+      type:  String,
+      default: ''
+    }
+  }
+  data = {
+    os: '',
+    deviceTopBarHeight: 0,
+    safeBottom: 0,
+    backIcon: require('./back.png')
+  }
+  computed = {
+    barStyle() {
+      return `top: ${this.deviceTopBarHeight}cpx;`;
+    },
+    mainStyle() {
+      return `
+        margin-top: ${this.deviceTopBarHeight + 88}cpx;
+        margin-bottom: ${this.safeBottom}cpx
+      `
+    },
+    borderStyle() {
+      if (this.os === 'android') {
+        return "border-bottom: 1px solid rgba(0, 0, 0, .08);"
+      }
+    }
+  }
+  methods = {
+    getDeviceTopBarHeight(system) {
+      if (this.os !== 'ios') {
+        return 0;
+      }
+      // iphoneX
+      if (/^iPhone10,[3|6]{1}$/.test(system.deviceModel)) {
+        return 88;
+      }
+      if (system.deviceTopBar &&  system.deviceTopBar.height && system.scale) {
+        return system.deviceTopBar.height * 2;
+      }
+      // iphone默认
+      return 60;
+    },
+    getDeviceSafeBottom(system) {
+      if (this.os !== 'ios') {
+        return 0;
+      }
+      // iphoneX 兼容
+      if (/^iPhone10,[3|6]{1}$/.test(system.deviceModel)) {
+        return 68;
+      }
+      return 0;
+    },
+    back() {
+      this.$cmlEmit('back');
+      if (this.$router.history.index) {
+        cml.navigateBack();
+      } else {
+        cml.close();
+      }
+    }
+  }
+  created() {
+    cml.getSystemInfo().then(system => {
+      this.os = system.extraParams.os.toLowerCase();
+      //差异化方法
+      this.deviceTopBarHeight = this.getDeviceTopBarHeight(system.extraParams);
+      this.safeBottom = this.getDeviceSafeBottom(system.extraParams);
+    })
+  } 
+}
+
+export default new CPage();
+
+</script>
+
+<style scoped>
+.navigator-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 88cpx;
+  z-index: 9999;
+}
+.navigator-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+.ios-shadow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10cpx;
+  bottom: 0;
+  box-shadow: 0 2cpx 4cpx rgba(0, 0, 0, .1);
+}
+.navigator-controls {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100cpx;
+  height: 88cpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navigator-controls-image {
+  height: 32cpx;
+  width: 19cpx;
+  margin-left: 36cpx;
+}
+
+.navigator-title {
+  width: 550cpx;
+  height: 88cpx;
+  line-height: 88cpx;
+  text-align: center;
+  font-size: 36cpx;
+  color: #333;
+}
+
+.page-main {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
+<script cml-type="json">
+{
+  "weex": {
+    "component": true
+  }
+}
+</script>

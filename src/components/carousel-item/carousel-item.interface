@@ -1,0 +1,4 @@
+<script cml-type="interface">
+interface CCarouselItemInterface {
+}
+</script>

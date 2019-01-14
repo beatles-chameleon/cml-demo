@@ -1,0 +1,15 @@
+{
+  "name": "chameleon-ui-builtin",
+  "version": "0.0.3",
+  "description": "chameleon内置组件库",
+  "main": "/components",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chameleon-Team",
+  "license": "Apache",
+  "email": "ChameleonCore@didiglobal.com",
+  "dependencies": {
+    "better-scroll": "1.13.2"
+  }
+}

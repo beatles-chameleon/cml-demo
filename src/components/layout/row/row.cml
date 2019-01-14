@@ -1,0 +1,170 @@
+<template>
+  <view class="{{ rowClass }}" style="{{ rowStyle }}">
+    <slot></slot>
+  </view>
+</template>
+<script>
+  class CRow {
+    props = {
+      // start/end/center/space-around/space-between
+      justify: {
+        type: String,
+        default: 'center'
+      },
+      // top/middle/bottom
+      align: {
+        type: String,
+        default: 'middle'
+      },
+      height: {
+        type: Number,
+        default: 0
+      },
+      wrap: {
+        type: Boolean,
+        default: false
+      },
+      margin: {
+        type: Number,
+        default: 0
+      }
+    }
+    computed = {
+      rowClass () {
+        return `flex-row-${this.justify}-${this.align}`;
+      },
+      rowStyle () {
+        let style = '';
+        if (this.height) {
+          style += `height:${this.height}cpx;`;
+        }
+        if (this.wrap) {
+          style += `flex-wrap:wrap;`;
+        }
+        if (this.margin) {
+          style += `margin:${this.margin/2}cpx 0;`;
+        }
+        return style;
+      }
+    }
+  }
+
+  export default new CRow();
+
+</script>
+
+<style scoped>
+
+.flex-row-start-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.flex-row-end-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.flex-row-center-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.flex-row-space-between-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.flex-row-space-around-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.flex-row-start-middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-row-end-middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-row-center-middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row-space-between-middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-row-space-around-middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-row-start-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.flex-row-end-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.flex-row-center-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.flex-row-space-between-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.flex-row-space-around-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+</style>
+
+<script cml-type="json">
+{
+    "base": {
+        "component": true
+    }
+}
+</script>
+
+
+

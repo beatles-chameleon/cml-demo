@@ -1,0 +1,13 @@
+<script cml-type="interface">
+type EventDetail = {
+  current: Number
+}
+interface CCarouselInterface {
+  autoplay: Boolean,
+  interval: Number,
+  circular: Boolean,
+  current: Number,
+  indicatorDots: Boolean,
+  change(eventDetail: EventDetail): void;
+}
+</script>

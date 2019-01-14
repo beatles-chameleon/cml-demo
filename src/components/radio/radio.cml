@@ -1,0 +1,143 @@
+<template>
+<view class="cml-radio">
+  <view class="cml-radio-wrap" c-bind:tap="changeSelect">
+    <view class="cml-radio-select" style="{{ radioStyle }}">
+      <view class="{{ radioClass }}">
+      </view>
+    </view>
+    <text class="cml-radio-label" >{{ label }}</text>
+  </view>
+</view>
+</template>
+<script>
+class Radio  {
+  props = {
+    checked: {
+      type: Boolean,
+      default: false
+    },
+    label: {
+      type: String
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    position: {
+      type: String,
+      default: 'left'
+    },
+    groupIndex: {
+      type: Number,
+      default: -1
+    }
+  }
+  data = {
+    innerChecked: false
+  }
+
+  computed = {
+    radioStyle () {
+      let style = '';
+      if (this.disabled) {
+        style += 'opacity:0.5;'
+      }
+      if (this.position == 'right') {
+        style += 'position:absolute;right:0;margin-right:45cpx;'
+      } else {
+        style += 'margin-right:13cpx;'
+      }
+      return style;
+    },
+    radioClass () {
+      if (this.disabled) {
+        return  this.innerChecked? 'cml-radio-selected-disabled': 'cml-radio-unselect-disabled';
+      }
+      return this.innerChecked? 'cml-radio-selected': 'cml-radio-unselect';
+    }
+  }
+
+  watch  = {
+    checked (val) {
+      this.innerChecked = val;
+    }
+  }
+
+  methods = {
+    changeSelect () {
+      if (this.disabled) return;
+      this.innerChecked = !this.innerChecked
+      let value = {
+        value: this.innerChecked
+      }
+      if (this.groupIndex !== -1) {
+        value.index = this.groupIndex
+      }
+      this.$cmlEmit('change', value);
+      this.$cmlEmit('changeevent', value);
+    }
+  }
+  mounted() {
+    this.innerChecked = this.checked;
+  }
+}
+
+export default new Radio();
+</script>
+<style scoped>
+@import "../../assets/css/var.less";
+.cml-radio {
+  margin: 10cpx;
+}
+.cml-radio-wrap {
+  padding:11cpx 0;
+  word-break: break-word;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 1.5;
+  position: relative;
+}
+.cml-radio-selected {
+  width:32cpx;
+  height:32cpx;
+  border:10cpx solid @color-orange;
+  border-radius: 100cpx;
+  box-sizing: border-box;
+}
+.cml-radio-selected-disabled {
+  width:32cpx;
+  height:32cpx;
+  border:10cpx solid @color-orange;
+  border-radius: 100cpx;
+  box-sizing: border-box;
+  opacity: 0.5;
+}
+.cml-radio-unselect {
+  width:32cpx;
+  height:32cpx;
+  border:1px solid #ccc;
+  border-radius: 20cpx;
+  box-sizing:border-box;
+}
+.cml-radio-unselect-disabled {
+  width:32cpx;
+  height:32cpx;
+  border-radius: 20cpx;
+  background: #ccc;
+  box-sizing:border-box;
+}
+.cml-radio-label {
+  color:#666;
+  font-weight: 400;
+  font-size: 32cpx;
+}
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "component": true
+  }
+}
+</script>

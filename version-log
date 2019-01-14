@@ -1,0 +1,15 @@
+#####################version info#####################
+
+# 2.0.8:  height传-1时，<scroller>填充页面剩余高度
+
+# 2.0.10: input type=number 支持min和max
+
+# 2.0.11: page组件delete absolute;scroller list weex端高度自计算
+
+# 2.0.12: scroller支持scrollTop像素单位滚动
+
+# 2.0.13: carousel 组件模板动态class修正
+
+# 2.0.15: 解决 cml-linter 校验提示的问题
+
+# 2.0.16: web scroller 惯性滚动触发滚动事件

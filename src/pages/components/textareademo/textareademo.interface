@@ -1,0 +1,7 @@
+<script cml-type="interface">
+//定义事件detail对象的参数
+type EventDetail = {
+}
+interface TextareaInterface {
+}
+</script>

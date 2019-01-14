@@ -1,0 +1,2 @@
+
+export const INDEX_CHANGE_NAME = 'INDEX_CHANGE_NAME'

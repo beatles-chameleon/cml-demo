@@ -1,0 +1,52 @@
+<template>
+  <view class="page">
+    <slot></slot>
+  </view>
+</template>
+<script>
+import cml from 'chameleon-api';
+ class CPage implements CPageInterface {
+    props = {
+      title: {
+        required: true,
+        type:  String,
+        default: ''
+      }
+    }
+    watch = {
+      title(v) {
+        this.setTitle(v);
+      }
+    }
+    methods = {
+      setTitle(v) {
+        document.title = v;
+        cml.setTitle(v);
+      }
+    }
+    created() {
+      this.setTitle(this.title);
+    }
+  }
+
+  export default new CPage();
+
+</script>
+
+<style scoped>
+.page {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
+<script cml-type="json">
+{
+  "web": {
+    "component": true
+  }
+}
+</script>
+
+
+

@@ -1,0 +1,56 @@
+<template>
+  <view class="rich-text">
+    <text c-for="{{richList}}" style="{{item.style}}" c-key="{{index}}">{{item.text}}</text>
+  </view>
+</template>
+<script>
+import richHandle from './richHandle.js';
+ class Richtext implements RichtextInterface {
+    props = {
+      richData: {
+        type: Object,
+        default: {
+          message: '',
+          rich_message: [{
+            color: '',
+            font_size: 0,
+            start: 0,
+            end: 0
+          }]
+        }
+      }
+    }
+    computed ={
+      richList() {
+        let richList = richHandle(this.richData);
+        richList = richList.map(item => {
+          if (item.color && item.font_size) {
+            item.style = `color:${item.color};font-size:${item.font_size}cpx;`
+          } else {
+            item.style = ''
+          }
+          return item;
+        })
+        return richList;
+      }
+    }
+  }
+
+  export default new Richtext();
+
+</script>
+
+<style scoped>
+.rich-text {
+  display: flex;
+  flex-direction: row;
+}
+</style>
+
+<script cml-type="json">
+{
+  "wx": {
+    "component": true
+  }
+}
+</script>

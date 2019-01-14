@@ -1,0 +1,129 @@
+<template>
+  <view class="container" ref="container" index="{{current}}" style="{{containerStyle}}">
+    <origin-slider
+      :infinite="circular"
+      :auto-play="autoplay"
+      :interval="interval"
+      :index="current"
+      @change="onChange"
+      ref="slider"
+    >
+      <slot />
+    </origin-slider>
+    <view style="{{directorStyle}}" c-if="{{indicatorDots}}">
+      <view
+        class="{{currentIndex == index ? 'director-icon director-icon-selected' : 'director-icon director-not-icon'}}"
+        c-for="{{children}}"
+        c-key="index"
+      ></view>
+    </view>
+  </view>
+</template>
+<script>
+import cml from 'chameleon-api'
+ class CCarousel implements CCarouselInterface {
+    data = {
+      currentIndex: 0,
+      children: [],
+      directorStyle: '',
+      containerStyle: '',
+    }
+    props = {
+      autoplay: {
+        type: Boolean,
+        default: false,
+      },
+      change: {
+        type: Function,
+        default: () => {},
+      },
+      current: {
+        type: Number,
+        default: 0,
+      },
+      interval: {
+        type: Number,
+        default: 5000,
+      },
+      circular: {
+        type: Boolean,
+        default: false,
+      },
+      indicatorDots: {
+        type: Boolean,
+        default: false,
+      }
+    }
+    mounted() {
+      
+      this.index = this.current;
+      let mostHeight = 0;
+      setTimeout(() => {
+        
+        cml.getRect(this.$refs.container, this).then((res) => {
+          this.children = this.$refs.slider.children;
+          // this.children.forEach((item) => {
+          //   if (item.style.height > mostHeight) {
+          //     mostHeight = item.style.height;
+          //   }
+          // })
+
+          // this.containerStyle = `height: ${mostHeight}px`;
+
+          if (res.width > 0 && res.height > 0) {
+            this.directorStyle = `position: absolute; width:${res.width}px; top: ${res.height - 50}px; display: flex; flex-direction: row; justify-content: center; align-items: center;`;
+          } 
+        })
+      }, 50)
+    }
+    methods = {
+      onChange(e) {
+        if (e.index !== undefined) {
+          this.currentIndex = e.index;
+          this.$cmlEmit('change', {
+            current: e.index
+          })
+        }
+      }
+    }
+  }
+  export default new CCarousel();
+</script>
+
+<style scoped>
+.container {
+  position: relative;
+}
+.director {
+  position: absolute;
+  top: 10cpx;
+  padding-bottom: 26cpx;
+}
+.director-icon {
+  margin-top: 8cpx;
+  height: 20cpx;
+  width: 20cpx;
+  border-radius: 10cpx;
+  margin-right: 20cpx;
+}
+
+.director-icon-selected {
+  background-color: #ffffff;
+}
+
+.director-not-icon {
+  background-color: #ccc;
+}
+</style>
+
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {
+    }
+  }
+}
+</script>
+
+
+
