@@ -18,7 +18,7 @@ import cml from "chameleon-api"
 
   data = {
     allLine: [
-      "chameleon的目标是Write once run everywhere",
+      "chameleon的目标是 真正专注于让一套代码运行多端的开发框架，提供标准的MVVM架构开发模式统一各类终端",
       "chameleon主要特性: ",
       "1、简洁强大的构建配置",
       "2、语法统一、快速上手",

@@ -10,7 +10,7 @@
   "license": "Apache",
   "email": "ChameleonCore@didiglobal.com",
   "dependencies": {
-    "chameleon-api": "^0.1.0",
+    "chameleon-api": "^0.1.1",
     "chameleon-bridge": "^0.1.0",
     "chameleon-runtime": "0.0.3",
     "chameleon-store": "0.0.3",

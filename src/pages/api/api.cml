@@ -337,7 +337,7 @@ class Home {
       });
     },
     getRect() {
-      cml.getRect(this.$refs.titleText, this).then(res => {
+      cml.getRect('titleText', this).then(res => {
         cml.showToast({
           message: JSON.stringify(res)
         });
