@@ -1,0 +1,5 @@
+<picker-view indicator-style="height: 72rpx;" style="height: {{height}}rpx;" value="{{wxValue}}" bindchange="bindwxChange" class=" cml-base cml-origin-picker-view">
+  <picker-view-column class=" cml-base cml-origin-picker-view-column">
+    <view wx:for="{{data}}" style="line-height:72rpx;align-items:center" class=" cml-base cml-view"><text class=" cml-base cml-text">{{item}}</text></view>
+  </picker-view-column>
+</picker-view>

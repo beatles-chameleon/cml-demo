@@ -1,0 +1,1 @@
+.container{flex:1;background:#f8f8f8}.title{display:flex;flex-direction:row;justify-content:center;line-height:88rpx;font-size:28rpx;text-align:center;height:88rpx;color:#999}.one{background-color:#2ef07f}.one,.two{color:#fff;height:500rpx}.two{background-color:#00a2ff}.three{color:#fff;height:500rpx;background-color:#00ffe4}

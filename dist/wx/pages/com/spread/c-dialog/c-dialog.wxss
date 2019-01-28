@@ -1,0 +1,1 @@
+.container{display:flex;flex-direction:column;flex:1;background:#f8f8f8}.btn{margin-top:20rpx;align-self:center}.custom-header{font-size:32rpx;padding:30rpx 20rpx}.custom-content{padding:60rpx;font-size:28rpx;text-align:center;color:#666}.custom-footer{text-align:center;border-top:.5rpx solid #f0f0f0;padding:30rpx 0;font-size:24rpx;font-size:32rpx;color:#fc9153}

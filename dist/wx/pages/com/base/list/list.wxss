@@ -1,0 +1,1 @@
+.list-eg{position:relative;flex:1;background:#f8f8f8}.panel{display:flex;width:600rpx;height:300rpx;margin-left:75rpx;margin-top:35rpx;margin-bottom:35rpx;flex-direction:column;justify-content:center;border-style:solid;border-color:#a2d9c0;background-color:rgba(162,217,192,.2)}.text{font-size:88rpx;text-align:center;color:#41b883;height:100rpx;line-height:100rpx}

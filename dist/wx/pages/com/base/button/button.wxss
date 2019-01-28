@@ -1,0 +1,1 @@
+.container{flex:1;padding-bottom:60rpx;font-size:32rpx;background:#f8f8f8}.button-list{display:flex;flex-direction:column;align-items:center}.section-title{margin-top:60rpx;display:flex;flex-direction:row;justify-content:center}.section-title-text{color:#fc9153;font-size:40rpx}.button-text{display:block;color:#999;margin-top:40rpx;margin-left:8rpx;margin-bottom:16rpx}
