@@ -1,0 +1,163 @@
+<template>
+<page title="input">
+    <view class="page-demo">
+        <scroller height="{{-1}}">
+            <c-header title="input"></c-header>
+            <text class="title-text" >focus聚焦 web端不支持</text>
+            <view class="input-wrap">
+                <input placeholder="focus聚焦 web端不支持" focus="{{isfocus}}" c-bind:blur="bindblurevent"></input>
+            </view>
+            <text class="title-text">数据绑定,value:{{inputValue}}</text>
+            <view class="input-wrap">
+                <input placeholder="数据绑定" value="{{inputValue}}" c-bind:input="inputEvent"></input>
+            </view>
+            <text class="title-text">监听input事件,当前事件：{{eventName}}</text>
+            <view class="input-wrap">
+                <input placeholder="监听input事件"  c-bind:input="testEvent" c-bind:blur="testEvent" c-bind:focus="testEvent" c-bind:confirm="testEvent"></input>
+            </view>
+            <text class="title-text">最大长度是5</text>
+            <view class="input-wrap">
+                <input placeholder="最大长度是5" maxlength="{{5}}" ></input>
+            </view>
+            <text class="title-text">text类型的input</text>
+            <view class="input-wrap">
+                <input placeholder="text类型的input" type="text"></input>
+            </view>
+
+            <text class="title-text">number类型的input</text>
+            <view class="input-wrap">
+                <input placeholder="number类型的input" type="number"></input>
+            </view>
+
+            <text class="title-text">number类型的input 支持最大值 最小值</text>
+            <view class="input-wrap">
+                <input placeholder="最大值200 最小值10" value="{{testMaxMinVal}}" type="number" maxValue="{{200}}" minValue="{{10}}" c-bind:blur="testMaxMinEvent"></input>
+            </view>
+
+            <text class="title-text">password类型的input</text>
+            <view class="input-wrap">
+                <input placeholder="password类型的input" type="password"></input>
+            </view>
+
+            <text class="title-text">禁用input</text>
+            <view class="input-wrap">
+                <input placeholder="禁用input" disabled="{{true}}" ></input>
+            </view>
+
+            <text class="title-text">键盘右下键按钮search web端不支持</text>
+            <view class="input-wrap">
+                <input placeholder="键盘右下键按钮search web端不支持" return-key-type="search" ></input>
+            </view>
+            
+            <text class="title-text">键盘右下键按钮done web端不支持</text>
+            <view class="input-wrap">
+                <input placeholder="键盘右下键按钮done web端不支持" return-key-type="done" ></input>
+            </view>
+
+            <text class="title-text">键盘右下键按钮next web端不支持</text>
+            <view class="input-wrap">
+                <input placeholder="键盘右下键按钮next web端不支持" return-key-type="next" ></input>
+            </view>
+
+            <text class="title-text">键盘右下键按钮go web端不支持</text>
+            <view class="input-wrap">
+                <input placeholder="键盘右下键按钮go web端不支持" return-key-type="go" ></input>
+            </view>
+
+            <text class="title-text">placeholderColor web端不支持</text>
+            <view class="input-wrap">
+                <input placeholder="placeholderColor web端不支持" placer-holder-color="#ff0000;" ></input>
+            </view>
+
+            <text class="title-text">自定义样式</text>
+            <view class="end-item">
+                <input placeholder="自定义样式" c-style="color: #00ff00; border: 1px solid #00f;" ></input>
+            </view>
+        </scroller>
+    </view>
+</page>
+</template>
+<script>
+import cml from 'chameleon-api'
+
+class Input {
+
+  data = {
+    isfocus: false,
+    inputValue: '',
+    eventName: '触发的事件名称',
+    keywords: '',
+    winHeight: 0,
+    testMaxMinVal: '10'
+  }
+
+  computed = {}
+  watch  = {}
+
+  methods = {
+    inputEvent(e) {
+      this.inputValue = e.detail.value;
+    },
+    testEvent(e) {
+      this.eventName = e.type
+    },
+    bindblurevent()  {
+      this.isfocus = false;
+    },
+    testMaxMinEvent (e) {
+        this.testMaxMinVal = '';
+        setTimeout(() => {
+            this.testMaxMinVal = e.detail.value;
+        }, 300)
+    }
+  }
+
+  beforeCreate() {}
+  created() {}
+  beforeMount() {}
+
+  mounted() {
+    setTimeout(() => {
+      this.isfocus = true;
+    }, 300);
+  }
+
+  beforeDestroy() {}
+  destroyed() {}
+}
+
+export default new Input();
+</script>
+<style scoped>
+ .page-demo {
+   background: #f8f8f8;
+   flex: 1;
+   padding: 0 10cpx 30cpx;
+ }
+ .title-text {
+   color: #999;
+   margin: 30cpx 20cpx 10cpx;
+   display: block;
+   font-size: 32cpx;
+ }
+ .end-item {
+   margin-bottom: 40cpx;
+   position: relative;
+ }
+
+.input-wrap  {
+   position: relative;
+ }
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+            "c-header": "/components/header/header"
+        },
+        "navigationBarTitleText": "input",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"
+    }
+}
+</script>

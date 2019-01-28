@@ -1,0 +1,146 @@
+<template>
+  <view class="collapse-cell">
+    <view class="collapse-title-row row" c-bind:tap="toggle">
+      <image class="title-left-icon" src="{{iconUri}}"></image>
+      <text class="cell-title">{{title}}</text>
+      <image class="title-right-icon" src="{{ isOpen ? iconUpUri : iconDownUri}}"></image>
+    </view>
+    <view class="collapse-cell-list" style="height: {{listHeight}}cpx;">  
+      <view class="collapse-cell-item"  c-for="{{list}}" c-for-item="cellInfo" c-for-index="listOrder"  c-bind:tap="onItemSelected(listOrder,cellInfo)">
+        <view class="collapse-cell-item-row row">
+          <text class="list-item-title">{{cellInfo.title}}</text>
+          <image class="list-item-icon" src="{{iconRightUri}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import cml from 'chameleon-api';
+
+const collapseAnimation = cml.createAnimation();
+
+class CompCollapse {
+  props = {
+    title: {
+      type: String,
+      default: ''
+    },
+    iconUri: {
+      type: String,
+      default: ''
+    },
+    list: {
+      type: Array,
+      default: []
+    }
+  }
+
+  data = {
+    isOpen: false,
+    iconUpUri: require(`../../assets/images/icons/icon-arrow-up.png`),
+    iconDownUri: require(`../../assets/images/icons/icon-arrow-down.png`),
+    iconRightUri: require(`../../assets/images/icons/icon-solid-arrow-right.png`),
+    listHeight: 0
+  }
+
+  methods = {
+    toggle(e) {
+      this.isOpen = !this.isOpen; 
+      this.listHeight = this.isOpen ? this.list.length * 121 : 0;
+    },
+    onItemSelected(index, info) {
+      this.$cmlEmit('itemselected', {
+        url: info.url, method: info.method, extraData: this.list[index].extraData
+      });
+    }
+  }
+}
+
+export default new CompCollapse();
+</script>
+
+<style scoped>
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.collapse-cell {
+  box-shadow: 0 2cpx 16cpx 0 rgba(146,167,215,0.12);
+  border-radius: 4cpx;
+  background-color: white;
+  margin-bottom: 26cpx;
+}
+
+.collapse-title-row {
+  height: 120cpx;
+}
+
+.title-left-icon {
+  width: 36cpx;
+  height: 36cpx;
+  margin-left: 36cpx;
+}
+
+.cell-title {
+  font-size: 28cpx;
+  color: #172742;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.title-right-icon {
+  width: 28cpx;
+  height: 16cpx;
+  margin-right: 40cpx;
+}
+
+.collapse-cell-list {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.2s;
+}
+
+
+.collapse-cell-item {
+  border-top: 1cpx solid #DBE2F0;
+  padding: 0 50cpx 0cpx;
+  overflow: hidden;
+  height: auto;
+}
+
+.collapse-cell-item-row {
+  height: 120cpx;
+}
+
+.list-item-title {
+  font-size: 26cpx;
+  color: #172742;
+  letter-spacing: 0;
+}
+
+.list-item-icon {
+  width: 9cpx;
+  height: 17cpx;
+}
+
+</style>
+
+
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+        }
+    },
+    "wx": {
+        "navigationBarTitleText": "index",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2",
+        "component": true
+    }
+}
+</script>

@@ -11,7 +11,7 @@ BD_BIN="$(cd "${BD_BIN}"; pwd)"
 PROJECT_ROOT="${BD_BIN}"
 
 #PROJECT NAME
-PROJECT_NAME="chameleon-ui-builtin"
+PROJECT_NAME="cml-demo"
 
 PLATFORM=$1
 DIST_FOLDER="$PROJECT_ROOT/dist/$PLATFORM"

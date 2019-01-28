@@ -1,0 +1,44 @@
+<script cml-type="interface">
+type res = [String];
+interface UnsupportedInterface {
+  getUnsupportApis(): res;
+}
+
+</script>
+
+<script cml-type="web">
+
+class Method implements UnsupportedInterface {
+  getUnsupportApis() {
+    return [];
+  }
+}
+
+export default new Method();
+</script>
+
+<script cml-type="weex">
+
+class Method implements UnsupportedInterface {
+  getUnsupportApis() {
+    return ['选取照片', '网络请求', 'WebSocket', '地理位置'];
+  }
+}
+
+export default new Method();
+</script>
+
+<script cml-type="wx">
+
+class Method implements UnsupportedInterface {
+  getUnsupportApis() {
+    return [];
+  }
+}
+
+export default new Method();
+</script>
+
+
+
+

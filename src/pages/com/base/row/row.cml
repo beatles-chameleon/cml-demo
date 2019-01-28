@@ -1,0 +1,70 @@
+<template>
+<page title="row演示">
+    <c-header title="row"></c-header>
+    <row margin="{{100}}">
+      <view class="col-item"></view>
+      <view class="col-item"></view>
+      <view class="col-item"></view>
+    </row>
+    <row margin="{{100}}" height="{{200}}">
+      <col width="{{50}}" height="{{100}}" background-color="#ddd" margin="{{20}}">
+        <view></view>
+      </col>
+      <col  width="{{100}}" height="{{100}}" background-color="#bbb" margin="{{20}}">
+        <view></view>
+      </col>
+      <col  width="{{200}}" height="{{100}}" background-color="#aaa" margin="{{20}}">
+        <view></view>
+      </col>
+    </row>
+    <row margin="{{100}}" height="{{100}}">
+      <col margin="{{50}}">
+        <view class="col-item-2"></view>
+      </col>
+      <col margin="{{50}}">
+        <view class="col-item-2"></view>
+      </col>
+      <col margin="{{50}}">
+        <view class="col-item-2"></view>
+      </col>
+    </row>
+</page>
+</template>
+<script>
+ class Row {
+  }
+
+  export default new Row();
+
+</script>
+
+<style scoped>
+.col-item {
+  background: #ccc;
+  width:200cpx;
+  height:100cpx;
+  margin:0 10cpx;
+}
+.col-item-2 {
+  background: #aaa;
+  width:200cpx;
+  height:100cpx;
+}
+</style>
+
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {
+      "c-header": "/components/header/header"
+    },
+    "navigationBarTitleText": "row",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+  }
+}
+
+</script>
+
+
+

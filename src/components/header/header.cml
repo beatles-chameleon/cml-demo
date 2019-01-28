@@ -1,0 +1,93 @@
+<template>
+  <view class="page-head">
+    <view class="page-head-title">
+      <text class="page-head-title-text">{{title}}</text>
+    </view>
+    <view class="page-head-line"></view>
+    <view c-if="{{desc}}" class="page-head-desc">
+      <text class="page-head-desc-text">{{desc}}</text>
+    </view>
+  </view>
+</template>
+<script>
+class Header   {
+  props = {
+    title: {
+      type: String,
+      default: '标题'
+    },
+    desc: {
+      type: String,
+      default: ''
+    }
+  }
+  data = {
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new Header();
+</script>
+<style scoped>
+.page-head{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60cpx 50cpx 80cpx;
+}
+.page-head-title{
+  padding: 0 40cpx 20cpx 40cpx;
+}
+.page-head-title-text {
+  font-size: 32cpx;
+  color: #BEBEBE;
+}
+.page-head-line{
+  margin: 0 auto;
+  width: 150cpx;
+  height: 2cpx;
+  background-color: #D8D8D8;
+}
+.page-head-desc{
+  padding-top: 20cpx;
+}
+
+.page-head-desc-text {
+  color: #9B9B9B;
+  font-size: 32cpx;
+}
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+        }
+    }
+}
+</script>

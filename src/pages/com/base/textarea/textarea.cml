@@ -1,0 +1,21 @@
+<template>
+    <textareademo></textareademo>
+</template>
+<script>
+    export default {};
+
+</script>
+<style scoped>
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+            "textareademo": "/components/textareademo/textareademo"
+        },
+        "navigationBarTitleText": "textarea",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"
+    }
+}
+</script>

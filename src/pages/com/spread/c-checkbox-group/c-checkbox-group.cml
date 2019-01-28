@@ -1,0 +1,140 @@
+<template>
+<page title="checkbox group演示">
+  <c-header title="checkbox"></c-header>
+  <view class="box">
+    <c-checkbox-group
+      option="{{ checkboxGroupOption1 }}"
+      c-bind:groupchange="groupChangeHandler1"
+      >
+    </c-checkbox-group>
+  </view>
+  <view class="title">
+    <text>selected value: {{ selected1 }}</text>
+  </view>
+
+  <view class="box">
+    <c-checkbox-group
+      option="{{ checkboxGroupOption2 }}"
+      position="right"
+      c-bind:groupchange="groupChangeHandler2"
+      >
+    </c-checkbox-group>
+  </view>
+  <view class="title">
+    <text>selected value: {{ selected2 }}</text>
+  </view>
+
+  <view class="box">
+    <c-checkbox-group
+      option="{{ checkboxGroupOption3 }}"
+      c-bind:groupchange="groupChangeHandler3"
+      horizontal="{{ true }}"
+      >
+    </c-checkbox-group>
+  </view>
+  <view class="title">
+    <text>selected value: {{ selected3 }}</text>
+  </view>
+
+</page>
+</template>
+<script>
+class CCheckbox {
+
+  data = {
+    checkboxGroupOption1: [{
+      checked: true,
+      label: 'one',
+      disabled: true
+    }, {
+      checked: false,
+      label: 'two'
+    }, {
+      checked: false,
+      label: 'three'
+    }],
+    selected1: 'one',
+    checkboxGroupOption2: [{
+      checked: true,
+      label: 'one',
+      disabled: true
+    }, {
+      checked: false,
+      label: 'two'
+    }, {
+      checked: false,
+      label: 'three'
+    }],
+    selected2: 'one',
+    checkboxGroupOption3: [{
+      checked: true,
+      label: 'one',
+      disabled: true
+    }, {
+      checked: false,
+      label: 'two'
+    }, {
+      checked: false,
+      label: 'three'
+    }],
+    selected3: 'one'
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+    valueChange1 (e) {
+      this.checkboxValue1 = e.detail.value
+    },
+    groupChangeHandler1 (e) {
+      this.checkboxGroupOption1 = e.detail.value
+      this.selected1 = e.detail.selected.join(', ')
+    },
+    groupChangeHandler2 (e) {
+      this.checkboxGroupOption2 = e.detail.value
+      this.selected2 = e.detail.selected.join(', ')
+    },
+    groupChangeHandler3 (e) {
+      this.checkboxGroupOption3 = e.detail.value
+      this.selected3 = e.detail.selected.join(', ')
+    },
+    valueChange2 (e) {
+      this.checkboxValue2 = e.detail.value
+    },
+  }
+}
+
+export default new CCheckbox();
+</script>
+<style scoped>
+.title {
+  font-size: 38cpx;
+  font-weight: 400;
+  margin: 20cpx 0;
+  padding: 8cpx 30cpx;
+  background: #eee
+}
+.checkbox-value {
+  font-size: 32cpx;
+}
+.box {
+  margin: 10cpx 50cpx;
+}
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+          "c-header": "/components/header/header",
+          "c-checkbox-group": "cml-ui/components/c-checkbox-group/c-checkbox-group"
+        },
+        "navigationBarTitleText": "c-checkbox-group",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"
+    }
+}
+</script>

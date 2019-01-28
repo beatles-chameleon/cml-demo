@@ -1,0 +1,43 @@
+<template>
+<page title="image">
+    <view class="container">
+        <c-header title="image" desc="这是一张本地图片"></c-header>
+        <image src="{{imageSrc}}" style="width: 682cpx;height:600cpx;" c-bind:load="imageLoad" c-bind:error="imageError"></image>
+    </view>
+</page>
+</template>
+<script>
+class Image {
+  data = {
+    imageSrc: require('../../../../assets/images/chameleon.jpg')
+  }
+  methods = {
+      imageLoad(e){
+      },
+      imageError(e){
+      }
+  }
+}
+export default new Image();
+</script>
+<style scoped>
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  background: #f8f8f8;
+}
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+            "c-header": "/components/header/header"
+        },
+        "navigationBarTitleText": "image",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"
+    }
+}
+</script>

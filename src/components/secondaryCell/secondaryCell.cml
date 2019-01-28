@@ -1,0 +1,81 @@
+<template>
+  <view class="secondary-cell">
+    <text class="cell-title">{{title}}</text>
+    <view class="cell-divider"></view>
+    <view class="btn-group" c-for="{{list}}" c-for-item="cellInfo">
+      <text class="btn-tip">{{cellInfo.title}}</text>
+      <button class="action-btn" size="none" type="blue" text="{{cellInfo.btnText}}" btn-style="height:100cpx;width:658cpx;margin: 24cpx 0 30cpx;" data-index="{{index}}" c-bind:onclick="onBtnClick(index)"></button>
+    </view>
+  </view>
+</template>
+
+<style scoped>
+.secondary-cell {
+  background-color: white;
+  padding: 40cpx 46cpx 70cpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cell-title {
+  font-size: 28cpx;
+  font-weight: 500;
+  color: #3C82FF;
+  margin-top: 40cpx;
+}
+
+.cell-divider {
+  background-color: #3C82FF;
+  height: 4cpx;
+  width: 60cpx;
+  margin: 40cpx 0;
+}
+
+.btn-tip {
+  font-size: 28cpx;
+  color: #192944;
+}
+
+</style>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    list: {
+      type: Array,
+      default: []
+    }
+  },
+  methods: {
+    onBtnClick(e) {
+      // let index = e.currentTarget.dataset.index;
+      let index = e;
+      this.$cmlEmit('btnclicked', {
+        extraData: this.list[index].extraData || {}
+      });
+    }
+  }
+}
+</script>
+
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+        }
+    },
+    "wx": {
+        "navigationBarTitleText": "Chameleon Demos",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#F0F2F7",
+        "component": true
+    }
+}
+</script>
+
