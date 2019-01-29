@@ -1,17 +1,1 @@
-.content {
-  width: 750rpx;
-  height: 300rpx;
-  background-color: peru;
-}
-.button-wrapper {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  margin-top: 50rpx;
-}
+.content{width:750rpx;height:300rpx;background-color:peru}.button-wrapper{flex:1;justify-content:center;align-items:center;margin-top:50rpx}
