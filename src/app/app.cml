@@ -24,12 +24,17 @@ export default new App();
 
 <script cml-type="json">
 {
-  "wx": {
+  "base": {
     "window": {
       "backgroundTextStyle": "dark",
       "navigationBarBackgroundColor": "#343434",
       "navigationBarTitleText": "Chameleon Demos",
       "navigationBarTextStyle": "white"
+    },
+    "permission": {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      }
     }
   }
 }

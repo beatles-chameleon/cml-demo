@@ -45,12 +45,6 @@ export default {
     "base": {
         "usingComponents": {
         }
-    },
-    "wx": {
-        "navigationBarTitleText": "Chameleon Demos",
-        "backgroundTextStyle": "dark",
-        "backgroundColor": "#F0F2F7",
-        "component": true
     }
 }
 </script>
