@@ -9,7 +9,7 @@
             header-height="{{100}}"
             text-align="center"
             data-scroller-height="{{400}}"
-            data="{{provins}}"
+            list="{{provins}}"
             default-index="{{defaultIndex}}"
             confirm-btn-style="color:red"
             cancel-btn-style="color:red"
