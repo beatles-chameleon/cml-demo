@@ -68,6 +68,7 @@ typings/
 # ///////////////////////////
 
 # dist
+dist/
 output/
 .temp
 node_modules

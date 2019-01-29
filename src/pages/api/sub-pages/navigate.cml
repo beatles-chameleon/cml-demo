@@ -29,7 +29,7 @@ export default {
   },  
 
 
-  beforeCreate() {
+  beforeCreate(res) {
     this.method = res.method;
     
   },

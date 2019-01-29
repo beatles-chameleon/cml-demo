@@ -1,1 +1,3 @@
-.page-navigate{background-color:#f0f2f7}
+.page-navigate {
+  background-color: #F0F2F7;
+}
