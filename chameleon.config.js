@@ -27,7 +27,7 @@ cml.config.merge({
   web: {
     dev: {
       analysis: false,
-      console: false
+      console: true
     },
     build: {
       analysis: false,
