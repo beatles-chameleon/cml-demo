@@ -1,1 +1,114 @@
-var __CML__GLOBAL=require("../../../../manifest.js");__CML__GLOBAL.webpackJsonp([36],{179:function(t,e,o){o(180),o(181)},180:function(t,e){},181:function(t,e,o){function n(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(e,"__esModule",{value:!0});var i=function(){function t(t,e){for(var o=0;o<e.length;o++){var n=e[o];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}return function(e,o,n){return o&&t(e.prototype,o),n&&t(e,n),e}}(),a=o(0),c=function(t){return t&&t.__esModule?t:{default:t}}(a),r=function(){function t(){n(this,t),this.data={bottomOffset:20,scrollDirection:"vertical",panels:[],rows:[],scrollTop:0},this.computed={},this.watch={},this.methods={change:function(t){var e=t.currentTarget,o=e.dataset,n=o.idx,i=this.panels[n];i&&(i.height=200===i.height?400:200,i.width=330===i.width?730:330,i.computedStyle="height:"+i.height+"cpx;width:"+i.width+"cpx;background-color:"+i.bgc+";opacity:"+i.opacity)},randomfn:function(){for(var t=[],e=1;e<=40;e++){var o={label:e,height:200,width:730,bgc:"#69BE96",opacity:1};o.computedStyle="height:"+o.height+"cpx;width:"+o.width+"cpx;background-color:"+o.bgc+";opacity:"+o.opacity+";",t.push(o)}return t},onScroll:function(t){},onBottom:function(t){console.log("onBottom")}}}return i(t,[{key:"created",value:function(t){this.panels=this.randomfn();for(var e=0;e<30;e++)this.rows.push("row "+e);console.log("demo page created:",t)}},{key:"mounted",value:function(){}}]),t}();e.default=new r,e.default=c.default.createPage(e.default).getOptions()}},[179]);
+var __CML__GLOBAL = require("../../../../manifest.js");
+__CML__GLOBAL.webpackJsonp([36],{
+
+/***/ "../../../../../npm/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/npm/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/base/scroller/scroller.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Scroller = function () {
+    function Scroller() {
+        _classCallCheck(this, Scroller);
+
+        this.data = {
+            /**
+             * scroller 配置
+             */
+            bottomOffset: 20,
+            scrollDirection: 'vertical',
+            panels: [],
+            rows: [],
+            scrollTop: 0
+        };
+        this.computed = {};
+        this.watch = {};
+        this.methods = {
+            change: function change(e) {
+                var target = e.currentTarget;
+                var dataset = target.dataset;
+                var i = dataset.idx;
+
+                var item = this.panels[i];
+                if (item) {
+                    item.height = item.height === 200 ? 400 : 200;
+                    item.width = item.width === 330 ? 730 : 330;
+                    item.computedStyle = 'height:' + item.height + 'cpx;width:' + item.width + 'cpx;background-color:' + item.bgc + ';opacity:' + item.opacity;
+                }
+            },
+            randomfn: function randomfn() {
+                var ary = [];
+                for (var i = 1; i <= 40; i++) {
+                    var item = { label: i, height: 200, width: 730, bgc: '#69BE96', opacity: 1 };
+                    item.computedStyle = 'height:' + item.height + 'cpx;width:' + item.width + 'cpx;background-color:' + item.bgc + ';opacity:' + item.opacity + ';';
+
+                    ary.push(item);
+                }
+                return ary;
+            },
+            onScroll: function onScroll(e) {
+                // console.log('scroll');
+            },
+            onBottom: function onBottom(e) {
+                console.log('onBottom');
+            }
+        };
+    }
+
+    _createClass(Scroller, [{
+        key: 'created',
+        value: function created(res) {
+            this.panels = this.randomfn();
+
+            for (var i = 0; i < 30; i++) {
+                this.rows.push('row ' + i);
+            }
+            console.log('demo page created:', res);
+        }
+    }, {
+        key: 'mounted',
+        value: function mounted() {
+            // setTimeout(() => {
+            //     this.scrollTop = 2000;
+            // }, 2000)
+        }
+    }]);
+
+    return Scroller;
+}();
+
+exports.default = new Scroller();
+
+
+exports.default = _chameleonRuntime2.default.createPage(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../../../../../npm/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/npm/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/base/scroller/scroller.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/pages/com/base/scroller/scroller.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../../../../../npm/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/npm/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/base/scroller/scroller.cml");
+var __cml__script = __webpack_require__("../../../../../npm/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/npm/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/base/scroller/scroller.cml");
+
+
+/***/ })
+
+},["./src/pages/com/base/scroller/scroller.cml"]);
