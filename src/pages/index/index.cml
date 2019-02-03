@@ -51,7 +51,6 @@ class Home {
     }
   }
 }
-alert(1);
 export default new Home();
 </script>
 

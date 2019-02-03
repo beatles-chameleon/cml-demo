@@ -1,0 +1,23 @@
+/* page {
+  background-color: #F0F2F7;
+} */
+.page-request {
+  background-color: #F0F2F7;
+}
+.preview-container {
+  width: 750rpx;
+  min-height: 350rpx;
+  padding: 40rpx 46rpx 70rpx;
+  background-color: white;
+  margin-top: 20rpx;
+}
+.preview-font {
+  font-size: 28rpx;
+  color: #192944;
+}
+.indent {
+  padding-left: 20rpx;
+}
+.preview-text {
+  margin-bottom: 24rpx;
+}

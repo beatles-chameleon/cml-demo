@@ -1,0 +1,19 @@
+.page-demo {
+  background: #f8f8f8;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 0 10rpx 30rpx;
+}
+.title-text {
+  color: #999;
+  margin: 30rpx 20rpx 10rpx;
+  font-size: 32rpx;
+}
+.end-item {
+  margin-bottom: 40rpx;
+  position: relative;
+}
+.input-wrap {
+  position: relative;
+}

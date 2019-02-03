@@ -1,0 +1,11 @@
+<cml-buildin-page title="c-toast演示" class=" cml-base cml-page">
+  <view class="container  cml-base cml-view">
+    <c-header title="c-toast" class=" cml-base cml-c-header"></c-header>
+    <c-toast duration="{{duration}}" show="{{show}}" onShow="_cmlEventProxy" data-eventshow="changeShow" message="{{message}}" type="{{type}}" need-icon="{{needIcon}}" mask="{{mask}}" class=" cml-base cml-c-toast" onCmlPropsEventProxy="_cmlPropsEventProxy"></c-toast>
+    <view class="btn  cml-base cml-view"><cml-buildin-button class="btn  cml-base cml-button" onOnclick="_cmlEventProxy" data-eventonclick="showLoading" text="loading toast" onCmlPropsEventProxy="_cmlPropsEventProxy"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view"><cml-buildin-button class="btn  cml-base cml-button" onOnclick="_cmlEventProxy" data-eventonclick="showMask" text="loading toast with mask" onCmlPropsEventProxy="_cmlPropsEventProxy"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view"><cml-buildin-button class="btn  cml-base cml-button" onOnclick="_cmlEventProxy" data-eventonclick="showSuccess" text="success toast" onCmlPropsEventProxy="_cmlPropsEventProxy"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view"><cml-buildin-button class="btn  cml-base cml-button" onOnclick="_cmlEventProxy" data-eventonclick="showWarn" text="warn toast" onCmlPropsEventProxy="_cmlPropsEventProxy"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view"><cml-buildin-button class="btn  cml-base cml-button" onOnclick="_cmlEventProxy" data-eventonclick="showWithout" text="toast without icon" onCmlPropsEventProxy="_cmlPropsEventProxy"></cml-buildin-button></view>
+  </view>
+</cml-buildin-page>

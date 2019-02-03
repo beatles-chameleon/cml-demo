@@ -47,7 +47,6 @@ var Home = function Home() {
   };
 };
 
-alert(1);
 exports.default = new Home();
 
 

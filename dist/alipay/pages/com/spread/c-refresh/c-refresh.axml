@@ -1,0 +1,20 @@
+<cml-buildin-page title="refresh演示" class=" cml-base cml-page">
+  <c-header title="refresh" class=" cml-base cml-c-header"></c-header>
+  <view class="container  cml-base cml-view">
+    <cml-buildin-scroller scroll-direction="{{scrollDirection}}" bottom-offset="{{bottomOffset}}" onScrolltobottom="_cmlEventProxy" data-eventscrolltobottom="onBottom" onCustomscroll="_cmlEventProxy" data-eventcustomscroll="onScroll" height="{{-1}}" class=" cml-base cml-scroller" onCmlPropsEventProxy="_cmlPropsEventProxy">   
+      <c-refresh display="{{ topRefreshing }}" onRefresh="_cmlEventProxy" data-eventrefresh="onrefreshUp" class=" cml-base cml-c-refresh" onCmlPropsEventProxy="_cmlPropsEventProxy">
+      </c-refresh>
+      <view class=" cml-base cml-view">
+        <view class="cell  cml-base cml-view" a:for="{{panels}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="change" data-idx="{{i}}" onCmlPropsEventProxy="_cmlPropsEventProxy">
+            <view class="panel  cml-base cml-view" style="{{item.computedStyle}}">
+                <text class="text  cml-base cml-text">{{item.label}}</text>
+            </view>
+        </view>
+      </view>
+      <view class="no-more-text  cml-base cml-view" a:if="{{ page >= sumPage }}"><text class=" cml-base cml-text">没有更多了...</text></view>
+      <c-refresh a:else display="{{ bottomRefreshing }}" direction="bottom" custom-ui="{{ true }}" onRefresh="_cmlEventProxy" data-eventrefresh="onrefreshDown" class=" cml-base cml-c-refresh" onCmlPropsEventProxy="_cmlPropsEventProxy">
+        <view class="loading-text  cml-base cml-view" style="{{loadingTextStyle}}"><text class=" cml-base cml-text">上拉刷新...</text></view>
+      </c-refresh>
+    </cml-buildin-scroller>
+  </view>
+</cml-buildin-page>

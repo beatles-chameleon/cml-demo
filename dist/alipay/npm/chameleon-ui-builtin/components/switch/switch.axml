@@ -1,0 +1,4 @@
+<view class="{{ disabled?'cml-switch-disabled':'cml-switch' }}  cml-base cml-view">
+  <switch checked="{{ checked }}" disabled="{{ disabled }}" onChange="_cmlEventProxy" data-eventchange="switchChange" color="{{ opencolor }}" class=" cml-base cml-switch" onCmlPropsEventProxy="_cmlPropsEventProxy" />
+    <text class="cml-switch-label  cml-base cml-text" a:if="{{ label }}">{{label}}</text>
+</view>

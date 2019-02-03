@@ -1,0 +1,5 @@
+<view class="{{cTabsItem}}  cml-base cml-view" onTap="_cmlEventProxy" data-eventtap="handleTabTap" onCmlPropsEventProxy="_cmlPropsEventProxy">
+  <view a:if="{{tab.prefixStyle}}" style="{{finalPrefix}}" class=" cml-base cml-view"></view>
+  <text style="{{finalLabel}}" class=" cml-base cml-text">{{tab.label}}</text>
+  <view a:if="{{tab.suffixStyle}}" style="{{finalSuffix}}" class=" cml-base cml-view"></view>
+</view>

@@ -1,0 +1,10 @@
+.c-aside {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  background-color: #d3dce6;
+  color: #333;
+  line-height: 60rpx;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+}

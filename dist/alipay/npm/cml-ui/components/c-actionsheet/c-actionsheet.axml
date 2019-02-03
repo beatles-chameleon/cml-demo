@@ -1,0 +1,22 @@
+<c-popup show="{{show}}" onClose="_cmlEventProxy" data-eventclose="cancelclick" position="bottom" class=" cml-base cml-c-popup" onCmlPropsEventProxy="_cmlPropsEventProxy">
+  <view class="action-wrap  cml-base cml-view">
+    <view class="action-header  cml-base cml-view">
+      <text class="action-header-text  cml-base cml-text" style="{{actionHeaderStyle}}">{{title}}</text>
+      <view class="cancel-wrap  cml-base cml-view" a:if="{{pickerStyle}}" onTap="_cmlEventProxy" data-eventtap="cancelclick" onCmlPropsEventProxy="_cmlPropsEventProxy">
+        <text class="cancel-text  cml-base cml-text" style="{{actionCancelStyle}}">{{cancelTxt}}</text>
+      </view>
+    </view>
+    <view class="action-content  cml-base cml-view" style="{{actionContentStyle}}">
+      <view class="action-list  cml-base cml-view"><cml-buildin-list class="action-list  cml-base cml-list" height="{{listHeight}}">
+        <view a:for="{{list}}" a:for-index="i" a:for-item="item" data-idx="{{i}}" data-value="{{item}}" onTap="_cmlEventProxy" data-eventtap="itemClick" class="action-list-item  cml-base cml-cell" onCmlPropsEventProxy="_cmlPropsEventProxy">
+          <text a:if="{{i === active}}" style="{{activeTextStyle}}" class="text-active  cml-base cml-text">{{item}}</text>
+          <text a:else style="{{textStyle}}" class="text  cml-base cml-text">{{item}}</text>
+        </view>     
+      </cml-buildin-list></view>
+    </view>
+    <block a:if="{{!pickerStyle}}" class=" cml-base cml-block">
+      <view class="action-space  cml-base cml-view"></view>
+      <text style="{{actionCancelStyle}}" onTap="_cmlEventProxy" data-eventtap="cancelclick" class="cancel-btn  cml-base cml-text" onCmlPropsEventProxy="_cmlPropsEventProxy">{{cancelTxt}}</text>
+    </block>
+  </view>
+</c-popup>

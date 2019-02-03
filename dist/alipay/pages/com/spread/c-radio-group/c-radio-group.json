@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "c-header": "./../../../../components/header/header",
+        "c-radio-group": "./../../../../npm/cml-ui/components/c-radio-group/c-radio-group",
+        "cml-buildin-page": "./../../../../npm/chameleon-ui-builtin/components/page/page"
+    },
+    "navigationBarTitleText": "c-radio-group",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}
