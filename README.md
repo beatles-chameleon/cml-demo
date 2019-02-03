@@ -5,4 +5,4 @@
 
 - clone 当前项目
 - 在项目根目录执行`npm install`
-
+- 启动项目`cml dev`
