@@ -223,7 +223,7 @@ _.getStyleKeyValue = function (declaration) {
 
 /***/ }),
 
-/***/ "../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-mixins/wx-mixins.js":
+/***/ "../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-mixins/wx-alipay-common-mixins.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 var _methods;
@@ -234,7 +234,20 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 var common = __webpack_require__("../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-mixins/common.js");
 var wxStyleHandle = __webpack_require__("../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/proxy/proxyMiniapp.js");
-var _ = module.exports = {};
+
+var deepClone = function deepClone(obj) {
+  if (obj.toString().slice(8, -1) !== "Object") {
+    return obj;
+  }
+  var res = {};
+  Object.keys(obj).forEach(function (key) {
+    res[key] = deepClone(obj[key]);
+  });
+  return res;
+};
+
+var _ = module.exports = { deepClone: deepClone };
+
 common.merge(_, common);
 
 _.mixins = {
@@ -276,11 +289,6 @@ _.mixins = {
     } else {
       console.log('can not find method ' + originFuncName);
     }
-  }), _defineProperty(_methods, _.eventEmitName, function (eventKey, detail) {
-    this.triggerEvent(eventKey, detail);
-    if (this.$__checkCmlEmit__) {
-      this.$__checkCmlEmit__(eventKey, detail);
-    }
   }), _defineProperty(_methods, _.styleParseName, function (content) {
     var res = '';
     if (_.isType(content, 'Object')) {
@@ -302,7 +310,11 @@ _.mixins = {
     }
     var cbs = animation.cbs,
         index = animation.index;
+    // 配合 解决百度端动画bug
 
+    if (cbs === undefined || index === undefined) {
+      return;
+    }
     var cb = cbs[index];
     if (cb && typeof cb === 'function') {
       cb();
@@ -333,6 +345,214 @@ function getNewEvent(e) {
   newEvent._originEvent = e;
   return newEvent;
 }
+
+/***/ }),
+
+/***/ "../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-mixins/wx-mixins.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var commonMixins = __webpack_require__("../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-mixins/wx-alipay-common-mixins.js");
+
+var _ = module.exports = commonMixins.deepClone(commonMixins);
+commonMixins.merge(_.mixins.methods, _defineProperty({}, _.eventEmitName, function (eventKey, detail) {
+  this.triggerEvent(eventKey, detail);
+  if (this.$__checkCmlEmit__) {
+    this.$__checkCmlEmit__(eventKey, detail);
+  }
+}));
+
+/***/ }),
+
+/***/ "../../../../../npm/lib/node_modules/chameleon-tool/node_modules/process/browser.js":
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
 
 /***/ }),
 
@@ -1829,7 +2049,8 @@ var _createAnimationFactory2 = _interopRequireDefault(_createAnimationFactory);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_index2.default.initAnimation();
+debugger;
+// Index.initAnimation();
 
 exports.default = function (description) {
   return new _createAnimationFactory2.default(description);
@@ -4292,7 +4513,7 @@ function showToast(opt) {
 /***/ "./node_modules/chameleon-api/src/lib/utils.js":
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports, "__esModule", {
+/* WEBPACK VAR INJECTION */(function(process) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.isFn = isFn;
@@ -4406,8 +4627,8 @@ function isNeedApiPrefix(url) {
 }
 
 function addApiPrefix(url) {
-  if (true) {
-    return "http://192.168.0.102:5556" + url;
+  if (process.env.cmlApiPrefix) {
+    return process.env.cmlApiPrefix + url;
   }
   return url;
 }
@@ -4565,6 +4786,7 @@ var checkValue = exports.checkValue = function checkValue(check, targetMap) {
   }
   return true;
 };
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("../../../../../npm/lib/node_modules/chameleon-tool/node_modules/process/browser.js")))
 
 /***/ }),
 

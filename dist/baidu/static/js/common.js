@@ -310,7 +310,11 @@ _.mixins = {
     }
     var cbs = animation.cbs,
         index = animation.index;
+    // 配合 解决百度端动画bug
 
+    if (cbs === undefined || index === undefined) {
+      return;
+    }
     var cb = cbs[index];
     if (cb && typeof cb === 'function') {
       cb();
@@ -1889,7 +1893,8 @@ var _createAnimationFactory2 = _interopRequireDefault(_createAnimationFactory);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_index2.default.initAnimation();
+debugger;
+// Index.initAnimation();
 
 exports.default = function (description) {
   return new _createAnimationFactory2.default(description);
