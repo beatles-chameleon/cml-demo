@@ -1,7 +1,0 @@
-<view class="c-tabs-root  cml-base cml-view">
-  <view class="c-tabs-wrap  cml-base cml-view">
-    <view class="c-tabs-item  cml-base cml-view"><c-tab-item class="c-tabs-item  cml-base cml-c-tab-item" a:for="{{tabs}}" tab="{{item}}" inline="{{inline}}" onTabclick="_cmlEventProxy" data-eventtabclick="handleTabTap" active-label="{{activeLabel}}" active-label-style="{{activeLabelStyle}}" active-icon-style="{{activeIconStyle}}" onCmlPropsEventProxy="_cmlPropsEventProxy"></c-tab-item></view>
-  </view>
-  <view a:if="{{hasUnderline}}" class="c-tabs-line-wrap  cml-base cml-view" style="{{tabLineStyle}}">
-  </view>
-</view>

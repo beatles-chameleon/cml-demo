@@ -1,8 +1,0 @@
-<view class="refresh  cml-base cml-view" wx:if="{{ display }}">
-  <block wx:if="{{ !customUi }}" class=" cml-base cml-block">
-    <image class="loading-icon  cml-base cml-image" src="{{ icon }}" />
-  </block>
-  <block wx:else class=" cml-base cml-block">
-    <slot class=" cml-base cml-slot"></slot>
-  </block>
-</view>

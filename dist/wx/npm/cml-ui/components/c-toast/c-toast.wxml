@@ -1,6 +1,0 @@
-<c-popup show="{{show}}" mask="{{mask}}" class=" cml-base cml-c-popup">
-  <view class="toast-content  cml-base cml-view">
-    <image wx:if="{{needIcon}}" src="{{typeImg}}" class="toast-icon  cml-base cml-image" />
-    <text class="toast-text  cml-base cml-text">{{message}}</text>
-  </view>
-</c-popup>

@@ -1,7 +1,0 @@
-{
-    "usingComponents": {
-        "c-popup": "./../../../../npm/cml-ui/components/c-popup/c-popup",
-        "cml-buildin-list": "./../../../../npm/chameleon-ui-builtin/components/list/list"
-    },
-    "component": true
-}
