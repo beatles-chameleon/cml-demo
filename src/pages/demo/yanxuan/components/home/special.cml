@@ -1,0 +1,91 @@
+<template>
+  <view class="special" c-bind:tap="test">
+    <view class="special-door">
+      <image src="{{disscountPriceImgUrl}}" class="special-door-img"></image>
+    </view>
+
+    <view class="special-info">
+      <view class="special-info-left">
+        <image src="{{special.newPerson}}" class="special-info-left-img"></image>
+      </view>
+
+      <view class="special-info-right">
+        <image src="{{special.temai}}" class="special-info-right-top"></image>
+        <image src="{{special.qingdan}}" class="special-info-right-bottom"></image>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import cml from 'chameleon-api';
+  class Special {
+    data = {
+      special: '',
+      disscountPriceImgUrl: ''
+    }
+    methods = {
+      test() {
+        cml.navigateTo({
+          "path": "/pages/demo/yanxuan/pages/list/list"
+        })
+      }
+    }
+    created() {
+      cml.get({
+        url: '/cml-yanxuan/mock/getHomeImgList.json'
+      }).then(res => {
+        try{
+          res = JSON.parse(res)
+        }catch(e){}
+        
+        if (res.code == 0) {
+          const {special, disscountPriceImgUrl} = res.data;
+          this.special = special;
+          this.disscountPriceImgUrl = disscountPriceImgUrl;
+        }
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+  }
+  export default new Special();
+</script>
+<style scoped>
+  .special{
+    width: 750cpx;
+    background: rgb(226, 179, 128);
+  }
+  .special-door{
+    width: 750cpx;
+    height: 330cpx;
+  }
+  .special-door-img{
+    width: 750cpx;
+    height: 330cpx;
+  }
+  .special-info {
+    width: 750cpx;
+    padding-bottom: 40cpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .special-info-left, .special-info-left-img,.special-info-right {
+    width: 375cpx;
+    height: 392cpx;
+  }
+  .special-info-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .special-info-right-top,.special-info-right-bottom{
+    width: 375cpx;
+    height: 196cpx;
+  }
+
+</style>
+<script cml-type="json">
+ { }
+</script>

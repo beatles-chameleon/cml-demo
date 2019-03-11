@@ -1,0 +1,66 @@
+<template>
+  <view class="carousel" c-bind:touchmove="forbinding">
+    <carousel class="carousel-container" indicator-dots="{{true}}" current="{{1}}" circular="{{true}}"
+              autoplay="{{true}}">
+      <carousel-item
+        class="carousel-carousel-item"
+        c-for="{{bannerImgList}}"
+        c-for-index="i"
+        c-for-item="item"
+        data-idx="{{i}}"
+      >
+        <image src="{{item.imgUrl}}" class="Img"/>
+      </carousel-item>
+
+    </carousel>
+  </view>
+</template>
+
+<script>
+  import cml from 'chameleon-api';
+  class List {
+    data = {
+      bannerImgList: []
+    }
+    methods = {
+      forbinding(e){
+        console.log(e)
+        e._originEvent.stopPropagation && e._originEvent.stopPropagation()
+      }
+    }
+    created() {
+      cml.get({
+        url: '/cml-yanxuan/mock/getHomeImgList.json'
+      }).then(res => {
+        try{
+          res = JSON.parse(res)
+        }catch(e){}
+        
+        if (res.code == 0) {
+          const {bannerImgList} = res.data;
+          this.bannerImgList = bannerImgList;
+        }
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+  }
+
+  export default new List();
+</script>
+<style scoped>
+  .carousel-container {
+    height: 370cpx;
+  }
+  .carousel-carousel-item {
+    width: 750cpx;
+    height: 370cpx;
+  }
+  .Img {
+    width: 750cpx;
+    height: 370cpx;
+  }
+</style>
+<script cml-type="json">
+  { }
+</script>

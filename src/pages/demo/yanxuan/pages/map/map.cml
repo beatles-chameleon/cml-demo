@@ -1,0 +1,33 @@
+<template>
+  <view class="map">
+    <map></map>
+  </view>
+</template>
+
+<script>
+
+class Map   {
+
+}
+
+export default new Map();
+</script>
+
+<style scoped>
+
+</style>
+
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {
+        "map": "../../components/map/map"
+    }
+  },
+  "wx": {
+    "navigationBarTitleText": "地图页",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+  }
+}
+</script>

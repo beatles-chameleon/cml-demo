@@ -1,0 +1,83 @@
+<template>
+  <view class="classList">
+    <view
+      class="classList-item"
+      c-for="{{classifyImgList}}"
+      c-for-index="i"
+      c-for-item="item"
+      c-bind:tap="change"
+      data-idx="{{i}}"
+    >
+      <image src="{{item.imgUrl}}" style="width: 110cpx;height:110cpx;" class="classList-item-img"></image>
+      <view class="classList-item-title">
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import cml from "chameleon-api";
+class Classlist {
+  data = {
+    classifyImgList: []
+  }
+  methods = {
+    change() {
+      cml.navigateTo({
+        "path": "/pages/demo/yanxuan/pages/list/list"
+      });
+    }
+  }
+
+  created() {
+
+    cml.get({
+      url: '/cml-yanxuan/mock/getHomeImgList.json'
+    }).then(res => {
+      try{
+        res = JSON.parse(res)
+      }catch(e){}
+
+      if (res.code == 0) {
+        const {classifyImgList} = res.data;
+        this.classifyImgList = classifyImgList;
+      }
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+}
+
+export default new Classlist();
+</script>
+<style scoped>
+  .classList {
+    width: 750cpx;
+    height: 380cpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20cpx;
+    background: #ffecdd;
+  }
+  .classList-item {
+    width: 110cpx;
+    margin: 20cpx 10cpx 0;
+  }
+  .classList-item-img {
+    width: 110cpx;
+    height: 110cpx;
+  }
+  .classList-item-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 22cpx;
+    margin-top: 4cpx;
+  }
+</style>
+<script cml-type="json">
+ { }
+</script>

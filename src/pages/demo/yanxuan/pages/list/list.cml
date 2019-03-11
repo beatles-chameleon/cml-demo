@@ -1,0 +1,270 @@
+<template>
+  <page title="列表">
+    <view class="container">
+      <scroller
+        scroll-direction="{{scrollDirection}}"
+        bottom-offset="{{bottomOffset}}"
+        c-bind:scrolltobottom="onBottom"
+        c-bind:customscroll="onScroll"
+        height="{{-1}}"
+      >
+        <c-refresh display="{{ topRefreshing }}" c-bind:refreshevent="onrefreshUp"></c-refresh>
+        <view>
+          <view class="bannerImg">
+            <image src="{{topImg}}" class="topImg"/>
+          </view>
+          <view class="scroll-content">
+            <view class="scroll-content-title">
+              <text class="scroll-content-title-con">床品件套</text>
+            </view>
+            <view class="scroll-content-des">
+              <text class="scroll-content-des-con">甄选品质，睡眠美学</text>
+            </view>
+
+            <view class="scroll-content-list">
+
+              <view
+                class="scroll-content-list-item"
+                c-for="{{list}}"
+                c-for-index="i"
+                c-for-item="item"
+                c-bind:tap="change"
+                data-idx="{{i}}"
+              >
+                <view class="scroll-content-list-item-content">
+                  <image src="{{item.imgUrl}}" class="scroll-content-list-item-content-img"/>
+                  <view class="scroll-content-list-item-content-des">
+                    <text class="des">{{item.des}}</text>
+                  </view>
+                </view>
+                <text class="scroll-content-list-item-name">{{item.name}}</text>
+                <text class="scroll-content-list-item-money">{{item.money}}</text>
+                <text class="scroll-content-list-item-tag">App特工</text>
+              </view>
+
+            </view>
+
+          </view>
+        </view>
+        <view class="no-more-text" c-if="{{ page >= sumPage }}">
+          <text>没有更多了...</text>
+        </view>
+        <c-refresh c-else
+                   display="{{ bottomRefreshing }}"
+                   direction="bottom"
+                   custom-ui="{{ true }}"
+                   c-bind:refreshevent="onrefreshDown"
+        >
+          <view class="loading-text" style="{{ loadingTextStyle }}">
+            <text>上拉刷新...</text>
+          </view>
+        </c-refresh>
+      </scroller>
+    </view>
+  </page>
+</template>
+<script>
+  import cml from 'chameleon-api'
+
+  class Refresh {
+    data = {
+      topRefreshing: false,
+      bottomRefreshing: false,
+      bottomOffset: 20,
+      scrollDirection: 'vertical',
+      loadingTextStyle: '',
+      page: 0,
+      sumPage: 5,
+      list: [],
+      topImg: ''
+    }
+    methods = {
+      onrefreshUp(e) {
+        this.topRefreshing = e.detail.value;
+        setTimeout(() => {
+          this.topRefreshing = false
+        }, 500)
+      },
+      onrefreshDown(e) {
+        this.bottomRefreshing = e.detail.value;
+        setTimeout(() => {
+          this.getData();
+          this.bottomRefreshing = false
+        }, 500)
+      },
+      change(e) {
+        cml.navigateTo({
+          "path": "/pages/demo/yanxuan/pages/detail/detail",
+          query: {
+            a: 1,
+            b: 'test'
+          }
+        })
+      },
+
+      onScroll(e) {
+        let scrollTop = e.detail.scrollTop;
+        if (scrollTop <= 0) {
+          this.topRefreshing = true;
+        }
+      },
+      onBottom(e) {
+        if (this.bottomRefreshing || this.page >= this.sumPage) return
+        this.bottomRefreshing = true;
+      },
+      getData() {
+        cml.get({
+          url: '/cml-yanxuan/mock/listImages.json'
+        }).then(res => {
+          try{
+            res = JSON.parse(res)
+          }catch(e){}
+
+          if (res.code == 0) {
+            const {topImgUrl, list} = res.data;
+            this.list = [...this.list, ...list];
+            this.topImg = topImgUrl;
+          }
+        })
+      }
+    }
+
+    created(res) {
+      this.loadingTextStyle = 'color:#666;font-size:36cpx;margin:30cpx auto;';
+      this.getData();
+    }
+  }
+
+  export default new Refresh();
+</script>
+<style scoped>
+  .container {
+    flex: 1;
+  }
+
+  .bannerImg {
+    width: 750cpx;
+    height: 390cpx;
+    background: #f4f4f4;
+  }
+
+  .topImg {
+    width: 750cpx;
+    height: 370cpx;
+  }
+
+  .scroll-content-title, .scroll-content-des {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .scroll-content-title-con {
+    padding-top: 30cpx;
+    font-size: 32cpx;
+    color: #333;
+  }
+
+  .scroll-content-des-con {
+    font-size: 24cpx;
+    color: #999;
+  }
+
+  .scroll-content-list {
+    width: 750cpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .scroll-content-list-item {
+    width: 345cpx;
+    margin-left: 20cpx;
+    padding-top: 30cpx;
+  }
+
+  .scroll-content-list-item-content {
+    width: 345cpx;
+    position: relative;
+  }
+
+  .scroll-content-list-item-content-img {
+    width: 345cpx;
+    height: 345cpx;
+  }
+
+  .scroll-content-list-item-content-des {
+    width: 345cpx;
+    height: 40cpx;
+    line-height: 40cpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 20cpx;
+    background: #F1ECE2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .des {
+    color: #9F8A60;
+    font-size: 24cpx;
+  }
+
+  .scroll-content-list-item-name {
+    white-space: nowrap;
+    color: #333;
+    font-size: 30cpx;
+  }
+
+  .scroll-content-list-item-money {
+    color: #b4282d;
+    font-size: 34cpx;
+  }
+
+  .scroll-content-list-item-tag {
+    width: 110cpx;
+    padding: 0 10cpx;
+    font-size: 20cpx;
+    color: #B4282D;
+    background: rgba(255, 255, 255, .9);
+    border: 1px solid #B4282D;
+    border-radius: 4cpx;
+  }
+
+  .no-more-text {
+    color: #999;
+    font-size: 36cpx;
+    text-align: center;
+    margin: 50cpx 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .loading-text {
+    color: #999;
+    font-size: 36cpx;
+    text-align: center;
+    margin: 50cpx 0;
+  }
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents":{
+        "c-refresh": "cml-ui/components/c-refresh/c-refresh"
+      },
+      "navigationBarTitleText": "列表",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#E2E2E2"
+    }
+  }
+</script>

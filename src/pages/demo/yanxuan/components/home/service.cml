@@ -1,0 +1,36 @@
+<template>
+  <view class="service">
+    <text class="service-item">网易自营品牌</text>
+    <text class="service-item">30天无忧退货</text>
+    <text class="service-item">48小时快速退款</text>
+  </view>
+</template>
+
+<script>
+
+class Service {
+
+}
+
+export default new Service();
+</script>
+<style scoped>
+  .service{
+    width: 750cpx;
+    height: 72cpx;
+    background: #ffecdd;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20cpx;
+  }
+  .service-item{
+    color: #B4282D;
+    font-size: 28cpx;
+  }
+</style>
+<script cml-type="json">
+ { }
+</script>

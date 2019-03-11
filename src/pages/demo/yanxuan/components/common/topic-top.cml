@@ -1,0 +1,97 @@
+<template>
+  <view class="wrapper">
+    <view class="cont">
+      <view class="i-tp" c-for="{{topics}}">
+        <image class="tp-img" resize="cover" src="{{item.img}}"></image>
+        <text class="tp-name">{{item.name}}</text>
+      </view>
+    </view>
+    <scroller class="tp-box" scroll-direction="{{'horizontal'}}" width="{{-1}}">
+      <view class="cont">
+        <view class="i-tp" c-for="{{topics}}">
+          <image class="tp-img" resize="cover" src="{{item.img}}"></image>
+          <text class="tp-name">{{item.name}}</text>
+        </view>
+      </view>
+    </scroller>
+  </view>
+</template>
+<script>
+  class Yanxuan {
+    props = {
+      topics: {
+        type: Array,
+        default: []
+      }
+    }
+  }
+
+  export default new Yanxuan();
+</script>
+<style scoped>
+
+  .wrapper {
+    background-color: #fff;
+  }
+
+  .tp-box {
+    height: 200cpx;
+    padding: 20cpx;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+  }
+
+  .cont {
+    display: flex;
+    flex-direction: row;
+    margin-top: 120cpx;
+  }
+
+  .i-tp {
+    width: 275cpx;
+    height: 150cpx;
+    margin: 10cpx;
+  }
+
+  .i-tp {
+    width: 275cpx;
+    height: 150cpx;
+    margin: 10cpx;
+    position: relative;
+  }
+
+  .tp-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 275cpx;
+    height: 150cpx;
+    border-radius: 10cpx;
+    background-color: #f4f4f4;
+  }
+
+  .tp-name {
+    position: relative;
+    z-index: 1;
+    font-size: 28cpx;
+    margin-left: 20cpx;
+    margin-right: 20cpx;
+    margin-top: 57cpx;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    lines: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {}
+    }
+  }
+</script>
+

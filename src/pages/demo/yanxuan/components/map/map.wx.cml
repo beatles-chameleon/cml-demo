@@ -1,0 +1,87 @@
+<template>
+  <view class="map_container">
+    <origin-map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true"
+      markers="{{markers}}" bindmarkertap="makertap"></origin-map>
+  </view>
+</template>
+
+<script>
+  import cml from 'chameleon-api';
+  import amapFile from './amap-wx';
+  var markersData = [];
+  class Map implements MapInterface {
+    props = {
+      name: {
+        type: String,
+        default: '默认值'
+      }
+    }
+
+    data = {
+      markers: [],
+      latitude: '',
+      longitude: '',
+      textData: {}
+    }
+
+    methods = {
+      makertap: function (e) {
+        var id = e.markerId;
+        var that = this;
+        that.showMarkerInfo(markersData, id);
+        that.changeMarkerColor(markersData, id);
+      },
+      showMarkerInfo: function (data, i) {
+        this.textData = {
+          name: data[i].name,
+          desc: data[i].address
+        }
+      },
+      changeMarkerColor: function (data, i) {
+        var that = this;
+        var markers = [];
+        this.markers = markers;
+      }
+    }
+
+    mounted() {
+      var me = this;
+      this.$cmlEmit('onshow', {
+        value: this.name
+      })
+
+      var myAmapFun = new amapFile.AMapWX({key: 'b7f499f3cc98e7170b361d77c2e12c17'});
+      myAmapFun.getPoiAround({
+        success: function (data) {
+          markersData = data.markers;
+          me.markers = markersData;
+          me.latitude = markersData[0].latitude;
+          me.longitude = markersData[0].longitude;
+          me.showMarkerInfo(markersData, 0);
+        },
+        fail: function (info) {
+          cml.showToast({message: JSON.stringify(info.errMsg)});
+        }
+      })
+
+    }
+  }
+
+  export default new Map();
+</script>
+
+<style scoped>
+  .map {
+    width: 750cpx;
+    height: 300cpx;
+  }
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": { }
+    }
+  }
+</script>
+
+

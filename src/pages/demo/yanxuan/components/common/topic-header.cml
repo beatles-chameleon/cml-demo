@@ -1,0 +1,72 @@
+<template>
+  <view class="wrapper border-bottom-1px">
+    <view class="left">
+      <text class="leftTxt" c-if="{{leftbtn}}">{{leftbtn.name}}</text>
+    </view>
+    <text class="tlt">{{title}}</text>
+    <view class="right">
+      <text class="rightTxt" c-if="{{rightbtn}}">{{rightbtn.name}}</text>
+    </view>
+  </view>
+</template>
+<script>
+  class Yanxuan {
+    props = {
+      title: {
+        type: String
+      },
+      leftbtn: {
+        type: Object
+      },
+      rightbtn: {
+        type: Object
+      }
+    }
+  }
+
+  export default new Yanxuan();
+</script>
+<style scoped>
+  .wrapper {
+    display: flex;
+    height: 114cpx;
+    padding-top: 44cpx;
+    background-color: #fafafa;
+    opacity: .99;
+    z-index: 101;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom-color: #d9d9d9;
+    box-sizing: border-box;
+  }
+
+  .tlt {
+    flex: 1;
+    font-size: 36cpx;
+    padding-top: 10cpx;
+    color: #333;
+    text-align: center;
+  }
+
+  .left, .right {
+    display: flex;
+    flex-direction: row;
+    height: 80cpx;
+    width: 120cpx;
+    padding-top: 10cpx;
+  }
+
+  .leftTxt, .rightTxt {
+    font-size: 30cpx;
+    text-align: center;
+  }
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {}
+    }
+  }
+</script>
+

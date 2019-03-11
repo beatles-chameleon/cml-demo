@@ -21,6 +21,12 @@
       "mock": "index.php"
     },
     {
+      "name": "demo",
+      "url": "/pages/demo/demo",
+      "path": "/pages/demo/demo",
+      "mock": "index.php"
+    },
+    {
       "name": "chooseImage",
       "url": "/pages/api/sub-pages/chooseImage",
       "path": "/pages/api/sub-pages/chooseImage",
@@ -205,6 +211,30 @@
       "name": "c-radio-group",
       "url": "/pages/com/spread/c-radio-group/c-radio-group",
       "path": "/pages/com/spread/c-radio-group/c-radio-group",
+      "mock": "index.php"
+    },
+    {
+      "url": "/cml/demo/yanxuan",
+      "path": "/pages/demo/yanxuan/pages/index/index",
+      "name": "yanxuan",
+      "mock": "index.php"
+    },
+    {
+      "url": "/cml/demo/yanxuan/list",
+      "path": "/pages/demo/yanxuan/pages/list/list",
+      "name": "yanxuan_list",
+      "mock": "index.php"
+    },
+    {
+      "url": "/cml/demo/yanxuan/detail",
+      "path": "/pages/demo/yanxuan/pages/detail/detail",
+      "name": "yanxuan_detail",
+      "mock": "index.php"
+    },
+    {
+      "url": "/cml/demo/yanxuan/map",
+      "path": "/pages/demo/yanxuan/pages/map/map",
+      "name": "yanxuan_map",
       "mock": "index.php"
     }
   ]

@@ -1,0 +1,49 @@
+<template>
+  <scroller
+    bottom-offset="{{20}}"
+    height="{{scrollHeight}}"
+  >
+    <slot></slot>
+  </scroller>
+</template>
+
+<script>
+import cml from 'chameleon-api'
+
+  class Myscroller implements MyscrollerInterface {
+    data = {
+      scrollHeight: -1
+    }
+
+    methods = {
+
+    }
+
+    mounted() {
+      cml.getSystemInfo().then((info) => {
+        if (info.env == 'weex') {
+          this.scrollHeight = Number(info.viewportHeight) - 80 - 88;
+        } else {
+          this.scrollHeight = Number(info.viewportHeight) - 80;
+        }
+      })
+    }
+  }
+
+  export default new Myscroller();
+</script>
+
+<style scoped>
+
+</style>
+
+<script cml-type="json">
+  {
+    "base":{
+      "component": true
+    }
+  }
+</script>
+
+
+

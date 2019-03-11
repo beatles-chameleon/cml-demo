@@ -1,0 +1,179 @@
+<template>
+  <page title="chameleon">
+    <view class="chameleon-content" style="height:{{scrollHeight}}cpx;">
+      <view class="content-main" c-animation="{{animationData}}" style="height:{{scrollHeight}}cpx;">
+        <view class="home">
+          <scroller
+            scroll-direction="vertical"
+            bottom-offset="{{20}}"
+            height="{{scrollHeight}}"
+          >
+            <cswiper></cswiper>
+            <service></service>
+            <classlist></classlist>
+            <special></special>
+          </scroller>
+        </view>
+        <view class="classify">
+          <scroller
+            scroll-direction="vertical"
+            bottom-offset="{{20}}"
+            height="{{scrollHeight}}"
+          >
+            <classify></classify>
+          </scroller>
+        </view>
+        <view class="things">
+          <scroller
+            scroll-direction="vertical"
+            bottom-offset="{{20}}"
+            height="{{scrollHeight}}"
+          >
+            <topic></topic>
+          </scroller>
+        </view>
+        <view class="cart">
+          <scroller
+            scroll-direction="vertical"
+            bottom-offset="{{20}}"
+            height="{{scrollHeight}}"
+          >
+            <shop></shop>
+          </scroller>
+        </view>
+        <view class="person">
+          <scroller
+            scroll-direction="vertical"
+            bottom-offset="{{20}}"
+            height="{{scrollHeight}}"
+          >
+            <my></my>
+          </scroller>
+        </view>
+      </view>
+    </view>
+
+    <view class="footer-zhanwei">
+      <ctab c-bind:translate="transition" class="footer"></ctab>
+    </view>
+  </page>
+</template>
+
+<script>
+  import cml from 'chameleon-api';
+  const animation = cml.createAnimation();
+  class Index {
+    data = {
+      title: "chameleon",
+      scrollHeight: -1,
+      animationData: {},
+      num: 1
+    }
+    methods = {
+      transition(info) {
+        const {oIndex} = info.detail;
+        this.animationData = animation.translateX(oIndex * -750).step({duration: 0}).export();
+      },
+      change() {
+        debugger
+        cml.navigateTo({
+          "path": "/pages/demo/yanxuan/pages/list/list"
+        })
+      }
+    }
+
+    created() {
+      cml.get({
+        url: '/cml-yanxuan/mock/getHomeImgList.json'
+      }).then(res => {
+        try{
+          res = JSON.parse(res)
+        }catch(e){}
+        
+        if (res.code == 0) {
+          const {special, disscountPriceImgUrl} = res.data;
+          this.special = special;
+          this.disscountPriceImgUrl = disscountPriceImgUrl;
+        }
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+
+    mounted() {
+      cml.getSystemInfo().then((info) => {
+        if (info.env == 'weex') {
+          this.scrollHeight = Number(info.viewportHeight) - 80 - 88;
+        } else {
+          this.scrollHeight = Number(info.viewportHeight) - 80;
+        }
+      })
+    }
+  }
+  export default new Index();
+</script>
+<style scoped>
+  .chameleon-content {
+    width: 750cpx;
+    overflow-x: hidden;
+  }
+  .content-main {
+    width: 3750cpx;
+    background: #9F8A60;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .home {
+    width: 750cpx;
+  }
+
+  .classify {
+    width: 750cpx;
+  }
+
+  .things {
+    width: 750cpx;
+  }
+
+  .cart {
+    width: 750cpx;
+  }
+
+  .person {
+    width: 750cpx;
+  }
+
+  .footer-zhanwei {
+    height: 100cpx;
+    width: 750cpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 2cpx solid #E6E6E6;
+  }
+
+</style>
+<script cml-type="json">
+  {
+    "base":{
+      "usingComponents": {
+        "ctab": "../../components/home/tab",
+        "cswiper": "../../components/home/cswiper",
+        "service": "../../components/home/service",
+        "classlist": "../../components/home/classlist",
+        "special": "../../components/home/special",
+        "classify": "../../components/classify/classify",
+        "shop": "../../components/shop/shop",
+        "my": "../../components/my/my",
+        "topic": "../../components/topic/topic"
+      },
+      "navigationBarTitleText": "首页",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "white"
+    }
+  }
+</script>

@@ -1,0 +1,237 @@
+<template>
+  <view class="wrapper">
+    <image ref="headerBg" class="header-bg" resize="cover" src="http://cdn.zwwill.com/yanxuan/imgs/bg5.png"></image>
+    <scroller height="{{scrollerHeight}}">
+      <view class="header">
+        <image class="i-photo" resize="cover" src="{{headerImg}}"></image>
+        <text class="i-name">哈哈哈哈哈</text>
+        <view class="b-tlt">
+          <image class="i-tag tag-e" resize="contain" src="https://yanxuan.nosdn.127.net/3dc6e876620bb84a5dac3deb6ecd4916.png"></image>
+          <text class="i-tag tag-v8 iconfont">&#xe6cc;</text>
+          <text class="txt-tag">品质生活家</text>
+        </view>
+      </view>
+      <view class="fbs">
+        <view class="s-box cell-button">
+          <view class="box-tlt border-bottom"><text class="box-txt">我的订单</text></view>
+          <view class="box-line">
+            <view class="i-box-l">
+              <image class="chameleo-logo" src="{{headerImg}}"></image>
+              <text class="i-box-tlt">待付款</text>
+            </view>
+            <view class="i-box-l">
+              <image class="chameleo-logo" src="{{headerImg}}"></image>
+              <text class="i-box-tlt">待发货</text>
+            </view>
+            <view class="i-box-l">
+              <image class="chameleo-logo" src="{{headerImg}}"></image>
+              <text class="i-box-tlt">已发货</text>
+            </view>
+            <view class="i-box-l">
+              <image class="chameleo-logo" src="{{headerImg}}"></image>
+              <text class="i-box-tlt">待评价</text>
+            </view>
+            <view class="i-box-l">
+              <image class="chameleo-logo" src="{{headerImg}}"></image>
+              <text class="i-box-tlt">退换/售后</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="s-box cell-button">
+        <view class="box-tlt border-bottom"><text class="box-txt">我的服务</text></view>
+        <view class="box-line line-serve border-bottom">
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">拼团订单</text></view>
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">邀请好友</text></view>
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">优惠券</text></view>
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">优先购</text></view>
+        </view>
+        <view class="box-line line-serve border-bottom">
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">礼品卡</text></view>
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">会员</text></view>
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">足迹</text></view>
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">收藏</text></view>
+        </view>
+        <view class="box-line line-serve">
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">地址</text></view>
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">客服</text></view>
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">帮助</text></view>
+          <view class="i-box-l"><image class="chameleo-logo" src="{{headerImg}}"></image><text class="i-box-tlt">设置</text></view>
+        </view>
+      </view>
+    </scroller>
+  </view>
+</template>
+<script>
+  import cml from "chameleon-api";
+  const tabbarHeight = 90;
+  class Yanxuan   {
+
+    data = {
+      classes: [],
+      subclasses : [],
+      scrollerHeight: -1,
+      headerImg: require('../../../../../assets/images/chameleon.jpg')
+    }
+
+    methods = {
+      jumpWeb (_url) {
+      },
+    }
+
+    created() {
+
+    }
+    mounted() {
+      cml.getSystemInfo().then((info)=>{
+        this.scrollerHeight = Number(info.viewportHeight) - tabbarHeight
+      })
+    }
+  }
+
+  export default new Yanxuan();
+</script>
+<style scoped>
+  .iconfont {
+    font-family:iconfont;
+  }
+  .wrapper{
+    background-color: #f4f4f4;
+  }
+  .fbs{
+    position:relative;
+    background-color: #f4f4f4;
+  }
+  .chameleo-logo {
+    width: 50cpx;
+    height: 50cpx;
+    margin-bottom: 8cpx;
+  }
+  .cell-button{
+    margin-bottom: 18cpx;
+  }
+  .header{
+    position:relative;
+    height: 360cpx;
+  }
+  .header-bg{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    height: 500cpx;
+    width: 750cpx;
+  }
+  .bg2{
+    top:500cpx;
+  }
+  .bg3{
+    top:1000cpx;
+  }
+  .i-photo{
+    position: absolute;
+    bottom:60cpx;
+    left: 30cpx;
+    height: 130cpx;
+    width: 130cpx;
+    border-radius: 130cpx;
+  }
+  .i-name{
+    position: absolute;
+    bottom:120cpx;
+    left: 190cpx;
+    height: 50cpx;
+    width: 300cpx;
+    font-size: 38cpx;
+    color:#fff;
+  }
+  .b-tlt{
+    position: absolute;
+    bottom: 70cpx;
+    left: 190cpx;
+    height: 40cpx;
+    width: 350cpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .i-tag{
+    width: 30cpx;
+    height: 30cpx;
+    font-size: 24cpx;
+    padding-top: 2cpx;
+    margin-right: 6cpx;
+    border-radius: 4cpx;
+  }
+  .tag-e{
+    width: 32cpx;
+    height: 32cpx;
+  }
+  .tag-v8{
+    color:#fff;
+    background-color: #b29e75;
+    text-align: center;
+  }
+  .txt-tag{
+    color:#b4a078;
+    flex: 1;
+    height: 40cpx;
+    font-size: 28cpx;
+    overflow: hidden;
+    lines:1;
+    text-overflow: ellipsis;
+  }
+  .s-box{
+    position:relative;
+    padding: 0 26cpx;
+    background-color: #fff;
+  }
+  .box-tlt{
+    height: 94cpx;
+  }
+  .box-txt{
+    display: block;
+    font-size: 26cpx;
+    padding-top: 34cpx;
+    color:#333;
+  }
+  .box-line{
+    box-sizing: border-box;
+    height: 132cpx;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .i-box-l{
+    width: 130cpx;
+    height: 132cpx;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+  }
+  .i-box-tlt{
+    font-size: 26cpx;
+    text-align: center;
+    color:#666;
+  }
+  .line-serve{
+    height: 150cpx;
+  }
+  .border-bottom{
+    border-bottom-style: solid;
+    border-bottom-width: 1cpx;
+    border-bottom-color: rgba(0,0,0,.15) ;
+  }
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": { },
+      "navigationBarTitleText": "我的",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#E2E2E2"
+    }
+  }
+</script>

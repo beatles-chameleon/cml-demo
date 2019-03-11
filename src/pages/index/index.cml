@@ -38,6 +38,11 @@ class Home {
         title: '接口',
         desc: '界面、网络、数据、weex端扩展能力',
         url: '/pages/api/api'
+      }, {
+        icon: require(`../../assets/images/home/home-api.png`),
+        title: '实例',
+        desc: '网易严选等更多实例',
+        url: '/pages/demo/demo'
       }],
     homeLogo: require(`../../assets/images/home/home-chameleon.png`),
     arrowRight: require(`../../assets/images/home/arrow-right.png`)

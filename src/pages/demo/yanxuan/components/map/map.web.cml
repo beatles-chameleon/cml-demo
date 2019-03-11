@@ -1,0 +1,68 @@
+<template>
+  <view c-bind:touchmove="forbinding">
+    <view class="amap-wrapper" c-bind:tap="forbinding">
+      <origin-el-amap vid="amapDemo" :zoom="zoom" :center="center" class="amap-box">
+        <origin-el-amap-marker vid="component-marker" :position="componentMarker.position"></origin-el-amap-marker>
+      </origin-el-amap>
+    </view>
+  </view>
+</template>
+
+<script>
+
+  import VueAMap from 'vue-amap';
+
+  VueAMap.initAMapApiLoader({
+    key: 'ea235da4d3cf7d5b5bce70822ba4ae59',
+    plugin: ['AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType'],
+    uiVersion: '1.0',
+    v: '1.4.4'
+  });
+
+  class Map implements MapInterface {
+    props = {
+      name: {
+        default: '默认值'
+      }
+    }
+    data = {
+      zoom: 14,
+      center: [121.5273285, 31.21515044],
+      componentMarker: {
+        position: [121.5273285, 31.21315058]
+      }
+    }
+
+    methods = {
+      forbinding(e){
+        console.log(e)
+      }
+    }
+
+    mounted() {
+      this.$cmlEmit('onshow',{
+        value: this.name
+      })
+    }
+  }
+
+  export default new Map();
+</script>
+
+<style scoped>
+  .amap-wrapper {
+    width: 750cpx;
+    height: 350cpx;
+  }
+</style>
+
+<script cml-type="json">
+  {
+    "base":{
+      "usingComponents":{ }
+    }
+  }
+</script>
+
+
+
