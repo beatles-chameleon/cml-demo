@@ -1,0 +1,6 @@
+<view class=" cml-base cml-view cml-4862c886"><cml-buildin-page title="navigate" class=" cml-base cml-page cml-4862c886">
+  <view class="page-navigate  cml-base cml-view cml-4862c886">
+    <view class=" cml-base cml-view cml-4862c886"><secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-base cml-secondary-header cml-4862c886"></secondary-header></view>
+    <view class=" cml-base cml-view cml-4862c886"><secondary-cell title="{{cell.title}}" list="{{cell.list}}" onBtnclicked="_cmlEventProxy" data-eventbtnclicked="onBtnClicked" class=" cml-base cml-secondary-cell cml-4862c886"></secondary-cell></view>
+  </view>
+  </cml-buildin-page></view>

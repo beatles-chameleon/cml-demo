@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "c-header": "./../../../../components/header/header",
+        "c-refresh": "./../../../../npm/cml-ui/components/c-refresh/c-refresh",
+        "cml-buildin-page": "./../../../../npm/chameleon-ui-builtin/components/page/page",
+        "cml-buildin-scroller": "./../../../../npm/chameleon-ui-builtin/components/scroller/scroller"
+    },
+    "navigationBarTitleText": "c-refresh",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

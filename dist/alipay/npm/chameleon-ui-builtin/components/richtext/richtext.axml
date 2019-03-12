@@ -1,0 +1,3 @@
+<view class="rich-text  cml-base cml-view cml-2850b4e2">
+  <text a:for="{{richList}}" style="{{item.style}}" a:key="{{index}}" class=" cml-base cml-text cml-2850b4e2">{{item.text}}</text>
+</view>

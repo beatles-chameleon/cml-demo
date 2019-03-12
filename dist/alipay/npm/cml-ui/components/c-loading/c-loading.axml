@@ -1,0 +1,14 @@
+<view class="{{containerClassName}}  cml-base cml-view cml-41feb1d0" style="{{containerStyle}}">
+  <view class="{{targetClassName}}  cml-base cml-view cml-41feb1d0  _cml_ref_lmc_" id="mask">
+    <slot class=" cml-base cml-slot cml-41feb1d0" />
+  </view>
+  <view class="{{boxClassName}}  cml-base cml-view cml-41feb1d0" style="{{loadingWrapStyle}}" a:if="{{!!loading}}">
+    <view class="{{targetMaskClassName}}  cml-base cml-view cml-41feb1d0" style="{{rectStyle}}"></view>
+    <view class="{{loadingWrapClassName}}  cml-base cml-view cml-41feb1d0" style="{{rectStyle}}">
+      <view class="{{loadingClassName}}  cml-base cml-view cml-41feb1d0" style="{{loadingStyle}}">
+        <image src="{{icon}}" class="{{loadImgClassName}}  cml-base cml-image cml-41feb1d0  _cml_ref_lmc_" id="loading" />
+        <text a:if="{{!!tip}}" class="{{loadTextClassName}}  cml-base cml-text cml-41feb1d0">{{tip}}</text>
+      </view>
+    </view>
+  </view>
+</view>

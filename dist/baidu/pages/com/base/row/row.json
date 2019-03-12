@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "c-header": "./../../../../components/header/header",
+        "cml-buildin-col": "./../../../../npm/chameleon-ui-builtin/components/layout/col/col",
+        "cml-buildin-row": "./../../../../npm/chameleon-ui-builtin/components/layout/row/row",
+        "cml-buildin-page": "./../../../../npm/chameleon-ui-builtin/components/page/page"
+    },
+    "navigationBarTitleText": "row",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

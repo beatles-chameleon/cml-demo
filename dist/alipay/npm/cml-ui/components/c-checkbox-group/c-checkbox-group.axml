@@ -1,0 +1,4 @@
+<view class="cml-checkbox-group  cml-base cml-view cml-fc85c26c" style="{{horizontalStyle}}">
+  <cml-buildin-checkbox a:for="{{ option }}" data-index="{{ index }}" data-uid="{{ item.uid }}" checked="{{ item.checked }}" label="{{ item.label }}" group-index="{{ index }}" position="{{ subPosition }}" disabled="{{ item.disabled ? true : false }}" onChange="_cmlEventProxy" data-eventchange="valueChange" class=" cml-base cml-checkbox cml-fc85c26c">
+  </cml-buildin-checkbox>
+</view>

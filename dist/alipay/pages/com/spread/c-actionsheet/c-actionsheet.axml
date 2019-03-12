@@ -1,0 +1,7 @@
+<view class=" cml-base cml-view cml-50d57180"><cml-buildin-page title="c-actionsheet演示" class=" cml-base cml-page cml-50d57180">
+  <view class=" cml-base cml-view cml-50d57180"><c-header title="c-actionsheet" class=" cml-base cml-c-header cml-50d57180"></c-header></view>
+  <view class="btn  cml-base cml-view cml-50d57180"><cml-buildin-button class="btn  cml-base cml-button cml-50d57180" onOnclick="_cmlEventProxy" data-eventonclick="showActionSheet" text="ActionSheet"></cml-buildin-button></view>
+  <view class="btn  cml-base cml-view cml-50d57180"><cml-buildin-button class="btn  cml-base cml-button cml-50d57180" onOnclick="_cmlEventProxy" data-eventonclick="showActionSheetActive" text="ActionSheet - active"></cml-buildin-button></view>
+  <view class="btn  cml-base cml-view cml-50d57180"><cml-buildin-button class="btn  cml-base cml-button cml-50d57180" onOnclick="_cmlEventProxy" data-eventonclick="showActionSheetPicker" text="ActionSheet - pickerStyle"></cml-buildin-button></view>
+  <view class=" cml-base cml-view cml-50d57180"><c-actionsheet show="{{actionShow}}" title="{{title}}" list="{{list}}" active="{{active}}" cancel-txt="取消" picker-style="{{pickerStyle}}" onCancel="_cmlEventProxy" data-eventcancel="cancel" onSelect="_cmlEventProxy" data-eventselect="select" class=" cml-base cml-c-actionsheet cml-50d57180"></c-actionsheet></view>
+  </cml-buildin-page></view>

@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "cml-buildin-checkbox": "./../../../../npm/chameleon-ui-builtin/components/checkbox/checkbox"
+    }
+}
