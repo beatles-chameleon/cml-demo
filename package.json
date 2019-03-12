@@ -11,7 +11,7 @@
   "email": "ChameleonCore@didiglobal.com",
   "dependencies": {
     "chameleon-api": "^0.2.2",
-    "chameleon-runtime": "0.0.8",
+    "chameleon-runtime": "0.0.10",
     "chameleon-store": "0.0.3",
     "chameleon-ui-builtin": "0.0.7-alpha",
     "cml-ui": "0.0.7-alpha"
