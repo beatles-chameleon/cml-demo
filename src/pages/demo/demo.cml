@@ -9,8 +9,8 @@
           </row>
         </view>
         <view class="page-list">
-          <view c-for="{{cells}}" c-for-item="cellInfo">
-            <collapse title="{{cellInfo.title}}" icon-uri="{{cellInfo.iconUri}}" list="{{cellInfo.list}}" c-bind:itemselected="cellItemSeleted"></collapse>
+          <view c-for="{{lists}}">
+            <demo-list title="{{item.title}}" icon-uri="{{item.iconUri}}" path="{{item.path}}" c-bind:itemtap="itemTap"></demo-list>
           </view>
         </view>
       </scroller>
@@ -32,14 +32,10 @@ class Demo   {
 
   data = {
     iconApiUri: require(`../../assets/images/api/icon-api.png`),
-    cells: [{
+    lists: [{
       title: '网易严选',
       iconUri: require(`../../assets/images/component/kind/content.png`),
-      list: [{
-        method: '',
-        url: routeObj["yanxuan"].path,
-        title: routeObj["yanxuan"].name
-      }]
+      path: routeObj['yanxuan'].path
     }]
   }
 
@@ -50,15 +46,10 @@ class Demo   {
   }
 
   methods = {
-    cellItemSeleted(e) {
-      let { method, extraData, url } = e.detail;
-      if (url) {
-        cml.navigateTo({
-          path: url
-        })
-      } else {
-        this[method] && this[method](extraData);
-      }
+    itemTap(e) {
+      cml.navigateTo({
+        path: e.detail.path
+      })
     }
   }
 
@@ -113,7 +104,7 @@ export default new Demo();
 {
   "base": {
     "usingComponents": {
-      "collapse": "/components/collapse/collapse"
+      "demo-list": "/components/demo-list/demo-list"
     }
   },
   "wx": {

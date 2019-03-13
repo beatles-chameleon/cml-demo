@@ -18,6 +18,7 @@
 
 <script>
 import cml from "chameleon-api";
+import homeData from '../../assets/getHomeImgList.json'
 class Classlist {
   data = {
     classifyImgList: []
@@ -31,21 +32,8 @@ class Classlist {
   }
 
   created() {
-
-    cml.get({
-      url: '/cml-yanxuan/mock/getHomeImgList.json'
-    }).then(res => {
-      try{
-        res = JSON.parse(res)
-      }catch(e){}
-
-      if (res.code == 0) {
-        const {classifyImgList} = res.data;
-        this.classifyImgList = classifyImgList;
-      }
-    }).catch(err => {
-      console.log(err)
-    })
+    const {classifyImgList} = homeData.data;
+    this.classifyImgList = classifyImgList;
   }
 }
 

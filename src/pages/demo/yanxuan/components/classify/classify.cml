@@ -26,6 +26,7 @@
 </template>
 <script>
   import cml from "chameleon-api";
+  import yanxuanData from '../../assets/yanxuan.json'
   const headerHeight = 114;
   const tabbarHeight = 90;
   class Yanxuan   {
@@ -46,22 +47,9 @@
     }
 
     created() {
-      cml.get({
-        url:'/cml-yanxuan/mock/yanxuan.json'
-      }).then(res=>{
-        try{
-          res = JSON.parse(res)
-        }catch(e){}
-        
-        if(res.errno == 0) {
-          let result = res.data.result;
-          this.classes = result.classes;
-          this.subclasses = result.subclasses;
-        } else {
-        }
-      }).catch(e=>{
-
-      })
+      let result = yanxuanData.data.result;
+      this.classes = result.classes;
+      this.subclasses = result.subclasses;
     }
 
     mounted() {

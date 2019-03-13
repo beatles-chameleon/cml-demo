@@ -1,0 +1,27 @@
+<view class=" cml-base cml-view cml-76bfe6cd"><cml-buildin-page title="checkbox group演示" class=" cml-base cml-page cml-76bfe6cd">
+  <view class=" cml-base cml-view cml-76bfe6cd"><c-header title="checkbox" class=" cml-base cml-c-header cml-76bfe6cd"></c-header></view>
+  <view class="box  cml-base cml-view cml-76bfe6cd">
+    <view class=" cml-base cml-view cml-76bfe6cd"><c-checkbox-group option="{{ checkboxGroupOption1 }}" onGroupchange="_cmlEventProxy" data-eventgroupchange="groupChangeHandler1" class=" cml-base cml-c-checkbox-group cml-76bfe6cd">
+    </c-checkbox-group></view>
+  </view>
+  <view class="title  cml-base cml-view cml-76bfe6cd">
+    <text class=" cml-base cml-text cml-76bfe6cd">selected value: {{selected1}}</text>
+  </view>
+
+  <view class="box  cml-base cml-view cml-76bfe6cd">
+    <view class=" cml-base cml-view cml-76bfe6cd"><c-checkbox-group option="{{ checkboxGroupOption2 }}" position="right" onGroupchange="_cmlEventProxy" data-eventgroupchange="groupChangeHandler2" class=" cml-base cml-c-checkbox-group cml-76bfe6cd">
+    </c-checkbox-group></view>
+  </view>
+  <view class="title  cml-base cml-view cml-76bfe6cd">
+    <text class=" cml-base cml-text cml-76bfe6cd">selected value: {{selected2}}</text>
+  </view>
+
+  <view class="box  cml-base cml-view cml-76bfe6cd">
+    <view class=" cml-base cml-view cml-76bfe6cd"><c-checkbox-group option="{{ checkboxGroupOption3 }}" onGroupchange="_cmlEventProxy" data-eventgroupchange="groupChangeHandler3" horizontal="{{ true }}" class=" cml-base cml-c-checkbox-group cml-76bfe6cd">
+    </c-checkbox-group></view>
+  </view>
+  <view class="title  cml-base cml-view cml-76bfe6cd">
+    <text class=" cml-base cml-text cml-76bfe6cd">selected value: {{selected3}}</text>
+  </view>
+
+  </cml-buildin-page></view>

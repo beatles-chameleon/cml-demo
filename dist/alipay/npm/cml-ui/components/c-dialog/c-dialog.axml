@@ -1,0 +1,26 @@
+<view class=" cml-base cml-view cml-1b959417"><c-popup show="{{show}}" mask="{{mask}}" class=" cml-base cml-c-popup cml-1b959417">
+  <view class="dialog-content  cml-base cml-view cml-1b959417">
+    
+    <view class="dialog-close  cml-base cml-view cml-1b959417" a:if="{{showClose}}" onTap="_cmlEventProxy" data-eventtap="closeTap">
+      <image src="{{closeSrc}}" style="width:22rpx;height:22rpx" class=" cml-base cml-image cml-1b959417" />
+    </view>
+    
+      <view class="icon-row  cml-base cml-view cml-1b959417">
+        <image a:if="{{iconUrl}}" src="{{iconUrl}}" class="custom-icon  cml-base cml-image cml-1b959417" style="{{computedIconStyle}}" />       
+        <view a:else class="icon-bg  cml-base cml-view cml-1b959417">
+          <image src="{{iconSrc}}" class="icon  cml-base cml-image cml-1b959417" />
+        </view>
+      </view>
+      <text class="title-row  cml-base cml-text cml-1b959417">{{title}}</text>
+      <text class="content-row  cml-base cml-text cml-1b959417">{{content}}</text>
+    
+    
+      <view class="btn-row border-top-1px  cml-base cml-view cml-1b959417">
+        <block a:if="{{type !== 'alert'}}" class=" cml-base cml-block cml-1b959417">
+          <view class="left-btn-wrap border-right-1px  cml-base cml-view cml-1b959417" onTap="_cmlEventProxy" data-eventtap="cancelTap"><text class="cancel-text  cml-base cml-text cml-1b959417">{{cancelText}}</text></view>
+        </block>
+        <view class="btn-wrap  cml-base cml-view cml-1b959417" onTap="_cmlEventProxy" data-eventtap="confirmTap"><text class="confirm-text  cml-base cml-text cml-1b959417">{{confirmText}}</text></view>
+      </view>     
+    
+  </view>
+  </c-popup></view>

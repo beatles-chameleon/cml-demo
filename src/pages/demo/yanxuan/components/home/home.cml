@@ -1,0 +1,27 @@
+<template>
+  <view class="home">
+    <cswiper></cswiper>
+    <service></service>
+    <classlist></classlist>
+    <special></special>
+  </view>
+</template>
+
+<script>
+  class Home {
+  }
+  export default new Home();
+</script>
+
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {
+        "cswiper": "./cswiper",
+        "service": "./service",
+        "classlist": "./classlist",
+        "special": "./special"
+      }
+    }
+  }
+</script>

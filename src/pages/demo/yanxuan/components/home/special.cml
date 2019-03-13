@@ -19,6 +19,7 @@
 
 <script>
   import cml from 'chameleon-api';
+  import homeData from '../../assets/getHomeImgList.json'
   class Special {
     data = {
       special: '',
@@ -32,21 +33,9 @@
       }
     }
     created() {
-      cml.get({
-        url: '/cml-yanxuan/mock/getHomeImgList.json'
-      }).then(res => {
-        try{
-          res = JSON.parse(res)
-        }catch(e){}
-        
-        if (res.code == 0) {
-          const {special, disscountPriceImgUrl} = res.data;
-          this.special = special;
-          this.disscountPriceImgUrl = disscountPriceImgUrl;
-        }
-      }).catch(err => {
-        console.log(err)
-      })
+      const {special, disscountPriceImgUrl} = homeData.data;
+      this.special = special;
+      this.disscountPriceImgUrl = disscountPriceImgUrl;
     }
   }
   export default new Special();

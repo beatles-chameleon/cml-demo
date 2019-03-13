@@ -1,111 +1,99 @@
 <template>
   <page title="chameleon">
     <view class="chameleon-content" style="height:{{scrollHeight}}cpx;">
-      <view class="content-main" c-animation="{{animationData}}" style="height:{{scrollHeight}}cpx;">
-        <view class="home">
-          <scroller
-            scroll-direction="vertical"
-            bottom-offset="{{20}}"
-            height="{{scrollHeight}}"
-          >
-            <cswiper></cswiper>
-            <service></service>
-            <classlist></classlist>
-            <special></special>
-          </scroller>
-        </view>
-        <view class="classify">
-          <scroller
-            scroll-direction="vertical"
-            bottom-offset="{{20}}"
-            height="{{scrollHeight}}"
-          >
-            <classify></classify>
-          </scroller>
-        </view>
-        <view class="things">
-          <scroller
-            scroll-direction="vertical"
-            bottom-offset="{{20}}"
-            height="{{scrollHeight}}"
-          >
-            <topic></topic>
-          </scroller>
-        </view>
-        <view class="cart">
-          <scroller
-            scroll-direction="vertical"
-            bottom-offset="{{20}}"
-            height="{{scrollHeight}}"
-          >
-            <shop></shop>
-          </scroller>
-        </view>
-        <view class="person">
-          <scroller
-            scroll-direction="vertical"
-            bottom-offset="{{20}}"
-            height="{{scrollHeight}}"
-          >
-            <my></my>
-          </scroller>
-        </view>
-      </view>
+      <scroller
+        scroll-direction="vertical"
+        bottom-offset="{{20}}"
+        height="{{scrollHeight}}"
+      >
+        <component is="{{currentCom}}"></component>
+      </scroller>
     </view>
 
     <view class="footer-zhanwei">
-      <ctab c-bind:translate="transition" class="footer"></ctab>
+      <c-tabbar c-bind:tabbarclick='handleTabbarClick' 
+                selected-index="{{selectedIndex}}"  
+                c-model="{{currentCom}}"
+                tabbar="{{tabbar}}"></c-tabbar>
     </view>
   </page>
 </template>
 
 <script>
   import cml from 'chameleon-api';
+  import homePageData from '../../assets/getHomeImgList.json';
   const animation = cml.createAnimation();
+  let chameleonIcon  = require('../../../../../assets/images/chameleon.png');
   class Index {
     data = {
       title: "chameleon",
       scrollHeight: -1,
       animationData: {},
-      num: 1
+      num: 1,
+      currentCom: 'home',
+      selectedIndex: 0,
+      tabbar: {
+        tabbarStyle: "height:120cpx;",
+        textStyle: "font-size: 24cpx",
+        selectedTextStyle: "font-size: 24cpx;color:#61c7fc;",
+        list: [
+          {
+            compName: 'home',
+            text: '首页',
+            icon: chameleonIcon,
+            "iconStyle":"width:40cpx;height:40cpx;",
+            "selectedIconStyle":"width:45cpx;height:45cpx;"
+          },
+          {
+            compName: 'classify',
+            text: '分类',
+            icon: chameleonIcon,
+            "iconStyle":"width:40cpx;height:40cpx;",
+            "selectedIconStyle":"width:45cpx;height:45cpx;"
+          },
+          {
+            compName: 'topic',
+            text: '识物',
+            icon: chameleonIcon,
+            "iconStyle":"width:40cpx;height:40cpx;",
+            "selectedIconStyle":"width:45cpx;height:45cpx;"
+          },
+          {
+            compName: 'shop',
+            text: '购物车',
+            icon: chameleonIcon,
+            "iconStyle":"width:40cpx;height:40cpx;",
+            "selectedIconStyle":"width:45cpx;height:45cpx;"
+          },
+          {
+            compName: 'my',
+            text: '个人',
+            icon: chameleonIcon,
+            "iconStyle":"width:40cpx;height:40cpx;",
+            "selectedIconStyle":"width:45cpx;height:45cpx;"
+          }
+        ]
+      }
     }
     methods = {
-      transition(info) {
-        const {oIndex} = info.detail;
-        this.animationData = animation.translateX(oIndex * -750).step({duration: 0}).export();
-      },
-      change() {
-        debugger
-        cml.navigateTo({
-          "path": "/pages/demo/yanxuan/pages/list/list"
-        })
+      handleTabbarClick(e){
+        //这里触发出来的 index 的值就是被激活的tab对应的index,可以根据这个index的值去动态的改变组件
+        this.selectedIndex = e.detail.index;
       }
     }
 
     created() {
-      cml.get({
-        url: '/cml-yanxuan/mock/getHomeImgList.json'
-      }).then(res => {
-        try{
-          res = JSON.parse(res)
-        }catch(e){}
-        
-        if (res.code == 0) {
-          const {special, disscountPriceImgUrl} = res.data;
-          this.special = special;
-          this.disscountPriceImgUrl = disscountPriceImgUrl;
-        }
-      }).catch(err => {
-        console.log(err)
-      })
+      const {special, disscountPriceImgUrl} = homePageData.data;
+      this.special = special;
+      this.disscountPriceImgUrl = disscountPriceImgUrl;
     }
 
     mounted() {
       cml.getSystemInfo().then((info) => {
         if (info.env == 'weex') {
-          this.scrollHeight = Number(info.viewportHeight) - 80 - 88;
+          this.scrollHeight = Number(info.viewportHeight) - 100 - 88;
         } else {
-          this.scrollHeight = Number(info.viewportHeight) - 80;
+          this.scrollHeight = Number(info.viewportHeight) - 100;
         }
       })
     }
@@ -146,7 +134,6 @@
   }
 
   .footer-zhanwei {
-    height: 100cpx;
     width: 750cpx;
     position: fixed;
     bottom: 0;
@@ -161,15 +148,12 @@
   {
     "base":{
       "usingComponents": {
-        "ctab": "../../components/home/tab",
-        "cswiper": "../../components/home/cswiper",
-        "service": "../../components/home/service",
-        "classlist": "../../components/home/classlist",
-        "special": "../../components/home/special",
+        "home": "../../components/home/home",
         "classify": "../../components/classify/classify",
         "shop": "../../components/shop/shop",
         "my": "../../components/my/my",
-        "topic": "../../components/topic/topic"
+        "topic": "../../components/topic/topic",
+        "c-tabbar": "cml-ui/components/c-tabbar/c-tabbar"
       },
       "navigationBarTitleText": "首页",
       "backgroundTextStyle": "dark",

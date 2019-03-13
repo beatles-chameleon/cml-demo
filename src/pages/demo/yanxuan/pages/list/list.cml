@@ -8,7 +8,6 @@
         c-bind:customscroll="onScroll"
         height="{{-1}}"
       >
-        <c-refresh display="{{ topRefreshing }}" c-bind:refreshevent="onrefreshUp"></c-refresh>
         <view>
           <view class="bannerImg">
             <image src="{{topImg}}" class="topImg"/>
@@ -47,24 +46,18 @@
           </view>
         </view>
         <view class="no-more-text" c-if="{{ page >= sumPage }}">
-          <text>没有更多了...</text>
+          <text>没有更多了</text>
         </view>
-        <c-refresh c-else
-                   display="{{ bottomRefreshing }}"
-                   direction="bottom"
-                   custom-ui="{{ true }}"
-                   c-bind:refreshevent="onrefreshDown"
-        >
-          <view class="loading-text" style="{{ loadingTextStyle }}">
-            <text>上拉刷新...</text>
+          <view c-else class="loading-text" style="{{ loadingTextStyle }}">
+            <text>加载中...</text>
           </view>
-        </c-refresh>
       </scroller>
     </view>
   </page>
 </template>
 <script>
   import cml from 'chameleon-api'
+  import listData from '../../assets/listImages.json';
 
   class Refresh {
     data = {
@@ -79,19 +72,6 @@
       topImg: ''
     }
     methods = {
-      onrefreshUp(e) {
-        this.topRefreshing = e.detail.value;
-        setTimeout(() => {
-          this.topRefreshing = false
-        }, 500)
-      },
-      onrefreshDown(e) {
-        this.bottomRefreshing = e.detail.value;
-        setTimeout(() => {
-          this.getData();
-          this.bottomRefreshing = false
-        }, 500)
-      },
       change(e) {
         cml.navigateTo({
           "path": "/pages/demo/yanxuan/pages/detail/detail",
@@ -101,31 +81,17 @@
           }
         })
       },
-
-      onScroll(e) {
-        let scrollTop = e.detail.scrollTop;
-        if (scrollTop <= 0) {
-          this.topRefreshing = true;
-        }
-      },
       onBottom(e) {
         if (this.bottomRefreshing || this.page >= this.sumPage) return
-        this.bottomRefreshing = true;
+        setTimeout(() => {
+          this.getData();
+        }, 200)
       },
       getData() {
-        cml.get({
-          url: '/cml-yanxuan/mock/listImages.json'
-        }).then(res => {
-          try{
-            res = JSON.parse(res)
-          }catch(e){}
-
-          if (res.code == 0) {
-            const {topImgUrl, list} = res.data;
-            this.list = [...this.list, ...list];
-            this.topImg = topImgUrl;
-          }
-        })
+        const {topImgUrl, list} = listData.data;
+        this.list = [...this.list, ...list];
+        this.topImg = topImgUrl;
+        this.page = this.page + 1;
       }
     }
 
@@ -254,6 +220,9 @@
     font-size: 36cpx;
     text-align: center;
     margin: 50cpx 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 </style>
 <script cml-type="json">

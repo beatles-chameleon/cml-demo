@@ -1,0 +1,1 @@
+.container{flex:1;background:#f8f8f8;display:flex;flex-direction:column}.tip-eg{width:740rpx;padding:100rpx 0;position:relative;display:flex;flex-direction:column}.tip-btn,.tip-eg{align-self:center}.tip-btn{padding:9rpx 10rpx;border:1px solid #fc9153;border-radius:4rpx;font-size:24rpx;color:#fc9153}.btn{margin-top:20rpx;align-self:center}

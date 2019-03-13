@@ -1,0 +1,1 @@
+.container-wrap{padding-bottom:30rpx;padding-left:15rpx;padding-right:15rpx}.container{position:absolute;top:0;left:0;right:0;bottom:0}.container-item{flex:1;flex-direction:row;align-items:center;color:#333}.container-item,.title{display:flex;justify-content:center;font-size:28rpx}.title{flex-direction:row;line-height:88rpx;text-align:center;height:88rpx;color:#999}

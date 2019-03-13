@@ -71,7 +71,7 @@
       classes: [],
       subclasses : [],
       scrollerHeight: -1,
-      headerImg: require('../../../../../assets/images/chameleon.jpg')
+      headerImg: require('../../../../../assets/images/chameleon.png')
     }
 
     methods = {

@@ -1,0 +1,25 @@
+.cml-cfc4534a.secondary-header {
+  padding: 46rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+          align-items: flex-start;
+}
+.cml-cfc4534a.header-title {
+  font-size: 38rpx;
+  color: #172742;
+  margin-bottom: 12rpx;
+}
+.cml-cfc4534a.header-subtitle {
+  font-size: 24rpx;
+  color: #A4ADC2;
+}

@@ -67,6 +67,7 @@
 
 <script>
   import cml from 'chameleon-api'
+  import detailData from '../../assets/detailInfo.json';
   class Detail {
     data = {
       bannerImg: [],
@@ -77,33 +78,19 @@
     }
     methods = {
       goto() {
-        cml.open('https://cmljs.org',
-          {wd: 'chameleon', time: new Date()},
-          {closeCurrent: false});
       },
       change() {
         console.log('change');
       },
       forbinding(e){
-        // e.stopPropagation();
       }
     }
     created() {
-      cml.get({
-        url: '/cml-yanxuan/mock/detailInfo.json'
-      }).then(res => {
-        try{
-          res = JSON.parse(res)
-        }catch(e){}
-
-        if (res.code == 0) {
-          const {carouselList, description, money, tag} = res.data;
-          this.bannerImg = carouselList;
-          this.descriptionInfo = description;
-          this.money = money;
-          this.appTag = tag;
-        }
-      })
+      const {carouselList, description, money, tag} = detailData.data;
+      this.bannerImg = carouselList;
+      this.descriptionInfo = description;
+      this.money = money;
+      this.appTag = tag;
     }
 
     mounted() {
