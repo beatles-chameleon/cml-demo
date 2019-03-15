@@ -1,0 +1,71 @@
+<template>
+  <view>
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+
+class Myscroller implements MyscrollerInterface {
+  props = {
+    name: {
+      type: String,
+      default: '默认值'
+    }
+  }
+
+  data = {
+  }
+
+  computed = {
+  }
+
+  watch = {
+  }
+
+  methods = {
+    
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+  
+  destroyed() {
+  }
+}
+
+export default new Myscroller();
+</script>
+
+<style >
+
+</style>
+
+<script cml-type="json">
+{
+  "base": {
+    "component": true,
+    "usingComponents": {}
+  },
+  "alipay": {
+    "window": {
+      "defaultTitle": "component",
+      "pullRefresh": false,
+      "allowsBounceVertical": "YES",
+      "titleBarColor": "#ffffff"
+    }
+  }
+}
+</script>

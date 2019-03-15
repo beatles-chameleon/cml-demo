@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {},
+    "window": {
+        "defaultTitle": "component",
+        "pullRefresh": false,
+        "allowsBounceVertical": "YES",
+        "titleBarColor": "#ffffff"
+    }
+}

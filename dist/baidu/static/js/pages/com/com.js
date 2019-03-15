@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("../../manifest.js");
-__CML__GLOBAL.webpackJsonp([6],{
+__CML__GLOBAL.webpackJsonp([7],{
 
 /***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/com.cml":
 /***/ (function(module, exports, __webpack_require__) {
@@ -154,11 +154,13 @@ var Home = function () {
           method: '',
           url: routeObj["c-tab"].path,
           title: routeObj["c-tab"].name
-        }, {
-          method: '',
-          url: routeObj["c-refresh"].path,
-          title: routeObj["c-refresh"].name
-        }, {
+        },
+        // {
+        //   method: '',
+        //   url: routeObj["c-refresh"].path,
+        //   title: routeObj["c-refresh"].name
+        // },
+        {
           method: '',
           url: routeObj["c-checkbox-group"].path,
           title: routeObj["c-checkbox-group"].name
@@ -206,13 +208,6 @@ exports.default = _chameleonRuntime2.default.createPage(exports.default).getOpti
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./src/assets/images/component/kind/content.png":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "static/img/content_615612b.png";
 
 /***/ }),
 

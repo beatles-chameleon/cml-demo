@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("../../../../manifest.js");
-__CML__GLOBAL.webpackJsonp([19],{
+__CML__GLOBAL.webpackJsonp([99],{
 
 /***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/chameleon-ui-builtin/components/button/button.baidu.cml":
 /***/ (function(module, exports, __webpack_require__) {
@@ -7,10 +7,6 @@ __CML__GLOBAL.webpackJsonp([19],{
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _type = __webpack_require__("./node_modules/chameleon-ui-builtin/components/button/type.js");
 
 var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
 
@@ -66,7 +62,10 @@ var __INTERFAE__DEFINES__ = {
       "disabled": "Boolean",
       "btnStyle": "String",
       "textStyle": "String",
+      "textStyleDisabled": "String",
       "disabledStyle": "String",
+      "btnHoverStyle": "String",
+      "textHoverStyle": "String",
       "openType": "String",
       "lang": "String",
       "sessionFrom": "String",
@@ -363,25 +362,39 @@ var __CML__WRAPPER__ = function wrapper(obj) {
 
   return obj;
 };
+function transCls(base, cxt) {
+  var type = cxt.type,
+      disabled = cxt.disabled,
+      size = cxt.size,
+      hover = cxt.hover;
 
+  var classList = [base];
 
-function str2obj(str) {
-  var styleArr = str.split(';');
-  var style = {};
-  styleArr.forEach(function (item) {
-    var si = item.split(':');
+  if (hover) {
+    classList.push(base + "-active");
+  }
 
-    if (si.length === 2) {
-      style[si[0]] = si[1];
+  if (!!~'red|orange|white|green'.indexOf(type)) {
+    classList.push(base + "-" + type);
+
+    if (hover) {
+      classList.push(base + "-" + type + "-active");
     }
-  });
-  return style;
-}
 
-function obj2style(styleObj) {
-  return styleObj ? Object.keys(styleObj).map(function (key) {
-    return key + ":" + styleObj[key] + ";";
-  }).join('') : '';
+    if (disabled) {
+      classList.push(base + "-" + type + "-disable");
+    }
+  }
+
+  if (!!~'full|big|medium|small'.indexOf(size)) {
+    classList.push(base + "-" + size);
+  }
+
+  if (disabled) {
+    classList.push(base + "-disable");
+  }
+
+  return classList.join(' ');
 }
 
 var Button = function Button() {
@@ -390,7 +403,7 @@ var Button = function Button() {
   this.props = {
     text: {
       type: String,
-      default: "确认"
+      default: "确定"
     },
     size: {
       type: String,
@@ -412,9 +425,21 @@ var Button = function Button() {
       type: String,
       default: ""
     },
+    textStyleDisabled: {
+      type: String,
+      default: ""
+    },
     disabledStyle: {
       type: String,
       default: ""
+    },
+    btnHoverStyle: {
+      type: String,
+      default: ''
+    },
+    textHoverStyle: {
+      type: String,
+      default: ''
     },
     openType: {
       type: String,
@@ -449,41 +474,33 @@ var Button = function Button() {
       default: ""
     }
   };
+  this.data = {
+    hover: false
+  };
   this.computed = {
+    btnClasses: function btnClasses() {
+      return transCls('cml-btn', this);
+    },
+    textClasses: function textClasses() {
+      return transCls('btn-text', this);
+    },
     mrBtnStyle: function mrBtnStyle() {
-      var type = this.type,
-          disabled = this.disabled,
+      var disabled = this.disabled,
           btnStyle = this.btnStyle,
-          size = this.size,
-          disabledStyle = this.disabledStyle;
+          disabledStyle = this.disabledStyle,
+          hover = this.hover,
+          btnHoverStyle = this.btnHoverStyle;
 
-      var mrBtnStyle = _extends({}, _type.STYLE_MAP[type], str2obj(btnStyle), _type.BUTTON_STYLE_MAP[size]);
-      var disabledInStyle = {
-        opacity: 0.2
-      };
-
-      if (type === "white") {
-        disabledInStyle = {
-          "background-color": "rgba(0, 0, 0, 0.1)"
-        };
-      }
-
-      var afterStyle = disabled ? _extends({}, mrBtnStyle, disabledInStyle, str2obj(disabledStyle), {
-        "border-width": 0
-      }) : mrBtnStyle;
-      return obj2style(afterStyle);
+      return disabled ? btnStyle + ";" + disabledStyle : hover ? btnStyle + ";" + btnHoverStyle : btnStyle;
     },
     mrTextStyle: function mrTextStyle() {
-      var type = this.type,
-          disabled = this.disabled,
+      var disabled = this.disabled,
           textStyle = this.textStyle,
-          size = this.size;
+          textStyleDisabled = this.textStyleDisabled,
+          hover = this.hover,
+          textHoverStyle = this.textHoverStyle;
 
-      var mrTextStyle = _extends({}, _type.TEXT_STYLE_MAP[type], str2obj(textStyle), _type.TEXT_FONTSIZE_STYLE_MAP[size]);
-      var afterStyle = disabled ? _extends({}, mrTextStyle, {
-        color: "#FFFFFF"
-      }) : mrTextStyle;
-      return obj2style(afterStyle);
+      return disabled ? textStyle + ";" + textStyleDisabled : hover ? textStyle + ";" + textHoverStyle : textStyle;
     }
   };
   this.methods = {
@@ -496,6 +513,12 @@ var Button = function Button() {
         type: type,
         disabled: disabled
       });
+    },
+    touchstart: function touchstart(e) {
+      this.hover = true;
+    },
+    touchend: function touchend(e) {
+      this.hover = false;
     },
     getuserinfo: function getuserinfo(e) {
       this.$cmlEmit('getuserinfo', e.detail);
@@ -543,86 +566,6 @@ exports.default = _chameleonRuntime2.default.createComponent(exports.default).ge
 var __cml__style0 = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"baidu\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/baidu/.postcssrc.js\"}}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"baidu\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=component&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/chameleon-ui-builtin/components/button/button.baidu.cml");
 var __cml__script = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/chameleon-ui-builtin/components/button/button.baidu.cml");
 
-
-/***/ }),
-
-/***/ "./node_modules/chameleon-ui-builtin/components/button/type.js":
-/***/ (function(module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var STYLE_MAP = exports.STYLE_MAP = {
-  red: {
-    'background-color': '#db2a36'
-  },
-  orange: {
-    'background-color': '#fc9153'
-  },
-  white: {
-    'background-color': '#FFFFFF',
-    'border-color': '#A5A5A5',
-    'border-width': '1px'
-  },
-  blue: {
-    'background-color': '#4a4c5b'
-  },
-  green: {
-    'background-color': '#50a050'
-  }
-};
-
-var TEXT_STYLE_MAP = exports.TEXT_STYLE_MAP = {
-  red: {
-    color: '#FFFFFF'
-  },
-  orange: {
-    color: '#FFFFFF'
-  },
-  blue: {
-    color: '#FFFFFF'
-  },
-  white: {
-    color: '#3D3D3D'
-  },
-  green: {
-    color: '#FFFFFF'
-  }
-};
-
-var BUTTON_STYLE_MAP = exports.BUTTON_STYLE_MAP = {
-  full: {
-    width: '702cpx',
-    height: '88cpx'
-  },
-  big: {
-    width: '339cpx',
-    height: '70cpx'
-  },
-  medium: {
-    width: '218cpx',
-    height: '60cpx'
-  },
-  small: {
-    width: '157cpx',
-    height: '44cpx'
-  }
-};
-
-var TEXT_FONTSIZE_STYLE_MAP = exports.TEXT_FONTSIZE_STYLE_MAP = {
-  full: {
-    'font-size': '36cpx'
-  },
-  big: {
-    'font-size': '32cpx'
-  },
-  medium: {
-    'font-size': '28cpx'
-  },
-  small: {
-    'font-size': '24cpx'
-  }
-};
 
 /***/ })
 

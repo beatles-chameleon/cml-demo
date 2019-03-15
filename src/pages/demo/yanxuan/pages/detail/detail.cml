@@ -289,8 +289,8 @@
   {
     "base": {
       "usingComponents": {
-          "myscroller": "./myscroller/myscroller",
-          "map": "../..//components/map/map"
+        "myscroller": "./myscroller/myscroller",
+        "map": "../../components/map/map"
       },
       "navigationBarTitleText": "详情页",
       "backgroundTextStyle": "dark",

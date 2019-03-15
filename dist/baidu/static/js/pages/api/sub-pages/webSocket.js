@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("../../../manifest.js");
-__CML__GLOBAL.webpackJsonp([13],{
+__CML__GLOBAL.webpackJsonp([10],{
 
 /***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/webSocket.cml":
 /***/ (function(module, exports, __webpack_require__) {
@@ -156,10 +156,94 @@ exports.default = _chameleonRuntime2.default.createPage(exports.default).getOpti
 
 /***/ }),
 
+/***/ "./node_modules/chameleon-api/src/interfaces/initSocket/baiduSocket.js":
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var BaiduSocket = function () {
+  function BaiduSocket(url) {
+    _classCallCheck(this, BaiduSocket);
+
+    this.instance = swan.connectSocket({
+      url: url
+    });
+  }
+
+  _createClass(BaiduSocket, [{
+    key: "onopen",
+    value: function onopen(cb) {
+      this.instance.onOpen(function () {
+        cb();
+      });
+    }
+  }, {
+    key: "onmessage",
+    value: function onmessage(cb) {
+      this.instance.onMessage(function (res) {
+        cb(res);
+      });
+    }
+  }, {
+    key: "onerror",
+    value: function onerror(cb) {
+      this.instance.onError(function (err) {
+        cb(err);
+      });
+    }
+  }, {
+    key: "onclose",
+    value: function onclose(cb) {
+      this.instance.onClose(function () {
+        cb();
+      });
+    }
+  }, {
+    key: "send",
+    value: function send(data) {
+      data = JSON.stringify(data);
+      this.instance.send({
+        data: data
+      });
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      this.instance.close();
+    }
+  }]);
+
+  return BaiduSocket;
+}();
+
+exports.default = BaiduSocket;
+
+/***/ }),
+
 /***/ "./node_modules/chameleon-api/src/interfaces/initSocket/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _baiduSocket = __webpack_require__("./node_modules/chameleon-api/src/interfaces/initSocket/baiduSocket.js");
+
+var _baiduSocket2 = _interopRequireDefault(_baiduSocket);
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/initSocket/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -177,7 +261,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["socketInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -467,7 +553,22 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "initSocket",
+    value: function initSocket(url) {
+      return new _baiduSocket2.default(url);
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 

@@ -335,7 +335,7 @@ var Home = function () {
       openNewBeatlesPage: function openNewBeatlesPage() {
         _chameleonBridge2.default.callNative('beatlesCommunicate', 'openNativeWebPage', {
           close_web: false,
-          url: 'http://www.baidu.com'
+          url: 'https://cmljs.org'
         });
       },
       callNativeLogin: function callNativeLogin() {
@@ -759,10 +759,334 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./node_modules/chameleon-api/src/config.js":
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var api = {
+  alert: {
+    baseOn: {
+      sdk: 'alert',
+      web: 'alert',
+      wx: 'showModal',
+      baidu: 'showModal',
+      alipay: 'alert',
+      weex: 'modal.alert'
+    }
+  },
+  cancelAnimationFrame: {
+    allCanUse: true,
+    baseOn: {
+      sdk: 'cancelAnimationFrame',
+      web: 'cancelAnimationFrame',
+      wx: 'cancelAnimationFrame',
+      baidu: 'cancelAnimationFrame',
+      weex: 'cancelAnimationFrame',
+      alipay: 'cancelAnimationFrame'
+    }
+  },
+  canIUse: {
+    allCanUse: true,
+    baseOn: {
+      sdk: 'canIUse',
+      web: 'canIUse',
+      wx: 'canIUse',
+      baidu: 'canIUse',
+      weex: 'canIUse',
+      alipay: 'canIUse'
+    }
+  },
+  inSDK: {
+    allCanUse: true,
+    baseOn: {
+      sdk: 'inSDK',
+      web: 'inSDK',
+      wx: '',
+      baidu: '',
+      weex: ''
+    }
+  },
+  chooseImage: {
+    baseOn: {
+      sdk: 'chooseImage',
+      web: 'chooseImage',
+      wx: 'chooseImage',
+      baidu: 'chooseImage',
+      weex: '',
+      alipay: 'chooseImage'
+    }
+  },
+  close: {
+    baseOn: {
+      sdk: 'close',
+      web: 'close',
+      wx: 'navigateBack',
+      baidu: 'navigateBack',
+      weex: '',
+      alipay: 'navigateBack'
+    }
+  },
+  confirm: {
+    baseOn: {
+      sdk: 'confirm',
+      web: 'confirm',
+      wx: 'showModal',
+      baidu: 'showModal',
+      weex: 'modal.confirm',
+      alipay: 'confirm'
+    }
+  },
+  cpx2px: {
+    baseOn: {
+      sdk: 'getSystemInfo',
+      web: 'getSystemInfo',
+      wx: 'getSystemInfoSync',
+      baidu: 'getSystemInfoSync',
+      weex: 'getSystemInfo',
+      alipay: 'getSystemInfoSync'
+    }
+  },
+  get: {
+    baseOn: {
+      sdk: 'request',
+      web: 'fetch',
+      wx: 'request',
+      baidu: 'request',
+      weex: 'fetch',
+      alipay: 'httpRequest'
+    }
+  },
+  getClipBoardData: {
+    baseOn: {
+      sdk: 'getClipBoardData',
+      web: 'getClipboardData',
+      wx: 'getClipboardData',
+      baidu: 'getClipboardData',
+      weex: 'clipboard.getString',
+      alipay: 'getClipboard'
+    }
+  },
+  getLocationInfo: {
+    baseOn: {
+      sdk: 'getLocationInfo',
+      web: 'getCurrentPosition',
+      wx: 'getLocation',
+      baidu: 'getLocation',
+      weex: '',
+      alipay: 'getLocation'
+    }
+  },
+  getRect: {
+    baseOn: {
+      sdk: 'getComponentRect',
+      web: 'getComputedStyle',
+      wx: 'createSelectorQuery',
+      baidu: 'createSelectorQuery',
+      weex: 'getComponentRect',
+      alipay: ''
+    }
+  },
+  getStorage: {
+    baseOn: {
+      sdk: 'getStorage',
+      web: 'localStorage.getItem',
+      wx: 'getStorageSync',
+      baidu: 'getStorageSync',
+      weex: 'storage.getItem',
+      alipay: 'getStorageSync'
+    }
+  },
+  getSystemInfo: {
+    baseOn: {
+      sdk: 'getSystemInfo',
+      web: 'getSystemInfo',
+      wx: 'getSystemInfo',
+      baidu: 'getSystemInfo',
+      weex: 'getSystemInfo',
+      alipay: 'getSystemInfo'
+    }
+  },
+  initSocket: {
+    baseOn: {
+      sdk: 'initSocket',
+      web: 'initSocket',
+      wx: 'connectSocket',
+      baidu: 'connectSocket',
+      weex: '',
+      alipay: 'connectSocket'
+    }
+  },
+  getLaunchOptionsSync: {
+    baseOn: {
+      sdk: 'getQueryObjSync',
+      web: 'location.href',
+      wx: 'getLaunchOptionsSync',
+      baidu: '',
+      weex: 'weex.config.bundleUrl',
+      alipay: ''
+    }
+  },
+  navigateBack: {
+    baseOn: {
+      sdk: 'navigateBack',
+      web: 'navigateBack',
+      wx: 'navigateBack',
+      baidu: 'navigateBack',
+      weex: 'navigateBack',
+      alipay: 'navigateBack'
+    }
+  },
+  navigateTo: {
+    baseOn: {
+      sdk: 'navigateTo',
+      web: 'navigateTo',
+      wx: 'navigateTo',
+      baidu: 'navigateTo',
+      weex: 'navigateTo',
+      alipay: 'navigateTo'
+    }
+  },
+  open: {
+    baseOn: {
+      sdk: 'open',
+      web: 'location.href',
+      wx: 'navigateToMiniProgram',
+      baidu: 'navigateToSmartProgram',
+      weex: 'navigator.push',
+      alipay: 'navigateToMiniProgram'
+    }
+  },
+  post: {
+    baseOn: {
+      sdk: 'request',
+      web: 'fetch',
+      wx: 'request',
+      baidu: 'request',
+      weex: 'fetch',
+      alipay: 'httpRequest'
+    }
+  },
+  px2cpx: {
+    baseOn: {
+      sdk: 'getSystemInfo',
+      web: 'getSystemInfo',
+      wx: 'getSystemInfoSync',
+      baidu: 'getSystemInfoSync',
+      weex: 'getSystemInfo',
+      alipay: ''
+    }
+  },
+  redirectTo: {
+    baseOn: {
+      sdk: 'redirectTo',
+      web: 'router.replace',
+      wx: 'redirectTo',
+      baidu: 'redirectTo',
+      weex: 'router.replace',
+      alipay: 'redirectTo'
+    }
+  },
+  reload: {
+    baseOn: {
+      sdk: 'reload',
+      web: 'location.reload',
+      wx: '',
+      baidu: '',
+      weex: '',
+      alipay: ''
+    }
+  },
+  removeStorage: {
+    baseOn: {
+      sdk: 'removeStorage',
+      web: 'localStorage.removeItem',
+      wx: 'removeStorageSync',
+      baidu: 'removeStorageSync',
+      weex: 'storage.removeItem',
+      alipay: 'removeStorageSync'
+    }
+  },
+  request: {
+    baseOn: {
+      sdk: 'request',
+      web: 'fetch',
+      wx: 'request',
+      baidu: 'request',
+      weex: 'fetch',
+      alipay: 'httpRequest'
+    }
+  },
+  requestAnimationFrame: {
+    allCanUse: true,
+    baseOn: {
+      sdk: 'setTimeout',
+      web: 'requestAnimationFrame',
+      wx: 'setTimeout',
+      baidu: 'setTimeout',
+      weex: 'requestAnimationFrame',
+      alipay: 'requestAnimationFrame'
+    }
+  },
+  setClipBoardData: {
+    baseOn: {
+      sdk: 'setClipBoardData',
+      web: 'setClipBoardData',
+      wx: 'setClipBoardData',
+      baidu: 'setClipBoardData',
+      weex: 'clipboard.setString',
+      alipay: 'setClipboard'
+    }
+  },
+  setStorage: {
+    baseOn: {
+      sdk: 'setStorage',
+      web: 'localStorage.setItem',
+      wx: 'setStorageSync',
+      baidu: 'setStorageSync',
+      weex: 'storage.setItem',
+      alipay: 'setStorageSync'
+    }
+  },
+  setTitle: {
+    baseOn: {
+      sdk: 'setTitle',
+      web: 'document.title',
+      wx: 'setNavigationBarTitle',
+      baidu: 'setNavigationBarTitle',
+      weex: '',
+      alipay: 'setNavigationBar'
+    }
+  },
+  showToast: {
+    baseOn: {
+      sdk: 'showToast',
+      web: 'showToast',
+      wx: 'showToast',
+      baidu: 'showToast',
+      weex: 'modal.toast',
+      alipay: 'showToast'
+    }
+  }
+};
+
+exports.api = api;
+
+/***/ }),
+
 /***/ "./node_modules/chameleon-api/src/interfaces/alert/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/alert/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -793,7 +1117,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["uiInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -1083,7 +1409,37 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "alert",
+    value: function alert(opt, successCallBack, failCallBack) {
+      var message = opt.message,
+          confirmTitle = opt.confirmTitle;
+
+      swan.showModal({
+        showCancel: false,
+        title: '',
+        content: message,
+        confirmText: confirmTitle,
+
+        success: function success() {
+          successCallBack(confirmTitle);
+        },
+        fail: function fail() {
+          failCallBack(confirmTitle);
+        }
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -1123,7 +1479,17 @@ function alert(opt) {
 /***/ "./node_modules/chameleon-api/src/interfaces/canIUse/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _config = __webpack_require__("./node_modules/chameleon-api/src/config.js");
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/canIUse/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -1146,7 +1512,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["canIUseInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -1436,7 +1804,36 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "canIUse",
+    value: function canIUse(metName, cb) {
+      if (!_config.api[metName]) {
+        cb(false);
+        return;
+      }
+
+      var allCan = _config.api[metName].allCanUse;
+
+      if (allCan) {
+        cb(true);
+        return;
+      }
+
+      var method = _config.api[metName].baseOn.wx;
+      var result = swan.canIUse(method);
+      cb(result);
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -1473,7 +1870,15 @@ function canIUse(metName) {
 /***/ "./node_modules/chameleon-api/src/interfaces/confirm/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/confirm/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -1505,7 +1910,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["uiInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -1795,7 +2202,42 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "confirm",
+    value: function confirm(opt, successCallBack, failCallBack) {
+      var message = opt.message,
+          confirmTitle = opt.confirmTitle,
+          cancelTitle = opt.cancelTitle;
+
+      swan.showModal({
+        title: '',
+        content: message,
+        confirmText: confirmTitle,
+        cancelText: cancelTitle,
+
+        success: function success(res) {
+          if (res.confirm) {
+            successCallBack(confirmTitle);
+          } else {
+            successCallBack(cancelTitle);
+          }
+        },
+        fail: function fail() {
+          failCallBack();
+        }
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -1837,7 +2279,15 @@ function confirm(opt) {
 /***/ "./node_modules/chameleon-api/src/interfaces/getClipBoardData/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/getClipBoardData/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -1869,7 +2319,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["ClipBoardDataInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -2159,7 +2611,58 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "getClipBoardData",
+    value: function getClipBoardData(cb) {
+      swan.getClipboardData({
+        success: function success(res) {
+          cb({
+            errno: 0,
+            errMsg: '',
+            data: res.data
+          });
+        },
+        fail: function fail(res) {
+          cb({
+            errno: -1,
+            errMsg: 'swan.getClipboardData fail',
+            data: ''
+          });
+        }
+      });
+    }
+  }, {
+    key: "setClipBoardData",
+    value: function setClipBoardData(text, cb) {
+      swan.setClipboardData({
+        data: text,
+        success: function success(res) {
+          cb({
+            errno: 0,
+            errMsg: '',
+            data: text
+          });
+        },
+        fail: function fail(res) {
+          cb({
+            errno: -1,
+            data: '',
+            errMsg: 'swan.setClipboardData fail'
+          });
+        }
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -2196,7 +2699,15 @@ function getClipBoardData() {
 /***/ "./node_modules/chameleon-api/src/interfaces/getLaunchOptionsSync/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/getLaunchOptionsSync/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -2214,7 +2725,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["launchOptionsInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -2504,7 +3017,22 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "getLaunchOptionsSync",
+    value: function getLaunchOptionsSync() {
+      return {};
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -2530,369 +3058,18 @@ function getLaunchOptionsSync() {
 
 /***/ }),
 
-/***/ "./node_modules/chameleon-api/src/interfaces/getLocationInfo/index.interface":
-/***/ (function(module, exports, __webpack_require__) {
-
-var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
-
-var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/getLocationInfo/index.interface";
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "data": {
-      "lat": "Number",
-      "lng": "Number"
-    },
-    "resData": {
-      "errno": "Number",
-      "errMsg": "String",
-      "data": "data"
-    },
-    "callback": {
-      "input": ["resData"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "UtilsInterface": {
-      "getLocationInfo": {
-        "input": ["callback"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
-  var className = obj.constructor.name;
-  /* eslint-disable no-undef */
-  var defines = __CHECK__DEFINES__;
-  var enableTypes = __enableTypes__.split(',') || []; // ['Object','Array','Nullable']
-  /* eslint-disable no-undef */
-  var types = defines.types;
-  var interfaceNames = defines.classes[className];
-  var methods = {};
-
-  interfaceNames && interfaceNames.forEach(function (interfaceName) {
-    var keys = Object.keys(defines.interfaces);
-    keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
-    });
-  });
-
-  /**
-   * 获取类型
-   *
-   * @param  {*}      value 值
-   * @return {string}       类型
-   */
-  var getType = function getType(value) {
-    if (value instanceof Promise) {
-      return "Promise";
-    }
-    var type = Object.prototype.toString.call(value);
-    return type.replace(/\[object\s(.*)\]/g, '$1').replace(/( |^)[a-z]/g, function (L) {
-      return L.toUpperCase();
-    });
-  };
-
-  /**
-   * 校验类型  两个loader共用代码
-   *
-   * @param  {*}      value 实际传入的值
-   * @param  {string} type  静态分析时候得到的值得类型
-   * @param  {array[string]} errList 校验错误信息  类型
-   * @return {bool}         校验结果
-   */
-
-  /* eslint complexity:[2,39] */
-  var checkType = function checkType(value, originType) {
-    var errList = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
-
-    var isNullableReg = /_cml_nullable_lmc_/g;
-    var type = originType.replace('_cml_nullable_lmc_', '');
-    type === "Void" && (type = "Undefined");
-    var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
-    if (currentType == 'Null') {
-      if (type == "Null") {
-        // 如果定义的参数的值就是 Null，那么校验通过
-        errList = [];
-      } else {
-        // 那么判断是否是可选参数的情况
-        canUseNullable && isNullableReg.test(originType) ? errList = [] : errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542Fnullable\u914D\u7F6E");
-      }
-      return errList;
-    }
-    if (currentType == 'Undefined') {
-      // 如果运行时传入的真实值是undefined,那么可能改值在接口处就是被定义为 Undefined类型或者是 ?string 这种可选参数 nullable的情况；
-      if (type == "Undefined") {
-        errList = [];
-      } else {
-        canUseNullable && isNullableReg.test(originType) ? errList = [] : errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542Fnullable\u914D\u7F6E\u6216\u8005\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
-      }
-      return errList;
-    }
-    if (currentType == 'String') {
-      if (type == 'String') {
-        errList = [];
-      } else {
-        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
-      }
-      return errList;
-    }
-    if (currentType == 'Boolean') {
-      if (type == 'Boolean') {
-        errList = [];
-      } else {
-        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
-      }
-      return errList;
-    }
-    if (currentType == 'Number') {
-      if (type == 'Number') {
-        errList = [];
-      } else {
-        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
-      }
-      return errList;
-    }
-    if (currentType == 'Object') {
-      if (type == 'Object') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Object \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
-      } else if (type == 'CMLObject') {
-        errList = [];
-      } else {
-        // 这种情况的对象就是自定义的对象；
-        if (types[type]) {
-          var _keys = Object.keys(types[type]);
-          // todo 这里是同样的问题，可能多传递
-          _keys.forEach(function (key) {
-            var subError = checkType(value[key], types[type][key], []);
-            if (subError && subError.length) {
-              errList = errList.concat(subError);
-            }
-          });
-          if (Object.keys(value).length > _keys.length) {
-            errList.push("type [" + type + "] \u53C2\u6570\u4E2A\u6570\u4E0E\u5B9A\u4E49\u4E0D\u7B26");
-          }
-        } else {
-          errList.push('找不到定义的type [' + type + ']!');
-        }
-      }
-      return errList;
-    }
-    if (currentType == 'Array') {
-      if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
-      } else {
-        if (types[type]) {
-          // 数组元素的类型
-          var itemType = types[type][0];
-          for (var i = 0; i < value.length; i++) {
-            var subError = checkType(value[i], itemType, []);
-            if (subError && subError.length) {
-              errList = errList.concat(subError);
-            }
-          }
-        } else {
-          errList.push('找不到定义的type [' + type + ']!');
-        }
-      }
-
-      return errList;
-    }
-    if (currentType == 'Function') {
-      // if (type == 'Function') {
-      //   errList = [];
-      // } else {
-      //   errList.push(`定义了${type}类型的参数，传入的却是${currentType},请检查所传参数是否和接口定义的一致`)
-      // }
-      if (types[type]) {
-        if (!types[type].input && !types[type].output) {
-          errList.push("\u627E\u4E0D\u5230" + types[type] + " \u51FD\u6570\u5B9A\u4E49\u7684\u8F93\u5165\u8F93\u51FA");
-        }
-      } else {
-        errList.push('找不到定义的type [' + type + ']!');
-      }
-      return errList;
-    }
-    if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
-      } else {
-        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
-      }
-      return errList;
-    }
-    if (currentType == 'Date') {
-      if (type == 'Date') {
-        errList = [];
-      } else {
-        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
-      }
-      return errList;
-    }
-    if (currentType == 'RegExp') {
-      if (type == 'RegExp') {
-        errList = [];
-      } else {
-        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
-      }
-      return errList;
-    }
-
-    return errList;
-  };
-
-  /**
-   * 校验参数类型
-   *
-   * @param  {string} methodName 方法名称
-   * @param  {Array}  argNames   参数名称列表
-   * @param  {Array}  argValues  参数值列表
-   * @return {bool}              校验结果
-   */
-  var checkArgsType = function checkArgsType(methodName, argValues) {
-    var argList = void 0;
-
-    if (getType(methodName) == 'Array') {
-      // 回调函数的校验    methodName[0] 方法的名字 methodName[1]该回调函数在方法的参数索引
-      argList = types[methods[methodName[0]].input[methodName[1]]].input;
-      // 拿到这个回调函数的参数定义
-    } else {
-      argList = methods[methodName].input;
-    }
-    // todo 函数可能多传参数
-    argList.forEach(function (argType, index) {
-      var errList = checkType(argValues[index], argType, []);
-      if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
-      }
-    });
-    if (argValues.length > argList.length) {
-      __CML_ERROR__("[" + methodName + "]\u65B9\u6CD5\u53C2\u6570\u4F20\u9012\u4E2A\u6570\u4E0E\u5B9A\u4E49\u4E0D\u7B26");
-    }
-  };
-
-  /**
-   * 校验返回值类型
-   *
-   * @param  {string} methodName 方法名称
-   * @param  {*}      returnData 返回值
-   * @return {bool}              校验结果
-   */
-  var checkReturnType = function checkReturnType(methodName, returnData) {
-    var output = void 0;
-    if (getType(methodName) == 'Array') {
-      output = types[methods[methodName[0]].input[methodName[1]]].output;
-    } else {
-      output = methods[methodName].output;
-    }
-    // todo output 为什么可以是数组
-    // if (output instanceof Array) {
-    //   output.forEach(type => {
-
-    //     //todo 而且是要有一个校验不符合就check失败？ 应该是有一个校验通过就可以吧
-    //     checkType(returnData, type,[])
-    //   });
-    // }
-    var errList = checkType(returnData, output, []);
-    if (errList && errList.length > 0) {
-      __CML_ERROR__("\n      \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u8FD4\u56DE\u503C\n      \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
-    }
-  };
-
-  /**
-   * 创建warpper
-   *
-   * @param  {string}   funcName   方法名称
-   * @param  {Function} originFunc 原有方法
-   * @return {Function}            包裹后的方法
-   */
-  var createWarpper = function createWarpper(funcName, originFunc) {
-    return function () {
-      var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
-        // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
-        if (getType(arg) == 'Function') {
-          return createWarpper([funcName, index], arg);
-        }
-        return arg;
-      });
-
-      checkArgsType(funcName, argValues);
-
-      var result = originFunc.apply(this, argValues);
-
-      checkReturnType(funcName, result);
-      return result;
-    };
-  };
-
-  // 获取所有方法
-  var keys = Object.keys(methods);
-
-  // 处理包装方法
-  keys.forEach(function (key) {
-    var originFunc = obj[key];
-    if (!originFunc) {
-      __CML_ERROR__('method [' + key + '] not found!');
-      return;
-    }
-
-    if (obj.hasOwnProperty(key)) {
-      obj[key] = createWarpper(key, originFunc);
-    } else {
-      Object.getPrototypeOf(obj)[key] = createWarpper(key, originFunc);
-    }
-  });
-
-  return obj;
-};
-
-null;
-
-(0, _util.copyProtoProperty)(exports.default);
-
-/***/ }),
-
-/***/ "./node_modules/chameleon-api/src/interfaces/getLocationInfo/index.js":
+/***/ "./node_modules/chameleon-api/src/interfaces/getStorage/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = getLocationInfo;
 
-var _index = __webpack_require__("./node_modules/chameleon-api/src/interfaces/getLocationInfo/index.interface");
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getLocationInfo() {
-  return new Promise(function (resolve, reject) {
-    _index2.default.getLocationInfo(function (res) {
-      if (res.errno === 0) {
-        resolve(res.data);
-      } else {
-        reject(res.errMsg);
-      }
-    });
-  });
-}
-
-/***/ }),
-
-/***/ "./node_modules/chameleon-api/src/interfaces/getStorage/index.interface":
-/***/ (function(module, exports, __webpack_require__) {
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/getStorage/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -2920,7 +3097,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["UtilsInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -3210,7 +3389,48 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "getStorage",
+    value: function getStorage(key, cb) {
+      try {
+        var _data = swan.getStorageSync(key);
+
+        if (typeof _data !== 'string') {
+          _data = JSON.stringify(value);
+        }
+
+        cb({
+          errno: 0,
+          errMsg: 'success',
+          data: _data !== null ? _data : ''
+        });
+      } catch (e) {
+        var _errMsg = void 0;
+
+        if (typeof e !== 'string') {
+          _errMsg = JSON.stringify(e);
+        } else {
+          _errMsg = e;
+        }
+
+        cb({
+          errno: -1,
+          errMsg: _errMsg,
+          data: ''
+        });
+      }
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -3250,7 +3470,15 @@ function getStorage(key) {
 /***/ "./node_modules/chameleon-api/src/interfaces/redirectTo/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/redirectTo/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -3274,7 +3502,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["UtilsInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -3564,7 +3794,33 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "redirectTo",
+    value: function redirectTo(opt) {
+      var path = opt.path,
+          query = opt.query;
+
+
+      if (path.indexOf('?') === -1) {
+        query = '?' + query;
+      }
+
+      path = path + query;
+      swan.redirectTo({
+        url: path
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -3611,7 +3867,15 @@ function redirectTo(opt) {
 /***/ "./node_modules/chameleon-api/src/interfaces/removeStorage/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/removeStorage/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -3639,7 +3903,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["UtilsInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -3929,7 +4195,43 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "removeStorage",
+    value: function removeStorage(key, cb) {
+      try {
+        swan.removeStorageSync(key);
+        cb({
+          errno: 0,
+          errMsg: 'success',
+          data: ''
+        });
+      } catch (e) {
+        var _errMsg = void 0;
+
+        if (typeof e !== 'string') {
+          _errMsg = JSON.stringify(e);
+        } else {
+          _errMsg = e;
+        }
+
+        cb({
+          errno: -1,
+          errMsg: _errMsg,
+          data: ''
+        });
+      }
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -3994,7 +4296,15 @@ function setClipBoardData(text) {
 /***/ "./node_modules/chameleon-api/src/interfaces/setStorage/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/setStorage/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -4022,7 +4332,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["UtilsInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -4312,7 +4624,43 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "setStorage",
+    value: function setStorage(key, value, cb) {
+      try {
+        swan.setStorageSync(key, value);
+        cb({
+          errno: 0,
+          errMsg: 'success',
+          data: value
+        });
+      } catch (e) {
+        var _errMsg = void 0;
+
+        if (typeof e !== 'string') {
+          _errMsg = JSON.stringify(e);
+        } else {
+          _errMsg = e;
+        }
+
+        cb({
+          errno: -1,
+          errMsg: _errMsg,
+          data: ''
+        });
+      }
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -4524,7 +4872,15 @@ close.prototype.methodName = methodName;
 /***/ "./node_modules/chameleon-bridge/apis/getComponentRect/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-bridge/apis/getComponentRect/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -4550,7 +4906,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["DomInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -4840,7 +5198,20 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "getComponentRect",
+    value: function getComponentRect(param, cb) {}
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -4897,7 +5268,15 @@ getLaunchUrl.prototype.methodName = methodName;
 /***/ "./node_modules/chameleon-bridge/apis/getQueryObjSync/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-bridge/apis/getQueryObjSync/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -4920,7 +5299,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["QueryInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -5210,7 +5591,20 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "getQueryObjSync",
+    value: function getQueryObjSync() {}
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -5713,7 +6107,15 @@ confirm.prototype.methodName = methodConfirm;
 /***/ "./node_modules/chameleon-bridge/core/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-bridge/core/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -5744,7 +6146,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["CoreInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -6034,7 +6438,26 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "initChannel",
+    value: function initChannel() {}
+  }, {
+    key: "callNative",
+    value: function callNative(module, method, args, callback) {}
+  }, {
+    key: "listenNative",
+    value: function listenNative(module, method, callback) {}
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -6058,12 +6481,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // 初始化通道
 _index2.default.initChannel();
 
-function callNative(module, method, args, callback) {
-  _index2.default.callNative.apply(_index2.default, arguments);
+function callNative(module, method, args) {
+  var callback = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : function () {};
+
+  _index2.default.callNative(module, method, args, callback);
 }
 
-function listenNative(module, method, callback) {
-  _index2.default.listenNative.apply(_index2.default, arguments);
+function listenNative(module, method) {
+  var callback = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
+
+  _index2.default.listenNative(module, method, callback);
 }
 
 /***/ }),
@@ -6409,7 +6836,15 @@ module.exports = __webpack_require__.p + "static/img/icon-default_aeb0517.png";
 /***/ "./src/components/unsupported/unsupported.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/src/components/unsupported/unsupported.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -6429,7 +6864,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["UnsupportedInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -6719,7 +7156,22 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "getUnsupportApis",
+    value: function getUnsupportApis() {
+      return ['beatles-bridge能力'];
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 

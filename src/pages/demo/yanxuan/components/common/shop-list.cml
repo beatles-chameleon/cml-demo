@@ -26,7 +26,6 @@
 
     methods = {
       jumpWeb(e) {
-        cml.open('https://chameleon-team.github.io/doc/');
       }
     }
 

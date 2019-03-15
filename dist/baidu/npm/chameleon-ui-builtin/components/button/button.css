@@ -137,10 +137,13 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  width: 702rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 0 30rpx;
   height: 88rpx;
+  line-height: 88rpx;
   background: #4a4c5b;
-  border: none;
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
@@ -148,14 +151,89 @@
   -webkit-justify-content: center;
           justify-content: center;
   border-radius: 4rpx;
+  font-size: 32rpx;
+}
+
+.cml-btn-active {
+  background: #444654;
 }
 
 .cml-btn:after {
   border: none;
 }
 
-.cml-btn:active {
-  opacity: 0.9;
+.cml-btn-orange {
+  background: #fc9153;
+}
+
+.cml-btn-orange-active {
+  background: #e8864c;
+}
+
+.cml-btn-green {
+  background: #50a050;
+}
+
+.cml-btn-green-active {
+  background: #57a957;
+}
+
+.cml-btn-red {
+  background: #db2a36;
+}
+
+.cml-btn-red-active {
+  background: #ea2e3b;
+}
+
+.cml-btn-disable {
+  background: #ccc;
+}
+
+.cml-btn-disable:active {
+  background: #ccc;
+}
+
+.cml-btn-white {
+  color: #666;
+  background: #FFFFFF;
+  border: 1rpx solid #A5A5A5;
+}
+
+.cml-btn-white-active {
+  background: #e8e8e8;
+}
+
+.cml-btn-white-disable,
+.cml-btn-white:disabled {
+  color: #fff;
+  background: #ccc;
+  border: 0;
+}
+
+.cml-btn-white-disable:active,
+.cml-btn-white:disabled:active {
+  background: #ccc;
+}
+
+.cml-btn-full {
+  width: 702rpx;
+  height: 88rpx;
+}
+
+.cml-btn-big {
+  width: 339rpx;
+  height: 70rpx;
+}
+
+.cml-btn-medium {
+  width: 218rpx;
+  height: 60rpx;
+}
+
+.cml-btn-small {
+  width: 157rpx;
+  height: 44rpx;
 }
 
 .btn-text {
@@ -164,13 +242,30 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   outline: none;
-  lines: 1;
   font-size: 36rpx;
-  font-weight: 500;
   color: #ffffff;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+}
+
+.btn-text-white {
+  color: #666;
+}
+
+.btn-text-white-disable {
+  color: #fff;
+}
+
+.btn-text-full {
+  font-size: 36rpx;
+}
+
+.btn-text-big {
+  font-size: 32rpx;
+}
+
+.btn-text-medium {
+  font-size: 28rpx;
+}
+
+.btn-text-small {
+  font-size: 24rpx;
 }

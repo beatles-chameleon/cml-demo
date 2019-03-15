@@ -1,12 +1,12 @@
 <template>
   <view class="wrapper">
-    <image ref="headerBg" class="header-bg" resize="cover" src="http://cdn.zwwill.com/yanxuan/imgs/bg5.png"></image>
+    <image ref="headerBg" class="header-bg" resize="cover" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/bg5.png"></image>
     <scroller height="{{scrollerHeight}}">
       <view class="header">
         <image class="i-photo" resize="cover" src="{{headerImg}}"></image>
         <text class="i-name">哈哈哈哈哈</text>
         <view class="b-tlt">
-          <image class="i-tag tag-e" resize="contain" src="https://yanxuan.nosdn.127.net/3dc6e876620bb84a5dac3deb6ecd4916.png"></image>
+          <image class="i-tag tag-e" resize="contain" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/3dc6e876620bb84a5dac3deb6ecd4916.png"></image>
           <text class="i-tag tag-v8 iconfont">&#xe6cc;</text>
           <text class="txt-tag">品质生活家</text>
         </view>

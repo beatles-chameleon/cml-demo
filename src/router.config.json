@@ -1,6 +1,6 @@
 {
   "mode": "hash",
-  "domain": "https://api.chameleon.com",
+  "domain": "https://cmljs.org",
   "routes":[
     {
       "url": "/",

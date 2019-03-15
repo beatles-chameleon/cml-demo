@@ -1,4 +1,4 @@
-<cml-buildin-page title="cml" class=" cml-base cml-page">
+<cml-buildin-page title="Chameleon" class=" cml-base cml-page">
     <view class="page-home  cml-base cml-view">
       <cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller">
         <view class="logo-row  cml-base cml-view">

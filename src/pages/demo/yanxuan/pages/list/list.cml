@@ -87,6 +87,9 @@
           this.getData();
         }, 200)
       },
+      onScroll() {
+
+      },
       getData() {
         const {topImgUrl, list} = listData.data;
         this.list = [...this.list, ...list];

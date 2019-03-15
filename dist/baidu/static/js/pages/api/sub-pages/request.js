@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("../../../manifest.js");
-__CML__GLOBAL.webpackJsonp([7],{
+__CML__GLOBAL.webpackJsonp([5],{
 
 /***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml":
 /***/ (function(module, exports, __webpack_require__) {
@@ -138,60 +138,17 @@ exports.default = _chameleonRuntime2.default.createPage(exports.default).getOpti
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = get;
+exports.default = post;
 
-var _index = __webpack_require__("./node_modules/chameleon-api/src/interfaces/request/index.interface");
+var _index = __webpack_require__("./node_modules/chameleon-api/src/interfaces/request/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
-var _utils = __webpack_require__("./node_modules/chameleon-api/src/lib/utils.js");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function get(_ref) {
-  var url = _ref.url,
-      _ref$data = _ref.data,
-      data = _ref$data === undefined ? {} : _ref$data,
-      _ref$header = _ref.header,
-      header = _ref$header === undefined ? {} : _ref$header,
-      _ref$setting = _ref.setting,
-      setting = _ref$setting === undefined ? { apiPrefix: (0, _utils.isNeedApiPrefix)(url) } : _ref$setting,
-      _ref$resDataType = _ref.resDataType,
-      resDataType = _ref$resDataType === undefined ? 'json' : _ref$resDataType;
-
-  if (setting.apiPrefix) {
-    url = (0, _utils.addApiPrefix)(url);
-  }
-
-  if (data && !(0, _utils.isEmpty)(data) && (0, _utils.queryStringify)(data)) {
-    if (url.indexOf('?') === -1) {
-      url += '?';
-    }
-    url += (0, _utils.queryStringify)(data);
-  }
-
-  return new Promise(function (resolve, reject) {
-    _index2.default.request({
-      url: url,
-      body: '',
-      method: 'GET',
-      setting: setting,
-      headers: header,
-      cb: function cb(res) {
-        var status = res.status,
-            data = res.data;
-
-        if (status >= 200 && status < 300) {
-          if (resDataType === 'json') {
-            data = (0, _utils.tryJsonParse)(data);
-          }
-          resolve(data);
-        } else {
-          reject('http statusCode:' + status);
-        }
-      }
-    });
-  });
+function post(options) {
+  options.method = "GET";
+  return (0, _index2.default)(options);
 }
 
 /***/ }),
@@ -202,82 +159,117 @@ function get(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 exports.default = post;
 
-var _index = __webpack_require__("./node_modules/chameleon-api/src/interfaces/request/index.interface");
+var _index = __webpack_require__("./node_modules/chameleon-api/src/interfaces/request/index.js");
 
 var _index2 = _interopRequireDefault(_index);
 
-var _utils = __webpack_require__("./node_modules/chameleon-api/src/lib/utils.js");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// contentType 支持json和form 不支持formdata body不知道如何处理
-function post(_ref) {
-  var url = _ref.url,
-      _ref$data = _ref.data,
-      data = _ref$data === undefined ? {} : _ref$data,
-      _ref$header = _ref.header,
-      header = _ref$header === undefined ? {} : _ref$header,
-      _ref$contentType = _ref.contentType,
-      contentType = _ref$contentType === undefined ? 'form' : _ref$contentType,
-      _ref$setting = _ref.setting,
-      setting = _ref$setting === undefined ? { apiPrefix: (0, _utils.isNeedApiPrefix)(url) } : _ref$setting,
-      _ref$resDataType = _ref.resDataType,
-      resDataType = _ref$resDataType === undefined ? 'json' : _ref$resDataType;
+function post(options) {
+  options.method = "POST";
+  return (0, _index2.default)(options);
+}
 
-  if (setting.apiPrefix) {
-    url = (0, _utils.addApiPrefix)(url);
+/***/ }),
+
+/***/ "./node_modules/chameleon-api/src/interfaces/request/common.js":
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.parseHeader = parseHeader;
+var defaultHeaders = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+var defaultOptions = {
+  credentials: 'same-origin'
+};
+
+var defaultType = 'form';
+var contentTypeMap = {
+  form: 'application/x-www-form-urlencoded',
+  json: 'application/json'
+};
+
+// 处理基本的错误, 如500, 404等等
+function filterStatus(res) {
+  if (res.status >= 200 && res.status < 300) {
+    return res;
+  } else {
+    var error = new Error(res.statusText);
+    error.res = res;
+    error.type = 'http';
+    throw error;
   }
-  switch (contentType) {
-    case 'form':
-      data = (0, _utils.queryStringify)(data);
-      header = _extends({}, header, {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      });
-      break;
-    case 'json':
-      data = JSON.stringify(data);
-      header = _extends({}, header, {
-        'Content-Type': 'application/json'
-      });
-      break;
-  }
+}
 
-  return new Promise(function (resolve, reject) {
-    _index2.default.request({
-      url: url,
-      body: data,
-      setting: setting,
-      method: 'POST',
-      headers: header,
-      cb: function cb(res) {
-        var status = res.status,
-            data = res.data,
-            headers = res.headers;
-
-        if (status >= 200 && status < 300) {
-          if (resDataType === 'json') {
-            data = (0, _utils.tryJsonParse)(data);
-          }
-          resolve(data);
-        } else {
-          reject('http statusCode:' + status);
-        }
-      }
-    });
+// 解析为json格式
+function parseJSON(res) {
+  return res.json()["catch"](function (err) {
+    if (err) {
+      err.type = 'json';
+      err.res = res;
+    }
+    throw err;
   });
 }
+
+// 转换成form表单形式
+function toForm(body) {
+  var form = new FormData();
+  Object.keys(body).forEach(function (key) {
+    if (body[key] !== undefined) {
+      form.append(key, body[key]);
+    }
+  });
+  return form;
+}
+
+function parseHeader(headers) {
+  // fetch中的headers value为数组形式,其他端为字符串形式， 统一为字符串
+  // header的key值统一为小写
+  var result = {};
+  Object.keys(headers).forEach(function (key) {
+    var value = headers[key];
+    if (value instanceof Array) {
+      value = value[0];
+    }
+    result[key.toLowerCase()] = value;
+  });
+  return JSON.stringify(result);
+}
+
+exports.default = {
+  defaultHeaders: defaultHeaders,
+  defaultOptions: defaultOptions,
+  defaultType: defaultType,
+  contentTypeMap: contentTypeMap,
+  filterStatus: filterStatus,
+  parseJSON: parseJSON,
+  toForm: toForm,
+  parseHeader: parseHeader
+};
 
 /***/ }),
 
 /***/ "./node_modules/chameleon-api/src/interfaces/request/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _common = __webpack_require__("./node_modules/chameleon-api/src/interfaces/request/common.js");
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/request/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -313,7 +305,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["UtilsInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -603,7 +597,49 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "request",
+    value: function request(params) {
+      var url = params.url,
+          body = params.body,
+          headers = params.headers,
+          method = params.method,
+          cb = params.cb;
+
+      swan.request({
+        url: url,
+        data: body,
+        dataType: 'text',
+        method: method,
+        header: headers,
+        success: function success(res) {
+          cb({
+            status: res.statusCode,
+            data: res.data,
+            headers: (0, _common.parseHeader)(res.header)
+          });
+        },
+        fail: function fail(e) {
+          cb({
+            status: -1,
+            data: 'request failed',
+            headers: '{}'
+          });
+          throw e;
+        }
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -628,9 +664,9 @@ var _utils = __webpack_require__("./node_modules/chameleon-api/src/lib/utils.js"
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// 为支持 DELETE / PUT 方法增加此方法
 function request(_ref) {
-  var url = _ref.url,
+  var domainkey = _ref.domainkey,
+      url = _ref.url,
       _ref$data = _ref.data,
       data = _ref$data === undefined ? {} : _ref$data,
       _ref$method = _ref.method,
@@ -644,22 +680,44 @@ function request(_ref) {
       _ref$resDataType = _ref.resDataType,
       resDataType = _ref$resDataType === undefined ? 'json' : _ref$resDataType;
 
-  if (setting.apiPrefix) {
-    url = (0, _utils.addApiPrefix)(url);
+  var media = "dev";
+  domainkey = domainkey || "apiPrefix";
+  // dev模式模拟多域名需要区分dmain
+  if (media === 'dev' && domainkey) {
+    if (!~url.indexOf('?')) {
+      url += '?';
+    }
+    url += (0, _utils.queryStringify)({ domainkey: domainkey });
   }
-  switch (contentType) {
-    case 'form':
-      data = (0, _utils.queryStringify)(data);
-      header = _extends({}, header, {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      });
-      break;
-    case 'json':
-      data = JSON.stringify(data);
-      header = _extends({}, header, {
-        'Content-Type': 'application/json'
-      });
-      break;
+
+  if (setting.apiPrefix) {
+    url = (0, _utils.addApiPrefix)(url, domainkey);
+  }
+
+  if (/^get$/gi.test(method)) {
+    if (data && !(0, _utils.isEmpty)(data) && (0, _utils.queryStringify)(data)) {
+      if (url.indexOf('?') === -1) {
+        url += '?';
+      }
+      url += (0, _utils.queryStringify)(data);
+      data = '';
+    }
+    data = '';
+  } else {
+    switch (contentType) {
+      case 'form':
+        data = (0, _utils.queryStringify)(data);
+        header = _extends({}, header, {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        });
+        break;
+      case 'json':
+        data = JSON.stringify(data);
+        header = _extends({}, header, {
+          'Content-Type': 'application/json'
+        });
+        break;
+    }
   }
 
   return new Promise(function (resolve, reject) {

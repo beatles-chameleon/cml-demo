@@ -24,7 +24,7 @@
 <script>
 import cml from 'chameleon-api';
 import bridge from 'chameleon-bridge';
-import supportChecker from '../../components/unsupported/unsupported';
+import supportChecker from '../../components/unsupported/unsupported.interface';
 
 class Home {
   data = {
@@ -265,7 +265,7 @@ class Home {
     openNewBeatlesPage() {
       bridge.callNative('beatlesCommunicate', 'openNativeWebPage', {
         close_web: false,
-        url: 'http://www.baidu.com'
+        url: 'https://cmljs.org'
       })
     },
     callNativeLogin() {

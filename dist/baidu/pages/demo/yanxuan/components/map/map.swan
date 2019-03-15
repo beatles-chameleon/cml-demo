@@ -1,0 +1,1 @@
+<map id="map" class="map  cml-base cml-origin-map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="{{true}}"></map>

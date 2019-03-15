@@ -2,7 +2,7 @@
 //设置静态资源的线上路径
 const publicPath = 'https://beatles-chameleon.github.io/cml-demo/dist';
 //设置api请求前缀
-const apiPrefix = 'https://api.chameleon.com';
+const apiPrefix = 'https://cmljs.org';
 
 cml.config.merge({
   cmlNpm: [
@@ -15,7 +15,7 @@ cml.config.merge({
   buildInfo: {
     wxAppId: '123456',
     wxEntryPage: '',
-    webPath: 'https://api.chameleon.com/h5/commentinfo'
+    webPath: 'https://cmljs.org/h5/commentinfo'
   },
   wx: {
     dev: {

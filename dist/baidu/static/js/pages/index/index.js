@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("../../manifest.js");
-__CML__GLOBAL.webpackJsonp([5],{
+__CML__GLOBAL.webpackJsonp([6],{
 
 /***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/index/index.cml":
 /***/ (function(module, exports, __webpack_require__) {
@@ -27,7 +27,7 @@ var Home = function Home() {
     pageList: [{
       icon: __webpack_require__("./src/assets/images/home/home-ui.png"),
       title: '组件',
-      desc: '基础内容、表单组建、导航、试图容器等',
+      desc: '基础内容、表单组建、导航、视图容器等',
       url: '/pages/com/com'
     }, {
       icon: __webpack_require__("./src/assets/images/home/home-api.png"),

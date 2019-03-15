@@ -313,12 +313,30 @@ var _state = __webpack_require__("./src/store/index/state.js");
 
 var _state2 = _interopRequireDefault(_state);
 
+var _state3 = __webpack_require__("./src/store/yanxuan/state.js");
+
+var _state4 = _interopRequireDefault(_state3);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var state = {
-  index: _state2.default
+  index: _state2.default,
+  yanxuan: _state4.default
 };
 
+exports.default = state;
+
+/***/ }),
+
+/***/ "./src/store/yanxuan/state.js":
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var state = {
+  tabs: [{ label: '首页' }, { label: "分类" }, { label: '识物' }, { label: '购物车' }, { label: '个人' }]
+};
 exports.default = state;
 
 /***/ })

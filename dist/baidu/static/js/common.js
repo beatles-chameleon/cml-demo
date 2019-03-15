@@ -1211,6 +1211,104 @@ function cpx2px(cpx) {
 
 /***/ }),
 
+/***/ "./node_modules/chameleon-api/src/interfaces/createAnimation/_util.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getTransform = exports.getRotateZ = exports.cpx2px = exports.descriptionPipe = exports.stylePipe = undefined;
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _index = __webpack_require__("./node_modules/chameleon-api/src/interfaces/createAnimation/index.interface");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var stylePipe = exports.stylePipe = function stylePipe(styles, descriptions, quene) {
+  for (var _len = arguments.length, args = Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
+    args[_key - 3] = arguments[_key];
+  }
+
+  var current = styles;
+  quene.forEach(function (fuc) {
+    current = fuc.apply(null, [current, descriptions].concat(args));
+  });
+  return current;
+};
+
+var descriptionPipe = exports.descriptionPipe = function descriptionPipe(descriptions, styles, quene) {
+  for (var _len2 = arguments.length, args = Array(_len2 > 3 ? _len2 - 3 : 0), _key2 = 3; _key2 < _len2; _key2++) {
+    args[_key2 - 3] = arguments[_key2];
+  }
+
+  var current = descriptions;
+  quene.forEach(function (fuc) {
+    current = fuc.apply(null, [current, styles].concat(args));
+  });
+  return current;
+};
+
+var cpx2px = exports.cpx2px = function cpx2px(v) {
+  return +(_index2.default.getViewportWidth() / 750 * v).toFixed(3);
+};
+
+var getRotateZ = exports.getRotateZ = function getRotateZ(a, b, c, d, e, f) {
+  var aa = Math.round(180 * Math.asin(a) / Math.PI);
+  var bb = Math.round(180 * Math.acos(b) / Math.PI);
+  var cc = Math.round(180 * Math.asin(c) / Math.PI);
+  var dd = Math.round(180 * Math.acos(d) / Math.PI);
+  var deg = 0;
+  if (aa == bb || -aa == bb) {
+    deg = dd;
+  } else if (-aa + bb == 180) {
+    deg = 180 + cc;
+  } else if (aa + bb == 180) {
+    deg = 360 - cc || 360 - dd;
+  }
+  return deg >= 360 ? 0 : deg;
+  // return (aa+','+bb+','+cc+','+dd);
+};
+
+// 获取元素的transform信息
+var getTransform = exports.getTransform = function getTransform(ele) {
+  var st = window.getComputedStyle(ele, null);
+
+  var tr = st.getPropertyValue("-webkit-transform") || st.getPropertyValue("-moz-transform") || st.getPropertyValue("-ms-transform") || st.getPropertyValue("-o-transform") || st.getPropertyValue("transform") || "FAIL";
+  if (tr === 'none') {
+    return;
+  }
+  var values = tr.split('(')[1].split(')')[0].split(',');
+
+  var _values = _slicedToArray(values, 6),
+      a = _values[0],
+      b = _values[1],
+      c = _values[2],
+      d = _values[3],
+      e = _values[4],
+      f = _values[5];
+  // var scale = Math.sqrt(a * a + b * b);
+  // arc sin, convert from radians to degrees, round
+  // var sin = b / scale;
+
+  var rotateZ = getRotateZ(a, b, c, d, e, f);
+  return {
+    translateX: Number(e.trim()),
+    translateY: Number(f.trim()),
+    scaleX: Number(a.trim()),
+    scaleY: Number(d.trim()),
+    rotateZ: rotateZ
+    // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
+    // var angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+  };
+};
+
+exports.default = {};
+
+/***/ }),
+
 /***/ "./node_modules/chameleon-api/src/interfaces/createAnimation/createAnimationFactory.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1364,10 +1462,55 @@ exports.default = createAnimationFactory;
 
 /***/ }),
 
+/***/ "./node_modules/chameleon-api/src/interfaces/createAnimation/descriptionLoader/common.js":
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var commonLoader = exports.commonLoader = function commonLoader(descriptions) {
+  return descriptions;
+};
+
+var transformOriginMap = {};
+var cacheTransformOriginLoader = exports.cacheTransformOriginLoader = function cacheTransformOriginLoader(descriptions, styles, id) {
+  var returnDescriptions = descriptions;
+
+  var transformOrigin = descriptions.transformOrigin;
+  if (!transformOriginMap[id]) {
+    transformOriginMap[id] = {};
+  }
+
+  if (transformOrigin) {
+    transformOriginMap[id].transformOrigin = transformOrigin;
+  }
+
+  returnDescriptions.transformOrigin = transformOriginMap[id].transformOrigin;
+  return returnDescriptions;
+};
+
+/***/ }),
+
 /***/ "./node_modules/chameleon-api/src/interfaces/createAnimation/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
-var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _common = __webpack_require__("./node_modules/chameleon-api/src/interfaces/createAnimation/styleLoader/common.js");
+
+var _baidu = __webpack_require__("./node_modules/chameleon-api/src/interfaces/createAnimation/styleLoader/baidu.js");
+
+var _common2 = __webpack_require__("./node_modules/chameleon-api/src/interfaces/createAnimation/descriptionLoader/common.js");
+
+var _util = __webpack_require__("./node_modules/chameleon-api/src/interfaces/createAnimation/_util.js");
+
+var _util2 = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/createAnimation/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -1405,7 +1548,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["CreateAnimationInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -1695,9 +1840,72 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var styleLoaderQueue = [_common.commonLoader, _common.cacheTransformStylesLoader, _baidu.transformLoader];
+var descriptionLoaderQueue = [_common2.commonLoader, _common2.cacheTransformOriginLoader];
 
-(0, _util.copyProtoProperty)(exports.default);
+var createAnimationFuc = function createAnimationFuc(quene) {
+  var animation = swan.createAnimation();
+  var cbs = {};
+  quene.forEach(function (tick, i) {
+    var styles = tick.styles,
+        descriptions = tick.descriptions;
+
+    cbs[i] = descriptions.cb;
+    Object.keys(styles).forEach(function (key) {
+      var value = styles[key];
+      animation[key](value);
+    });
+    animation.step(descriptions);
+  });
+  var temp = animation.export();
+  temp.cbs = cbs;
+  temp.index = 0;
+  return temp;
+};
+
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "initAnimation",
+    value: function initAnimation() {}
+  }, {
+    key: "checkNumber",
+    value: function checkNumber(number) {}
+  }, {
+    key: "checkString",
+    value: function checkString(string) {}
+  }, {
+    key: "checkObject",
+    value: function checkObject(object) {}
+  }, {
+    key: "getViewportWidth",
+    value: function getViewportWidth() {
+      var _swan$getSystemInfoSy = swan.getSystemInfoSync(),
+          windowWidth = _swan$getSystemInfoSy.windowWidth;
+
+      return windowWidth;
+    }
+  }, {
+    key: "exportMiddleWare",
+    value: function exportMiddleWare(param) {
+      return createAnimationFuc(param.updateQueue.map(function (tick) {
+        return {
+          styles: (0, _util.stylePipe)(tick.styles, tick.descriptions, styleLoaderQueue, param.id),
+          descriptions: (0, _util.descriptionPipe)(tick.descriptions, tick.styles, descriptionLoaderQueue, param.id)
+        };
+      }));
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
+
+(0, _util2.copyProtoProperty)(exports.default);
 
 /***/ }),
 
@@ -1726,10 +1934,554 @@ exports.default = function (description) {
 
 /***/ }),
 
+/***/ "./node_modules/chameleon-api/src/interfaces/createAnimation/styleLoader/baidu.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.transformLoader = undefined;
+
+var _util = __webpack_require__("./node_modules/chameleon-api/src/interfaces/createAnimation/_util.js");
+
+var _utils = __webpack_require__("./node_modules/chameleon-api/src/lib/utils.js");
+
+var _common = __webpack_require__("./node_modules/chameleon-api/src/interfaces/createAnimation/styleLoader/common.js");
+
+var transformLoader = exports.transformLoader = function transformLoader(styles, description) {
+  var returnStyles = {};
+
+  Object.keys(styles).forEach(function (key) {
+    var value = styles[key];
+
+    // 目前不支持自动转换，所以loader来做
+    if (_common.isNumTypeStyles.includes(key)) {
+      if ((0, _utils.isNum)(value)) {
+        // 转换单位
+        value = (0, _util.cpx2px)(value);
+      } else {
+        console.error('Parameter must be a number');
+      }
+    }
+
+    // // 目前不支持转换，所以loader来做
+    // if (isStr(value) && value.includes('px')) {
+    //   value = value.replace('px', 'rpx');
+    // }
+
+    // 100deg -> 100
+    if (_common.rotateStyles.includes(key) && (0, _utils.isStr)(value)) {
+
+      if (value.includes('deg')) {
+        value = value.split('deg')[0];
+      } else {
+        console.error('Parameter format error');
+      }
+    }
+
+    // 此处使用transformMap保留transform状态。因为weex每次会初始化transform。行为会跟web，wx端不一致
+    returnStyles[key] = value;
+  });
+
+  return returnStyles;
+};
+
+/***/ }),
+
+/***/ "./node_modules/chameleon-api/src/interfaces/createAnimation/styleLoader/common.js":
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var rotateStyles = exports.rotateStyles = ['rotate', 'rotateX', 'retateY'];
+
+var isNumTypeStyles = exports.isNumTypeStyles = ['width', 'height', 'translateX', 'translateY'];
+
+var transformStyles = exports.transformStyles = ['translate', 'translateX', 'translateY', 'scale', 'scaleX', 'scaleY', 'rotate', 'rotateX', 'rotateY'];
+
+var compositeStyles = exports.compositeStyles = ['translate', 'scale'];
+
+var commonLoader = exports.commonLoader = function commonLoader(styles) {
+  var returnStyles = {};
+
+  Object.keys(styles).forEach(function (key) {
+    var value = styles[key];
+    //
+    if (value.length === 1 && key !== 'scale') {
+      returnStyles[key] = value[0];
+    } else {
+      if (compositeStyles.includes(key)) {
+        // scale的值只传递一个的情况
+        if (key === 'scale' && value.length === 1) {
+          returnStyles[key + 'X'] = value[0];
+          returnStyles[key + 'Y'] = value[0];
+        } else {
+          returnStyles[key + 'X'] = value[0];
+          returnStyles[key + 'Y'] = value[1];
+        }
+
+        // returnStyles[`${key}Z`] = value[2];
+      } else {
+          // redLog(`${key}属性不支持传多个参数`);
+        }
+    }
+  });
+  return returnStyles;
+};
+
+// 缓存transform属性
+var transformStylesMap = {};
+var cacheTransformStylesLoader = exports.cacheTransformStylesLoader = function cacheTransformStylesLoader(styles, descriptions, id) {
+  var returnStyles = {};
+
+  if (!transformStylesMap[id]) {
+    transformStylesMap[id] = {};
+  }
+
+  Object.keys(styles).forEach(function (key) {
+    var value = styles[key];
+
+    if (transformStyles.includes(key)) {
+      transformStylesMap[id][key] = value;
+    }
+    returnStyles[key] = value;
+  });
+
+  if (JSON.stringify(transformStylesMap[id]) !== '{}') {
+    Object.keys(transformStylesMap[id]).forEach(function (key) {
+      var value = transformStylesMap[id][key];
+
+      returnStyles[key] = value;
+    });
+  }
+
+  return returnStyles;
+};
+
+/***/ }),
+
+/***/ "./node_modules/chameleon-api/src/interfaces/getLocationInfo/index.interface":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/getLocationInfo/index.interface";
+var __CML_ERROR__ = function throwError(content) {
+  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
+};
+
+var __enableTypes__ = "";
+var __CHECK__DEFINES__ = {
+  "types": {
+    "data": {
+      "lat": "Number",
+      "lng": "Number"
+    },
+    "resData": {
+      "errno": "Number",
+      "errMsg": "String",
+      "data": "data"
+    },
+    "callback": {
+      "input": ["resData"],
+      "output": "Undefined"
+    }
+  },
+  "interfaces": {
+    "UtilsInterface": {
+      "getLocationInfo": {
+        "input": ["callback"],
+        "output": "Undefined"
+      }
+    }
+  },
+  "classes": {
+    "Method": ["UtilsInterface"]
+  }
+};
+var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
+  var className = obj.constructor.name;
+  /* eslint-disable no-undef */
+  var defines = __CHECK__DEFINES__;
+  var enableTypes = __enableTypes__.split(',') || []; // ['Object','Array','Nullable']
+  /* eslint-disable no-undef */
+  var types = defines.types;
+  var interfaceNames = defines.classes[className];
+  var methods = {};
+
+  interfaceNames && interfaceNames.forEach(function (interfaceName) {
+    var keys = Object.keys(defines.interfaces);
+    keys.forEach(function (key) {
+      Object.assign(methods, defines.interfaces[key]);
+    });
+  });
+
+  /**
+   * 获取类型
+   *
+   * @param  {*}      value 值
+   * @return {string}       类型
+   */
+  var getType = function getType(value) {
+    if (value instanceof Promise) {
+      return "Promise";
+    }
+    var type = Object.prototype.toString.call(value);
+    return type.replace(/\[object\s(.*)\]/g, '$1').replace(/( |^)[a-z]/g, function (L) {
+      return L.toUpperCase();
+    });
+  };
+
+  /**
+   * 校验类型  两个loader共用代码
+   *
+   * @param  {*}      value 实际传入的值
+   * @param  {string} type  静态分析时候得到的值得类型
+   * @param  {array[string]} errList 校验错误信息  类型
+   * @return {bool}         校验结果
+   */
+
+  /* eslint complexity:[2,39] */
+  var checkType = function checkType(value, originType) {
+    var errList = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+
+    var isNullableReg = /_cml_nullable_lmc_/g;
+    var type = originType.replace('_cml_nullable_lmc_', '');
+    type === "Void" && (type = "Undefined");
+    var currentType = getType(value);
+    var canUseNullable = enableTypes.includes("Nullable");
+    var canUseObject = enableTypes.includes("Object");
+    if (currentType == 'Null') {
+      if (type == "Null") {
+        // 如果定义的参数的值就是 Null，那么校验通过
+        errList = [];
+      } else {
+        // 那么判断是否是可选参数的情况
+        canUseNullable && isNullableReg.test(originType) ? errList = [] : errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542Fnullable\u914D\u7F6E");
+      }
+      return errList;
+    }
+    if (currentType == 'Undefined') {
+      // 如果运行时传入的真实值是undefined,那么可能改值在接口处就是被定义为 Undefined类型或者是 ?string 这种可选参数 nullable的情况；
+      if (type == "Undefined") {
+        errList = [];
+      } else {
+        canUseNullable && isNullableReg.test(originType) ? errList = [] : errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542Fnullable\u914D\u7F6E\u6216\u8005\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'String') {
+      if (type == 'String') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'Boolean') {
+      if (type == 'Boolean') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'Number') {
+      if (type == 'Number') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'Object') {
+      if (type == 'Object') {
+        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Object \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+      } else if (type == 'CMLObject') {
+        errList = [];
+      } else {
+        // 这种情况的对象就是自定义的对象；
+        if (types[type]) {
+          var _keys = Object.keys(types[type]);
+          // todo 这里是同样的问题，可能多传递
+          _keys.forEach(function (key) {
+            var subError = checkType(value[key], types[type][key], []);
+            if (subError && subError.length) {
+              errList = errList.concat(subError);
+            }
+          });
+          if (Object.keys(value).length > _keys.length) {
+            errList.push("type [" + type + "] \u53C2\u6570\u4E2A\u6570\u4E0E\u5B9A\u4E49\u4E0D\u7B26");
+          }
+        } else {
+          errList.push('找不到定义的type [' + type + ']!');
+        }
+      }
+      return errList;
+    }
+    if (currentType == 'Array') {
+      if (type == 'Array') {
+        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+      } else {
+        if (types[type]) {
+          // 数组元素的类型
+          var itemType = types[type][0];
+          for (var i = 0; i < value.length; i++) {
+            var subError = checkType(value[i], itemType, []);
+            if (subError && subError.length) {
+              errList = errList.concat(subError);
+            }
+          }
+        } else {
+          errList.push('找不到定义的type [' + type + ']!');
+        }
+      }
+
+      return errList;
+    }
+    if (currentType == 'Function') {
+      // if (type == 'Function') {
+      //   errList = [];
+      // } else {
+      //   errList.push(`定义了${type}类型的参数，传入的却是${currentType},请检查所传参数是否和接口定义的一致`)
+      // }
+      if (types[type]) {
+        if (!types[type].input && !types[type].output) {
+          errList.push("\u627E\u4E0D\u5230" + types[type] + " \u51FD\u6570\u5B9A\u4E49\u7684\u8F93\u5165\u8F93\u51FA");
+        }
+      } else {
+        errList.push('找不到定义的type [' + type + ']!');
+      }
+      return errList;
+    }
+    if (currentType == 'Promise') {
+      if (type == 'Promise') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'Date') {
+      if (type == 'Date') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'RegExp') {
+      if (type == 'RegExp') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+
+    return errList;
+  };
+
+  /**
+   * 校验参数类型
+   *
+   * @param  {string} methodName 方法名称
+   * @param  {Array}  argNames   参数名称列表
+   * @param  {Array}  argValues  参数值列表
+   * @return {bool}              校验结果
+   */
+  var checkArgsType = function checkArgsType(methodName, argValues) {
+    var argList = void 0;
+
+    if (getType(methodName) == 'Array') {
+      // 回调函数的校验    methodName[0] 方法的名字 methodName[1]该回调函数在方法的参数索引
+      argList = types[methods[methodName[0]].input[methodName[1]]].input;
+      // 拿到这个回调函数的参数定义
+    } else {
+      argList = methods[methodName].input;
+    }
+    // todo 函数可能多传参数
+    argList.forEach(function (argType, index) {
+      var errList = checkType(argValues[index], argType, []);
+      if (errList && errList.length > 0) {
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+      }
+    });
+    if (argValues.length > argList.length) {
+      __CML_ERROR__("[" + methodName + "]\u65B9\u6CD5\u53C2\u6570\u4F20\u9012\u4E2A\u6570\u4E0E\u5B9A\u4E49\u4E0D\u7B26");
+    }
+  };
+
+  /**
+   * 校验返回值类型
+   *
+   * @param  {string} methodName 方法名称
+   * @param  {*}      returnData 返回值
+   * @return {bool}              校验结果
+   */
+  var checkReturnType = function checkReturnType(methodName, returnData) {
+    var output = void 0;
+    if (getType(methodName) == 'Array') {
+      output = types[methods[methodName[0]].input[methodName[1]]].output;
+    } else {
+      output = methods[methodName].output;
+    }
+    // todo output 为什么可以是数组
+    // if (output instanceof Array) {
+    //   output.forEach(type => {
+
+    //     //todo 而且是要有一个校验不符合就check失败？ 应该是有一个校验通过就可以吧
+    //     checkType(returnData, type,[])
+    //   });
+    // }
+    var errList = checkType(returnData, output, []);
+    if (errList && errList.length > 0) {
+      __CML_ERROR__("\n      \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u8FD4\u56DE\u503C\n      \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+    }
+  };
+
+  /**
+   * 创建warpper
+   *
+   * @param  {string}   funcName   方法名称
+   * @param  {Function} originFunc 原有方法
+   * @return {Function}            包裹后的方法
+   */
+  var createWarpper = function createWarpper(funcName, originFunc) {
+    return function () {
+      var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
+        // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
+        if (getType(arg) == 'Function') {
+          return createWarpper([funcName, index], arg);
+        }
+        return arg;
+      });
+
+      checkArgsType(funcName, argValues);
+
+      var result = originFunc.apply(this, argValues);
+
+      checkReturnType(funcName, result);
+      return result;
+    };
+  };
+
+  // 获取所有方法
+  var keys = Object.keys(methods);
+
+  // 处理包装方法
+  keys.forEach(function (key) {
+    var originFunc = obj[key];
+    if (!originFunc) {
+      __CML_ERROR__('method [' + key + '] not found!');
+      return;
+    }
+
+    if (obj.hasOwnProperty(key)) {
+      obj[key] = createWarpper(key, originFunc);
+    } else {
+      Object.getPrototypeOf(obj)[key] = createWarpper(key, originFunc);
+    }
+  });
+
+  return obj;
+};
+
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "getLocationInfo",
+    value: function getLocationInfo(cb) {
+      swan.getLocation({
+        type: 'wgs84',
+        success: function success(res) {
+          var latitude = +res.latitude;
+          var longitude = +res.longitude;
+          cb({
+            errno: 0,
+            errMsg: '',
+            data: {
+              lat: latitude,
+              lng: longitude
+            }
+          });
+        },
+
+        fail: function fail() {
+          cb({
+            errno: -1,
+            errMsg: 'getLocation failed',
+            data: {
+              lat: 0,
+              lng: 0
+            }
+          });
+        }
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
+
+(0, _util.copyProtoProperty)(exports.default);
+
+/***/ }),
+
+/***/ "./node_modules/chameleon-api/src/interfaces/getLocationInfo/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getLocationInfo;
+
+var _index = __webpack_require__("./node_modules/chameleon-api/src/interfaces/getLocationInfo/index.interface");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function getLocationInfo() {
+  return new Promise(function (resolve, reject) {
+    _index2.default.getLocationInfo(function (res) {
+      if (res.errno === 0) {
+        resolve(res.data);
+      } else {
+        reject(res.errMsg);
+      }
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./node_modules/chameleon-api/src/interfaces/getRect/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/getRect/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -1760,7 +2512,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["UserInfoInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -2050,7 +2804,40 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "getRect",
+    value: function getRect(refObj, cb) {
+      var query = swan.createSelectorQuery().in(refObj.context);
+      query.select("#" + refObj.id).boundingClientRect();
+      query.exec(function (res) {
+        swan.getSystemInfo({
+          success: function success(systemRes) {
+            var windowWidth = systemRes.windowWidth;
+            var scale = 750 / windowWidth;
+            var rectObj = {
+              width: res[0] && res[0].width * scale || 0,
+              height: res[0] && res[0].height * scale || 0,
+              left: res[0] && res[0].left * scale || 0,
+              top: res[0] && res[0].top * scale || 0,
+              right: res[0] && res[0].right * scale || 0,
+              bottom: res[0] && res[0].bottom * scale || 0
+            };
+            cb(rectObj);
+          }
+        });
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -2086,7 +2873,15 @@ function getRect(ref, context) {
 /***/ "./node_modules/chameleon-api/src/interfaces/getSystemInfo/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/getSystemInfo/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -2116,7 +2911,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["UserInfoInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -2406,7 +3203,46 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "getSystemInfo",
+    value: function getSystemInfo(cb) {
+      swan.getSystemInfo({
+        success: function success(res) {
+          var os = /android/i.test(res.system) ? 'android' : 'ios';
+          var viewportWidth = res.windowWidth;
+          var viewportHeight = res.windowHeight;
+          var systemInfo = {
+            os: os,
+            env: 'baidu',
+            viewportWidth: viewportWidth,
+            viewportHeight: viewportHeight,
+            extraParams: res || {}
+          };
+          cb(systemInfo);
+        },
+        fail: function fail(err) {
+          var systemInfo = {
+            os: '',
+            env: 'baidu',
+            viewportWidth: 0,
+            viewportHeight: 0,
+            extraParams: {}
+          };
+          cb(systemInfo);
+        }
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -2457,7 +3293,15 @@ function getSystemInfo() {
 /***/ "./node_modules/chameleon-api/src/interfaces/navigateTo/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/navigateTo/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -2481,7 +3325,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["UtilsInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -2771,7 +3617,33 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "navigateTo",
+    value: function navigateTo(opt) {
+      var path = opt.path,
+          query = opt.query;
+
+
+      if (path.indexOf('?') === -1) {
+        query = '?' + query;
+      }
+
+      path = path + query;
+      swan.navigateTo({
+        url: path
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -2812,7 +3684,15 @@ function navigateTo(opt) {
 /***/ "./node_modules/chameleon-api/src/interfaces/px2cpx/getWidth.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/px2cpx/getWidth.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -2830,7 +3710,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["getWidthInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -3120,7 +4002,25 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "getWidth",
+    value: function getWidth() {
+      var _swan$getSystemInfoSy = swan.getSystemInfoSync(),
+          windowWidth = _swan$getSystemInfoSy.windowWidth;
+
+      return windowWidth;
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -3157,7 +4057,15 @@ function px2cpx(px) {
 /***/ "./node_modules/chameleon-api/src/interfaces/setTitle/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/setTitle/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -3175,7 +4083,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["setTitleInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -3465,7 +4375,24 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "setTitle",
+    value: function setTitle(title) {
+      swan.setNavigationBarTitle({
+        title: title
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -3496,7 +4423,15 @@ function setTitle() {
 /***/ "./node_modules/chameleon-api/src/interfaces/showToast/index.interface":
 /***/ (function(module, exports, __webpack_require__) {
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-api/src/interfaces/showToast/index.interface";
 var __CML_ERROR__ = function throwError(content) {
@@ -3519,7 +4454,9 @@ var __CHECK__DEFINES__ = {
       }
     }
   },
-  "classes": {}
+  "classes": {
+    "Method": ["uiInterface"]
+  }
 };
 var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   var className = obj.constructor.name;
@@ -3809,7 +4746,29 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   return obj;
 };
 
-null;
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "showToast",
+    value: function showToast(opt) {
+      var message = opt.message,
+          duration = opt.duration;
+
+      swan.showToast({
+        icon: 'none',
+        title: message,
+        duration: duration
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method());
 
 (0, _util.copyProtoProperty)(exports.default);
 
@@ -3928,7 +4887,7 @@ function parseQuery(obj) {
 }
 
 function queryStringify(obj) {
-  var str = '&';
+  var str = '';
   var keys = null;
   if (obj && Object.keys(obj).length > 0) {
     keys = Object.keys(obj);
@@ -3955,15 +4914,21 @@ function queryParse() {
 }
 
 function isNeedApiPrefix(url) {
-  return (/^\/[^/]/.test(url)
-  );
+  return !/^(https?\:\/\/)|^(\/\/)/.test(url);
 }
 
-function addApiPrefix(url) {
-  if (true) {
-    return "http://172.22.137.218:5556" + url;
+function addApiPrefix(url, domainkey) {
+  var domainMap = {"apiPrefix":"http://172.22.137.218:5556"};
+  // 新版cli
+  if (domainMap) {
+    var prefix = domainMap[domainkey] || "http://172.22.137.218:5556";
+    return prefix + url;
+  } else {
+    // 老版本配置apiPrefix
+    if (true) {
+      return "http://172.22.137.218:5556" + url;
+    }
   }
-  return url;
 }
 
 function tryJsonParse(some) {
@@ -5710,6 +6675,10 @@ var _OptTransformer = __webpack_require__("./node_modules/chameleon-runtime/src/
 
 var _OptTransformer2 = _interopRequireDefault(_OptTransformer);
 
+var _RuntimeWidget = __webpack_require__("./node_modules/chameleon-runtime/src/platform/common/proto/RuntimeWidget.js");
+
+var _RuntimeWidget2 = _interopRequireDefault(_RuntimeWidget);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -5728,8 +6697,19 @@ var App = exports.App = function (_BaseCtor) {
 
     _this.cmlType = 'baidu';
 
+    var runtimeWidget = new _RuntimeWidget2.default({
+      platform: _this.cmlType,
+      options: _this.options
+    });
+
     _this.initOptTransformer(_OptTransformer2.default, {
       type: 'app',
+      builtinMixins: {
+        onLaunch: function onLaunch() {
+          // 初始化
+          runtimeWidget.setContext(this).init().start('app-view-render');
+        }
+      },
       needResolveAttrs: ['methods'],
       hooks: _lifecycle2.default.get('baidu.app.hooks'),
       hooksMap: _lifecycle2.default.get('baidu.app.hooksMap')
@@ -5990,13 +6970,17 @@ exports.default = BaseCtor;
 /***/ }),
 
 /***/ "./node_modules/chameleon-runtime/src/platform/common/proto/BaseOptionsTransformer.js":
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _type = __webpack_require__("./node_modules/chameleon-runtime/src/platform/common/util/type.js");
+
+var _warn = __webpack_require__("./node_modules/chameleon-runtime/src/platform/common/util/warn.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -6012,6 +6996,11 @@ var BaseOptionsTransformer = function () {
     this.hooks = config.hooks;
     this.hooksMap = config.hooksMap;
     this.platform = '';
+
+    if (true) {
+      var mix = this.options.mixins;
+      (0, _warn.invariant)((0, _type.type)(mix) === 'Undefined' || (0, _type.type)(mix) === "Array", "mixins expects an Array");
+    }
   }
 
   _createClass(BaseOptionsTransformer, [{
@@ -6088,55 +7077,118 @@ var MiniOptTransformer = function (_BaseOptionsTransform) {
       this.propsName = this.platform ? _KEY2.default.get(this.platform + '.props') : '';
       this.whitelist = this.platform ? _lifecycle2.default.get(this.platform + '.' + this.type + '.whitelist') : [];
 
-      this.needPropsHandler && this.propsHandler();
+      this.needPropsHandler && this.initProps(this.options);
       // 生命周期映射
-      this.lifecycleHandler();
+      this.transferLifecycle(this.options);
+      this.handleMixins(this.options);
+
       // 各端差异化生命周期
       this.extendWhitelistHooks();
 
       // init 顺序很重要
-      this.mergeInjectedMixins();
+      // this.mergeInjectedMixins()
       this.mergeBuiltinMixins();
       this.resolveOptions();
       this.transformHooks();
       this.needResolveAttrs && this.resolveAttrs();
       this.needTransformProperties && this.transformProperties();
+
+      if (this.platform === 'alipay') {
+        delete this.options['computed'];
+      }
     }
 
     /**
        * 处理组件props属性
-       * @param  {Object} obj 组件options
+       * @param  {Object} vmObj 组件options
        * @return {[type]}     [description]
        */
 
   }, {
-    key: 'propsHandler',
-    value: function propsHandler() {
+    key: 'initProps',
+    value: function initProps(vmObj) {
       var _this2 = this;
 
-      var obj = this.options;
-      if (!obj['props']) {
-        return;
-      }
+      if (!vmObj['props']) return;
 
-      Object.getOwnPropertyNames(obj['props']).forEach(function (name) {
-        var self = _this2;
-        var prop = obj['props'][name];
+      Object.getOwnPropertyNames(vmObj['props']).forEach(function (name) {
+        var prop = vmObj['props'][name];
+        // Number: 0
+        // Boolean: false
+        // Array: false
+        // String: ''
+        // Object: null
+        // null: null
+        function make(type) {
+          if (!knowType(type)) {
+            return;
+          }
 
-        if ((0, _type.type)(prop) === 'Object' && prop.hasOwnProperty('default')) {
-          check(prop['default'], prop['type']);
+          switch (type) {
+            case Number:
+              prop = vmObj['props'][name] = {
+                type: Number,
+                default: 0
+              };
+              break;
+            case Boolean:
+              prop = vmObj['props'][name] = {
+                type: Boolean,
+                default: false
+              };
+              break;
+            case Array:
+              prop = vmObj['props'][name] = {
+                type: Array,
+                default: []
+              };
+              break;
+            case String:
+              prop = vmObj['props'][name] = {
+                type: String,
+                default: ''
+              };
+              break;
+            case Object:
+              prop = vmObj['props'][name] = {
+                type: Object,
+                default: null
+              };
+              break;
+            case null:
+              prop = vmObj['props'][name] = {
+                type: null,
+                default: null
+              };
+              break;
+            default:
+              break;
+          }
+        }
 
+        function knowType(type) {
+          return type === Number || type === Boolean || type === Array || type === String || type === Object || type === null;
+        }
+
+        // 处理 props = { a: String, b: Boolean }
+        make(prop);
+
+        if ((0, _type.type)(prop) === 'Object') {
           if (_this2.platform === 'alipay') {
-            obj['props'][name] = prop['default'];
-            // todo 收集自定义事件
+            if (!prop.hasOwnProperty('default')) {
+              // alipay 处理 // 处理 props = { a: {type:String}, b: {type:Boolean} }
+              make(prop.type);
+            }
+
+            vmObj['props'][name] = prop['default'];
           } else {
-            (0, _util.rename)(prop, 'default', 'value');
+            (0, _util.rename)(vmObj['props'][name], 'default', 'value');
           }
         }
       });
 
       if (this.platform !== 'alipay') {
-        (0, _util.rename)(obj, 'props', 'properties');
+        (0, _util.rename)(vmObj, 'props', 'properties');
       }
 
       function check(value, type) {
@@ -6151,49 +7203,62 @@ var MiniOptTransformer = function (_BaseOptionsTransform) {
 
     /**
      * 生命周期映射
-     * @param  {Object} obj 待添加属性对象
+     * @param  {Object} vmObj vm对象
      * @param  {Object} map 映射表
      * @param  {Object} lifecycle 生命周期序列 确保顺序遍历
      * @return {Object}     修改后值
      */
 
   }, {
-    key: 'lifecycleHandler',
-    value: function lifecycleHandler() {
+    key: 'transferLifecycle',
+    value: function transferLifecycle(vmObj) {
       var _this3 = this;
 
       // 将生命周期 键名 处理成 ['_' + key]
       var cmlHooks = _lifecycle2.default.get('cml.hooks').map(function (key) {
         return '_' + key;
       });
-      var obj = this.options;
       var _map = {};
 
       Object.keys(this.hooksMap).forEach(function (key) {
         _map['_' + key] = _this3.hooksMap[key];
 
-        if (obj.hasOwnProperty(key)) {
-          obj['_' + key] = obj[key];
-          delete obj[key];
+        if (vmObj.hasOwnProperty(key)) {
+          vmObj['_' + key] = vmObj[key];
+          delete vmObj[key];
         }
       });
 
       cmlHooks.forEach(function (key) {
         var mapVal = _map[key];
-        var objVal = obj[key];
+        var objVal = vmObj[key];
 
-        if (obj.hasOwnProperty(key)) {
-          if (obj.hasOwnProperty(mapVal)) {
-            if ((0, _type.type)(obj[mapVal]) !== 'Array') {
-              obj[mapVal] = [obj[mapVal], objVal];
+        if (vmObj.hasOwnProperty(key)) {
+          if (vmObj.hasOwnProperty(mapVal)) {
+            if ((0, _type.type)(vmObj[mapVal]) !== 'Array') {
+              vmObj[mapVal] = [vmObj[mapVal], objVal];
             } else {
-              obj[mapVal].push(objVal);
+              vmObj[mapVal].push(objVal);
             }
           } else {
-            obj[mapVal] = [objVal];
+            vmObj[mapVal] = [objVal];
           }
-          delete obj[key];
+          delete vmObj[key];
         }
+      });
+    }
+  }, {
+    key: 'handleMixins',
+    value: function handleMixins(vmObj) {
+      var _this4 = this;
+
+      if (!vmObj.mixins) return;
+
+      var mixins = vmObj.mixins;
+
+      mixins.forEach(function (mix) {
+        // 生命周期映射
+        _this4.transferLifecycle(mix);
       });
     }
 
@@ -6204,7 +7269,7 @@ var MiniOptTransformer = function (_BaseOptionsTransform) {
   }, {
     key: 'extendWhitelistHooks',
     value: function extendWhitelistHooks() {
-      var _this4 = this;
+      var _this5 = this;
 
       var allHooks = this.hooks.concat(this.whitelist);
       var methods = this.options.methods;
@@ -6215,10 +7280,10 @@ var MiniOptTransformer = function (_BaseOptionsTransform) {
 
       allHooks.forEach(function (hook) {
         if ((0, _type.type)(methods[hook]) === 'Function') {
-          if (_this4.options[hook]) {
-            _this4.options[hook].push(methods[hook]);
+          if (_this5.options[hook]) {
+            _this5.options[hook].push(methods[hook]);
           } else {
-            _this4.options[hook] = [methods[hook]];
+            _this5.options[hook] = [methods[hook]];
           }
           delete methods[hook];
         }
@@ -6236,7 +7301,7 @@ var MiniOptTransformer = function (_BaseOptionsTransform) {
         return item;
       });
 
-      this.options.mixins = this.options.mixins ? this.options.mixins.concat(btMixin) : btMixin;
+      this.options.mixins = this.options.mixins ? btMixin.concat(this.options.mixins) : btMixin;
     }
   }, {
     key: 'resolveOptions',
@@ -6306,7 +7371,7 @@ var MiniOptTransformer = function (_BaseOptionsTransform) {
       this.hooks.forEach(function (key) {
         var hooksArr = self.options[key];
         hooksArr && (self.options[key] = function () {
-          var _this5 = this;
+          var _this6 = this;
 
           for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
             args[_key] = arguments[_key];
@@ -6329,7 +7394,7 @@ var MiniOptTransformer = function (_BaseOptionsTransform) {
           }
           Promise.resolve().then(function () {
             asyncQuene.forEach(function (fn) {
-              fn.apply(_this5, args);
+              fn.apply(_this6, args);
             });
           });
           return result;
@@ -6359,8 +7424,10 @@ var MiniOptTransformer = function (_BaseOptionsTransform) {
     value: function transformProperties() {
       var originProperties = this.options[this.propsName];
       var newProps = {};
+
       (0, _util.enumerableKeys)(originProperties).forEach(function (key) {
         var rawFiled = originProperties[key];
+
         var rawObserver = rawFiled.observer;
         var newFiled = null;
         if (typeof rawFiled === 'function') {
@@ -6752,10 +7819,12 @@ function setDataFactory(context, self) {
   };
 
   function _render(data) {
-    // style 处理
-    (0, _style.styleHandle)(data);
+    if ((0, _type.type)(context.setData) === 'Function') {
+      // style 处理
+      (0, _style.styleHandle)(data);
 
-    context.setData(data, walkUpdatedCb(context));
+      context.setData(data, walkUpdatedCb(context));
+    }
   }
 }
 
@@ -7083,13 +8152,10 @@ var _Trie = __webpack_require__("./node_modules/chameleon-runtime/src/platform/c
 
 var _Trie2 = _interopRequireDefault(_Trie);
 
-var _util = __webpack_require__("./node_modules/chameleon-runtime/src/platform/common/util/util.js");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function diff(newData, oldData) {
   return newData;
-
   var diffData = {};
   var newDataFlag = [];
   var oldDataFlag = [];
@@ -7116,47 +8182,12 @@ function diff(newData, oldData) {
     trie.insertData(path);
   });
 
-  var updateFlags = trie.getShortPaths().map(function (path) {
-    // 获取parent path
-    var ary = path.split('.');
-
-    var len = ary.length;
-    var last = ary[len - 1];
-    var pattern = /\[[0-9]+\]$/;
-
-    if (pattern.test(last)) {
-      // 数组
-      ary[len - 1] = last.replace(pattern, '');
-    } else {
-      if (len > 1) {
-        ary.pop();
-      }
-    }
-
-    return ary.join('.');
-  }).filter(function (item) {
+  trie.getShortPaths().filter(function (item) {
     return item;
+  }).forEach(function (path) {
+    // update delete item
+    updateDiff('', path);
   });
-
-  updateFlags.forEach(function (path) {
-    if (path) {
-      var nVal = newData[path];
-      updateDiff(nVal, path);
-    }
-  });
-
-  return diffData;
-
-  function hasFlag(collectAry, path) {
-    return collectAry.indexOf(path);
-  }
-
-  function deleFlag(collectAry, path) {
-    var index = hasFlag(collectAry, path);
-    if (index !== -1) {
-      collectAry.splice(index, 1);
-    }
-  }
 
   function updateDiff(val, path) {
     if (val !== undefined) {
@@ -7164,56 +8195,78 @@ function diff(newData, oldData) {
     }
   }
 
-  function check(str) {
-    if (!str) {
-      console.error('pathStr should not be null!');
-      return false;
-    }
-    return true;
+  return diffData;
+}
+
+function hasFlag(collectAry, path) {
+  return collectAry.indexOf(path);
+}
+
+function deleFlag(collectAry, path) {
+  var index = hasFlag(collectAry, path);
+  if (index !== -1) {
+    collectAry.splice(index, 1);
   }
+}
 
-  function flatten(d) {
-    var pathStr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-    var collectAry = arguments[2];
-    var flatData = arguments[3];
+function check(str) {
+  if (!str) {
+    console.error('pathStr should not be null!');
+    return false;
+  }
+  return true;
+}
 
-    if ((0, _type.type)(d) === 'Array') {
-      check(pathStr);
+function flatten(d) {
+  var pathStr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+  var collectAry = arguments[2];
+  var flatData = arguments[3];
 
-      if (d.length === 0) {
-        collectAry.push(pathStr);
-        if (flatData) {
-          flatData[pathStr] = d;
-        }
-        return;
-      }
+  if ((0, _type.type)(d) === 'Array') {
+    check(pathStr);
 
-      d.forEach(function (item, i) {
-        var path = pathStr + '[' + i + ']';
-        flatten(item, path, collectAry, flatData);
-      });
-    } else if ((0, _type.type)(d) === 'Object') {
-      if (Object.keys(d).length === 0) {
-        collectAry.push(pathStr);
-        if (flatData) {
-          flatData[pathStr] = d;
-        }
-        return;
-      }
-
-      Object.keys(d).forEach(function (k) {
-        var v = d[k];
-        var path = pathStr ? pathStr + '.' + k : k;
-        flatten(v, path, collectAry, flatData);
-      });
-    } else {
-      check(pathStr);
+    if (d.length === 0) {
       collectAry.push(pathStr);
       if (flatData) {
         flatData[pathStr] = d;
       }
+      return;
+    }
+
+    d.forEach(function (item, i) {
+      var path = pathStr + '[' + i + ']';
+      flatten(item, path, collectAry, flatData);
+    });
+  } else if ((0, _type.type)(d) === 'Object') {
+    if (Object.keys(d).length === 0) {
+      collectAry.push(pathStr);
+      if (flatData) {
+        flatData[pathStr] = d;
+      }
+      return;
+    }
+
+    Object.keys(d).forEach(function (k) {
+      var v = d[k];
+      var path = pathStr ? isNum(k) ? pathStr + '[' + k + ']' : pathStr + '.' + k : k;
+      flatten(v, path, collectAry, flatData);
+    });
+  } else {
+    check(pathStr);
+    collectAry.push(pathStr);
+    if (flatData) {
+      flatData[pathStr] = d;
     }
   }
+}
+
+function isNaN(value) {
+  var n = Number(value);
+  return n !== n;
+}
+
+function isNum(value) {
+  return !isNaN(Number(value));
 }
 
 /**
@@ -7298,22 +8351,22 @@ var LIFECYCLE = {
       whitelist: ['onError', 'onPageNotFound']
     },
     page: {
-      hooks: ['onLoad', 'onReady', 'onShow', 'onHide', 'onUnload'],
+      hooks: ['onLoad', 'onShow', 'onReady', 'onHide', 'onUnload'],
       hooksMap: {
         'beforeCreate': 'onLoad',
         'created': 'onLoad',
-        'beforeMount': 'onShow',
-        'mounted': 'onReady',
+        'beforeMount': 'onLoad',
+        'mounted': 'onShow',
         'beforeDestroy': 'onUnload',
         'destroyed': 'onUnload'
       },
-      whitelist: ['onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onPageScroll', 'onTabItemTap']
+      whitelist: ['onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onPageScroll', 'onTabItemTap', 'onReady', 'onHide']
     },
     component: {
       hooks: ['created', 'attached', 'ready', 'detached'],
       hooksMap: {
         'beforeCreate': 'created',
-        'created': 'created',
+        'created': 'attached',
         'beforeMount': 'attached',
         'mounted': 'ready',
         'beforeDestroy': 'detached',
@@ -7340,12 +8393,12 @@ var LIFECYCLE = {
       hooksMap: {
         'beforeCreate': 'onLoad',
         'created': 'onLoad',
-        'beforeMount': 'onShow',
-        'mounted': 'onReady',
+        'beforeMount': 'onLoad',
+        'mounted': 'onShow',
         'beforeDestroy': 'onUnload',
         'destroyed': 'onUnload'
       },
-      whitelist: ['onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onTitleClick']
+      whitelist: ['onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onTitleClick', 'onReady', 'onHide']
     },
     component: {
       hooks: ['didMount', 'didUnmount'],
@@ -7378,19 +8431,19 @@ var LIFECYCLE = {
       hooksMap: {
         'beforeCreate': 'onLoad',
         'created': 'onLoad',
-        'beforeMount': 'onShow',
-        'mounted': 'onReady',
+        'beforeMount': 'onLoad',
+        'mounted': 'onShow',
         'beforeDestroy': 'onUnload',
         'destroyed': 'onUnload'
       },
-      whitelist: ['onForceReLaunch', 'onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onShareAppMessage', 'onPageScroll', 'onTabItemTap']
+      whitelist: ['onForceReLaunch', 'onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onShareAppMessage', 'onPageScroll', 'onTabItemTap', 'onReady', 'onHide']
     },
     component: {
       hooks: ['created', 'attached', 'ready', 'detached'],
       hooksMap: {
         'beforeCreate': 'created',
-        'created': 'created',
-        'beforeMount': 'created',
+        'created': 'attached',
+        'beforeMount': 'attached',
         'mounted': 'ready',
         'beforeDestroy': 'detached',
         'destroyed': 'detached'
@@ -7560,9 +8613,22 @@ function pxTransform(s) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 exports.type = type;
+exports.isObject = isObject;
 function type(n) {
   return Object.prototype.toString.call(n).slice(8, -1);
+}
+
+/**
+ * Quick object check - this is primarily used to tell
+ * Objects from primitive values when we know the value
+ * is a JSON-compliant type.
+ */
+function isObject(obj) {
+  return obj !== null && (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === 'object';
 }
 
 /***/ }),
@@ -7576,6 +8642,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.propToFn = propToFn;
 exports.rename = rename;
 exports.normalizeMap = normalizeMap;
 exports.merge = merge;
@@ -7589,6 +8658,17 @@ exports.enumerableKeys = enumerableKeys;
 exports.flatten = flatten;
 
 var _type = __webpack_require__("./node_modules/chameleon-runtime/src/platform/common/util/type.js");
+
+// transfer 对象的`${name}`属性值 to function
+function propToFn(obj, name) {
+  if (!obj) return;
+
+  var _temp = obj[name];
+
+  obj[name] = function () {
+    return _extends({}, _temp);
+  };
+}
 
 /**
  * 对象键名重定义
@@ -7847,6 +8927,45 @@ function flatten() {
   flattenRe(obj);
 
   return ret;
+}
+
+/***/ }),
+
+/***/ "./node_modules/chameleon-runtime/src/platform/common/util/warn.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.fail = fail;
+exports.invariant = invariant;
+exports.deprecated = deprecated;
+var OBFUSCATED_ERROR = exports.OBFUSCATED_ERROR = "An invariant failed, however the error is obfuscated because this is an production build.";
+
+function fail(message) {
+    invariant(false, message);
+    throw "X"; // unreachable
+}
+
+function invariant(check, message) {
+    if (!check) throw new Error("[chameleon-runtime] " + (message || OBFUSCATED_ERROR));
+}
+
+/**
+ * Prints a deprecation message, but only one time.
+ * Returns false if the deprecated message was already printed before
+ */
+var deprecatedMessages = [];
+
+function deprecated(msg, thing) {
+    if (false) return false;
+    if (thing) {
+        return deprecated("'" + msg + "', use '" + thing + "' instead.");
+    }
+    if (deprecatedMessages.indexOf(msg) !== -1) return false;
+    deprecatedMessages.push(msg);
+    console.error("[chameleon-runtime] Deprecated: " + msg);
+    return true;
 }
 
 /***/ }),
@@ -12485,10 +13604,45 @@ module.exports = __webpack_require__.p + "static/img/icon-api_e8d66df.png";
 
 /***/ }),
 
+/***/ "./src/assets/images/chameleon.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/chameleon_83ee00e.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/component/kind/content.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/content_615612b.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/icons/icon-arrow-up.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/icon-arrow-up_56472bc.png";
+
+/***/ }),
+
+/***/ "./src/pages/demo/yanxuan/assets/getHomeImgList.json":
+/***/ (function(module, exports) {
+
+module.exports = {"code":0,"data":{"bannerImgList":[{"imgUrl":"http://cmljs.org/assets/images/yanxuan/288bf88910aeba6d89689b99bec93133.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/3804d6f02516e59927e07f091c8f1b27.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/ce535663c045b5e877540b0e0be16bb3.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/06af49f2a59b00ad080aeb03fb8d408f.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/7c94908d8e197cc99e942324c5cc526e.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/96cf611743d7b382c11031f29152fa04.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/973e299ac2e80c03acfb5d2d4501231c.jpg?imageView&quality=75&thumbnail=750x0"}],"classifyImgList":[{"imgUrl":"http://cmljs.org/assets/images/yanxuan/9cdedb90a09cf061cfa19f3e21321c73.png","title":"居家"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/57e39dc404f1ce90b959d76b9abe4314.png","title":"鞋包分配"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/2b580df265124836dcd96b1c88068127.png","title":"服装"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/a53fff4d3cf0f4dedd78a8a0f2b129c9.png","title":"电器"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/6147b31404d5ddf1207a8363605aebf9.png","title":"婴童"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/8d29af79c24d78a3dcf7d61249702dcf.png","title":"饮食"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/2b9a25b6ea81655eb431944d3d57185f.png","title":"洗护"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/293f2341415d70bf7c6460c77fa07f41.png","title":"餐厨"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/2fbba45f945ee592d5470269d9e61f1c.png","title":"文体"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/54947b070f8af594dd46069f2d3bdd34.png","title":"特色区"}],"disscountPriceImgUrl":"http://cmljs.org/assets/images/yanxuan/15468670774810413.gif?imageView&thumbnail=750x0&quality=75","special":{"newPerson":"http://cmljs.org/assets/images/yanxuan/15468671496890421.png","temai":"http://cmljs.org/assets/images/yanxuan/15468671650860425.png","qingdan":"http://cmljs.org/assets/images/yanxuan/15468671650860425.png"}}}
+
+/***/ }),
+
+/***/ "./src/pages/demo/yanxuan/assets/yanxuan.json":
+/***/ (function(module, exports) {
+
+module.exports = {"errno":"0","errmsg":"","data":{"result":{"banners":[{"title":"","url":"http://cmljs.org/assets/images/yanxuan/630439320dae9f1ce3afef3c39721383.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/5100f0176e27a167cc2aea08b1bd11d8.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/banner-1.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/banner-8.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/banner-2.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/banner-4.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/banner-6.jpg"}],"makers":{"title":"品牌制造商直供","list":[{"name":"新秀丽制造商","price":"59","state":"上新","bg":"http://cmljs.org/assets/images/yanxuan/ppbg-1.jpg","url":"https%3A%2F%2Fm.you.163.com%2Fitem%2Fmanufacturer%3FtagId%3D1001037%26page%3D1%26size%3D100"},{"name":"MUJI制造商","price":"12.9","state":"上新","bg":"http://cmljs.org/assets/images/yanxuan/ppbg-2.jpg","url":"https%3A%2F%2Fm.you.163.com%2Fitem%2Fmanufacturer%3FtagId%3D1001000%26page%3D1%26size%3D100"},{"name":"CK制造商","price":"29","state":"上新","bg":"http://cmljs.org/assets/images/yanxuan/ppbg-3.jpg","url":"https%3A%2F%2Fm.you.163.com%2Fitem%2Fmanufacturer%3FtagId%3D1026000%26page%3D1%26size%3D100"},{"name":"Adidas制造商","price":"29","bg":"http://cmljs.org/assets/images/yanxuan/75523d4274d85825ece16370cdb1693f.jpg","url":"https%3A%2F%2Fm.you.163.com%2Fitem%2Fmanufacturer%3FtagId%3D1001003%26page%3D1%26size%3D100"}]},"recommend":{"head1":{"tlt":"周一周四 · 新品发布","tltBg":"http://cmljs.org/assets/images/yanxuan/bg-new.png","url":""},"goods1":[{"tlt":"日式和风声波式电动牙刷","img":"http://cmljs.org/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png?imageView&quality=85&thumbnail=330x330","info":"进口刷毛，专利技术","price":"119"},{"tlt":"小馒头 多色双肩包","img":"http://cmljs.org/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png?imageView&quality=85&thumbnail=330x330","info":"奶油色泽，小巧减龄","price":"79"},{"tlt":"多功能商务双肩包","img":"http://cmljs.org/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png?imageView&quality=85&thumbnail=330x330","info":"17个功能分区，内置分层收纳","price":"334"},{"tlt":"切尔西牛皮女靴","img":"http://cmljs.org/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png?imageView&quality=85&thumbnail=330x330","info":"经典牛皮切尔西，时尚帅气","price":"289"},{"tlt":"清心花茶壶套装","img":"http://cmljs.org/assets/images/yanxuan/a2a0f13385d67220b29e7a1124a361e6.png?imageView&quality=85&thumbnail=330x330","info":"明亮通透，滤茶迅速","price":"119"},{"tlt":"全棉色织磨毛四件套","img":"http://cmljs.org/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png?imageView&quality=85&thumbnail=330x330","info":"优雅色织，温暖磨毛","price":"299"},{"tlt":"黑凤梨 20寸PC膜拉链登机箱","img":"http://cmljs.org/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png?imageView&quality=85&thumbnail=330x330","info":"热卖9万只，网易人手1只","price":"185"},{"tlt":"日式和风敞口保温杯","img":"http://cmljs.org/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png?imageView&quality=85&thumbnail=330x330","info":"真空隔热，保温保冷","price":"32"}],"head2":{"tlt":"周一周四 · 新品发布","tltBg":"http://cmljs.org/assets/images/yanxuan/bg-new.png","url":""},"goods2":[{"tlt":"日式和风声波式电动牙刷","img":"http://cmljs.org/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png?imageView&quality=85&thumbnail=330x330","info":"进口刷毛，专利技术","price":"119"},{"tlt":"小馒头 多色双肩包","img":"http://cmljs.org/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png?imageView&quality=85&thumbnail=330x330","info":"奶油色泽，小巧减龄","price":"79"},{"tlt":"多功能商务双肩包","img":"http://cmljs.org/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png?imageView&quality=85&thumbnail=330x330","info":"17个功能分区，内置分层收纳","price":"334"},{"tlt":"切尔西牛皮女靴","img":"http://cmljs.org/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png?imageView&quality=85&thumbnail=330x330","info":"经典牛皮切尔西，时尚帅气","price":"289"},{"tlt":"清心花茶壶套装","img":"http://cmljs.org/assets/images/yanxuan/a2a0f13385d67220b29e7a1124a361e6.png?imageView&quality=85&thumbnail=330x330","info":"明亮通透，滤茶迅速","price":"119"},{"tlt":"全棉色织磨毛四件套","img":"http://cmljs.org/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png?imageView&quality=85&thumbnail=330x330","info":"优雅色织，温暖磨毛","price":"299"},{"tlt":"黑凤梨 20寸PC膜拉链登机箱","img":"http://cmljs.org/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png?imageView&quality=85&thumbnail=330x330","info":"热卖9万只，网易人手1只","price":"185"},{"tlt":"日式和风敞口保温杯","img":"http://cmljs.org/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png?imageView&quality=85&thumbnail=330x330","info":"真空隔热，保温保冷","price":"32"}]},"goods":[{"tlt":"日式和风敞口保温杯","img":"http://cmljs.org/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png?imageView&quality=85&thumbnail=330x330","info":"真空隔热，保温保冷","url":"","price":"32"},{"tlt":"切尔西牛皮女靴","img":"http://cmljs.org/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png?imageView&quality=85&thumbnail=330x330","info":"奶油色泽，小巧减龄","url":"","price":"32"},{"tlt":"小馒头多色双肩包","img":"http://cmljs.org/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png?imageView&quality=85&thumbnail=330x330","info":"奶油色泽，小巧减龄","url":"","price":"79"},{"tlt":"全棉色织磨毛四件套","img":"http://cmljs.org/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png?imageView&quality=85&thumbnail=330x330","info":"优雅色织，温暖磨毛","url":"","price":"299"},{"tlt":"日式和风声波式电动牙刷","img":"http://cmljs.org/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png?imageView&quality=85&thumbnail=330x330","info":"进口刷毛，专利技术","url":"","price":"119"},{"tlt":"多功能商务双肩包","img":"http://cmljs.org/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png?imageView&quality=85&thumbnail=330x330","info":"17个功能分区，内置分层收纳","url":"","price":"334"},{"tlt":"黑凤梨20寸PC膜拉链登机箱","img":"http://cmljs.org/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png?imageView&quality=85&thumbnail=330x330","info":"热卖9万只，网易人手1只","url":"","price":"185"},{"tlt":"日式蓬软太鼓抱枕","img":"http://cmljs.org/assets/images/yanxuan/ad953e16ad8c33b714e7af941ce8cd56.png?imageView&quality=85&thumbnail=330x330","info":"萌趣太鼓造型 软糯轻柔回弹","url":"","price":"29"},{"tlt":"可水洗抗菌防螨丝羽绒枕","img":"http://cmljs.org/assets/images/yanxuan/a6c9e142fd008b3734c690a71a78ae5b.png?imageView&quality=85&thumbnail=330x330","info":"进口防螨布，热销50万件","url":"","price":"99"},{"tlt":"双宫茧桑蚕丝被 空调被","img":"http://cmljs.org/assets/images/yanxuan/6b341648f59d0c3eb48fa81e1d2de06e.png?imageView&quality=85&thumbnail=330x330","info":"一级桑蚕丝，吸湿透气柔软","url":"","price":"479"},{"tlt":"怀抱休闲椅组合（皮款）","img":"http://cmljs.org/assets/images/yanxuan/b5289125e9b55cf72e9a9623d006415e.png?imageView&quality=85&thumbnail=330x330","info":"葛优躺神器皮款","url":"","price":"3999"},{"tlt":"欧式哑光餐具套装","img":"http://cmljs.org/assets/images/yanxuan/431e86c88b4a6c9f065d1d8abea6b603.png?imageView&quality=85&thumbnail=330x330","info":"德化白瓷，坚实耐用","url":"","price":"189"},{"tlt":"清新两用杯","img":"http://cmljs.org/assets/images/yanxuan/431f5d142e3dd9946dc8e38c2aa3cd34.png?imageView&quality=85&thumbnail=330x330","info":"办公杯优选 轻松饮茶","url":"","price":"52"},{"tlt":"两带式男/女款拖鞋","img":"http://cmljs.org/assets/images/yanxuan/7d1c130c7d80edf824e4218c6829b7c8.png?imageView&quality=85&thumbnail=330x330","info":"鞋杯随脚型而变，舒适呵护","url":"","price":"69.9"}],"topics":[{"name":"严选look","img":"http://cmljs.org/assets/images/yanxuan/15030393722652401.jpg"},{"name":"严选推荐","img":"http://cmljs.org/assets/images/yanxuan/d943675462a06f817d33062d4eb059f5.jpg"},{"name":"丁磊私物推荐","img":"http://cmljs.org/assets/images/yanxuan/1de4da49367dd7c01af1f7a2b23b0237.jpg"},{"name":"挑款师推荐","img":"http://cmljs.org/assets/images/yanxuan/437cc656ff529f8f84db6efc48df9bf4.png"}],"articles":[{"auther":"严选推荐","autherimg":"http://cmljs.org/assets/images/yanxuan/3d860cbf663253590da6a64ff07f9919.png?imageView&thumbnail=64y64","tlt":"年中扫一扫，下半年运势好","info":"6个家庭清洁小技巧","price":"6.9","img":"http://cmljs.org/assets/images/yanxuan/5a1df92d48fa3214bec9bb40ab067683.jpg"},{"auther":"服装组：小服","autherimg":"http://cmljs.org/assets/images/yanxuan/15041772608140418.png?imageView&thumbnail=64y64","tlt":"小姐姐们的运动衣提前上架啦","info":"前两天推男式运动T恤时，就有小伙伴在专题评论里，问小姐姐们的运动衣在哪儿。","price":"","img":["http://cmljs.org/assets/images/yanxuan/15041772896010423.jpg","http://cmljs.org/assets/images/yanxuan/15041772789070419.jpg","http://cmljs.org/assets/images/yanxuan/15041772808640420.jpg"]},{"auther":"居家组：朵朵","autherimg":"http://cmljs.org/assets/images/yanxuan/15040896357740404.png?imageView&thumbnail=64y64","tlt":"初秋，最想用它来裸睡","info":"连续下了几场雨，杭州的早晚，已透出几丝凉意。再睡席子便有点凉了，于是周末从柜子翻...","price":"","img":["http://cmljs.org/assets/images/yanxuan/15040927525260414.jpg","http://cmljs.org/assets/images/yanxuan/15040927586650416.jpg","http://cmljs.org/assets/images/yanxuan/15040927556820415.jpg"]},{"auther":"严选推荐","autherimg":"http://cmljs.org/assets/images/yanxuan/3d860cbf663253590da6a64ff07f9919.png?imageView&thumbnail=64y64","tlt":"不为繁华易匠心","info":"那些值得珍藏的严选手作好物","price":"29","img":"http://cmljs.org/assets/images/yanxuan/4d72145e48e65ee3deaf2e1403e6ec73.jpg"}],"classes":["推荐区","家装区","居家","餐厨","配件","服装","电器","洗护","杂货","饮食","婴童","志趣"],"subclasses":[{"name":"中秋系列","img":"http://cmljs.org/assets/images/yanxuan/82ae05c313b93355239ca1795917a5ac.png?imageView&quality=85&thumbnail=144x144"},{"name":"超值套装","img":"http://cmljs.org/assets/images/yanxuan/bd6f7deba69c8af2f6bb80025d7b98de.png?imageView&quality=85&thumbnail=144x144"},{"name":"热卖爆品","img":"http://cmljs.org/assets/images/yanxuan/c3418cc60d3968263c5b2ac7fb153c34.png?imageView&quality=85&thumbnail=144x144"},{"name":"999+好评","img":"http://cmljs.org/assets/images/yanxuan/87d1cb1bc196c5775b17788aea1c2239.png?imageView&quality=85&thumbnail=144x144"},{"name":"boss推荐","img":"http://cmljs.org/assets/images/yanxuan/fbee769af73c0f63f6120eb27ff3ce96.png?imageView&quality=85&thumbnail=144x144"},{"name":"明星推荐","img":"http://cmljs.org/assets/images/yanxuan/7dea8f7e0e706804c3307504e2e7c463.png?imageView&quality=85&thumbnail=144x144"},{"name":"黑凤梨系列","img":"http://cmljs.org/assets/images/yanxuan/a4a14669ce1fa497aece9a20c669196e.png?imageView&quality=85&thumbnail=144x144"},{"name":"趣味粉系列","img":"http://cmljs.org/assets/images/yanxuan/87fc01e5876482d521ecca13aea42653.png?imageView&quality=85&thumbnail=144x144"}]}}}
+
+/***/ }),
+
 /***/ "./src/router.config.json":
 /***/ (function(module, exports) {
 
-module.exports = {"mode":"hash","domain":"https://api.chameleon.com","routes":[{"url":"/","path":"/pages/index/index","name":"首页","mock":"index.php"},{"name":"com","url":"/pages/com/com","path":"/pages/com/com","mock":"index.php"},{"name":"api","url":"/pages/api/api","path":"/pages/api/api","mock":"index.php"},{"name":"api","url":"/pages/demo/demo","path":"/pages/demo/demo","mock":"index.php"},{"name":"chooseImage","url":"/pages/api/sub-pages/chooseImage","path":"/pages/api/sub-pages/chooseImage","mock":"index.php"},{"name":"animation","url":"/pages/api/sub-pages/animation","path":"/pages/api/sub-pages/animation","mock":"index.php"},{"name":"request","url":"/pages/api/sub-pages/request","path":"/pages/api/sub-pages/request","mock":"index.php"},{"name":"webSocket","url":"/pages/api/sub-pages/webSocket","path":"/pages/api/sub-pages/webSocket","mock":"index.php"},{"name":"navigate","url":"/pages/api/sub-pages/navigate","path":"/pages/api/sub-pages/navigate","mock":"index.php"},{"name":"list","url":"/pages/com/base/list/list","path":"/pages/com/base/list/list","mock":"index.php"},{"name":"scroller","url":"/pages/com/base/scroller/scroller","path":"/pages/com/base/scroller/scroller","mock":"index.php"},{"name":"view","url":"/pages/com/base/view/view","path":"/pages/com/base/view/view","mock":"index.php"},{"name":"text","url":"/pages/com/base/text/text","path":"/pages/com/base/text/text","mock":"index.php"},{"name":"button","url":"/pages/com/base/button/button","path":"/pages/com/base/button/button","mock":"index.php"},{"name":"input","url":"/pages/com/base/input/input","path":"/pages/com/base/input/input","mock":"index.php"},{"name":"textarea","url":"/pages/com/base/textarea/textarea","path":"/pages/com/base/textarea/textarea","mock":"index.php"},{"name":"image","url":"/pages/com/base/image/image","path":"/pages/com/base/image/image","mock":"index.php"},{"name":"video","url":"/pages/com/base/video/video","path":"/pages/com/base/video/video","mock":"index.php"},{"name":"richtext","url":"/pages/com/base/richtext/richtext","path":"/pages/com/base/richtext/richtext"},{"name":"switch","url":"/pages/com/base/switch/switch","path":"/pages/com/base/switch/switch"},{"name":"radio","url":"/pages/com/base/radio/radio","path":"/pages/com/base/radio/radio"},{"name":"checkbox","url":"/pages/com/base/checkbox/checkbox","path":"/pages/com/base/checkbox/checkbox"},{"name":"carousel","url":"/pages/com/base/carousel/carousel","path":"/pages/com/base/carousel/carousel"},{"name":"row","url":"/pages/com/base/row/row","path":"/pages/com/base/row/row","mock":"index.php"},{"name":"layout","url":"/pages/com/base/layout/layout","path":"/pages/com/base/layout/layout","mock":"index.php"},{"name":"c-dialog","url":"/pages/com/spread/c-dialog/c-dialog","path":"/pages/com/spread/c-dialog/c-dialog","mock":"index.php"},{"name":"c-loading","url":"/pages/com/spread/c-loading/c-loading","path":"/pages/com/spread/c-loading/c-loading","mock":"index.php"},{"name":"c-toast","url":"/pages/com/spread/c-toast/c-toast","path":"/pages/com/spread/c-toast/c-toast","mock":"index.php"},{"name":"c-tip","url":"/pages/com/spread/c-tip/c-tip","path":"/pages/com/spread/c-tip/c-tip","mock":"index.php"},{"name":"c-popup","url":"/pages/com/spread/c-popup/c-popup","path":"/pages/com/spread/c-popup/c-popup","mock":"index.php"},{"name":"c-actionsheet","url":"/pages/com/spread/c-actionsheet/c-actionsheet","path":"/pages/com/spread/c-actionsheet/c-actionsheet","mock":"index.php"},{"name":"c-picker","url":"/pages/com/spread/c-picker/c-picker","path":"/pages/com/spread/c-picker/c-picker","mock":"index.php"},{"name":"c-tab","url":"/pages/com/spread/c-tab/c-tab","path":"/pages/com/spread/c-tab/c-tab","mock":"index.php"},{"name":"c-refresh","url":"/pages/com/spread/c-refresh/c-refresh","path":"/pages/com/spread/c-refresh/c-refresh","mock":"index.php"},{"name":"c-checkbox-group","url":"/pages/com/spread/c-checkbox-group/c-checkbox-group","path":"/pages/com/spread/c-checkbox-group/c-checkbox-group","mock":"index.php"},{"name":"c-radio-group","url":"/pages/com/spread/c-radio-group/c-radio-group","path":"/pages/com/spread/c-radio-group/c-radio-group","mock":"index.php"}]}
+module.exports = {"mode":"hash","domain":"https://api.chameleon.com","routes":[{"url":"/","path":"/pages/index/index","name":"首页","mock":"index.php"},{"name":"com","url":"/pages/com/com","path":"/pages/com/com","mock":"index.php"},{"name":"api","url":"/pages/api/api","path":"/pages/api/api","mock":"index.php"},{"name":"demo","url":"/pages/demo/demo","path":"/pages/demo/demo","mock":"index.php"},{"name":"chooseImage","url":"/pages/api/sub-pages/chooseImage","path":"/pages/api/sub-pages/chooseImage","mock":"index.php"},{"name":"animation","url":"/pages/api/sub-pages/animation","path":"/pages/api/sub-pages/animation","mock":"index.php"},{"name":"request","url":"/pages/api/sub-pages/request","path":"/pages/api/sub-pages/request","mock":"index.php"},{"name":"webSocket","url":"/pages/api/sub-pages/webSocket","path":"/pages/api/sub-pages/webSocket","mock":"index.php"},{"name":"navigate","url":"/pages/api/sub-pages/navigate","path":"/pages/api/sub-pages/navigate","mock":"index.php"},{"name":"list","url":"/pages/com/base/list/list","path":"/pages/com/base/list/list","mock":"index.php"},{"name":"scroller","url":"/pages/com/base/scroller/scroller","path":"/pages/com/base/scroller/scroller","mock":"index.php"},{"name":"view","url":"/pages/com/base/view/view","path":"/pages/com/base/view/view","mock":"index.php"},{"name":"text","url":"/pages/com/base/text/text","path":"/pages/com/base/text/text","mock":"index.php"},{"name":"button","url":"/pages/com/base/button/button","path":"/pages/com/base/button/button","mock":"index.php"},{"name":"input","url":"/pages/com/base/input/input","path":"/pages/com/base/input/input","mock":"index.php"},{"name":"textarea","url":"/pages/com/base/textarea/textarea","path":"/pages/com/base/textarea/textarea","mock":"index.php"},{"name":"image","url":"/pages/com/base/image/image","path":"/pages/com/base/image/image","mock":"index.php"},{"name":"video","url":"/pages/com/base/video/video","path":"/pages/com/base/video/video","mock":"index.php"},{"name":"richtext","url":"/pages/com/base/richtext/richtext","path":"/pages/com/base/richtext/richtext"},{"name":"switch","url":"/pages/com/base/switch/switch","path":"/pages/com/base/switch/switch"},{"name":"radio","url":"/pages/com/base/radio/radio","path":"/pages/com/base/radio/radio"},{"name":"checkbox","url":"/pages/com/base/checkbox/checkbox","path":"/pages/com/base/checkbox/checkbox"},{"name":"carousel","url":"/pages/com/base/carousel/carousel","path":"/pages/com/base/carousel/carousel"},{"name":"row","url":"/pages/com/base/row/row","path":"/pages/com/base/row/row","mock":"index.php"},{"name":"layout","url":"/pages/com/base/layout/layout","path":"/pages/com/base/layout/layout","mock":"index.php"},{"name":"c-dialog","url":"/pages/com/spread/c-dialog/c-dialog","path":"/pages/com/spread/c-dialog/c-dialog","mock":"index.php"},{"name":"c-loading","url":"/pages/com/spread/c-loading/c-loading","path":"/pages/com/spread/c-loading/c-loading","mock":"index.php"},{"name":"c-toast","url":"/pages/com/spread/c-toast/c-toast","path":"/pages/com/spread/c-toast/c-toast","mock":"index.php"},{"name":"c-tip","url":"/pages/com/spread/c-tip/c-tip","path":"/pages/com/spread/c-tip/c-tip","mock":"index.php"},{"name":"c-popup","url":"/pages/com/spread/c-popup/c-popup","path":"/pages/com/spread/c-popup/c-popup","mock":"index.php"},{"name":"c-actionsheet","url":"/pages/com/spread/c-actionsheet/c-actionsheet","path":"/pages/com/spread/c-actionsheet/c-actionsheet","mock":"index.php"},{"name":"c-picker","url":"/pages/com/spread/c-picker/c-picker","path":"/pages/com/spread/c-picker/c-picker","mock":"index.php"},{"name":"c-tab","url":"/pages/com/spread/c-tab/c-tab","path":"/pages/com/spread/c-tab/c-tab","mock":"index.php"},{"name":"c-refresh","url":"/pages/com/spread/c-refresh/c-refresh","path":"/pages/com/spread/c-refresh/c-refresh","mock":"index.php"},{"name":"c-checkbox-group","url":"/pages/com/spread/c-checkbox-group/c-checkbox-group","path":"/pages/com/spread/c-checkbox-group/c-checkbox-group","mock":"index.php"},{"name":"c-radio-group","url":"/pages/com/spread/c-radio-group/c-radio-group","path":"/pages/com/spread/c-radio-group/c-radio-group","mock":"index.php"},{"url":"/cml/demo/yanxuan","path":"/pages/demo/yanxuan/pages/index/index","name":"yanxuan","mock":"index.php"},{"url":"/cml/demo/yanxuan/list","path":"/pages/demo/yanxuan/pages/list/list","name":"yanxuan_list","mock":"index.php"},{"url":"/cml/demo/yanxuan/detail","path":"/pages/demo/yanxuan/pages/detail/detail","name":"yanxuan_detail","mock":"index.php"},{"url":"/cml/demo/yanxuan/map","path":"/pages/demo/yanxuan/pages/map/map","name":"yanxuan_map","mock":"index.php"}]}
 
 /***/ }),
 

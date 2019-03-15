@@ -9,7 +9,7 @@
     <view class="shop-cart">
       <view c-if="{{!goodslist || goodslist.length<=0}}" class="cart-empty">
         <view class="center" c-bind:tap="godetail">
-          <image class="img-empty" resize="contain" src="https://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noCart-a8fe3f12e5.png"></image>
+          <image class="img-empty" resize="contain" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/noCart-a8fe3f12e5.png"></image>
         </view>
         <text class="txt-empty">去添加点什么吧</text>
       </view>
@@ -83,6 +83,7 @@
     display: flex;
     flex-direction: row;
     background-color: #ffffff;
+    position: relative;
   }
   .cart-empty{
     height: 350cpx;
@@ -107,6 +108,7 @@
     text-align: center;
     font-size: 30cpx;
     width: 750cpx;
+    left: 0;
     top:250cpx;
     color:#999;
   }

@@ -8,7 +8,9 @@
           </cml-buildin-row></view>
         </view>
         <view class="page-list  cml-base cml-view cml-79444aaa">
-        
+          <view a:for="{{lists}}" class=" cml-base cml-view cml-79444aaa">
+            <view class=" cml-base cml-view cml-79444aaa"><demo-list title="{{item.title}}" icon-uri="{{item.iconUri}}" path="{{item.path}}" onItemtap="_cmlEventProxy" data-eventitemtap="itemTap" class=" cml-base cml-demo-list cml-79444aaa"></demo-list></view>
+          </view>
         </view>
       </cml-buildin-scroller></view>
     </view>

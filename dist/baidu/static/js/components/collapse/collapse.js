@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("../../manifest.js");
-__CML__GLOBAL.webpackJsonp([8],{
+__CML__GLOBAL.webpackJsonp([11],{
 
 /***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/components/collapse/collapse.cml":
 /***/ (function(module, exports, __webpack_require__) {
@@ -77,13 +77,6 @@ exports.default = _chameleonRuntime2.default.createComponent(exports.default).ge
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "static/img/icon-arrow-down_b02079e.png";
-
-/***/ }),
-
-/***/ "./src/assets/images/icons/icon-arrow-up.png":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "static/img/icon-arrow-up_56472bc.png";
 
 /***/ }),
 
