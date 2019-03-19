@@ -1,8 +1,0 @@
-<view class="refresh  cml-base cml-view" s-if=" display ">
-  <block s-if=" !customUi " class=" cml-base cml-block">
-    <image class="loading-icon  cml-base cml-image" src="{{ icon }}" />
-  </block>
-  <block s-else class=" cml-base cml-block">
-    <slot class=" cml-base cml-slot"></slot>
-  </block>
-</view>
