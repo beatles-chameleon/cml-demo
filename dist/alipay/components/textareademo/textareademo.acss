@@ -1,1 +1,19 @@
-.cml-ffb05a54.page-demo{background:#f8f8f8;flex:1;padding:0 10rpx 30rpx}.cml-ffb05a54.title-text{color:#999;margin:30rpx 20rpx 10rpx;font-size:32rpx}.cml-ffb05a54.end-item{margin-bottom:40rpx;position:relative}.cml-ffb05a54.input-wrap{position:relative}
+.cml-6ffdb3ef.page-demo {
+  background: #f8f8f8;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 0 10rpx 30rpx;
+}
+.cml-6ffdb3ef.title-text {
+  color: #999;
+  margin: 30rpx 20rpx 10rpx;
+  font-size: 32rpx;
+}
+.cml-6ffdb3ef.end-item {
+  margin-bottom: 40rpx;
+  position: relative;
+}
+.cml-6ffdb3ef.input-wrap {
+  position: relative;
+}

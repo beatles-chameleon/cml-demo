@@ -1,11 +1,11 @@
-<view class=" cml-base cml-view cml-5074b426"><cml-buildin-page title="c-loading演示" class=" cml-base cml-page cml-5074b426">
-    <view class=" cml-base cml-view cml-5074b426">
-        <view class=" cml-base cml-view cml-5074b426"><c-header title="c-loading" class=" cml-base cml-c-header cml-5074b426"></c-header></view>
-        <view class=" cml-base cml-view cml-5074b426"><c-loading loading="{{loading}}" class=" cml-base cml-c-loading cml-5074b426">
-            <view class="content  cml-base cml-view cml-5074b426"></view>  
+<view class=" cml-base cml-view cml-60c4ed2d"><cml-buildin-page title="c-loading演示" class=" cml-base cml-page cml-60c4ed2d">
+    <view class=" cml-base cml-view cml-60c4ed2d">
+        <view class=" cml-base cml-view cml-60c4ed2d"><c-header title="c-loading" class=" cml-base cml-c-header cml-60c4ed2d"></c-header></view>
+        <view class=" cml-base cml-view cml-60c4ed2d"><c-loading loading="{{loading}}" class=" cml-base cml-c-loading cml-60c4ed2d">
+            <view class="content  cml-base cml-view cml-60c4ed2d"></view>  
         </c-loading></view>
-        <view class="button-wrapper  cml-base cml-view cml-5074b426">
-            <view class="button  cml-base cml-view cml-5074b426"><cml-buildin-button class="button  cml-base cml-button cml-5074b426" text="更改loading态" onOnclick="_cmlEventProxy" data-eventonclick="changeLoading"></cml-buildin-button></view> 
+        <view class="button-wrapper  cml-base cml-view cml-60c4ed2d">
+            <view class="button  cml-base cml-view cml-60c4ed2d"><cml-buildin-button class="button  cml-base cml-button cml-60c4ed2d" text="更改loading态" onOnclick="_cmlEventProxy" data-eventonclick="changeLoading"></cml-buildin-button></view> 
         </view>
     </view>
   </cml-buildin-page></view>

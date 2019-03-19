@@ -1,24 +1,24 @@
-<view class=" cml-base cml-view cml-37c906c8"><cml-buildin-page title="radio group演示" class=" cml-base cml-page cml-37c906c8">
-  <view class=" cml-base cml-view cml-37c906c8"><c-header title="radio" class=" cml-base cml-c-header cml-37c906c8"></c-header></view>
-    <view class="box  cml-base cml-view cml-37c906c8">
-      <view class=" cml-base cml-view cml-37c906c8"><c-radio-group option="{{ radioGroupOption1 }}" onGroupchange="_cmlEventProxy" data-eventgroupchange="groupChangeHandler1" class=" cml-base cml-c-radio-group cml-37c906c8">
+<view class=" cml-base cml-view cml-42af48cf"><cml-buildin-page title="radio group演示" class=" cml-base cml-page cml-42af48cf">
+  <view class=" cml-base cml-view cml-42af48cf"><c-header title="radio" class=" cml-base cml-c-header cml-42af48cf"></c-header></view>
+    <view class="box  cml-base cml-view cml-42af48cf">
+      <view class=" cml-base cml-view cml-42af48cf"><c-radio-group option="{{ radioGroupOption1 }}" onGroupchange="_cmlEventProxy" data-eventgroupchange="groupChangeHandler1" class=" cml-base cml-c-radio-group cml-42af48cf">
       </c-radio-group></view>
     </view>
-    <view class="title  cml-base cml-view cml-37c906c8">
-      <text class=" cml-base cml-text cml-37c906c8">selected value: {{radioSelect1}}</text>
+    <view class="title  cml-base cml-view cml-42af48cf">
+      <text class=" cml-base cml-text cml-42af48cf">selected value: {{radioSelect1}}</text>
     </view>
-    <view class="box  cml-base cml-view cml-37c906c8">
-      <view class=" cml-base cml-view cml-37c906c8"><c-radio-group option="{{ radioGroupOption2 }}" position="right" onGroupchange="_cmlEventProxy" data-eventgroupchange="groupChangeHandler2" class=" cml-base cml-c-radio-group cml-37c906c8">
+    <view class="box  cml-base cml-view cml-42af48cf">
+      <view class=" cml-base cml-view cml-42af48cf"><c-radio-group option="{{ radioGroupOption2 }}" position="right" onGroupchange="_cmlEventProxy" data-eventgroupchange="groupChangeHandler2" class=" cml-base cml-c-radio-group cml-42af48cf">
       </c-radio-group></view>
     </view>
-    <view class="title  cml-base cml-view cml-37c906c8">
-      <text class=" cml-base cml-text cml-37c906c8">selected value: {{radioSelect2}}</text>
+    <view class="title  cml-base cml-view cml-42af48cf">
+      <text class=" cml-base cml-text cml-42af48cf">selected value: {{radioSelect2}}</text>
     </view>
-    <view class="box  cml-base cml-view cml-37c906c8">
-      <view class=" cml-base cml-view cml-37c906c8"><c-radio-group option="{{ radioGroupOption3 }}" horizontal="{{ true }}" onGroupchange="_cmlEventProxy" data-eventgroupchange="groupChangeHandler3" class=" cml-base cml-c-radio-group cml-37c906c8">
+    <view class="box  cml-base cml-view cml-42af48cf">
+      <view class=" cml-base cml-view cml-42af48cf"><c-radio-group option="{{ radioGroupOption3 }}" horizontal="{{ true }}" onGroupchange="_cmlEventProxy" data-eventgroupchange="groupChangeHandler3" class=" cml-base cml-c-radio-group cml-42af48cf">
       </c-radio-group></view>
     </view>
-    <view class="title  cml-base cml-view cml-37c906c8">
-      <text class=" cml-base cml-text cml-37c906c8">selected value: {{radioSelect3}}</text>
+    <view class="title  cml-base cml-view cml-42af48cf">
+      <text class=" cml-base cml-text cml-42af48cf">selected value: {{radioSelect3}}</text>
     </view>
   </cml-buildin-page></view>

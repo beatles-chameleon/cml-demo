@@ -1,15 +1,15 @@
-<view class=" cml-base cml-view cml-3c99700e"><cml-buildin-page title="API" class=" cml-base cml-page cml-3c99700e">
-  <view class="page  cml-base cml-view cml-3c99700e">
-    <view class=" cml-base cml-view cml-3c99700e"><cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller cml-3c99700e">
-      <view class="title-row  cml-base cml-view cml-3c99700e">
-        <view class=" cml-base cml-view cml-3c99700e"><cml-buildin-row justify="start" class=" cml-base cml-row cml-3c99700e">
-          <image class="title-icon  cml-base cml-image cml-3c99700e" src="{{iconApiUri}}"></image>
-          <text class="title-text  cml-base cml-text cml-3c99700e  _cml_ref_lmc_" id="titleText">API</text>
+<view class=" cml-base cml-view cml-49a512e7"><cml-buildin-page title="API" class=" cml-base cml-page cml-49a512e7">
+  <view class="page  cml-base cml-view cml-49a512e7">
+    <view class=" cml-base cml-view cml-49a512e7"><cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller cml-49a512e7">
+      <view class="title-row  cml-base cml-view cml-49a512e7">
+        <view class=" cml-base cml-view cml-49a512e7"><cml-buildin-row justify="start" class=" cml-base cml-row cml-49a512e7">
+          <image class="title-icon  cml-base cml-image cml-49a512e7" src="{{iconApiUri}}"></image>
+          <text class="title-text  cml-base cml-text cml-49a512e7  _cml_ref_lmc_" id="titleText">API</text>
         </cml-buildin-row></view>
       </view>
-      <view class="page-list  cml-base cml-view cml-3c99700e">
-        <view a:for="{{cells}}" a:for-item="cellInfo" class=" cml-base cml-view cml-3c99700e">
-          <view class=" cml-base cml-view cml-3c99700e"><collapse title="{{cellInfo.title}}" icon-uri="{{cellInfo.iconUri}}" list="{{cellInfo.list}}" onItemselected="_cmlEventProxy" data-eventitemselected="cellItemSeleted" class=" cml-base cml-collapse cml-3c99700e"></collapse></view>
+      <view class="page-list  cml-base cml-view cml-49a512e7">
+        <view a:for="{{cells}}" a:for-item="cellInfo" class=" cml-base cml-view cml-49a512e7">
+          <view class=" cml-base cml-view cml-49a512e7"><collapse title="{{cellInfo.title}}" icon-uri="{{cellInfo.iconUri}}" list="{{cellInfo.list}}" onItemselected="_cmlEventProxy" data-eventitemselected="cellItemSeleted" class=" cml-base cml-collapse cml-49a512e7"></collapse></view>
         </view>
       </view>
     </cml-buildin-scroller></view>

@@ -1,1 +1,112 @@
-var __CML__GLOBAL=require("../../../../manifest.js");__CML__GLOBAL.webpackJsonp([30],{297:function(e,t,n){n(298),n(299)},298:function(e,t){},299:function(e,t,n){function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),c=n(0),a=function(e){return e&&e.__esModule?e:{default:e}}(c),u=function(){function e(){i(this,e),this.data={actionShow:!1,mask:!0,list:["高铁","火车","飞机","打车","地铁"],active:-1,title:"出行方式",pickerStyle:!1},this.computed={},this.watch={},this.methods={showActionSheet:function(){this.pickerStyle=!1,this.actionShow=!0},showActionSheetActive:function(){this.pickerStyle=!1,this.actionShow=!0},showActionSheetPicker:function(){this.pickerStyle=!0,this.actionShow=!0},cancel:function(){this.actionShow=!1},select:function(e){this.actionShow=!1,this.active=+e.detail.index}}}return o(e,[{key:"beforeCreate",value:function(){}},{key:"created",value:function(){}},{key:"beforeMount",value:function(){}},{key:"mounted",value:function(){this.active=0}},{key:"beforeDestroy",value:function(){}},{key:"destroyed",value:function(){}}]),e}();t.default=new u,t.default=a.default.createPage(t.default).getOptions()}},[297]);
+var __CML__GLOBAL = require("../../../../manifest.js");
+__CML__GLOBAL.webpackJsonp([26],{
+
+/***/ "../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/spread/c-actionsheet/c-actionsheet.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var CActionsheet = function () {
+  function CActionsheet() {
+    _classCallCheck(this, CActionsheet);
+
+    this.data = {
+      actionShow: false,
+      mask: true,
+      list: ["高铁", "火车", "飞机", "打车", "地铁"],
+      active: -1,
+      title: "出行方式",
+      pickerStyle: false
+    };
+    this.computed = {};
+    this.watch = {};
+    this.methods = {
+      showActionSheet: function showActionSheet() {
+        this.pickerStyle = false;
+        this.actionShow = true;
+      },
+      showActionSheetActive: function showActionSheetActive() {
+        this.pickerStyle = false;
+        this.actionShow = true;
+      },
+      showActionSheetPicker: function showActionSheetPicker() {
+        this.pickerStyle = true;
+        this.actionShow = true;
+      },
+      cancel: function cancel() {
+        this.actionShow = false;
+        // cml.showToast({
+        //   message: "Clicked 取消"
+        // });
+      },
+      select: function select(e) {
+        this.actionShow = false;
+        this.active = +e.detail.index;
+        // cml.showToast({
+        //   message: "Clicked" + " " + e.detail.value
+        // });
+      }
+    };
+  }
+
+  _createClass(CActionsheet, [{
+    key: "beforeCreate",
+    value: function beforeCreate() {}
+  }, {
+    key: "created",
+    value: function created() {}
+  }, {
+    key: "beforeMount",
+    value: function beforeMount() {}
+  }, {
+    key: "mounted",
+    value: function mounted() {
+      this.active = 0;
+    }
+  }, {
+    key: "beforeDestroy",
+    value: function beforeDestroy() {}
+  }, {
+    key: "destroyed",
+    value: function destroyed() {}
+  }]);
+
+  return CActionsheet;
+}();
+
+exports.default = new CActionsheet();
+
+
+exports.default = _chameleonRuntime2.default.createPage(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"wx\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/spread/c-actionsheet/c-actionsheet.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/pages/com/spread/c-actionsheet/c-actionsheet.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"wx\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/spread/c-actionsheet/c-actionsheet.cml");
+var __cml__script = __webpack_require__("../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/spread/c-actionsheet/c-actionsheet.cml");
+
+
+/***/ })
+
+},["./src/pages/com/spread/c-actionsheet/c-actionsheet.cml"]);

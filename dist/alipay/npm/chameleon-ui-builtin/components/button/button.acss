@@ -1,1 +1,40 @@
-.cml-3ccfcbfc.cml-btn{display:flex;width:702rpx;height:88rpx;background:#4a4c5b;border:none;align-items:center;justify-content:center;border-radius:4rpx;align-self:center}.cml-3ccfcbfc.cml-btn:after{border:none}.cml-3ccfcbfc.cml-btn:active{opacity:.9}.cml-3ccfcbfc.btn-text{text-align:center;vertical-align:middle;white-space:nowrap;outline:none;lines:1;font-size:36rpx;font-weight:500;color:#fff;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1}
+.cml-3bbb46db.cml-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 702rpx;
+  height: 88rpx;
+  background: #4a4c5b;
+  border: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  border-radius: 4rpx;
+  -webkit-align-self: center;
+          align-self: center;
+}
+.cml-3bbb46db.cml-btn:after {
+  border: none;
+}
+.cml-3bbb46db.cml-btn:active {
+  opacity: 0.9;
+}
+.cml-3bbb46db.btn-text {
+  text-align: center;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  outline: none;
+  lines: 1;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

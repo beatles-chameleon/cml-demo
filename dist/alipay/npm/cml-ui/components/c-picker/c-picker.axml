@@ -1,6 +1,6 @@
-<view show="{{show}}" class=" cml-base cml-view cml-3ec508ea">
-    <view class=" cml-base cml-view cml-3ec508ea"><c-picker-panel show="{{show}}" height="{{height}}" header-height="{{headerHeight}}" cancel-btn-style="{{cancelBtnStyle}}" confirm-btn-style="{{confirmBtnStyle}}" onCancel="_cmlEventProxy" data-eventcancel="cancel" onConfirm="_cmlEventProxy" data-eventconfirm="confirm" class=" cml-base cml-c-picker-panel cml-3ec508ea">
-        <view class=" cml-base cml-view cml-3ec508ea"><c-picker-item text-align="{{textAlign}}" height="{{dataScrollerHeight}}" list="{{list}}" default-index="{{defaultIndex}}" onSelectchange="_cmlEventProxy" data-eventselectchange="selectchange" class=" cml-base cml-c-picker-item cml-3ec508ea">
+<view show="{{show}}" class=" cml-base cml-view cml-49ab4af1">
+    <view class=" cml-base cml-view cml-49ab4af1"><c-picker-panel show="{{show}}" height="{{height}}" header-height="{{headerHeight}}" cancel-btn-style="{{cancelBtnStyle}}" confirm-btn-style="{{confirmBtnStyle}}" onCancel="_cmlEventProxy" data-eventcancel="cancel" onConfirm="_cmlEventProxy" data-eventconfirm="confirm" class=" cml-base cml-c-picker-panel cml-49ab4af1">
+        <view class=" cml-base cml-view cml-49ab4af1"><c-picker-item text-align="{{textAlign}}" height="{{dataScrollerHeight}}" list="{{list}}" default-index="{{defaultIndex}}" onSelectchange="_cmlEventProxy" data-eventselectchange="selectchange" class=" cml-base cml-c-picker-item cml-49ab4af1">
         </c-picker-item></view>
     </c-picker-panel></view>
 </view>

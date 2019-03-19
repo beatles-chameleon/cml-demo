@@ -1,8 +1,8 @@
-<view class="refresh  cml-base cml-view cml-077adfdc" a:if="{{ display }}">
-  <block a:if="{{ !customUi }}" class=" cml-base cml-block cml-077adfdc">
-    <image class="loading-icon  cml-base cml-image cml-077adfdc" src="{{ icon }}" />
+<view class="refresh  cml-base cml-view cml-7148a5eb" a:if="{{ display }}">
+  <block a:if="{{ !customUi }}" class=" cml-base cml-block cml-7148a5eb">
+    <image class="loading-icon  cml-base cml-image cml-7148a5eb" src="{{ icon }}" />
   </block>
-  <block a:else class=" cml-base cml-block cml-077adfdc">
-    <slot class=" cml-base cml-slot cml-077adfdc"></slot>
+  <block a:else class=" cml-base cml-block cml-7148a5eb">
+    <slot class=" cml-base cml-slot cml-7148a5eb"></slot>
   </block>
 </view>

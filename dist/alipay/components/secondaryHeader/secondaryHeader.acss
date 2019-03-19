@@ -1,1 +1,25 @@
-.cml-5dfc75a4.secondary-header{padding:46rpx;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.cml-5dfc75a4.header-title{font-size:38rpx;color:#172742;margin-bottom:12rpx}.cml-5dfc75a4.header-subtitle{font-size:24rpx;color:#a4adc2}
+.cml-1acedcf5.secondary-header {
+  padding: 46rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+          align-items: flex-start;
+}
+.cml-1acedcf5.header-title {
+  font-size: 38rpx;
+  color: #172742;
+  margin-bottom: 12rpx;
+}
+.cml-1acedcf5.header-subtitle {
+  font-size: 24rpx;
+  color: #A4ADC2;
+}

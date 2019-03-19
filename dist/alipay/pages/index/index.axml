@@ -1,19 +1,19 @@
-<view class=" cml-base cml-view cml-213e7b84"><cml-buildin-page title="cml" class=" cml-base cml-page cml-213e7b84">
-    <view class="page-home  cml-base cml-view cml-213e7b84">
-      <view class=" cml-base cml-view cml-213e7b84"><cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller cml-213e7b84">
-        <view class="logo-row  cml-base cml-view cml-213e7b84">
-          <image class="logo-icon  cml-base cml-image cml-213e7b84" src="{{homeLogo}}"></image>
-          <text class="logo-desc  cml-base cml-text cml-213e7b84">Chameleon</text>
+<view class=" cml-base cml-view cml-75bd5097"><cml-buildin-page title="cml" class=" cml-base cml-page cml-75bd5097">
+    <view class="page-home  cml-base cml-view cml-75bd5097">
+      <view class=" cml-base cml-view cml-75bd5097"><cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller cml-75bd5097">
+        <view class="logo-row  cml-base cml-view cml-75bd5097">
+          <image class="logo-icon  cml-base cml-image cml-75bd5097" src="{{homeLogo}}"></image>
+          <text class="logo-desc  cml-base cml-text cml-75bd5097">Chameleon</text>
         </view>
-        <view class="list  cml-base cml-view cml-213e7b84">
-          <view class="list-cell  cml-base cml-view cml-213e7b84" a:for="{{pageList}}" a:for-item="pageInfo" onTap="_cmlInlineStatementEventProxy" data-arg0="{{pageInfo.url}}" data-args="pageInfo.url" data-eventtap="onItemSelected">
-            <view class="content-item row  cml-base cml-view cml-213e7b84">
-              <image class="content-item-left-icon  cml-base cml-image cml-213e7b84" src="{{pageInfo.icon}}"></image>
-              <view class="text-group  cml-base cml-view cml-213e7b84">
-                <text class="text-title  cml-base cml-text cml-213e7b84">{{pageInfo.title}}</text>
-                <text class="text-desc  cml-base cml-text cml-213e7b84">{{pageInfo.desc}}</text>
+        <view class="list  cml-base cml-view cml-75bd5097">
+          <view class="list-cell  cml-base cml-view cml-75bd5097" a:for="{{pageList}}" a:for-item="pageInfo" onTap="_cmlInlineStatementEventProxy" data-arg0="{{pageInfo.url}}" data-args="pageInfo.url" data-eventtap="onItemSelected">
+            <view class="content-item row  cml-base cml-view cml-75bd5097">
+              <image class="content-item-left-icon  cml-base cml-image cml-75bd5097" src="{{pageInfo.icon}}"></image>
+              <view class="text-group  cml-base cml-view cml-75bd5097">
+                <text class="text-title  cml-base cml-text cml-75bd5097">{{pageInfo.title}}</text>
+                <text class="text-desc  cml-base cml-text cml-75bd5097">{{pageInfo.desc}}</text>
               </view>         
-              <image class="content-item-right-icon  cml-base cml-image cml-213e7b84" src="{{arrowRight}}"></image>
+              <image class="content-item-right-icon  cml-base cml-image cml-75bd5097" src="{{arrowRight}}"></image>
             </view>
           </view>    
         </view>

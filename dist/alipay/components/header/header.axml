@@ -1,9 +1,9 @@
-<view class="page-head  cml-base cml-view cml-b50da1ec">
-  <view class="page-head-title  cml-base cml-view cml-b50da1ec">
-    <text class="page-head-title-text  cml-base cml-text cml-b50da1ec">{{title}}</text>
+<view class="page-head  cml-base cml-view cml-f86d0ade">
+  <view class="page-head-title  cml-base cml-view cml-f86d0ade">
+    <text class="page-head-title-text  cml-base cml-text cml-f86d0ade">{{title}}</text>
   </view>
-  <view class="page-head-line  cml-base cml-view cml-b50da1ec"></view>
-  <view a:if="{{desc}}" class="page-head-desc  cml-base cml-view cml-b50da1ec">
-    <text class="page-head-desc-text  cml-base cml-text cml-b50da1ec">{{desc}}</text>
+  <view class="page-head-line  cml-base cml-view cml-f86d0ade"></view>
+  <view a:if="{{desc}}" class="page-head-desc  cml-base cml-view cml-f86d0ade">
+    <text class="page-head-desc-text  cml-base cml-text cml-f86d0ade">{{desc}}</text>
   </view>
 </view>

@@ -1,11 +1,11 @@
-<view class=" cml-base cml-view cml-89a6e388"><cml-buildin-page title="c-toast演示" class=" cml-base cml-page cml-89a6e388">
-  <view class="container  cml-base cml-view cml-89a6e388">
-    <view class=" cml-base cml-view cml-89a6e388"><c-header title="c-toast" class=" cml-base cml-c-header cml-89a6e388"></c-header></view>
-    <view class=" cml-base cml-view cml-89a6e388"><c-toast duration="{{duration}}" show="{{show}}" onShow="_cmlEventProxy" data-eventshow="changeShow" message="{{message}}" type="{{type}}" need-icon="{{needIcon}}" mask="{{mask}}" class=" cml-base cml-c-toast cml-89a6e388"></c-toast></view>
-    <view class="btn  cml-base cml-view cml-89a6e388"><cml-buildin-button class="btn  cml-base cml-button cml-89a6e388" onOnclick="_cmlEventProxy" data-eventonclick="showLoading" text="loading toast"></cml-buildin-button></view>
-    <view class="btn  cml-base cml-view cml-89a6e388"><cml-buildin-button class="btn  cml-base cml-button cml-89a6e388" onOnclick="_cmlEventProxy" data-eventonclick="showMask" text="loading toast with mask"></cml-buildin-button></view>
-    <view class="btn  cml-base cml-view cml-89a6e388"><cml-buildin-button class="btn  cml-base cml-button cml-89a6e388" onOnclick="_cmlEventProxy" data-eventonclick="showSuccess" text="success toast"></cml-buildin-button></view>
-    <view class="btn  cml-base cml-view cml-89a6e388"><cml-buildin-button class="btn  cml-base cml-button cml-89a6e388" onOnclick="_cmlEventProxy" data-eventonclick="showWarn" text="warn toast"></cml-buildin-button></view>
-    <view class="btn  cml-base cml-view cml-89a6e388"><cml-buildin-button class="btn  cml-base cml-button cml-89a6e388" onOnclick="_cmlEventProxy" data-eventonclick="showWithout" text="toast without icon"></cml-buildin-button></view>
+<view class=" cml-base cml-view cml-f3cf3a7a"><cml-buildin-page title="c-toast演示" class=" cml-base cml-page cml-f3cf3a7a">
+  <view class="container  cml-base cml-view cml-f3cf3a7a">
+    <view class=" cml-base cml-view cml-f3cf3a7a"><c-header title="c-toast" class=" cml-base cml-c-header cml-f3cf3a7a"></c-header></view>
+    <view class=" cml-base cml-view cml-f3cf3a7a"><c-toast duration="{{duration}}" show="{{show}}" onShow="_cmlEventProxy" data-eventshow="changeShow" message="{{message}}" type="{{type}}" need-icon="{{needIcon}}" mask="{{mask}}" class=" cml-base cml-c-toast cml-f3cf3a7a"></c-toast></view>
+    <view class="btn  cml-base cml-view cml-f3cf3a7a"><cml-buildin-button class="btn  cml-base cml-button cml-f3cf3a7a" onOnclick="_cmlEventProxy" data-eventonclick="showLoading" text="loading toast"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view cml-f3cf3a7a"><cml-buildin-button class="btn  cml-base cml-button cml-f3cf3a7a" onOnclick="_cmlEventProxy" data-eventonclick="showMask" text="loading toast with mask"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view cml-f3cf3a7a"><cml-buildin-button class="btn  cml-base cml-button cml-f3cf3a7a" onOnclick="_cmlEventProxy" data-eventonclick="showSuccess" text="success toast"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view cml-f3cf3a7a"><cml-buildin-button class="btn  cml-base cml-button cml-f3cf3a7a" onOnclick="_cmlEventProxy" data-eventonclick="showWarn" text="warn toast"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view cml-f3cf3a7a"><cml-buildin-button class="btn  cml-base cml-button cml-f3cf3a7a" onOnclick="_cmlEventProxy" data-eventonclick="showWithout" text="toast without icon"></cml-buildin-button></view>
   </view>
   </cml-buildin-page></view>

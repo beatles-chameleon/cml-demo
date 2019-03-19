@@ -1,10 +1,10 @@
-<view class="cml-checkbox  cml-base cml-view cml-4d3a01be">
-  <view class="cml-checkbox-wrap  cml-base cml-view cml-4d3a01be" onTap="_cmlEventProxy" data-eventtap="changeCheck">
-    <view class="cml-checkbox-check  cml-base cml-view cml-4d3a01be" style="{{checkStyle}}">
-      <view class="{{ checkClass }}  cml-base cml-view cml-4d3a01be">
-        <image class="inner-icon  cml-base cml-image cml-4d3a01be" src="{{ checkImg }}" />
+<view class="cml-checkbox  cml-base cml-view cml-5404ab85">
+  <view class="cml-checkbox-wrap  cml-base cml-view cml-5404ab85" onTap="_cmlEventProxy" data-eventtap="changeCheck">
+    <view class="cml-checkbox-check  cml-base cml-view cml-5404ab85" style="{{checkStyle}}">
+      <view class="{{ checkClass }}  cml-base cml-view cml-5404ab85">
+        <image class="inner-icon  cml-base cml-image cml-5404ab85" src="{{ checkImg }}" />
       </view>
     </view>
-    <text class="cml-checkbox-label  cml-base cml-text cml-4d3a01be">{{label}}</text>
+    <text class="cml-checkbox-label  cml-base cml-text cml-5404ab85">{{label}}</text>
   </view>
 </view>

@@ -1,1 +1,33 @@
-.cml-b50da1ec.page-head{display:flex;flex-direction:column;align-items:center;padding:60rpx 50rpx 80rpx}.cml-b50da1ec.page-head-title{padding:0 40rpx 20rpx}.cml-b50da1ec.page-head-title-text{font-size:32rpx;color:#bebebe}.cml-b50da1ec.page-head-line{margin:0 auto;width:150rpx;height:2rpx;background-color:#d8d8d8}.cml-b50da1ec.page-head-desc{padding-top:20rpx}.cml-b50da1ec.page-head-desc-text{color:#9b9b9b;font-size:32rpx}
+.cml-f86d0ade.page-head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 60rpx 50rpx 80rpx;
+}
+.cml-f86d0ade.page-head-title {
+  padding: 0 40rpx 20rpx 40rpx;
+}
+.cml-f86d0ade.page-head-title-text {
+  font-size: 32rpx;
+  color: #BEBEBE;
+}
+.cml-f86d0ade.page-head-line {
+  margin: 0 auto;
+  width: 150rpx;
+  height: 2rpx;
+  background-color: #D8D8D8;
+}
+.cml-f86d0ade.page-head-desc {
+  padding-top: 20rpx;
+}
+.cml-f86d0ade.page-head-desc-text {
+  color: #9B9B9B;
+  font-size: 32rpx;
+}

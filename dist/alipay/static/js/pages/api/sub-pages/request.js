@@ -1,1 +1,144 @@
-var __CML__GLOBAL=require("../../../manifest.js");__CML__GLOBAL.webpackJsonp([7],{174:function(e,t,o){o(175),o(176)},175:function(e,t){},176:function(e,t,o){function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var i=o(177),r=n(i),a=o(178),s=n(a),u=o(179),d=n(u),f="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},c=o(0),p=n(c);t.default={data:{title:"",subtitle:"网络请求",respones:[],cell:{title:"网络请求",list:[{title:"",btnText:"点击发起"}]},map:{get:"以 cml.get 发起请求",post:"以 cml.post 发起请求",request:"以 cml.request 发起 put 请求"},isShowLoading:!1},beforeCreate:function(e){this.method=e.method,this.title=["cml",this.method].join(".")},created:function(){this.cell.list[0].title=this.map[this.method]},methods:{onBtnClicked:function(e){var t=this,o=this.method;this.showLoading(),"get"===o&&(0,d.default)({url:"https://postman-echo.com/get?name=get"}).then(function(e){t.respones=t.flatResponses(e),t.hideLoading()}),"post"===o&&(0,s.default)({url:"https://postman-echo.com/post?name=post",data:{name:"cml"}}).then(function(e){t.respones=t.flatResponses(e),t.hideLoading()}),"request"===o&&(0,r.default)({url:"https://postman-echo.com/put?name=request",data:{name:"cml"},method:"PUT"}).then(function(e){t.respones=t.flatResponses(e),t.hideLoading()})},flatResponses:function(e){var t=[];return e&&Object.keys(e).filter(function(e){return~["args","headers","url","data"].indexOf(e)}).forEach(function(o){"string"==typeof e[o]&&t.push({name:o,value:e[o]}),"object"===f(e[o])&&t.push({name:o,child:Object.entries(e[o]).map(function(e){return e.join(":")})})}),t},showLoading:function(){this.isShowLoading=!0},hideLoading:function(){this.isShowLoading=!1}}},t.default=p.default.createPage(t.default).getOptions()},177:function(e,t,o){function n(e){var t=e.url,o=e.data,n=void 0===o?{}:o,r=e.method,u=void 0===r?"GET":r,d=e.header,f=void 0===d?{}:d,c=e.contentType,p=void 0===c?"form":c,l=e.setting,h=void 0===l?{apiPrefix:(0,s.isNeedApiPrefix)(t)}:l,y=e.resDataType,m=void 0===y?"json":y;switch(h.apiPrefix&&(t=(0,s.addApiPrefix)(t)),p){case"form":"string"!=typeof n&&(n=(0,s.queryStringify)(n)),f=i({},f,{"Content-Type":"application/x-www-form-urlencoded"});break;case"json":"string"!=typeof n&&(n=JSON.stringify(n)),f=i({},f,{"Content-Type":"application/json"})}return new Promise(function(e,o){a.default.request({url:t,body:n,setting:h,method:u,headers:f,cb:function(t){var n=t.status,i=t.data;n>=200&&n<300?("json"===m&&(i=(0,s.tryJsonParse)(i)),e(i)):o("http statusCode:"+n)}})})}Object.defineProperty(t,"__esModule",{value:!0});var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var o=arguments[t];for(var n in o)Object.prototype.hasOwnProperty.call(o,n)&&(e[n]=o[n])}return e};t.default=n;var r=o(18),a=function(e){return e&&e.__esModule?e:{default:e}}(r),s=o(4)},178:function(e,t,o){function n(e){var t=e.url,o=e.data,n=void 0===o?{}:o,r=e.header,u=void 0===r?{}:r,d=e.contentType,f=void 0===d?"form":d,c=e.setting,p=void 0===c?{apiPrefix:(0,s.isNeedApiPrefix)(t)}:c,l=e.resDataType,h=void 0===l?"json":l;switch(p.apiPrefix&&(t=(0,s.addApiPrefix)(t)),f){case"form":"string"!=typeof n&&(n=(0,s.queryStringify)(n)),u=i({},u,{"Content-Type":"application/x-www-form-urlencoded"});break;case"json":"string"!=typeof n&&(n=JSON.stringify(n)),u=i({},u,{"Content-Type":"application/json"})}return new Promise(function(e,o){a.default.request({url:t,body:n,setting:p,method:"POST",headers:u,cb:function(t){var n=t.status,i=t.data;t.headers,n>=200&&n<300?("json"===h&&(i=(0,s.tryJsonParse)(i)),e(i)):o("http statusCode:"+n)}})})}Object.defineProperty(t,"__esModule",{value:!0});var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var o=arguments[t];for(var n in o)Object.prototype.hasOwnProperty.call(o,n)&&(e[n]=o[n])}return e};t.default=n;var r=o(18),a=function(e){return e&&e.__esModule?e:{default:e}}(r),s=o(4)},179:function(e,t,o){function n(e){var t=e.url,o=e.data,n=void 0===o?{}:o,i=e.header,s=void 0===i?{}:i,u=e.setting,d=void 0===u?{apiPrefix:(0,a.isNeedApiPrefix)(t)}:u,f=e.resDataType,c=void 0===f?"json":f;return d.apiPrefix&&(t=(0,a.addApiPrefix)(t)),n&&!(0,a.isEmpty)(n)&&(0,a.queryStringify)(n)&&(-1===t.indexOf("?")&&(t+="?"),t+=(0,a.queryStringify)(n)),new Promise(function(e,o){r.default.request({url:t,body:"",method:"GET",setting:d,headers:s,cb:function(t){var n=t.status,i=t.data;n>=200&&n<300?("json"===c&&(i=(0,a.tryJsonParse)(i)),e(i)):o("http statusCode:"+n)}})})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=n;var i=o(18),r=function(e){return e&&e.__esModule?e:{default:e}}(i),a=o(4)},18:function(e,t,o){(0,o(1).copyProtoProperty)(t.default)}},[174]);
+var __CML__GLOBAL = require("../../../manifest.js");
+__CML__GLOBAL.webpackJsonp([43],{
+
+/***/ "../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _index = __webpack_require__("./node_modules/chameleon-api/src/interfaces/request/index.js");
+
+var _index2 = _interopRequireDefault(_index);
+
+var _index3 = __webpack_require__("./node_modules/chameleon-api/src/interfaces/post/index.js");
+
+var _index4 = _interopRequireDefault(_index3);
+
+var _index5 = __webpack_require__("./node_modules/chameleon-api/src/interfaces/get/index.js");
+
+var _index6 = _interopRequireDefault(_index5);
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  data: {
+    title: '',
+    subtitle: '网络请求',
+    respones: [],
+    cell: {
+      title: '网络请求',
+      list: [{
+        title: '',
+        btnText: '点击发起'
+      }]
+    },
+    map: {
+      get: '以 cml.get 发起请求',
+      post: '以 cml.post 发起请求',
+      request: '以 cml.request 发起 put 请求'
+    },
+    isShowLoading: false
+  },
+  beforeCreate: function beforeCreate(res) {
+    this.method = res.method;
+    this.title = ['cml', this.method].join(".");
+  },
+  created: function created() {
+    this.cell.list[0].title = this.map[this.method];
+  },
+
+  methods: {
+    onBtnClicked: function onBtnClicked(e) {
+      var _this = this;
+
+      var method = this.method;
+      this.showLoading();
+      method === 'get' && (0, _index6.default)({
+        url: 'https://postman-echo.com/get?name=get'
+      }).then(function (res) {
+        _this.respones = _this.flatResponses(res);
+        _this.hideLoading();
+      });
+      method === 'post' && (0, _index4.default)({
+        url: 'https://postman-echo.com/post?name=post',
+        data: {
+          name: 'cml'
+        }
+      }).then(function (res) {
+        _this.respones = _this.flatResponses(res);
+        _this.hideLoading();
+      });
+      method === 'request' && (0, _index2.default)({
+        url: 'https://postman-echo.com/put?name=request',
+        data: {
+          name: 'cml'
+        },
+        method: 'PUT'
+      }).then(function (res) {
+        _this.respones = _this.flatResponses(res);
+        _this.hideLoading();
+      });
+    },
+    flatResponses: function flatResponses(res) {
+      var results = [];
+      if (!!res) {
+        Object.keys(res).filter(function (key) {
+          return ~['args', 'headers', 'url', 'data'].indexOf(key);
+        }).forEach(function (key) {
+          if (typeof res[key] === 'string') {
+            results.push({
+              name: key,
+              value: res[key]
+            });
+          }
+          if (_typeof(res[key]) === 'object') {
+            results.push({
+              name: key,
+              child: Object.entries(res[key]).map(function (pairs) {
+                return pairs.join(":");
+              })
+            });
+          }
+        });
+      }
+      return results;
+    },
+    showLoading: function showLoading() {
+      this.isShowLoading = true;
+    },
+    hideLoading: function hideLoading() {
+      this.isShowLoading = false;
+    }
+  }
+};
+
+
+exports.default = _chameleonRuntime2.default.createPage(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"alipay\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/alipay/.postcssrc.js\"}}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"alipay\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/pages/api/sub-pages/request.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"alipay\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/alipay/.postcssrc.js\"}}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"alipay\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml");
+var __cml__script = __webpack_require__("../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml");
+
+
+/***/ })
+
+},["./src/pages/api/sub-pages/request.cml"]);

@@ -1,33 +1,33 @@
-<view class=" cml-base cml-view cml-31a0e660"><cml-buildin-page title="animation" class=" cml-base cml-page cml-31a0e660">
-  <view class="page-contain  cml-base cml-view cml-31a0e660">
-  <view class="container  cml-base cml-view cml-31a0e660">
-    <view class="btn-box  cml-base cml-view cml-31a0e660">
-      <text class="title  cml-base cml-text cml-31a0e660">Transform</text>
-      <view class="btn-wraper  cml-base cml-view cml-31a0e660">
-        <view class=" cml-base cml-view cml-31a0e660"><cml-buildin-button text="Rotate" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="rotate" class=" cml-base cml-button cml-31a0e660"></cml-buildin-button></view>
+<view class=" cml-base cml-view cml-b1b4918e"><cml-buildin-page title="animation" class=" cml-base cml-page cml-b1b4918e">
+  <view class="page-contain  cml-base cml-view cml-b1b4918e">
+  <view class="container  cml-base cml-view cml-b1b4918e">
+    <view class="btn-box  cml-base cml-view cml-b1b4918e">
+      <text class="title  cml-base cml-text cml-b1b4918e">Transform</text>
+      <view class="btn-wraper  cml-base cml-view cml-b1b4918e">
+        <view class=" cml-base cml-view cml-b1b4918e"><cml-buildin-button text="Rotate" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="rotate" class=" cml-base cml-button cml-b1b4918e"></cml-buildin-button></view>
       </view>
-      <view class="btn-wraper  cml-base cml-view cml-31a0e660">
-        <view class=" cml-base cml-view cml-31a0e660"><cml-buildin-button text="Scale" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="scale" class=" cml-base cml-button cml-31a0e660"></cml-buildin-button></view>
+      <view class="btn-wraper  cml-base cml-view cml-b1b4918e">
+        <view class=" cml-base cml-view cml-b1b4918e"><cml-buildin-button text="Scale" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="scale" class=" cml-base cml-button cml-b1b4918e"></cml-buildin-button></view>
       </view>
-      <view class="btn-wraper  cml-base cml-view cml-31a0e660">
-        <view class=" cml-base cml-view cml-31a0e660"><cml-buildin-button text="Translate" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="translate" class=" cml-base cml-button cml-31a0e660"></cml-buildin-button></view>
+      <view class="btn-wraper  cml-base cml-view cml-b1b4918e">
+        <view class=" cml-base cml-view cml-b1b4918e"><cml-buildin-button text="Translate" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="translate" class=" cml-base cml-button cml-b1b4918e"></cml-buildin-button></view>
       </view>
-      <text class="title  cml-base cml-text cml-31a0e660">Others</text>
-      <view class="btn-wraper  cml-base cml-view cml-31a0e660">
-        <view class=" cml-base cml-view cml-31a0e660"><cml-buildin-button text="BgColor" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="backgroundColor" class=" cml-base cml-button cml-31a0e660"></cml-buildin-button></view>
+      <text class="title  cml-base cml-text cml-b1b4918e">Others</text>
+      <view class="btn-wraper  cml-base cml-view cml-b1b4918e">
+        <view class=" cml-base cml-view cml-b1b4918e"><cml-buildin-button text="BgColor" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="backgroundColor" class=" cml-base cml-button cml-b1b4918e"></cml-buildin-button></view>
       </view>
-      <view class="btn-wraper  cml-base cml-view cml-31a0e660">
-        <view class=" cml-base cml-view cml-31a0e660"><cml-buildin-button text="Opacity" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="opacity" class=" cml-base cml-button cml-31a0e660"></cml-buildin-button></view>
+      <view class="btn-wraper  cml-base cml-view cml-b1b4918e">
+        <view class=" cml-base cml-view cml-b1b4918e"><cml-buildin-button text="Opacity" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="opacity" class=" cml-base cml-button cml-b1b4918e"></cml-buildin-button></view>
       </view>
-      <view class="btn-wraper  cml-base cml-view cml-31a0e660">
-        <view class=" cml-base cml-view cml-31a0e660"><cml-buildin-button text="width" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="width" class=" cml-base cml-button cml-31a0e660"></cml-buildin-button></view>
+      <view class="btn-wraper  cml-base cml-view cml-b1b4918e">
+        <view class=" cml-base cml-view cml-b1b4918e"><cml-buildin-button text="width" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="width" class=" cml-base cml-button cml-b1b4918e"></cml-buildin-button></view>
       </view>
-      <view class="btn-wraper  cml-base cml-view cml-31a0e660">
-        <view class=" cml-base cml-view cml-31a0e660"><cml-buildin-button text="height" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="height" class=" cml-base cml-button cml-31a0e660"></cml-buildin-button></view>
+      <view class="btn-wraper  cml-base cml-view cml-b1b4918e">
+        <view class=" cml-base cml-view cml-b1b4918e"><cml-buildin-button text="height" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="height" class=" cml-base cml-button cml-b1b4918e"></cml-buildin-button></view>
       </view>
     </view>
-      <view class="animation-entity  cml-base cml-view cml-31a0e660" animation="{{(animationData).actions}}" onTransitionend="_cmlInlineStatementEventProxy" data-arg1="$event" data-arg0="animationData" data-args="'animationData',$event" data-eventtransitionend="_animationCb">
-        <text class="animation-text  cml-base cml-text cml-31a0e660" animation="{{(animationTextData).actions}}" onTransitionend="_cmlInlineStatementEventProxy" data-arg1="$event" data-arg0="animationTextData" data-args="'animationTextData',$event" data-eventtransitionend="_animationCb">CML</text>
+      <view class="animation-entity  cml-base cml-view cml-b1b4918e" animation="{{(animationData).actions}}" onTransitionend="_cmlInlineStatementEventProxy" data-arg1="$event" data-arg0="animationData" data-args="'animationData',$event" data-eventtransitionend="_animationCb">
+        <text class="animation-text  cml-base cml-text cml-b1b4918e" animation="{{(animationTextData).actions}}" onTransitionend="_cmlInlineStatementEventProxy" data-arg1="$event" data-arg0="animationTextData" data-args="'animationTextData',$event" data-eventtransitionend="_animationCb">CML</text>
       </view>
   </view>
   </view>

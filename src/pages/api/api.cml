@@ -228,19 +228,6 @@ class Home {
         title: '查看动画展示',
         method: 'goAnimation'
       }]
-    },{
-      title: 'beatles-bridge能力',
-      iconUri: require(`../../assets/images/api/icon-default.png`),
-      list: [{
-        title: '打开新页面',
-        method: 'openNewBeatlesPage'
-      },{
-        title: '调起登录(仅安卓)',
-        method: 'callNativeLogin'
-      },{
-        title: '登录状态变化',
-        method: 'onLoginChange'
-      }]
     }]
   }
 
@@ -261,29 +248,6 @@ class Home {
       cml.showToast({
         message: JSON.stringify(options),
       });      
-    },
-    openNewBeatlesPage() {
-      bridge.callNative('beatlesCommunicate', 'openNativeWebPage', {
-        close_web: false,
-        url: 'http://www.baidu.com'
-      })
-    },
-    callNativeLogin() {
-      bridge.callNative('beatlesCommunicate', 'callNativeLogin', {}, res => {
-        cml.showToast({
-          message: '返回登录结果: ' + JSON.stringify(res)
-        })
-      })
-    },
-    onLoginChange() {
-      bridge.listenNative('beatlesCommunicate', 'onLoginChange', res => {
-        cml.showToast({
-          message: '登录状态发生变化: ' + JSON.stringify(res)
-        })
-      })
-      cml.showToast({
-        message: '注册登录状态变化事件成功'
-      })
     },
     canIUse({ apiName = '' }) {
       cml.canIUse(apiName).then(res => {

@@ -1,1 +1,33 @@
-.cml-7ca731d0.secondary-cell{background-color:#fff;padding:40rpx 46rpx 70rpx;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start}.cml-7ca731d0.cell-title{font-size:28rpx;font-weight:500;color:#3c82ff;margin-top:40rpx}.cml-7ca731d0.cell-divider{background-color:#3c82ff;height:4rpx;width:60rpx;margin:40rpx 0}.cml-7ca731d0.btn-tip{font-size:28rpx;color:#192944}
+.cml-025b0b42.secondary-cell {
+  background-color: white;
+  padding: 40rpx 46rpx 70rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+          align-items: flex-start;
+}
+.cml-025b0b42.cell-title {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #3C82FF;
+  margin-top: 40rpx;
+}
+.cml-025b0b42.cell-divider {
+  background-color: #3C82FF;
+  height: 4rpx;
+  width: 60rpx;
+  margin: 40rpx 0;
+}
+.cml-025b0b42.btn-tip {
+  font-size: 28rpx;
+  color: #192944;
+}

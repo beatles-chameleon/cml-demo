@@ -1,1 +1,76 @@
-var __CML__GLOBAL=require("../../../manifest.js");__CML__GLOBAL.webpackJsonp([13],{198:function(e,t,n){n(199),n(200)},199:function(e,t){},200:function(e,t,n){function a(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(201),u=a(o),i=n(0),r=a(i);t.default={data:{title:"路由导航展示页",subtitle:"",cell:{title:"路由导航返回演示",list:[{title:"点击返回上一页",btnText:"点击返回"}]},map:{navigateTo:"返回上一个开启的页面",redirectTo:"上一个开启的页面被关闭，返回上一个页面之前的页面"},method:""},beforeCreate:function(e){this.method=e.method},created:function(){this.subtitle=this.map[this.method]},methods:{onBtnClicked:function(){(0,u.default)(-1)}}},t.default=r.default.createPage(t.default).getOptions()},201:function(e,t,n){function a(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:-1;u.default.navigateBack(e)}Object.defineProperty(t,"__esModule",{value:!0}),t.default=a;var o=n(202),u=function(e){return e&&e.__esModule?e:{default:e}}(o)},202:function(e,t,n){function a(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var o=function(){function e(e,t){for(var n=0;n<t.length;n++){var a=t[n];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(e,a.key,a)}}return function(t,n,a){return n&&e(t.prototype,n),a&&e(t,a),t}}(),u=n(1),i=function(){function e(){a(this,e)}return o(e,[{key:"navigateBack",value:function(e){wx.navigateBack({delta:Math.abs(e)})}}]),e}();t.default=new i,(0,u.copyProtoProperty)(t.default)}},[198]);
+var __CML__GLOBAL = require("../../../manifest.js");
+__CML__GLOBAL.webpackJsonp([44],{
+
+/***/ "../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/navigate.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _index = __webpack_require__("./node_modules/chameleon-api/src/interfaces/navigateBack/index.js");
+
+var _index2 = _interopRequireDefault(_index);
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var method = '';
+exports.default = {
+  data: {
+    title: '路由导航展示页',
+    subtitle: '',
+    cell: {
+      title: '路由导航返回演示',
+      list: [{
+        title: '点击返回上一页',
+        btnText: '点击返回'
+      }]
+    },
+    map: {
+      navigateTo: '返回上一个开启的页面',
+      redirectTo: '上一个开启的页面被关闭，返回上一个页面之前的页面'
+    },
+    method: ''
+  },
+
+  beforeCreate: function beforeCreate(res) {
+    this.method = res.method;
+  },
+  created: function created() {
+    this.subtitle = this.map[this.method];
+  },
+
+
+  methods: {
+    onBtnClicked: function onBtnClicked() {
+      (0, _index2.default)(-1);
+    }
+  }
+};
+
+
+exports.default = _chameleonRuntime2.default.createPage(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"wx\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/navigate.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/pages/api/sub-pages/navigate.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"wx\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/navigate.cml");
+var __cml__script = __webpack_require__("../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/navigate.cml");
+
+
+/***/ })
+
+},["./src/pages/api/sub-pages/navigate.cml"]);
