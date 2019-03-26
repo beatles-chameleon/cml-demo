@@ -1,10 +1,10 @@
-<view class=" cml-base cml-view cml-1d5b681e"><cml-buildin-page title="scroller" class=" cml-base cml-page cml-1d5b681e">
-    <view class="container  cml-base cml-view cml-1d5b681e">
-    <view class=" cml-base cml-view cml-1d5b681e"><cml-buildin-scroller scroll-direction="{{scrollDirection}}" bottom-offset="{{bottomOffset}}" height="{{-1}}" onScrolltobottom="_cmlEventProxy" data-eventscrolltobottom="onBottom" onOnscroll="_cmlEventProxy" data-eventonscroll="onScroll" scroll-top="{{scrollTop}}" class=" cml-base cml-scroller cml-1d5b681e">
-        <view class=" cml-base cml-view cml-1d5b681e"><c-header title="scroller" class=" cml-base cml-c-header cml-1d5b681e"></c-header></view>
-        <view class="cell  cml-base cml-view cml-1d5b681e" a:for="{{panels}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="change" data-idx="{{i}}">
-            <view class="panel  cml-base cml-view cml-1d5b681e" style="{{item.computedStyle}}">
-                <text class="text  cml-base cml-text cml-1d5b681e">{{item.label}}</text>
+<view class=" cml-base cml-view cml-32d4c4ea"><cml-buildin-page title="scroller" class=" cml-base cml-page cml-32d4c4ea">
+    <view class="container  cml-base cml-view cml-32d4c4ea">
+    <view class=" cml-base cml-view cml-32d4c4ea"><cml-buildin-scroller scroll-direction="{{scrollDirection}}" bottom-offset="{{bottomOffset}}" height="{{-1}}" onScrolltobottom="_cmlEventProxy" data-eventscrolltobottom="onBottom" onOnscroll="_cmlEventProxy" data-eventonscroll="onScroll" scroll-top="{{scrollTop}}" class=" cml-base cml-scroller cml-32d4c4ea">
+        <view class=" cml-base cml-view cml-32d4c4ea"><c-header title="scroller" class=" cml-base cml-c-header cml-32d4c4ea"></c-header></view>
+        <view class="cell  cml-base cml-view cml-32d4c4ea" a:for="{{panels}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="change" data-idx="{{i}}">
+            <view class="panel  cml-base cml-view cml-32d4c4ea" style="{{item.computedStyle}}">
+                <text class="text  cml-base cml-text cml-32d4c4ea">{{item.label}}</text>
             </view>
         </view>
     </cml-buildin-scroller></view>

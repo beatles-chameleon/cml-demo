@@ -146,11 +146,13 @@ class Home {
         method: '',
         url: routeObj["c-tab"].path,
         title: routeObj["c-tab"].name
-      },{
-        method: '',
-        url: routeObj["c-refresh"].path,
-        title: routeObj["c-refresh"].name
-      },{
+      },
+      // {
+      //   method: '',
+      //   url: routeObj["c-refresh"].path,
+      //   title: routeObj["c-refresh"].name
+      // },
+      {
         method: '',
         url: routeObj["c-checkbox-group"].path,
         title: routeObj["c-checkbox-group"].name

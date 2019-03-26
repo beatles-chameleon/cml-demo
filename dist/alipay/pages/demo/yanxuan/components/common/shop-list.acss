@@ -1,0 +1,97 @@
+.cml-4337f02a.wrapper {
+  background-color: #fff;
+  padding-bottom: 10rpx;
+  padding-top: 26rpx;
+  width: 750rpx;
+  margin-bottom: 60rpx;
+}
+.cml-4337f02a.tlt {
+  display: block;
+  text-align: center;
+  color: #333;
+  width: 750rpx;
+  padding: 10rpx;
+  font-size: 30rpx;
+}
+.cml-4337f02a.gb-box {
+  padding: 16rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  background-color: #fff;
+}
+.cml-4337f02a.i-gd {
+  width: 350rpx;
+  height: 510rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+.cml-4337f02a.gd-img-box {
+  width: 350rpx;
+  height: 350rpx;
+  background-color: #f4f4f4;
+}
+.cml-4337f02a.gd-img {
+  width: 350rpx;
+  height: 350rpx;
+  background-color: #f4f4f4;
+}
+.cml-4337f02a.gd-tlt {
+  font-size: 28rpx;
+  color: #333;
+  width: 350rpx;
+  margin-top: 15rpx;
+  overflow: hidden;
+  lines: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.cml-4337f02a.gd-info {
+  display: block;
+  font-size: 24rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  color: #9F8A60;
+  background-color: #F1ECE2;
+  overflow: hidden;
+  lines: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.cml-4337f02a.gd-price {
+  display: block;
+  font-size: 28rpx;
+  width: 350rpx;
+  margin-top: 10rpx;
+  color: #b4282d;
+  overflow: hidden;
+  lines: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

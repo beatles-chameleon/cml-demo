@@ -1,0 +1,11 @@
+.cml-7bbc0d65.carousel-container {
+  height: 370rpx;
+}
+.cml-7bbc0d65.carousel-carousel-item {
+  width: 750rpx;
+  height: 370rpx;
+}
+.cml-7bbc0d65.Img {
+  width: 750rpx;
+  height: 370rpx;
+}

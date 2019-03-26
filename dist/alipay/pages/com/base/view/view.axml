@@ -1,22 +1,22 @@
-<view class=" cml-base cml-view cml-3be3707e"><cml-buildin-page title="view" class=" cml-base cml-page cml-3be3707e">
-  <view class="page-demo  cml-base cml-view cml-3be3707e">
-    <view class=" cml-base cml-view cml-3be3707e"><cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller cml-3be3707e">
-      <view class=" cml-base cml-view cml-3be3707e"><c-header title="view" class=" cml-base cml-c-header cml-3be3707e"></c-header></view>
-        <view class="page-box  cml-base cml-view cml-3be3707e">
-            <view class="page-section  cml-base cml-view cml-3be3707e">
-                <view class="page-section-title  cml-base cml-view cml-3be3707e"><text class=" cml-base cml-text cml-3be3707e">flex-direction: row</text></view>
-                <view class="page-section-content  cml-base cml-view cml-3be3707e" style="flex-direction:row">          
-                    <view class="flex-item demo-1  cml-base cml-view cml-3be3707e"><text class=" cml-base cml-text cml-3be3707e">I</text></view>
-                    <view class="flex-item demo-2  cml-base cml-view cml-3be3707e"><text class=" cml-base cml-text cml-3be3707e">II</text></view>
-                    <view class="flex-item demo-3  cml-base cml-view cml-3be3707e"><text class=" cml-base cml-text cml-3be3707e">III</text></view>
+<view class=" cml-base cml-view cml-49e73a2a"><cml-buildin-page title="view" class=" cml-base cml-page cml-49e73a2a">
+  <view class="page-demo  cml-base cml-view cml-49e73a2a">
+    <view class=" cml-base cml-view cml-49e73a2a"><cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller cml-49e73a2a">
+      <view class=" cml-base cml-view cml-49e73a2a"><c-header title="view" class=" cml-base cml-c-header cml-49e73a2a"></c-header></view>
+        <view class="page-box  cml-base cml-view cml-49e73a2a">
+            <view class="page-section  cml-base cml-view cml-49e73a2a">
+                <view class="page-section-title  cml-base cml-view cml-49e73a2a"><text class=" cml-base cml-text cml-49e73a2a">flex-direction: row</text></view>
+                <view class="page-section-content  cml-base cml-view cml-49e73a2a" style="flex-direction:row">          
+                    <view class="flex-item demo-1  cml-base cml-view cml-49e73a2a"><text class=" cml-base cml-text cml-49e73a2a">I</text></view>
+                    <view class="flex-item demo-2  cml-base cml-view cml-49e73a2a"><text class=" cml-base cml-text cml-49e73a2a">II</text></view>
+                    <view class="flex-item demo-3  cml-base cml-view cml-49e73a2a"><text class=" cml-base cml-text cml-49e73a2a">III</text></view>
                 </view>
             </view>
-            <view class="page-section  cml-base cml-view cml-3be3707e">
-                <view class="page-section-title  cml-base cml-view cml-3be3707e"><text class=" cml-base cml-text cml-3be3707e">flex-direction: column</text></view>
-                <view class="page-section-content  cml-base cml-view cml-3be3707e" style="flex-direction:column">          
-                    <view class="flex-item-V demo-1  cml-base cml-view cml-3be3707e"><text class=" cml-base cml-text cml-3be3707e">I</text></view>
-                    <view class="flex-item-V demo-2  cml-base cml-view cml-3be3707e"><text class=" cml-base cml-text cml-3be3707e">II</text></view>
-                    <view class="flex-item-V demo-3  cml-base cml-view cml-3be3707e"><text class=" cml-base cml-text cml-3be3707e">III</text></view>
+            <view class="page-section  cml-base cml-view cml-49e73a2a">
+                <view class="page-section-title  cml-base cml-view cml-49e73a2a"><text class=" cml-base cml-text cml-49e73a2a">flex-direction: column</text></view>
+                <view class="page-section-content  cml-base cml-view cml-49e73a2a" style="flex-direction:column">          
+                    <view class="flex-item-V demo-1  cml-base cml-view cml-49e73a2a"><text class=" cml-base cml-text cml-49e73a2a">I</text></view>
+                    <view class="flex-item-V demo-2  cml-base cml-view cml-49e73a2a"><text class=" cml-base cml-text cml-49e73a2a">II</text></view>
+                    <view class="flex-item-V demo-3  cml-base cml-view cml-49e73a2a"><text class=" cml-base cml-text cml-49e73a2a">III</text></view>
                 </view>
             </view>
         </view>

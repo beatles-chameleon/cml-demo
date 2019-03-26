@@ -1,0 +1,163 @@
+<template>
+  <page title="chameleon">
+    <view class="chameleon-content" style="height:{{scrollHeight}}cpx;">
+      <scroller
+        scroll-direction="vertical"
+        bottom-offset="{{20}}"
+        height="{{scrollHeight}}"
+      >
+        <component is="{{currentCom}}"></component>
+      </scroller>
+    </view>
+
+    <view class="footer-zhanwei">
+      <c-tabbar c-bind:tabbarclick='handleTabbarClick' 
+                selected-index="{{selectedIndex}}"  
+                c-model="{{currentCom}}"
+                tabbar="{{tabbar}}"></c-tabbar>
+    </view>
+  </page>
+</template>
+
+<script>
+  import cml from 'chameleon-api';
+  import homePageData from '../../assets/getHomeImgList.json';
+  const animation = cml.createAnimation();
+  let chameleonIcon  = require('../../../../../assets/images/chameleon.png');
+  class Index {
+    data = {
+      title: "chameleon",
+      scrollHeight: -1,
+      animationData: {},
+      num: 1,
+      currentCom: 'home',
+      selectedIndex: 0,
+      tabbar: {
+        tabbarStyle: "height:120cpx;",
+        textStyle: "font-size: 24cpx",
+        selectedTextStyle: "font-size: 24cpx;color:#61c7fc;",
+        list: [
+          {
+            compName: 'home',
+            text: '首页',
+            icon: chameleonIcon,
+            "iconStyle":"width:40cpx;height:40cpx;",
+            "selectedIconStyle":"width:45cpx;height:45cpx;"
+          },
+          {
+            compName: 'classify',
+            text: '分类',
+            icon: chameleonIcon,
+            "iconStyle":"width:40cpx;height:40cpx;",
+            "selectedIconStyle":"width:45cpx;height:45cpx;"
+          },
+          {
+            compName: 'topic',
+            text: '识物',
+            icon: chameleonIcon,
+            "iconStyle":"width:40cpx;height:40cpx;",
+            "selectedIconStyle":"width:45cpx;height:45cpx;"
+          },
+          {
+            compName: 'shop',
+            text: '购物车',
+            icon: chameleonIcon,
+            "iconStyle":"width:40cpx;height:40cpx;",
+            "selectedIconStyle":"width:45cpx;height:45cpx;"
+          },
+          {
+            compName: 'my',
+            text: '个人',
+            icon: chameleonIcon,
+            "iconStyle":"width:40cpx;height:40cpx;",
+            "selectedIconStyle":"width:45cpx;height:45cpx;"
+          }
+        ]
+      }
+    }
+    methods = {
+      handleTabbarClick(e){
+        //这里触发出来的 index 的值就是被激活的tab对应的index,可以根据这个index的值去动态的改变组件
+        this.selectedIndex = e.detail.index;
+      }
+    }
+
+    created() {
+      const {special, disscountPriceImgUrl} = homePageData.data;
+      this.special = special;
+      this.disscountPriceImgUrl = disscountPriceImgUrl;
+    }
+
+    mounted() {
+      cml.getSystemInfo().then((info) => {
+        if (info.env == 'weex') {
+          this.scrollHeight = Number(info.viewportHeight) - 100 - 88;
+        } else {
+          this.scrollHeight = Number(info.viewportHeight) - 100;
+        }
+      })
+    }
+  }
+  export default new Index();
+</script>
+<style scoped>
+  .chameleon-content {
+    width: 750cpx;
+    overflow-x: hidden;
+  }
+  .content-main {
+    width: 3750cpx;
+    background: #9F8A60;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .home {
+    width: 750cpx;
+  }
+
+  .classify {
+    width: 750cpx;
+  }
+
+  .things {
+    width: 750cpx;
+  }
+
+  .cart {
+    width: 750cpx;
+  }
+
+  .person {
+    width: 750cpx;
+  }
+
+  .footer-zhanwei {
+    width: 750cpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 2cpx solid #E6E6E6;
+  }
+
+</style>
+<script cml-type="json">
+  {
+    "base":{
+      "usingComponents": {
+        "home": "../../components/home/home",
+        "classify": "../../components/classify/classify",
+        "shop": "../../components/shop/shop",
+        "my": "../../components/my/my",
+        "topic": "../../components/topic/topic",
+        "c-tabbar": "cml-ui/components/c-tabbar/c-tabbar"
+      },
+      "navigationBarTitleText": "首页",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "white"
+    }
+  }
+</script>

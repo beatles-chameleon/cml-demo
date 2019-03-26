@@ -24,7 +24,7 @@
 <script>
 import cml from 'chameleon-api';
 import bridge from 'chameleon-bridge';
-import supportChecker from '../../components/unsupported/unsupported';
+import supportChecker from '../../components/unsupported/unsupported.interface';
 
 class Home {
   data = {
@@ -228,19 +228,6 @@ class Home {
         title: '查看动画展示',
         method: 'goAnimation'
       }]
-    },{
-      title: 'beatles-bridge能力',
-      iconUri: require(`../../assets/images/api/icon-default.png`),
-      list: [{
-        title: '打开新页面',
-        method: 'openNewBeatlesPage'
-      },{
-        title: '调起登录(仅安卓)',
-        method: 'callNativeLogin'
-      },{
-        title: '登录状态变化',
-        method: 'onLoginChange'
-      }]
     }]
   }
 
@@ -265,7 +252,7 @@ class Home {
     openNewBeatlesPage() {
       bridge.callNative('beatlesCommunicate', 'openNativeWebPage', {
         close_web: false,
-        url: 'http://www.baidu.com'
+        url: 'https://cmljs.org'
       })
     },
     callNativeLogin() {

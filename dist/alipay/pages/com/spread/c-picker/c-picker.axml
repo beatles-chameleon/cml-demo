@@ -1,8 +1,8 @@
-<view class=" cml-base cml-view cml-8b38ae80"><cml-buildin-page title="c-picker演示" class=" cml-base cml-page cml-8b38ae80">
-    <view class=" cml-base cml-view cml-8b38ae80"><c-header title="c-picker" class=" cml-base cml-c-header cml-8b38ae80"></c-header></view>
-    <view class=" cml-base cml-view cml-8b38ae80">
-        <text class="select-text  cml-base cml-text cml-8b38ae80" onTap="_cmlEventProxy" data-eventtap="showClick">点击选择：{{provins[provinsIndex]}}</text>
-        <view class=" cml-base cml-view cml-8b38ae80"><c-picker show="{{pickerShow}}" height="{{500}}" header-height="{{100}}" text-align="center" data-scroller-height="{{400}}" list="{{provins}}" default-index="{{defaultIndex}}" confirm-btn-style="color:red" cancel-btn-style="color:red" onCancel="_cmlEventProxy" data-eventcancel="cancel" onConfirm="_cmlEventProxy" data-eventconfirm="confirm" onSelectchange="_cmlEventProxy" data-eventselectchange="selectchange" class=" cml-base cml-c-picker cml-8b38ae80">
+<view class=" cml-base cml-view cml-1de636ed"><cml-buildin-page title="c-picker演示" class=" cml-base cml-page cml-1de636ed">
+    <view class=" cml-base cml-view cml-1de636ed"><c-header title="c-picker" class=" cml-base cml-c-header cml-1de636ed"></c-header></view>
+    <view class=" cml-base cml-view cml-1de636ed">
+        <text class="select-text  cml-base cml-text cml-1de636ed" onTap="_cmlEventProxy" data-eventtap="showClick">点击选择：{{provins[provinsIndex]}}</text>
+        <view class=" cml-base cml-view cml-1de636ed"><c-picker show="{{pickerShow}}" height="{{500}}" header-height="{{100}}" text-align="center" data-scroller-height="{{400}}" list="{{provins}}" default-index="{{defaultIndex}}" confirm-btn-style="color:red" cancel-btn-style="color:red" onCancel="_cmlEventProxy" data-eventcancel="cancel" onConfirm="_cmlEventProxy" data-eventconfirm="confirm" onSelectchange="_cmlEventProxy" data-eventselectchange="selectchange" class=" cml-base cml-c-picker cml-1de636ed">
         </c-picker></view>
     </view>
   </cml-buildin-page></view>

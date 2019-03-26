@@ -1,8 +1,8 @@
-<view class="secondary-cell  cml-base cml-view cml-7ca731d0">
-  <text class="cell-title  cml-base cml-text cml-7ca731d0">{{title}}</text>
-  <view class="cell-divider  cml-base cml-view cml-7ca731d0"></view>
-  <view class="btn-group  cml-base cml-view cml-7ca731d0" a:for="{{list}}" a:for-item="cellInfo">
-    <text class="btn-tip  cml-base cml-text cml-7ca731d0">{{cellInfo.title}}</text>
-    <view class="action-btn  cml-base cml-view cml-7ca731d0"><cml-buildin-button class="action-btn  cml-base cml-button cml-7ca731d0" size="none" type="blue" text="{{cellInfo.btnText}}" btn-style="height:100cpx;width:658cpx;margin: 24cpx 0 30cpx;" data-index="{{index}}" onOnclick="_cmlInlineStatementEventProxy" data-arg0="{{index}}" data-args="index" data-eventonclick="onBtnClick"></cml-buildin-button></view>
+<view class="secondary-cell  cml-base cml-view cml-67b216c5">
+  <text class="cell-title  cml-base cml-text cml-67b216c5">{{title}}</text>
+  <view class="cell-divider  cml-base cml-view cml-67b216c5"></view>
+  <view class="btn-group  cml-base cml-view cml-67b216c5" a:for="{{list}}" a:for-item="cellInfo">
+    <text class="btn-tip  cml-base cml-text cml-67b216c5">{{cellInfo.title}}</text>
+    <view class="action-btn  cml-base cml-view cml-67b216c5"><cml-buildin-button class="action-btn  cml-base cml-button cml-67b216c5" size="none" type="blue" text="{{cellInfo.btnText}}" btn-style="height:100cpx;width:658cpx;margin: 24cpx 0 30cpx;" data-index="{{index}}" onOnclick="_cmlInlineStatementEventProxy" data-arg0="{{index}}" data-args="index" data-eventonclick="onBtnClick"></cml-buildin-button></view>
   </view>
 </view>

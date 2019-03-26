@@ -1,0 +1,13 @@
+<view class="wrapper  cml-base cml-view cml-4337f02a">
+  <text class="tlt  cml-base cml-text cml-4337f02a">猜你喜欢</text>
+  <view class="gb-box  cml-base cml-view cml-4337f02a">
+    <view class="i-gd  cml-base cml-view cml-4337f02a" a:for="{{goods}}" data-url="{{item.url}}" onTap="_cmlEventProxy" data-eventtap="jumpWeb">
+      <view class="gd-img-box  cml-base cml-view cml-4337f02a">
+        <image class="gd-img  cml-base cml-image cml-4337f02a" resize="cover" src="{{item.img}}"></image>
+      </view>
+      <text class="gd-info  cml-base cml-text cml-4337f02a">{{item.info}}</text>
+      <text class="gd-tlt  cml-base cml-text cml-4337f02a">{{item.tlt}}</text>
+      <text class="gd-price  cml-base cml-text cml-4337f02a">¥{{item.price}}</text>
+    </view>
+  </view>
+</view>

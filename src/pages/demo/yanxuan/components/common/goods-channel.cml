@@ -1,0 +1,80 @@
+<template>
+  <view class="container border-bottom-1px">
+    <scroller class="scroller" cstyle="" scroll-direction="horizontal" width="{{-1}}">
+      <view class="wrapper">
+        <view class="j-uline" ref="jcLine"></view>
+        <text class="i-c c-act">推荐</text>
+        <text class="i-c">限时购</text>
+        <text class="i-c">新品</text>
+        <text class="i-c">居家</text>
+        <text class="i-c">餐厨</text>
+        <text class="i-c">配件</text>
+        <text class="i-c">服装</text>
+        <text class="i-c">电器</text>
+        <text class="i-c">洗护</text>
+        <text class="i-c">杂货</text>
+        <text class="i-c">饮食</text>
+        <text class="i-c">婴童</text>
+        <text class="i-c">志趣</text>
+      </view>
+    </scroller>
+  </view>
+</template>
+<script>
+  class Yanxuan {
+
+
+  }
+
+  export default new Yanxuan();
+</script>
+<style scoped>
+  .container {
+    margin-top: 114cpx;
+    background-color: #fafafa;
+    border-bottom-color: #d9d9d9;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 2000cpx;
+    height: 60cpx;
+  }
+
+  .scroller {
+    display: flex;
+    height: 60cpx;
+    flex-direction: row;
+  }
+
+  .i-c {
+    box-sizing: border-box;
+    font-size: 26cpx;
+    color: #333;
+  }
+
+  .c-act {
+    color: #b4282d;
+  }
+
+  .j-uline {
+    display: flex;
+    position: absolute;
+    left: 30cpx;
+    bottom: 0;
+    width: 82cpx;
+    height: 4cpx;
+    background-color: #b4282d;
+  }
+
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {}
+    }
+  }
+</script>

@@ -1,0 +1,88 @@
+<template>
+  <view>
+    <origin-map id="map"
+                class="map"
+                longitude="{{longitude}}"
+                latitude="{{latitude}}"
+                scale="14"
+                show-location="{{true}}"
+                ></origin-map>
+  </view>
+</template>
+
+<script>
+import cml from 'chameleon-api';
+class Map implements MapInterface {
+  props = {
+    name: {
+      type: String,
+      default: '默认值'
+    }
+  }
+  data = {
+    longitude: '',
+    latitude: '',
+    markers: [],
+    mapCtx: null
+  }
+
+  computed = {
+  }
+
+  watch = {
+  }
+
+  methods = {
+    
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+    // this.mapCtx = my.createMapContext('map');
+    cml.getLocationInfo().then(info => {
+      this.latitude = info.lat;
+      this.longitude = info.lng;
+    })
+  }
+
+  beforeDestroy() {
+  }
+  
+  destroyed() {
+  }
+}
+
+export default new Map();
+</script>
+
+<style >
+.map {
+  width: 750cpx;
+  height: 300cpx;
+}
+</style>
+
+<script cml-type="json">
+{
+  "base": {
+    "component": true,
+    "usingComponents": {}
+  },
+  "alipay": {
+    "window": {
+      "defaultTitle": "component",
+      "pullRefresh": false,
+      "allowsBounceVertical": "YES",
+      "titleBarColor": "#ffffff"
+    }
+  }
+}
+</script>

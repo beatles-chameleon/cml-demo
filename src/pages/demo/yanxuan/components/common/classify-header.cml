@@ -1,0 +1,46 @@
+<template>
+  <view class="wrapper" >
+    <text class="search iconfont">搜索商品，共8888款好物</text>
+  </view>
+</template>
+<script>
+  class Yanxuan { }
+  export default new Yanxuan();
+</script>
+<style scoped>
+  .wrapper{
+    width: 750cpx;
+    height: 114cpx;
+    padding-top: 30cpx;
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    z-index: 101;
+    background-color: #fafafa;
+    opacity: .99;
+    border-bottom-width: 1cpx;
+    border-bottom-color: #d9d9d9;
+    border-bottom-style: solid;
+    box-sizing: border-box;
+  }
+  .search {
+    flex: 1;
+    height: 70cpx;
+    font-size: 26cpx;
+    line-height: 70cpx;
+    background-color: #ededed;
+    border-radius: 8cpx;
+    margin-right: 26cpx;
+    margin-left: 26cpx;
+    text-align: center;
+    color:#666;
+  }
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {}
+    }
+  }
+</script>

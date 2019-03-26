@@ -1,0 +1,165 @@
+<template>
+  <view class="wrapper">
+    <view class="auther-box" c-bind:tap="godetail">
+      <image class="auther-img" resize="cover" src="{{article.autherimg}}"></image>
+      <text class="auther-name">{{article.auther}}</text>
+    </view>
+    <view class="img-box">
+      <view class="wd" c-if="{{stringFun}}" c-bind:tap="godetail">
+        <image class="main-img" resize="cover" src="{{article.img}}"></image>
+      </view>
+      <view class="wd" c-else-if="{{objectFun}}" c-bind:tap="godetail">
+        <image class="main-img" resize="cover" src="{{article.img[0]}}"></image>
+        <view class="sub-imgs-box">
+          <image class="sub-img" resize="cover" src="{{article.img[1]}}"></image>
+          <image class="sub-img" resize="cover" src="{{article.img[2]}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="tlt-box" c-bind:tap="godetail">
+      <text class="tlt">{{article.tlt}}</text>
+      <text class="price" c-if="{{article.price}}">{{article.price}}元起</text>
+    </view>
+    <view class="info-box" c-bind:tap="godetail">
+      <text class="info">{{article.info}}</text>
+    </view>
+  </view>
+</template>
+<script>
+  import cml from "chameleon-api";
+
+  class Yanxuan {
+    props = {
+      article: {
+        type: Object,
+        default: {}
+      },
+      url: {
+        type: String,
+        default: ''
+      }
+    }
+
+    computed = {
+      stringFun(obj) {
+        return (typeof this.article.img == 'string')
+      },
+      objectFun(obj) {
+        return (typeof this.article.img == 'object' && this.article.img.length >= 3)
+      }
+    }
+
+    methods = {
+      godetail() {
+        cml.navigateTo({
+          "path": "/pages/demo/yanxuan/pages/detail/detail"
+        });
+      }
+    }
+
+  }
+
+  export default new Yanxuan();
+</script>
+<style scoped>
+  .wrapper {
+    background-color: #fff;
+    padding-top: 15cpx;
+    padding-bottom: 15cpx;
+  }
+
+  .auther-box {
+    height: 75cpx;
+    padding-top: 10cpx;
+    padding-left: 25cpx;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  .auther-img {
+    height: 58cpx;
+    width: 58cpx;
+    border-radius: 58cpx;
+  }
+
+  .auther-name {
+    flex: 1;
+    font-size: 26cpx;
+    height: 58cpx;
+    padding-left: 20cpx;
+    padding-top: 10cpx;
+  }
+
+  .img-box, .wd {
+    display: flex;
+    width: 750cpx;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .main-img {
+    flex: 1;
+    height: 380cpx;
+  }
+
+  .sub-imgs-box {
+    width: 190cpx;
+    height: 380cpx;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sub-img {
+    height: 188cpx;
+    width: 190cpx;
+    margin-left: 3cpx;
+    margin-bottom: 3cpx;
+  }
+
+  .tlt-box {
+    height: 80cpx;
+    padding: 20cpx;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+
+  .tlt {
+    font-size: 34cpx;
+    flex: 1;
+    overflow: hidden;
+    lines: 1;
+    text-overflow: ellipsis;
+  }
+
+  .price {
+    font-size: 34cpx;
+    color: #b4282d;
+    padding-left: 10cpx;
+
+  }
+
+  .info-box {
+    padding-left: 20cpx;
+    padding-right: 20cpx;
+  }
+
+  .info {
+    font-size: 26cpx;
+    overflow: hidden;
+    lines: 2;
+    text-overflow: ellipsis;
+    color: #666;
+  }
+</style>
+
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {}
+    }
+  }
+</script>
+

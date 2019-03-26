@@ -1,1 +1,10 @@
-.cml-7942e3a3.c-head{display:flex;background-color:#b3c0d1;color:#333;line-height:60rpx;flex-shrink:0}
+.cml-6d06b2d6.c-head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  background-color: #b3c0d1;
+  color: #333;
+  line-height: 60rpx;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+}

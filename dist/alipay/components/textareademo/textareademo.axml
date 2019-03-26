@@ -1,36 +1,36 @@
-<view class=" cml-base cml-view cml-ffb05a54"><cml-buildin-page title="textarea" class=" cml-base cml-page cml-ffb05a54">
-    <view class="page-demo  cml-base cml-view cml-ffb05a54">
-        <view class="input-wrap  cml-base cml-view cml-ffb05a54">
-            <text class="title-text  cml-base cml-text cml-ffb05a54">focus聚焦</text>
-            <view class=" cml-base cml-view cml-ffb05a54"><cml-buildin-textarea placeholder="focus聚焦 web端不支持自动" focus="{{isfocus}}" onBlur="_cmlEventProxy" data-eventblur="bindblurevent" class=" cml-base cml-textarea cml-ffb05a54"></cml-buildin-textarea></view>
+<view class=" cml-base cml-view cml-c6e4316e"><cml-buildin-page title="textarea" class=" cml-base cml-page cml-c6e4316e">
+    <view class="page-demo  cml-base cml-view cml-c6e4316e">
+        <view class="input-wrap  cml-base cml-view cml-c6e4316e">
+            <text class="title-text  cml-base cml-text cml-c6e4316e">focus聚焦</text>
+            <view class=" cml-base cml-view cml-c6e4316e"><cml-buildin-textarea placeholder="focus聚焦 web端不支持自动" focus="{{isfocus}}" onBlur="_cmlEventProxy" data-eventblur="bindblurevent" class=" cml-base cml-textarea cml-c6e4316e"></cml-buildin-textarea></view>
         </view>
-        <view class="input-wrap  cml-base cml-view cml-ffb05a54">
-            <text class="title-text  cml-base cml-text cml-ffb05a54">数据绑定,value:{{inputValue}}</text>
-            <view class=" cml-base cml-view cml-ffb05a54"><cml-buildin-textarea placeholder="数据绑定" value="{{inputValue}}" onInput="_cmlEventProxy" data-eventinput="inputEvent" class=" cml-base cml-textarea cml-ffb05a54"></cml-buildin-textarea></view>
+        <view class="input-wrap  cml-base cml-view cml-c6e4316e">
+            <text class="title-text  cml-base cml-text cml-c6e4316e">数据绑定,value:{{inputValue}}</text>
+            <view class=" cml-base cml-view cml-c6e4316e"><cml-buildin-textarea placeholder="数据绑定" value="{{inputValue}}" onInput="_cmlEventProxy" data-eventinput="inputEvent" class=" cml-base cml-textarea cml-c6e4316e"></cml-buildin-textarea></view>
         </view>
-        <view class="input-wrap  cml-base cml-view cml-ffb05a54">
-            <text class="title-text  cml-base cml-text cml-ffb05a54">监听input事件,当前事件：{{eventName}}</text>
-            <view class=" cml-base cml-view cml-ffb05a54"><cml-buildin-textarea placeholder="监听textarea事件" onInput="_cmlEventProxy" data-eventinput="testEvent" onBlur="_cmlEventProxy" data-eventblur="testEvent" onFocus="_cmlEventProxy" data-eventfocus="testEvent" onConfirm="_cmlEventProxy" data-eventconfirm="testEvent" class=" cml-base cml-textarea cml-ffb05a54"></cml-buildin-textarea></view>
+        <view class="input-wrap  cml-base cml-view cml-c6e4316e">
+            <text class="title-text  cml-base cml-text cml-c6e4316e">监听input事件,当前事件：{{eventName}}</text>
+            <view class=" cml-base cml-view cml-c6e4316e"><cml-buildin-textarea placeholder="监听textarea事件" onInput="_cmlEventProxy" data-eventinput="testEvent" onBlur="_cmlEventProxy" data-eventblur="testEvent" onFocus="_cmlEventProxy" data-eventfocus="testEvent" onConfirm="_cmlEventProxy" data-eventconfirm="testEvent" class=" cml-base cml-textarea cml-c6e4316e"></cml-buildin-textarea></view>
         </view>
-        <view class="input-wrap  cml-base cml-view cml-ffb05a54">
-            <text class="title-text  cml-base cml-text cml-ffb05a54">最大长度是5</text>
-            <view class=" cml-base cml-view cml-ffb05a54"><cml-buildin-textarea placeholder="最大长度是5" maxlength="{{5}}" class=" cml-base cml-textarea cml-ffb05a54"></cml-buildin-textarea></view>
+        <view class="input-wrap  cml-base cml-view cml-c6e4316e">
+            <text class="title-text  cml-base cml-text cml-c6e4316e">最大长度是5</text>
+            <view class=" cml-base cml-view cml-c6e4316e"><cml-buildin-textarea placeholder="最大长度是5" maxlength="{{5}}" class=" cml-base cml-textarea cml-c6e4316e"></cml-buildin-textarea></view>
         </view>
-        <view class="input-wrap  cml-base cml-view cml-ffb05a54">
-            <text class="title-text  cml-base cml-text cml-ffb05a54">禁用textarea</text>
-            <view class=" cml-base cml-view cml-ffb05a54"><cml-buildin-textarea placeholder="禁用textarea" disabled="{{true}}" class=" cml-base cml-textarea cml-ffb05a54"></cml-buildin-textarea></view>
+        <view class="input-wrap  cml-base cml-view cml-c6e4316e">
+            <text class="title-text  cml-base cml-text cml-c6e4316e">禁用textarea</text>
+            <view class=" cml-base cml-view cml-c6e4316e"><cml-buildin-textarea placeholder="禁用textarea" disabled="{{true}}" class=" cml-base cml-textarea cml-c6e4316e"></cml-buildin-textarea></view>
         </view>
-        <view class="input-wrap  cml-base cml-view cml-ffb05a54">
-            <text class="title-text  cml-base cml-text cml-ffb05a54">键盘右下键按钮done</text>
-            <view class=" cml-base cml-view cml-ffb05a54"><cml-buildin-textarea placeholder="键盘右下键按钮done" return-key-type="done" class=" cml-base cml-textarea cml-ffb05a54"></cml-buildin-textarea></view>
+        <view class="input-wrap  cml-base cml-view cml-c6e4316e">
+            <text class="title-text  cml-base cml-text cml-c6e4316e">键盘右下键按钮done</text>
+            <view class=" cml-base cml-view cml-c6e4316e"><cml-buildin-textarea placeholder="键盘右下键按钮done" return-key-type="done" class=" cml-base cml-textarea cml-c6e4316e"></cml-buildin-textarea></view>
         </view>
-        <view class="input-wrap  cml-base cml-view cml-ffb05a54">
-            <text class="title-text  cml-base cml-text cml-ffb05a54">placeholderColor web端不支持</text>
-            <view class=" cml-base cml-view cml-ffb05a54"><cml-buildin-textarea placeholder="placeholderColor web端不支持" placer-holder-color="#ff0000;" class=" cml-base cml-textarea cml-ffb05a54"></cml-buildin-textarea></view>
+        <view class="input-wrap  cml-base cml-view cml-c6e4316e">
+            <text class="title-text  cml-base cml-text cml-c6e4316e">placeholderColor web端不支持</text>
+            <view class=" cml-base cml-view cml-c6e4316e"><cml-buildin-textarea placeholder="placeholderColor web端不支持" placer-holder-color="#ff0000;" class=" cml-base cml-textarea cml-c6e4316e"></cml-buildin-textarea></view>
         </view>
-        <view class="end-item  cml-base cml-view cml-ffb05a54">
-            <text class="title-text  cml-base cml-text cml-ffb05a54">自定义样式</text>
-            <view class=" cml-base cml-view cml-ffb05a54"><cml-buildin-textarea placeholder="自定义样式" c-style="color: #00ff00; border: 1px solid #00f;" class=" cml-base cml-textarea cml-ffb05a54"></cml-buildin-textarea></view>
+        <view class="end-item  cml-base cml-view cml-c6e4316e">
+            <text class="title-text  cml-base cml-text cml-c6e4316e">自定义样式</text>
+            <view class=" cml-base cml-view cml-c6e4316e"><cml-buildin-textarea placeholder="自定义样式" c-style="color: #00ff00; border: 1px solid #00f;" class=" cml-base cml-textarea cml-c6e4316e"></cml-buildin-textarea></view>
         </view>  
     </view>
   </cml-buildin-page></view>

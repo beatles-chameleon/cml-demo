@@ -1,19 +1,19 @@
-<view class=" cml-base cml-view cml-e39524b8"><cml-buildin-page title="refresh演示" class=" cml-base cml-page cml-e39524b8">
-  <view class=" cml-base cml-view cml-e39524b8"><c-header title="refresh" class=" cml-base cml-c-header cml-e39524b8"></c-header></view>
-  <view class="container  cml-base cml-view cml-e39524b8">
-    <view class=" cml-base cml-view cml-e39524b8"><cml-buildin-scroller scroll-direction="{{scrollDirection}}" bottom-offset="{{bottomOffset}}" onScrolltobottom="_cmlEventProxy" data-eventscrolltobottom="onBottom" onCustomscroll="_cmlEventProxy" data-eventcustomscroll="onScroll" height="{{-1}}" class=" cml-base cml-scroller cml-e39524b8">   
-      <view class=" cml-base cml-view cml-e39524b8"><c-refresh display="{{ topRefreshing }}" onRefresh="_cmlEventProxy" data-eventrefresh="onrefreshUp" class=" cml-base cml-c-refresh cml-e39524b8">
+<view class=" cml-base cml-view cml-1b4d2491"><cml-buildin-page title="refresh演示" class=" cml-base cml-page cml-1b4d2491">
+  <view class=" cml-base cml-view cml-1b4d2491"><c-header title="refresh" class=" cml-base cml-c-header cml-1b4d2491"></c-header></view>
+  <view class="container  cml-base cml-view cml-1b4d2491">
+    <view class=" cml-base cml-view cml-1b4d2491"><cml-buildin-scroller scroll-direction="{{scrollDirection}}" bottom-offset="{{bottomOffset}}" onScrolltobottom="_cmlEventProxy" data-eventscrolltobottom="onBottom" onCustomscroll="_cmlEventProxy" data-eventcustomscroll="onScroll" height="{{-1}}" class=" cml-base cml-scroller cml-1b4d2491">   
+      <view class=" cml-base cml-view cml-1b4d2491"><c-refresh display="{{ topRefreshing }}" onRefresh="_cmlEventProxy" data-eventrefresh="onrefreshUp" class=" cml-base cml-c-refresh cml-1b4d2491">
       </c-refresh></view>
-      <view class=" cml-base cml-view cml-e39524b8">
-        <view class="cell  cml-base cml-view cml-e39524b8" a:for="{{panels}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="change" data-idx="{{i}}">
-            <view class="panel  cml-base cml-view cml-e39524b8" style="{{item.computedStyle}}">
-                <text class="text  cml-base cml-text cml-e39524b8">{{item.label}}</text>
+      <view class=" cml-base cml-view cml-1b4d2491">
+        <view class="cell  cml-base cml-view cml-1b4d2491" a:for="{{panels}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="change" data-idx="{{i}}">
+            <view class="panel  cml-base cml-view cml-1b4d2491" style="{{item.computedStyle}}">
+                <text class="text  cml-base cml-text cml-1b4d2491">{{item.label}}</text>
             </view>
         </view>
       </view>
-      <view class="no-more-text  cml-base cml-view cml-e39524b8" a:if="{{ page >= sumPage }}"><text class=" cml-base cml-text cml-e39524b8">没有更多了...</text></view>
-      <view a:else class=" cml-base cml-view cml-e39524b8"><c-refresh display="{{ bottomRefreshing }}" direction="bottom" custom-ui="{{ true }}" onRefresh="_cmlEventProxy" data-eventrefresh="onrefreshDown" class=" cml-base cml-c-refresh cml-e39524b8">
-        <view class="loading-text  cml-base cml-view cml-e39524b8" style="{{loadingTextStyle}}"><text class=" cml-base cml-text cml-e39524b8">上拉刷新...</text></view>
+      <view class="no-more-text  cml-base cml-view cml-1b4d2491" a:if="{{ page >= sumPage }}"><text class=" cml-base cml-text cml-1b4d2491">没有更多了...</text></view>
+      <view a:else class=" cml-base cml-view cml-1b4d2491"><c-refresh display="{{ bottomRefreshing }}" direction="bottom" custom-ui="{{ true }}" onRefresh="_cmlEventProxy" data-eventrefresh="onrefreshDown" class=" cml-base cml-c-refresh cml-1b4d2491">
+        <view class="loading-text  cml-base cml-view cml-1b4d2491" style="{{loadingTextStyle}}"><text class=" cml-base cml-text cml-1b4d2491">上拉刷新...</text></view>
       </c-refresh></view>
     </cml-buildin-scroller></view>
   </view>

@@ -14,6 +14,7 @@
         "pages/index/index",
         "pages/com/com",
         "pages/api/api",
+        "pages/demo/demo",
         "pages/api/sub-pages/chooseImage",
         "pages/api/sub-pages/animation",
         "pages/api/sub-pages/request",
@@ -45,7 +46,11 @@
         "pages/com/spread/c-tab/c-tab",
         "pages/com/spread/c-refresh/c-refresh",
         "pages/com/spread/c-checkbox-group/c-checkbox-group",
-        "pages/com/spread/c-radio-group/c-radio-group"
+        "pages/com/spread/c-radio-group/c-radio-group",
+        "pages/demo/yanxuan/pages/index/index",
+        "pages/demo/yanxuan/pages/list/list",
+        "pages/demo/yanxuan/pages/detail/detail",
+        "pages/demo/yanxuan/pages/map/map"
     ],
     "usingComponents": {}
 }

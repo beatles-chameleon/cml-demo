@@ -1,0 +1,17 @@
+<view class="tab-bar-root {{layoutClass}}  cml-base cml-view cml-018d6652">
+  <view class="tab-bar-wrap   cml-base cml-view cml-018d6652" style="{{tabbar.tabbarStyle || ';'}}">
+    <view a:for="{{tabbar.list }}" a:key="text" class="tab-item-wrap  cml-base cml-view cml-018d6652">
+      <view class="tab-content  cml-base cml-view cml-018d6652" onTap="_cmlInlineStatementEventProxy" data-arg0="{{index}}" data-args="index" data-eventtap="onTabbarItemTap">
+        <view class="tab-icon-wrap  cml-base cml-view cml-018d6652" a:if="{{!top && hasIcon}}">
+          <image a:if="{{!(index === tapedIndex)}}" class="tab-icon  cml-base cml-image cml-018d6652" src="{{item.icon}}" style="{{!(index === tapedIndex) ? item.iconStyle || '' : ';'}}"></image>
+          <image a:if="{{index === tapedIndex}}" class="tab-icon  cml-base cml-image cml-018d6652" src="{{item.selectedIcon || item.icon}}" style="{{index === tapedIndex ? item.selectedIconStyle || '' : ''}}"></image>
+        </view>
+        <view class="tab-title  cml-base cml-view cml-018d6652">
+          <text class="tab-text  cml-base cml-text cml-018d6652" style="{{index === tapedIndex ? tabbar.selectedTextStyle || 'color:#61c7fc' : tabbar.textStyle || 'color:#000000'}}">{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view a:if="{{top}}" class="line-wrap  cml-base cml-view cml-018d6652" style="{{tabLineStyle}}"></view>
+
+</view>

@@ -1,17 +1,17 @@
-<view class=" cml-base cml-view cml-5dfb41eb"><cml-buildin-page title="request" class=" cml-base cml-page cml-5dfb41eb">
-  <view class="page-request  cml-base cml-view cml-5dfb41eb">
-    <view class=" cml-base cml-view cml-5dfb41eb"><secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-base cml-secondary-header cml-5dfb41eb"></secondary-header></view>
-    <view class=" cml-base cml-view cml-5dfb41eb"><secondary-cell title="{{cell.title}}" list="{{cell.list}}" onBtnclicked="_cmlEventProxy" data-eventbtnclicked="onBtnClicked" class=" cml-base cml-secondary-cell cml-5dfb41eb"></secondary-cell></view>
-    <view class="preview-container  cml-base cml-view cml-5dfb41eb">
-      <text class="preview-text preview-font  cml-base cml-text cml-5dfb41eb">请求信息</text>
-      <view a:for="{{respones}}" a:for-item="res" a:for-index="idx" class=" cml-base cml-view cml-5dfb41eb">
-        <text class="preview-font  cml-base cml-text cml-5dfb41eb">{{res.name}}</text>
-        <text a:if="{{res.value}}" class="preview-font indent  cml-base cml-text cml-5dfb41eb">{{res.value}}</text>
-        <block a:if="{{res.child}}" class=" cml-base cml-block cml-5dfb41eb">
-          <text a:for="{{res.child}}" a:for-item="str" class="preview-font indent  cml-base cml-text cml-5dfb41eb">{{str}}</text>
+<view class=" cml-base cml-view cml-07f2c744"><cml-buildin-page title="request" class=" cml-base cml-page cml-07f2c744">
+  <view class="page-request  cml-base cml-view cml-07f2c744">
+    <view class=" cml-base cml-view cml-07f2c744"><secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-base cml-secondary-header cml-07f2c744"></secondary-header></view>
+    <view class=" cml-base cml-view cml-07f2c744"><secondary-cell title="{{cell.title}}" list="{{cell.list}}" onBtnclicked="_cmlEventProxy" data-eventbtnclicked="onBtnClicked" class=" cml-base cml-secondary-cell cml-07f2c744"></secondary-cell></view>
+    <view class="preview-container  cml-base cml-view cml-07f2c744">
+      <text class="preview-text preview-font  cml-base cml-text cml-07f2c744">请求信息</text>
+      <view a:for="{{respones}}" a:for-item="res" a:for-index="idx" class=" cml-base cml-view cml-07f2c744">
+        <text class="preview-font  cml-base cml-text cml-07f2c744">{{res.name}}</text>
+        <text a:if="{{res.value}}" class="preview-font indent  cml-base cml-text cml-07f2c744">{{res.value}}</text>
+        <block a:if="{{res.child}}" class=" cml-base cml-block cml-07f2c744">
+          <text a:for="{{res.child}}" a:for-item="str" class="preview-font indent  cml-base cml-text cml-07f2c744">{{str}}</text>
         </block>
       </view>
     </view>
-    <view class=" cml-base cml-view cml-5dfb41eb"><c-loading loading="{{isShowLoading}}" class=" cml-base cml-c-loading cml-5dfb41eb"></c-loading></view>
+    <view class=" cml-base cml-view cml-07f2c744"><c-loading loading="{{isShowLoading}}" class=" cml-base cml-c-loading cml-07f2c744"></c-loading></view>
   </view>
   </cml-buildin-page></view>

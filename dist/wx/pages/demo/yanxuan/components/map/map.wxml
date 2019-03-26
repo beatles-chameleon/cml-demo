@@ -1,0 +1,3 @@
+<view class="map_container  cml-base cml-view">
+  <map class="map  cml-base cml-origin-map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map>
+</view>

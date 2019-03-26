@@ -1,0 +1,144 @@
+<template>
+  <view class="wrapper">
+    <classify-header></classify-header>
+    <view class="wrapper-content">
+      <view class="class-list" style="{{scrollerHeight}}cpx">
+        <scroller height="{{scrollerHeight}}">
+          <view class="class-wrapper" c-bind:tap="forbinding">
+            <text class="class-txt" c-for="{{classes}}">{{item}}</text>
+          </view>
+        </scroller>
+      </view>
+
+      <view class="main-list" style="{{scrollerHeight}}cpx">
+        <image class="ad-img" resize="cover" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/3ebd7addcc0d101d116052a57cec2f16.png"></image>
+        <text class="sub-tlt"> --- 推荐区分类 --- </text>
+        <view class="sub-box">
+          <view class="sub-i" c-for="{{subclasses}}" c-bind:tap="godetail">
+            <image class="i-img" resize="contain" src="{{item.img}}"></image>
+            <text class="i-name">{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</template>
+<script>
+  import cml from "chameleon-api";
+  import yanxuanData from '../../assets/yanxuan.json'
+  const headerHeight = 114;
+  const tabbarHeight = 90;
+  class Yanxuan   {
+    data = {
+      classes: [],
+      subclasses : [],
+      scrollerHeight: -1
+    }
+    methods = {
+      godetail(){
+        cml.navigateTo({
+          "path": "/pages/demo/yanxuan/pages/detail/detail"
+        });
+      },
+      forbinding(e){
+        // e.stopPropagation();
+      }
+    }
+
+    created() {
+      let result = yanxuanData.data.result;
+      this.classes = result.classes;
+      this.subclasses = result.subclasses;
+    }
+
+    mounted() {
+      cml.getSystemInfo().then((info)=>{
+        this.scrollerHeight = Number(info.viewportHeight) - headerHeight - tabbarHeight
+      })
+    }
+  }
+
+  export default new Yanxuan();
+</script>
+<style scoped>
+
+  .class-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrapper-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .class-list{
+    width: 150cpx;
+    /*height: 1000cpx;*/
+    border-right-color: #d9d9d9;
+    background-color: #fff;
+    border-right-style:solid;
+  }
+  .class-txt{
+    font-size: 28cpx;
+    margin-top: 22cpx;
+    margin-bottom: 26cpx;
+    margin-left: 10cpx;
+    margin-right: 10cpx;
+    text-align: center;
+    color:#333;
+  }
+  .main-list{
+    width: 600cpx;
+    /*height: 1000cpx;*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: #fff;
+  }
+  .ad-img{
+    width: 532cpx;
+    height: 194cpx;
+    border-radius: 6cpx;
+    margin: 28cpx;
+  }
+  .sub-tlt{
+    display:block;
+    text-align: center;
+    font-size: 24cpx;
+    color:#333;
+    margin-top: 10cpx;
+    margin-bottom: 30cpx;
+  }
+  .sub-box{
+    padding-left: 26cpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .sub-i{
+    display:flex;
+    flex-direction:column;
+    width: 178cpx;
+    height: 200cpx;
+  }
+  .i-img{
+    width: 150cpx;
+    margin-left: 14cpx;
+    margin-right: 14cpx;
+    height: 150cpx;
+  }
+  .i-name{
+    font-size: 22cpx;
+    text-align: center;
+  }
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {
+        "classify-header": "../common/classify-header"
+      }
+    }
+  }
+</script>

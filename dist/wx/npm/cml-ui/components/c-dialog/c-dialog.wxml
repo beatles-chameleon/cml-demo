@@ -15,11 +15,11 @@
       <text class="content-row  cml-base cml-text">{{content}}</text>
     
     
-      <view class="btn-row border-top-1px  cml-base cml-view">
+      <view class="btn-row border-top-1px cml-border-top-1px  cml-base cml-view">
         <block wx:if="{{type !== 'alert'}}" class=" cml-base cml-block">
-          <view class="left-btn-wrap border-right-1px  cml-base cml-view" bindtap="_cmlEventProxy" data-eventtap="cancelTap"><text class="cancel-text  cml-base cml-text">{{cancelText}}</text></view>
+          <view class="left-btn-wrap border-right-1px cml-border-right-1px  cml-base cml-view" bindtap="_cmlEventProxy" data-eventtap="cancelTap"><text class="cancel-text  cml-base cml-text" style="{{computedCancelStyle}}">{{cancelText}}</text></view>
         </block>
-        <view class="btn-wrap  cml-base cml-view" bindtap="_cmlEventProxy" data-eventtap="confirmTap"><text class="confirm-text  cml-base cml-text">{{confirmText}}</text></view>
+        <view class="btn-wrap  cml-base cml-view" bindtap="_cmlEventProxy" data-eventtap="confirmTap"><text class="confirm-text  cml-base cml-text" style="{{computedConfirmStyle}}">{{confirmText}}</text></view>
       </view>     
     
   </view>

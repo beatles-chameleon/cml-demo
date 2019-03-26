@@ -41,6 +41,27 @@ class Method implements UnsupportedInterface {
 export default new Method();
 </script>
 
+<script cml-type="alipay">
+
+class Method implements UnsupportedInterface {
+  getUnsupportApis() {
+    return ['启动参数', 'beatles-bridge能力']
+  }
+}
+
+export default new Method();
+</script>
+<script cml-type="baidu">
+
+class Method implements UnsupportedInterface {
+  getUnsupportApis() {
+    return ['beatles-bridge能力']
+  }
+}
+
+export default new Method();
+</script>
+
 
 
 

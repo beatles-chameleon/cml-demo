@@ -1,20 +1,20 @@
-<view class=" cml-base cml-view cml-1717fd24"><cml-buildin-page title="c-tip演示" class=" cml-base cml-page cml-1717fd24">
-  <view class=" cml-base cml-view cml-1717fd24"><c-header title="c-tip" class=" cml-base cml-c-header cml-1717fd24"></c-header></view>
-  <view class="tip-eg  cml-base cml-view cml-1717fd24">
-  <view style="position:absolute;top:0;left:300rpx" class=" cml-base cml-view cml-1717fd24"><c-tip show="{{showtip1}}" direction="top" onClose="_cmlEventProxy" data-eventclose="closeTip1" style="position:absolute;top:0;left:300rpx" class=" cml-base cml-c-tip cml-1717fd24">
-    <text style="color:#fff" class=" cml-base cml-text cml-1717fd24">Tip</text>
+<view class=" cml-base cml-view cml-3a77f111"><cml-buildin-page title="c-tip演示" class=" cml-base cml-page cml-3a77f111">
+  <view class=" cml-base cml-view cml-3a77f111"><c-header title="c-tip" class=" cml-base cml-c-header cml-3a77f111"></c-header></view>
+  <view class="tip-eg  cml-base cml-view cml-3a77f111">
+  <view style="position:absolute;top:0;left:300rpx" class=" cml-base cml-view cml-3a77f111"><c-tip show="{{showtip1}}" direction="top" onClose="_cmlEventProxy" data-eventclose="closeTip1" style="position:absolute;top:0;left:300rpx" class=" cml-base cml-c-tip cml-3a77f111">
+    <text style="color:#fff" class=" cml-base cml-text cml-3a77f111">Tip</text>
   </c-tip></view>
-  <text class="tip-btn  cml-base cml-text cml-1717fd24" onTap="_cmlEventProxy" data-eventtap="showTip1">Show tip</text>
+  <text class="tip-btn  cml-base cml-text cml-3a77f111" onTap="_cmlEventProxy" data-eventtap="showTip1">Show tip</text>
   </view>
 
-    <view class="tip-eg  cml-base cml-view cml-1717fd24">
-      <view style="{{tipStyle}}" class=" cml-base cml-view cml-1717fd24"><c-tip show="{{showtip2}}" direction="{{direction}}" onClose="_cmlEventProxy" data-eventclose="closeTip2" style="{{tipStyle}}" class=" cml-base cml-c-tip cml-1717fd24">
-        <text style="color:#fff" class=" cml-base cml-text cml-1717fd24">Awesome!</text>
+    <view class="tip-eg  cml-base cml-view cml-3a77f111">
+      <view style="{{tipStyle}}" class=" cml-base cml-view cml-3a77f111"><c-tip show="{{showtip2}}" direction="{{direction}}" onClose="_cmlEventProxy" data-eventclose="closeTip2" style="{{tipStyle}}" class=" cml-base cml-c-tip cml-3a77f111">
+        <text style="color:#fff" class=" cml-base cml-text cml-3a77f111">Awesome!</text>
       </c-tip></view>
-      <text class="tip-btn  cml-base cml-text cml-1717fd24" onTap="_cmlEventProxy" data-eventtap="showTip2">chameleon-ui</text>
+      <text class="tip-btn  cml-base cml-text cml-3a77f111" onTap="_cmlEventProxy" data-eventtap="showTip2">chameleon-ui</text>
     </view>
-    <view class="btn  cml-base cml-view cml-1717fd24"><cml-buildin-button class="btn  cml-base cml-button cml-1717fd24" onOnclick="_cmlEventProxy" data-eventonclick="showTip2Top" text="top"></cml-buildin-button></view>
-    <view class="btn  cml-base cml-view cml-1717fd24"><cml-buildin-button class="btn  cml-base cml-button cml-1717fd24" onOnclick="_cmlEventProxy" data-eventonclick="showTip2Bottom" text="bottom"></cml-buildin-button></view>
-    <view class="btn  cml-base cml-view cml-1717fd24"><cml-buildin-button class="btn  cml-base cml-button cml-1717fd24" onOnclick="_cmlEventProxy" data-eventonclick="showTip2Left" text="left"></cml-buildin-button></view>
-    <view class="btn  cml-base cml-view cml-1717fd24"><cml-buildin-button class="btn  cml-base cml-button cml-1717fd24" onOnclick="_cmlEventProxy" data-eventonclick="showTip2Right" text="right"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view cml-3a77f111"><cml-buildin-button class="btn  cml-base cml-button cml-3a77f111" onOnclick="_cmlEventProxy" data-eventonclick="showTip2Top" text="top"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view cml-3a77f111"><cml-buildin-button class="btn  cml-base cml-button cml-3a77f111" onOnclick="_cmlEventProxy" data-eventonclick="showTip2Bottom" text="bottom"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view cml-3a77f111"><cml-buildin-button class="btn  cml-base cml-button cml-3a77f111" onOnclick="_cmlEventProxy" data-eventonclick="showTip2Left" text="left"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view cml-3a77f111"><cml-buildin-button class="btn  cml-base cml-button cml-3a77f111" onOnclick="_cmlEventProxy" data-eventonclick="showTip2Right" text="right"></cml-buildin-button></view>
   </cml-buildin-page></view>

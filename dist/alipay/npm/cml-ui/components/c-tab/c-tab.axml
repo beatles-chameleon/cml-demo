@@ -1,7 +1,7 @@
-<view class="c-tabs-root  cml-base cml-view cml-3227757c">
-  <view class="c-tabs-wrap  cml-base cml-view cml-3227757c">
-    <c-tab-item class="c-tabs-item  cml-base cml-c-tab-item cml-3227757c" a:for="{{tabs}}" tab="{{item}}" inline="{{inline}}" onTabclick="_cmlEventProxy" data-eventtabclick="handleTabTap" active-label="{{activeLabel}}" active-label-style="{{activeLabelStyle}}" active-icon-style="{{activeIconStyle}}"></c-tab-item>
+<view class="c-tabs-root  cml-base cml-view cml-e61c1622">
+  <view class="c-tabs-wrap  cml-base cml-view cml-e61c1622">
+    <c-tab-item class="c-tabs-item  cml-base cml-c-tab-item cml-e61c1622" a:for="{{tabs}}" tab="{{item}}" inline="{{inline}}" onTabclick="_cmlEventProxy" data-eventtabclick="handleTabTap" active-label="{{activeLabel}}" active-label-style="{{activeLabelStyle}}" active-icon-style="{{activeIconStyle}}"></c-tab-item>
   </view>
-  <view a:if="{{hasUnderline}}" class="c-tabs-line-wrap  cml-base cml-view cml-3227757c" style="{{tabLineStyle}}">
+  <view a:if="{{hasUnderline}}" class="c-tabs-line-wrap  cml-base cml-view cml-e61c1622" style="{{tabLineStyle}}">
   </view>
 </view>

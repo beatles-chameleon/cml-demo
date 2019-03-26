@@ -1,15 +1,15 @@
-<view class=" cml-base cml-view cml-2b7b1c5c"><cml-buildin-page title="组件" class=" cml-base cml-page cml-2b7b1c5c">
-    <view class="page  cml-base cml-view cml-2b7b1c5c">
-      <view class=" cml-base cml-view cml-2b7b1c5c"><cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller cml-2b7b1c5c">
-        <view class="title-row  cml-base cml-view cml-2b7b1c5c">
-          <view class=" cml-base cml-view cml-2b7b1c5c"><cml-buildin-row justify="start" class=" cml-base cml-row cml-2b7b1c5c">
-            <image class="title-icon  cml-base cml-image cml-2b7b1c5c" src="{{iconApiUri}}"></image>
-            <text class="title-text  cml-base cml-text cml-2b7b1c5c  _cml_ref_lmc_" id="titleText">组件</text>
+<view class=" cml-base cml-view cml-0dd16c0f"><cml-buildin-page title="组件" class=" cml-base cml-page cml-0dd16c0f">
+    <view class="page  cml-base cml-view cml-0dd16c0f">
+      <view class=" cml-base cml-view cml-0dd16c0f"><cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller cml-0dd16c0f">
+        <view class="title-row  cml-base cml-view cml-0dd16c0f">
+          <view class=" cml-base cml-view cml-0dd16c0f"><cml-buildin-row justify="start" class=" cml-base cml-row cml-0dd16c0f">
+            <image class="title-icon  cml-base cml-image cml-0dd16c0f" src="{{iconApiUri}}"></image>
+            <text class="title-text  cml-base cml-text cml-0dd16c0f  _cml_ref_lmc_" id="titleText">组件</text>
           </cml-buildin-row></view>
         </view>
-        <view class="page-list  cml-base cml-view cml-2b7b1c5c">
-          <view a:for="{{cells}}" a:for-item="cellInfo" class=" cml-base cml-view cml-2b7b1c5c">
-            <view class=" cml-base cml-view cml-2b7b1c5c"><collapse title="{{cellInfo.title}}" icon-uri="{{cellInfo.iconUri}}" list="{{cellInfo.list}}" onItemselected="_cmlEventProxy" data-eventitemselected="cellItemSeleted" class=" cml-base cml-collapse cml-2b7b1c5c"></collapse></view>
+        <view class="page-list  cml-base cml-view cml-0dd16c0f">
+          <view a:for="{{cells}}" a:for-item="cellInfo" class=" cml-base cml-view cml-0dd16c0f">
+            <view class=" cml-base cml-view cml-0dd16c0f"><collapse title="{{cellInfo.title}}" icon-uri="{{cellInfo.iconUri}}" list="{{cellInfo.list}}" onItemselected="_cmlEventProxy" data-eventitemselected="cellItemSeleted" class=" cml-base cml-collapse cml-0dd16c0f"></collapse></view>
           </view>
         </view>
       </cml-buildin-scroller></view>

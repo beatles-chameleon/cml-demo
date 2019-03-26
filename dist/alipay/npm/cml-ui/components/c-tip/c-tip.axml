@@ -1,11 +1,11 @@
-<view class="tip  cml-base cml-view cml-576744ce" a:if="{{show}}" style="{{tipStyle}}">
-  <image class="tip-angle  cml-base cml-image cml-576744ce" src="{{angleImg}}" style="{{angleStyle}}" />
-  <view class="tip-wrap  cml-base cml-view cml-576744ce">
-    <view class="tip-close  cml-base cml-view cml-576744ce" onTap="_cmlEventProxy" data-eventtap="closeTap">
-        <image src="{{closeUrl}}" style="width:24rpx;height:24rpx" class=" cml-base cml-image cml-576744ce" />
+<view class="tip  cml-base cml-view cml-0526170a" a:if="{{show}}" style="{{tipStyle}}">
+  <image class="tip-angle  cml-base cml-image cml-0526170a" src="{{angleImg}}" style="{{angleStyle}}" />
+  <view class="tip-wrap  cml-base cml-view cml-0526170a">
+    <view class="tip-close  cml-base cml-view cml-0526170a" onTap="_cmlEventProxy" data-eventtap="closeTap">
+        <image src="{{closeUrl}}" style="width:24rpx;height:24rpx" class=" cml-base cml-image cml-0526170a" />
     </view>
-    <view class="tip-content  cml-base cml-view cml-576744ce">
-      <slot class=" cml-base cml-slot cml-576744ce"></slot>
+    <view class="tip-content  cml-base cml-view cml-0526170a">
+      <slot class=" cml-base cml-slot cml-0526170a"></slot>
     </view>
   </view>
 </view>
