@@ -1,8 +1,0 @@
-{
-    "usingComponents": {
-        "demo-list": "./../../components/demo-list/demo-list",
-        "cml-buildin-row": "./../../npm/chameleon-ui-builtin/components/layout/row/row",
-        "cml-buildin-page": "./../../npm/chameleon-ui-builtin/components/page/page",
-        "cml-buildin-scroller": "./../../npm/chameleon-ui-builtin/components/scroller/scroller"
-    }
-}

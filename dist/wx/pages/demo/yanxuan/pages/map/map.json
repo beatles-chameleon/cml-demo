@@ -1,8 +1,0 @@
-{
-    "usingComponents": {
-        "map": "./../../components/map/map"
-    },
-    "navigationBarTitleText": "地图页",
-    "backgroundTextStyle": "dark",
-    "backgroundColor": "#E2E2E2"
-}

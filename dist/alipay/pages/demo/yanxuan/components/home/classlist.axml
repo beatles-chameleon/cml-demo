@@ -1,8 +1,0 @@
-<view class="classList  cml-base cml-view cml-34b87de0">
-  <view class="classList-item  cml-base cml-view cml-34b87de0" a:for="{{classifyImgList}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="change" data-idx="{{i}}">
-    <image src="{{item.imgUrl}}" style="width:110rpx;height:110rpx" class="classList-item-img  cml-base cml-image cml-34b87de0"></image>
-    <view class="classList-item-title  cml-base cml-view cml-34b87de0">
-      <text class=" cml-base cml-text cml-34b87de0">{{item.title}}</text>
-    </view>
-  </view>
-</view>

@@ -1,7 +1,0 @@
-<view class="collapse-cell  cml-base cml-view cml-e8c0df2e">
-  <view class="collapse-title-row row  cml-base cml-view cml-e8c0df2e" onTap="_cmlEventProxy" data-eventtap="itemTap">
-    <image class="title-left-icon  cml-base cml-image cml-e8c0df2e" src="{{iconUri}}"></image>
-    <text class="cell-title  cml-base cml-text cml-e8c0df2e">{{title}}</text>
-    <image class="title-right-icon  cml-base cml-image cml-e8c0df2e" src="{{iconUpUri}}"></image>
-  </view>
-</view>

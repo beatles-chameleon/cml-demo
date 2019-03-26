@@ -1,9 +1,0 @@
-{
-    "usingComponents": {
-        "cml-buildin-button": "./../../../npm/chameleon-ui-builtin/components/button/button",
-        "cml-buildin-page": "./../../../npm/chameleon-ui-builtin/components/page/page"
-    },
-    "navigationBarTitleText": "动画演示",
-    "backgroundTextStyle": "dark",
-    "backgroundColor": "#E2E2E2"
-}
