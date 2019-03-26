@@ -1,12 +1,1 @@
-switch {
-  -webkit-align-self: flex-start;
-          align-self: flex-start;
-}
-.cml-648525f5.cml-switch-disabled {
-  opacity: 0.5;
-}
-.cml-648525f5.cml-switch-label {
-  color: #666;
-  font-weight: 400;
-  font-size: 32rpx;
-}
+switch{align-self:flex-start}.cml-648525f5.cml-switch-disabled{opacity:.5}.cml-648525f5.cml-switch-label{color:#666;font-weight:400;font-size:32rpx}
