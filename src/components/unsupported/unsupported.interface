@@ -45,7 +45,7 @@ export default new Method();
 
 class Method implements UnsupportedInterface {
   getUnsupportApis() {
-    return ['beatles-bridge能力']
+    return ['启动参数', 'beatles-bridge能力']
   }
 }
 

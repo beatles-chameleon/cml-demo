@@ -10,12 +10,12 @@
   "license": "Apache",
   "email": "ChameleonCore@didiglobal.com",
   "dependencies": {
-    "chameleon-api": "^0.3.0-alpha.0",
-    "chameleon-bridge": "^0.1.1-alpha.1",
-    "chameleon-runtime": "0.0.9",
+    "chameleon-api": "^0.3.0-alpha.3",
+    "chameleon-bridge": "^0.1.1-alpha.2",
+    "chameleon-runtime": "0.0.12",
     "chameleon-store": "0.0.3",
-    "chameleon-ui-builtin": "0.0.7-alpha.3",
-    "cml-ui": "0.0.7-alpha.1",
+    "chameleon-ui-builtin": "0.0.7-alpha.5",
+    "cml-ui": "0.0.7-alpha.3",
     "vue-amap": "^0.5.8"
   }
 }

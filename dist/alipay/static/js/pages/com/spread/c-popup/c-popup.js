@@ -1,1 +1,119 @@
-var __CML__GLOBAL=require("../../../../manifest.js");__CML__GLOBAL.webpackJsonp([30],{303:function(t,e,o){o(304),o(305)},304:function(t,e){},305:function(t,e,o){function n(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(e,"__esModule",{value:!0});var i=function(){function t(t,e){for(var o=0;o<e.length;o++){var n=e[o];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}return function(e,o,n){return o&&t(e.prototype,o),n&&t(e,n),e}}(),u=o(0),a=function(t){return t&&t.__esModule?t:{default:t}}(u),f=function(){function t(){n(this,t),this.data={mask:!0,show:!1,show2:!1,position:"",pos:["left","top","right","bottom",""],posi:0},this.computed={contentStyle:function(){var t=void 0;switch(this.position){case"left":t="width:200cpx;background:#fff;";break;case"top":t="height:200cpx;background:#fff;";break;case"right":t="width:200cpx;background:#fff;";break;case"bottom":t="height:200cpx;background:#fff;";break;default:t="display:block;width: 500cpx;height: 200cpx;background: #fff;"}return t}},this.watch={},this.methods={showPopup:function(){this.show=!0},showPopup2:function(){this.position=this.pos[this.posi++],this.posi=this.posi%5,this.show2=!0},closePopup:function(){this.show=!1,this.show2=!1}}}return i(t,[{key:"beforeCreate",value:function(){}},{key:"created",value:function(){}},{key:"beforeMount",value:function(){}},{key:"mounted",value:function(){}},{key:"beforeDestroy",value:function(){}},{key:"destroyed",value:function(){}}]),t}();e.default=new f,e.default=a.default.createPage(e.default).getOptions()}},[303]);
+var __CML__GLOBAL = require("../../../../manifest.js");
+__CML__GLOBAL.webpackJsonp([30],{
+
+/***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/spread/c-popup/c-popup.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var CPopup = function () {
+  function CPopup() {
+    _classCallCheck(this, CPopup);
+
+    this.data = {
+      mask: true,
+      show: false,
+      show2: false,
+      position: '',
+      pos: ['left', 'top', 'right', 'bottom', ''],
+      posi: 0
+    };
+    this.computed = {
+      contentStyle: function contentStyle() {
+        var style = void 0;
+        switch (this.position) {
+          case 'left':
+            style = 'width:200cpx;background:#fff;';
+            break;
+          case 'top':
+            style = 'height:200cpx;background:#fff;';
+            break;
+          case 'right':
+            style = 'width:200cpx;background:#fff;';
+            break;
+          case 'bottom':
+            style = 'height:200cpx;background:#fff;';
+            break;
+          default:
+            style = "display:block;width: 500cpx;height: 200cpx;background: #fff;";
+            break;
+        }
+        return style;
+      }
+    };
+    this.watch = {};
+    this.methods = {
+      showPopup: function showPopup() {
+        this.show = true;
+      },
+      showPopup2: function showPopup2() {
+        this.position = this.pos[this.posi++];
+        this.posi = this.posi % 5;
+        this.show2 = true;
+      },
+      closePopup: function closePopup() {
+        this.show = false;
+        this.show2 = false;
+      }
+    };
+  }
+
+  _createClass(CPopup, [{
+    key: 'beforeCreate',
+    value: function beforeCreate() {}
+  }, {
+    key: 'created',
+    value: function created() {}
+  }, {
+    key: 'beforeMount',
+    value: function beforeMount() {}
+  }, {
+    key: 'mounted',
+    value: function mounted() {}
+  }, {
+    key: 'beforeDestroy',
+    value: function beforeDestroy() {}
+  }, {
+    key: 'destroyed',
+    value: function destroyed() {}
+  }]);
+
+  return CPopup;
+}();
+
+exports.default = new CPopup();
+
+
+exports.default = _chameleonRuntime2.default.createPage(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"alipay\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/alipay/.postcssrc.js\"}}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"alipay\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/spread/c-popup/c-popup.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/pages/com/spread/c-popup/c-popup.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"alipay\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/alipay/.postcssrc.js\"}}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"alipay\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/spread/c-popup/c-popup.cml");
+var __cml__script = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/com/spread/c-popup/c-popup.cml");
+
+
+/***/ })
+
+},["./src/pages/com/spread/c-popup/c-popup.cml"]);

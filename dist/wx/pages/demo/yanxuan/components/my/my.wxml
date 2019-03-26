@@ -1,11 +1,11 @@
 <view class="wrapper  cml-base cml-view">
-  <image class="header-bg  cml-base cml-image  _cml_ref_lmc_" resize="cover" src="http://cdn.zwwill.com/yanxuan/imgs/bg5.png" id="headerBg"></image>
+  <image class="header-bg  cml-base cml-image  _cml_ref_lmc_" resize="cover" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/bg5.png" id="headerBg"></image>
   <cml-buildin-scroller height="{{scrollerHeight}}" class=" cml-base cml-scroller">
     <view class="header  cml-base cml-view">
       <image class="i-photo  cml-base cml-image" resize="cover" src="{{headerImg}}"></image>
       <text class="i-name  cml-base cml-text">哈哈哈哈哈</text>
       <view class="b-tlt  cml-base cml-view">
-        <image class="i-tag tag-e  cml-base cml-image" resize="contain" src="https://yanxuan.nosdn.127.net/3dc6e876620bb84a5dac3deb6ecd4916.png"></image>
+        <image class="i-tag tag-e  cml-base cml-image" resize="contain" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/3dc6e876620bb84a5dac3deb6ecd4916.png"></image>
         <text class="i-tag tag-v8 iconfont  cml-base cml-text"></text>
         <text class="txt-tag  cml-base cml-text">品质生活家</text>
       </view>

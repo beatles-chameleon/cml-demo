@@ -665,7 +665,7 @@ var _utils = __webpack_require__("./node_modules/chameleon-api/src/lib/utils.js"
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function request(_ref) {
-  var domainkey = _ref.domainkey,
+  var domain = _ref.domain,
       url = _ref.url,
       _ref$data = _ref.data,
       data = _ref$data === undefined ? {} : _ref$data,
@@ -676,43 +676,60 @@ function request(_ref) {
       _ref$contentType = _ref.contentType,
       contentType = _ref$contentType === undefined ? 'form' : _ref$contentType,
       _ref$setting = _ref.setting,
-      setting = _ref$setting === undefined ? { apiPrefix: (0, _utils.isNeedApiPrefix)(url) } : _ref$setting,
+      setting = _ref$setting === undefined ? {} : _ref$setting,
       _ref$resDataType = _ref.resDataType,
       resDataType = _ref$resDataType === undefined ? 'json' : _ref$resDataType;
+  var _setting$apiPrefix = setting.apiPrefix,
+      apiPrefix = _setting$apiPrefix === undefined ? (0, _utils.isNeedApiPrefix)(url) : _setting$apiPrefix,
+      _setting$jsonp = setting.jsonp,
+      jsonp = _setting$jsonp === undefined ? false : _setting$jsonp,
+      _setting$credentials = setting.credentials,
+      credentials = _setting$credentials === undefined ? 'include' : _setting$credentials;
 
   var media = "dev";
-  domainkey = domainkey || "apiPrefix";
-  // dev模式模拟多域名需要区分dmain
-  if (media === 'dev' && domainkey) {
-    if (!~url.indexOf('?')) {
-      url += '?';
+  // 如果用户配置了domain
+  if (domain) {
+    if (media === 'dev') {
+      // dev模式对domain做分割处理
+      if (~domain.indexOf('__DEV_SPLIT__')) {
+        var splitArray = domain.split('__DEV_SPLIT__');
+        domain = splitArray[0];
+        var domainKey = splitArray[1];
+        url = (0, _utils.buildQueryStringUrl)({ domainKey: domainKey }, url);
+      }
     }
-    url += (0, _utils.queryStringify)({ domainkey: domainkey });
-  }
-
-  if (setting.apiPrefix) {
-    url = (0, _utils.addApiPrefix)(url, domainkey);
+    url = domain + url;
+  } else {
+    // 如果没有配置domain
+    if (apiPrefix) {
+      // 有apiPrefix优先
+      if (true) {
+        url = "http://172.24.36.108:5556" + url;
+      }
+    }
   }
 
   if (/^get$/gi.test(method)) {
-    if (data && !(0, _utils.isEmpty)(data) && (0, _utils.queryStringify)(data)) {
-      if (url.indexOf('?') === -1) {
-        url += '?';
-      }
-      url += (0, _utils.queryStringify)(data);
+    if (data && !(0, _utils.isEmpty)(data)) {
+      url = (0, _utils.buildQueryStringUrl)(data, url);
+    }
+    if (typeof data !== 'string') {
       data = '';
     }
-    data = '';
   } else {
     switch (contentType) {
       case 'form':
-        data = (0, _utils.queryStringify)(data);
+        if (typeof data !== 'string') {
+          data = (0, _utils.buildQueryStringUrl)(data);
+        }
         header = _extends({}, header, {
           'Content-Type': 'application/x-www-form-urlencoded'
         });
         break;
       case 'json':
-        data = JSON.stringify(data);
+        if (typeof data !== 'string') {
+          data = JSON.stringify(data);
+        }
         header = _extends({}, header, {
           'Content-Type': 'application/json'
         });
@@ -724,7 +741,11 @@ function request(_ref) {
     _index2.default.request({
       url: url,
       body: data,
-      setting: setting,
+      setting: {
+        apiPrefix: apiPrefix,
+        jsonp: jsonp,
+        credentials: credentials
+      },
       method: method,
       headers: header,
       cb: function cb(res) {
@@ -733,7 +754,11 @@ function request(_ref) {
 
         if (status >= 200 && status < 300) {
           if (resDataType === 'json') {
-            data = (0, _utils.tryJsonParse)(data);
+            try {
+              data = JSON.parse(data);
+            } catch (e) {
+              console.warn('resDataType默认为"json", 尝试对返回内容进行JSON.parse, 但似乎出了些问题(若不希望对结果进行parse, 可传入resDataType: "text"): ', e);
+            }
           }
           resolve(data);
         } else {

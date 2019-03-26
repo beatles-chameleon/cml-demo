@@ -37,6 +37,7 @@ var __INTERFAE__DEFINES__ = {
       "defaultIndex": "Number",
       "height": "Number",
       "textAlign": "String",
+      "itemStyle": "String",
       "selectchange": {
         "input": ["EventDetail"],
         "output": "Undefined"
@@ -326,6 +327,10 @@ var CPickerItem = function () {
       textAlign: {
         type: String,
         default: "center"
+      },
+      itemStyle: {
+        type: String,
+        default: ""
       }
     };
     this.data = {};

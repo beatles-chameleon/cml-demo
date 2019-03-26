@@ -3299,6 +3299,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _utils = __webpack_require__("./node_modules/chameleon-api/src/lib/utils.js");
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3628,12 +3630,7 @@ var Method = function () {
       var path = opt.path,
           query = opt.query;
 
-
-      if (path.indexOf('?') === -1) {
-        query = '?' + query;
-      }
-
-      path = path + query;
+      path = (0, _utils.buildQueryStringUrl)((0, _utils.queryParse)(query), path);
       swan.navigateTo({
         url: path
       });
@@ -3667,7 +3664,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function navigateTo(opt) {
   // 转换为字符串通过多态不支持object，需改
-  var query = (0, _utils.queryStringify)(opt.query) || '';
+  var query = (0, _utils.buildQueryStringUrl)(opt.query) || '';
   var path = opt.path || '';
   var url = opt.url || '';
 
@@ -4818,6 +4815,7 @@ exports.isEmpty = isEmpty;
 exports.noop = noop;
 exports.parseQuery = parseQuery;
 exports.queryStringify = queryStringify;
+exports.buildQueryStringUrl = buildQueryStringUrl;
 exports.queryParse = queryParse;
 exports.isNeedApiPrefix = isNeedApiPrefix;
 exports.addApiPrefix = addApiPrefix;
@@ -4887,16 +4885,27 @@ function parseQuery(obj) {
 }
 
 function queryStringify(obj) {
-  var str = '';
+  var strArr = [];
   var keys = null;
   if (obj && Object.keys(obj).length > 0) {
     keys = Object.keys(obj);
     for (var i = 0; i < keys.length; i++) {
       var key = keys[i];
-      str += key + '=' + encodeURIComponent(obj[key]) + '&';
+      strArr.push(key + '=' + encodeURIComponent(obj[key]));
     }
   }
-  return str;
+  return strArr.join('&');
+}
+
+function buildQueryStringUrl(params) {
+  var url = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+  if (!url) return queryStringify(params);
+  var retUrl = url;
+  if (queryStringify(params)) {
+    retUrl = url.indexOf('?') > -1 ? url + '&' + queryStringify(params) : url + '?' + queryStringify(params);
+  }
+  return retUrl;
 }
 
 function queryParse() {
@@ -4918,15 +4927,15 @@ function isNeedApiPrefix(url) {
 }
 
 function addApiPrefix(url, domainkey) {
-  var domainMap = {"apiPrefix":"http://172.22.137.218:5556"};
+  var domainMap = {"apiPrefix":"http://172.24.36.108:5556"};
   // 新版cli
   if (domainMap) {
-    var prefix = domainMap[domainkey] || "http://172.22.137.218:5556";
+    var prefix = domainMap[domainkey] || "http://172.24.36.108:5556";
     return prefix + url;
   } else {
     // 老版本配置apiPrefix
     if (true) {
-      return "http://172.22.137.218:5556" + url;
+      return "http://172.24.36.108:5556" + url;
     }
   }
 }
@@ -4960,26 +4969,53 @@ function getOpenObj(url) {
   var webUrlWithoutQuery = url.split('?')[0];
   var queryObj = getQueryParamsFromUrl(url);
 
-  var _queryObj$weixin_appi = queryObj.weixin_appid,
+  var _queryObj$path = queryObj.path,
+      path = _queryObj$path === undefined ? '' : _queryObj$path,
+      _queryObj$envVersion = queryObj.envVersion,
+      envVersion = _queryObj$envVersion === undefined ? '' : _queryObj$envVersion,
+      _queryObj$weixin_appi = queryObj.weixin_appid,
       weixin_appid = _queryObj$weixin_appi === undefined ? '' : _queryObj$weixin_appi,
       _queryObj$weixin_path = queryObj.weixin_path,
       weixin_path = _queryObj$weixin_path === undefined ? '' : _queryObj$weixin_path,
       _queryObj$weixin_envV = queryObj.weixin_envVersion,
       weixin_envVersion = _queryObj$weixin_envV === undefined ? '' : _queryObj$weixin_envV,
+      _queryObj$baidu_appid = queryObj.baidu_appid,
+      baidu_appid = _queryObj$baidu_appid === undefined ? '' : _queryObj$baidu_appid,
+      _queryObj$baidu_path = queryObj.baidu_path,
+      baidu_path = _queryObj$baidu_path === undefined ? '' : _queryObj$baidu_path,
+      _queryObj$baidu_envVe = queryObj.baidu_envVersion,
+      baidu_envVersion = _queryObj$baidu_envVe === undefined ? '' : _queryObj$baidu_envVe,
+      _queryObj$alipay_appi = queryObj.alipay_appid,
+      alipay_appid = _queryObj$alipay_appi === undefined ? '' : _queryObj$alipay_appi,
+      _queryObj$alipay_path = queryObj.alipay_path,
+      alipay_path = _queryObj$alipay_path === undefined ? '' : _queryObj$alipay_path,
+      _queryObj$alipay_envV = queryObj.alipay_envVersion,
+      alipay_envVersion = _queryObj$alipay_envV === undefined ? '' : _queryObj$alipay_envV,
       _queryObj$weex_path = queryObj.weex_path,
       weex_path = _queryObj$weex_path === undefined ? '' : _queryObj$weex_path,
-      _queryObj$wx_addr = queryObj.wx_addr,
-      wx_addr = _queryObj$wx_addr === undefined ? '' : _queryObj$wx_addr,
-      extraData = _objectWithoutProperties(queryObj, ['weixin_appid', 'weixin_path', 'weixin_envVersion', 'weex_path', 'wx_addr']);
+      _queryObj$cml_addr = queryObj.cml_addr,
+      cml_addr = _queryObj$cml_addr === undefined ? '' : _queryObj$cml_addr,
+      extraData = _objectWithoutProperties(queryObj, ['path', 'envVersion', 'weixin_appid', 'weixin_path', 'weixin_envVersion', 'baidu_appid', 'baidu_path', 'baidu_envVersion', 'alipay_appid', 'alipay_path', 'alipay_envVersion', 'weex_path', 'cml_addr']);
 
   var objTreated = {
-    weex: wx_addr ? webUrlWithoutQuery + '?weex_path=' + weex_path + queryStringify(extraData) + '&wx_addr=' + wx_addr : null,
+    weex: cml_addr ? webUrlWithoutQuery + '?weex_path=' + weex_path + queryStringify(extraData) + '&cml_addr=' + cml_addr : null,
     web: webUrlWithoutQuery + '?' + queryStringify(extraData),
     wx: {
       appId: weixin_appid,
-      path: weixin_path,
+      path: weixin_path || path,
       extraData: extraData,
-      envVersion: weixin_envVersion
+      envVersion: weixin_envVersion || envVersion
+    },
+    alipay: {
+      appId: alipay_appid,
+      path: alipay_path || path,
+      extraData: extraData,
+      envVersion: alipay_envVersion || envVersion
+    },
+    baidu: {
+      appKey: baidu_appid,
+      path: baidu_path || path,
+      extraData: extraData
     }
   };
   return objTreated;
@@ -7807,13 +7843,13 @@ function setDataFactory(context, self) {
     if (_firstAction) {
       _firstAction = false;
 
-      _cache = data;
+      _cache = Object.assign({}, data);
       _render(data);
     } else {
 
       var dataDiff = (0, _diff2.default)(data, _cache);
 
-      _cache = data;
+      _cache = Object.assign({}, data);
       _render(dataDiff);
     }
   };
@@ -7821,9 +7857,9 @@ function setDataFactory(context, self) {
   function _render(data) {
     if ((0, _type.type)(context.setData) === 'Function') {
       // style 处理
-      (0, _style.styleHandle)(data);
+      var after = (0, _style.styleHandle)(data);
 
-      context.setData(data, walkUpdatedCb(context));
+      context.setData(after, walkUpdatedCb(context));
     }
   }
 }
@@ -8152,10 +8188,12 @@ var _Trie = __webpack_require__("./node_modules/chameleon-runtime/src/platform/c
 
 var _Trie2 = _interopRequireDefault(_Trie);
 
+var _mobx = __webpack_require__("./node_modules/mobx/lib/mobx.module.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function diff(newData, oldData) {
-  return newData;
+  return innerDiff(newData, oldData);
   var diffData = {};
   var newDataFlag = [];
   var oldDataFlag = [];
@@ -8269,6 +8307,18 @@ function isNum(value) {
   return !isNaN(Number(value));
 }
 
+function innerDiff(newData, oldData) {
+
+  var diffData = {};
+  Object.keys(newData).forEach(function (key) {
+    if (!_mobx.extras.deepEqual(newData[key], oldData[key])) {
+      diffData[key] = newData[key];
+    }
+  });
+
+  return diffData;
+}
+
 /**
      * func initFlag(){oldData{'k1':'v1','k2':{'k3':'v3'}} -> oldDataFlag[] record to ['k1','k2.k3']}
      * func deleFlag(path){ index = oldDataFlag.indexOf(path) ? oldDataFlag[path].splice(index)}
@@ -8360,7 +8410,7 @@ var LIFECYCLE = {
         'beforeDestroy': 'onUnload',
         'destroyed': 'onUnload'
       },
-      whitelist: ['onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onPageScroll', 'onTabItemTap', 'onReady', 'onHide']
+      whitelist: ['onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onPageScroll', 'onResize', 'onTabItemTap', 'onReady', 'onHide']
     },
     component: {
       hooks: ['created', 'attached', 'ready', 'detached'],
@@ -8436,7 +8486,7 @@ var LIFECYCLE = {
         'beforeDestroy': 'onUnload',
         'destroyed': 'onUnload'
       },
-      whitelist: ['onForceReLaunch', 'onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onShareAppMessage', 'onPageScroll', 'onTabItemTap', 'onReady', 'onHide']
+      whitelist: ['onForceReLaunch', 'onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onPageScroll', 'onTabItemTap', 'onReady', 'onHide']
     },
     component: {
       hooks: ['created', 'attached', 'ready', 'detached'],
@@ -8572,27 +8622,64 @@ function mergeWatch(parent, child, key) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 exports.styleHandle = styleHandle;
 
 var _type = __webpack_require__("./node_modules/chameleon-runtime/src/platform/common/util/type.js");
 
-function styleHandle(d) {
+var _mobx = __webpack_require__("./node_modules/mobx/lib/mobx.module.js");
 
-  if ((0, _type.type)(d) === 'Array') {
-    d.forEach(function (item, i) {
-      d[i] = styleHandle(item);
-    });
-  } else if ((0, _type.type)(d) === 'Object') {
-    Object.keys(d).forEach(function (k) {
-      var v = d[k];
+function styleHandle(source) {
+  var detectCycles = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
-      d[k] = styleHandle(v);
-    });
-  } else if ((0, _type.type)(d) === 'String') {
-    return pxTransform(d);
+  var __alreadySeen = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+
+  function cache(value) {
+    if (detectCycles) {
+      __alreadySeen.push([source, value]);
+    }
+    return value;
   }
 
-  return d;
+  if (detectCycles && __alreadySeen === null) {
+    __alreadySeen = [];
+  }
+
+  if (detectCycles && source !== null && (typeof source === 'undefined' ? 'undefined' : _typeof(source)) === "object") {
+    for (var i = 0, l = __alreadySeen.length; i < l; i++) {
+      if (__alreadySeen[i][0] === source) {
+        return __alreadySeen[i][1];
+      }
+    }
+  }
+
+  source = (0, _mobx.toJS)(source);
+
+  if ((0, _type.type)(source) === 'Array') {
+    var res = cache([]);
+    var toAdd = source.map(function (value) {
+      return styleHandle(value, detectCycles, __alreadySeen);
+    });
+
+    res.length = toAdd.length;
+    for (var _i = 0, _l = toAdd.length; _i < _l; _i++) {
+      res[_i] = toAdd[_i];
+    }
+
+    return res;
+  } else if ((0, _type.type)(source) === 'Object') {
+    var _res = cache({});
+    for (var key in source) {
+      _res[key] = styleHandle(source[key], detectCycles, __alreadySeen);
+    }
+    return _res;
+  } else if ((0, _type.type)(source) === 'String') {
+    return pxTransform(source);
+  } else {
+    return source;
+  }
 }
 
 function pxTransform(s) {
@@ -8661,13 +8748,13 @@ var _type = __webpack_require__("./node_modules/chameleon-runtime/src/platform/c
 
 // transfer 对象的`${name}`属性值 to function
 function propToFn(obj, name) {
-  if (!obj) return;
+  if (obj && (0, _type.isObject)(obj[name])) {
+    var _temp = obj[name];
 
-  var _temp = obj[name];
-
-  obj[name] = function () {
-    return _extends({}, _temp);
-  };
+    obj[name] = function () {
+      return _extends({}, _temp);
+    };
+  }
 }
 
 /**
@@ -13628,21 +13715,21 @@ module.exports = __webpack_require__.p + "static/img/icon-arrow-up_56472bc.png";
 /***/ "./src/pages/demo/yanxuan/assets/getHomeImgList.json":
 /***/ (function(module, exports) {
 
-module.exports = {"code":0,"data":{"bannerImgList":[{"imgUrl":"http://cmljs.org/assets/images/yanxuan/288bf88910aeba6d89689b99bec93133.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/3804d6f02516e59927e07f091c8f1b27.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/ce535663c045b5e877540b0e0be16bb3.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/06af49f2a59b00ad080aeb03fb8d408f.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/7c94908d8e197cc99e942324c5cc526e.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/96cf611743d7b382c11031f29152fa04.jpg?imageView&quality=75&thumbnail=750x0"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/973e299ac2e80c03acfb5d2d4501231c.jpg?imageView&quality=75&thumbnail=750x0"}],"classifyImgList":[{"imgUrl":"http://cmljs.org/assets/images/yanxuan/9cdedb90a09cf061cfa19f3e21321c73.png","title":"居家"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/57e39dc404f1ce90b959d76b9abe4314.png","title":"鞋包分配"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/2b580df265124836dcd96b1c88068127.png","title":"服装"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/a53fff4d3cf0f4dedd78a8a0f2b129c9.png","title":"电器"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/6147b31404d5ddf1207a8363605aebf9.png","title":"婴童"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/8d29af79c24d78a3dcf7d61249702dcf.png","title":"饮食"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/2b9a25b6ea81655eb431944d3d57185f.png","title":"洗护"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/293f2341415d70bf7c6460c77fa07f41.png","title":"餐厨"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/2fbba45f945ee592d5470269d9e61f1c.png","title":"文体"},{"imgUrl":"http://cmljs.org/assets/images/yanxuan/54947b070f8af594dd46069f2d3bdd34.png","title":"特色区"}],"disscountPriceImgUrl":"http://cmljs.org/assets/images/yanxuan/15468670774810413.gif?imageView&thumbnail=750x0&quality=75","special":{"newPerson":"http://cmljs.org/assets/images/yanxuan/15468671496890421.png","temai":"http://cmljs.org/assets/images/yanxuan/15468671650860425.png","qingdan":"http://cmljs.org/assets/images/yanxuan/15468671650860425.png"}}}
+module.exports = {"code":0,"data":{"bannerImgList":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/288bf88910aeba6d89689b99bec93133.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3804d6f02516e59927e07f091c8f1b27.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ce535663c045b5e877540b0e0be16bb3.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/06af49f2a59b00ad080aeb03fb8d408f.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/7c94908d8e197cc99e942324c5cc526e.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/96cf611743d7b382c11031f29152fa04.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/973e299ac2e80c03acfb5d2d4501231c.jpg"}],"classifyImgList":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/9cdedb90a09cf061cfa19f3e21321c73.png","title":"居家"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/57e39dc404f1ce90b959d76b9abe4314.png","title":"鞋包分配"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2b580df265124836dcd96b1c88068127.png","title":"服装"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a53fff4d3cf0f4dedd78a8a0f2b129c9.png","title":"电器"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/6147b31404d5ddf1207a8363605aebf9.png","title":"婴童"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/8d29af79c24d78a3dcf7d61249702dcf.png","title":"饮食"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2b9a25b6ea81655eb431944d3d57185f.png","title":"洗护"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/293f2341415d70bf7c6460c77fa07f41.png","title":"餐厨"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2fbba45f945ee592d5470269d9e61f1c.png","title":"文体"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/54947b070f8af594dd46069f2d3bdd34.png","title":"特色区"}],"disscountPriceImgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468670774810413.gif","special":{"newPerson":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671496890421.png","temai":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671650860425.png","qingdan":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671650860425.png"}}}
 
 /***/ }),
 
 /***/ "./src/pages/demo/yanxuan/assets/yanxuan.json":
 /***/ (function(module, exports) {
 
-module.exports = {"errno":"0","errmsg":"","data":{"result":{"banners":[{"title":"","url":"http://cmljs.org/assets/images/yanxuan/630439320dae9f1ce3afef3c39721383.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/5100f0176e27a167cc2aea08b1bd11d8.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/banner-1.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/banner-8.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/banner-2.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/banner-4.jpg"},{"title":"","url":"http://cmljs.org/assets/images/yanxuan/banner-6.jpg"}],"makers":{"title":"品牌制造商直供","list":[{"name":"新秀丽制造商","price":"59","state":"上新","bg":"http://cmljs.org/assets/images/yanxuan/ppbg-1.jpg","url":"https%3A%2F%2Fm.you.163.com%2Fitem%2Fmanufacturer%3FtagId%3D1001037%26page%3D1%26size%3D100"},{"name":"MUJI制造商","price":"12.9","state":"上新","bg":"http://cmljs.org/assets/images/yanxuan/ppbg-2.jpg","url":"https%3A%2F%2Fm.you.163.com%2Fitem%2Fmanufacturer%3FtagId%3D1001000%26page%3D1%26size%3D100"},{"name":"CK制造商","price":"29","state":"上新","bg":"http://cmljs.org/assets/images/yanxuan/ppbg-3.jpg","url":"https%3A%2F%2Fm.you.163.com%2Fitem%2Fmanufacturer%3FtagId%3D1026000%26page%3D1%26size%3D100"},{"name":"Adidas制造商","price":"29","bg":"http://cmljs.org/assets/images/yanxuan/75523d4274d85825ece16370cdb1693f.jpg","url":"https%3A%2F%2Fm.you.163.com%2Fitem%2Fmanufacturer%3FtagId%3D1001003%26page%3D1%26size%3D100"}]},"recommend":{"head1":{"tlt":"周一周四 · 新品发布","tltBg":"http://cmljs.org/assets/images/yanxuan/bg-new.png","url":""},"goods1":[{"tlt":"日式和风声波式电动牙刷","img":"http://cmljs.org/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png?imageView&quality=85&thumbnail=330x330","info":"进口刷毛，专利技术","price":"119"},{"tlt":"小馒头 多色双肩包","img":"http://cmljs.org/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png?imageView&quality=85&thumbnail=330x330","info":"奶油色泽，小巧减龄","price":"79"},{"tlt":"多功能商务双肩包","img":"http://cmljs.org/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png?imageView&quality=85&thumbnail=330x330","info":"17个功能分区，内置分层收纳","price":"334"},{"tlt":"切尔西牛皮女靴","img":"http://cmljs.org/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png?imageView&quality=85&thumbnail=330x330","info":"经典牛皮切尔西，时尚帅气","price":"289"},{"tlt":"清心花茶壶套装","img":"http://cmljs.org/assets/images/yanxuan/a2a0f13385d67220b29e7a1124a361e6.png?imageView&quality=85&thumbnail=330x330","info":"明亮通透，滤茶迅速","price":"119"},{"tlt":"全棉色织磨毛四件套","img":"http://cmljs.org/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png?imageView&quality=85&thumbnail=330x330","info":"优雅色织，温暖磨毛","price":"299"},{"tlt":"黑凤梨 20寸PC膜拉链登机箱","img":"http://cmljs.org/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png?imageView&quality=85&thumbnail=330x330","info":"热卖9万只，网易人手1只","price":"185"},{"tlt":"日式和风敞口保温杯","img":"http://cmljs.org/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png?imageView&quality=85&thumbnail=330x330","info":"真空隔热，保温保冷","price":"32"}],"head2":{"tlt":"周一周四 · 新品发布","tltBg":"http://cmljs.org/assets/images/yanxuan/bg-new.png","url":""},"goods2":[{"tlt":"日式和风声波式电动牙刷","img":"http://cmljs.org/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png?imageView&quality=85&thumbnail=330x330","info":"进口刷毛，专利技术","price":"119"},{"tlt":"小馒头 多色双肩包","img":"http://cmljs.org/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png?imageView&quality=85&thumbnail=330x330","info":"奶油色泽，小巧减龄","price":"79"},{"tlt":"多功能商务双肩包","img":"http://cmljs.org/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png?imageView&quality=85&thumbnail=330x330","info":"17个功能分区，内置分层收纳","price":"334"},{"tlt":"切尔西牛皮女靴","img":"http://cmljs.org/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png?imageView&quality=85&thumbnail=330x330","info":"经典牛皮切尔西，时尚帅气","price":"289"},{"tlt":"清心花茶壶套装","img":"http://cmljs.org/assets/images/yanxuan/a2a0f13385d67220b29e7a1124a361e6.png?imageView&quality=85&thumbnail=330x330","info":"明亮通透，滤茶迅速","price":"119"},{"tlt":"全棉色织磨毛四件套","img":"http://cmljs.org/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png?imageView&quality=85&thumbnail=330x330","info":"优雅色织，温暖磨毛","price":"299"},{"tlt":"黑凤梨 20寸PC膜拉链登机箱","img":"http://cmljs.org/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png?imageView&quality=85&thumbnail=330x330","info":"热卖9万只，网易人手1只","price":"185"},{"tlt":"日式和风敞口保温杯","img":"http://cmljs.org/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png?imageView&quality=85&thumbnail=330x330","info":"真空隔热，保温保冷","price":"32"}]},"goods":[{"tlt":"日式和风敞口保温杯","img":"http://cmljs.org/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png?imageView&quality=85&thumbnail=330x330","info":"真空隔热，保温保冷","url":"","price":"32"},{"tlt":"切尔西牛皮女靴","img":"http://cmljs.org/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png?imageView&quality=85&thumbnail=330x330","info":"奶油色泽，小巧减龄","url":"","price":"32"},{"tlt":"小馒头多色双肩包","img":"http://cmljs.org/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png?imageView&quality=85&thumbnail=330x330","info":"奶油色泽，小巧减龄","url":"","price":"79"},{"tlt":"全棉色织磨毛四件套","img":"http://cmljs.org/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png?imageView&quality=85&thumbnail=330x330","info":"优雅色织，温暖磨毛","url":"","price":"299"},{"tlt":"日式和风声波式电动牙刷","img":"http://cmljs.org/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png?imageView&quality=85&thumbnail=330x330","info":"进口刷毛，专利技术","url":"","price":"119"},{"tlt":"多功能商务双肩包","img":"http://cmljs.org/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png?imageView&quality=85&thumbnail=330x330","info":"17个功能分区，内置分层收纳","url":"","price":"334"},{"tlt":"黑凤梨20寸PC膜拉链登机箱","img":"http://cmljs.org/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png?imageView&quality=85&thumbnail=330x330","info":"热卖9万只，网易人手1只","url":"","price":"185"},{"tlt":"日式蓬软太鼓抱枕","img":"http://cmljs.org/assets/images/yanxuan/ad953e16ad8c33b714e7af941ce8cd56.png?imageView&quality=85&thumbnail=330x330","info":"萌趣太鼓造型 软糯轻柔回弹","url":"","price":"29"},{"tlt":"可水洗抗菌防螨丝羽绒枕","img":"http://cmljs.org/assets/images/yanxuan/a6c9e142fd008b3734c690a71a78ae5b.png?imageView&quality=85&thumbnail=330x330","info":"进口防螨布，热销50万件","url":"","price":"99"},{"tlt":"双宫茧桑蚕丝被 空调被","img":"http://cmljs.org/assets/images/yanxuan/6b341648f59d0c3eb48fa81e1d2de06e.png?imageView&quality=85&thumbnail=330x330","info":"一级桑蚕丝，吸湿透气柔软","url":"","price":"479"},{"tlt":"怀抱休闲椅组合（皮款）","img":"http://cmljs.org/assets/images/yanxuan/b5289125e9b55cf72e9a9623d006415e.png?imageView&quality=85&thumbnail=330x330","info":"葛优躺神器皮款","url":"","price":"3999"},{"tlt":"欧式哑光餐具套装","img":"http://cmljs.org/assets/images/yanxuan/431e86c88b4a6c9f065d1d8abea6b603.png?imageView&quality=85&thumbnail=330x330","info":"德化白瓷，坚实耐用","url":"","price":"189"},{"tlt":"清新两用杯","img":"http://cmljs.org/assets/images/yanxuan/431f5d142e3dd9946dc8e38c2aa3cd34.png?imageView&quality=85&thumbnail=330x330","info":"办公杯优选 轻松饮茶","url":"","price":"52"},{"tlt":"两带式男/女款拖鞋","img":"http://cmljs.org/assets/images/yanxuan/7d1c130c7d80edf824e4218c6829b7c8.png?imageView&quality=85&thumbnail=330x330","info":"鞋杯随脚型而变，舒适呵护","url":"","price":"69.9"}],"topics":[{"name":"严选look","img":"http://cmljs.org/assets/images/yanxuan/15030393722652401.jpg"},{"name":"严选推荐","img":"http://cmljs.org/assets/images/yanxuan/d943675462a06f817d33062d4eb059f5.jpg"},{"name":"丁磊私物推荐","img":"http://cmljs.org/assets/images/yanxuan/1de4da49367dd7c01af1f7a2b23b0237.jpg"},{"name":"挑款师推荐","img":"http://cmljs.org/assets/images/yanxuan/437cc656ff529f8f84db6efc48df9bf4.png"}],"articles":[{"auther":"严选推荐","autherimg":"http://cmljs.org/assets/images/yanxuan/3d860cbf663253590da6a64ff07f9919.png?imageView&thumbnail=64y64","tlt":"年中扫一扫，下半年运势好","info":"6个家庭清洁小技巧","price":"6.9","img":"http://cmljs.org/assets/images/yanxuan/5a1df92d48fa3214bec9bb40ab067683.jpg"},{"auther":"服装组：小服","autherimg":"http://cmljs.org/assets/images/yanxuan/15041772608140418.png?imageView&thumbnail=64y64","tlt":"小姐姐们的运动衣提前上架啦","info":"前两天推男式运动T恤时，就有小伙伴在专题评论里，问小姐姐们的运动衣在哪儿。","price":"","img":["http://cmljs.org/assets/images/yanxuan/15041772896010423.jpg","http://cmljs.org/assets/images/yanxuan/15041772789070419.jpg","http://cmljs.org/assets/images/yanxuan/15041772808640420.jpg"]},{"auther":"居家组：朵朵","autherimg":"http://cmljs.org/assets/images/yanxuan/15040896357740404.png?imageView&thumbnail=64y64","tlt":"初秋，最想用它来裸睡","info":"连续下了几场雨，杭州的早晚，已透出几丝凉意。再睡席子便有点凉了，于是周末从柜子翻...","price":"","img":["http://cmljs.org/assets/images/yanxuan/15040927525260414.jpg","http://cmljs.org/assets/images/yanxuan/15040927586650416.jpg","http://cmljs.org/assets/images/yanxuan/15040927556820415.jpg"]},{"auther":"严选推荐","autherimg":"http://cmljs.org/assets/images/yanxuan/3d860cbf663253590da6a64ff07f9919.png?imageView&thumbnail=64y64","tlt":"不为繁华易匠心","info":"那些值得珍藏的严选手作好物","price":"29","img":"http://cmljs.org/assets/images/yanxuan/4d72145e48e65ee3deaf2e1403e6ec73.jpg"}],"classes":["推荐区","家装区","居家","餐厨","配件","服装","电器","洗护","杂货","饮食","婴童","志趣"],"subclasses":[{"name":"中秋系列","img":"http://cmljs.org/assets/images/yanxuan/82ae05c313b93355239ca1795917a5ac.png?imageView&quality=85&thumbnail=144x144"},{"name":"超值套装","img":"http://cmljs.org/assets/images/yanxuan/bd6f7deba69c8af2f6bb80025d7b98de.png?imageView&quality=85&thumbnail=144x144"},{"name":"热卖爆品","img":"http://cmljs.org/assets/images/yanxuan/c3418cc60d3968263c5b2ac7fb153c34.png?imageView&quality=85&thumbnail=144x144"},{"name":"999+好评","img":"http://cmljs.org/assets/images/yanxuan/87d1cb1bc196c5775b17788aea1c2239.png?imageView&quality=85&thumbnail=144x144"},{"name":"boss推荐","img":"http://cmljs.org/assets/images/yanxuan/fbee769af73c0f63f6120eb27ff3ce96.png?imageView&quality=85&thumbnail=144x144"},{"name":"明星推荐","img":"http://cmljs.org/assets/images/yanxuan/7dea8f7e0e706804c3307504e2e7c463.png?imageView&quality=85&thumbnail=144x144"},{"name":"黑凤梨系列","img":"http://cmljs.org/assets/images/yanxuan/a4a14669ce1fa497aece9a20c669196e.png?imageView&quality=85&thumbnail=144x144"},{"name":"趣味粉系列","img":"http://cmljs.org/assets/images/yanxuan/87fc01e5876482d521ecca13aea42653.png?imageView&quality=85&thumbnail=144x144"}]}}}
+module.exports = {"errno":"0","errmsg":"","data":{"result":{"banners":[{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/630439320dae9f1ce3afef3c39721383.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/5100f0176e27a167cc2aea08b1bd11d8.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-1.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-8.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-2.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-4.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-6.jpg"}],"makers":{"title":"品牌制造商直供","list":[{"name":"新秀丽制造商","price":"59","state":"上新","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ppbg-1.jpg","url":""},{"name":"MUJI制造商","price":"12.9","state":"上新","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ppbg-2.jpg","url":""},{"name":"CK制造商","price":"29","state":"上新","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ppbg-3.jpg","url":""},{"name":"Adidas制造商","price":"29","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/75523d4274d85825ece16370cdb1693f.jpg","url":""}]},"recommend":{"head1":{"tlt":"周一周四 · 新品发布","tltBg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/bg-new.png","url":""},"goods1":[{"tlt":"日式和风声波式电动牙刷","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png","info":"进口刷毛，专利技术","price":"119"},{"tlt":"小馒头 多色双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png","info":"奶油色泽，小巧减龄","price":"79"},{"tlt":"多功能商务双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png","info":"17个功能分区，内置分层收纳","price":"334"},{"tlt":"切尔西牛皮女靴","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png","info":"经典牛皮切尔西，时尚帅气","price":"289"},{"tlt":"清心花茶壶套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a2a0f13385d67220b29e7a1124a361e6.png","info":"明亮通透，滤茶迅速","price":"119"},{"tlt":"全棉色织磨毛四件套","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png","info":"优雅色织，温暖磨毛","price":"299"},{"tlt":"黑凤梨 20寸PC膜拉链登机箱","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png","info":"热卖9万只，网易人手1只","price":"185"},{"tlt":"日式和风敞口保温杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png","info":"真空隔热，保温保冷","price":"32"}],"head2":{"tlt":"周一周四 · 新品发布","tltBg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/bg-new.png","url":""},"goods2":[{"tlt":"日式和风声波式电动牙刷","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png","info":"进口刷毛，专利技术","price":"119"},{"tlt":"小馒头 多色双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png","info":"奶油色泽，小巧减龄","price":"79"},{"tlt":"多功能商务双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png","info":"17个功能分区，内置分层收纳","price":"334"},{"tlt":"切尔西牛皮女靴","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png","info":"经典牛皮切尔西，时尚帅气","price":"289"},{"tlt":"清心花茶壶套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a2a0f13385d67220b29e7a1124a361e6.png","info":"明亮通透，滤茶迅速","price":"119"},{"tlt":"全棉色织磨毛四件套","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png","info":"优雅色织，温暖磨毛","price":"299"},{"tlt":"黑凤梨 20寸PC膜拉链登机箱","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png","info":"热卖9万只，网易人手1只","price":"185"},{"tlt":"日式和风敞口保温杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png","info":"真空隔热，保温保冷","price":"32"}]},"goods":[{"tlt":"日式和风敞口保温杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png","info":"真空隔热，保温保冷","url":"","price":"32"},{"tlt":"切尔西牛皮女靴","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png","info":"奶油色泽，小巧减龄","url":"","price":"32"},{"tlt":"小馒头多色双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png","info":"奶油色泽，小巧减龄","url":"","price":"79"},{"tlt":"全棉色织磨毛四件套","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png","info":"优雅色织，温暖磨毛","url":"","price":"299"},{"tlt":"日式和风声波式电动牙刷","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png","info":"进口刷毛，专利技术","url":"","price":"119"},{"tlt":"多功能商务双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png","info":"17个功能分区，内置分层收纳","url":"","price":"334"},{"tlt":"黑凤梨20寸PC膜拉链登机箱","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png","info":"热卖9万只，网易人手1只","url":"","price":"185"},{"tlt":"日式蓬软太鼓抱枕","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ad953e16ad8c33b714e7af941ce8cd56.png","info":"萌趣太鼓造型 软糯轻柔回弹","url":"","price":"29"},{"tlt":"可水洗抗菌防螨丝羽绒枕","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a6c9e142fd008b3734c690a71a78ae5b.png","info":"进口防螨布，热销50万件","url":"","price":"99"},{"tlt":"双宫茧桑蚕丝被 空调被","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/6b341648f59d0c3eb48fa81e1d2de06e.png","info":"一级桑蚕丝，吸湿透气柔软","url":"","price":"479"},{"tlt":"怀抱休闲椅组合（皮款）","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/b5289125e9b55cf72e9a9623d006415e.png","info":"葛优躺神器皮款","url":"","price":"3999"},{"tlt":"欧式哑光餐具套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/431e86c88b4a6c9f065d1d8abea6b603.png","info":"德化白瓷，坚实耐用","url":"","price":"189"},{"tlt":"清新两用杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/431f5d142e3dd9946dc8e38c2aa3cd34.png","info":"办公杯优选 轻松饮茶","url":"","price":"52"},{"tlt":"两带式男/女款拖鞋","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/7d1c130c7d80edf824e4218c6829b7c8.png","info":"鞋杯随脚型而变，舒适呵护","url":"","price":"69.9"}],"topics":[{"name":"严选look","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15030393722652401.jpg"},{"name":"严选推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/d943675462a06f817d33062d4eb059f5.jpg"},{"name":"丁磊私物推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/1de4da49367dd7c01af1f7a2b23b0237.jpg"},{"name":"挑款师推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/437cc656ff529f8f84db6efc48df9bf4.png"}],"articles":[{"auther":"严选推荐","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3d860cbf663253590da6a64ff07f9919.png","tlt":"年中扫一扫，下半年运势好","info":"6个家庭清洁小技巧","price":"6.9","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/5a1df92d48fa3214bec9bb40ab067683.jpg"},{"auther":"服装组：小服","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772608140418.png","tlt":"小姐姐们的运动衣提前上架啦","info":"前两天推男式运动T恤时，就有小伙伴在专题评论里，问小姐姐们的运动衣在哪儿。","price":"","img":["https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772896010423.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772808640420.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772808640420.jpg"]},{"auther":"居家组：朵朵","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040896357740404.png","tlt":"初秋，最想用它来裸睡","info":"连续下了几场雨，杭州的早晚，已透出几丝凉意。再睡席子便有点凉了，于是周末从柜子翻...","price":"","img":["https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040927525260414.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040927586650416.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040927556820415.jpg"]},{"auther":"严选推荐","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3d860cbf663253590da6a64ff07f9919.png","tlt":"不为繁华易匠心","info":"那些值得珍藏的严选手作好物","price":"29","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/4d72145e48e65ee3deaf2e1403e6ec73.jpg"}],"classes":["推荐区","家装区","居家","餐厨","配件","服装","电器","洗护","杂货","饮食","婴童","志趣"],"subclasses":[{"name":"中秋系列","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/82ae05c313b93355239ca1795917a5ac.png"},{"name":"超值套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/bd6f7deba69c8af2f6bb80025d7b98de.png"},{"name":"热卖爆品","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/c3418cc60d3968263c5b2ac7fb153c34.png"},{"name":"999+好评","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/87d1cb1bc196c5775b17788aea1c2239.png"},{"name":"boss推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/fbee769af73c0f63f6120eb27ff3ce96.png"},{"name":"明星推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/7dea8f7e0e706804c3307504e2e7c463.png"},{"name":"黑凤梨系列","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a4a14669ce1fa497aece9a20c669196e.png"},{"name":"趣味粉系列","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/87fc01e5876482d521ecca13aea42653.png"}]}}}
 
 /***/ }),
 
 /***/ "./src/router.config.json":
 /***/ (function(module, exports) {
 
-module.exports = {"mode":"hash","domain":"https://api.chameleon.com","routes":[{"url":"/","path":"/pages/index/index","name":"首页","mock":"index.php"},{"name":"com","url":"/pages/com/com","path":"/pages/com/com","mock":"index.php"},{"name":"api","url":"/pages/api/api","path":"/pages/api/api","mock":"index.php"},{"name":"demo","url":"/pages/demo/demo","path":"/pages/demo/demo","mock":"index.php"},{"name":"chooseImage","url":"/pages/api/sub-pages/chooseImage","path":"/pages/api/sub-pages/chooseImage","mock":"index.php"},{"name":"animation","url":"/pages/api/sub-pages/animation","path":"/pages/api/sub-pages/animation","mock":"index.php"},{"name":"request","url":"/pages/api/sub-pages/request","path":"/pages/api/sub-pages/request","mock":"index.php"},{"name":"webSocket","url":"/pages/api/sub-pages/webSocket","path":"/pages/api/sub-pages/webSocket","mock":"index.php"},{"name":"navigate","url":"/pages/api/sub-pages/navigate","path":"/pages/api/sub-pages/navigate","mock":"index.php"},{"name":"list","url":"/pages/com/base/list/list","path":"/pages/com/base/list/list","mock":"index.php"},{"name":"scroller","url":"/pages/com/base/scroller/scroller","path":"/pages/com/base/scroller/scroller","mock":"index.php"},{"name":"view","url":"/pages/com/base/view/view","path":"/pages/com/base/view/view","mock":"index.php"},{"name":"text","url":"/pages/com/base/text/text","path":"/pages/com/base/text/text","mock":"index.php"},{"name":"button","url":"/pages/com/base/button/button","path":"/pages/com/base/button/button","mock":"index.php"},{"name":"input","url":"/pages/com/base/input/input","path":"/pages/com/base/input/input","mock":"index.php"},{"name":"textarea","url":"/pages/com/base/textarea/textarea","path":"/pages/com/base/textarea/textarea","mock":"index.php"},{"name":"image","url":"/pages/com/base/image/image","path":"/pages/com/base/image/image","mock":"index.php"},{"name":"video","url":"/pages/com/base/video/video","path":"/pages/com/base/video/video","mock":"index.php"},{"name":"richtext","url":"/pages/com/base/richtext/richtext","path":"/pages/com/base/richtext/richtext"},{"name":"switch","url":"/pages/com/base/switch/switch","path":"/pages/com/base/switch/switch"},{"name":"radio","url":"/pages/com/base/radio/radio","path":"/pages/com/base/radio/radio"},{"name":"checkbox","url":"/pages/com/base/checkbox/checkbox","path":"/pages/com/base/checkbox/checkbox"},{"name":"carousel","url":"/pages/com/base/carousel/carousel","path":"/pages/com/base/carousel/carousel"},{"name":"row","url":"/pages/com/base/row/row","path":"/pages/com/base/row/row","mock":"index.php"},{"name":"layout","url":"/pages/com/base/layout/layout","path":"/pages/com/base/layout/layout","mock":"index.php"},{"name":"c-dialog","url":"/pages/com/spread/c-dialog/c-dialog","path":"/pages/com/spread/c-dialog/c-dialog","mock":"index.php"},{"name":"c-loading","url":"/pages/com/spread/c-loading/c-loading","path":"/pages/com/spread/c-loading/c-loading","mock":"index.php"},{"name":"c-toast","url":"/pages/com/spread/c-toast/c-toast","path":"/pages/com/spread/c-toast/c-toast","mock":"index.php"},{"name":"c-tip","url":"/pages/com/spread/c-tip/c-tip","path":"/pages/com/spread/c-tip/c-tip","mock":"index.php"},{"name":"c-popup","url":"/pages/com/spread/c-popup/c-popup","path":"/pages/com/spread/c-popup/c-popup","mock":"index.php"},{"name":"c-actionsheet","url":"/pages/com/spread/c-actionsheet/c-actionsheet","path":"/pages/com/spread/c-actionsheet/c-actionsheet","mock":"index.php"},{"name":"c-picker","url":"/pages/com/spread/c-picker/c-picker","path":"/pages/com/spread/c-picker/c-picker","mock":"index.php"},{"name":"c-tab","url":"/pages/com/spread/c-tab/c-tab","path":"/pages/com/spread/c-tab/c-tab","mock":"index.php"},{"name":"c-refresh","url":"/pages/com/spread/c-refresh/c-refresh","path":"/pages/com/spread/c-refresh/c-refresh","mock":"index.php"},{"name":"c-checkbox-group","url":"/pages/com/spread/c-checkbox-group/c-checkbox-group","path":"/pages/com/spread/c-checkbox-group/c-checkbox-group","mock":"index.php"},{"name":"c-radio-group","url":"/pages/com/spread/c-radio-group/c-radio-group","path":"/pages/com/spread/c-radio-group/c-radio-group","mock":"index.php"},{"url":"/cml/demo/yanxuan","path":"/pages/demo/yanxuan/pages/index/index","name":"yanxuan","mock":"index.php"},{"url":"/cml/demo/yanxuan/list","path":"/pages/demo/yanxuan/pages/list/list","name":"yanxuan_list","mock":"index.php"},{"url":"/cml/demo/yanxuan/detail","path":"/pages/demo/yanxuan/pages/detail/detail","name":"yanxuan_detail","mock":"index.php"},{"url":"/cml/demo/yanxuan/map","path":"/pages/demo/yanxuan/pages/map/map","name":"yanxuan_map","mock":"index.php"}]}
+module.exports = {"mode":"hash","domain":"https://cmljs.org","routes":[{"url":"/","path":"/pages/index/index","name":"首页","mock":"index.php"},{"name":"com","url":"/pages/com/com","path":"/pages/com/com","mock":"index.php"},{"name":"api","url":"/pages/api/api","path":"/pages/api/api","mock":"index.php"},{"name":"demo","url":"/pages/demo/demo","path":"/pages/demo/demo","mock":"index.php"},{"name":"chooseImage","url":"/pages/api/sub-pages/chooseImage","path":"/pages/api/sub-pages/chooseImage","mock":"index.php"},{"name":"animation","url":"/pages/api/sub-pages/animation","path":"/pages/api/sub-pages/animation","mock":"index.php"},{"name":"request","url":"/pages/api/sub-pages/request","path":"/pages/api/sub-pages/request","mock":"index.php"},{"name":"webSocket","url":"/pages/api/sub-pages/webSocket","path":"/pages/api/sub-pages/webSocket","mock":"index.php"},{"name":"navigate","url":"/pages/api/sub-pages/navigate","path":"/pages/api/sub-pages/navigate","mock":"index.php"},{"name":"list","url":"/pages/com/base/list/list","path":"/pages/com/base/list/list","mock":"index.php"},{"name":"scroller","url":"/pages/com/base/scroller/scroller","path":"/pages/com/base/scroller/scroller","mock":"index.php"},{"name":"view","url":"/pages/com/base/view/view","path":"/pages/com/base/view/view","mock":"index.php"},{"name":"text","url":"/pages/com/base/text/text","path":"/pages/com/base/text/text","mock":"index.php"},{"name":"button","url":"/pages/com/base/button/button","path":"/pages/com/base/button/button","mock":"index.php"},{"name":"input","url":"/pages/com/base/input/input","path":"/pages/com/base/input/input","mock":"index.php"},{"name":"textarea","url":"/pages/com/base/textarea/textarea","path":"/pages/com/base/textarea/textarea","mock":"index.php"},{"name":"image","url":"/pages/com/base/image/image","path":"/pages/com/base/image/image","mock":"index.php"},{"name":"video","url":"/pages/com/base/video/video","path":"/pages/com/base/video/video","mock":"index.php"},{"name":"richtext","url":"/pages/com/base/richtext/richtext","path":"/pages/com/base/richtext/richtext"},{"name":"switch","url":"/pages/com/base/switch/switch","path":"/pages/com/base/switch/switch"},{"name":"radio","url":"/pages/com/base/radio/radio","path":"/pages/com/base/radio/radio"},{"name":"checkbox","url":"/pages/com/base/checkbox/checkbox","path":"/pages/com/base/checkbox/checkbox"},{"name":"carousel","url":"/pages/com/base/carousel/carousel","path":"/pages/com/base/carousel/carousel"},{"name":"row","url":"/pages/com/base/row/row","path":"/pages/com/base/row/row","mock":"index.php"},{"name":"layout","url":"/pages/com/base/layout/layout","path":"/pages/com/base/layout/layout","mock":"index.php"},{"name":"c-dialog","url":"/pages/com/spread/c-dialog/c-dialog","path":"/pages/com/spread/c-dialog/c-dialog","mock":"index.php"},{"name":"c-loading","url":"/pages/com/spread/c-loading/c-loading","path":"/pages/com/spread/c-loading/c-loading","mock":"index.php"},{"name":"c-toast","url":"/pages/com/spread/c-toast/c-toast","path":"/pages/com/spread/c-toast/c-toast","mock":"index.php"},{"name":"c-tip","url":"/pages/com/spread/c-tip/c-tip","path":"/pages/com/spread/c-tip/c-tip","mock":"index.php"},{"name":"c-popup","url":"/pages/com/spread/c-popup/c-popup","path":"/pages/com/spread/c-popup/c-popup","mock":"index.php"},{"name":"c-actionsheet","url":"/pages/com/spread/c-actionsheet/c-actionsheet","path":"/pages/com/spread/c-actionsheet/c-actionsheet","mock":"index.php"},{"name":"c-picker","url":"/pages/com/spread/c-picker/c-picker","path":"/pages/com/spread/c-picker/c-picker","mock":"index.php"},{"name":"c-tab","url":"/pages/com/spread/c-tab/c-tab","path":"/pages/com/spread/c-tab/c-tab","mock":"index.php"},{"name":"c-refresh","url":"/pages/com/spread/c-refresh/c-refresh","path":"/pages/com/spread/c-refresh/c-refresh","mock":"index.php"},{"name":"c-checkbox-group","url":"/pages/com/spread/c-checkbox-group/c-checkbox-group","path":"/pages/com/spread/c-checkbox-group/c-checkbox-group","mock":"index.php"},{"name":"c-radio-group","url":"/pages/com/spread/c-radio-group/c-radio-group","path":"/pages/com/spread/c-radio-group/c-radio-group","mock":"index.php"},{"url":"/cml/demo/yanxuan","path":"/pages/demo/yanxuan/pages/index/index","name":"yanxuan","mock":"index.php"},{"url":"/cml/demo/yanxuan/list","path":"/pages/demo/yanxuan/pages/list/list","name":"yanxuan_list","mock":"index.php"},{"url":"/cml/demo/yanxuan/detail","path":"/pages/demo/yanxuan/pages/detail/detail","name":"yanxuan_detail","mock":"index.php"},{"url":"/cml/demo/yanxuan/map","path":"/pages/demo/yanxuan/pages/map/map","name":"yanxuan_map","mock":"index.php"}]}
 
 /***/ }),
 

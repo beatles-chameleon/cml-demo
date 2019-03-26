@@ -30,6 +30,8 @@ var __INTERFAE__DEFINES__ = {
   },
   "interfaces": {
     "TextareaInterface": {
+      "cStyle": "String",
+      "cstyle": "String",
       "value": "String",
       "placeholder": "String",
       "disabled": "Boolean",
@@ -40,7 +42,6 @@ var __INTERFAE__DEFINES__ = {
       "maxlength": "Number",
       "returnKeyType": "String",
       "placerHolderColor": "String",
-      "cStyle": "String",
       "rows": "Number",
       "inputevent": {
         "input": ["inputEventDetail"],
@@ -341,6 +342,14 @@ var Textarea = function Textarea() {
   _classCallCheck(this, Textarea);
 
   this.props = {
+    cStyle: {
+      type: String,
+      default: ''
+    },
+    cstyle: {
+      type: String,
+      default: ''
+    },
     //textarea的内容
     value: {
       type: String,
@@ -376,25 +385,15 @@ var Textarea = function Textarea() {
       type: String,
       default: '#666'
     },
-    cStyle: {
-      type: String,
-      default: ''
-    },
     rows: {
       type: Number,
       default: 2
     }
   };
-  this.data = {
-    defaultStyle: "font-size: 40cpx; height: 150cpx; line-height: 50cpx; padding-left:20cpx; padding-right:20cpx; color: #000; text-align: left; background-color: #fff; width:auto; border: 1px solid #999; border-radius: 8cpx;"
-  };
+  this.data = {};
   this.computed = {
     wxPlaceHolderStyle: function wxPlaceHolderStyle() {
       return "color: " + this.placerHolderColor;
-    },
-    wxStyle: function wxStyle() {
-      var style = this.defaultStyle + this.cStyle;
-      return style;
     }
   };
   this.watch = {

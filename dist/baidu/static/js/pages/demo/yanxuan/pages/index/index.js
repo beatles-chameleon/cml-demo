@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("../../../../../manifest.js");
-__CML__GLOBAL.webpackJsonp([24],{
+__CML__GLOBAL.webpackJsonp([23],{
 
 /***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/demo/yanxuan/pages/index/index.cml":
 /***/ (function(module, exports, __webpack_require__) {

@@ -132,3 +132,17 @@
 .border-none:before, .border-none:after {
     display: none;
 }
+
+.textarea-wrap {
+  font-size: 40rpx;
+  height: 150rpx;
+  line-height: 50rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  width: auto;
+  border: 1rpx solid #999;
+  border-radius: 8rpx;
+}

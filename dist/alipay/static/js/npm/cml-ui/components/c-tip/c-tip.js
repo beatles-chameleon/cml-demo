@@ -1,1 +1,223 @@
-var __CML__GLOBAL=require("../../../../manifest.js");__CML__GLOBAL.webpackJsonp([3],{295:function(t,e,o){o(296),o(297)},296:function(t,e){},297:function(t,e,o){function i(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(e,"__esModule",{value:!0});var f=o(0),s=function(t){return t&&t.__esModule?t:{default:t}}(f),h=function t(){i(this,t),this.props={show:{type:Boolean,default:!1},direction:{type:String,default:"top"},closeUrl:{type:String,default:o(298)},offsetLeft:{type:Number,default:0},offsetTop:{type:Number,default:0},offsetRight:{type:Number,default:0},offsetBottom:{type:Number,default:0}},this.data={iconMap:{left:o(299),right:o(300),top:o(301),bottom:o(302)}},this.computed={angleImg:function(){return this.iconMap[this.direction]},tipStyle:function(){var t=void 0;switch(this.direction){case"top":t=this.offsetLeft||this.offsetRight?"padding-bottom: 16cpx;":"flex-direction: column-reverse;";break;case"right":t=this.offsetTop||this.offsetBottom?"padding-left: 16cpx;":"flex-direction: row;";break;case"bottom":t=this.offsetLeft||this.offsetRight?"padding-top: 16cpx;":"flex-direction: column;";break;case"left":t=this.offsetTop||this.offsetBottom?"padding-right: 16cpx;":"flex-direction: row-reverse;"}return t},angleStyle:function(){var t=void 0;switch(this.direction){case"top":this.offsetLeft||this.offsetRight?(t="position: absolute; bottom: 0;width: 32cpx; height: 16cpx;",this.offsetLeft&&(t=t+"left:"+this.offsetLeft+"cpx;"),this.offsetRight&&(t=t+"right:"+this.offsetRight+"cpx;")):t="width: 32cpx; height: 16cpx;";break;case"right":this.offsetTop||this.offsetBottom?(t="position: absolute; left: 0;width: 16cpx; height: 32cpx;",this.offsetTop&&(t=t+"top:"+this.offsetTop+"cpx;"),this.offsetBottom&&(t=t+"bottom:"+this.offsetBottom+"cpx;")):t="width: 16cpx; height: 32cpx;";break;case"bottom":this.offsetLeft||this.offsetRight?(t="position: absolute; top: 0;width: 32cpx; height: 16cpx;",this.offsetLeft&&(t=t+"left:"+this.offsetLeft+"cpx;"),this.offsetRight&&(t=t+"right:"+this.offsetRight+"cpx;")):t="width: 32cpx; height: 16cpx;";break;case"left":this.offsetTop||this.offsetBottom?(t="position: absolute; right: 0;width: 16cpx; height: 32cpx;",this.offsetTop&&(t=t+"top:"+this.offsetTop+"cpx;"),this.offsetBottom&&(t=t+"bottom:"+this.offsetBottom+"cpx;")):t="width: 16cpx; height: 32cpx;"}return t}},this.watch={},this.methods={closeTap:function(){this.$cmlEmit("close")}}};e.default=new h,e.default=s.default.createComponent(e.default).getOptions()},298:function(t,e,o){t.exports=o.p+"static/img/close_49a1751.png"},299:function(t,e,o){t.exports=o.p+"static/img/left_0ac0eaf.png"},300:function(t,e,o){t.exports=o.p+"static/img/right_c8f477d.png"},301:function(t,e,o){t.exports=o.p+"static/img/top_a17a0e7.png"},302:function(t,e,o){t.exports=o.p+"static/img/bottom_4f4eed1.png"}},[295]);
+var __CML__GLOBAL = require("../../../../manifest.js");
+__CML__GLOBAL.webpackJsonp([3],{
+
+/***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/cml-ui/components/c-tip/c-tip.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var CTip = function CTip() {
+  _classCallCheck(this, CTip);
+
+  this.props = {
+    show: {
+      type: Boolean,
+      default: false
+    },
+    direction: {
+      type: String,
+      default: "top" //bottom, left, right
+    },
+    closeUrl: {
+      type: String,
+      default: __webpack_require__("./node_modules/cml-ui/components/c-tip/images/close.png")
+    },
+    offsetLeft: {
+      type: Number,
+      default: 0
+    },
+    offsetTop: {
+      type: Number,
+      default: 0
+    },
+    offsetRight: {
+      type: Number,
+      default: 0
+    },
+    offsetBottom: {
+      type: Number,
+      default: 0
+    }
+  };
+  this.data = {
+    iconMap: {
+      left: __webpack_require__("./node_modules/cml-ui/components/c-tip/images/left.png"),
+      right: __webpack_require__("./node_modules/cml-ui/components/c-tip/images/right.png"),
+      top: __webpack_require__("./node_modules/cml-ui/components/c-tip/images/top.png"),
+      bottom: __webpack_require__("./node_modules/cml-ui/components/c-tip/images/bottom.png")
+    }
+  };
+  this.computed = {
+    angleImg: function angleImg() {
+      return this.iconMap[this.direction];
+    },
+    tipStyle: function tipStyle() {
+      var style = void 0;
+      switch (this.direction) {
+        case 'top':
+          if (this.offsetLeft || this.offsetRight) {
+            style = "padding-bottom: 16cpx;";
+          } else {
+            style = "flex-direction: column-reverse;";
+          }
+          break;
+        case 'right':
+          if (this.offsetTop || this.offsetBottom) {
+            style = "padding-left: 16cpx;";
+          } else {
+            style = "flex-direction: row;";
+          }
+          break;
+        case 'bottom':
+          if (this.offsetLeft || this.offsetRight) {
+            style = "padding-top: 16cpx;";
+          } else {
+            style = 'flex-direction: column;';
+          }
+          break;
+        case 'left':
+          if (this.offsetTop || this.offsetBottom) {
+            style = "padding-right: 16cpx;";
+          } else {
+            style = 'flex-direction: row-reverse;';
+          }
+          break;
+      }
+      return style;
+    },
+    angleStyle: function angleStyle() {
+      var style = void 0;
+      switch (this.direction) {
+        case 'top':
+          if (this.offsetLeft || this.offsetRight) {
+            style = "position: absolute; bottom: 0;width: 32cpx; height: 16cpx;";
+            if (this.offsetLeft) {
+              style = style + ("left:" + this.offsetLeft + "cpx;");
+            }
+            if (this.offsetRight) {
+              style = style + ("right:" + this.offsetRight + "cpx;");
+            }
+          } else {
+            style = "width: 32cpx; height: 16cpx;";
+          }
+          break;
+        case 'right':
+          if (this.offsetTop || this.offsetBottom) {
+            style = "position: absolute; left: 0;width: 16cpx; height: 32cpx;";
+            if (this.offsetTop) {
+              style = style + ("top:" + this.offsetTop + "cpx;");
+            }
+            if (this.offsetBottom) {
+              style = style + ("bottom:" + this.offsetBottom + "cpx;");
+            }
+          } else {
+            style = "width: 16cpx; height: 32cpx;";
+          }
+          break;
+        case 'bottom':
+          if (this.offsetLeft || this.offsetRight) {
+            style = "position: absolute; top: 0;width: 32cpx; height: 16cpx;";
+            if (this.offsetLeft) {
+              style = style + ("left:" + this.offsetLeft + "cpx;");
+            }
+            if (this.offsetRight) {
+              style = style + ("right:" + this.offsetRight + "cpx;");
+            }
+          } else {
+            style = "width: 32cpx; height: 16cpx;";
+          }
+          break;
+        case 'left':
+          if (this.offsetTop || this.offsetBottom) {
+            style = "position: absolute; right: 0;width: 16cpx; height: 32cpx;";
+            if (this.offsetTop) {
+              style = style + ("top:" + this.offsetTop + "cpx;");
+            }
+            if (this.offsetBottom) {
+              style = style + ("bottom:" + this.offsetBottom + "cpx;");
+            }
+          } else {
+            style = "width: 16cpx; height: 32cpx;";
+          }
+          break;
+      }
+      return style;
+    }
+  };
+  this.watch = {};
+  this.methods = {
+    closeTap: function closeTap() {
+      this.$cmlEmit("close");
+    }
+  };
+};
+
+exports.default = new CTip();
+
+
+exports.default = _chameleonRuntime2.default.createComponent(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"alipay\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/alipay/.postcssrc.js\"}}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"alipay\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=component&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/cml-ui/components/c-tip/c-tip.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./node_modules/cml-ui/components/c-tip/c-tip.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"alipay\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/alipay/.postcssrc.js\"}}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"alipay\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=component&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/cml-ui/components/c-tip/c-tip.cml");
+var __cml__script = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=alipay&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/cml-ui/components/c-tip/c-tip.cml");
+
+
+/***/ }),
+
+/***/ "./node_modules/cml-ui/components/c-tip/images/bottom.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/bottom_4f4eed1.png";
+
+/***/ }),
+
+/***/ "./node_modules/cml-ui/components/c-tip/images/close.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/close_49a1751.png";
+
+/***/ }),
+
+/***/ "./node_modules/cml-ui/components/c-tip/images/left.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/left_0ac0eaf.png";
+
+/***/ }),
+
+/***/ "./node_modules/cml-ui/components/c-tip/images/right.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/right_c8f477d.png";
+
+/***/ }),
+
+/***/ "./node_modules/cml-ui/components/c-tip/images/top.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/top_a17a0e7.png";
+
+/***/ })
+
+},["./node_modules/cml-ui/components/c-tip/c-tip.cml"]);

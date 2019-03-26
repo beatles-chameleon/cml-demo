@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("../../../../manifest.js");
-__CML__GLOBAL.webpackJsonp([23],{
+__CML__GLOBAL.webpackJsonp([22],{
 
 /***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/chameleon-ui-builtin/components/input/input.wx.cml":
 /***/ (function(module, exports, __webpack_require__) {
@@ -37,6 +37,8 @@ var __INTERFAE__DEFINES__ = {
   },
   "interfaces": {
     "InputInterface": {
+      "cStyle": "String",
+      "cstyle": "String",
       "value": "String",
       "type": "String",
       "placeholder": "String",
@@ -48,7 +50,6 @@ var __INTERFAE__DEFINES__ = {
       "maxlength": "Number",
       "returnKeyType": "String",
       "placerHolderColor": "String",
-      "cStyle": "String",
       "maxValue": "Number",
       "minValue": "Number",
       "inputevent": {
@@ -349,6 +350,14 @@ var Input = function () {
     _classCallCheck(this, Input);
 
     this.props = {
+      cStyle: {
+        type: String,
+        default: ''
+      },
+      cstyle: {
+        type: String,
+        default: ''
+      },
       value: {
         type: String,
         default: ''
@@ -389,10 +398,6 @@ var Input = function () {
         type: String,
         default: '#bebebe'
       },
-      cStyle: {
-        type: String,
-        default: ''
-      },
       maxValue: {
         //type=number 最大值
         type: Number,
@@ -405,16 +410,11 @@ var Input = function () {
       }
     };
     this.data = {
-      inputValue: "",
-      defaultStyle: "font-size: 33cpx; height: 80cpx; line-height: 80cpx; padding-left:20cpx; padding-right:20cpx; color: #000; border: 1px solid #999;border-radius: 8cpx; text-align: left; background-color: #fff;"
+      inputValue: ""
     };
     this.computed = {
       wxPlaceHolderStyle: function wxPlaceHolderStyle() {
         return "color: " + this.placerHolderColor + ";";
-      },
-      wxStyle: function wxStyle() {
-        var style = this.defaultStyle + this.cStyle;
-        return style;
       },
       isInputNumber: function isInputNumber() {
         return this.type === 'number';

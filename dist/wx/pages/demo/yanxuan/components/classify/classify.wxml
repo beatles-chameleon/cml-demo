@@ -10,7 +10,7 @@
     </view>
 
     <view class="main-list  cml-base cml-view" style="{{scrollerHeight}}rpx">
-      <image class="ad-img  cml-base cml-image" resize="cover" src="https://yanxuan.nosdn.127.net/3ebd7addcc0d101d116052a57cec2f16.png"></image>
+      <image class="ad-img  cml-base cml-image" resize="cover" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/3ebd7addcc0d101d116052a57cec2f16.png"></image>
       <text class="sub-tlt  cml-base cml-text"> --- 推荐区分类 --- </text>
       <view class="sub-box  cml-base cml-view">
         <view class="sub-i  cml-base cml-view" wx:for="{{subclasses}}" bindtap="_cmlEventProxy" data-eventtap="godetail">

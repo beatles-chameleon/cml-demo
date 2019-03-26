@@ -32,6 +32,7 @@ var __INTERFAE__DEFINES__ = {
       "autoplay": "Boolean",
       "loop": "Boolean",
       "src": "String",
+      "cstyle": "String",
       "customstart": {
         "input": ["Undefined"],
         "output": "Undefined"
@@ -346,6 +347,10 @@ var Video = function Video() {
       default: false
     },
     src: {
+      type: String,
+      default: ''
+    },
+    cstyle: {
       type: String,
       default: ''
     }

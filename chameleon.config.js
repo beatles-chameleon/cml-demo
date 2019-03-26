@@ -6,7 +6,6 @@ const apiPrefix = 'https://cmljs.org';
 
 cml.config.merge({
   cmlNpm: [
-    
   ],
   devPort: 5556,
   templateType: 'html',

@@ -3476,6 +3476,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _utils = __webpack_require__("./node_modules/chameleon-api/src/lib/utils.js");
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3805,12 +3807,7 @@ var Method = function () {
       var path = opt.path,
           query = opt.query;
 
-
-      if (path.indexOf('?') === -1) {
-        query = '?' + query;
-      }
-
-      path = path + query;
+      path = (0, _utils.buildQueryStringUrl)((0, _utils.queryParse)(query), path);
       swan.redirectTo({
         url: path
       });
@@ -3853,7 +3850,7 @@ function redirectTo(opt) {
     url = opt.url;
   }
   if (typeof opt.query !== 'string') {
-    query = (0, _utils.queryStringify)(opt.query);
+    query = (0, _utils.buildQueryStringUrl)(opt.query);
   }
   _index2.default.redirectTo({
     path: path,
@@ -4633,11 +4630,23 @@ var Method = function () {
     key: "setStorage",
     value: function setStorage(key, value, cb) {
       try {
-        swan.setStorageSync(key, value);
-        cb({
-          errno: 0,
-          errMsg: 'success',
-          data: value
+        swan.setStorage({
+          key: key,
+          data: value,
+          success: function success() {
+            cb({
+              errno: 0,
+              errMsg: 'success',
+              data: value
+            });
+          },
+          fail: function fail() {
+            cb({
+              errno: -1,
+              errMsg: 'fail',
+              data: ''
+            });
+          }
         });
       } catch (e) {
         var _errMsg = void 0;
@@ -6700,8 +6709,8 @@ function isNeedApiPrefix(url) {
 }
 
 function addApiPrefix(url) {
-  if (process && process.env && "http://172.22.137.218:5556") {
-    return "http://172.22.137.218:5556" + url;
+  if (process && process.env && "http://172.24.36.108:5556") {
+    return "http://172.24.36.108:5556" + url;
   }
   return url;
 }

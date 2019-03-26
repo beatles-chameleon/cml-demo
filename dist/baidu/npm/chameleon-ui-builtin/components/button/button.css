@@ -151,6 +151,8 @@
   -webkit-justify-content: center;
           justify-content: center;
   border-radius: 4rpx;
+  -webkit-align-self: stretch;
+          align-self: stretch;
   font-size: 32rpx;
 }
 

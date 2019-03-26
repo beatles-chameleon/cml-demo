@@ -154,8 +154,11 @@ page, .cml-view {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center;
+  -webkit-align-self: stretch;
+          align-self: stretch;
   border-radius: 4rpx;
   font-size: 32rpx;
+  color: #fff;
 }
 
 .cml-btn-active {

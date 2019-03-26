@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("../../../../../manifest.js");
-__CML__GLOBAL.webpackJsonp([16],{
+__CML__GLOBAL.webpackJsonp([15],{
 
 /***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/demo/yanxuan/pages/list/list.cml":
 /***/ (function(module, exports, __webpack_require__) {
@@ -102,7 +102,7 @@ exports.default = _chameleonRuntime2.default.createPage(exports.default).getOpti
 /***/ "./src/pages/demo/yanxuan/assets/listImages.json":
 /***/ (function(module, exports) {
 
-module.exports = {"code":0,"data":{"topImgUrl":"https://yanxuan.nosdn.127.net/4972949f269e7295a4f37e99a303553e.jpg?quality=85&thumbnail=750x0&imageView","list":[{"imgUrl":"https://yanxuan.nosdn.127.net/8635c42f2b3a92768b12015c491821b5.png?imageView&quality=65&thumbnail=330x330","des":"400跟纯棉贡缎","name":"60s锦绵贡缎四件套","money":"￥400","tag":["APP特惠"]},{"imgUrl":"https://yanxuan.nosdn.127.net/4a00fd1035efe874d70d51dfc04c5cee.png?imageView&quality=65&thumbnail=330x330","des":"少女粉润贡缎","name":"朱莉.粉唐四件套","money":"￥359","tag":["年货节特卖","满赠"]},{"imgUrl":"https://yanxuan.nosdn.127.net/9f3c89c8b98fb06968c67edb12a195cf.png?imageView&quality=65&thumbnail=330x330","des":"少女粉润贡缎","name":"朱莉.粉唐四件套","money":"￥359","tag":[]},{"imgUrl":"https://yanxuan.nosdn.127.net/cc863b46d890633445fb2a1354b01841.png?imageView&quality=65&thumbnail=330x330","des":"入门享受奢华感受","name":"60s锦绵贡缎四件套","money":"￥400"}]}}
+module.exports = {"code":0,"data":{"topImgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/4972949f269e7295a4f37e99a303553e.jpg","list":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/8635c42f2b3a92768b12015c491821b5.png","des":"400跟纯棉贡缎","name":"60s锦绵贡缎四件套","money":"￥400","tag":["APP特惠"]},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/4a00fd1035efe874d70d51dfc04c5cee.png","des":"少女粉润贡缎","name":"朱莉.粉唐四件套","money":"￥359","tag":["年货节特卖","满赠"]},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/9f3c89c8b98fb06968c67edb12a195cf.png","des":"少女粉润贡缎","name":"朱莉.粉唐四件套","money":"￥359","tag":[]},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/cc863b46d890633445fb2a1354b01841.png","des":"入门享受奢华感受","name":"60s锦绵贡缎四件套","money":"￥400"}]}}
 
 /***/ }),
 

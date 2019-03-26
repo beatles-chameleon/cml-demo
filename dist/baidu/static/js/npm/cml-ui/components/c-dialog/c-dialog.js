@@ -74,6 +74,12 @@ var CDialog = function CDialog() {
     },
     iconStyle: {
       type: Object
+    },
+    confirmStyle: {
+      type: Object
+    },
+    cancelStyle: {
+      type: Object
     }
   };
   this.data = {
@@ -85,6 +91,12 @@ var CDialog = function CDialog() {
     },
     computedIconStyle: function computedIconStyle() {
       return (0, _style.obj2str)(this.iconStyle || {});
+    },
+    computedConfirmStyle: function computedConfirmStyle() {
+      return (0, _style.obj2str)(this.confirmStyle || {});
+    },
+    computedCancelStyle: function computedCancelStyle() {
+      return (0, _style.obj2str)(this.cancelStyle || {});
     }
   };
   this.watch = {};
