@@ -1,0 +1,42 @@
+<view class=" cml-base cml-view cml-517ad4f6"><cml-buildin-page title="列表" class=" cml-base cml-page cml-517ad4f6">
+  <view class="container  cml-base cml-view cml-517ad4f6">
+    <view class=" cml-base cml-view cml-517ad4f6"><cml-buildin-scroller scroll-direction="{{scrollDirection}}" bottom-offset="{{bottomOffset}}" onScrolltobottom="_cmlEventProxy" data-eventscrolltobottom="onBottom" onCustomscroll="_cmlEventProxy" data-eventcustomscroll="onScroll" height="{{-1}}" class=" cml-base cml-scroller cml-517ad4f6">
+      <view class=" cml-base cml-view cml-517ad4f6">
+        <view class="bannerImg  cml-base cml-view cml-517ad4f6">
+          <image src="{{topImg}}" class="topImg  cml-base cml-image cml-517ad4f6" />
+        </view>
+        <view class="scroll-content  cml-base cml-view cml-517ad4f6">
+          <view class="scroll-content-title  cml-base cml-view cml-517ad4f6">
+            <text class="scroll-content-title-con  cml-base cml-text cml-517ad4f6">床品件套</text>
+          </view>
+          <view class="scroll-content-des  cml-base cml-view cml-517ad4f6">
+            <text class="scroll-content-des-con  cml-base cml-text cml-517ad4f6">甄选品质，睡眠美学</text>
+          </view>
+
+          <view class="scroll-content-list  cml-base cml-view cml-517ad4f6">
+
+            <view class="scroll-content-list-item  cml-base cml-view cml-517ad4f6" a:for="{{list}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="change" data-idx="{{i}}">
+              <view class="scroll-content-list-item-content  cml-base cml-view cml-517ad4f6">
+                <image src="{{item.imgUrl}}" class="scroll-content-list-item-content-img  cml-base cml-image cml-517ad4f6" />
+                <view class="scroll-content-list-item-content-des  cml-base cml-view cml-517ad4f6">
+                  <text class="des  cml-base cml-text cml-517ad4f6">{{item.des}}</text>
+                </view>
+              </view>
+              <text class="scroll-content-list-item-name  cml-base cml-text cml-517ad4f6">{{item.name}}</text>
+              <text class="scroll-content-list-item-money  cml-base cml-text cml-517ad4f6">{{item.money}}</text>
+              <text class="scroll-content-list-item-tag  cml-base cml-text cml-517ad4f6">App特工</text>
+            </view>
+
+          </view>
+
+        </view>
+      </view>
+      <view class="no-more-text  cml-base cml-view cml-517ad4f6" a:if="{{ page >= sumPage }}">
+        <text class=" cml-base cml-text cml-517ad4f6">没有更多了</text>
+      </view>
+        <view a:else class="loading-text  cml-base cml-view cml-517ad4f6" style="{{loadingTextStyle}}">
+          <text class=" cml-base cml-text cml-517ad4f6">加载中...</text>
+        </view>
+    </cml-buildin-scroller></view>
+  </view>
+  </cml-buildin-page></view>

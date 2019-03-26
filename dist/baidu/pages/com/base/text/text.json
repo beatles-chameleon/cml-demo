@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "c-header": "./../../../../components/header/header",
+        "cml-buildin-page": "./../../../../npm/chameleon-ui-builtin/components/page/page"
+    },
+    "navigationBarTitleText": "text",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#f8f8f8"
+}

@@ -1,0 +1,66 @@
+.cml-e8c0df2e.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.cml-e8c0df2e.collapse-cell {
+  box-shadow: 0 2rpx 16rpx 0 rgba(146, 167, 215, 0.12);
+  border-radius: 4rpx;
+  background-color: white;
+  margin-bottom: 26rpx;
+}
+.cml-e8c0df2e.collapse-title-row {
+  height: 120rpx;
+}
+.cml-e8c0df2e.title-left-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 36rpx;
+}
+.cml-e8c0df2e.cell-title {
+  font-size: 28rpx;
+  color: #172742;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+.cml-e8c0df2e.title-right-icon {
+  width: 28rpx;
+  height: 16rpx;
+  margin-right: 40rpx;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.cml-e8c0df2e.collapse-cell-list {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.2s;
+  transition: height 0.2s;
+}
+.cml-e8c0df2e.collapse-cell-item {
+  border-top: 1rpx solid #DBE2F0;
+  padding: 0 50rpx 0rpx;
+  overflow: hidden;
+  height: auto;
+}
+.cml-e8c0df2e.collapse-cell-item-row {
+  height: 120rpx;
+}
+.cml-e8c0df2e.list-item-title {
+  font-size: 26rpx;
+  color: #172742;
+  letter-spacing: 0;
+}
+.cml-e8c0df2e.list-item-icon {
+  width: 9rpx;
+  height: 17rpx;
+}

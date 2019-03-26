@@ -1,0 +1,15 @@
+{
+    "usingComponents": {
+        "home": "./../../components/home/home",
+        "classify": "./../../components/classify/classify",
+        "shop": "./../../components/shop/shop",
+        "my": "./../../components/my/my",
+        "topic": "./../../components/topic/topic",
+        "c-tabbar": "./../../../../../npm/cml-ui/components/c-tabbar/c-tabbar",
+        "cml-buildin-page": "./../../../../../npm/chameleon-ui-builtin/components/page/page",
+        "cml-buildin-scroller": "./../../../../../npm/chameleon-ui-builtin/components/scroller/scroller"
+    },
+    "navigationBarTitleText": "首页",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "white"
+}

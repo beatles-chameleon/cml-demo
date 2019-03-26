@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "cml-buildin-radio": "./../../../../npm/chameleon-ui-builtin/components/radio/radio"
+    }
+}

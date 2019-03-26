@@ -1,0 +1,12 @@
+.cml-6647cb5f.input-wrap {
+  font-size: 33rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  color: #000;
+  border: 1rpx solid #999;
+  border-radius: 8rpx;
+  text-align: left;
+  background-color: #fff;
+}

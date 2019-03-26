@@ -1,0 +1,118 @@
+.cml-2da417a9.wrapper {
+  background-color: #fff;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+}
+.cml-2da417a9.auther-box {
+  height: 75rpx;
+  padding-top: 10rpx;
+  padding-left: 25rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+}
+.cml-2da417a9.auther-img {
+  height: 58rpx;
+  width: 58rpx;
+  border-radius: 58rpx;
+}
+.cml-2da417a9.auther-name {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  font-size: 26rpx;
+  height: 58rpx;
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+}
+.cml-2da417a9.img-box,
+.cml-2da417a9.wd {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 750rpx;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+}
+.cml-2da417a9.main-img {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  height: 380rpx;
+}
+.cml-2da417a9.sub-imgs-box {
+  width: 190rpx;
+  height: 380rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.cml-2da417a9.sub-img {
+  height: 188rpx;
+  width: 190rpx;
+  margin-left: 3rpx;
+  margin-bottom: 3rpx;
+}
+.cml-2da417a9.tlt-box {
+  height: 80rpx;
+  padding: 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  box-sizing: border-box;
+}
+.cml-2da417a9.tlt {
+  font-size: 34rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  overflow: hidden;
+  lines: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.cml-2da417a9.price {
+  font-size: 34rpx;
+  color: #b4282d;
+  padding-left: 10rpx;
+}
+.cml-2da417a9.info-box {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.cml-2da417a9.info {
+  font-size: 26rpx;
+  overflow: hidden;
+  lines: 2;
+  text-overflow: ellipsis;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

@@ -1,0 +1,33 @@
+.cml-67b216c5.secondary-cell {
+  background-color: white;
+  padding: 40rpx 46rpx 70rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+          align-items: flex-start;
+}
+.cml-67b216c5.cell-title {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #3C82FF;
+  margin-top: 40rpx;
+}
+.cml-67b216c5.cell-divider {
+  background-color: #3C82FF;
+  height: 4rpx;
+  width: 60rpx;
+  margin: 40rpx 0;
+}
+.cml-67b216c5.btn-tip {
+  font-size: 28rpx;
+  color: #192944;
+}
