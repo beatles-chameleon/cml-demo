@@ -1,2 +1,2 @@
-<video style="{{cstyle}}" controls="{{controls}}" autoplay="{{autoplay}}" loop="{{loop}}" src="{{src}}" onPlay="_cmlEventProxy" data-eventplay="onstart" onPause="_cmlEventProxy" data-eventpause="onpause" onEnded="_cmlEventProxy" data-eventended="onfinish" onError="_cmlEventProxy" data-eventerror="onfail" class=" cml-base cml-video cml-7d11017d">
+<video style="{{computedStyle}}" controls="{{controls}}" autoplay="{{autoplay}}" loop="{{loop}}" src="{{src}}" onPlay="_cmlEventProxy" data-eventplay="onstart" onPause="_cmlEventProxy" data-eventpause="onpause" onEnded="_cmlEventProxy" data-eventended="onfinish" onError="_cmlEventProxy" data-eventerror="onfail" class=" cml-base cml-video cml-7d11017d">
 </video>

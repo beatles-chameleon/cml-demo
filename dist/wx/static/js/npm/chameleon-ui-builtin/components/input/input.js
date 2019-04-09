@@ -1,1 +1,592 @@
-var __CML__GLOBAL=require("../../../../manifest.js");__CML__GLOBAL.webpackJsonp([22],{441:function(e,t,n){n(442),n(443)},442:function(e,t){},443:function(e,t,n){function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var u=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),r=n(444),a=n(0),l=function(e){return e&&e.__esModule?e:{default:e}}(a),o=function(){function e(){i(this,e),this.props={cStyle:{type:String,default:""},cstyle:{type:String,default:""},value:{type:String,default:""},type:{type:String,default:"text"},placeholder:{type:String,default:""},disabled:{type:Boolean,default:!1},focus:{type:Boolean,default:!1},maxlength:{type:Number,default:140},returnKeyType:{type:String,default:"done"},placerHolderColor:{type:String,default:"#bebebe"},maxValue:{type:Number,default:1/0},minValue:{type:Number,default:-1/0}},this.data={inputValue:""},this.computed={wxPlaceHolderStyle:function(){return"color: "+this.placerHolderColor+";"},isInputNumber:function(){return"number"===this.type}},this.watch={focus:function(e,t){},value:function(e,t){this.inputValue=e}},this.methods={inputEvent:function(e){this.handleDetail(e),this.$cmlEmit("input",{value:this.inputValue}),this.$cmlEmit("inputevent",{value:this.inputValue})},blurEvent:function(e){this.handleDetail(e),this.$cmlEmit("blurevent",{value:this.inputValue}),this.$cmlEmit("blur",{value:this.inputValue})},focusEvent:function(e){this.handleDetail(e),this.$cmlEmit("focusevent",{value:this.inputValue}),this.$cmlEmit("focus",{value:this.inputValue})},confirmEvent:function(e){this.handleDetail(e),this.$cmlEmit("confirmevent",{value:this.inputValue}),this.$cmlEmit("confirm",{value:this.inputValue})},handleDetail:function(e){if(!e)return"";var t=e.detail.value;return this.isInputNumber&&(t=(0,r.getValBetweenMaxAndMin)(t,this.maxValue,this.minValue)),this.inputValue=t||""}}}return u(e,[{key:"mounted",value:function(){this.inputValue=this.value}}]),e}();t.default=new o,t.default=l.default.createComponent(t.default).getOptions()},444:function(e,t){function n(e){var t=e.split(";"),n={};return t.forEach(function(e){var t=e.split(":"),i=String(t[0]).replace(/(^\s*)|(\s*)$/g,""),u=String(t[1]).replace(/(^\s*)|(\s*)$/g,"");n[i]=u}),n}function i(e){return"number"!=typeof e?void console.error("Parameter must be a number"):window.innerWidth/750*e}function u(e){return e?/(-?\d*\.?\d*)cpx/gi.test(e)?e.replace(/(-?\d*\.?\d*)cpx/gi,function(e,t){return i(Number(t))+"px"}):e:""}function r(e){if(!e)return{};var t=e.split(";"),n={};return t.forEach(function(e){var t=e.split(":"),i=String(t[0]).replace(/(^\s*)|(\s*)$/g,"");if(i){var r=u(String(t[1]).replace(/(^\s*)|(\s*)$/g,""));n[i]=r}}),n}function a(e,t,n){return isNaN(Number(e))?"":isNaN(t)||isNaN(n)?e:(t!=1/0&&t<=Number(e)&&(e=String(t)),n!=-1/0&&n>=Number(e)&&(e=String(n)),e)}Object.defineProperty(t,"__esModule",{value:!0}),t.str2obj=n,t.cpx2px=i,t.pxTransform=u,t.cmlStyleTransfer=r,t.getValBetweenMaxAndMin=a}},[441]);
+var __CML__GLOBAL = require("../../../../manifest.js");
+__CML__GLOBAL.webpackJsonp([23],{
+
+/***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/chameleon-ui-builtin/components/input/input.wx.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _utils = __webpack_require__("./node_modules/chameleon-ui-builtin/assets/js/utils/utils.js");
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var __INTERFACE__FILEPATH = "/Users/didi/Documents/code/didi/cml-demo/node_modules/chameleon-ui-builtin/components/input/input.interface";
+var __CML_ERROR__ = function throwError(content) {
+  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
+};
+
+var __enableTypes__ = [];
+var __INTERFAE__DEFINES__ = {
+  "types": {
+    "inputEventDetail": {
+      "value": "String"
+    },
+    "blurEventDetail": {},
+    "focusEventDetail": {},
+    "confirEventDetail": {}
+  },
+  "interfaces": {
+    "InputInterface": {
+      "cStyle": "String",
+      "cstyle": "String",
+      "value": "String",
+      "type": "String",
+      "placeholder": "String",
+      "disabled": "Boolean",
+      "focus": {
+        "input": ["inputEventDetail"],
+        "output": "Undefined"
+      },
+      "maxlength": "Number",
+      "returnKeyType": "String",
+      "placerHolderColor": "String",
+      "maxValue": "Number",
+      "minValue": "Number",
+      "inputevent": {
+        "input": ["inputEventDetail"],
+        "output": "Undefined"
+      },
+      "blurevent": {
+        "input": ["inputEventDetail"],
+        "output": "Undefined"
+      },
+      "focusevent": {
+        "input": ["inputEventDetail"],
+        "output": "Undefined"
+      },
+      "confirmevent": {
+        "input": ["inputEventDetail"],
+        "output": "Undefined"
+      },
+      "input": {
+        "input": ["inputEventDetail"],
+        "output": "Undefined"
+      },
+      "blur": {
+        "input": ["inputEventDetail"],
+        "output": "Undefined"
+      },
+      "confirm": {
+        "input": ["inputEventDetail"],
+        "output": "Undefined"
+      }
+    }
+  },
+  "classes": {}
+};
+var __CML__DEFINES__ = {
+  "types": {},
+  "interfaces": {},
+  "classes": {
+    "Input": ["InputInterface"]
+  }
+};
+var __CML__WRAPPER__ = function wrapper(obj) {
+  var className = obj.constructor.name;
+  var interfaceDefines = __INTERFAE__DEFINES__;
+  var enableTypes = __enableTypes__; // ['Object','Array','Nullable']
+  var types = interfaceDefines.types;
+  var interfaceKey = Object.keys(interfaceDefines.interfaces)[0]; // interface Name
+  var interfaceObj = interfaceDefines.interfaces[interfaceKey];
+  var cmlDefines = __CML__DEFINES__;
+  var isImplementInterface = false;
+  // 找到class
+  if (cmlDefines.classes[className]) {
+    // class 的interface数组中有interface中的定义
+    if (~cmlDefines.classes[className].indexOf(interfaceKey)) {
+      isImplementInterface = true;
+    } else {
+      console.error("class " + className + " not implements interface " + interfaceKey);
+    }
+  }
+
+  var props = [];
+  var events = {};
+
+  Object.keys(interfaceObj).forEach(function (key) {
+    var item = interfaceObj[key];
+    if (is(item, 'Object')) {
+      // 是事件  有output和input
+      events[key] = item;
+    } else {
+      // 是属性
+      props.push({
+        key: key,
+        value: item
+      });
+    }
+  });
+
+  // created 时做props校验  同时建立watch属性检测props类型
+  // 包装this.$cmlEmit 校验自定义事件参数类型
+  function isFunc(target) {
+    return target && is(target, 'Function');
+  }
+
+  function is(source, type) {
+    return Object.prototype.toString.call(source) === '[object ' + type + ']';
+  }
+
+  var getType = function getType(value) {
+    var type = Object.prototype.toString.call(value);
+    return type.replace(/\[object\s(.*)\]/g, '$1').replace(/( |^)[a-z]/g, function (L) {
+      return L.toUpperCase();
+    });
+  };
+
+  // beforeCreate时 vue中还获取不到mixins的this.$cmlEmit方法
+  var oldCreated = obj.created || function () {};
+  obj.created = function () {
+    checkProps.call(this);
+    oldCreated.call(this);
+  };
+
+  obj.methods = obj.methods || {};
+
+  obj.methods.$__checkCmlEmit__ = function (eventName, eventDetail) {
+    if (events[eventName]) {
+      var input = events[eventName].input;
+
+      var detailType = input[0];
+      var _errList = checkType(eventDetail, detailType, []);
+      if (_errList && _errList.length) {
+        __CML_ERROR__("errorinfo: event " + eventName + " detail verification fails\n            " + _errList.join('\n') + "\n          ");
+      }
+    } else {
+      __CML_ERROR__("errorinfo:  event " + eventName + " is not defined in interface\n            " + errList.join('\n') + "\n          ");
+    }
+  };
+
+  function checkProps() {
+    var _this = this;
+
+    props.forEach(function (item) {
+      var errList = checkType(_this[item.key], item.value, []);
+      if (errList && errList.length) {
+        __CML_ERROR__("error: prop [" + item.key + "] verification fails\n          " + errList.join('\n') + "\n        ");
+      }
+    });
+  }
+
+  obj.watch = obj.watch || {};
+
+  props.forEach(function (item) {
+    var oldWatch = obj.watch[item.key];
+    obj.watch[item.key] = function (newVal, oldVal) {
+      var errList = checkType(newVal, item.value, []);
+      if (errList && errList.length) {
+        __CML_ERROR__("errorinfo: prop [" + item.key + "] verification fails\n            " + errList.join('\n') + "\n          ");
+      }
+      if (isFunc(oldWatch)) {
+        oldWatch.call(this, newVal, oldVal);
+      }
+    };
+  });
+
+  /**
+   * 校验类型  两个loader共用代码
+   *
+   * @param  {*}      value 实际传入的值
+   * @param  {string} type  静态分析时候得到的值得类型
+   * @param  {array[string]} errList 校验错误信息  类型
+   * @return {bool}         校验结果
+   */
+  var checkType = function checkType(value, originType) {
+    var errList = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+
+    var isNullableReg = /_cml_nullable_lmc_/g;
+    var type = originType.replace('_cml_nullable_lmc_', '');
+    type === "Void" && (type = "Undefined");
+    var currentType = getType(value); // Undefined Null Object Array Number String  Function只可能是这几种类型；
+    // 但是对于type的值则可能是 Undefined Null Number String NullUndefinedStiring
+    // Object Array Function EventDetail(...这种自定义的复杂数据类型) 这几种；
+    // 判断nullable类型的参数
+    // 如果 currentType === type 那么就会直接返回 [];
+    var canUseNullable = enableTypes.includes("Nullable");
+    var canUseObject = enableTypes.includes("Object");
+    var canUseArray = enableTypes.includes("Array");
+    if (currentType == 'Null') {
+      // 如果传入的值是 null类型，那么可能的情况是该值在接口处的被定义为Null或者是 ?string 这种可选参数的形式；
+      if (type == "Null") {
+        // 如果定义的参数的值就是 Null，那么校验通过
+        errList = [];
+      } else {
+        // 实际定义的参数的值不是 Null  ?string这种形式的定义，type = new String('String') ?Callback type = new String('Callback')
+        // 那么判断是否是可选参数的情况
+        canUseNullable && isNullableReg.test(originType) ? errList = [] : errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542Fnullable\u914D\u7F6E");
+      }
+      return errList;
+    }
+    if (currentType == 'Undefined') {
+      // 如果运行时传入的真实值是undefined,那么可能改值在接口处就是被定义为 Undefined类型或者是 ?string 这种可选参数 nullable的情况；
+      if (type == "Undefined") {
+        errList = [];
+      } else {
+        canUseNullable && isNullableReg.test(originType) ? errList = [] : errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542Fnullable\u914D\u7F6E\u6216\u8005\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'String') {
+      if (type == 'String') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'Boolean') {
+      if (type == 'Boolean') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'Number') {
+      if (type == 'Number') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'Object') {
+      if (type == 'Object') {
+        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Object \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+      } else if (type == 'CMLObject') {
+        errList = [];
+      } else {
+        // 这种情况的对象就是自定义的对象；
+        if (types[type]) {
+          var keys = Object.keys(types[type]);
+          // todo 这里是同样的问题，可能多传递
+          keys.forEach(function (key) {
+            var subError = checkType(value[key], types[type][key], []);
+            if (subError && subError.length) {
+              errList = errList.concat(subError);
+            }
+          });
+          if (Object.keys(value).length > keys.length) {
+            errList.push("type [" + type + "] \u53C2\u6570\u4E2A\u6570\u4E0E\u5B9A\u4E49\u4E0D\u7B26");
+          }
+        } else {
+          errList.push('找不到定义的type [' + type + ']!');
+        }
+      }
+      return errList;
+    }
+    if (currentType == 'Array') {
+      if (type == 'Array') {
+        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+      } else {
+        if (types[type]) {
+          // 数组元素的类型
+          var itemType = types[type][0];
+          for (var i = 0; i < value.length; i++) {
+            var subError = checkType(value[i], itemType, []);
+            if (subError && subError.length) {
+              errList = errList.concat(subError);
+            }
+          }
+        } else {
+          errList.push('找不到定义的type [' + type + ']!');
+        }
+      }
+
+      return errList;
+    }
+    if (currentType == 'Function') {
+      if (types[type]) {
+        if (!types[type].input && !types[type].output) {
+          errList.push("\u627E\u4E0D\u5230" + types[type] + " \u51FD\u6570\u5B9A\u4E49\u7684\u8F93\u5165\u8F93\u51FA");
+        }
+      } else {
+        errList.push('找不到定义的type [' + type + ']!');
+      }
+    }
+    if (currentType == 'Promise') {
+      if (type == 'Promise') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'Date') {
+      if (type == 'Date') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+    if (currentType == 'RegExp') {
+      if (type == 'RegExp') {
+        errList = [];
+      } else {
+        errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
+      }
+      return errList;
+    }
+
+    return errList;
+  };
+
+  return obj;
+};
+
+var Input = function () {
+  function Input() {
+    _classCallCheck(this, Input);
+
+    this.props = {
+      cStyle: {
+        type: String,
+        default: ''
+      },
+      cstyle: {
+        type: String,
+        default: ''
+      },
+      value: {
+        type: String,
+        default: ''
+      },
+      //input的类型
+      type: {
+        type: String,
+        default: 'text' //枚举值 text number password
+
+      },
+      //input的placerholder
+      placeholder: {
+        type: String,
+        default: ''
+      },
+      //是否禁用input输入
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      //控制input是否聚焦
+      focus: {
+        type: Boolean,
+        default: false
+      },
+      //最大长度
+      maxlength: {
+        type: Number,
+        default: 140
+      },
+      //右下角返回键类型
+      returnKeyType: {
+        //枚举值 done search next go
+        type: String,
+        default: 'done'
+      },
+      placerHolderColor: {
+        type: String,
+        default: '#bebebe'
+      },
+      maxValue: {
+        //type=number 最大值
+        type: Number,
+        default: Infinity
+      },
+      minValue: {
+        //type=number 最小值
+        type: Number,
+        default: -Infinity
+      }
+    };
+    this.data = {
+      inputValue: ""
+    };
+    this.computed = {
+      wxPlaceHolderStyle: function wxPlaceHolderStyle() {
+        return "color: " + this.placerHolderColor + ";";
+      },
+      isInputNumber: function isInputNumber() {
+        return this.type === 'number';
+      },
+      computedStyle: function computedStyle() {
+        // props 必须经过计算属性，否则没有经过 cpx 转换
+        return this.cStyle || this.cstyle;
+      }
+    };
+    this.watch = {
+      focus: function focus(newVal, oldVal) {},
+      value: function value(newVal, oldVal) {
+        this.inputValue = newVal;
+      }
+    };
+    this.methods = {
+      inputEvent: function inputEvent(e) {
+        this.handleDetail(e);
+        this.$cmlEmit('input', {
+          value: this.inputValue
+        });
+        this.$cmlEmit('inputevent', {
+          value: this.inputValue
+        });
+      },
+      blurEvent: function blurEvent(e) {
+        this.handleDetail(e);
+        this.$cmlEmit('blurevent', {
+          value: this.inputValue
+        });
+        this.$cmlEmit('blur', {
+          value: this.inputValue
+        });
+      },
+      focusEvent: function focusEvent(e) {
+        this.handleDetail(e);
+        this.$cmlEmit('focusevent', {
+          value: this.inputValue
+        });
+        this.$cmlEmit('focus', {
+          value: this.inputValue
+        });
+      },
+      confirmEvent: function confirmEvent(e) {
+        this.handleDetail(e);
+        this.$cmlEmit('confirmevent', {
+          value: this.inputValue
+        });
+        this.$cmlEmit('confirm', {
+          value: this.inputValue
+        });
+      },
+      handleDetail: function handleDetail(e) {
+        if (!e) {
+          return '';
+        }
+
+        var value = e.detail.value;
+
+        if (this.isInputNumber) {
+          value = (0, _utils.getValBetweenMaxAndMin)(value, this.maxValue, this.minValue);
+        }
+
+        return this.inputValue = value || '';
+      }
+    };
+  }
+
+  _createClass(Input, [{
+    key: "mounted",
+    value: function mounted() {
+      this.inputValue = this.value;
+    }
+  }]);
+
+  return Input;
+}();
+
+exports.default = __CML__WRAPPER__(new Input());
+
+
+exports.default = _chameleonRuntime2.default.createComponent(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/cml-extract-css-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/chameleon-ui-builtin/components/input/input.wx.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./node_modules/chameleon-ui-builtin/assets/js/utils/utils.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _index = __webpack_require__("./node_modules/chameleon-api/src/interfaces/cpx2px/index.js");
+
+var _index2 = _interopRequireDefault(_index);
+
+exports.str2obj = str2obj;
+exports.pxTransform = pxTransform;
+exports.cmlStyleTransfer = cmlStyleTransfer;
+exports.getValBetweenMaxAndMin = getValBetweenMaxAndMin;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function str2obj(str) {
+    var styleAry = str.split(';');
+    var obj = {};
+    styleAry.forEach(function (element) {
+        var classObj = element.split(':');
+        var className = String(classObj[0]).replace(/(^\s*)|(\s*)$/g, "");
+        var classValue = String(classObj[1]).replace(/(^\s*)|(\s*)$/g, "");
+        obj[className] = classValue;
+    });
+    return obj;
+}
+
+function pxTransform(s) {
+    if (!s) return '';
+    if (!!~s.indexOf('cpx')) {
+        return s.replace(/(-?\d*\.?\d*)cpx/ig, function (matchs, $1) {
+            return (0, _index2.default)(Number($1)) + 'px';
+        });
+    }
+    return s;
+}
+
+function cmlStyleTransfer(str) {
+    if (!str) return {};
+    var styleAry = str.split(';');
+    var obj = {};
+    styleAry.forEach(function (element) {
+        var classObj = element.split(':');
+        var className = String(classObj[0]).replace(/(^\s*)|(\s*)$/g, "");
+        if (className) {
+            var classValue = pxTransform(String(classObj[1]).replace(/(^\s*)|(\s*)$/g, ""));
+            obj[className] = classValue;
+        }
+    });
+    return obj;
+}
+
+function getValBetweenMaxAndMin(value, maxValue, minValue) {
+    if (isNaN(Number(value))) {
+        return '';
+    }
+    if (isNaN(maxValue) || isNaN(minValue)) {
+        return value;
+    }
+    if (maxValue != Infinity && maxValue <= Number(value)) {
+        value = String(maxValue);
+    }
+    if (minValue != -Infinity && minValue >= Number(value)) {
+        value = String(minValue);
+    }
+    return value;
+}
+
+/***/ }),
+
+/***/ "./node_modules/chameleon-ui-builtin/components/input/input.wx.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/cml-extract-css-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/chameleon-ui-builtin/components/input/input.wx.cml");
+var __cml__script = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/chameleon-ui-builtin/components/input/input.wx.cml");
+
+
+/***/ })
+
+},["./node_modules/chameleon-ui-builtin/components/input/input.wx.cml"]);

@@ -1,6 +1,6 @@
 <cml-buildin-page title="text" class=" cml-base cml-page">
   <view class="page-demo  cml-base cml-view" style="height:{{pageHeight}}rpx">
-    <c-header title="text" class=" cml-base cml-c-header"></c-header>
+    <c-header title="text" class=" cml-view cml-c-header"></c-header>
       <view class="text-area  cml-base cml-view">
         <view wx:for="{{addLine}}" wx:key="{{item}}" class=" cml-base cml-view">
           <text class="line-text  cml-base cml-text">{{item}}</text>

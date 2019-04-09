@@ -11,9 +11,7 @@
     </view>
 
     <view class="footer-zhanwei">
-      <c-tabbar c-bind:tabbarclick='handleTabbarClick' 
-                selected-index="{{selectedIndex}}"  
-                c-model="{{currentCom}}"
+      <c-tabbar c-model="{{currentCom}}"
                 tabbar="{{tabbar}}"></c-tabbar>
     </view>
   </page>
@@ -76,10 +74,6 @@
       }
     }
     methods = {
-      handleTabbarClick(e){
-        //这里触发出来的 index 的值就是被激活的tab对应的index,可以根据这个index的值去动态的改变组件
-        this.selectedIndex = e.detail.index;
-      }
     }
 
     created() {

@@ -1,4 +1,4 @@
-<c-popup show="{{show}}" bindclose="_cmlEventProxy" data-eventclose="cancelclick" position="bottom" class=" cml-base cml-c-popup">
+<c-popup show="{{show}}" bindclose="_cmlEventProxy" data-eventclose="cancelclick" position="bottom" class=" cml-view cml-c-popup">
   <view class="action-wrap  cml-base cml-view">
     <view class="action-header  cml-base cml-view">
       <text class="action-header-text  cml-base cml-text" style="{{actionHeaderStyle}}">{{title}}</text>

@@ -1,6 +1,6 @@
 <cml-buildin-page title="详情页" class=" cml-base cml-page">
   <view class="content  cml-base cml-view">
-    <myscroller class=" cml-base cml-myscroller">
+    <myscroller class=" cml-view cml-myscroller">
       <view class=" cml-base cml-view">
         <swiper class="carousel-container  cml-base cml-carousel" indicator-dots="{{true}}" current="{{1}}" circular="{{true}}">
           <swiper-item class="carousel-carousel-item  cml-base cml-carousel-item" wx:for="{{bannerImg}}" wx:for-index="i" wx:for-item="item" wx:key="i" bindtap="_cmlEventProxy" data-eventtap="change" data-idx="{{i}}">
@@ -43,7 +43,7 @@
         <text class="coupon-get  cml-base cml-text">去领取</text>
       </view>
       <view class="map  cml-base cml-view">
-        <map class=" cml-base cml-map"></map>
+        <map class=" cml-view cml-map"></map>
       </view>
     </myscroller>
   </view>

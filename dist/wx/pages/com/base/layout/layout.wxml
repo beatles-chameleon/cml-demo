@@ -1,6 +1,6 @@
 <cml-buildin-page title="layout演示" class=" cml-base cml-page">
   <cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller">
-    <c-header title="{{headerTitle}}" desc="{{headerDesc}}" class=" cml-base cml-c-header"></c-header>
+    <c-header title="{{headerTitle}}" desc="{{headerDesc}}" class=" cml-view cml-c-header"></c-header>
     <view class="title  cml-base cml-view"><text class=" cml-base cml-text">以下是demo</text></view>
     
     <view class="container-wrap  cml-base cml-view">
