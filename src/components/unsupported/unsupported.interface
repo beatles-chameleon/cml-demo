@@ -21,7 +21,7 @@ export default new Method();
 
 class Method implements UnsupportedInterface {
   getUnsupportApis() {
-    return ['设置页面标题', '选取照片', 'WebSocket', '地理位置'];
+    return ['设置页面标题', 'WebSocket', '地理位置'];
   }
 }
 
