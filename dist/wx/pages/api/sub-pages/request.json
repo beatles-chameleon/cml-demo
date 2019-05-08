@@ -2,8 +2,8 @@
     "usingComponents": {
         "secondary-header": "./../../../components/secondaryHeader/secondaryHeader",
         "secondary-cell": "./../../../components/secondaryCell/secondaryCell",
-        "c-loading": "./../../../npm/cml-ui/components/c-loading/c-loading",
-        "cml-buildin-page": "./../../../npm/chameleon-ui-builtin/components/page/page"
+        "c-loading": "/npm/cml-ui/components/c-loading/c-loading",
+        "cml-buildin-page": "/npm/chameleon-ui-builtin/components/page/page"
     },
     "navigationBarTitleText": "网络请求",
     "backgroundTextStyle": "dark",

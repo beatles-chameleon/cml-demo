@@ -1,4 +1,4 @@
-<c-popup show="{{show}}" mask="{{mask}}" class=" cml-view cml-c-popup">
+<c-popup show="{{show}}" mask="{{mask}}" class=" cml-base cml-c-popup">
   <view class="dialog-content  cml-base cml-view">
     
     <view class="dialog-close  cml-base cml-view" wx:if="{{showClose}}" bindtap="_cmlEventProxy" data-eventtap="closeTap">

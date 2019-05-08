@@ -1,5 +1,5 @@
 <cml-buildin-page title="row演示" class=" cml-base cml-page">
-    <c-header title="row" class=" cml-view cml-c-header"></c-header>
+    <c-header title="row" class=" cml-base cml-c-header"></c-header>
     <cml-buildin-row margin="{{100}}" class=" cml-base cml-row">
       <view class="col-item  cml-base cml-view"></view>
       <view class="col-item  cml-base cml-view"></view>

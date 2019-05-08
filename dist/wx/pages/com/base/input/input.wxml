@@ -1,7 +1,7 @@
 <cml-buildin-page title="input" class=" cml-base cml-page">
     <view class="page-demo  cml-base cml-view">
         <cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller">
-            <c-header title="input" class=" cml-view cml-c-header"></c-header>
+            <c-header title="input" class=" cml-base cml-c-header"></c-header>
             <text class="title-text  cml-base cml-text">focus聚焦 web端不支持</text>
             <view class="input-wrap  cml-base cml-view">
                 <cml-buildin-input placeholder="focus聚焦 web端不支持" focus="{{isfocus}}" bindblur="_cmlEventProxy" data-eventblur="bindblurevent" class=" cml-base cml-input"></cml-buildin-input>
