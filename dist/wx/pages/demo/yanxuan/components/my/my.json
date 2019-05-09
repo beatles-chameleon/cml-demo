@@ -1,6 +1,6 @@
 {
     "usingComponents": {
-        "cml-buildin-scroller": "/npm/chameleon-ui-builtin/components/scroller/scroller"
+        "cml-buildin-scroller": "./../../../../../npm/chameleon-ui-builtin/components/scroller/scroller"
     },
     "navigationBarTitleText": "我的",
     "backgroundTextStyle": "dark",

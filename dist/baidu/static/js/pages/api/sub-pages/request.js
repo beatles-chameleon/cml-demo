@@ -1,7 +1,7 @@
 var __CML__GLOBAL = require("../../../manifest.js");
 __CML__GLOBAL.webpackJsonp([5],{
 
-/***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml":
+/***/ "../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml":
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", {
@@ -125,7 +125,7 @@ exports.default = _chameleonRuntime2.default.createPage(exports.default).getOpti
 
 /***/ }),
 
-/***/ "../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/cml-extract-css-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"baidu\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/baidu/.postcssrc.js\"}}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"baidu\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml":
+/***/ "../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/cml-extract-css-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"baidu\"}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/configs/postcss/baidu/.postcssrc.js\"}}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"baidu\"}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -265,9 +265,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _common = __webpack_require__("./node_modules/chameleon-api/src/interfaces/request/common.js");
 
-var _util = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
+var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -322,10 +324,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -359,8 +360,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -431,7 +433,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -465,8 +467,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -559,6 +561,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -578,7 +584,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -630,7 +643,6 @@ var Method = function () {
             data: 'request failed',
             headers: '{}'
           });
-          throw e;
         }
       });
     }
@@ -679,6 +691,8 @@ function request(_ref) {
       setting = _ref$setting === undefined ? {} : _ref$setting,
       _ref$resDataType = _ref.resDataType,
       resDataType = _ref$resDataType === undefined ? 'json' : _ref$resDataType;
+
+  method = method.toUpperCase();
   var _setting$apiPrefix = setting.apiPrefix,
       apiPrefix = _setting$apiPrefix === undefined ? (0, _utils.isNeedApiPrefix)(url) : _setting$apiPrefix,
       _setting$jsonp = setting.jsonp,
@@ -704,37 +718,34 @@ function request(_ref) {
     if (apiPrefix) {
       // 有apiPrefix优先
       if (true) {
-        url = "http://172.24.36.57:5556" + url;
+        url = "http://172.24.36.89:5556" + url;
       }
     }
   }
 
-  if (/^get$/gi.test(method)) {
-    if (data && !(0, _utils.isEmpty)(data)) {
-      url = (0, _utils.buildQueryStringUrl)(data, url);
-    }
-    if (typeof data !== 'string') {
-      data = '';
-    }
-  } else {
-    switch (contentType) {
-      case 'form':
-        if (typeof data !== 'string') {
-          data = (0, _utils.buildQueryStringUrl)(data);
-        }
-        header = _extends({}, header, {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        });
-        break;
-      case 'json':
-        if (typeof data !== 'string') {
-          data = JSON.stringify(data);
-        }
-        header = _extends({}, header, {
-          'Content-Type': 'application/json'
-        });
-        break;
-    }
+  if (['GET', 'PUT', 'DELETE'].indexOf(method) > -1) {
+    url = (0, _utils.buildQueryStringUrl)(data, url);
+  }
+  switch (contentType) {
+    case 'form':
+      if (typeof data !== 'string') {
+        data = (0, _utils.buildQueryStringUrl)(data);
+      }
+      header = _extends({}, header, {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      });
+      break;
+    case 'json':
+      if (typeof data !== 'string') {
+        data = JSON.stringify(data);
+      }
+      header = _extends({}, header, {
+        'Content-Type': 'application/json'
+      });
+      break;
+  }
+  if (typeof data !== 'string') {
+    data = '';
   }
 
   return new Promise(function (resolve, reject) {
@@ -750,6 +761,7 @@ function request(_ref) {
       headers: header,
       cb: function cb(res) {
         var status = res.status,
+            headers = res.headers,
             data = res.data;
 
         if (status >= 200 && status < 300) {
@@ -762,7 +774,11 @@ function request(_ref) {
           }
           resolve(data);
         } else {
-          reject('http statusCode:' + status);
+          if (resDataType === 'json') {
+            data = (0, _utils.tryJsonParse)(data);
+          }
+          headers = (0, _utils.tryJsonParse)(headers);
+          reject({ data: data, headers: headers, status: status });
         }
       }
     });
@@ -774,8 +790,8 @@ function request(_ref) {
 /***/ "./src/pages/api/sub-pages/request.cml":
 /***/ (function(module, exports, __webpack_require__) {
 
-var __cml__style0 = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/cml-extract-css-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"baidu\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/configs/postcss/baidu/.postcssrc.js\"}}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"baidu\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml");
-var __cml__script = __webpack_require__("../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.12.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml");
+var __cml__style0 = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/cml-extract-css-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"baidu\"}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/configs/postcss/baidu/.postcssrc.js\"}}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"baidu\"}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml");
+var __cml__script = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml");
 
 
 /***/ })

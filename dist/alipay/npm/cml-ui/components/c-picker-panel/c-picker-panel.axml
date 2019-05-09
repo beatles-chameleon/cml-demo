@@ -1,17 +1,15 @@
 <view class="picker-panel  cml-base cml-view cml-dfbe5a92" a:if="{{show}}">
     <view class=" cml-base cml-view cml-dfbe5a92"><c-popup mask="{{true}}" show="{{show}}" class=" cml-base cml-c-popup cml-dfbe5a92">
       <view class="panel-wrap  cml-base cml-view cml-dfbe5a92" style="{{wraperStyle}}">
-        <slot name="header" class=" cml-base cml-slot cml-dfbe5a92">
-          <view class="panel-header  cml-base cml-view cml-dfbe5a92" style="{{headerStyle}}">
-              <view class="left-wrap  cml-base cml-view cml-dfbe5a92" onTap="_cmlEventProxy" data-eventtap="cancelclick">
-                <text class="left-btn-text  cml-base cml-text cml-dfbe5a92" style="{{computedCancelBtn}}">取消</text>
-              </view>
-              <view class="title  cml-base cml-view cml-dfbe5a92"><text class=" cml-base cml-text cml-dfbe5a92">{{title}}</text></view>
-              <view class="right-wrap  cml-base cml-view cml-dfbe5a92" onTap="_cmlEventProxy" data-eventtap="confirmclick">
-                <text class="right-btn-text  cml-base cml-text cml-dfbe5a92" style="{{computedConfirmBtn}}">确定</text>
-              </view>
-          </view>
-        </slot>
+        <view class="panel-header  cml-base cml-view cml-dfbe5a92" style="{{headerStyle}}">
+            <view class="left-wrap  cml-base cml-view cml-dfbe5a92" onTap="_cmlEventProxy" data-eventtap="cancelclick">
+              <text class="left-btn-text  cml-base cml-text cml-dfbe5a92" style="{{computedCancelBtn}}">取消</text>
+            </view>
+            <view class="title  cml-base cml-view cml-dfbe5a92"><text class=" cml-base cml-text cml-dfbe5a92">{{title}}</text></view>
+            <view class="right-wrap  cml-base cml-view cml-dfbe5a92" onTap="_cmlEventProxy" data-eventtap="confirmclick">
+              <text class="right-btn-text  cml-base cml-text cml-dfbe5a92" style="{{computedConfirmBtn}}">确定</text>
+            </view>
+        </view>
         <slot class=" cml-base cml-slot cml-dfbe5a92"></slot>
       </view>
     </c-popup></view>

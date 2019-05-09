@@ -1,5 +1,5 @@
 <cml-buildin-page title="radio演示" class=" cml-base cml-page">
-  <c-header title="radio" class=" cml-base cml-c-header"></c-header>
+  <c-header title="radio" class=" cml-view cml-c-header"></c-header>
   <view class="box  cml-base cml-view">
     <cml-buildin-radio checked="{{ radioValue1 }}" label="Option1" bindchange="_cmlEventProxy" data-eventchange="valueChange1" class=" cml-base cml-radio">
     </cml-buildin-radio>

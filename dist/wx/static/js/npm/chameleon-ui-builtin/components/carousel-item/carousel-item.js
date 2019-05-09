@@ -105,10 +105,10 @@ var __CML__WRAPPER__ = function wrapper(obj) {
       var detailType = input[0];
       var _errList = checkType(eventDetail, detailType, []);
       if (_errList && _errList.length) {
-        __CML_ERROR__("\u9519\u8BEF\u4FE1\u606F: event " + eventName + " detail \u53C2\u6570\u6821\u9A8C\u5931\u8D25\n            " + _errList.join('\n') + "\n          ");
+        __CML_ERROR__("errorinfo: event " + eventName + " detail verification fails\n            " + _errList.join('\n') + "\n          ");
       }
     } else {
-      __CML_ERROR__("\u9519\u8BEF\u4FE1\u606F: \u63A5\u53E3\u4E2D\u672A\u5B9A\u4E49 event " + eventName + "\n            " + errList.join('\n') + "\n          ");
+      __CML_ERROR__("errorinfo:  event " + eventName + " is not defined in interface\n            " + errList.join('\n') + "\n          ");
     }
   };
 
@@ -118,7 +118,7 @@ var __CML__WRAPPER__ = function wrapper(obj) {
     props.forEach(function (item) {
       var errList = checkType(_this[item.key], item.value, []);
       if (errList && errList.length) {
-        __CML_ERROR__("\u9519\u8BEF\u4FE1\u606F: prop [" + item.key + "] \u7C7B\u578B\u6821\u9A8C\u9519\u8BEF\n          " + errList.join('\n') + "\n        ");
+        __CML_ERROR__("error: prop [" + item.key + "] verification fails\n          " + errList.join('\n') + "\n        ");
       }
     });
   }
@@ -130,7 +130,7 @@ var __CML__WRAPPER__ = function wrapper(obj) {
     obj.watch[item.key] = function (newVal, oldVal) {
       var errList = checkType(newVal, item.value, []);
       if (errList && errList.length) {
-        __CML_ERROR__("\u9519\u8BEF\u4FE1\u606F: prop [" + item.key + "] \u7C7B\u578B\u6821\u9A8C\u9519\u8BEF\n            " + errList.join('\n') + "\n          ");
+        __CML_ERROR__("errorinfo: prop [" + item.key + "] verification fails\n            " + errList.join('\n') + "\n          ");
       }
       if (isFunc(oldWatch)) {
         oldWatch.call(this, newVal, oldVal);

@@ -238,7 +238,7 @@ _.getStyleKeyValue = function (declaration) {
 
 /***/ }),
 
-/***/ "../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-mixins/wx-mixins.js":
+/***/ "../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-mixins/wx-alipay-common-mixins.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 var _methods;
@@ -249,7 +249,20 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 var common = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-mixins/common.js");
 var wxStyleHandle = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/proxy/proxyMiniapp.js");
-var _ = module.exports = {};
+
+var deepClone = function deepClone(obj) {
+  if (obj.toString().slice(8, -1) !== "Object") {
+    return obj;
+  }
+  var res = {};
+  Object.keys(obj).forEach(function (key) {
+    res[key] = deepClone(obj[key]);
+  });
+  return res;
+};
+
+var _ = module.exports = { deepClone: deepClone };
+
 common.merge(_, common);
 
 _.mixins = {
@@ -257,30 +270,34 @@ _.mixins = {
     var dataset = e.currentTarget.dataset;
 
     var originFuncName = dataset && dataset['event' + e.type];
-
     var argsStr = dataset && dataset.args;
-    var argsArr = argsStr.split(',').reduce(function (result, item, index) {
-      var arg = dataset['arg' + index];
-      if (arg === "$event") {
-        var newEvent = getNewEvent(e);
-        result.push(newEvent);
-      } else {
-        // 这里的值微信已经计算好了；到dateset的时候已经是计算的结果 比如msg = 'sss' data-arg1="{{msg + 1}}"
-        // dataset[arg1] = 'sss1'
-        result.push(dataset['arg' + index]);
-      }
-      return result;
-    }, []);
+    var argsArr = [];
+    // 由于百度对于 data-arg="" 在dataset.arg = true 值和微信端不一样所以需要重新处理下这部分逻辑
+    if (argsStr && typeof argsStr === 'string') {
+      argsArr = argsStr.split(',').reduce(function (result, item, index) {
+        var arg = dataset['arg' + index];
+        if (arg === "$event") {
+          var newEvent = getNewEvent(e);
+          result.push(newEvent);
+        } else {
+          // 这里的值微信已经计算好了；到dateset的时候已经是计算的结果 比如msg = 'sss' data-arg1="{{msg + 1}}"
+          // dataset[arg1] = 'sss1'
+          result.push(dataset['arg' + index]);
+        }
+        return result;
+      }, []);
+    }
     if (originFuncName && this[originFuncName] && _.isType(this[originFuncName], 'Function')) {
       this[originFuncName].apply(this, _toConsumableArray(argsArr));
     } else {
       console.log('can not find method ' + originFuncName);
     }
   }), _defineProperty(_methods, _.modelEventProxyName, function (e) {
-    var dataset = e.currentTarget.dataset;
-
+    var dataset = e.currentTarget && e.currentTarget.dataset;
     var modelKey = dataset && dataset.modelkey;
-    this[modelKey] = e.detail.value;
+    if (modelKey) {
+      this[modelKey] = e.detail.value;
+    }
   }), _defineProperty(_methods, _.eventProxyName, function (e) {
     var dataset = e.currentTarget.dataset;
 
@@ -290,11 +307,6 @@ _.mixins = {
       this[originFuncName](newEvent);
     } else {
       console.log('can not find method ' + originFuncName);
-    }
-  }), _defineProperty(_methods, _.eventEmitName, function (eventKey, detail) {
-    this.triggerEvent(eventKey, detail);
-    if (this.$__checkCmlEmit__) {
-      this.$__checkCmlEmit__(eventKey, detail);
     }
   }), _defineProperty(_methods, _.styleParseName, function (content) {
     var res = '';
@@ -317,7 +329,11 @@ _.mixins = {
     }
     var cbs = animation.cbs,
         index = animation.index;
+    // 配合 解决百度端动画bug
 
+    if (cbs === undefined || index === undefined) {
+      return;
+    }
     var cb = cbs[index];
     if (cb && typeof cb === 'function') {
       cb();
@@ -348,6 +364,23 @@ function getNewEvent(e) {
   newEvent._originEvent = e;
   return newEvent;
 }
+
+/***/ }),
+
+/***/ "../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-mixins/wx-mixins.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var commonMixins = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-mixins/wx-alipay-common-mixins.js");
+
+var _ = module.exports = commonMixins.deepClone(commonMixins);
+commonMixins.merge(_.mixins.methods, _defineProperty({}, _.eventEmitName, function (eventKey, detail) {
+  this.triggerEvent(eventKey, detail);
+  if (this.$__checkCmlEmit__) {
+    this.$__checkCmlEmit__(eventKey, detail);
+  }
+}));
 
 /***/ }),
 
@@ -1609,6 +1642,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _common = __webpack_require__("./node_modules/chameleon-api/src/interfaces/createAnimation/styleLoader/common.js");
 
 var _wx = __webpack_require__("./node_modules/chameleon-api/src/interfaces/createAnimation/styleLoader/wx.js");
@@ -1674,10 +1709,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -1711,8 +1745,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -1783,7 +1818,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -1817,8 +1852,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -1866,7 +1901,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -1911,6 +1946,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -1930,7 +1969,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -2179,6 +2225,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2229,10 +2277,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -2266,8 +2313,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -2338,7 +2386,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -2372,8 +2420,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -2421,7 +2469,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -2466,6 +2514,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -2485,7 +2537,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -2579,6 +2638,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2628,10 +2689,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -2665,8 +2725,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -2737,7 +2798,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -2771,8 +2832,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -2820,7 +2881,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -2865,6 +2926,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -2884,7 +2949,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -2999,6 +3071,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _utils = __webpack_require__("./node_modules/chameleon-api/src/lib/utils.js");
 
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
@@ -3015,7 +3089,7 @@ var __CHECK__DEFINES__ = {
   "types": {
     "options": {
       "path": "String",
-      "query": "String",
+      "query": "CMLObject",
       "url": "String"
     }
   },
@@ -3044,10 +3118,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -3081,8 +3154,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -3153,7 +3227,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -3187,8 +3261,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -3236,7 +3310,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -3281,6 +3355,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -3300,7 +3378,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -3330,7 +3415,7 @@ var Method = function () {
       var path = opt.path,
           query = opt.query;
 
-      path = (0, _utils.buildQueryStringUrl)((0, _utils.queryParse)(query), path);
+      path = (0, _utils.buildQueryStringUrl)(query, path);
       wx.navigateTo({
         url: path
       });
@@ -3358,13 +3443,11 @@ var _index = __webpack_require__("./node_modules/chameleon-api/src/interfaces/na
 
 var _index2 = _interopRequireDefault(_index);
 
-var _utils = __webpack_require__("./node_modules/chameleon-api/src/lib/utils.js");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function navigateTo(opt) {
   // 转换为字符串通过多态不支持object，需改
-  var query = (0, _utils.buildQueryStringUrl)(opt.query) || '';
+  var query = opt.query || {};
   var path = opt.path || '';
   var url = opt.url || '';
 
@@ -3386,6 +3469,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
 
@@ -3424,10 +3509,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -3461,8 +3545,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -3533,7 +3618,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -3567,8 +3652,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -3616,7 +3701,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -3661,6 +3746,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -3680,7 +3769,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -3760,6 +3856,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3797,10 +3895,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -3834,8 +3931,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -3906,7 +4004,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -3940,8 +4038,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -3989,7 +4087,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -4034,6 +4132,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -4053,7 +4155,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -4126,6 +4235,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4168,10 +4279,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -4205,8 +4315,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -4277,7 +4388,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -4311,8 +4422,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -4360,7 +4471,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -4405,6 +4516,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -4424,7 +4539,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -4616,7 +4738,7 @@ function queryParse() {
   for (var i = 0; i < arr.length; i++) {
     if (arr[i].indexOf('=') !== -1) {
       var keyValue = arr[i].match(/([^=]*)=(.*)/);
-      parmsObj[keyValue[1]] = keyValue[2];
+      parmsObj[keyValue[1]] = decodeURIComponent(keyValue[2]);
     }
   }
   return parmsObj;
@@ -4643,7 +4765,9 @@ function addApiPrefix(url, domainkey) {
 function tryJsonParse(some) {
   // 这里eslint提示也先别删除\[\]
   if (isStr(some) && /[\{\[].*[\}\]]/.test(some)) {
-    some = JSON.parse(some);
+    try {
+      some = JSON.parse(some);
+    } catch (err) {}
   }
   return some;
 }
@@ -4862,6 +4986,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 __webpack_require__("./node_modules/chameleon-runtime/src/interfaces/bootstrap/shim.js");
 
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
@@ -4905,10 +5031,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -4942,8 +5067,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -5014,7 +5140,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -5048,8 +5174,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -5097,7 +5223,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -5142,6 +5268,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -5161,7 +5291,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -5276,6 +5413,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _wx = __webpack_require__("./node_modules/chameleon-runtime/src/platform/wx/index.js");
 
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
@@ -5315,10 +5454,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -5352,8 +5490,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -5424,7 +5563,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -5458,8 +5597,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -5507,7 +5646,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -5552,6 +5691,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -5571,7 +5714,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -5641,6 +5791,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _wx = __webpack_require__("./node_modules/chameleon-runtime/src/platform/wx/index.js");
 
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
@@ -5680,10 +5832,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -5717,8 +5868,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -5789,7 +5941,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -5823,8 +5975,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -5872,7 +6024,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -5917,6 +6069,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -5936,7 +6092,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -6006,6 +6169,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _wx = __webpack_require__("./node_modules/chameleon-runtime/src/platform/wx/index.js");
 
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
@@ -6045,10 +6210,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -6082,8 +6246,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -6154,7 +6319,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -6188,8 +6353,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -6237,7 +6402,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -6282,6 +6447,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -6301,7 +6470,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -6413,7 +6589,7 @@ exports.default = BaseCtor;
 /***/ "./node_modules/chameleon-runtime/src/platform/common/proto/BaseOptionsTransformer.js":
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(process) {Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
@@ -6440,7 +6616,7 @@ var BaseOptionsTransformer = function () {
     this.usedHooks = config.usedHooks;
     this.platform = '';
 
-    if (process.env.media !== "build") {
+    if (true) {
       var mix = this.options.mixins;
       (0, _warn.invariant)((0, _type.type)(mix) === 'Undefined' || (0, _type.type)(mix) === "Array", "mixins expects an Array");
     }
@@ -6457,7 +6633,6 @@ var BaseOptionsTransformer = function () {
 }();
 
 exports.default = BaseOptionsTransformer;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -7392,6 +7567,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _util = __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/cml-compile/runtime/common/util.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -7429,10 +7606,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -7466,8 +7642,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -7538,7 +7715,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -7572,8 +7749,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -7621,7 +7798,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -7666,6 +7843,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -7685,7 +7866,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];
@@ -8741,7 +8929,7 @@ function flatten() {
 /***/ "./node_modules/chameleon-runtime/src/platform/common/util/warn.js":
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(process) {Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.fail = fail;
@@ -8765,7 +8953,7 @@ function invariant(check, message) {
 var deprecatedMessages = [];
 
 function deprecated(msg, thing) {
-    if (process.env.media === "build") return false;
+    if (false) return false;
     if (thing) {
         return deprecated("'" + msg + "', use '" + thing + "' instead.");
     }
@@ -8774,7 +8962,6 @@ function deprecated(msg, thing) {
     console.error("[chameleon-runtime] Deprecated: " + msg);
     return true;
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("../../../../.nvm/versions/node/v8.13.0/lib/node_modules/chameleon-tool/node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -9151,6 +9338,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _wx = __webpack_require__("./node_modules/chameleon-store/src/platform/wx/index.js");
 
 var _wx2 = _interopRequireDefault(_wx);
@@ -9194,10 +9383,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
   interfaceNames && interfaceNames.forEach(function (interfaceName) {
     var keys = Object.keys(defines.interfaces);
     keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
+      methods = _extends({}, methods, defines.interfaces[key]);
     });
   });
-
   /**
    * 获取类型
    *
@@ -9231,8 +9419,9 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     var type = originType.replace('_cml_nullable_lmc_', '');
     type === "Void" && (type = "Undefined");
     var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
+    var canUseNullable = !!~enableTypes.indexOf("Nullable");
+    var canUseObject = !!~enableTypes.indexOf("Object");
+    var canUseArray = !!~enableTypes.indexOf("Array");
     if (currentType == 'Null') {
       if (type == "Null") {
         // 如果定义的参数的值就是 Null，那么校验通过
@@ -9303,7 +9492,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     }
     if (currentType == 'Array') {
       if (type == 'Array') {
-        !canUseObject ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
+        !canUseArray ? errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B" + type + "\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B") : errList = [];
       } else {
         if (types[type]) {
           // 数组元素的类型
@@ -9337,8 +9526,8 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
       return errList;
     }
     if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
+      if (type === 'Promise') {
+        errList.push("\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49Promise\u7C7B\u578B\uFF0C\u5F02\u6B65\u8BF7\u91C7\u7528\u56DE\u8C03\u51FD\u6570\u7684\u5F62\u5F0F\uFF01");
       } else {
         errList.push("\u5B9A\u4E49\u4E86" + type + "\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F" + currentType + ",\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4");
       }
@@ -9386,7 +9575,7 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
     argList.forEach(function (argType, index) {
       var errList = checkType(argValues[index], argType, []);
       if (errList && errList.length > 0) {
-        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + "\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
+        __CML_ERROR__("\n        \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5" + methodName + " \u6216\u8BE5" + methodName + "\u7684\u56DE\u8C03\u51FD\u6570\u4E2D\u7B2C" + (index + 1) + "\u4E2A\u53C2\u6570\n        \u9519\u8BEF\u4FE1\u606F: " + errList.join('\n'));
       }
     });
     if (argValues.length > argList.length) {
@@ -9431,6 +9620,10 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
    */
   var createWarpper = function createWarpper(funcName, originFunc) {
     return function () {
+      // 白名单方法
+      if (this && this.$cmlPolyHooks && this.$cmlPolyHooks.indexOf(originFunc)) {
+        return originFunc.apply(this, arguments);
+      }
       var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
         // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
         if (getType(arg) == 'Function') {
@@ -9450,7 +9643,14 @@ var __OBJECT__WRAPPER__ = function __OBJECT__WRAPPER__(obj) {
 
   // 获取所有方法
   var keys = Object.keys(methods);
-
+  // 微信 预览模式会执行 白屏暂时注释
+  // Object.getOwnPropertyNames(Object.getPrototypeOf(obj)).forEach(key => {
+  //   if (!/constructor|prototype|length/ig.test(key)) {
+  //     if (!~keys.indexOf(key)) {
+  //       __CML_ERROR__('method [' + key + '] not declare in the interface!');
+  //     }
+  //   }
+  // })
   // 处理包装方法
   keys.forEach(function (key) {
     var originFunc = obj[key];

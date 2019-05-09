@@ -7,7 +7,7 @@
       </view>
       <view class="button-list">
         <text class="button-text">default/blue</text>
-        <button c-bind:onclick='testclick'></button>
+        <button text="确定" c-bind:onclick='testclick'></button>
 
         <text class="button-text">disabled</text>
         <button
@@ -45,7 +45,7 @@
       </view>
       <view class="button-list">
         <text class="button-text">big</text>
-        <button c-bind:onclick='testclick' ></button>
+        <button text="确定" c-bind:onclick='testclick' ></button>
 
         <text class="button-text">medium</text>
         <button

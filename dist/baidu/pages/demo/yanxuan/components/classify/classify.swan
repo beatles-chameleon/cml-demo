@@ -1,5 +1,5 @@
 <view class="wrapper  cml-base cml-view">
-  <classify-header class=" cml-base cml-classify-header"></classify-header>
+  <classify-header class=" cml-view cml-classify-header"></classify-header>
   <view class="wrapper-content  cml-base cml-view">
     <view class="class-list  cml-base cml-view" style="{{scrollerHeight}}rpx">
       <cml-buildin-scroller height="{{scrollerHeight}}" class=" cml-base cml-scroller">

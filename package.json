@@ -12,10 +12,10 @@
   "dependencies": {
     "chameleon-api": "^0.4.9",
     "chameleon-bridge": "^0.1.2",
-    "chameleon-runtime": "^0.1.4",
+    "chameleon-runtime": "^0.1.5",
     "chameleon-store": "0.0.3",
-    "chameleon-ui-builtin": "^0.2.0",
-    "cml-ui": "^0.1.5",
+    "chameleon-ui-builtin": "^0.2.9",
+    "cml-ui": "^0.1.8",
     "vue-amap": "^0.5.8"
   }
 }
