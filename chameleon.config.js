@@ -21,7 +21,8 @@ cml.config.merge({
     dev: {
     },
     build: {
-      apiPrefix
+      apiPrefix,
+      publicPath: `${publicPath}/wx/`,
     }
   },
   web: {
