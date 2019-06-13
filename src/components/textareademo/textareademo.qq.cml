@@ -1,0 +1,95 @@
+<template>
+<page title="textarea">
+    <view class="page-demo">
+        <view class="input-wrap">
+            <text class="title-text" >focus聚焦</text>
+            <textarea placeholder="focus聚焦 web端不支持自动" focus="{{isfocus}}"  c-bind:blur="bindblurevent"></textarea>
+        </view>
+        <view class="input-wrap">
+            <text class="title-text">数据绑定,value:{{inputValue}}</text>
+            <textarea placeholder="数据绑定" value="{{inputValue}}" c-bind:input="inputEvent"></textarea>
+        </view>
+        <view class="input-wrap">
+            <text class="title-text">监听input事件,当前事件：{{eventName}}</text>
+            <textarea placeholder="监听textarea事件"  c-bind:input="testEvent" c-bind:blur="testEvent" c-bind:focus="testEvent" c-bind:confirm="testEvent"></textarea>
+        </view>
+        <view class="input-wrap">
+            <text class="title-text">最大长度是5</text>
+            <textarea placeholder="最大长度是5" maxlength="{{5}}" ></textarea>
+        </view>
+        <view class="input-wrap">
+            <text class="title-text">禁用textarea</text>
+            <textarea placeholder="禁用textarea" disabled="{{true}}" ></textarea>
+        </view>
+        <view class="input-wrap">
+            <text class="title-text">键盘右下键按钮done</text>
+            <textarea placeholder="键盘右下键按钮done" return-key-type="done" ></textarea>
+        </view>
+        <view class="input-wrap">
+            <text class="title-text">placeholderColor web端不支持</text>
+            <textarea placeholder="placeholderColor web端不支持" placer-holder-color="#ff0000;" ></textarea>
+        </view>
+        <view class="end-item">
+            <text class="title-text">自定义样式</text>
+            <textarea placeholder="自定义样式" c-style="color: #00ff00; border: 1px solid #00f;" ></textarea>
+        </view>  
+    </view>
+</page>
+</template>
+<script>
+  class Textarea implements TextareaInterface  {
+
+  data = {
+    isfocus: false,
+    inputValue: '',
+    eventName: '触发的事件名称',
+  }
+
+  computed = {}
+  watch  = {}
+
+  methods = {
+    inputEvent(e) {    
+      this.inputValue = e.detail.value;      
+    },
+    testEvent(e) {
+      this.eventName = e.type
+    },
+    bindblurevent()  {
+      this.isfocus = false;      
+    }
+  }
+  mounted() {
+    setTimeout(() => {
+      this.isfocus = true;
+    }, 300);
+  }
+
+  beforeDestroy() {}
+  destroyed() {}
+}
+
+export default new Textarea();
+</script>
+<style scoped>
+.page-demo {
+   background: #f8f8f8;
+   flex: 1;
+   padding: 0 10cpx 30cpx;
+ }
+ .title-text {
+   color: #999;
+   margin: 30cpx 20cpx 10cpx;
+   font-size: 32cpx;
+ }
+ .end-item {
+   margin-bottom: 40cpx;
+   position: relative;
+ }
+.input-wrap  {
+   position: relative;
+ }
+</style>
+<script cml-type="json">
+{}
+</script>
