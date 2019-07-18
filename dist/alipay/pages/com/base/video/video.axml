@@ -1,8 +1,0 @@
-<view class=" cml-base cml-view cml-3cc849fa"><cml-buildin-page title="video" class=" cml-base cml-page cml-3cc849fa">
-  <view class="container  cml-base cml-view cml-3cc849fa">
-    <view class=" cml-base cml-view cml-3cc849fa"><c-header title="video" class=" cml-base cml-c-header cml-3cc849fa"></c-header></view>
-      <text class=" cml-base cml-text cml-3cc849fa">视频state: </text>
-      <text class="info  cml-base cml-text cml-3cc849fa">{{state}}</text>
-      <view class="video  cml-base cml-view cml-3cc849fa" style="display:flex;flex-direction:column;align-items:center"><cml-buildin-video class="video  cml-base cml-video cml-3cc849fa" src="{{videoSrc}}" autoplay="{{true}}" controls="{{true}}" onStart="_cmlEventProxy" data-eventstart="onstart" onPause="_cmlEventProxy" data-eventpause="onpause" onFinish="_cmlEventProxy" data-eventfinish="onfinish" onFail="_cmlEventProxy" data-eventfail="onfail" style="display:flex;flex-direction:column;align-items:center"></cml-buildin-video></view>
-  </view>
-  </cml-buildin-page></view>

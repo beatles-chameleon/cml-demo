@@ -1,6 +1,0 @@
-<view class=" cml-base cml-view cml-160ffbda"><c-popup show="{{show}}" mask="{{mask}}" class=" cml-base cml-c-popup cml-160ffbda">
-  <view class="toast-content  cml-base cml-view cml-160ffbda">
-    <image a:if="{{needIcon}}" src="{{typeImg}}" class="toast-icon  cml-base cml-image cml-160ffbda" />
-    <text class="toast-text  cml-base cml-text cml-160ffbda">{{message}}</text>
-  </view>
-  </c-popup></view>

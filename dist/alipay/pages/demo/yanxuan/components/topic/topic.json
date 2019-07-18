@@ -1,8 +1,0 @@
-{
-    "usingComponents": {
-        "topic-header": "./../common/topic-header",
-        "topic-top": "./../common/topic-top",
-        "topic-main": "./../common/topic-main"
-    },
-    "component": true
-}

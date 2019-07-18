@@ -1,7 +1,0 @@
-{
-    "usingComponents": {
-        "c-picker-panel": "./../../../../npm/cml-ui/components/c-picker-panel/c-picker-panel",
-        "c-picker-item": "./../../../../npm/cml-ui/components/c-picker-item/c-picker-item"
-    },
-    "component": true
-}

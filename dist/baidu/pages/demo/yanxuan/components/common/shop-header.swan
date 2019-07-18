@@ -1,9 +1,0 @@
-<view class="wrapper border-bottom-1px  cml-base cml-view">
-  <view class="left  cml-base cml-view">
-    <text class="leftTxt  cml-base cml-text" s-if="leftbtn">{{leftbtn.name}}</text>
-  </view>
-  <text class="tlt  cml-base cml-text">{{title}}</text>
-  <view class="right  cml-base cml-view">
-    <text class="rightTxt  cml-base cml-text" s-if="rightbtn">{{rightbtn.name}}</text>
-  </view>
-</view>
