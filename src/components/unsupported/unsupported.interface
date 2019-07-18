@@ -74,6 +74,18 @@ class Method implements UnsupportedInterface {
 
 export default new Method();
 </script>
+<script cml-type="tt">
+
+class Method implements UnsupportedInterface {
+  getUnsupportApis() {
+    // 线上版微信小程序未配置demo请求的域名为可信域名，发版时去掉'网络请求'
+    // return ['网络请求', 'WebSocket'];
+    return []
+  }
+}
+
+export default new Method();
+</script>
 
 
 

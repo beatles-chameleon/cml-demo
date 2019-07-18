@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import cml from 'chameleon-api'
+import cml from 'cml-tt-api'
 
   class Myscroller implements MyscrollerInterface {
     data = {

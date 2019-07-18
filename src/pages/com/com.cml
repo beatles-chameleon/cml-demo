@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import cml from 'chameleon-api';
-import routerConfig from '../../router.config.json'
+import cml from 'cml-tt-api';
+import routerConfig from '../../router.config.js'
 let routes = routerConfig.routes;
 
 let routeObj = {}

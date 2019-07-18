@@ -83,7 +83,7 @@ export default new CPickerItem();
     "base": {
         "usingComponents": {
             "c-header": "/components/header/header",
-            "c-picker-item": "cml-ui/components/c-picker-item/c-picker-item"
+            "c-picker-item": "cml-tt-ui/components/c-picker-item/c-picker-item"
         },
         "navigationBarTitleText": "index",
         "backgroundTextStyle": "dark",

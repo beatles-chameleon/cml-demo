@@ -149,7 +149,7 @@ export default new CDialog();
     "base": {
         "usingComponents": {
           "c-header": "/components/header/header",
-          "c-dialog": "cml-ui/components/c-dialog/c-dialog"
+          "c-dialog": "cml-tt-ui/components/c-dialog/c-dialog"
         },
         "navigationBarTitleText": "c-dialog",
         "backgroundTextStyle": "dark",

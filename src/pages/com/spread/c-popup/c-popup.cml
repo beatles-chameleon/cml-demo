@@ -101,7 +101,7 @@ export default new CPopup();
     "base": {
         "usingComponents": {
           "c-header": "/components/header/header",
-          "c-popup": "cml-ui/components/c-popup/c-popup"
+          "c-popup": "cml-tt-ui/components/c-popup/c-popup"
         },
         "navigationBarTitleText": "c-popup",
         "backgroundTextStyle": "dark",
