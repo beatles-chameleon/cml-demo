@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "c-tab-item": "./../../../../npm/cml-ui/components/c-tab-pane-item/c-tab-pane-item"
-    },
-    "component": true
-}

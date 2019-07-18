@@ -1,7 +1,0 @@
-<picker-view indicator-style="height: 72rpx;" style="height: {{height}}rpx;" value="{{value}}" onChange="bindChange" class=" cml-base cml-origin-picker-view cml-2e2f5b17">
-  <picker-view-column class=" cml-base cml-origin-picker-view-column cml-2e2f5b17">
-    <view a:for="{{list}}" style="line-height:72rpx;align-items:center" class=" cml-base cml-view cml-2e2f5b17">
-      <text style="{{computedItemStyle}}" class=" cml-base cml-text cml-2e2f5b17">{{item}}</text>
-    </view>
-  </picker-view-column>
-</picker-view>

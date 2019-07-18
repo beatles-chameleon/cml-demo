@@ -1,8 +1,0 @@
-{
-    "usingComponents": {
-        "textareademo": "./../../../../components/textareademo/textareademo"
-    },
-    "navigationBarTitleText": "textarea",
-    "backgroundTextStyle": "dark",
-    "backgroundColor": "#E2E2E2"
-}
