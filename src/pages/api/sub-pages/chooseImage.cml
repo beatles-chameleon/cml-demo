@@ -38,7 +38,7 @@ export default {
       cml.chooseImage({
         type: this.chooseType
       }).then(res => {
-        this.imgSrc = res.base64 || res.WxTempFilePaths[0];
+        this.imgSrc = res.base64 || res.tempFilePaths[0];
       });
     }
   },

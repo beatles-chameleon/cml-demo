@@ -28,10 +28,9 @@ cml.config.merge({
     qq: true,
     tt:true,
   },
-  platforms: ['tt'],
+  // platforms: ['wx','web'],
   devPort: 5556,
   templateType: 'html',
-  // platforms: ["web","weex"],
   cmlComponents: [
   ],
   buildInfo: {
