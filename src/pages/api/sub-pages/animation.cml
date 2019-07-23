@@ -56,7 +56,6 @@ class Animation {
   methods = {
     rotate () {
       let animationCreation = animation;
-      debugger;
       while (this.current_rotate !== 360) {
         this.current_rotate += 90;
         animationCreation = animationCreation
@@ -67,9 +66,7 @@ class Animation {
             delay: 0,
           })
       }
-      debugger;
       this.animationData = animationCreation.export();
-      debugger;
       this.current_rotate = 0
     },
     scale () {

@@ -20,7 +20,7 @@
 
 <script>
 import cml from 'cml-tt-api';
-import routerConfig from '../../router.config.js'
+import routerConfig from '../../router.config.json'
 let routes = routerConfig.routes;
 
 let routeObj = {}
