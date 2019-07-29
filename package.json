@@ -10,17 +10,18 @@
   "license": "Apache",
   "email": "ChameleonCore@didiglobal.com",
   "dependencies": {
+    "chameleon-bridge": "^0.1.11",
+    "vue-amap": "^0.5.10",
     "chameleon-api": "^0.5.3",
     "chameleon-runtime": "0.1.4",
     "chameleon-store": "0.0.3",
     "chameleon-ui-builtin": "0.4.0-mvvm.3",
-    "cml-tt-api": "0.0.3-alpha.0",
-    "cml-tt-plugin": "0.0.3-alpha.0",
-    "cml-tt-runtime": "0.0.3-alpha.0",
-    "cml-tt-store": "0.0.3-alpha.0",
-    "cml-tt-ui": "0.0.3-alpha.0",
-    "cml-tt-ui-builtin": "0.0.3-alpha.0",
-    "cml-ui": "^0.3.0-alpha.1",
-    "vue-amap": "^0.5.10"
+    "cml-tt-api": "0.0.3-alpha.1",
+    "cml-tt-plugin": "0.0.3-alpha.1",
+    "cml-tt-runtime": "0.0.3-alpha.1",
+    "cml-tt-store": "0.0.3-alpha.1",
+    "cml-tt-ui": "0.0.3-alpha.1",
+    "cml-tt-ui-builtin": "0.0.3-alpha.1",
+    "cml-ui": "^0.3.0-alpha.1"
   }
 }
