@@ -36,7 +36,7 @@
   {
     "base": {
       "usingComponents": {
-          "c-tabs": "cml-ui/components/c-tab/c-tab"
+          "c-tabs": "cml-tt-ui/components/c-tab/c-tab"
       }
     }
   }

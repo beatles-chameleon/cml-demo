@@ -42,7 +42,7 @@
 </page>
 </template>
 <script>
-import cml from 'chameleon-api'
+import cml from 'cml-tt-api'
 class Refresh {
   data = {
     topRefreshing:false,
@@ -176,7 +176,7 @@ export default new Refresh();
     "base": {
         "usingComponents": {
           "c-header": "/components/header/header",
-          "c-refresh": "cml-ui/components/c-refresh/c-refresh"
+          "c-refresh": "cml-tt-ui/components/c-refresh/c-refresh"
         },
         "navigationBarTitleText": "c-refresh",
         "backgroundTextStyle": "dark",

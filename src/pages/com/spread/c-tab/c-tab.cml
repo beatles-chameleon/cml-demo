@@ -98,9 +98,9 @@ export default new CTab();
   "base":{
     "usingComponents": {
       "c-header": "/components/header/header",
-      "c-tab": "cml-ui/components/c-tab/c-tab",
-      "c-tab-pane": "cml-ui/components/c-tab-pane/c-tab-pane",
-      "c-tab-pane-item": "cml-ui/components/c-tab-pane-item/c-tab-pane-item"
+      "c-tab": "cml-tt-ui/components/c-tab/c-tab",
+      "c-tab-pane": "cml-tt-ui/components/c-tab-pane/c-tab-pane",
+      "c-tab-pane-item": "cml-tt-ui/components/c-tab-pane-item/c-tab-pane-item"
     },
     "navigationBarTitleText": "c-tab",
      "backgroundTextStyle": "dark",

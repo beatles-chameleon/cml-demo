@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import cml from 'chameleon-api';
+import cml from 'cml-tt-api';
 class Map implements MapInterface {
   props = {
     name: {

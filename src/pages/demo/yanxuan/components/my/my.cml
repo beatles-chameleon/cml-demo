@@ -63,7 +63,7 @@
   </view>
 </template>
 <script>
-  import cml from "chameleon-api";
+  import cml from "cml-tt-api";
   const tabbarHeight = 90;
   class Yanxuan   {
 

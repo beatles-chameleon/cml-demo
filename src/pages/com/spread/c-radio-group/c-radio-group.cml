@@ -136,7 +136,7 @@ export default new CRadio();
     "base": {
         "usingComponents": {
           "c-header": "/components/header/header",
-          "c-radio-group": "cml-ui/components/c-radio-group/c-radio-group"
+          "c-radio-group": "cml-tt-ui/components/c-radio-group/c-radio-group"
         },
         "navigationBarTitleText": "c-radio-group",
         "backgroundTextStyle": "dark",
