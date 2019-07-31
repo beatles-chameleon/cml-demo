@@ -1,0 +1,31 @@
+<view class=" cml-base cml-view cml-3e3bc736"><cml-buildin-page title="switch演示" class=" cml-base cml-page cml-3e3bc736">
+  <view class=" cml-base cml-view cml-3e3bc736"><c-header title="switch" class=" cml-base cml-c-header cml-3e3bc736"></c-header></view>
+    <view class="box  cml-base cml-view cml-3e3bc736">
+      <view class=" cml-base cml-view cml-3e3bc736"><cml-buildin-switch checked="{{ switchValue1 }}" label="Switch" onChange="_cmlEventProxy" data-eventchange="switchChange1" class=" cml-base cml-switch cml-3e3bc736">
+      </cml-buildin-switch></view>
+    </view>
+    <view class="title  cml-base cml-view cml-3e3bc736">
+      <text class=" cml-base cml-text cml-3e3bc736">switch value: {{switchValue1}}</text>
+    </view>
+    <view class="box  cml-base cml-view cml-3e3bc736">
+      <view class=" cml-base cml-view cml-3e3bc736"><cml-buildin-switch checked="{{ switchValue2 }}" label="Switch" onChange="_cmlEventProxy" data-eventchange="switchChange2" class=" cml-base cml-switch cml-3e3bc736">
+      </cml-buildin-switch></view>
+    </view>
+    <view class="title  cml-base cml-view cml-3e3bc736">
+     <text class=" cml-base cml-text cml-3e3bc736">switch value: {{switchValue2}}</text>
+   </view>
+    <view class="box  cml-base cml-view cml-3e3bc736">
+       <view class=" cml-base cml-view cml-3e3bc736"><cml-buildin-switch checked="{{ switchValue3 }}" label="Disabled Switch" disabled="{{true}}" class=" cml-base cml-switch cml-3e3bc736">
+      </cml-buildin-switch></view>
+    </view>
+    <view class="title  cml-base cml-view cml-3e3bc736">
+      <text class=" cml-base cml-text cml-3e3bc736">switch value: {{switchValue3}}</text>
+    </view>
+    <view class="box  cml-base cml-view cml-3e3bc736">
+       <view class=" cml-base cml-view cml-3e3bc736"><cml-buildin-switch checked="{{ switchValue4 }}" label="Disabled Switch" disabled="{{true}}" class=" cml-base cml-switch cml-3e3bc736">
+      </cml-buildin-switch></view>
+    </view>
+    <view class="title  cml-base cml-view cml-3e3bc736">
+      <text class=" cml-base cml-text cml-3e3bc736">switch value: {{switchValue4}}</text>
+    </view>
+  </cml-buildin-page></view>

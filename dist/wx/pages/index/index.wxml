@@ -6,7 +6,7 @@
           <text class="logo-desc  cml-base cml-text">Chameleon</text>
         </view>
         <view class="list  cml-base cml-view">
-          <view class="list-cell  cml-base cml-view" wx:for="{{pageList}}" wx:for-item="pageInfo" bindtap="_cmlInline" data-eventtap="{{['onItemSelected',pageInfo.url]}}">
+          <view class="list-cell  cml-base cml-view" wx:for="{{pageList}}" wx:for-item="pageInfo" bindtap="_cmlInlineStatementEventProxy" data-arg0="{{pageInfo.url}}" data-args="pageInfo.url" data-eventtap="onItemSelected">
             <view class="content-item row  cml-base cml-view">
               <image class="content-item-left-icon  cml-base cml-image" src="{{pageInfo.icon}}"></image>
               <view class="text-group  cml-base cml-view">

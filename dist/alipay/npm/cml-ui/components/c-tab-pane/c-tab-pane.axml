@@ -1,0 +1,5 @@
+<view class="pane-root  cml-base cml-view cml-1c14ae02">
+  <view class="pane-wrap  cml-base cml-view cml-1c14ae02" style="{{paneWrap}}">
+    <slot class=" cml-base cml-slot cml-1c14ae02">  </slot>
+  </view>
+</view>

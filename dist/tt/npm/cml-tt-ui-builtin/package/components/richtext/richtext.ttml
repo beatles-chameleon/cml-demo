@@ -1,3 +1,0 @@
-<view class=" rich-text  cml-base cml-view">
-  <text tt:for="{{richList}}" style="{{item.style}}" tt:key="{{index}}" class=" cml-base cml-text">{{item.text}}</text>
-</view>

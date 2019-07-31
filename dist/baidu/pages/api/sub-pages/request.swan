@@ -1,7 +1,7 @@
 <cml-buildin-page title="request" class=" cml-base cml-page">
   <view class="page-request  cml-base cml-view">
     <secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-view cml-secondary-header"></secondary-header>
-    <secondary-cell title="{{cell.title}}" list="{{cell.list}}" bindbtnclicked="_cmlEventProxy" data-eventbtnclicked="{{['onBtnClicked']}}" class=" cml-view cml-secondary-cell"></secondary-cell>
+    <secondary-cell title="{{cell.title}}" list="{{cell.list}}" bindbtnclicked="_cmlEventProxy" data-eventbtnclicked="onBtnClicked" class=" cml-view cml-secondary-cell"></secondary-cell>
     <view class="preview-container  cml-base cml-view">
       <text class="preview-text preview-font  cml-base cml-text">请求信息</text>
       <view s-for="respones" s-for-item="res" s-for-index="idx" class=" cml-base cml-view">

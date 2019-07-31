@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "cml-buildin-button": "./../../npm/cml-tt-ui-builtin/package/components/button/button"
-    },
-    "component": true
-}

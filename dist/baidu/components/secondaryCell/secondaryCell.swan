@@ -3,6 +3,6 @@
   <view class="cell-divider  cml-base cml-view"></view>
   <view class="btn-group  cml-base cml-view" s-for="list" s-for-item="cellInfo">
     <text class="btn-tip  cml-base cml-text">{{cellInfo.title}}</text>
-    <cml-buildin-button class="action-btn  cml-base cml-button" size="none" type="blue" text="{{cellInfo.btnText}}" btn-style="height:100cpx;width:658cpx;margin: 24cpx 0 30cpx;" data-index="{{index}}" bindonclick="_cmlInline" data-eventonclick="{{['onBtnClick',index]}}"></cml-buildin-button>
+    <cml-buildin-button class="action-btn  cml-base cml-button" size="none" type="blue" text="{{cellInfo.btnText}}" btn-style="height:100cpx;width:658cpx;margin: 24cpx 0 30cpx;" data-index="{{index}}" bindonclick="_cmlInlineStatementEventProxy" data-arg0="{{index}}" data-args="index" data-eventonclick="onBtnClick"></cml-buildin-button>
   </view>
 </view>

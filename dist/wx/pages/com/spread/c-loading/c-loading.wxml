@@ -5,7 +5,7 @@
             <view class="content  cml-base cml-view"></view>  
         </c-loading>
         <view class="button-wrapper  cml-base cml-view">
-            <cml-buildin-button class="button  cml-base cml-button" text="更改loading态" bindonclick="_cmlEventProxy" data-eventonclick="{{['changeLoading']}}"></cml-buildin-button> 
+            <cml-buildin-button class="button  cml-base cml-button" text="更改loading态" bindonclick="_cmlEventProxy" data-eventonclick="changeLoading"></cml-buildin-button> 
         </view>
     </view>
 </cml-buildin-page>

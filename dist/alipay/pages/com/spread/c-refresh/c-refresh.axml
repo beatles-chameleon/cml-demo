@@ -1,0 +1,20 @@
+<view class=" cml-base cml-view cml-4db91988"><cml-buildin-page title="refresh演示" class=" cml-base cml-page cml-4db91988">
+  <view class=" cml-base cml-view cml-4db91988"><c-header title="refresh" class=" cml-base cml-c-header cml-4db91988"></c-header></view>
+  <view class="container  cml-base cml-view cml-4db91988">
+    <view class=" cml-base cml-view cml-4db91988"><cml-buildin-scroller scroll-direction="{{scrollDirection}}" bottom-offset="{{bottomOffset}}" onScrolltobottom="_cmlEventProxy" data-eventscrolltobottom="onBottom" onCustomscroll="_cmlEventProxy" data-eventcustomscroll="onScroll" height="{{-1}}" class=" cml-base cml-scroller cml-4db91988">   
+      <view class=" cml-base cml-view cml-4db91988"><c-refresh display="{{ topRefreshing }}" onRefresh="_cmlEventProxy" data-eventrefresh="onrefreshUp" class=" cml-base cml-c-refresh cml-4db91988">
+      </c-refresh></view>
+      <view class=" cml-base cml-view cml-4db91988">
+        <view class="cell  cml-base cml-view cml-4db91988" a:for="{{panels}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="change" data-idx="{{i}}">
+            <view class="panel  cml-base cml-view cml-4db91988" style="{{item.computedStyle}}">
+                <text class="text  cml-base cml-text cml-4db91988">{{item.label}}</text>
+            </view>
+        </view>
+      </view>
+      <view class="no-more-text  cml-base cml-view cml-4db91988" a:if="{{ page >= sumPage }}"><text class=" cml-base cml-text cml-4db91988">没有更多了...</text></view>
+      <view a:else class=" cml-base cml-view cml-4db91988"><c-refresh display="{{ bottomRefreshing }}" direction="bottom" custom-ui="{{ true }}" onRefresh="_cmlEventProxy" data-eventrefresh="onrefreshDown" class=" cml-base cml-c-refresh cml-4db91988">
+        <view class="loading-text  cml-base cml-view cml-4db91988" style="{{loadingTextStyle}}"><text class=" cml-base cml-text cml-4db91988">上拉刷新...</text></view>
+      </c-refresh></view>
+    </cml-buildin-scroller></view>
+  </view>
+  </cml-buildin-page></view>

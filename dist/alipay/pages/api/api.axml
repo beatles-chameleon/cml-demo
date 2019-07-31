@@ -1,0 +1,17 @@
+<view class=" cml-base cml-view cml-636bd576"><cml-buildin-page title="API" class=" cml-base cml-page cml-636bd576">
+  <view class="page  cml-base cml-view cml-636bd576">
+    <view class=" cml-base cml-view cml-636bd576"><cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller cml-636bd576">
+      <view class="title-row  cml-base cml-view cml-636bd576">
+        <view class=" cml-base cml-view cml-636bd576"><cml-buildin-row justify="start" class=" cml-base cml-row cml-636bd576">
+          <image class="title-icon  cml-base cml-image cml-636bd576" src="{{iconApiUri}}"></image>
+          <text class="title-text  cml-base cml-text cml-636bd576  _cml_ref_lmc_" id="titleText">API</text>
+        </cml-buildin-row></view>
+      </view>
+      <view class="page-list  cml-base cml-view cml-636bd576">
+        <view a:for="{{cells}}" a:for-item="cellInfo" class=" cml-base cml-view cml-636bd576">
+          <view class=" cml-base cml-view cml-636bd576"><collapse title="{{cellInfo.title}}" icon-uri="{{cellInfo.iconUri}}" list="{{cellInfo.list}}" onItemselected="_cmlEventProxy" data-eventitemselected="cellItemSeleted" class=" cml-base cml-collapse cml-636bd576"></collapse></view>
+        </view>
+      </view>
+    </cml-buildin-scroller></view>
+  </view>
+  </cml-buildin-page></view>

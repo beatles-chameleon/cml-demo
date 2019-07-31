@@ -1,8 +1,0 @@
-{
-    "usingComponents": {
-        "demo-list": "./../../components/demo-list/demo-list",
-        "cml-buildin-row": "./../../npm/cml-tt-ui-builtin/package/components/layout/row/row",
-        "cml-buildin-page": "./../../npm/cml-tt-ui-builtin/package/components/page/page",
-        "cml-buildin-scroller": "./../../npm/cml-tt-ui-builtin/package/components/scroller/scroller"
-    }
-}

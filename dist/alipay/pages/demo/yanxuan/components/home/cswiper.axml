@@ -1,0 +1,8 @@
+<view class="carousel  cml-base cml-view cml-7ce96fd0" onTouchMove="_cmlEventProxy" data-eventtouchmove="forbinding">
+  <view class="carousel-container  cml-base cml-view cml-7ce96fd0"><swiper class="carousel-container  cml-base cml-carousel cml-7ce96fd0" indicator-dots="{{true}}" current="{{1}}" circular="{{true}}" autoplay="{{true}}">
+    <swiper-item class="carousel-carousel-item  cml-base cml-carousel-item cml-7ce96fd0" a:for="{{bannerImgList}}" a:for-index="i" a:for-item="item" data-idx="{{i}}" a:key="{{i}}">
+      <image src="{{item.imgUrl}}" class="Img  cml-base cml-image cml-7ce96fd0" />
+    </swiper-item>
+
+  </swiper></view>
+</view>

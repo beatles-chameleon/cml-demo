@@ -1,0 +1,8 @@
+<view class=" cml-base cml-view cml-58739750"><cml-buildin-page title="c-picker演示" class=" cml-base cml-page cml-58739750">
+    <view class=" cml-base cml-view cml-58739750"><c-header title="c-picker" class=" cml-base cml-c-header cml-58739750"></c-header></view>
+    <view class=" cml-base cml-view cml-58739750">
+        <text class="select-text  cml-base cml-text cml-58739750" onTap="_cmlEventProxy" data-eventtap="showClick">点击选择：{{provins[provinsIndex]}}</text>
+        <view class=" cml-base cml-view cml-58739750"><c-picker show="{{pickerShow}}" height="{{500}}" header-height="{{100}}" text-align="center" data-scroller-height="{{400}}" list="{{provins}}" default-index="{{defaultIndex}}" confirm-btn-style="color:red" cancel-btn-style="color:red" onCancel="_cmlEventProxy" data-eventcancel="cancel" onConfirm="_cmlEventProxy" data-eventconfirm="confirm" onSelectchange="_cmlEventProxy" data-eventselectchange="selectchange" class=" cml-base cml-c-picker cml-58739750">
+        </c-picker></view>
+    </view>
+  </cml-buildin-page></view>

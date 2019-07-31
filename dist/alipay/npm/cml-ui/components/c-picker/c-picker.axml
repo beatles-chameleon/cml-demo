@@ -1,0 +1,6 @@
+<view a:if="{{show}}" class=" cml-base cml-view cml-1a7ff682">
+    <view class=" cml-base cml-view cml-1a7ff682"><c-picker-panel show="{{show}}" height="{{height}}" header-height="{{headerHeight}}" cancel-btn-style="{{cancelBtnStyle}}" confirm-btn-style="{{confirmBtnStyle}}" onCancel="_cmlEventProxy" data-eventcancel="cancel" onConfirm="_cmlEventProxy" data-eventconfirm="confirm" class=" cml-base cml-c-picker-panel cml-1a7ff682">
+        <view class=" cml-base cml-view cml-1a7ff682"><c-picker-item text-align="{{textAlign}}" height="{{dataScrollerHeight}}" list="{{list}}" item-style="{{itemStyle}}" default-index="{{defaultIndex}}" onSelectchange="_cmlEventProxy" data-eventselectchange="selectchange" class=" cml-base cml-c-picker-item cml-1a7ff682">
+        </c-picker-item></view>
+    </c-picker-panel></view>
+</view>

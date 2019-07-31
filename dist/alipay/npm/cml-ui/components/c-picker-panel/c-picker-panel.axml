@@ -1,0 +1,16 @@
+<view class="picker-panel  cml-base cml-view cml-0bf01de2" a:if="{{show}}">
+    <view class=" cml-base cml-view cml-0bf01de2"><c-popup mask="{{true}}" show="{{show}}" class=" cml-base cml-c-popup cml-0bf01de2">
+      <view class="panel-wrap  cml-base cml-view cml-0bf01de2" style="{{wraperStyle}}">
+        <view class="panel-header  cml-base cml-view cml-0bf01de2" style="{{headerStyle}}">
+            <view class="left-wrap  cml-base cml-view cml-0bf01de2" onTap="_cmlEventProxy" data-eventtap="cancelclick">
+              <text class="left-btn-text  cml-base cml-text cml-0bf01de2" style="{{computedCancelBtn}}">取消</text>
+            </view>
+            <view class="title  cml-base cml-view cml-0bf01de2"><text class=" cml-base cml-text cml-0bf01de2">{{title}}</text></view>
+            <view class="right-wrap  cml-base cml-view cml-0bf01de2" onTap="_cmlEventProxy" data-eventtap="confirmclick">
+              <text class="right-btn-text  cml-base cml-text cml-0bf01de2" style="{{computedConfirmBtn}}">确定</text>
+            </view>
+        </view>
+        <slot class=" cml-base cml-slot cml-0bf01de2"></slot>
+      </view>
+    </c-popup></view>
+</view>

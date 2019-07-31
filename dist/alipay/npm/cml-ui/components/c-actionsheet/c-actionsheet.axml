@@ -1,0 +1,22 @@
+<view class=" cml-base cml-view cml-63c4ca82"><c-popup show="{{show}}" onClose="_cmlEventProxy" data-eventclose="cancelclick" position="bottom" class=" cml-base cml-c-popup cml-63c4ca82">
+  <view class="action-wrap  cml-base cml-view cml-63c4ca82">
+    <view class="action-header  cml-base cml-view cml-63c4ca82" a:if="{{title || pickerStyle}}">
+      <text class="action-header-text  cml-base cml-text cml-63c4ca82" style="{{actionHeaderStyle}}">{{title}}</text>
+      <view class="cancel-wrap  cml-base cml-view cml-63c4ca82" a:if="{{pickerStyle}}" onTap="_cmlEventProxy" data-eventtap="cancelclick">
+        <text class="cancel-text  cml-base cml-text cml-63c4ca82" style="{{actionCancelStyle}}">{{cancelTxt}}</text>
+      </view>
+    </view>
+    <view class="action-content  cml-base cml-view cml-63c4ca82" style="{{actionContentStyle}}">
+      <view class="action-list  cml-base cml-view cml-63c4ca82"><cml-buildin-list class="action-list  cml-base cml-list cml-63c4ca82" height="{{listHeight}}">
+        <view a:for="{{list}}" a:for-index="i" a:for-item="item" data-idx="{{i}}" data-value="{{item}}" onTap="_cmlEventProxy" data-eventtap="itemClick" class="action-list-item  cml-base cml-cell cml-63c4ca82">
+          <text a:if="{{i === active}}" style="{{activeTextStyle}}" class="text-active  cml-base cml-text cml-63c4ca82">{{item}}</text>
+          <text a:else style="{{textStyle}}" class="text  cml-base cml-text cml-63c4ca82">{{item}}</text>
+        </view>     
+      </cml-buildin-list></view>
+    </view>
+    <block a:if="{{!pickerStyle}}" class=" cml-base cml-block cml-63c4ca82">
+      <view class="action-space  cml-base cml-view cml-63c4ca82"></view>
+      <text style="{{actionCancelStyle}}" onTap="_cmlEventProxy" data-eventtap="cancelclick" class="cancel-btn  cml-base cml-text cml-63c4ca82">{{cancelTxt}}</text>
+    </block>
+  </view>
+  </c-popup></view>

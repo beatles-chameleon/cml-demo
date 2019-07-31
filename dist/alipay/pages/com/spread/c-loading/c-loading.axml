@@ -1,0 +1,11 @@
+<view class=" cml-base cml-view cml-c93a8c84"><cml-buildin-page title="c-loading演示" class=" cml-base cml-page cml-c93a8c84">
+    <view class=" cml-base cml-view cml-c93a8c84">
+        <view class=" cml-base cml-view cml-c93a8c84"><c-header title="c-loading" class=" cml-base cml-c-header cml-c93a8c84"></c-header></view>
+        <view class=" cml-base cml-view cml-c93a8c84"><c-loading loading="{{loading}}" class=" cml-base cml-c-loading cml-c93a8c84">
+            <view class="content  cml-base cml-view cml-c93a8c84"></view>  
+        </c-loading></view>
+        <view class="button-wrapper  cml-base cml-view cml-c93a8c84">
+            <view class="button  cml-base cml-view cml-c93a8c84"><cml-buildin-button class="button  cml-base cml-button cml-c93a8c84" text="更改loading态" onOnclick="_cmlEventProxy" data-eventonclick="changeLoading"></cml-buildin-button></view> 
+        </view>
+    </view>
+  </cml-buildin-page></view>

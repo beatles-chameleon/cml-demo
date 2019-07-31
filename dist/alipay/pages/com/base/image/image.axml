@@ -1,0 +1,6 @@
+<view class=" cml-base cml-view cml-df26d5a4"><cml-buildin-page title="image" class=" cml-base cml-page cml-df26d5a4">
+    <view class="container  cml-base cml-view cml-df26d5a4">
+        <view class=" cml-base cml-view cml-df26d5a4"><c-header title="image" desc="这是一张本地图片" class=" cml-base cml-c-header cml-df26d5a4"></c-header></view>
+        <image src="{{imageSrc}}" style="width:682rpx;height:600rpx" onLoad="_cmlEventProxy" data-eventload="imageLoad" onError="_cmlEventProxy" data-eventerror="imageError" class=" cml-base cml-image cml-df26d5a4"></image>
+    </view>
+  </cml-buildin-page></view>

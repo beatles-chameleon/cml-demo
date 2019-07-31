@@ -1,6 +1,0 @@
-<view class=" home  cml-base cml-view">
-  <cswiper class=" cml-view cml-cswiper"></cswiper>
-  <service class=" cml-view cml-service"></service>
-  <classlist class=" cml-view cml-classlist"></classlist>
-  <special class=" cml-view cml-special"></special>
-</view>

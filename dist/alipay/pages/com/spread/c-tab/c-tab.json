@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "c-header": "./../../../../components/header/header",
+        "c-tab": "./../../../../npm/cml-ui/components/c-tab/c-tab",
+        "c-tab-pane": "./../../../../npm/cml-ui/components/c-tab-pane/c-tab-pane",
+        "c-tab-pane-item": "./../../../../npm/cml-ui/components/c-tab-pane-item/c-tab-pane-item",
+        "cml-buildin-page": "./../../../../npm/chameleon-ui-builtin/components/page/page"
+    },
+    "navigationBarTitleText": "c-tab",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

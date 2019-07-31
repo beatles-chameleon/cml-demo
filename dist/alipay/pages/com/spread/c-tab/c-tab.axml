@@ -1,0 +1,39 @@
+<view class=" cml-base cml-view cml-1d53c9a0"><cml-buildin-page title="c-tab演示" class=" cml-base cml-page cml-1d53c9a0">
+  <view class=" cml-base cml-view cml-1d53c9a0">
+     <view class=" cml-base cml-view cml-1d53c9a0"><c-header title="{{headerTitle}}" desc="{{headerDesc}}" class=" cml-base cml-c-header cml-1d53c9a0"></c-header></view>
+     
+     <view class="title  cml-base cml-view cml-1d53c9a0"><text class=" cml-base cml-text cml-1d53c9a0">单tab案例</text></view>
+     <view class=" cml-base cml-view cml-1d53c9a0"><c-tab tabs="{{tabsAlone}}" onTabclick="_cmlEventProxy" data-eventtabclick="handleTabTapAlone" active-label="{{activeLabelAlone}}" has-underline="{{false}}" inline="{{false}}" class=" cml-base cml-c-tab cml-1d53c9a0">
+     </c-tab></view>
+
+     <view class="title  cml-base cml-view cml-1d53c9a0"><text class="title  cml-base cml-text cml-1d53c9a0">tab+pane案例</text></view>
+     <view class=" cml-base cml-view cml-1d53c9a0"><c-tab tabs="{{tabs}}" onTabclick="_cmlEventProxy" data-eventtabclick="handleTabTap" active-label="{{activeLabel}}" inline="{{false}}" class=" cml-base cml-c-tab cml-1d53c9a0">
+     </c-tab></view>
+     <view class=" cml-base cml-view cml-1d53c9a0"><c-tab-pane tabs="{{tabs}}" active-label="{{activeLabel}}" class=" cml-base cml-c-tab-pane cml-1d53c9a0">
+       
+       
+       
+       <view class=" cml-base cml-view cml-1d53c9a0"><c-tab-pane-item class=" cml-base cml-c-tab-pane-item cml-1d53c9a0">
+         <view class="one  cml-base cml-view cml-1d53c9a0"><text class=" cml-base cml-text cml-1d53c9a0">
+           1
+           </text></view>
+       </c-tab-pane-item></view>
+       <view class=" cml-base cml-view cml-1d53c9a0"><c-tab-pane-item class=" cml-base cml-c-tab-pane-item cml-1d53c9a0">
+         <view class="two  cml-base cml-view cml-1d53c9a0"><text class=" cml-base cml-text cml-1d53c9a0">
+           2
+           </text></view>
+       </c-tab-pane-item></view>
+       <view class=" cml-base cml-view cml-1d53c9a0"><c-tab-pane-item class=" cml-base cml-c-tab-pane-item cml-1d53c9a0">
+         <view class="three  cml-base cml-view cml-1d53c9a0"><text class=" cml-base cml-text cml-1d53c9a0">
+           3
+           </text></view>
+       </c-tab-pane-item></view>
+       <view class=" cml-base cml-view cml-1d53c9a0"><c-tab-pane-item class=" cml-base cml-c-tab-pane-item cml-1d53c9a0">
+         <view class=" cml-base cml-view cml-1d53c9a0"><text class=" cml-base cml-text cml-1d53c9a0">
+           4
+           </text></view>
+       </c-tab-pane-item></view>
+     </c-tab-pane></view>
+
+  </view>
+  </cml-buildin-page></view>

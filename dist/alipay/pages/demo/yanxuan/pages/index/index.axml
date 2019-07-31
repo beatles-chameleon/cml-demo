@@ -1,0 +1,11 @@
+<view class=" cml-base cml-view cml-06496696"><cml-buildin-page title="chameleon" class=" cml-base cml-page cml-06496696">
+  <view class="chameleon-content  cml-base cml-view cml-06496696" style="height:{{scrollHeight}}rpx;">
+    <view class=" cml-base cml-view cml-06496696"><cml-buildin-scroller scroll-direction="vertical" bottom-offset="{{20}}" height="{{scrollHeight}}" class=" cml-base cml-scroller cml-06496696">
+      <c-tabbar a:if="{{currentCom === 'c-tabbar'}}" is="{{currentCom}}" class=" cml-base cml-component cml-06496696  cml-base cml-c-tabbar cml-06496696"></c-tabbar><topic a:if="{{currentCom === 'topic'}}" is="{{currentCom}}" class=" cml-base cml-component cml-06496696  cml-base cml-topic cml-06496696"></topic><my a:if="{{currentCom === 'my'}}" is="{{currentCom}}" class=" cml-base cml-component cml-06496696  cml-base cml-my cml-06496696"></my><shop a:if="{{currentCom === 'shop'}}" is="{{currentCom}}" class=" cml-base cml-component cml-06496696  cml-base cml-shop cml-06496696"></shop><classify a:if="{{currentCom === 'classify'}}" is="{{currentCom}}" class=" cml-base cml-component cml-06496696  cml-base cml-classify cml-06496696"></classify><home a:if="{{currentCom === 'home'}}" is="{{currentCom}}" class=" cml-base cml-component cml-06496696  cml-base cml-home cml-06496696"></home>
+    </cml-buildin-scroller></view>
+  </view>
+
+  <view class="footer-zhanwei  cml-base cml-view cml-06496696">
+    <view class=" cml-base cml-view cml-06496696"><c-tabbar data-modelkey="currentCom" data-eventinput="_cmlModelEventProxy" onInput="_cmlModelEventProxy" value="{{currentCom}}" tabbar="{{tabbar}}" class=" cml-base cml-c-tabbar cml-06496696"></c-tabbar></view>
+  </view>
+  </cml-buildin-page></view>

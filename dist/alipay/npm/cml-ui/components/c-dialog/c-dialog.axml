@@ -1,0 +1,28 @@
+<view class=" cml-base cml-view cml-f217f07c"><c-popup show="{{show}}" mask="{{mask}}" class=" cml-base cml-c-popup cml-f217f07c">
+  <view class="dialog-content  cml-base cml-view cml-f217f07c" style="{{computedDialogStyle}}">
+    
+    <view class="dialog-close  cml-base cml-view cml-f217f07c" a:if="{{showClose}}" onTap="_cmlEventProxy" data-eventtap="closeTap">
+      <image src="{{closeSrc}}" style="width:22rpx;height:22rpx" class=" cml-base cml-image cml-f217f07c" />
+    </view>
+    
+    <view class="dialog-content-wrap  cml-base cml-view cml-f217f07c">
+      <view class="icon-row  cml-base cml-view cml-f217f07c" a:if="{{showIcon}}">
+        <image a:if="{{iconUrl}}" src="{{iconUrl}}" class="custom-icon  cml-base cml-image cml-f217f07c" style="{{computedIconStyle}}" />       
+        <view a:else class="icon-bg  cml-base cml-view cml-f217f07c">
+          <image src="{{iconSrc}}" class="icon  cml-base cml-image cml-f217f07c" />
+        </view>
+      </view>
+      <text class="title-row  cml-base cml-text cml-f217f07c" style="{{computedTitleStyle}}">{{title}}</text>
+      <text class="content-row  cml-base cml-text cml-f217f07c" style="{{computedContentStyle}}">{{content}}</text>
+    </view>
+    
+    
+      <view class="btn-row border-top-1px cml-border-top-1px  cml-base cml-view cml-f217f07c">
+        <block a:if="{{type !== 'alert'}}" class=" cml-base cml-block cml-f217f07c">
+          <view class="left-btn-wrap border-right-1px cml-border-right-1px  cml-base cml-view cml-f217f07c" onTap="_cmlEventProxy" data-eventtap="cancelTap"><text class="cancel-text  cml-base cml-text cml-f217f07c" style="{{computedCancelStyle}}">{{cancelText}}</text></view>
+        </block>
+        <view class="btn-wrap  cml-base cml-view cml-f217f07c" onTap="_cmlEventProxy" data-eventtap="confirmTap"><text class="confirm-text  cml-base cml-text cml-f217f07c" style="{{computedConfirmStyle}}">{{confirmText}}</text></view>
+      </view>     
+    
+  </view>
+  </c-popup></view>
