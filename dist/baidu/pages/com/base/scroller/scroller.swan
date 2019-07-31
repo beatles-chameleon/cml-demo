@@ -1,0 +1,12 @@
+<cml-buildin-page title="scroller" class=" cml-base cml-page">
+    <view class="container  cml-base cml-view">
+    <cml-buildin-scroller scroll-direction="{{scrollDirection}}" bottom-offset="{{bottomOffset}}" height="{{-1}}" bindscrolltobottom="_cmlEventProxy" data-eventscrolltobottom="{{['onBottom']}}" bindonscroll="_cmlEventProxy" data-eventonscroll="{{['onScroll']}}" scroll-top="{{scrollTop}}" class=" cml-base cml-scroller">
+        <c-header title="scroller" class=" cml-view cml-c-header"></c-header>
+        <view class="cell  cml-base cml-view" s-for="panels" s-for-index="i" s-for-item="item" bindtap="_cmlEventProxy" data-eventtap="{{['change']}}" data-idx="{{i}}">
+            <view class="panel  cml-base cml-view" style="{{item.computedStyle}}">
+                <text class="text  cml-base cml-text">{{item.label}}</text>
+            </view>
+        </view>
+    </cml-buildin-scroller>
+    </view>
+</cml-buildin-page>

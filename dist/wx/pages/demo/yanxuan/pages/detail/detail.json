@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "myscroller": "./myscroller/myscroller",
+        "map": "./../../components/map/map",
+        "cml-buildin-page": "./../../../../../npm/chameleon-ui-builtin/components/page/page"
+    },
+    "navigationBarTitleText": "详情页",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

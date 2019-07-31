@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "cswiper": "./cswiper",
+        "service": "./service",
+        "classlist": "./classlist",
+        "special": "./special"
+    },
+    "component": true
+}

@@ -1,0 +1,16 @@
+<view class="picker-panel  cml-base cml-view" wx:if="{{show}}">
+    <c-popup mask="{{true}}" show="{{show}}" class=" cml-view cml-c-popup">
+      <view class="panel-wrap  cml-base cml-view" style="{{wraperStyle}}">
+        <view class="panel-header  cml-base cml-view" style="{{headerStyle}}">
+            <view class="left-wrap  cml-base cml-view" bindtap="_cmlEventProxy" data-eventtap="{{['cancelclick']}}">
+              <text class="left-btn-text  cml-base cml-text" style="{{computedCancelBtn}}">取消</text>
+            </view>
+            <view class="title  cml-base cml-view"><text class=" cml-base cml-text">{{title}}</text></view>
+            <view class="right-wrap  cml-base cml-view" bindtap="_cmlEventProxy" data-eventtap="{{['confirmclick']}}">
+              <text class="right-btn-text  cml-base cml-text" style="{{computedConfirmBtn}}">确定</text>
+            </view>
+        </view>
+        <slot class=" cml-base cml-slot"></slot>
+      </view>
+    </c-popup>
+</view>

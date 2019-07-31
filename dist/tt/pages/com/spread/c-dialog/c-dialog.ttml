@@ -1,0 +1,11 @@
+<cml-buildin-page title="c-dialog演示" class=" cml-base cml-cml-buildin-page">
+  <view class=" container  cml-base cml-view">
+    <c-header title="c-dialog" class=" cml-view cml-c-header"></c-header>
+    <c-dialog show="{{show}}" type="{{type}}" bindshow="_cmlEventProxy" title="{{title}}" mask="{{mask}}" content="{{content}}" show-close="{{showClose}}" icon-type="{{iconType}}" icon-style="{{iconStyle}}" bindclose="_cmlEventProxy" bindconfirm="_cmlEventProxy" bindcancel="_cmlEventProxy" data-eventshow="{{['changeShow']}}" data-eventclose="{{['closeEvent']}}" data-eventconfirm="{{['confirmEvent']}}" data-eventcancel="{{['cancelEvent']}}" class=" cml-view cml-c-dialog"></c-dialog>
+    
+    <cml-buildin-button class=" btn  cml-base cml-cml-buildin-button" bindonclick="_cmlEventProxy" text="alert dialog" data-eventonclick="{{['showAlert']}}"></cml-buildin-button>
+    <cml-buildin-button class=" btn  cml-base cml-cml-buildin-button" bindonclick="_cmlEventProxy" text="confirm dialog" data-eventonclick="{{['showConfirm']}}"></cml-buildin-button>
+    <cml-buildin-button class=" btn  cml-base cml-cml-buildin-button" bindonclick="_cmlEventProxy" text="show close dialog" data-eventonclick="{{['showCloseIcon']}}"></cml-buildin-button>
+    
+  </view>
+</cml-buildin-page>

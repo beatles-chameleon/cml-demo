@@ -1,0 +1,17 @@
+<cml-buildin-page title="组件" class=" cml-base cml-cml-buildin-page">
+    <view class=" page  cml-base cml-view">
+      <cml-buildin-scroller height="{{-1}}" class=" cml-base cml-cml-buildin-scroller">
+        <view class=" title-row  cml-base cml-view">
+          <cml-buildin-row justify="start" class=" cml-base cml-cml-buildin-row">
+            <image class=" title-icon  cml-base cml-image" src="{{iconApiUri}}"></image>
+            <text class=" title-text  cml-base cml-text" ref="titleText">组件</text>
+          </cml-buildin-row>
+        </view>
+        <view class=" page-list  cml-base cml-view">
+          <view tt:for="{{cells}}" tt:for-item="cellInfo" class=" cml-base cml-view">
+            <collapse title="{{cellInfo.title}}" icon-uri="{{cellInfo.iconUri}}" list="{{cellInfo.list}}" binditemselected="_cmlEventProxy" data-eventitemselected="{{['cellItemSeleted']}}" class=" cml-view cml-collapse"></collapse>
+          </view>
+        </view>
+      </cml-buildin-scroller>
+    </view>
+</cml-buildin-page>

@@ -1,0 +1,11 @@
+<cml-buildin-page title="chameleon" class=" cml-base cml-page">
+  <view class="chameleon-content  cml-base cml-view" style="height:{{scrollHeight}}rpx;">
+    <cml-buildin-scroller scroll-direction="vertical" bottom-offset="{{20}}" height="{{scrollHeight}}" class=" cml-base cml-scroller">
+      <c-tabbar wx:if="{{currentCom === 'c-tabbar'}}" is="{{currentCom}}" class=" cml-base cml-component  cml-view cml-c-tabbar"></c-tabbar><topic wx:if="{{currentCom === 'topic'}}" is="{{currentCom}}" class=" cml-base cml-component  cml-view cml-topic"></topic><my wx:if="{{currentCom === 'my'}}" is="{{currentCom}}" class=" cml-base cml-component  cml-view cml-my"></my><shop wx:if="{{currentCom === 'shop'}}" is="{{currentCom}}" class=" cml-base cml-component  cml-view cml-shop"></shop><classify wx:if="{{currentCom === 'classify'}}" is="{{currentCom}}" class=" cml-base cml-component  cml-view cml-classify"></classify><home wx:if="{{currentCom === 'home'}}" is="{{currentCom}}" class=" cml-base cml-component  cml-view cml-home"></home>
+    </cml-buildin-scroller>
+  </view>
+
+  <view class="footer-zhanwei  cml-base cml-view">
+    <c-tabbar data-modelkey="currentCom" bindinput="_cmlModelEventProxy" value="{{currentCom}}" tabbar="{{tabbar}}" class=" cml-view cml-c-tabbar"></c-tabbar>
+  </view>
+</cml-buildin-page>

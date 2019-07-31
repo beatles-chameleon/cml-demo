@@ -1,0 +1,3 @@
+<view class="map  cml-base cml-view">
+  <map class=" cml-view cml-map"></map>
+</view>

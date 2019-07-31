@@ -1,0 +1,8 @@
+<view class=" carousel  cml-base cml-view" bindtouchmove="_cmlEventProxy" data-eventtouchmove="{{['forbinding']}}">
+  <swiper class=" carousel-container  cml-base cml-cml-buildin-carousel" indicator-dots="{{true}}" current="{{1}}" circular="{{true}}" autoplay="{{true}}">
+    <swiper-item class=" carousel-carousel-item  cml-base cml-cml-buildin-carousel-item" tt:for="{{bannerImgList}}" tt:for-index="i" tt:for-item="item" data-idx="{{i}}" tt:key="{{i}}">
+      <image class=" Img  cml-base cml-image" src="{{item.imgUrl}}" />
+    </swiper-item>
+
+  </swiper>
+</view>

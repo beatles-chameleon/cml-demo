@@ -1,0 +1,17 @@
+<cml-buildin-page title="webSocket" class=" cml-base cml-cml-buildin-page">
+  <view class=" page-websocket  cml-base cml-view">
+    <secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-view cml-secondary-header"></secondary-header>
+    <secondary-cell title="{{cell.title}}" list="{{cell.list}}" bindbtnclicked="_cmlEventProxy" data-eventbtnclicked="{{['onBtnClicked']}}" class=" cml-view cml-secondary-cell"></secondary-cell>
+    <view class=" preview-container  cml-base cml-view">
+      <text class=" preview-text preview-font  cml-base cml-text">WebSocket 状态输出</text>
+      <view tt:for="{{respones}}" tt:for-item="res" tt:for-index="idx" class=" cml-base cml-view">
+        <text class=" preview-font  cml-base cml-text">{{res.name}}</text>
+        <text class=" preview-font indent  cml-base cml-text" tt:if="{{res.value}}">{{res.value}}</text>
+        <block tt:if="{{res.child}}" class=" cml-base cml-block">
+          <text class=" preview-font indent  cml-base cml-text" tt:for="{{res.child}}" tt:for-item="str">{{str}}</text>
+        </block>        
+      </view>
+    </view>
+    <c-loading loading="{{isShowLoading}}" class=" cml-view cml-c-loading"></c-loading>
+  </view>
+</cml-buildin-page>

@@ -1,0 +1,20 @@
+<cml-buildin-page title="c-tip演示" class=" cml-base cml-cml-buildin-page">
+  <c-header title="c-tip" class=" cml-view cml-c-header"></c-header>
+  <view class=" tip-eg  cml-base cml-view">
+  <c-tip show="{{showtip1}}" direction="top" bindclose="_cmlEventProxy" style="position:absolute;top:0;left:300rpx" data-eventclose="{{['closeTip1']}}" class=" cml-view cml-c-tip">
+    <text style="color:#fff" class=" cml-base cml-text">Tip</text>
+  </c-tip>
+  <text class=" tip-btn  cml-base cml-text" bindtap="_cmlEventProxy" data-eventtap="{{['showTip1']}}">Show tip</text>
+  </view>
+
+    <view class=" tip-eg  cml-base cml-view">
+      <c-tip show="{{showtip2}}" direction="{{direction}}" bindclose="_cmlEventProxy" style="{{tipStyle}}" data-eventclose="{{['closeTip2']}}" class=" cml-view cml-c-tip">
+        <text style="color:#fff" class=" cml-base cml-text">Awesome!</text>
+      </c-tip>
+      <text class=" tip-btn  cml-base cml-text" bindtap="_cmlEventProxy" data-eventtap="{{['showTip2']}}">chameleon-ui</text>
+    </view>
+    <cml-buildin-button class=" btn  cml-base cml-cml-buildin-button" bindonclick="_cmlEventProxy" text="top" data-eventonclick="{{['showTip2Top']}}"></cml-buildin-button>
+    <cml-buildin-button class=" btn  cml-base cml-cml-buildin-button" bindonclick="_cmlEventProxy" text="bottom" data-eventonclick="{{['showTip2Bottom']}}"></cml-buildin-button>
+    <cml-buildin-button class=" btn  cml-base cml-cml-buildin-button" bindonclick="_cmlEventProxy" text="left" data-eventonclick="{{['showTip2Left']}}"></cml-buildin-button>
+    <cml-buildin-button class=" btn  cml-base cml-cml-buildin-button" bindonclick="_cmlEventProxy" text="right" data-eventonclick="{{['showTip2Right']}}"></cml-buildin-button>
+</cml-buildin-page>
