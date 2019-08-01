@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import cml from 'chameleon-api';
+  import cml from 'cml-tt-api';
   import homePageData from '../../assets/getHomeImgList.json';
   const animation = cml.createAnimation();
   let chameleonIcon  = require('../../../../../assets/images/chameleon.png');
@@ -147,7 +147,7 @@
         "shop": "../../components/shop/shop",
         "my": "../../components/my/my",
         "topic": "../../components/topic/topic",
-        "c-tabbar": "cml-ui/components/c-tabbar/c-tabbar"
+        "c-tabbar": "cml-tt-ui/components/c-tabbar/c-tabbar"
       },
       "navigationBarTitleText": "首页",
       "backgroundTextStyle": "dark",

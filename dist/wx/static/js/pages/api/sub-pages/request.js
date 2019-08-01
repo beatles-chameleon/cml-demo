@@ -1,1 +1,136 @@
-var __CML__GLOBAL=require("../../../manifest.js");__CML__GLOBAL.webpackJsonp([5],{196:function(e,t,n){n(197),n(198)},197:function(e,t){},198:function(e,t,n){function o(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var r=n(24),a=o(r),s=n(201),i=o(s),u=n(202),f=o(u),d="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},c=n(0),l=o(c);t.default={data:{title:"",subtitle:"网络请求",respones:[],cell:{title:"网络请求",list:[{title:"",btnText:"点击发起"}]},map:{get:"以 cml.get 发起请求",post:"以 cml.post 发起请求",request:"以 cml.request 发起 put 请求"},isShowLoading:!1},beforeCreate:function(e){this.method=e.method,this.title=["cml",this.method].join(".")},created:function(){this.cell.list[0].title=this.map[this.method]},methods:{onBtnClicked:function(e){var t=this,n=this.method;this.showLoading(),"get"===n&&(0,f.default)({url:"https://postman-echo.com/get?name=get"}).then(function(e){t.respones=t.flatResponses(e),t.hideLoading()}),"post"===n&&(0,i.default)({url:"https://postman-echo.com/post?name=post",data:{name:"cml"}}).then(function(e){t.respones=t.flatResponses(e),t.hideLoading()}),"request"===n&&(0,a.default)({url:"https://postman-echo.com/put?name=request",data:{name:"cml"},method:"PUT"}).then(function(e){t.respones=t.flatResponses(e),t.hideLoading()})},flatResponses:function(e){var t=[];return e&&Object.keys(e).filter(function(e){return~["args","headers","url","data"].indexOf(e)}).forEach(function(n){"string"==typeof e[n]&&t.push({name:n,value:e[n]}),"object"===d(e[n])&&t.push({name:n,child:Object.entries(e[n]).map(function(e){return e.join(":")})})}),t},showLoading:function(){this.isShowLoading=!0},hideLoading:function(){this.isShowLoading=!1}}},t.default=l.default.createPage(t.default).getOptions()},199:function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),a=n(200),s=n(1),i=function(){function e(){o(this,e)}return r(e,[{key:"request",value:function(e){var t=e.url,n=e.body,o=e.headers,r=e.method,s=e.cb;wx.request({url:t,data:n,dataType:"text",method:r,header:o,success:function(e){s({status:e.statusCode,data:e.data,headers:(0,a.parseHeader)(e.header)})},fail:function(e){s({status:-1,data:"request failed",headers:"{}"})}})}}]),e}();t.default=new i,(0,s.copyProtoProperty)(t.default)},200:function(e,t){function n(e){if(e.status>=200&&e.status<300)return e;var t=new Error(e.statusText);throw t.res=e,t.type="http",t}function o(e){return e.json().catch(function(t){throw t&&(t.type="json",t.res=e),t})}function r(e){var t=new FormData;return Object.keys(e).forEach(function(n){void 0!==e[n]&&t.append(n,e[n])}),t}function a(e){var t={};return Object.keys(e).forEach(function(n){var o=e[n];o instanceof Array&&(o=o[0]),t[n.toLowerCase()]=o}),JSON.stringify(t)}Object.defineProperty(t,"__esModule",{value:!0}),t.parseHeader=a;var s={"Content-Type":"application/x-www-form-urlencoded"},i={credentials:"same-origin"},u={form:"application/x-www-form-urlencoded",json:"application/json"};t.default={defaultHeaders:s,defaultOptions:i,defaultType:"form",contentTypeMap:u,filterStatus:n,parseJSON:o,toForm:r,parseHeader:a}},201:function(e,t,n){function o(e){return e.method="POST",(0,a.default)(e)}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var r=n(24),a=function(e){return e&&e.__esModule?e:{default:e}}(r)},202:function(e,t,n){function o(e){return e.method="GET",(0,a.default)(e)}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var r=n(24),a=function(e){return e&&e.__esModule?e:{default:e}}(r)},24:function(e,t,n){function o(e){var t=e.domain,n=e.url,o=e.data,a=void 0===o?{}:o,u=e.method,f=void 0===u?"GET":u,d=e.header,c=void 0===d?{}:d,l=e.contentType,p=void 0===l?"form":l,h=e.setting,m=void 0===h?{}:h,y=e.resDataType,v=void 0===y?"json":y;f=f.toUpperCase();var b=m.apiPrefix,g=void 0===b?(0,i.isNeedApiPrefix)(n):b,j=m.jsonp,w=void 0!==j&&j,_=m.credentials,O=void 0===_?"include":_;if(t){n=t+n}else g&&(n="https://cmljs.org"+n);switch(["GET","PUT","DELETE"].indexOf(f)>-1&&(n=(0,i.buildQueryStringUrl)(a,n),"GET"==f&&(a="")),p){case"form":"string"!=typeof a&&(a=(0,i.buildQueryStringUrl)(a)),c=r({},c,{"Content-Type":"application/x-www-form-urlencoded"});break;case"json":"string"!=typeof a&&(a=JSON.stringify(a)),c=r({},c,{"Content-Type":"application/json"})}return"string"!=typeof a&&(a=""),new Promise(function(e,t){s.default.request({url:n,body:a,setting:{apiPrefix:g,jsonp:w,credentials:O},method:f,headers:c,cb:function(n){var o=n.status,r=n.headers,a=n.data;if(o>=200&&o<300){if("json"===v&&"string"==typeof a)try{a=JSON.parse(a)}catch(e){console.warn('resDataType默认为"json", 尝试对返回内容进行JSON.parse, 但似乎出了些问题(若不希望对结果进行parse, 可传入resDataType: "text"): ',e)}e(a)}else"json"===v&&(a=(0,i.tryJsonParse)(a)),r=(0,i.tryJsonParse)(r),t({data:a,headers:r,status:o})}})})}Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e};t.default=o;var a=n(199),s=function(e){return e&&e.__esModule?e:{default:e}}(a),i=n(7)}},[196]);
+var __CML__GLOBAL = require("../../../manifest.js");
+__CML__GLOBAL.webpackJsonp([50],{
+
+/***/ "../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _cmlTtApi = __webpack_require__("./node_modules/cml-tt-api/index.js");
+
+var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  data: {
+    title: '',
+    subtitle: '网络请求',
+    respones: [],
+    cell: {
+      title: '网络请求',
+      list: [{
+        title: '',
+        btnText: '点击发起'
+      }]
+    },
+    map: {
+      get: '以 cml.get 发起请求',
+      post: '以 cml.post 发起请求',
+      request: '以 cml.request 发起 put 请求'
+    },
+    isShowLoading: false
+  },
+  beforeCreate: function beforeCreate(res) {
+    this.method = res.method;
+    this.title = ['cml', this.method].join(".");
+  },
+  created: function created() {
+    this.cell.list[0].title = this.map[this.method];
+  },
+
+  methods: {
+    onBtnClicked: function onBtnClicked(e) {
+      var _this = this;
+
+      var method = this.method;
+      this.showLoading();
+      method === 'get' && _cmlTtApi2.default.get({
+        url: 'https://postman-echo.com/get?name=get'
+      }).then(function (res) {
+        _this.respones = _this.flatResponses(res);
+        _this.hideLoading();
+      });
+      method === 'post' && _cmlTtApi2.default.post({
+        url: 'https://postman-echo.com/post?name=post',
+        data: {
+          name: 'cml'
+        }
+      }).then(function (res) {
+        _this.respones = _this.flatResponses(res);
+        _this.hideLoading();
+      });
+      method === 'request' && _cmlTtApi2.default.request({
+        url: 'https://postman-echo.com/put?name=request',
+        data: {
+          name: 'cml'
+        },
+        method: 'PUT'
+      }).then(function (res) {
+        _this.respones = _this.flatResponses(res);
+        _this.hideLoading();
+      });
+    },
+    flatResponses: function flatResponses(res) {
+      var results = [];
+      if (!!res) {
+        Object.keys(res).filter(function (key) {
+          return ~['args', 'headers', 'url', 'data'].indexOf(key);
+        }).forEach(function (key) {
+          if (typeof res[key] === 'string') {
+            results.push({
+              name: key,
+              value: res[key]
+            });
+          }
+          if (_typeof(res[key]) === 'object') {
+            results.push({
+              name: key,
+              child: Object.entries(res[key]).map(function (pairs) {
+                return pairs.join(":");
+              })
+            });
+          }
+        });
+      }
+      return results;
+    },
+    showLoading: function showLoading() {
+      this.isShowLoading = true;
+    },
+    hideLoading: function hideLoading() {
+      this.isShowLoading = false;
+    }
+  }
+};
+
+
+exports.default = _chameleonRuntime2.default.createPage(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/cml-extract-css-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/pages/api/sub-pages/request.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/cml-extract-css-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml");
+var __cml__script = __webpack_require__("../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/sub-pages/request.cml");
+
+
+/***/ })
+
+},["./src/pages/api/sub-pages/request.cml"]);

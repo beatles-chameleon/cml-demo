@@ -1,1 +1,535 @@
-var __CML__GLOBAL=require("../../manifest.js");__CML__GLOBAL.webpackJsonp([1],[,,function(e,t,n){function o(e,t,n){var o=arguments.length>3&&void 0!==arguments[3]?arguments[3]:function(){};i.default.callNative(e,t,n,o)}function a(e,t){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:function(){};i.default.listenNative(e,t,n)}Object.defineProperty(t,"__esModule",{value:!0}),t.callNative=o,t.listenNative=a;var r=n(151),i=function(e){return e&&e.__esModule?e:{default:e}}(r);i.default.initChannel()},function(e,t,n){e.exports=n.p+"static/img/icon-default_aeb0517.png"},,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"getClipBoardData",value:function(e){wx.getClipboardData({success:function(t){e({errno:0,errMsg:"",data:t.data})},fail:function(t){e({errno:-1,errMsg:"wx.getClipboardData fail",data:""})}})}},{key:"setClipBoardData",value:function(e,t){wx.setClipboardData({data:e,success:function(n){t({errno:0,errMsg:"",data:e})},fail:function(e){t({errno:-1,data:"",errMsg:"wx.setClipboardData fail"})}})}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)},,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,function(e,t,n){n(122),n(123)},function(e,t){},function(e,t,n){function o(e){return e&&e.__esModule?e:{default:e}}function a(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var r=n(124),i=o(r),u=n(13),c=o(u),l=n(127),f=o(l),s=n(129),d=o(s),p=n(131),m=o(p),y=n(133),g=o(y),v=n(134),b=o(v),h=n(23),w=o(h),_=n(14),x=o(_),S=n(5),O=o(S),P=n(136),N=o(P),k=n(4),M=o(k),q=n(138),j=o(q),T=n(140),C=o(T),I=n(42),U=o(I),A=n(143),D=o(A),B=n(10),L=o(B),W=n(147),E=o(W),R=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),J=n(149),F=o(J),Q=n(175),K=o(Q),X=n(0),G=o(X),V=function(){function e(){a(this,e),this.data={iconApiUri:n(21),cells:[{title:"启动参数",iconUri:n(3),list:[{method:"getLaunchOptionsSync",url:"",title:"获取启动参数"}]},{title:"CanIUse",iconUri:n(3),list:[{method:"canIUse",url:"",title:"CanIUse:showToast",extraData:{apiName:"showToast"}},{method:"canIUse",url:"",title:"CanIUse:showAnyToast",extraData:{apiName:"showAnyToast"}}]},{title:"设置页面标题",iconUri:n(3),list:[{title:"设置标题为: 自定义标题",method:"setTitle",extraData:{title:"自定义标题"}}]},{title:"交互反馈",iconUri:n(3),list:[{title:"toast 弹框",method:"showUx",extraData:{uX:"showToast",message:"toast 弹框"}},{title:"alert 弹框",method:"showUx",extraData:{uX:"alert",message:"alert 弹框"}},{title:"confirm 弹框",method:"showUx",extraData:{uX:"confirm",message:"confirm 弹框"}}]},{title:"选取照片",iconUri:n(3),list:[{title:"从相机获取",method:"chooseImage",extraData:{type:"camera"}},{title:"从相册获取",method:"chooseImage",extraData:{type:"album"}},{title:"菜单选择",method:"chooseImage",extraData:{type:"choice"}}]},{title:"路由导航",iconUri:n(3),list:[{title:"cml.navigateTo",method:"navigateTo"},{title:"cml.redirectTo",method:"redirectTo"}]},{title:"网络请求",iconUri:n(3),list:[{title:"cml.get 请求",method:"request",extraData:{method:"get"}},{title:"cml.post 请求",method:"request",extraData:{method:"post"}},{title:"cml.request 发起 put 请求",method:"request",extraData:{method:"request"}}]},{title:"WebSocket",iconUri:n(3),list:[{title:"查看 WebSocket 展示",method:"webSocket"}]},{title:"数据存储",iconUri:n(3),list:[{title:'存储 name: "ironman"',method:"storage",extraData:{action:"set"}},{title:"获取 name 值",method:"storage",extraData:{action:"get"}},{title:"删除 name 值",method:"storage",extraData:{action:"remove"}}]},{title:"地理位置",iconUri:n(3),list:[{title:"获取地理位置",method:"getGeo"}]},{title:"系统信息",iconUri:n(3),list:[{title:"获取系统信息",method:"getSystemInfo"}]},{title:"单位转换",iconUri:n(3),list:[{title:"px 转 cpx",method:"px2cpx"},{title:"cpx 转 px",method:"cpx2px"}]},{title:"剪贴板",iconUri:n(3),list:[{title:"设置剪贴板为 AA",method:"clipBoard",extraData:{action:"set",text:"AA"}},{title:"获取剪贴内容",method:"clipBoard",extraData:{action:"get"}}]},{title:"元素属性",iconUri:n(3),list:[{title:"获取页面顶部API文本的属性",method:"getRect"}]},{title:"动画",iconUri:n(3),list:[{title:"查看动画展示",method:"goAnimation"}]}]},this.methods={cellItemSeleted:function(e){var t=e.detail,n=t.method,o=t.extraData;this[n]&&this[n](o)},getLaunchOptionsSync:function(){var e=(0,E.default)();(0,L.default)({message:JSON.stringify(e)})},openNewBeatlesPage:function(){F.default.callNative("beatlesCommunicate","openNativeWebPage",{close_web:!1,url:"https://cmljs.org"})},callNativeLogin:function(){F.default.callNative("beatlesCommunicate","callNativeLogin",{},function(e){(0,L.default)({message:"返回登录结果: "+JSON.stringify(e)})})},onLoginChange:function(){F.default.listenNative("beatlesCommunicate","onLoginChange",function(e){(0,L.default)({message:"登录状态发生变化: "+JSON.stringify(e)})}),(0,L.default)({message:"注册登录状态变化事件成功"})},canIUse:function(e){var t=e.apiName,n=void 0===t?"":t;(0,D.default)(n).then(function(e){(0,L.default)({message:["当前版本支持",n].join(" ")})},function(e){(0,L.default)({message:["当前版本不支持",n].join(" ")})})},setTitle:function(e){var t=e.title,n=void 0===t?"":t;(0,U.default)(n)},showUx:function(e){var t=e.uX,n=void 0===t?"":t,o=e.message,a=void 0===o?"":o;"showToast"===n&&(0,L.default)({message:a}),"alert"===n&&(0,C.default)({message:a,confirmTitle:"好的"}),"confirm"===n&&(0,j.default)({message:a})},chooseImage:function(e){var t=e.type,n=void 0===t?"":t;(0,M.default)({path:"/pages/api/sub-pages/chooseImage",query:{type:n}})},getGeo:function(){(0,N.default)().then(function(e){(0,L.default)({message:JSON.stringify(e)})}).catch(function(e){(0,L.default)({message:e.message})})},getSystemInfo:function(){(0,O.default)().then(function(e){(0,L.default)({message:JSON.stringify(e),duration:2e3})})},px2cpx:function(){(0,L.default)({message:["1px 合 ",(0,x.default)(1),"cpx"].join("")})},cpx2px:function(){(0,L.default)({message:["1cpx 合 ",(0,w.default)(1),"px"].join("")})},clipBoard:function(e){var t=e.action,n=void 0===t?"":t;e.text;"get"===n?(0,b.default)().then(function(e){(0,L.default)({message:JSON.stringify(e)})}):(0,g.default)("AA").then(function(e){(0,L.default)({message:"剪贴板内容已设置为:AA"})})},storage:function(e){var t=e.action,n=void 0===t?"":t;"set"===n&&(0,m.default)("name","ironman").then(function(e){(0,L.default)({message:"name 已设置为 ironman"})}),"get"===n&&(0,d.default)("name").then(function(e){(0,L.default)({message:e})},function(e){(0,L.default)({message:e.message||"name 值已不存在"})}),"remove"===n&&(0,f.default)("name").then(function(e){(0,L.default)({message:"name 值已删除"})})},getRect:function(){(0,c.default)("titleText",this).then(function(e){(0,L.default)({message:JSON.stringify(e)})})},goAnimation:function(){(0,M.default)({path:"/pages/api/sub-pages/animation"})},request:function(e){var t=e.method,n=void 0===t?"":t;(0,M.default)({path:"/pages/api/sub-pages/request",query:{method:n}})},webSocket:function(){(0,M.default)({path:"/pages/api/sub-pages/webSocket"})},navigateTo:function(){(0,M.default)({path:"/pages/api/sub-pages/navigate",query:{method:"navigateTo"}})},redirectTo:function(){(0,i.default)({path:"/pages/api/sub-pages/navigate",query:{method:"redirectTo"}})}}}return R(e,[{key:"created",value:function(){var e=K.default.getUnsupportApis();this.cells=this.cells.filter(function(t){return!~e.indexOf(t.title)})}}]),e}();t.default=new V,t.default=G.default.createPage(t.default).getOptions()},function(e,t,n){function o(e){var t=e.query||{},n=e.path||"",o=e.url||"";r.default.redirectTo({path:n,url:o,query:t})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var a=n(125),r=function(e){return e&&e.__esModule?e:{default:e}}(a)},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(7),i=n(1),u=function(){function e(){o(this,e)}return a(e,[{key:"redirectTo",value:function(e){var t=e.path,n=e.query;t=(0,r.buildQueryStringUrl)(n,t),wx.redirectTo({url:t})}}]),e}();t.default=new u,(0,i.copyProtoProperty)(t.default)},,function(e,t,n){function o(e){return new Promise(function(t,n){r.default.removeStorage(e,function(e){0===e.errno?t():n(e.errMsg)})})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var a=n(128),r=function(e){return e&&e.__esModule?e:{default:e}}(a)},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"removeStorage",value:function(e,t){try{wx.removeStorageSync(e),t({errno:0,errMsg:"success",data:""})}catch(e){var n=void 0;n="string"!=typeof e?JSON.stringify(e):e,t({errno:-1,errMsg:n,data:""})}}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)},function(e,t,n){function o(e){return new Promise(function(t,n){r.default.getStorage(e,function(e){0===e.errno?(e.data=(0,i.tryJsonParse)(e.data),t(e.data)):n(e.errMsg)})})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var a=n(130),r=function(e){return e&&e.__esModule?e:{default:e}}(a),i=n(7)},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"getStorage",value:function(e,t){try{var n=wx.getStorageSync(e);n&&"string"!=typeof n&&(n=JSON.stringify(n)),t({errno:0,errMsg:"success",data:null!==n?n:""})}catch(e){var o=void 0;o="string"!=typeof e?JSON.stringify(e):e,t({errno:-1,errMsg:o,data:""})}}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)},function(e,t,n){function o(e,t){var n=void 0===t?"undefined":a(t);return"string"!==n&&(t=JSON.stringify(t)),"undefined"===n?(console.warn('The type of storage value can not be "undefined"'),Promise.reject('The type of storage value cannot be "undefined"')):new Promise(function(n,o){i.default.setStorage(e,t,function(e){0===e.errno?n(e.data):o(e.errMsg)})})}Object.defineProperty(t,"__esModule",{value:!0});var a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t.default=o;var r=n(132),i=function(e){return e&&e.__esModule?e:{default:e}}(r)},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"setStorage",value:function(e,t,n){try{wx.setStorage({key:e,data:t,success:function(){n({errno:0,errMsg:"success",data:t})},fail:function(){n({errno:-1,errMsg:"fail",data:""})}})}catch(e){var o=void 0;o="string"!=typeof e?JSON.stringify(e):e,n({errno:-1,errMsg:o,data:""})}}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)},function(e,t,n){function o(e){return new Promise(function(t,n){r.default.setClipBoardData(e,function(e){0===e.errno?t(e.data):n(e.errMsg)})})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var a=n(41),r=function(e){return e&&e.__esModule?e:{default:e}}(a)},function(e,t,n){function o(){return new Promise(function(e,t){r.default.getClipBoardData(function(n){0===n.errno?e(n.data):t(n.msg)})})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var a=n(41),r=function(e){return e&&e.__esModule?e:{default:e}}(a)},,function(e,t,n){function o(){return new Promise(function(e,t){r.default.getLocationInfo(function(n){0===n.errno?e(n.data):t(n.errMsg)})})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var a=n(137),r=function(e){return e&&e.__esModule?e:{default:e}}(a)},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"getLocationInfo",value:function(e){wx.getLocation({type:"wgs84",success:function(t){var n=+t.latitude,o=+t.longitude;e({errno:0,errMsg:"",data:{lat:n,lng:o}})},fail:function(){e({errno:-1,errMsg:"getLocation failed",data:{lat:0,lng:0}})}})}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)},function(e,t,n){function o(e){var t=e.message,n=void 0===t?"":t,o=e.confirmTitle,a=void 0===o?"确定":o,i=e.cancelTitle,u=void 0===i?"取消":i;return new Promise(function(e,t){r.default.confirm({message:n,confirmTitle:a,cancelTitle:u},function(t){e(t)},function(){t()})})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var a=n(139),r=function(e){return e&&e.__esModule?e:{default:e}}(a)},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"confirm",value:function(e,t,n){var o=e.message,a=e.confirmTitle,r=e.cancelTitle;wx.showModal({title:"",content:o,confirmText:a,cancelText:r,success:function(e){t(e.confirm?a:r)},fail:function(){n()}})}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)},function(e,t,n){function o(e){var t=e.message,n=void 0===t?"":t,o=e.confirmTitle,a=void 0===o?"确定":o;return new Promise(function(e,t){r.default.alert({message:n,confirmTitle:a},function(){e()},function(){t()})})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var a=n(141),r=function(e){return e&&e.__esModule?e:{default:e}}(a)},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"alert",value:function(e,t,n){var o=e.message,a=e.confirmTitle;wx.showModal({showCancel:!1,title:"",content:o,confirmText:a,success:function(){t(a)},fail:function(){n(a)}})}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)},,function(e,t,n){function o(e){return new Promise(function(t,n){r.default.canIUse(e,function(e){e?t(e):n(e)})})}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var a=n(144),r=function(e){return e&&e.__esModule?e:{default:e}}(a)},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(145),i=n(1),u=function(){function e(){o(this,e)}return a(e,[{key:"canIUse",value:function(e,t){if(!r.api[e])return void t(!1);if(r.api[e].allCanUse)return void t(!0);var n=r.api[e].baseOn.wx;t(wx.canIUse(n))}}]),e}();t.default=new u,(0,i.copyProtoProperty)(t.default)},function(e,t){Object.defineProperty(t,"__esModule",{value:!0});var n={alert:{baseOn:{sdk:"alert",web:"alert",wx:"showModal",qq:"showModal",baidu:"showModal",alipay:"alert",weex:"modal.alert"}},cancelAnimationFrame:{allCanUse:!0,baseOn:{sdk:"cancelAnimationFrame",web:"cancelAnimationFrame",wx:"cancelAnimationFrame",qq:"cancelAnimationFrame",baidu:"cancelAnimationFrame",weex:"cancelAnimationFrame",alipay:"cancelAnimationFrame"}},canIUse:{allCanUse:!0,baseOn:{sdk:"canIUse",web:"canIUse",wx:"canIUse",qq:"canIUse",baidu:"canIUse",weex:"canIUse",alipay:"canIUse"}},inSDK:{allCanUse:!0,baseOn:{sdk:"inSDK",web:"inSDK",wx:"",qq:"",baidu:"",weex:""}},chooseImage:{baseOn:{sdk:"chooseImage",web:"chooseImage",wx:"chooseImage",qq:"chooseImage",baidu:"chooseImage",weex:"",alipay:"chooseImage"}},close:{baseOn:{sdk:"close",web:"close",wx:"navigateBack",qq:"navigateBack",baidu:"navigateBack",weex:"",alipay:"navigateBack"}},confirm:{baseOn:{sdk:"confirm",web:"confirm",wx:"showModal",qq:"showModal",baidu:"showModal",weex:"modal.confirm",alipay:"confirm"}},cpx2px:{baseOn:{sdk:"getSystemInfo",web:"getSystemInfo",wx:"getSystemInfoSync",qq:"getSystemInfoSync",baidu:"getSystemInfoSync",weex:"getSystemInfo",alipay:"getSystemInfoSync"}},get:{baseOn:{sdk:"request",web:"fetch",wx:"request",qq:"request",baidu:"request",weex:"fetch",alipay:"httpRequest"}},getClipBoardData:{baseOn:{sdk:"getClipBoardData",web:"getClipboardData",wx:"getClipboardData",qq:"getClipboardData",baidu:"getClipboardData",weex:"clipboard.getString",alipay:"getClipboard"}},getLocationInfo:{baseOn:{sdk:"getLocationInfo",web:"getCurrentPosition",wx:"getLocation",qq:"getLocation",baidu:"getLocation",weex:"",alipay:"getLocation"}},getRect:{baseOn:{sdk:"getComponentRect",web:"getComputedStyle",wx:"createSelectorQuery",qq:"createSelectorQuery",baidu:"createSelectorQuery",weex:"getComponentRect",alipay:""}},getStorage:{baseOn:{sdk:"getStorage",web:"localStorage.getItem",wx:"getStorageSync",qq:"getStorageSync",baidu:"getStorageSync",weex:"storage.getItem",alipay:"getStorageSync"}},getSystemInfo:{baseOn:{sdk:"getSystemInfo",web:"getSystemInfo",wx:"getSystemInfo",qq:"getSystemInfo",baidu:"getSystemInfo",weex:"getSystemInfo",alipay:"getSystemInfo"}},initSocket:{baseOn:{sdk:"initSocket",web:"initSocket",wx:"connectSocket",qq:"connectSocket",baidu:"connectSocket",weex:"",alipay:"connectSocket"}},getLaunchOptionsSync:{baseOn:{sdk:"getQueryObjSync",web:"location.href",wx:"getLaunchOptionsSync",qq:"getLaunchOptionsSync",baidu:"",weex:"weex.config.bundleUrl",alipay:""}},navigateBack:{baseOn:{sdk:"navigateBack",web:"navigateBack",wx:"navigateBack",qq:"navigateBack",baidu:"navigateBack",weex:"navigateBack",alipay:"navigateBack"}},navigateTo:{baseOn:{sdk:"navigateTo",web:"navigateTo",wx:"navigateTo",qq:"navigateTo",baidu:"navigateTo",weex:"navigateTo",alipay:"navigateTo"}},open:{baseOn:{sdk:"open",web:"location.href",wx:"navigateToMiniProgram",qq:"navigateToMiniProgram",baidu:"navigateToSmartProgram",weex:"navigator.push",alipay:"navigateToMiniProgram"}},post:{baseOn:{sdk:"request",web:"fetch",wx:"request",qq:"request",baidu:"request",weex:"fetch",alipay:"httpRequest"}},px2cpx:{baseOn:{sdk:"getSystemInfo",web:"getSystemInfo",wx:"getSystemInfoSync",qq:"getSystemInfoSync",baidu:"getSystemInfoSync",weex:"getSystemInfo",alipay:""}},redirectTo:{baseOn:{sdk:"redirectTo",web:"router.replace",wx:"redirectTo",qq:"redirectTo",baidu:"redirectTo",weex:"router.replace",alipay:"redirectTo"}},reload:{baseOn:{sdk:"reload",web:"location.reload",wx:"",qq:"",baidu:"",weex:"",alipay:""}},removeStorage:{baseOn:{sdk:"removeStorage",web:"localStorage.removeItem",wx:"removeStorageSync",qq:"removeStorageSync",baidu:"removeStorageSync",weex:"storage.removeItem",alipay:"removeStorageSync"}},request:{baseOn:{sdk:"request",web:"fetch",wx:"request",qq:"request",baidu:"request",weex:"fetch",alipay:"httpRequest"}},requestAnimationFrame:{allCanUse:!0,baseOn:{sdk:"setTimeout",web:"requestAnimationFrame",wx:"setTimeout",qq:"setTimeout",baidu:"setTimeout",weex:"requestAnimationFrame",alipay:"requestAnimationFrame"}},setClipBoardData:{baseOn:{sdk:"setClipBoardData",web:"setClipBoardData",wx:"setClipBoardData",qq:"setClipBoardData",baidu:"setClipBoardData",weex:"clipboard.setString",alipay:"setClipboard"}},setStorage:{baseOn:{sdk:"setStorage",web:"localStorage.setItem",wx:"setStorageSync",qq:"setStorageSync",baidu:"setStorageSync",weex:"storage.setItem",alipay:"setStorageSync"}},setTitle:{baseOn:{sdk:"setTitle",web:"document.title",wx:"setNavigationBarTitle",qq:"setNavigationBarTitle",baidu:"setNavigationBarTitle",weex:"",alipay:"setNavigationBar"}},showToast:{baseOn:{sdk:"showToast",web:"showToast",wx:"showToast",qq:"showToast",baidu:"showToast",weex:"modal.toast",alipay:"showToast"}}};t.api=n},,function(e,t,n){function o(){return r.default.getLaunchOptionsSync()}Object.defineProperty(t,"__esModule",{value:!0}),t.default=o;var a=n(148),r=function(e){return e&&e.__esModule?e:{default:e}}(a)},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"getLaunchOptionsSync",value:function(){return wx.getLaunchOptionsSync()}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)},function(e,t,n){function o(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}Object.defineProperty(t,"__esModule",{value:!0});var a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},r=n(150),i=o(r),u=n(152),c=o(u),l=n(153),f=o(l),s=n(154),d=o(s),p=n(155),m=o(p),y=n(157),g=o(y),v=n(158),b=o(v),h=n(159),w=o(h),_=n(160),x=o(_),S=n(161),O=o(S),P=n(162),N=o(P),k=n(163),M=o(k),q=n(165),j=o(q),T=n(166),C=o(T),I=n(167),U=o(I),A=n(169),D=o(A),B=n(170),L=o(B),W=n(171),E=o(W),R=n(172),J=o(R),F=n(2),Q=o(F),K=n(174),X=o(K);t.default=a({},i,c,f,d,m,g,b,w,x,O,N,M,j,C,U,D,J,L,E,J,Q,X)},function(e,t,n){function o(e,t){(0,a.callNative)(r,i,e,function(e){if(0==e.errno){var n="data:image/"+e.data.type+";base64,"+e.data.image;e.data.base64=n}else e.data={type:"",image:"",base64:""};t(e)})}Object.defineProperty(t,"__esModule",{value:!0}),t.chooseImage=o;var a=n(2),r="cml",i="chooseImage";o.prototype.moduleName=r,o.prototype.methodName=i},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"initChannel",value:function(){}},{key:"callNative",value:function(e,t,n,o){}},{key:"listenNative",value:function(e,t,n){}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)},function(e,t,n){function o(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=arguments[1];(0,r.callNative)(i,u,e,function(e){t(e)})}function a(e,t){var n=e.data,o=void 0===n?"":n;(0,r.callNative)(i,c,{data:o},function(e){t(e)})}Object.defineProperty(t,"__esModule",{value:!0}),t.getClipBoardData=o,t.setClipBoardData=a;var r=n(2),i="clipboard",u="getClipBoardData",c="setClipBoardData";o.prototype.moduleName=i,o.prototype.methodName=u,a.prototype.moduleName=i,a.prototype.methodName=c},function(e,t,n){function o(){(0,a.callNative)(r,i,{},function(){})}Object.defineProperty(t,"__esModule",{value:!0}),t.close=o;var a=n(2),r="cml",i="closePage";o.prototype.moduleName=r,o.prototype.methodName=i},function(e,t,n){function o(e,t){(0,a.callNative)(r,i,e,function(e){t(e)})}Object.defineProperty(t,"__esModule",{value:!0}),t.getLocationInfo=o;var a=n(2),r="cml",i="getLocationInfo";o.prototype.moduleName=r,o.prototype.methodName=i},function(e,t,n){function o(e){var t=e.url,n=e.commonPatchParams,o=e.extraOptions&&e.extraOptions.closeCurrent||!1;t=(0,r.getUrlWithConnector)(t)+(0,r.queryStringify)(n);var c=(0,r.getOpenObj)(t),l=c.weex?c.weex:c.web;(0,a.callNative)(i,u,{url:l,closeCurrent:o},function(){})}Object.defineProperty(t,"__esModule",{value:!0}),t.open=o;var a=n(2),r=n(156),i="cml",u="openPage";o.prototype.moduleName=i,o.prototype.methodName=u},function(e,t,n){(function(e){function n(e,t){var n={};for(var o in e)t.indexOf(o)>=0||Object.prototype.hasOwnProperty.call(e,o)&&(n[o]=e[o]);return n}function o(e,t){return Object.prototype.toString.call(e)==="[object "+t+"]"}function a(e){return o(e,"Function")}function r(e){return o(e,"String")}function i(e){return o(e,"Object")}function u(e){return o(e,"Array")}function c(e){return o(e,"Undefined")}function l(e){for(key in e)if(e.hasOwnProperty(key))return!1;return!0}function f(){}function s(e){var t="&",n=null;if(e&&Object.keys(e).length>0){n=Object.keys(e);for(var o=0;o<n.length;o++){var a=n[o];t+=a+"="+encodeURIComponent(e[a])+"&"}}return t}function d(e){var t="&",n=null;if(e&&Object.keys(e).length>0){n=Object.keys(e);for(var o=0;o<n.length;o++){var a=n[o];t+=a+"="+encodeURIComponent(e[a])+"&"}}return t}function p(e){e=e||"";for(var t=e.split(/(\?|&)/),n={},o=0;o<t.length;o++)if(-1!==t[o].indexOf("=")){var a=t[o].match(/([^=]*)=(.*)/);n[a[1]]=a[2]}return n}function m(e){return/^\/[^\/]/.test(e)}function y(t){return e&&e.env?"https://cmljs.org"+t:t}function g(e){return r(e)&&/[\{\[].*[\}\]]/.test(e)&&(e=JSON.parse(e)),e}function v(e){for(var t=e,n=t.split(/(\?|&)/),o={},a=0;a<n.length;a++)if(-1!==n[a].indexOf("=")){var r=n[a].match(/([^=]*)=(.*)/);o[r[1]]=decodeURIComponent(r[2])}return o}function b(e){var t=e.split("?")[0],o=v(e),a=o.weixin_appid,r=void 0===a?"":a,i=o.weixin_path,u=void 0===i?"":i,c=o.weixin_envVersion,l=void 0===c?"":c,f=o.weex_path,s=void 0===f?"":f,p=o.wx_addr,m=void 0===p?"":p,y=o.cml_addr,g=void 0===y?"":y,b=n(o,["weixin_appid","weixin_path","weixin_envVersion","weex_path","wx_addr","cml_addr"]),h="";return g&&(g=g+"?_cml_r="+~~(1e5*Math.random()),g=encodeURIComponent(g),h=t+"?weex_path="+s+d(b)+"&cml_addr="+g),m&&(m=m+"?_cml_r="+~~(1e5*Math.random()),m=encodeURIComponent(m),h=t+"?weex_path="+s+d(b)+"&wx_addr="+m),{weex:h,web:t+"?"+d(b),wx:{appId:r,path:u,extraData:b,envVersion:l}}}function h(e){return e+(e.includes("?")?"&":"?")}function w(e,t,n){return e=_(e),n=_(n),-1!==t.indexOf("=")&&e===n||(-1!==t.indexOf(">")&&e>n||-1!==t.indexOf("<")&&e<n)}function _(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"";e=e.split("."),e.length=4;var t=[];return e.forEach(function(e){e*=1,e?t.push(e>=10?e:"0"+e):t.push("00")}),parseInt(t.join(""),10)}Object.defineProperty(t,"__esModule",{value:!0}),t.isFn=a,t.isStr=r,t.isObj=i,t.isArray=u,t.isUndefined=c,t.isEmpty=l,t.noop=f,t.parseQuery=s,t.queryStringify=d,t.queryParse=p,t.isNeedApiPrefix=m,t.addApiPrefix=y,t.tryJsonParse=g,t.getQueryParamsFromSearchStr=v,t.getOpenObj=b,t.getUrlWithConnector=h,t.compareVersion=w}).call(t,n(32))},function(e,t,n){function o(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};(0,a.callNative)(r,i,e,function(){})}Object.defineProperty(t,"__esModule",{value:!0}),t.reload=o;var a=n(2),r="cml",i="reloadPage";o.prototype.moduleName=r,o.prototype.methodName=i},function(e,t,n){function o(e){var t=e.url,n=e.headers,o=e.body,u=e.method,c=e.cb,l={url:t,method:u,headers:n,type:"text"};"get"!=u.toLocaleLowerCase()&&(l.body=o),(0,a.callNative)(r,i,l,function(e){var t=e.errno,n=e.data,o=void 0===n?"":n;0==t&&c(o)})}Object.defineProperty(t,"__esModule",{value:!0}),t.request=o;var a=n(2),r="stream",i="fetch";o.prototype.moduleName=r,o.prototype.methodName=i},function(e,t,n){function o(){(0,a.callNative)(r,i,{},function(){})}Object.defineProperty(t,"__esModule",{value:!0}),t.rollbackWeb=o;var a=n(2),r="cml",i="rollbackWeb";o.prototype.moduleName=r,o.prototype.methodName=i},function(e,t,n){function o(e){var t=e.url;return r.WebSocket(t),r}Object.defineProperty(t,"__esModule",{value:!0}),t.initSocket=o;var a=n(2);o.prototype.moduleName="webSocket",o.prototype.methodName="WebSocket";var r={WebSocket:function(e){this._callAdapter("WebSocket",{url:e})},onopen:function(e){this._listenAdapter("onopen",e)},onmessage:function(e){this._listenAdapter("onmessage",e)},onerror:function(e){this._listenAdapter("onerror",e)},onclose:function(e){this._listenAdapter("onclose",e)},send:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};this._callAdapter("send",e)},close:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{code:0,reason:"close"};this._callAdapter("close",e)},_callAdapter:function(e,t){(0,a.callNative)("webSocket",e,t,function(){})},_listenAdapter:function(e,t){(0,a.listenNative)("webSocket",e,t)}}},function(e,t,n){function o(e,t){(0,i.callNative)(u,c,e,function(e){t(e)})}function a(e,t){(0,i.callNative)(u,l,e,function(e){t(e)})}function r(e,t){(0,i.callNative)(u,f,e,function(e){t(e)})}Object.defineProperty(t,"__esModule",{value:!0}),t.setStorage=o,t.getStorage=a,t.removeStorage=r;var i=n(2),u="storage",c="setStorage",l="getStorage",f="removeStorage";o.prototype.moduleName=u,o.prototype.methodName=c,a.prototype.moduleName=u,a.prototype.methodName=l,r.prototype.moduleName=u,r.prototype.methodName=f},function(e,t,n){function o(e,t){(0,a.callNative)(r,i,e,function(e){e.data.extraParams.os=e.data.os;try{e.data.extraParams.deviceModel=WXEnvironment&&WXEnvironment.deviceModel||""}catch(e){}var n=e.data,o=n.deviceWidth,a=n.deviceHeight,r=n.scale,i=e.data.extraParams.viewHeight;e.data.viewportWidth=o/r,e.data.viewportHeight=(i||a)/r,t(e)})}Object.defineProperty(t,"__esModule",{value:!0}),t.getSystemInfo=o;var a=n(2),r="cml",i="getSystemInfo";o.prototype.moduleName=r,o.prototype.methodName=i},function(e,t,n){(function(e){function o(t,n){var o=t.method,u=this[o]&&this[o].prototype.moduleName,c=this[o]&&this[o].prototype.methodName;e&&o?(0,a.callNative)(r,i,{module:u,method:c},n):n(this[o]?!0:!1)}Object.defineProperty(t,"__esModule",{value:!0}),t.canIUse=o;var a=n(2),r="cml",i="canIUse";o.prototype.moduleName=r,o.prototype.methodName=i}).call(t,n(164)(e))},function(e,t){e.exports=function(e){return e.webpackPolyfill||(e.deprecate=function(){},e.paths=[],e.children||(e.children=[]),Object.defineProperty(e,"loaded",{enumerable:!0,get:function(){return e.l}}),Object.defineProperty(e,"id",{enumerable:!0,get:function(){return e.i}}),e.webpackPolyfill=1),e}},function(e,t,n){function o(e,t){(0,a.callNative)(r,i,e,t)}Object.defineProperty(t,"__esModule",{value:!0}),t.getSDKInfo=o;var a=n(2),r="cml",i="getSDKInfo";o.prototype.moduleName=r,o.prototype.methodName=i},function(e,t,n){function o(e){(0,a.callNative)(r,i,e,function(){})}Object.defineProperty(t,"__esModule",{value:!0}),t.setTitle=o;var a=n(2),r="cml",i="setTitle";o.prototype.moduleName=r,o.prototype.methodName=i},function(e,t,n){function o(){return r.default.getQueryObjSync()}Object.defineProperty(t,"__esModule",{value:!0}),t.getQueryObjSync=o;var a=n(168),r=function(e){return e&&e.__esModule?e:{default:e}}(a);o.prototype.moduleName="cml",o.prototype.methodName="getLaunchUrl"},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"getQueryObjSync",value:function(){}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)},function(e,t,n){function o(e,t){(0,a.callNative)(r,i,e,t)}Object.defineProperty(t,"__esModule",{value:!0}),t.getLaunchUrl=o;var a=n(2),r="cml",i="getLaunchUrl";o.prototype.moduleName=r,o.prototype.methodName=i},function(e,t,n){function o(e){(0,i.callNative)(u,c,e,function(){})}function a(e,t){(0,i.callNative)(u,l,e,t)}function r(e,t,n){(0,i.callNative)(u,f,e,t)}Object.defineProperty(t,"__esModule",{value:!0}),t.showToast=o,t.alert=a,t.confirm=r;var i=n(2),u="modal",c="showToast",l="alert",f="confirm";o.prototype.moduleName=u,o.prototype.methodName=c,a.prototype.moduleName=u,a.prototype.methodName=l,r.prototype.moduleName=u,r.prototype.methodName=f},function(e,t){function n(){return!!this.getQueryObjSync().cml_sdk}Object.defineProperty(t,"__esModule",{value:!0}),t.inSDK=n},function(e,t,n){function o(e,t,n,o){r.default.getComponentRect.apply(r.default,arguments)}Object.defineProperty(t,"__esModule",{value:!0}),t.getComponentRect=o;var a=n(173),r=function(e){return e&&e.__esModule?e:{default:e}}(a);o.prototype.moduleName="dom",o.prototype.methodName="getComponentRect"},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"getComponentRect",value:function(e,t){}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)},function(e,t,n){function o(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:function(){};(0,s.callNative)(d,"create",e,function(e){t(e)})}function a(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:function(){};(0,s.callNative)(d,"play",e,function(e){t(e)})}function r(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:function(){};(0,s.callNative)(d,"pause",e,function(e){t(e)})}function i(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:function(){};(0,s.callNative)(d,"seekTo",e,function(e){t(e)})}function u(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:function(){};(0,s.callNative)(d,"currentPos",e,function(e){t(e)})}function c(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:function(){};(0,s.callNative)(d,"destroy",e,function(e){t(e)})}function l(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:function(){};(0,s.listenNative)(d,"onBufferingChange",function(t){e(t)})}function f(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:function(){};(0,s.listenNative)(d,"onStatusChange",function(t){e(t)})}Object.defineProperty(t,"__esModule",{value:!0}),t.createWeexAudio=o,t.playWeexAudio=a,t.pauseWeexAudio=r,t.seekToWeexAudio=i,t.getWeexAudioCurrentPos=u,t.destroyAudio=c,t.audioBufferChange=l,t.audioStatusChange=f;var s=n(2),d="audio"},function(e,t,n){function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){function e(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,n,o){return n&&e(t.prototype,n),o&&e(t,o),t}}(),r=n(1),i=function(){function e(){o(this,e)}return a(e,[{key:"getUnsupportApis",value:function(){return[]}}]),e}();t.default=new i,(0,r.copyProtoProperty)(t.default)}],[121]);
+var __CML__GLOBAL = require("../../manifest.js");
+__CML__GLOBAL.webpackJsonp([8],{
+
+/***/ "../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/api.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+// import bridge from 'chameleon-bridge';
+
+
+var _cmlTtApi = __webpack_require__("./node_modules/cml-tt-api/index.js");
+
+var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
+
+var _unsupported = __webpack_require__("./src/components/unsupported/unsupported.interface");
+
+var _unsupported2 = _interopRequireDefault(_unsupported);
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Home = function () {
+  function Home() {
+    _classCallCheck(this, Home);
+
+    this.data = {
+      iconApiUri: __webpack_require__("./src/assets/images/api/icon-api.png"),
+      cells: [{
+        title: '启动参数',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          method: 'getLaunchOptionsSync',
+          url: '',
+          title: '获取启动参数'
+        }]
+      }, {
+        title: 'CanIUse',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          method: 'canIUse',
+          url: '',
+          title: 'CanIUse:showToast',
+          extraData: {
+            apiName: 'showToast'
+          }
+        }, {
+          method: 'canIUse',
+          url: '',
+          title: 'CanIUse:showAnyToast',
+          extraData: {
+            apiName: 'showAnyToast'
+          }
+        }]
+      }, {
+        title: '设置页面标题',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: '设置标题为: 自定义标题',
+          method: 'setTitle',
+          extraData: {
+            title: '自定义标题'
+          }
+        }]
+      }, {
+        title: '交互反馈',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: 'toast 弹框',
+          method: 'showUx',
+          extraData: {
+            uX: 'showToast',
+            message: 'toast 弹框'
+          }
+        }, {
+          title: 'alert 弹框',
+          method: 'showUx',
+          extraData: {
+            uX: 'alert',
+            message: 'alert 弹框'
+          }
+        }, {
+          title: 'confirm 弹框',
+          method: 'showUx',
+          extraData: {
+            uX: 'confirm',
+            message: 'confirm 弹框'
+          }
+        }]
+      }, {
+        title: '选取照片',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: '从相机获取',
+          method: 'chooseImage',
+          extraData: {
+            type: 'camera'
+          }
+        }, {
+          title: '从相册获取',
+          method: 'chooseImage',
+          extraData: {
+            type: 'album'
+          }
+        }, {
+          title: '菜单选择',
+          method: 'chooseImage',
+          extraData: {
+            type: 'choice'
+          }
+        }]
+      }, {
+        title: '路由导航',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: 'cml.navigateTo',
+          method: 'navigateTo'
+        }, {
+          title: 'cml.redirectTo',
+          method: 'redirectTo'
+        }]
+      }, {
+        title: '网络请求',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: 'cml.get 请求',
+          method: 'request',
+          extraData: {
+            method: 'get'
+          }
+        }, {
+          title: 'cml.post 请求',
+          method: 'request',
+          extraData: {
+            method: 'post'
+          }
+        }, {
+          title: 'cml.request 发起 put 请求',
+          method: 'request',
+          extraData: {
+            method: 'request'
+          }
+        }]
+      }, {
+        title: 'WebSocket',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: '查看 WebSocket 展示',
+          method: 'webSocket'
+        }]
+      }, {
+        title: '数据存储',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: '存储 name: "ironman"',
+          method: 'storage',
+          extraData: {
+            action: 'set'
+          }
+        }, {
+          title: '获取 name 值',
+          method: 'storage',
+          extraData: {
+            action: 'get'
+          }
+        }, {
+          title: '删除 name 值',
+          method: 'storage',
+          extraData: {
+            action: 'remove'
+          }
+        }]
+      }, {
+        title: '地理位置',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: '获取地理位置',
+          method: 'getGeo'
+        }]
+      }, {
+        title: '系统信息',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: '获取系统信息',
+          method: 'getSystemInfo'
+        }]
+      }, {
+        title: '单位转换',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: 'px 转 cpx',
+          method: 'px2cpx'
+        }, {
+          title: 'cpx 转 px',
+          method: 'cpx2px'
+        }]
+      }, {
+        title: '剪贴板',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: '设置剪贴板为 AA',
+          method: 'clipBoard',
+          extraData: {
+            action: 'set',
+            text: 'AA'
+          }
+        }, {
+          title: '获取剪贴内容',
+          method: 'clipBoard',
+          extraData: {
+            action: 'get'
+          }
+        }]
+      }, {
+        title: '元素属性',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: '获取页面顶部API文本的属性',
+          method: 'getRect'
+        }]
+      }, {
+        title: '动画',
+        iconUri: __webpack_require__("./src/assets/images/api/icon-default.png"),
+        list: [{
+          title: '查看动画展示',
+          method: 'goAnimation'
+        }]
+      }]
+    };
+    this.methods = {
+      cellItemSeleted: function cellItemSeleted(e) {
+        var _e$detail = e.detail,
+            method = _e$detail.method,
+            extraData = _e$detail.extraData;
+
+        this[method] && this[method](extraData);
+      },
+      getLaunchOptionsSync: function getLaunchOptionsSync() {
+        var options = _cmlTtApi2.default.getLaunchOptionsSync();
+        _cmlTtApi2.default.showToast({
+          message: JSON.stringify(options)
+        });
+      },
+      openNewBeatlesPage: function openNewBeatlesPage() {
+        // bridge.callNative('beatlesCommunicate', 'openNativeWebPage', {
+        //   close_web: false,
+        //   url: 'https://cmljs.org'
+        // })
+      },
+      callNativeLogin: function callNativeLogin() {
+        // bridge.callNative('beatlesCommunicate', 'callNativeLogin', {}, res => {
+        //   cml.showToast({
+        //     message: '返回登录结果: ' + JSON.stringify(res)
+        //   })
+        // })
+      },
+      onLoginChange: function onLoginChange() {
+        // bridge.listenNative('beatlesCommunicate', 'onLoginChange', res => {
+        //   cml.showToast({
+        //     message: '登录状态发生变化: ' + JSON.stringify(res)
+        //   })
+        // })
+        // cml.showToast({
+        //   message: '注册登录状态变化事件成功'
+        // })
+      },
+      canIUse: function canIUse(_ref) {
+        var _ref$apiName = _ref.apiName,
+            apiName = _ref$apiName === undefined ? '' : _ref$apiName;
+
+        _cmlTtApi2.default.canIUse(apiName).then(function (res) {
+          _cmlTtApi2.default.showToast({
+            message: ['当前版本支持', apiName].join(" ")
+          });
+        }, function (err) {
+          _cmlTtApi2.default.showToast({
+            message: ['当前版本不支持', apiName].join(" ")
+          });
+        });
+      },
+      setTitle: function setTitle(_ref2) {
+        var _ref2$title = _ref2.title,
+            title = _ref2$title === undefined ? '' : _ref2$title;
+
+        _cmlTtApi2.default.setTitle(title);
+      },
+      showUx: function showUx(_ref3) {
+        var _ref3$uX = _ref3.uX,
+            uX = _ref3$uX === undefined ? '' : _ref3$uX,
+            _ref3$message = _ref3.message,
+            message = _ref3$message === undefined ? '' : _ref3$message;
+
+        uX === 'showToast' && _cmlTtApi2.default.showToast({ message: message });
+        uX === 'alert' && _cmlTtApi2.default.alert({ message: message, confirmTitle: '好的' });
+        uX === 'confirm' && _cmlTtApi2.default.confirm({ message: message });
+      },
+      chooseImage: function chooseImage(_ref4) {
+        var _ref4$type = _ref4.type,
+            type = _ref4$type === undefined ? '' : _ref4$type;
+
+        _cmlTtApi2.default.navigateTo({
+          path: '/pages/api/sub-pages/chooseImage',
+          query: {
+            type: type
+          }
+        });
+      },
+      getGeo: function getGeo() {
+        _cmlTtApi2.default.getLocationInfo().then(function (res) {
+          _cmlTtApi2.default.showToast({
+            message: JSON.stringify(res)
+          });
+        }).catch(function (err) {
+          _cmlTtApi2.default.showToast({
+            message: err.message
+          });
+        });
+      },
+      getSystemInfo: function getSystemInfo() {
+        _cmlTtApi2.default.getSystemInfo().then(function (res) {
+          _cmlTtApi2.default.showToast({
+            message: JSON.stringify(res),
+            duration: 2000
+          });
+        });
+      },
+      px2cpx: function px2cpx() {
+        _cmlTtApi2.default.showToast({ message: ['1px 合 ', _cmlTtApi2.default.px2cpx(1), 'cpx'].join("") });
+      },
+      cpx2px: function cpx2px() {
+        _cmlTtApi2.default.showToast({ message: ['1cpx 合 ', _cmlTtApi2.default.cpx2px(1), 'px'].join("") });
+      },
+      clipBoard: function clipBoard(_ref5) {
+        var _ref5$action = _ref5.action,
+            action = _ref5$action === undefined ? '' : _ref5$action,
+            _ref5$text = _ref5.text,
+            text = _ref5$text === undefined ? '' : _ref5$text;
+
+        if (action === 'get') {
+          _cmlTtApi2.default.getClipBoardData().then(function (res) {
+            _cmlTtApi2.default.showToast({
+              message: JSON.stringify(res)
+            });
+          });
+        } else {
+          _cmlTtApi2.default.setClipBoardData('AA').then(function (res) {
+            _cmlTtApi2.default.showToast({
+              message: '剪贴板内容已设置为:AA'
+            });
+          });
+        }
+      },
+      storage: function storage(_ref6) {
+        var _ref6$action = _ref6.action,
+            action = _ref6$action === undefined ? '' : _ref6$action;
+
+        action === 'set' && _cmlTtApi2.default.setStorage('name', 'ironman').then(function (res) {
+          _cmlTtApi2.default.showToast({
+            message: 'name 已设置为 ironman'
+          });
+        });
+        action === 'get' && _cmlTtApi2.default.getStorage('name').then(function (res) {
+          _cmlTtApi2.default.showToast({
+            message: res
+          });
+        }, function (err) {
+          _cmlTtApi2.default.showToast({
+            message: err.message || 'name 值已不存在'
+          });
+        });
+        action === 'remove' && _cmlTtApi2.default.removeStorage('name').then(function (res) {
+          _cmlTtApi2.default.showToast({
+            message: 'name 值已删除'
+          });
+        });
+      },
+      getRect: function getRect() {
+        _cmlTtApi2.default.getRect('titleText', this).then(function (res) {
+          _cmlTtApi2.default.showToast({
+            message: JSON.stringify(res)
+          });
+        });
+      },
+      goAnimation: function goAnimation() {
+        _cmlTtApi2.default.navigateTo({
+          path: '/pages/api/sub-pages/animation'
+        });
+      },
+      request: function request(_ref7) {
+        var _ref7$method = _ref7.method,
+            method = _ref7$method === undefined ? '' : _ref7$method;
+
+        _cmlTtApi2.default.navigateTo({
+          path: '/pages/api/sub-pages/request',
+          query: {
+            method: method
+          }
+        });
+      },
+      webSocket: function webSocket() {
+        _cmlTtApi2.default.navigateTo({
+          path: '/pages/api/sub-pages/webSocket'
+        });
+      },
+      navigateTo: function navigateTo() {
+        _cmlTtApi2.default.navigateTo({
+          path: '/pages/api/sub-pages/navigate',
+          query: {
+            method: 'navigateTo'
+          }
+        });
+      },
+      redirectTo: function redirectTo() {
+        _cmlTtApi2.default.redirectTo({
+          path: '/pages/api/sub-pages/navigate',
+          query: {
+            method: 'redirectTo'
+          }
+        });
+      }
+    };
+  }
+
+  _createClass(Home, [{
+    key: 'created',
+    value: function created() {
+      var unsupportedApis = _unsupported2.default.getUnsupportApis();
+      this.cells = this.cells.filter(function (cell) {
+        return !~unsupportedApis.indexOf(cell.title);
+      });
+    }
+  }]);
+
+  return Home;
+}();
+
+exports.default = new Home();
+
+
+exports.default = _chameleonRuntime2.default.createPage(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/cml-extract-css-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/api.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/assets/images/api/icon-default.png":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/icon-default_aeb0517.png";
+
+/***/ }),
+
+/***/ "./src/components/unsupported/unsupported.interface":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/src/components/unsupported/unsupported.interface";
+var __CML_ERROR__ = function throwError(content) {
+  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
+};
+
+var __enableTypes__ = "";
+var __CHECK__DEFINES__ = {
+  "types": {
+    "res": ["String"]
+  },
+  "interfaces": {
+    "UnsupportedInterface": {
+      "getUnsupportApis": {
+        "input": [],
+        "output": "res"
+      }
+    }
+  },
+  "classes": {
+    "Method": ["UnsupportedInterface"]
+  }
+};
+var __OBJECT__WRAPPER__ = __webpack_require__("../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/mvvm-interface-parser/runtime/checkWrapper.js");
+
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: "getUnsupportApis",
+    value: function getUnsupportApis() {
+      // 线上版微信小程序未配置demo请求的域名为可信域名，发版时去掉'网络请求'
+      // return ['网络请求', 'WebSocket'];
+      return [];
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+
+
+var copyProtoProperty = __webpack_require__("../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/mvvm-interface-parser/runtime/copyProto.js");
+copyProtoProperty(exports.default);
+
+/***/ }),
+
+/***/ "./src/pages/api/api.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/cml-extract-css-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\",\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/api.cml");
+var __cml__script = __webpack_require__("../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../.nvm/versions/node/v10.7.0/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/api/api.cml");
+
+
+/***/ })
+
+},["./src/pages/api/api.cml"]);

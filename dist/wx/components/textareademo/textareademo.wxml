@@ -2,15 +2,15 @@
     <view class="page-demo  cml-base cml-view">
         <view class="input-wrap  cml-base cml-view">
             <text class="title-text  cml-base cml-text">focus聚焦</text>
-            <cml-buildin-textarea placeholder="focus聚焦 web端不支持自动" focus="{{isfocus}}" bindblur="_cmlEventProxy" data-eventblur="bindblurevent" class=" cml-base cml-textarea"></cml-buildin-textarea>
+            <cml-buildin-textarea placeholder="focus聚焦 web端不支持自动" focus="{{isfocus}}" bindblur="_cmlEventProxy" data-eventblur="{{['bindblurevent']}}" class=" cml-base cml-textarea"></cml-buildin-textarea>
         </view>
         <view class="input-wrap  cml-base cml-view">
             <text class="title-text  cml-base cml-text">数据绑定,value:{{inputValue}}</text>
-            <cml-buildin-textarea placeholder="数据绑定" value="{{inputValue}}" bindinput="_cmlEventProxy" data-eventinput="inputEvent" class=" cml-base cml-textarea"></cml-buildin-textarea>
+            <cml-buildin-textarea placeholder="数据绑定" value="{{inputValue}}" bindinput="_cmlEventProxy" data-eventinput="{{['inputEvent']}}" class=" cml-base cml-textarea"></cml-buildin-textarea>
         </view>
         <view class="input-wrap  cml-base cml-view">
             <text class="title-text  cml-base cml-text">监听input事件,当前事件：{{eventName}}</text>
-            <cml-buildin-textarea placeholder="监听textarea事件" bindinput="_cmlEventProxy" data-eventinput="testEvent" bindblur="_cmlEventProxy" data-eventblur="testEvent" bindfocus="_cmlEventProxy" data-eventfocus="testEvent" bindconfirm="_cmlEventProxy" data-eventconfirm="testEvent" class=" cml-base cml-textarea"></cml-buildin-textarea>
+            <cml-buildin-textarea placeholder="监听textarea事件" bindinput="_cmlEventProxy" data-eventinput="{{['testEvent']}}" bindblur="_cmlEventProxy" data-eventblur="{{['testEvent']}}" bindfocus="_cmlEventProxy" data-eventfocus="{{['testEvent']}}" bindconfirm="_cmlEventProxy" data-eventconfirm="{{['testEvent']}}" class=" cml-base cml-textarea"></cml-buildin-textarea>
         </view>
         <view class="input-wrap  cml-base cml-view">
             <text class="title-text  cml-base cml-text">最大长度是5</text>

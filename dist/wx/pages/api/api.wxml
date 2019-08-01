@@ -9,7 +9,7 @@
       </view>
       <view class="page-list  cml-base cml-view">
         <view wx:for="{{cells}}" wx:for-item="cellInfo" class=" cml-base cml-view">
-          <collapse title="{{cellInfo.title}}" icon-uri="{{cellInfo.iconUri}}" list="{{cellInfo.list}}" binditemselected="_cmlEventProxy" data-eventitemselected="cellItemSeleted" class=" cml-view cml-collapse"></collapse>
+          <collapse title="{{cellInfo.title}}" icon-uri="{{cellInfo.iconUri}}" list="{{cellInfo.list}}" binditemselected="_cmlEventProxy" data-eventitemselected="{{['cellItemSeleted']}}" class=" cml-view cml-collapse"></collapse>
         </view>
       </view>
     </cml-buildin-scroller>

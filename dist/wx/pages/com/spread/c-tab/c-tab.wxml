@@ -3,11 +3,11 @@
      <c-header title="{{headerTitle}}" desc="{{headerDesc}}" class=" cml-view cml-c-header"></c-header>
      
      <view class="title  cml-base cml-view"><text class=" cml-base cml-text">单tab案例</text></view>
-     <c-tab tabs="{{tabsAlone}}" bindtabclick="_cmlEventProxy" data-eventtabclick="handleTabTapAlone" active-label="{{activeLabelAlone}}" has-underline="{{false}}" inline="{{false}}" class=" cml-view cml-c-tab">
+     <c-tab tabs="{{tabsAlone}}" bindtabclick="_cmlEventProxy" data-eventtabclick="{{['handleTabTapAlone']}}" active-label="{{activeLabelAlone}}" has-underline="{{false}}" inline="{{false}}" class=" cml-view cml-c-tab">
      </c-tab>
 
      <view class="title  cml-base cml-view"><text class="title  cml-base cml-text">tab+pane案例</text></view>
-     <c-tab tabs="{{tabs}}" bindtabclick="_cmlEventProxy" data-eventtabclick="handleTabTap" active-label="{{activeLabel}}" inline="{{false}}" class=" cml-view cml-c-tab">
+     <c-tab tabs="{{tabs}}" bindtabclick="_cmlEventProxy" data-eventtabclick="{{['handleTabTap']}}" active-label="{{activeLabel}}" inline="{{false}}" class=" cml-view cml-c-tab">
      </c-tab>
      <c-tab-pane tabs="{{tabs}}" active-label="{{activeLabel}}" class=" cml-view cml-c-tab-pane">
        

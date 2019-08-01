@@ -1,0 +1,29 @@
+<template>
+  <view class="myscroller">
+    <slot></slot>
+  </view>
+</template>
+
+<script>
+
+
+  class Myscroller implements MyscrollerInterface {
+
+  }
+
+  export default new Myscroller();
+</script>
+
+<style scoped>
+.myscroller {
+  overflow-x: hidden;
+}
+</style>
+
+<script cml-type="json">
+  {
+    "base":{
+      "component": true
+    }
+  }
+</script>

@@ -7,7 +7,7 @@
   </view>
   <view class="shop-cart  cml-base cml-view">
     <view wx:if="{{!goodslist || goodslist.length<=0}}" class="cart-empty  cml-base cml-view">
-      <view class="center  cml-base cml-view" bindtap="_cmlEventProxy" data-eventtap="godetail">
+      <view class="center  cml-base cml-view" bindtap="_cmlEventProxy" data-eventtap="{{['godetail']}}">
         <image class="img-empty  cml-base cml-image" resize="contain" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/noCart-a8fe3f12e5.png"></image>
       </view>
       <text class="txt-empty  cml-base cml-text">去添加点什么吧</text>

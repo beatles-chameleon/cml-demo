@@ -100,7 +100,7 @@ export default new CPicker();
     "base": {
         "usingComponents": {
             "c-header": "/components/header/header",
-            "c-picker": "cml-ui/components/c-picker/c-picker"
+            "c-picker": "cml-tt-ui/components/c-picker/c-picker"
         },
         "navigationBarTitleText": "c-picker",
         "backgroundTextStyle": "dark",

@@ -68,7 +68,7 @@ export default new CLoading();
     "base": {
         "usingComponents": {
             "c-header": "/components/header/header",
-            "c-loading": "cml-ui/components/c-loading/c-loading"
+            "c-loading": "cml-tt-ui/components/c-loading/c-loading"
         },
         "navigationBarTitleText": "loading",
         "backgroundTextStyle": "dark",

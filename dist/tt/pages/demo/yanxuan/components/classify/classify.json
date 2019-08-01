@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "classify-header": "./../common/classify-header",
+        "cml-buildin-scroller": "./../../../../../npm/cml-tt-ui-builtin/package/components/scroller/scroller"
+    },
+    "component": true
+}

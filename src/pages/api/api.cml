@@ -22,8 +22,8 @@
 
 
 <script>
-import cml from 'chameleon-api';
-import bridge from 'chameleon-bridge';
+import cml from 'cml-tt-api';
+// import bridge from 'chameleon-bridge';
 import supportChecker from '../../components/unsupported/unsupported.interface';
 
 class Home {
@@ -250,27 +250,27 @@ class Home {
       });      
     },
     openNewBeatlesPage() {
-      bridge.callNative('beatlesCommunicate', 'openNativeWebPage', {
-        close_web: false,
-        url: 'https://cmljs.org'
-      })
+      // bridge.callNative('beatlesCommunicate', 'openNativeWebPage', {
+      //   close_web: false,
+      //   url: 'https://cmljs.org'
+      // })
     },
     callNativeLogin() {
-      bridge.callNative('beatlesCommunicate', 'callNativeLogin', {}, res => {
-        cml.showToast({
-          message: '返回登录结果: ' + JSON.stringify(res)
-        })
-      })
+      // bridge.callNative('beatlesCommunicate', 'callNativeLogin', {}, res => {
+      //   cml.showToast({
+      //     message: '返回登录结果: ' + JSON.stringify(res)
+      //   })
+      // })
     },
     onLoginChange() {
-      bridge.listenNative('beatlesCommunicate', 'onLoginChange', res => {
-        cml.showToast({
-          message: '登录状态发生变化: ' + JSON.stringify(res)
-        })
-      })
-      cml.showToast({
-        message: '注册登录状态变化事件成功'
-      })
+      // bridge.listenNative('beatlesCommunicate', 'onLoginChange', res => {
+      //   cml.showToast({
+      //     message: '登录状态发生变化: ' + JSON.stringify(res)
+      //   })
+      // })
+      // cml.showToast({
+      //   message: '注册登录状态变化事件成功'
+      // })
     },
     canIUse({ apiName = '' }) {
       cml.canIUse(apiName).then(res => {
