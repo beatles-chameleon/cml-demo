@@ -1,0 +1,6 @@
+<cml-buildin-page title="navigate" class=" cml-base cml-page">
+  <view class="page-navigate  cml-base cml-view">
+    <secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-view cml-secondary-header"></secondary-header>
+    <secondary-cell title="{{cell.title}}" list="{{cell.list}}" bindbtnclicked="_cmlEventProxy" data-eventbtnclicked="{{['onBtnClicked']}}" class=" cml-view cml-secondary-cell"></secondary-cell>
+  </view>
+</cml-buildin-page>

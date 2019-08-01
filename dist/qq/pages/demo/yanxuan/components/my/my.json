@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "cml-buildin-scroller": "./../../../../../npm/chameleon-ui-builtin/components/scroller/scroller"
+    },
+    "navigationBarTitleText": "我的",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2",
+    "component": true
+}

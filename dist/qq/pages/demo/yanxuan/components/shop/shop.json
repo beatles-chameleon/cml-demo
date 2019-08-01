@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "shop-header": "./../common/shop-header",
+        "shop-list": "./../common/shop-list"
+    },
+    "component": true
+}
