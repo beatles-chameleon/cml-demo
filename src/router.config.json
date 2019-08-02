@@ -1,5 +1,5 @@
 {
-  "mode": "hash",
+  "mode": "histroy",
   "domain": "https://cmljs.org",
   "routes":[
     {
