@@ -1,7 +1,7 @@
 var manifest = require('./manifest.js');
 var cmldefine = manifest.cmldefine;
 
-cmldefine('60', function(require, exports, module) {
+cmldefine('58', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -63,11 +63,11 @@ cmldefine('0', function(require, exports, module) {
   value: true
 });
 
-var _index = require("61");
+var _index = require("59");
 
-var _index2 = require("85");
+var _index2 = require("83");
 
-var _index3 = require("87");
+var _index3 = require("85");
 
 exports.default = {
   createApp: _index.createApp,
@@ -75,13 +75,13 @@ exports.default = {
   createComponent: _index3.createComponent
 };
 })
-cmldefine('61', function(require, exports, module) {
+cmldefine('59', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.createApp = createApp;
 
-var _index = require("62");
+var _index = require("60");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -95,7 +95,7 @@ function createApp(options) {
   return _index2.default.createApp(options);
 }
 })
-cmldefine('62', function(require, exports, module) {
+cmldefine('60', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -118,37 +118,13 @@ var _createClass = function () {
   };
 }();
 
-var _tt = require("20");
+var _tt = require("18");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
-}
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-runtime/src/interfaces/createApp/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "createAppInterface": {
-      "createApp": {
-        "input": ["CMLObject"],
-        "output": "CMLObject"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["createAppInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4"); // 定义模块的interface
+} // 定义模块的interface
 
 
 var Method = function () {
@@ -157,7 +133,7 @@ var Method = function () {
   }
 
   _createClass(Method, [{
-    key: "createApp",
+    key: 'createApp',
     value: function createApp(options) {
       return new _tt.App(options);
     }
@@ -166,18 +142,18 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('20', function(require, exports, module) {
+cmldefine('18', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _instance = require("63");
+var _instance = require("61");
 
 Object.defineProperty(exports, 'App', {
   enumerable: true,
@@ -198,12 +174,12 @@ Object.defineProperty(exports, 'Component', {
   }
 });
 })
-cmldefine('63', function(require, exports, module) {
+cmldefine('61', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _app = require("64");
+var _app = require("62");
 
 Object.defineProperty(exports, 'App', {
   enumerable: true,
@@ -212,7 +188,7 @@ Object.defineProperty(exports, 'App', {
   }
 });
 
-var _page = require("83");
+var _page = require("81");
 
 Object.defineProperty(exports, 'Page', {
   enumerable: true,
@@ -221,7 +197,7 @@ Object.defineProperty(exports, 'Page', {
   }
 });
 
-var _component = require("84");
+var _component = require("82");
 
 Object.defineProperty(exports, 'Component', {
   enumerable: true,
@@ -230,25 +206,25 @@ Object.defineProperty(exports, 'Component', {
   }
 });
 })
-cmldefine('64', function(require, exports, module) {
+cmldefine('62', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.CmlApp = undefined;
 
-var _VmAdapter = require("21");
+var _VmAdapter = require("19");
 
 var _VmAdapter2 = _interopRequireDefault(_VmAdapter);
 
-var _MiniRuntimeCore = require("22");
+var _MiniRuntimeCore = require("20");
 
 var _MiniRuntimeCore2 = _interopRequireDefault(_MiniRuntimeCore);
 
-var _BaseCtor2 = require("23");
+var _BaseCtor2 = require("21");
 
 var _BaseCtor3 = _interopRequireDefault(_BaseCtor2);
 
-var _lifecycle = require("12");
+var _lifecycle = require("10");
 
 var _lifecycle2 = _interopRequireDefault(_lifecycle);
 
@@ -328,16 +304,16 @@ var CmlApp = exports.CmlApp = function (_BaseCtor) {
   return CmlApp;
 }(_BaseCtor3.default);
 })
-cmldefine('21', function(require, exports, module) {
+cmldefine('19', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _MiniVmAdapter2 = require("65");
+var _MiniVmAdapter2 = require("63");
 
 var _MiniVmAdapter3 = _interopRequireDefault(_MiniVmAdapter2);
 
-var _cmlTtMixins = require("71");
+var _cmlTtMixins = require("69");
 
 var _cmlTtMixins2 = _interopRequireDefault(_cmlTtMixins);
 
@@ -400,7 +376,7 @@ var VmAdapter = function (_MiniVmAdapter) {
 
 exports.default = VmAdapter;
 })
-cmldefine('65', function(require, exports, module) {
+cmldefine('63', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -423,27 +399,27 @@ var _createClass = function () {
   };
 }();
 
-var _BaseVmAdapter2 = require("66");
+var _BaseVmAdapter2 = require("64");
 
 var _BaseVmAdapter3 = _interopRequireDefault(_BaseVmAdapter2);
 
-var _util = require("14");
+var _util = require("12");
 
-var _type = require("9");
+var _type = require("7");
 
-var _resolve = require("68");
+var _resolve = require("66");
 
-var _mobx = require("15");
+var _mobx = require("13");
 
-var _KEY = require("33");
+var _KEY = require("31");
 
 var _KEY2 = _interopRequireDefault(_KEY);
 
-var _lifecycle = require("12");
+var _lifecycle = require("10");
 
 var _lifecycle2 = _interopRequireDefault(_lifecycle);
 
-var _options = require("70");
+var _options = require("68");
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -890,7 +866,7 @@ var MiniVmAdapter = function (_BaseVmAdapter) {
 
 exports.default = MiniVmAdapter;
 })
-cmldefine('66', function(require, exports, module) {
+cmldefine('64', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -913,9 +889,9 @@ var _createClass = function () {
   };
 }();
 
-var _type = require("9");
+var _type = require("7");
 
-var _warn = require("32");
+var _warn = require("30");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -938,7 +914,7 @@ var BaseVmAdapter = function () {
     this.usedHooks = config.usedHooks;
     this.platform = '';
 
-    if ("dev" !== "build") {
+    if ("build" !== "build") {
       var mix = this.options.mixins;
       (0, _warn.invariant)((0, _type.type)(mix) === 'Undefined' || (0, _type.type)(mix) === "Array", "mixins expects an Array");
     }
@@ -956,7 +932,7 @@ var BaseVmAdapter = function () {
 
 exports.default = BaseVmAdapter;
 })
-cmldefine('9', function(require, exports, module) {
+cmldefine('7', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -1005,7 +981,7 @@ function isPromise(v) {
   return isDef(v) && typeof v.then === 'function' && typeof v.catch === 'function';
 }
 })
-cmldefine('32', function(require, exports, module) {
+cmldefine('30', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -1031,7 +1007,7 @@ function invariant(check, message) {
 var deprecatedMessages = [];
 
 function deprecated(msg, thing) {
-  if ("dev" === "build") return false;
+  if ("build" === "build") return false;
 
   if (thing) {
     return deprecated("'" + msg + "', use '" + thing + "' instead.");
@@ -1043,7 +1019,7 @@ function deprecated(msg, thing) {
   return true;
 }
 })
-cmldefine('14', function(require, exports, module) {
+cmldefine('12', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -1072,9 +1048,9 @@ exports.deleteProperties = deleteProperties;
 exports.enumerableKeys = enumerableKeys;
 exports.flatten = flatten;
 
-var _type = require("9");
+var _type = require("7");
 
-var _clone = require("67");
+var _clone = require("65");
 /**
  * Check whether an object has the property.
  */
@@ -1431,14 +1407,14 @@ function flatten() {
   return ret;
 }
 })
-cmldefine('67', function(require, exports, module) {
+cmldefine('65', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.find = find;
 exports.deepClone = deepClone;
 
-var _type = require("9");
+var _type = require("7");
 /**
  * Get the first item that pass the test
  * by second argument function
@@ -1492,7 +1468,7 @@ function deepClone(obj) {
   return copy;
 }
 })
-cmldefine('68', function(require, exports, module) {
+cmldefine('66', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -1502,9 +1478,9 @@ exports.mergeSimpleProps = mergeSimpleProps;
 exports.mergeData = mergeData;
 exports.mergeWatch = mergeWatch;
 
-var _util = require("14");
+var _util = require("12");
 
-var _type = require("9");
+var _type = require("7");
 
 function mergeDefault(parent, child, key) {
   parent[key] = child[key];
@@ -1564,7 +1540,7 @@ function mergeWatch(parent, child, key) {
   });
 }
 })
-cmldefine('15', function(require, exports, module) {
+cmldefine('13', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -5805,12 +5781,12 @@ exports.trace = trace;
 exports.isArrayLike = isArrayLike;
 exports.default = everything;
 })
-cmldefine('33', function(require, exports, module) {
+cmldefine('31', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _config = require("34");
+var _config = require("32");
 
 var _config2 = _interopRequireDefault(_config);
 
@@ -5828,7 +5804,7 @@ var KEY = {
 };
 exports.default = new _config2.default(KEY);
 })
-cmldefine('34', function(require, exports, module) {
+cmldefine('32', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -5922,12 +5898,12 @@ var Config = function () {
 
 exports.default = Config;
 })
-cmldefine('12', function(require, exports, module) {
+cmldefine('10', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _config = require("34");
+var _config = require("32");
 
 var _config2 = _interopRequireDefault(_config);
 
@@ -6000,15 +5976,15 @@ var LIFECYCLE = {
 };
 exports.default = new _config2.default(LIFECYCLE);
 })
-cmldefine('70', function(require, exports, module) {
+cmldefine('68', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.mergeOptions = mergeOptions;
 
-var _util = require("14");
+var _util = require("12");
 
-var _lifecycle = require("12");
+var _lifecycle = require("10");
 
 var _lifecycle2 = _interopRequireDefault(_lifecycle);
 
@@ -6099,7 +6075,7 @@ function mergeOptions(parent, child, vm) {
   return options;
 }
 })
-cmldefine('71', function(require, exports, module) {
+cmldefine('69', function(require, exports, module) {
   var _methods;
 
 function _defineProperty(obj, key, value) {
@@ -6129,11 +6105,11 @@ function _toConsumableArray(arr) {
   }
 }
 
-var utils = require("72");
+var utils = require("70");
 
 var _ = module.exports = {};
 
-var wxStyleHandle = require("74");
+var wxStyleHandle = require("72");
 
 _.eventProxyName = '_cmlEventProxy';
 _.modelEventProxyName = '_cmlModelEventProxy'; // c-model的事件代理
@@ -6289,10 +6265,10 @@ _.mixins = {
   }), _methods)
 };
 })
-cmldefine('72', function(require, exports, module) {
+cmldefine('70', function(require, exports, module) {
   var _ = module.exports = {};
 
-var _require = require("73"),
+var _require = require("71"),
     px2cpx = _require.px2cpx;
 
 _.getStyleKeyValue = function (declaration) {
@@ -6371,7 +6347,7 @@ _.getNewEvent = function (e) {
   return newEvent;
 };
 })
-cmldefine('73', function(require, exports, module) {
+cmldefine('71', function(require, exports, module) {
   var _ = module.exports = {};
 
 var viewportWidth = void 0;
@@ -6389,10 +6365,10 @@ _.px2cpx = function (px, platform) {
   return cpx;
 };
 })
-cmldefine('74', function(require, exports, module) {
-  var utils = require("75");
+cmldefine('72', function(require, exports, module) {
+  var utils = require("73");
 
-var lines = require("76"); // 运行时的cpx2rpx不能使用postcss处理，因为$cmlStyle方法用到了该方法，在运行时使用postcss 会出现Cannot find module "fs"的错误
+var lines = require("74"); // 运行时的cpx2rpx不能使用postcss处理，因为$cmlStyle方法用到了该方法，在运行时使用postcss 会出现Cannot find module "fs"的错误
 
 
 module.exports = function (content) {
@@ -6432,7 +6408,7 @@ module.exports = function (content) {
   }
 };
 })
-cmldefine('75', function(require, exports, module) {
+cmldefine('73', function(require, exports, module) {
   var _ = {};
 module.exports = _; // 将字符串中的 单引号变成 双引号；
 
@@ -6482,14 +6458,14 @@ _.getStyleKeyValue = function (declaration) {
   };
 };
 })
-cmldefine('76', function(require, exports, module) {
+cmldefine('74', function(require, exports, module) {
   // 静态编译和运行时 web和小程序端对lines属性特殊处理
 module.exports = function (linesNumber) {
   // 作为一个属性注意最后不能添加分号
   return "display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: " + linesNumber + "; overflow: hidden";
 };
 })
-cmldefine('22', function(require, exports, module) {
+cmldefine('20', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -6532,31 +6508,31 @@ var _createClass = function () {
   };
 }();
 
-var _mobx = require("15");
+var _mobx = require("13");
 
-var _toJS = require("77");
+var _toJS = require("75");
 
 var _toJS2 = _interopRequireDefault(_toJS);
 
-var _util = require("14");
+var _util = require("12");
 
-var _type = require("9");
+var _type = require("7");
 
-var _lifecycle = require("12");
+var _lifecycle = require("10");
 
 var _lifecycle2 = _interopRequireDefault(_lifecycle);
 
-var _KEY = require("33");
+var _KEY = require("31");
 
 var _KEY2 = _interopRequireDefault(_KEY);
 
-var _diff = require("79");
+var _diff = require("77");
 
 var _diff2 = _interopRequireDefault(_diff);
 
-var _warn = require("32");
+var _warn = require("30");
 
-var _EventBus = require("80");
+var _EventBus = require("78");
 
 var _EventBus2 = _interopRequireDefault(_EventBus);
 
@@ -6597,7 +6573,7 @@ var MiniRuntimeCore = function () {
   }, {
     key: 'init',
     value: function init() {
-      if ("dev" !== "build") {
+      if ("build" !== "build") {
         (0, _warn.invariant)(!!this.context, "【chameleon-runtime】runtime context should not undefined");
       }
 
@@ -7006,7 +6982,7 @@ function createWatcher(vm, expOrFn, handler, options) {
   return vm.$watch(expOrFn, handler, options);
 }
 })
-cmldefine('77', function(require, exports, module) {
+cmldefine('75', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7019,11 +6995,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.default = toJS;
 
-var _mobx = require("15");
+var _mobx = require("13");
 
-var _type = require("9");
+var _type = require("7");
 
-var _style = require("78");
+var _style = require("76");
 
 function toJS(source) {
   var detectCycles = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
@@ -7118,7 +7094,7 @@ function toJS(source) {
   }
 }
 })
-cmldefine('78', function(require, exports, module) {
+cmldefine('76', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7132,7 +7108,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 exports.styleHandle = styleHandle;
 exports.pxTransform = pxTransform;
 
-var _type = require("9");
+var _type = require("7");
 
 function styleHandle(source) {
   var detectCycles = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
@@ -7196,15 +7172,15 @@ function pxTransform(s) {
   });
 }
 })
-cmldefine('79', function(require, exports, module) {
+cmldefine('77', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = diff;
 
-var _type = require("9");
+var _type = require("7");
 
-var _mobx = require("15");
+var _mobx = require("13");
 
 function diff(current, old) {
   var out = {};
@@ -7294,12 +7270,12 @@ function isNum(value) {
   return !isNaN(Number(value));
 }
 })
-cmldefine('80', function(require, exports, module) {
+cmldefine('78', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Event = require("81");
+var _Event = require("79");
 
 var _Event2 = _interopRequireDefault(_Event);
 
@@ -7312,7 +7288,7 @@ function _interopRequireDefault(obj) {
 var EventBus = new _Event2.default();
 exports.default = EventBus;
 })
-cmldefine('81', function(require, exports, module) {
+cmldefine('79', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7521,7 +7497,7 @@ var Event = function () {
 
 exports.default = Event;
 })
-cmldefine('23', function(require, exports, module) {
+cmldefine('21', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7558,7 +7534,7 @@ var _createClass = function () {
   };
 }();
 
-var _proto = require("82");
+var _proto = require("80");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -7596,7 +7572,7 @@ var BaseCtor = function () {
 
 exports.default = BaseCtor;
 })
-cmldefine('82', function(require, exports, module) {
+cmldefine('80', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7627,25 +7603,25 @@ function copyProtoProperty() {
   return EXPORT_OBJ;
 }
 })
-cmldefine('83', function(require, exports, module) {
+cmldefine('81', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.CmlPage = undefined;
 
-var _BaseCtor2 = require("23");
+var _BaseCtor2 = require("21");
 
 var _BaseCtor3 = _interopRequireDefault(_BaseCtor2);
 
-var _lifecycle = require("12");
+var _lifecycle = require("10");
 
 var _lifecycle2 = _interopRequireDefault(_lifecycle);
 
-var _VmAdapter = require("21");
+var _VmAdapter = require("19");
 
 var _VmAdapter2 = _interopRequireDefault(_VmAdapter);
 
-var _MiniRuntimeCore = require("22");
+var _MiniRuntimeCore = require("20");
 
 var _MiniRuntimeCore2 = _interopRequireDefault(_MiniRuntimeCore);
 
@@ -7739,25 +7715,25 @@ var CmlPage = exports.CmlPage = function (_BaseCtor) {
   return CmlPage;
 }(_BaseCtor3.default);
 })
-cmldefine('84', function(require, exports, module) {
+cmldefine('82', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.CmlComponent = undefined;
 
-var _BaseCtor2 = require("23");
+var _BaseCtor2 = require("21");
 
 var _BaseCtor3 = _interopRequireDefault(_BaseCtor2);
 
-var _lifecycle = require("12");
+var _lifecycle = require("10");
 
 var _lifecycle2 = _interopRequireDefault(_lifecycle);
 
-var _VmAdapter = require("21");
+var _VmAdapter = require("19");
 
 var _VmAdapter2 = _interopRequireDefault(_VmAdapter);
 
-var _MiniRuntimeCore = require("22");
+var _MiniRuntimeCore = require("20");
 
 var _MiniRuntimeCore2 = _interopRequireDefault(_MiniRuntimeCore);
 
@@ -7850,338 +7826,7 @@ var CmlComponent = exports.CmlComponent = function (_BaseCtor) {
   return CmlComponent;
 }(_BaseCtor3.default);
 })
-cmldefine('4', function(require, exports, module) {
-  /**
-* 对象包裹器
-*运行时的错误信息，根据端传入不同的方法，
-* @param  {Object} obj 需要处理的对象
-* @return {Object}     对象
-*/
-
-/* istanbul ignore next */
-module.exports = function (obj, __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__) {
-  var className = obj.constructor.name;
-  /* eslint-disable no-undef */
-
-  var defines = __CHECK__DEFINES__;
-  var enableTypes = __enableTypes__.split(',') || []; // ['Object','Array','Nullable']
-
-  /* eslint-disable no-undef */
-
-  var types = defines.types;
-  var interfaceNames = defines.classes[className];
-  var methods = {};
-  interfaceNames && interfaceNames.forEach(function (interfaceName) {
-    var keys = Object.keys(defines.interfaces);
-    keys.forEach(function (key) {
-      Object.assign(methods, defines.interfaces[key]);
-    });
-  });
-  /**
-  * 获取类型
-  *
-  * @param  {*}      value 值
-  * @return {string}       类型
-  */
-
-  var getType = function getType(value) {
-    if (value instanceof Promise) {
-      return "Promise";
-    }
-
-    var type = Object.prototype.toString.call(value);
-    return type.replace(/\[object\s(.*)\]/g, '$1').replace(/( |^)[a-z]/g, function (L) {
-      return L.toUpperCase();
-    });
-  };
-  /**
-  * 校验类型  两个loader共用代码
-  *
-  * @param  {*}      value 实际传入的值
-  * @param  {string} type  静态分析时候得到的值得类型
-  * @param  {array[string]} errList 校验错误信息  类型
-  * @return {bool}         校验结果
-  */
-
-  /* eslint complexity:[2,39] */
-
-
-  var checkType = function checkType(value, originType) {
-    var errList = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
-    var isNullableReg = /_cml_nullable_lmc_/g;
-    var type = originType.replace('_cml_nullable_lmc_', '');
-    type === "Void" && (type = "Undefined");
-    var currentType = getType(value);
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
-
-    if (currentType == 'Null') {
-      if (type == "Null") {
-        // 如果定义的参数的值就是 Null，那么校验通过
-        errList = [];
-      } else {
-        // 那么判断是否是可选参数的情况
-        canUseNullable && isNullableReg.test(originType) ? errList = [] : errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542Fnullable\u914D\u7F6E');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Undefined') {
-      // 如果运行时传入的真实值是undefined,那么可能改值在接口处就是被定义为 Undefined类型或者是 ?string 这种可选参数 nullable的情况；
-      if (type == "Undefined") {
-        errList = [];
-      } else {
-        canUseNullable && isNullableReg.test(originType) ? errList = [] : errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542Fnullable\u914D\u7F6E\u6216\u8005\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'String') {
-      if (type == 'String') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Boolean') {
-      if (type == 'Boolean') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Number') {
-      if (type == 'Number') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Object') {
-      if (type == 'Object') {
-        !canUseObject ? errList.push('\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B' + type + '\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Object \u7C7B\u578B\u53C2\u6570\uFF1B') : errList = [];
-      } else if (type == 'CMLObject') {
-        errList = [];
-      } else {
-        // 这种情况的对象就是自定义的对象；
-        if (types[type]) {
-          var _keys = Object.keys(types[type]); // todo 这里是同样的问题，可能多传递
-
-
-          _keys.forEach(function (key) {
-            var subError = checkType(value[key], types[type][key], []);
-
-            if (subError && subError.length) {
-              errList = errList.concat(subError);
-            }
-          });
-
-          if (Object.keys(value).length > _keys.length) {
-            errList.push('type [' + type + '] \u53C2\u6570\u4E2A\u6570\u4E0E\u5B9A\u4E49\u4E0D\u7B26');
-          }
-        } else {
-          errList.push('找不到定义的type [' + type + ']!');
-        }
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Array') {
-      if (type == 'Array') {
-        !canUseObject ? errList.push('\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B' + type + '\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B') : errList = [];
-      } else {
-        if (types[type]) {
-          // 数组元素的类型
-          var itemType = types[type][0];
-
-          for (var i = 0; i < value.length; i++) {
-            var subError = checkType(value[i], itemType, []);
-
-            if (subError && subError.length) {
-              errList = errList.concat(subError);
-            }
-          }
-        } else {
-          errList.push('找不到定义的type [' + type + ']!');
-        }
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Function') {
-      // if (type == 'Function') {
-      //   errList = [];
-      // } else {
-      //   errList.push(`定义了${type}类型的参数，传入的却是${currentType},请检查所传参数是否和接口定义的一致`)
-      // }
-      if (types[type]) {
-        if (!types[type].input && !types[type].output) {
-          errList.push('\u627E\u4E0D\u5230' + types[type] + ' \u51FD\u6570\u5B9A\u4E49\u7684\u8F93\u5165\u8F93\u51FA');
-        }
-      } else {
-        errList.push('找不到定义的type [' + type + ']!');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Date') {
-      if (type == 'Date') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'RegExp') {
-      if (type == 'RegExp') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    return errList;
-  };
-  /**
-  * 校验参数类型
-  *
-  * @param  {string} methodName 方法名称
-  * @param  {Array}  argNames   参数名称列表
-  * @param  {Array}  argValues  参数值列表
-  * @return {bool}              校验结果
-  */
-
-
-  var checkArgsType = function checkArgsType(methodName, argValues) {
-    var argList = void 0;
-
-    if (getType(methodName) == 'Array') {
-      // 回调函数的校验    methodName[0] 方法的名字 methodName[1]该回调函数在方法的参数索引
-      argList = types[methods[methodName[0]].input[methodName[1]]].input; // 拿到这个回调函数的参数定义
-    } else {
-      argList = methods[methodName].input;
-    } // todo 函数可能多传参数
-
-
-    argList.forEach(function (argType, index) {
-      var errList = checkType(argValues[index], argType, []);
-
-      if (errList && errList.length > 0) {
-        __CML_ERROR__('\n       \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5' + methodName + '\u7B2C' + (index + 1) + '\u4E2A\u53C2\u6570\n       \u9519\u8BEF\u4FE1\u606F: ' + errList.join('\n'));
-      }
-    });
-
-    if (argValues.length > argList.length) {
-      __CML_ERROR__('[' + methodName + ']\u65B9\u6CD5\u53C2\u6570\u4F20\u9012\u4E2A\u6570\u4E0E\u5B9A\u4E49\u4E0D\u7B26');
-    }
-  };
-  /**
-  * 校验返回值类型
-  *
-  * @param  {string} methodName 方法名称
-  * @param  {*}      returnData 返回值
-  * @return {bool}              校验结果
-  */
-
-
-  var checkReturnType = function checkReturnType(methodName, returnData) {
-    var output = void 0;
-
-    if (getType(methodName) == 'Array') {
-      output = types[methods[methodName[0]].input[methodName[1]]].output;
-    } else {
-      output = methods[methodName].output;
-    } // todo output 为什么可以是数组
-    // if (output instanceof Array) {
-    //   output.forEach(type => {
-    //     //todo 而且是要有一个校验不符合就check失败？ 应该是有一个校验通过就可以吧
-    //     checkType(returnData, type,[])
-    //   });
-    // }
-
-
-    var errList = checkType(returnData, output, []);
-
-    if (errList && errList.length > 0) {
-      __CML_ERROR__('\n     \u6821\u9A8C\u4F4D\u7F6E: \u65B9\u6CD5' + methodName + '\u8FD4\u56DE\u503C\n     \u9519\u8BEF\u4FE1\u606F: ' + errList.join('\n'));
-    }
-  };
-  /**
-  * 创建warpper
-  *
-  * @param  {string}   funcName   方法名称
-  * @param  {Function} originFunc 原有方法
-  * @return {Function}            包裹后的方法
-  */
-
-
-  var createWarpper = function createWarpper(funcName, originFunc) {
-    return function () {
-      var argValues = Array.prototype.slice.call(arguments).map(function (arg, index) {
-        // 对传入的方法要做特殊的处理，这个是传入的callback，对callback函数再做包装
-        if (getType(arg) == 'Function') {
-          return createWarpper([funcName, index], arg);
-        }
-
-        return arg;
-      });
-      checkArgsType(funcName, argValues);
-      var result = originFunc.apply(this, argValues);
-      checkReturnType(funcName, result);
-      return result;
-    };
-  }; // 获取所有方法
-
-
-  var keys = Object.keys(methods); // 处理包装方法
-
-  keys.forEach(function (key) {
-    var originFunc = obj[key];
-
-    if (!originFunc) {
-      __CML_ERROR__('method [' + key + '] not found!');
-
-      return;
-    }
-
-    if (obj.hasOwnProperty(key)) {
-      obj[key] = createWarpper(key, originFunc);
-    } else {
-      Object.getPrototypeOf(obj)[key] = createWarpper(key, originFunc);
-    }
-  });
-  return obj;
-};
-})
-cmldefine('5', function(require, exports, module) {
+cmldefine('3', function(require, exports, module) {
   module.exports = function copyProtoProperty(obj) {
   var EXPORT_OBJ = obj || {};
   var EXPORT_PROTO = Object.getPrototypeOf(EXPORT_OBJ);
@@ -8200,13 +7845,13 @@ cmldefine('5', function(require, exports, module) {
   return EXPORT_OBJ;
 };
 })
-cmldefine('85', function(require, exports, module) {
+cmldefine('83', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.createPage = createPage;
 
-var _index = require("86");
+var _index = require("84");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -8218,6 +7863,79 @@ function _interopRequireDefault(obj) {
 
 function createPage(options) {
   return _index2.default.createPage(options);
+}
+})
+cmldefine('84', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var _tt = require("18");
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+} // 定义模块的interface
+
+
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: 'createPage',
+    value: function createPage(options) {
+      return new _tt.Page(options);
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = new Method();
+
+var copyProtoProperty = require("3");
+
+copyProtoProperty(exports.default);
+})
+cmldefine('85', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createComponent = createComponent;
+
+var _index = require("86");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function createComponent(options) {
+  return _index2.default.createComponent(options);
 }
 })
 cmldefine('86', function(require, exports, module) {
@@ -8243,37 +7961,13 @@ var _createClass = function () {
   };
 }();
 
-var _tt = require("20");
+var _tt = require("18");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
-}
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-runtime/src/interfaces/createPage/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "createPgInterface": {
-      "createPage": {
-        "input": ["CMLObject"],
-        "output": "CMLObject"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["createPageInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4"); // 定义模块的interface
+} // 定义模块的interface
 
 
 var Method = function () {
@@ -8282,104 +7976,7 @@ var Method = function () {
   }
 
   _createClass(Method, [{
-    key: "createPage",
-    value: function createPage(options) {
-      return new _tt.Page(options);
-    }
-  }]);
-
-  return Method;
-}();
-
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
-
-var copyProtoProperty = require("5");
-
-copyProtoProperty(exports.default);
-})
-cmldefine('87', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.createComponent = createComponent;
-
-var _index = require("88");
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function createComponent(options) {
-  return _index2.default.createComponent(options);
-}
-})
-cmldefine('88', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-var _tt = require("20");
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-runtime/src/interfaces/createComponent/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "createCmptInterface": {
-      "createComponent": {
-        "input": ["CMLObject"],
-        "output": "CMLObject"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["createComponentInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4"); // 定义模块的interface
-
-
-var Method = function () {
-  function Method() {
-    _classCallCheck(this, Method);
-  }
-
-  _createClass(Method, [{
-    key: "createComponent",
+    key: 'createComponent',
     value: function createComponent(options) {
       return new _tt.Component(options);
     }
@@ -8388,13 +7985,13 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('93', function(require, exports, module) {
+cmldefine('91', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8424,23 +8021,23 @@ var Home = function Home() {
 
   this.data = {
     pageList: [{
-      icon: require("156"),
+      icon: require("154"),
       title: '组件',
       desc: '基础内容、表单组建、导航、视图容器等',
       url: '/pages/com/com'
     }, {
-      icon: require("40"),
+      icon: require("38"),
       title: '接口',
       desc: '界面、网络、数据、weex端扩展能力',
       url: '/pages/api/api'
     }, {
-      icon: require("40"),
+      icon: require("38"),
       title: '实例',
       desc: '网易严选等更多实例',
       url: '/pages/demo/demo'
     }],
-    homeLogo: require("157"),
-    arrowRight: require("158")
+    homeLogo: require("155"),
+    arrowRight: require("156")
   };
   this.methods = {
     onItemSelected: function onItemSelected(url) {
@@ -8459,131 +8056,131 @@ cmldefine('1', function(require, exports, module) {
   value: true
 });
 
-var _index = require("94");
+var _index = require("92");
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = require("96");
+var _index3 = require("94");
 
 var _index4 = _interopRequireDefault(_index3);
 
-var _index5 = require("98");
+var _index5 = require("96");
 
 var _index6 = _interopRequireDefault(_index5);
 
-var _index7 = require("100");
+var _index7 = require("98");
 
 var _index8 = _interopRequireDefault(_index7);
 
-var _index9 = require("102");
+var _index9 = require("100");
 
 var _index10 = _interopRequireDefault(_index9);
 
-var _index11 = require("104");
+var _index11 = require("102");
 
 var _index12 = _interopRequireDefault(_index11);
 
-var _index13 = require("106");
+var _index13 = require("104");
 
 var _index14 = _interopRequireDefault(_index13);
 
-var _index15 = require("108");
+var _index15 = require("106");
 
 var _index16 = _interopRequireDefault(_index15);
 
-var _index17 = require("110");
+var _index17 = require("108");
 
 var _index18 = _interopRequireDefault(_index17);
 
-var _index19 = require("112");
+var _index19 = require("110");
 
 var _index20 = _interopRequireDefault(_index19);
 
-var _index21 = require("114");
+var _index21 = require("112");
 
 var _index22 = _interopRequireDefault(_index21);
 
-var _index23 = require("116");
+var _index23 = require("114");
 
 var _index24 = _interopRequireDefault(_index23);
 
-var _index25 = require("119");
+var _index25 = require("117");
 
 var _index26 = _interopRequireDefault(_index25);
 
-var _index27 = require("121");
+var _index27 = require("119");
 
 var _index28 = _interopRequireDefault(_index27);
 
-var _index29 = require("122");
+var _index29 = require("120");
 
 var _index30 = _interopRequireDefault(_index29);
 
-var _index31 = require("123");
+var _index31 = require("121");
 
 var _index32 = _interopRequireDefault(_index31);
 
-var _index33 = require("125");
+var _index33 = require("123");
 
 var _index34 = _interopRequireDefault(_index33);
 
-var _index35 = require("127");
+var _index35 = require("125");
 
 var _index36 = _interopRequireDefault(_index35);
 
-var _index37 = require("129");
+var _index37 = require("127");
 
 var _index38 = _interopRequireDefault(_index37);
 
-var _index39 = require("131");
+var _index39 = require("129");
 
 var _index40 = _interopRequireDefault(_index39);
 
-var _index41 = require("133");
+var _index41 = require("131");
 
 var _index42 = _interopRequireDefault(_index41);
 
-var _index43 = require("135");
+var _index43 = require("133");
 
 var _index44 = _interopRequireDefault(_index43);
 
-var _index45 = require("137");
+var _index45 = require("135");
 
 var _index46 = _interopRequireDefault(_index45);
 
-var _index47 = require("138");
+var _index47 = require("136");
 
 var _index48 = _interopRequireDefault(_index47);
 
-var _index49 = require("139");
+var _index49 = require("137");
 
 var _index50 = _interopRequireDefault(_index49);
 
-var _index51 = require("142");
+var _index51 = require("140");
 
 var _index52 = _interopRequireDefault(_index51);
 
-var _index53 = require("144");
+var _index53 = require("142");
 
 var _index54 = _interopRequireDefault(_index53);
 
-var _index55 = require("24");
+var _index55 = require("22");
 
 var _index56 = _interopRequireDefault(_index55);
 
-var _index57 = require("148");
+var _index57 = require("146");
 
 var _index58 = _interopRequireDefault(_index57);
 
-var _index59 = require("149");
+var _index59 = require("147");
 
 var _index60 = _interopRequireDefault(_index59);
 
-var _index61 = require("150");
+var _index61 = require("148");
 
 var _index62 = _interopRequireDefault(_index61);
 
-var _index63 = require("154");
+var _index63 = require("152");
 
 var _index64 = _interopRequireDefault(_index63);
 
@@ -8628,13 +8225,13 @@ exports.default = {
   createInnerAudioContext: _index64.default
 };
 })
-cmldefine('94', function(require, exports, module) {
+cmldefine('92', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = alert;
 
-var _index = require("95");
+var _index = require("93");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -8655,6 +8252,104 @@ function alert(opt) {
       confirmTitle: confirmTitle
     }, function () {
       resolve();
+    }, function () {
+      reject();
+    });
+  });
+}
+})
+cmldefine('93', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: 'alert',
+    value: function alert(opt, successCallBack, failCallBack) {
+      var message = opt.message,
+          confirmTitle = opt.confirmTitle;
+      tt.showModal({
+        title: confirmTitle,
+        content: message,
+        showCancel: false,
+        success: function success() {
+          successCallBack(confirmTitle);
+        },
+        fail: function fail() {
+          failCallBack(confirmTitle);
+        }
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = new Method();
+
+var copyProtoProperty = require("3");
+
+copyProtoProperty(exports.default);
+})
+cmldefine('94', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = confirm;
+
+var _index = require("95");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function confirm(opt) {
+  var _opt$message = opt.message,
+      message = _opt$message === undefined ? '' : _opt$message,
+      _opt$confirmTitle = opt.confirmTitle,
+      confirmTitle = _opt$confirmTitle === undefined ? '确定' : _opt$confirmTitle,
+      _opt$cancelTitle = opt.cancelTitle,
+      cancelTitle = _opt$cancelTitle === undefined ? '取消' : _opt$cancelTitle;
+  return new Promise(function (resolve, reject) {
+    _index2.default.confirm({
+      message: message,
+      confirmTitle: confirmTitle,
+      cancelTitle: cancelTitle
+    }, function (value) {
+      resolve(value);
     }, function () {
       reject();
     });
@@ -8690,62 +8385,31 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/alert/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "alertOpt": {
-      "message": "String",
-      "confirmTitle": "String"
-    },
-    "successCallBack": {
-      "input": ["String"],
-      "output": "Undefined"
-    },
-    "failCallBack": {
-      "input": ["String"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "uiInterface": {
-      "alert": {
-        "input": ["alertOpt", "successCallBack", "failCallBack"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["uiInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "alert",
-    value: function alert(opt, successCallBack, failCallBack) {
+    key: 'confirm',
+    value: function confirm(opt, successCallBack, failCallBack) {
       var message = opt.message,
-          confirmTitle = opt.confirmTitle;
+          confirmTitle = opt.confirmTitle,
+          cancelTitle = opt.cancelTitle;
       tt.showModal({
-        title: confirmTitle,
+        title: '',
         content: message,
-        showCancel: false,
-        success: function success() {
-          successCallBack(confirmTitle);
+        confirmText: confirmTitle,
+        cancelText: cancelTitle,
+        success: function success(res) {
+          if (res.confirm) {
+            successCallBack(confirmTitle);
+          } else {
+            successCallBack(cancelTitle);
+          }
         },
         fail: function fail() {
-          failCallBack(confirmTitle);
+          failCallBack();
         }
       });
     }
@@ -8754,9 +8418,9 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
@@ -8764,7 +8428,7 @@ cmldefine('96', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = confirm;
+exports.default = showToast;
 
 var _index = require("97");
 
@@ -8776,23 +8440,15 @@ function _interopRequireDefault(obj) {
   };
 }
 
-function confirm(opt) {
+function showToast(opt) {
   var _opt$message = opt.message,
       message = _opt$message === undefined ? '' : _opt$message,
-      _opt$confirmTitle = opt.confirmTitle,
-      confirmTitle = _opt$confirmTitle === undefined ? '确定' : _opt$confirmTitle,
-      _opt$cancelTitle = opt.cancelTitle,
-      cancelTitle = _opt$cancelTitle === undefined ? '取消' : _opt$cancelTitle;
-  return new Promise(function (resolve, reject) {
-    _index2.default.confirm({
-      message: message,
-      confirmTitle: confirmTitle,
-      cancelTitle: cancelTitle
-    }, function (value) {
-      resolve(value);
-    }, function () {
-      reject();
-    });
+      _opt$duration = opt.duration,
+      duration = _opt$duration === undefined ? 2000 : _opt$duration;
+
+  _index2.default.showToast({
+    message: message,
+    duration: duration
   });
 }
 })
@@ -8825,70 +8481,20 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/confirm/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "confirmOpt": {
-      "message": "String",
-      "confirmTitle": "String",
-      "cancelTitle": "String"
-    },
-    "successCallBack": {
-      "input": ["String"],
-      "output": "Undefined"
-    },
-    "failCallBack": {
-      "input": [],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "uiInterface": {
-      "confirm": {
-        "input": ["confirmOpt", "successCallBack", "failCallBack"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["uiInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "confirm",
-    value: function confirm(opt, successCallBack, failCallBack) {
+    key: 'showToast',
+    value: function showToast(opt) {
       var message = opt.message,
-          confirmTitle = opt.confirmTitle,
-          cancelTitle = opt.cancelTitle;
-      tt.showModal({
-        title: '',
-        content: message,
-        confirmText: confirmTitle,
-        cancelText: cancelTitle,
-        success: function success(res) {
-          if (res.confirm) {
-            successCallBack(confirmTitle);
-          } else {
-            successCallBack(cancelTitle);
-          }
-        },
-        fail: function fail() {
-          failCallBack();
-        }
+          duration = opt.duration;
+      tt.showToast({
+        icon: 'none',
+        title: message,
+        duration: duration
       });
     }
   }]);
@@ -8896,9 +8502,9 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
@@ -8906,7 +8512,7 @@ cmldefine('98', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = showToast;
+exports.default = setTitle;
 
 var _index = require("99");
 
@@ -8918,16 +8524,10 @@ function _interopRequireDefault(obj) {
   };
 }
 
-function showToast(opt) {
-  var _opt$message = opt.message,
-      message = _opt$message === undefined ? '' : _opt$message,
-      _opt$duration = opt.duration,
-      duration = _opt$duration === undefined ? 2000 : _opt$duration;
+function setTitle() {
+  var title = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
-  _index2.default.showToast({
-    message: message,
-    duration: duration
-  });
+  _index2.default.setTitle(title);
 }
 })
 cmldefine('99', function(require, exports, module) {
@@ -8959,49 +8559,16 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/showToast/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "toastOpt": {
-      "message": "String",
-      "duration": "Number"
-    }
-  },
-  "interfaces": {
-    "uiInterface": {
-      "showToast": {
-        "input": ["toastOpt"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["uiInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "showToast",
-    value: function showToast(opt) {
-      var message = opt.message,
-          duration = opt.duration;
-      tt.showToast({
-        icon: 'none',
-        title: message,
-        duration: duration
+    key: 'setTitle',
+    value: function setTitle(title) {
+      tt.setNavigationBarTitle({
+        title: title
       });
     }
   }]);
@@ -9009,9 +8576,9 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
@@ -9019,7 +8586,6 @@ cmldefine('100', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = setTitle;
 
 var _index = require("101");
 
@@ -9031,11 +8597,10 @@ function _interopRequireDefault(obj) {
   };
 }
 
-function setTitle() {
-  var title = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+var RequestAnimationFactory = _index2.default.init();
 
-  _index2.default.setTitle(title);
-}
+var animationFrame = new RequestAnimationFactory();
+exports.default = animationFrame.requestAnimationFrame();
 })
 cmldefine('101', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -9060,103 +8625,7 @@ var _createClass = function () {
   };
 }();
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/setTitle/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "setTitleInterface": {
-      "setTitle": {
-        "input": ["String"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["setTitleInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
-var Method = function () {
-  function Method() {
-    _classCallCheck(this, Method);
-  }
-
-  _createClass(Method, [{
-    key: "setTitle",
-    value: function setTitle(title) {
-      tt.setNavigationBarTitle({
-        title: title
-      });
-    }
-  }]);
-
-  return Method;
-}();
-
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
-
-var copyProtoProperty = require("5");
-
-copyProtoProperty(exports.default);
-})
-cmldefine('102', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _index = require("103");
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-var RequestAnimationFactory = _index2.default.init();
-
-var animationFrame = new RequestAnimationFactory();
-exports.default = animationFrame.requestAnimationFrame();
-})
-cmldefine('103', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-var _animationShim = require("35");
+var _animationShim = require("33");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -9164,42 +8633,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/requestAnimationFrame/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "AnimationFrameFactory": {
-      "input": [],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "RequestAnimationInterface": {
-      "init": {
-        "input": [],
-        "output": "AnimationFrameFactory"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["RequestAnimationInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "init",
+    key: 'init',
     value: function init() {
       return function () {
         function AnimationFrameFactory() {
@@ -9207,7 +8647,7 @@ var Method = function () {
         }
 
         _createClass(AnimationFrameFactory, [{
-          key: "requestAnimationFrame",
+          key: 'requestAnimationFrame',
           value: function requestAnimationFrame() {
             return _animationShim.requestAnimationFrame;
           }
@@ -9221,13 +8661,13 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('35', function(require, exports, module) {
+cmldefine('33', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9267,12 +8707,12 @@ var cancelAnimationFrame = exports.cancelAnimationFrame = function cancelAnimati
   }
 };
 })
-cmldefine('104', function(require, exports, module) {
+cmldefine('102', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = require("105");
+var _index = require("103");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -9286,6 +8726,91 @@ var CancelAnimationFactory = _index2.default.init();
 
 var animationFrame = new CancelAnimationFactory();
 exports.default = animationFrame.cancelAnimationFrame();
+})
+cmldefine('103', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var _animationShim = require("33");
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: 'init',
+    value: function init() {
+      return function () {
+        function AnimationFrameFactory() {
+          _classCallCheck(this, AnimationFrameFactory);
+        }
+
+        _createClass(AnimationFrameFactory, [{
+          key: 'cancelAnimationFrame',
+          value: function cancelAnimationFrame() {
+            return _animationShim.cancelAnimationFrame;
+          }
+        }]);
+
+        return AnimationFrameFactory;
+      }();
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = new Method();
+
+var copyProtoProperty = require("3");
+
+copyProtoProperty(exports.default);
+})
+cmldefine('104', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = inSDK;
+
+var _index = require("105");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function inSDK() {
+  return _index2.default.inSDK();
+}
 })
 cmldefine('105', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -9310,42 +8835,11 @@ var _createClass = function () {
   };
 }();
 
-var _animationShim = require("35");
-
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/cancelAnimationFrame/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "AnimationFrameFactory": {
-      "input": [],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "CancelAnimationInterface": {
-      "init": {
-        "input": [],
-        "output": "AnimationFrameFactory"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["CancelAnimationInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
 
 var Method = function () {
   function Method() {
@@ -9353,31 +8847,18 @@ var Method = function () {
   }
 
   _createClass(Method, [{
-    key: "init",
-    value: function init() {
-      return function () {
-        function AnimationFrameFactory() {
-          _classCallCheck(this, AnimationFrameFactory);
-        }
-
-        _createClass(AnimationFrameFactory, [{
-          key: "cancelAnimationFrame",
-          value: function cancelAnimationFrame() {
-            return _animationShim.cancelAnimationFrame;
-          }
-        }]);
-
-        return AnimationFrameFactory;
-      }();
+    key: 'inSDK',
+    value: function inSDK() {
+      return false;
     }
   }]);
 
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
@@ -9385,7 +8866,7 @@ cmldefine('106', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = inSDK;
+exports.default = chooseImage;
 
 var _index = require("107");
 
@@ -9397,8 +8878,17 @@ function _interopRequireDefault(obj) {
   };
 }
 
-function inSDK() {
-  return _index2.default.inSDK();
+function chooseImage() {
+  var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    type: 'choice'
+  };
+  return new Promise(function (resolve, reject) {
+    _index2.default.chooseImage(params, function (res) {
+      resolve(res);
+    }, function (err) {
+      reject(err);
+    });
+  });
 }
 })
 cmldefine('107', function(require, exports, module) {
@@ -9430,160 +8920,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/inSDK/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "InSDKInterface": {
-      "inSDK": {
-        "input": [],
-        "output": "Boolean"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["InSDKInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "inSDK",
-    value: function inSDK() {
-      return false;
-    }
-  }]);
-
-  return Method;
-}();
-
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
-
-var copyProtoProperty = require("5");
-
-copyProtoProperty(exports.default);
-})
-cmldefine('108', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = chooseImage;
-
-var _index = require("109");
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function chooseImage() {
-  var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    type: 'choice'
-  };
-  return new Promise(function (resolve, reject) {
-    _index2.default.chooseImage(params, function (res) {
-      resolve(res);
-    }, function (err) {
-      reject(err);
-    });
-  });
-}
-})
-cmldefine('109', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/chooseImage/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "params": {
-      "type": "String"
-    },
-    "callbackSuccessReturn__tempFilePaths": ["String"],
-    "callbackSuccessReturn": {
-      "base64": "String",
-      "tempFilePaths": "callbackSuccessReturn__tempFilePaths"
-    },
-    "callbackFailReturn": {
-      "errMsg": "String"
-    },
-    "callbackSuccess": {
-      "input": ["callbackSuccessReturn"],
-      "output": "Undefined"
-    },
-    "callbackFail": {
-      "input": ["callbackFailReturn"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "chooseImageInterface": {
-      "chooseImage": {
-        "input": ["params", "callbackSuccess", "callbackFail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["chooseImageInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
-var Method = function () {
-  function Method() {
-    _classCallCheck(this, Method);
-  }
-
-  _createClass(Method, [{
-    key: "chooseImage",
+    key: 'chooseImage',
     value: function chooseImage(params, callbackSuccess, callbackFail) {
       var sourceType = [];
 
@@ -9620,19 +8963,19 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('110', function(require, exports, module) {
+cmldefine('108', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = close;
 
-var _index = require("111");
+var _index = require("109");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -9644,6 +8987,84 @@ function _interopRequireDefault(obj) {
 
 function close() {
   _index2.default.close();
+}
+})
+cmldefine('109', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: 'close',
+    value: function close() {
+      tt.navigateBack({
+        delta: 1
+      });
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = new Method();
+
+var copyProtoProperty = require("3");
+
+copyProtoProperty(exports.default);
+})
+cmldefine('110', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = open;
+
+var _index = require("111");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function open() {
+  var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var commonPatchParams = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var extraOptions = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {
+    closeCurrent: false
+  };
+
+  _index2.default.open(url, commonPatchParams, extraOptions);
 }
 })
 cmldefine('111', function(require, exports, module) {
@@ -9675,156 +9096,26 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/close/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "closeInterface": {
-      "close": {
-        "input": [],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["closeInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "close",
-    value: function close() {
-      tt.navigateBack({
-        delta: 1
-      });
-    }
-  }]);
-
-  return Method;
-}();
-
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
-
-var copyProtoProperty = require("5");
-
-copyProtoProperty(exports.default);
-})
-cmldefine('112', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = open;
-
-var _index = require("113");
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function open() {
-  var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-  var commonPatchParams = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var extraOptions = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {
-    closeCurrent: false
-  };
-
-  _index2.default.open(url, commonPatchParams, extraOptions);
-}
-})
-cmldefine('113', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/open/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "extraOptions": {
-      "closeCurrent": "Boolean"
-    }
-  },
-  "interfaces": {
-    "openPageInterface": {
-      "open": {
-        "input": ["String", "CMLObject", "extraOptions"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["openPageInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
-var Method = function () {
-  function Method() {
-    _classCallCheck(this, Method);
-  }
-
-  _createClass(Method, [{
-    key: "open",
+    key: 'open',
     value: function open() {}
   }]);
 
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('114', function(require, exports, module) {
+cmldefine('112', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9837,7 +9128,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.default = setStorage;
 
-var _index = require("115");
+var _index = require("113");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -9870,7 +9161,7 @@ function setStorage(key, value) {
   });
 }
 })
-cmldefine('115', function(require, exports, module) {
+cmldefine('113', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9899,47 +9190,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/setStorage/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "obj": {
-      "errno": "Number",
-      "errMsg": "String",
-      "data": "String"
-    },
-    "setCallback": {
-      "input": ["obj"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "UtilsInterface": {
-      "setStorage": {
-        "input": ["String", "String", "setCallback"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["UtilsInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "setStorage",
+    key: 'setStorage',
     value: function setStorage(key, value, cb) {
       try {
         tt.setStorage({
@@ -9981,23 +9238,23 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('116', function(require, exports, module) {
+cmldefine('114', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = getStorage;
 
-var _index = require("117");
+var _index = require("115");
 
 var _index2 = _interopRequireDefault(_index);
 
-var _utils = require("11");
+var _utils = require("9");
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -10018,7 +9275,7 @@ function getStorage(key) {
   });
 }
 })
-cmldefine('117', function(require, exports, module) {
+cmldefine('115', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10047,47 +9304,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/getStorage/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "obj": {
-      "errno": "Number",
-      "errMsg": "String",
-      "data": "String"
-    },
-    "getCallback": {
-      "input": ["obj"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "UtilsInterface": {
-      "getStorage": {
-        "input": ["String", "getCallback"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["UtilsInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "getStorage",
+    key: 'getStorage',
     value: function getStorage(key, cb) {
       try {
         var _data = tt.getStorageSync(key);
@@ -10122,13 +9345,13 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('11', function(require, exports, module) {
+cmldefine('9', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10281,8 +9504,8 @@ function addApiPrefix(url, domainkey) {
     return prefix + url;
   } else {
     // 老版本配置apiPrefix
-    if ("http://172.24.40.90:5556") {
-      return "http://172.24.40.90:5556" + url;
+    if ("https://cmljs.org") {
+      return "https://cmljs.org" + url;
     }
   }
 }
@@ -10495,13 +9718,13 @@ var checkValue = exports.checkValue = function checkValue(check, targetMap) {
   return true;
 };
 })
-cmldefine('119', function(require, exports, module) {
+cmldefine('117', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = removeStorage;
 
-var _index = require("120");
+var _index = require("118");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -10523,7 +9746,7 @@ function removeStorage(key) {
   });
 }
 })
-cmldefine('120', function(require, exports, module) {
+cmldefine('118', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10552,47 +9775,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/removeStorage/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "obj": {
-      "errno": "Number",
-      "errMsg": "String",
-      "data": "String"
-    },
-    "removeCallback": {
-      "input": ["obj"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "UtilsInterface": {
-      "removeStorage": {
-        "input": ["String", "removeCallback"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["UtilsInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "removeStorage",
+    key: 'removeStorage',
     value: function removeStorage(key, cb) {
       try {
         tt.removeStorageSync(key);
@@ -10622,19 +9811,19 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('121', function(require, exports, module) {
+cmldefine('119', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = getClipBoardData;
 
-var _index = require("36");
+var _index = require("34");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -10656,7 +9845,7 @@ function getClipBoardData() {
   });
 }
 })
-cmldefine('36', function(require, exports, module) {
+cmldefine('34', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10685,51 +9874,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/getClipBoardData/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "res": {
-      "errno": "Number",
-      "errMsg": "String",
-      "data": "String"
-    },
-    "callback": {
-      "input": ["res"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "ClipBoardDataInterface": {
-      "getClipBoardData": {
-        "input": ["callback"],
-        "output": "Undefined"
-      },
-      "setClipBoardData": {
-        "input": ["String", "callback"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["ClipBoardDataInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "getClipBoardData",
+    key: 'getClipBoardData',
     value: function getClipBoardData(cb) {
       tt.getClipboardData({
         success: function success(res) {
@@ -10749,7 +9900,7 @@ var Method = function () {
       });
     }
   }, {
-    key: "setClipBoardData",
+    key: 'setClipBoardData',
     value: function setClipBoardData(text, cb) {
       tt.setClipboardData({
         data: text,
@@ -10774,19 +9925,19 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('122', function(require, exports, module) {
+cmldefine('120', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = setClipBoardData;
 
-var _index = require("36");
+var _index = require("34");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -10808,13 +9959,13 @@ function setClipBoardData(text) {
   });
 }
 })
-cmldefine('123', function(require, exports, module) {
+cmldefine('121', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = reload;
 
-var _index = require("124");
+var _index = require("122");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -10826,6 +9977,82 @@ function _interopRequireDefault(obj) {
 
 function reload() {
   _index2.default.reload();
+}
+})
+cmldefine('122', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: 'reload',
+    value: function reload() {}
+  }]);
+
+  return Method;
+}();
+
+exports.default = new Method();
+
+var copyProtoProperty = require("3");
+
+copyProtoProperty(exports.default);
+})
+cmldefine('123', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = redirectTo;
+
+var _index = require("124");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function redirectTo(opt) {
+  var query = opt.query || {};
+  var path = opt.path || '';
+  var url = opt.url || '';
+
+  _index2.default.redirectTo({
+    path: path,
+    url: url,
+    query: query
+  });
 }
 })
 cmldefine('124', function(require, exports, module) {
@@ -10851,35 +10078,13 @@ var _createClass = function () {
   };
 }();
 
+var _utils = require("9");
+
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/reload/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "reloadInterface": {
-      "reload": {
-        "input": [],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["reloadInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
 
 var Method = function () {
   function Method() {
@@ -10887,16 +10092,23 @@ var Method = function () {
   }
 
   _createClass(Method, [{
-    key: "reload",
-    value: function reload() {}
+    key: 'redirectTo',
+    value: function redirectTo(opt) {
+      var path = opt.path,
+          query = opt.query;
+      path = (0, _utils.buildQueryStringUrl)(query, path);
+      tt.redirectTo({
+        url: path
+      });
+    }
   }]);
 
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
@@ -10904,7 +10116,7 @@ cmldefine('125', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = redirectTo;
+exports.default = navigateTo;
 
 var _index = require("126");
 
@@ -10916,12 +10128,13 @@ function _interopRequireDefault(obj) {
   };
 }
 
-function redirectTo(opt) {
+function navigateTo(opt) {
+  // 转换为字符串通过多态不支持object，需改
   var query = opt.query || {};
   var path = opt.path || '';
-  var url = opt.url || '';
+  var url = opt.url || ''; // 不能通过直接转换类型对opt.query重新赋值的操作, 否则会造成opt原始传入对象数据被篡改的问题
 
-  _index2.default.redirectTo({
+  _index2.default.navigateTo({
     path: path,
     url: url,
     query: query
@@ -10951,7 +10164,7 @@ var _createClass = function () {
   };
 }();
 
-var _utils = require("11");
+var _utils = require("9");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -10959,48 +10172,18 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/redirectTo/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "options": {
-      "path": "String",
-      "query": "CMLObject",
-      "url": "String"
-    }
-  },
-  "interfaces": {
-    "UtilsInterface": {
-      "redirectTo": {
-        "input": ["options"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["UtilsInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "redirectTo",
-    value: function redirectTo(opt) {
+    key: 'navigateTo',
+    value: function navigateTo(opt) {
       var path = opt.path,
           query = opt.query;
       path = (0, _utils.buildQueryStringUrl)(query, path);
-      tt.redirectTo({
+      tt.navigateTo({
         url: path
       });
     }
@@ -11009,9 +10192,9 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
@@ -11019,7 +10202,7 @@ cmldefine('127', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = navigateTo;
+exports.default = navigateBack;
 
 var _index = require("128");
 
@@ -11031,17 +10214,10 @@ function _interopRequireDefault(obj) {
   };
 }
 
-function navigateTo(opt) {
-  // 转换为字符串通过多态不支持object，需改
-  var query = opt.query || {};
-  var path = opt.path || '';
-  var url = opt.url || ''; // 不能通过直接转换类型对opt.query重新赋值的操作, 否则会造成opt原始传入对象数据被篡改的问题
+function navigateBack() {
+  var backPageNum = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : -1;
 
-  _index2.default.navigateTo({
-    path: path,
-    url: url,
-    query: query
-  });
+  _index2.default.navigateBack(backPageNum);
 }
 })
 cmldefine('128', function(require, exports, module) {
@@ -11067,43 +10243,11 @@ var _createClass = function () {
   };
 }();
 
-var _utils = require("11");
-
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/navigateTo/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "options": {
-      "path": "String",
-      "query": "CMLObject",
-      "url": "String"
-    }
-  },
-  "interfaces": {
-    "UtilsInterface": {
-      "navigateTo": {
-        "input": ["options"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["UtilsInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
 
 var Method = function () {
   function Method() {
@@ -11111,13 +10255,10 @@ var Method = function () {
   }
 
   _createClass(Method, [{
-    key: "navigateTo",
-    value: function navigateTo(opt) {
-      var path = opt.path,
-          query = opt.query;
-      path = (0, _utils.buildQueryStringUrl)(query, path);
-      tt.navigateTo({
-        url: path
+    key: 'navigateBack',
+    value: function navigateBack(backPageNum) {
+      tt.navigateBack({
+        delta: Math.abs(backPageNum)
       });
     }
   }]);
@@ -11125,9 +10266,9 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
@@ -11135,11 +10276,28 @@ cmldefine('129', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = navigateBack;
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+exports.default = getSystemInfo;
 
 var _index = require("130");
 
 var _index2 = _interopRequireDefault(_index);
+
+var _utils = require("9");
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -11147,10 +10305,25 @@ function _interopRequireDefault(obj) {
   };
 }
 
-function navigateBack() {
-  var backPageNum = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : -1;
+function getSystemInfo() {
+  return new Promise(function (resolve, reject) {
+    _index2.default.getSystemInfo(function (res) {
+      res.extraParams = (0, _utils.tryJsonParse)(res.extraParams); // px2viewpx
 
-  _index2.default.navigateBack(backPageNum);
+      var pxRpxRate = 750 / res.viewportWidth;
+      var viewportHeight = (res.viewportHeight * pxRpxRate).toFixed(3);
+      var viewportWidth = (res.viewportWidth * pxRpxRate).toFixed(3);
+
+      if (res.os) {
+        resolve(_extends({}, res, {
+          viewportHeight: viewportHeight,
+          viewportWidth: viewportWidth
+        }));
+      } else {
+        reject(res);
+      }
+    });
+  });
 }
 })
 cmldefine('130', function(require, exports, module) {
@@ -11181,172 +10354,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/navigateBack/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "UtilsInterface": {
-      "navigateBack": {
-        "input": ["Number"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["UtilsInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
-var Method = function () {
-  function Method() {
-    _classCallCheck(this, Method);
-  }
-
-  _createClass(Method, [{
-    key: "navigateBack",
-    value: function navigateBack(backPageNum) {
-      tt.navigateBack({
-        delta: Math.abs(backPageNum)
-      });
-    }
-  }]);
-
-  return Method;
-}();
-
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
-
-var copyProtoProperty = require("5");
-
-copyProtoProperty(exports.default);
-})
-cmldefine('131', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }
-
-  return target;
-};
-
-exports.default = getSystemInfo;
-
-var _index = require("132");
-
-var _index2 = _interopRequireDefault(_index);
-
-var _utils = require("11");
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function getSystemInfo() {
-  return new Promise(function (resolve, reject) {
-    _index2.default.getSystemInfo(function (res) {
-      res.extraParams = (0, _utils.tryJsonParse)(res.extraParams); // px2viewpx
-
-      var pxRpxRate = 750 / res.viewportWidth;
-      var viewportHeight = (res.viewportHeight * pxRpxRate).toFixed(3);
-      var viewportWidth = (res.viewportWidth * pxRpxRate).toFixed(3);
-
-      if (res.os) {
-        resolve(_extends({}, res, {
-          viewportHeight: viewportHeight,
-          viewportWidth: viewportWidth
-        }));
-      } else {
-        reject(res);
-      }
-    });
-  });
-}
-})
-cmldefine('132', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/getSystemInfo/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "res": {
-      "os": "String",
-      "env": "String",
-      "viewportWidth": "Number",
-      "viewportHeight": "Number",
-      "extraParams": "CMLObject"
-    },
-    "CallBack": {
-      "input": ["res"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "UserInfoInterface": {
-      "getSystemInfo": {
-        "input": ["CallBack"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["UserInfoInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
 
 var Method = function () {
   function Method() {
@@ -11387,19 +10394,19 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('133', function(require, exports, module) {
+cmldefine('131', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = getLaunchOptionsSync;
 
-var _index = require("134");
+var _index = require("132");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -11411,6 +10418,84 @@ function _interopRequireDefault(obj) {
 
 function getLaunchOptionsSync() {
   return _index2.default.getLaunchOptionsSync();
+}
+})
+cmldefine('132', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: 'getLaunchOptionsSync',
+    value: function getLaunchOptionsSync() {
+      return tt.getLaunchOptionsSync();
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = new Method();
+
+var copyProtoProperty = require("3");
+
+copyProtoProperty(exports.default);
+})
+cmldefine('133', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getRect;
+
+var _index = require("134");
+
+var _index2 = _interopRequireDefault(_index);
+
+var _utils = require("9");
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function getRect(ref, context) {
+  return new Promise(function (resolve, reject) {
+    var refObj = (0, _utils.getRefObj)(ref, context);
+
+    _index2.default.getRect(refObj, function (res) {
+      resolve(res);
+    });
+  });
 }
 })
 cmldefine('134', function(require, exports, module) {
@@ -11442,155 +10527,16 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/getLaunchOptionsSync/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "launchOptionsInterface": {
-      "getLaunchOptionsSync": {
-        "input": [],
-        "output": "CMLObject"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["launchOptionsInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "getLaunchOptionsSync",
-    value: function getLaunchOptionsSync() {
-      return tt.getLaunchOptionsSync();
-    }
-  }]);
-
-  return Method;
-}();
-
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
-
-var copyProtoProperty = require("5");
-
-copyProtoProperty(exports.default);
-})
-cmldefine('135', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = getRect;
-
-var _index = require("136");
-
-var _index2 = _interopRequireDefault(_index);
-
-var _utils = require("11");
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function getRect(ref, context) {
-  return new Promise(function (resolve, reject) {
-    var refObj = (0, _utils.getRefObj)(ref, context);
-
-    _index2.default.getRect(refObj, function (res) {
-      resolve(res);
-    });
-  });
-}
-})
-cmldefine('136', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/getRect/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "resData": {
-      "width": "Number",
-      "height": "Number",
-      "left": "Number",
-      "top": "Number",
-      "right": "Number",
-      "bottom": "Number"
-    },
-    "CallBack": {
-      "input": ["resData"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "UserInfoInterface": {
-      "getRect": {
-        "input": ["CMLObject", "CallBack"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["UserInfoInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
-var Method = function () {
-  function Method() {
-    _classCallCheck(this, Method);
-  }
-
-  _createClass(Method, [{
-    key: "getRect",
+    key: 'getRect',
     value: function getRect(refObj, cb) {
       var query = tt.createSelectorQuery().in(refObj.context);
-      query.select("#" + refObj.id).boundingClientRect();
+      query.select('#' + refObj.id).boundingClientRect();
       query.exec(function (res) {
         tt.getSystemInfo({
           success: function success(systemRes) {
@@ -11614,19 +10560,19 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('137', function(require, exports, module) {
+cmldefine('135', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = px2cpx;
 
-var _getWidth = require("37");
+var _getWidth = require("35");
 
 var _getWidth2 = _interopRequireDefault(_getWidth);
 
@@ -11648,7 +10594,7 @@ function px2cpx(px) {
   return cpx;
 }
 })
-cmldefine('37', function(require, exports, module) {
+cmldefine('35', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -11677,37 +10623,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/px2cpx/getWidth.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "getWidthInterface": {
-      "getWidth": {
-        "input": [],
-        "output": "Number"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["getWidthInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "getWidth",
+    key: 'getWidth',
     value: function getWidth() {
       var _tt$getSystemInfoSync = tt.getSystemInfoSync(),
           windowWidth = _tt$getSystemInfoSync.windowWidth;
@@ -11719,19 +10641,19 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('138', function(require, exports, module) {
+cmldefine('136', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = cpx2px;
 
-var _getWidth = require("37");
+var _getWidth = require("35");
 
 var _getWidth2 = _interopRequireDefault(_getWidth);
 
@@ -11753,13 +10675,13 @@ function cpx2px(cpx) {
   return px;
 }
 })
-cmldefine('139', function(require, exports, module) {
+cmldefine('137', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = initSocket;
 
-var _index = require("140");
+var _index = require("138");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -11777,7 +10699,7 @@ function initSocket() {
   return instance;
 }
 })
-cmldefine('140', function(require, exports, module) {
+cmldefine('138', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -11800,7 +10722,7 @@ var _createClass = function () {
   };
 }();
 
-var _ttSocket = require("141");
+var _ttSocket = require("139");
 
 var _ttSocket2 = _interopRequireDefault(_ttSocket);
 
@@ -11816,37 +10738,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/initSocket/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "socketInterface": {
-      "initSocket": {
-        "input": ["String"],
-        "output": "CMLObject"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["socketInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "initSocket",
+    key: 'initSocket',
     value: function initSocket(url) {
       return new _ttSocket2.default(url);
     }
@@ -11855,13 +10753,13 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('141', function(require, exports, module) {
+cmldefine('139', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -11947,13 +10845,13 @@ var TtSocket = function () {
 
 exports.default = TtSocket;
 })
-cmldefine('142', function(require, exports, module) {
+cmldefine('140', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = canIUse;
 
-var _index = require("143");
+var _index = require("141");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -11970,6 +10868,84 @@ function canIUse(metName) {
         resolve(res);
       } else {
         reject(res);
+      }
+    });
+  });
+}
+})
+cmldefine('141', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+var Method = function () {
+  function Method() {
+    _classCallCheck(this, Method);
+  }
+
+  _createClass(Method, [{
+    key: 'canIUse',
+    value: function canIUse(metName, cb) {
+      cb(true);
+    }
+  }]);
+
+  return Method;
+}();
+
+exports.default = new Method();
+
+var copyProtoProperty = require("3");
+
+copyProtoProperty(exports.default);
+})
+cmldefine('142', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getLocationInfo;
+
+var _index = require("143");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function getLocationInfo() {
+  return new Promise(function (resolve, reject) {
+    _index2.default.getLocationInfo(function (res) {
+      if (res.errno === 0) {
+        resolve(res.data);
+      } else {
+        reject(res.errMsg);
       }
     });
   });
@@ -12004,158 +10980,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/canIUse/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "callback": {
-      "input": ["Boolean"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "canIUseInterface": {
-      "canIUse": {
-        "input": ["String", "callback"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["canIUseInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "canIUse",
-    value: function canIUse(metName, cb) {
-      cb(true);
-    }
-  }]);
-
-  return Method;
-}();
-
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
-
-var copyProtoProperty = require("5");
-
-copyProtoProperty(exports.default);
-})
-cmldefine('144', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = getLocationInfo;
-
-var _index = require("145");
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-function getLocationInfo() {
-  return new Promise(function (resolve, reject) {
-    _index2.default.getLocationInfo(function (res) {
-      if (res.errno === 0) {
-        resolve(res.data);
-      } else {
-        reject(res.errMsg);
-      }
-    });
-  });
-}
-})
-cmldefine('145', function(require, exports, module) {
-  Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/getLocationInfo/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "data": {
-      "lat": "Number",
-      "lng": "Number"
-    },
-    "resData": {
-      "errno": "Number",
-      "errMsg": "String",
-      "data": "data"
-    },
-    "callback": {
-      "input": ["resData"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "UtilsInterface": {
-      "getLocationInfo": {
-        "input": ["callback"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["UtilsInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
-var Method = function () {
-  function Method() {
-    _classCallCheck(this, Method);
-  }
-
-  _createClass(Method, [{
-    key: "getLocationInfo",
+    key: 'getLocationInfo',
     value: function getLocationInfo(cb) {
       tt.getLocation({
         type: 'wgs84',
@@ -12188,13 +11019,13 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('24', function(require, exports, module) {
+cmldefine('22', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -12215,11 +11046,11 @@ var _extends = Object.assign || function (target) {
 
 exports.default = request;
 
-var _index = require("146");
+var _index = require("144");
 
 var _index2 = _interopRequireDefault(_index);
 
-var _utils = require("11");
+var _utils = require("9");
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -12249,7 +11080,7 @@ function request(_ref) {
       jsonp = _setting$jsonp === undefined ? false : _setting$jsonp,
       _setting$credentials = setting.credentials,
       credentials = _setting$credentials === undefined ? 'include' : _setting$credentials;
-  var media = "dev"; // 如果用户配置了domain
+  var media = "build"; // 如果用户配置了domain
 
   if (domain) {
     if (media === 'dev') {
@@ -12269,8 +11100,8 @@ function request(_ref) {
     // 如果没有配置domain
     if (apiPrefix) {
       // 有apiPrefix优先
-      if ("http://172.24.40.90:5556") {
-        url = "http://172.24.40.90:5556" + url;
+      if ("https://cmljs.org") {
+        url = "https://cmljs.org" + url;
       }
     }
   }
@@ -12348,7 +11179,7 @@ function request(_ref) {
   });
 }
 })
-cmldefine('146', function(require, exports, module) {
+cmldefine('144', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -12371,7 +11202,7 @@ var _createClass = function () {
   };
 }();
 
-var _common = require("147");
+var _common = require("145");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -12379,55 +11210,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/request/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "responseType": {
-      "status": "Number",
-      "data": "String",
-      "headers": "String"
-    },
-    "requestParams__cb": {
-      "input": ["responseType"],
-      "output": "Undefined"
-    },
-    "requestParams": {
-      "url": "String",
-      "body": "String",
-      "headers": "CMLObject",
-      "setting": "CMLObject",
-      "method": "String",
-      "cb": "requestParams__cb"
-    }
-  },
-  "interfaces": {
-    "UtilsInterface": {
-      "request": {
-        "input": ["requestParams"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["UtilsInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "request",
+    key: 'request',
     value: function request(params) {
       var url = params.url,
           body = params.body,
@@ -12461,13 +11250,13 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('147', function(require, exports, module) {
+cmldefine('145', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -12545,13 +11334,13 @@ exports.default = {
   parseHeader: parseHeader
 };
 })
-cmldefine('148', function(require, exports, module) {
+cmldefine('146', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = post;
 
-var _index = require("24");
+var _index = require("22");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -12566,13 +11355,13 @@ function post(options) {
   return (0, _index2.default)(options);
 }
 })
-cmldefine('149', function(require, exports, module) {
+cmldefine('147', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = post;
 
-var _index = require("24");
+var _index = require("22");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -12587,16 +11376,16 @@ function post(options) {
   return (0, _index2.default)(options);
 }
 })
-cmldefine('150', function(require, exports, module) {
+cmldefine('148', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = require("25");
+var _index = require("23");
 
 var _index2 = _interopRequireDefault(_index);
 
-var _createAnimationFactory = require("153");
+var _createAnimationFactory = require("151");
 
 var _createAnimationFactory2 = _interopRequireDefault(_createAnimationFactory);
 
@@ -12612,7 +11401,7 @@ exports.default = function (description) {
   return new _createAnimationFactory2.default(description);
 };
 })
-cmldefine('25', function(require, exports, module) {
+cmldefine('23', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -12635,63 +11424,19 @@ var _createClass = function () {
   };
 }();
 
-var _common = require("38");
+var _common = require("36");
 
-var _tt = require("151");
+var _tt = require("149");
 
-var _common2 = require("152");
+var _common2 = require("150");
 
-var _util = require("39");
+var _util = require("37");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/createAnimation/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "CreateAnimationInterface": {
-      "initAnimation": {
-        "input": [],
-        "output": "Undefined"
-      },
-      "exportMiddleWare": {
-        "input": ["CMLObject"],
-        "output": "CMLObject"
-      },
-      "checkNumber": {
-        "input": ["Number"],
-        "output": "Undefined"
-      },
-      "checkString": {
-        "input": ["String"],
-        "output": "Undefined"
-      },
-      "checkObject": {
-        "input": ["CMLObject"],
-        "output": "Undefined"
-      },
-      "getViewportWidth": {
-        "input": [],
-        "output": "Number"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["CreateAnimationInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
 
 var styleLoaderQueue = [_common.commonLoader, _common.cacheTransformStylesLoader, _tt.transformLoader];
 var descriptionLoaderQueue = [_common2.commonLoader, _common2.cacheTransformOriginLoader];
@@ -12721,21 +11466,21 @@ var Method = function () {
   }
 
   _createClass(Method, [{
-    key: "initAnimation",
+    key: 'initAnimation',
     value: function initAnimation() {
       this.isTTAnimation = true;
     }
   }, {
-    key: "checkNumber",
+    key: 'checkNumber',
     value: function checkNumber(number) {}
   }, {
-    key: "checkString",
+    key: 'checkString',
     value: function checkString(string) {}
   }, {
-    key: "checkObject",
+    key: 'checkObject',
     value: function checkObject(object) {}
   }, {
-    key: "getViewportWidth",
+    key: 'getViewportWidth',
     value: function getViewportWidth() {
       var _tt$getSystemInfoSync = tt.getSystemInfoSync(),
           windowWidth = _tt$getSystemInfoSync.windowWidth;
@@ -12743,7 +11488,7 @@ var Method = function () {
       return windowWidth;
     }
   }, {
-    key: "exportMiddleWare",
+    key: 'exportMiddleWare',
     value: function exportMiddleWare(param) {
       return createAnimationFuc(param.updateQueue.map(function (tick) {
         return {
@@ -12757,13 +11502,13 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('38', function(require, exports, module) {
+cmldefine('36', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -12827,17 +11572,17 @@ var cacheTransformStylesLoader = exports.cacheTransformStylesLoader = function c
   return returnStyles;
 };
 })
-cmldefine('151', function(require, exports, module) {
+cmldefine('149', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.transformLoader = undefined;
 
-var _util = require("39");
+var _util = require("37");
 
-var _utils = require("11");
+var _utils = require("9");
 
-var _common = require("38");
+var _common = require("36");
 
 var transformLoader = exports.transformLoader = function transformLoader(styles, description) {
   var returnStyles = {};
@@ -12872,13 +11617,13 @@ var transformLoader = exports.transformLoader = function transformLoader(styles,
   return returnStyles;
 }; // import { cpx2px } from 'chameleon-api/src/interfaces/createAnimation/_util';
 })
-cmldefine('39', function(require, exports, module) {
+cmldefine('37', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.cpx2px = exports.descriptionPipe = exports.stylePipe = undefined;
 
-var _index = require("25");
+var _index = require("23");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -12918,7 +11663,7 @@ var cpx2px = exports.cpx2px = function cpx2px(v) {
 
 exports.default = {};
 })
-cmldefine('152', function(require, exports, module) {
+cmldefine('150', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -12945,12 +11690,12 @@ var cacheTransformOriginLoader = exports.cacheTransformOriginLoader = function c
   return returnDescriptions;
 };
 })
-cmldefine('153', function(require, exports, module) {
+cmldefine('151', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = require("25");
+var _index = require("23");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -13142,13 +11887,13 @@ createAnimationFactory.prototype = {
 utils.enhanceAnimationPrototype(createAnimationFactory.prototype, STYLES);
 exports.default = createAnimationFactory;
 })
-cmldefine('154', function(require, exports, module) {
+cmldefine('152', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = createInnerAudioContext;
 
-var _index = require("155");
+var _index = require("153");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -13162,7 +11907,7 @@ function createInnerAudioContext() {
   return _index2.default.createInnerAudioContext();
 }
 })
-cmldefine('155', function(require, exports, module) {
+cmldefine('153', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -13191,42 +11936,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-api/src/interfaces/createInnerAudioContext/index.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "callback": {
-      "input": ["CMLObject"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "AudioInterfaceInterface": {
-      "createInnerAudioContext": {
-        "input": [],
-        "output": "CMLObject"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["AudioInterfaceInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "createInnerAudioContext",
+    key: 'createInnerAudioContext',
     value: function createInnerAudioContext() {
       return tt.createInnerAudioContext();
     }
@@ -13235,25 +11951,25 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
+cmldefine('154', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/home-ui_ff6eff2.png";
+})
+cmldefine('38', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/home-api_f4f07d0.png";
+})
+cmldefine('155', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/home-chameleon_4bdd159.png";
+})
 cmldefine('156', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/home-ui_ff6eff2.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/arrow-right_481e0c4.png";
 })
-cmldefine('40', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/home-api_f4f07d0.png";
-})
-cmldefine('157', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/home-chameleon_4bdd159.png";
-})
-cmldefine('158', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/arrow-right_481e0c4.png";
-})
-cmldefine('162', function(require, exports, module) {
+cmldefine('160', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -13296,37 +12012,6 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/page/page.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "CPageInterface": {
-      "title": "String",
-      "full": "Boolean",
-      "back": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CPage": ["CPageInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
-
 var CPage = function () {
   function CPage() {
     _classCallCheck(this, CPage);
@@ -13355,7 +12040,7 @@ var CPage = function () {
   }
 
   _createClass(CPage, [{
-    key: "created",
+    key: 'created',
     value: function created() {
       this.setTitle(this.title);
     }
@@ -13364,301 +12049,15 @@ var CPage = function () {
   return CPage;
 }();
 
-exports.default = __CML__WRAPPER__(new CPage(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CPage();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('2', function(require, exports, module) {
-  /* istanbul ignore next */
-module.exports = function (obj, __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__) {
-  var className = obj.constructor.name;
-  var interfaceDefines = __INTERFAE__DEFINES__;
-  var enableTypes = __enableTypes__; // ['Object','Array','Nullable']
-
-  var types = interfaceDefines.types;
-  var interfaceKey = Object.keys(interfaceDefines.interfaces)[0]; // interface Name
-
-  var interfaceObj = interfaceDefines.interfaces[interfaceKey];
-  var cmlDefines = __CML__DEFINES__;
-  var isImplementInterface = false; // 找到class
-
-  if (cmlDefines.classes[className]) {
-    // class 的interface数组中有interface中的定义
-    if (~cmlDefines.classes[className].indexOf(interfaceKey)) {
-      isImplementInterface = true;
-    } else {
-      console.error('class ' + className + ' not implements interface ' + interfaceKey);
-    }
-  }
-
-  var props = [];
-  var events = {};
-  Object.keys(interfaceObj).forEach(function (key) {
-    var item = interfaceObj[key];
-
-    if (is(item, 'Object')) {
-      // 是事件  有output和input
-      events[key] = item;
-    } else {
-      // 是属性
-      props.push({
-        key: key,
-        value: item
-      });
-    }
-  }); // created 时做props校验  同时建立watch属性检测props类型
-  // 包装this.$cmlEmit 校验自定义事件参数类型
-
-  function isFunc(target) {
-    return target && is(target, 'Function');
-  }
-
-  function is(source, type) {
-    return Object.prototype.toString.call(source) === '[object ' + type + ']';
-  }
-
-  var getType = function getType(value) {
-    var type = Object.prototype.toString.call(value);
-    return type.replace(/\[object\s(.*)\]/g, '$1').replace(/( |^)[a-z]/g, function (L) {
-      return L.toUpperCase();
-    });
-  }; // beforeCreate时 vue中还获取不到mixins的this.$cmlEmit方法
-
-
-  var oldCreated = obj.created || function () {};
-
-  obj.created = function () {
-    checkProps.call(this);
-    oldCreated.call(this);
-  };
-
-  obj.methods = obj.methods || {};
-
-  obj.methods.$__checkCmlEmit__ = function (eventName, eventDetail) {
-    if (events[eventName]) {
-      var input = events[eventName].input;
-      var detailType = input[0];
-
-      var _errList = checkType(eventDetail, detailType, []);
-
-      if (_errList && _errList.length) {
-        __CML_ERROR__('errorinfo: event ' + eventName + ' detail verification fails\n           ' + _errList.join('\n') + '\n         ');
-      }
-    } else {
-      __CML_ERROR__('errorinfo:  event ' + eventName + ' is not defined in interface\n           ' + errList.join('\n') + '\n         ');
-    }
-  };
-
-  function checkProps() {
-    var _this = this;
-
-    props.forEach(function (item) {
-      var errList = checkType(_this[item.key], item.value, []);
-
-      if (errList && errList.length) {
-        __CML_ERROR__('error: prop [' + item.key + '] verification fails\n         ' + errList.join('\n') + '\n       ');
-      }
-    });
-  }
-
-  obj.watch = obj.watch || {};
-  props.forEach(function (item) {
-    var oldWatch = obj.watch[item.key];
-
-    obj.watch[item.key] = function (newVal, oldVal) {
-      var errList = checkType(newVal, item.value, []);
-
-      if (errList && errList.length) {
-        __CML_ERROR__('errorinfo: prop [' + item.key + '] verification fails\n           ' + errList.join('\n') + '\n         ');
-      }
-
-      if (isFunc(oldWatch)) {
-        oldWatch.call(this, newVal, oldVal);
-      }
-    };
-  });
-  /**
-   * 校验类型  两个loader共用代码
-   *
-   * @param  {*}      value 实际传入的值
-   * @param  {string} type  静态分析时候得到的值得类型
-   * @param  {array[string]} errList 校验错误信息  类型
-   * @return {bool}         校验结果
-   */
-
-  var checkType = function checkType(value, originType) {
-    var errList = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
-    var isNullableReg = /_cml_nullable_lmc_/g;
-    var type = originType.replace('_cml_nullable_lmc_', '');
-    type === "Void" && (type = "Undefined");
-    var currentType = getType(value); // Undefined Null Object Array Number String  Function只可能是这几种类型；
-    // 但是对于type的值则可能是 Undefined Null Number String NullUndefinedStiring
-    // Object Array Function EventDetail(...这种自定义的复杂数据类型) 这几种；
-    // 判断nullable类型的参数
-    // 如果 currentType === type 那么就会直接返回 [];
-
-    var canUseNullable = enableTypes.includes("Nullable");
-    var canUseObject = enableTypes.includes("Object");
-    var canUseArray = enableTypes.includes("Array");
-
-    if (currentType == 'Null') {
-      // 如果传入的值是 null类型，那么可能的情况是该值在接口处的被定义为Null或者是 ?string 这种可选参数的形式；
-      if (type == "Null") {
-        // 如果定义的参数的值就是 Null，那么校验通过
-        errList = [];
-      } else {
-        // 实际定义的参数的值不是 Null  ?string这种形式的定义，type = new String('String') ?Callback type = new String('Callback')
-        // 那么判断是否是可选参数的情况
-        canUseNullable && isNullableReg.test(originType) ? errList = [] : errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542Fnullable\u914D\u7F6E');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Undefined') {
-      // 如果运行时传入的真实值是undefined,那么可能改值在接口处就是被定义为 Undefined类型或者是 ?string 这种可选参数 nullable的情况；
-      if (type == "Undefined") {
-        errList = [];
-      } else {
-        canUseNullable && isNullableReg.test(originType) ? errList = [] : errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542Fnullable\u914D\u7F6E\u6216\u8005\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'String') {
-      if (type == 'String') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Boolean') {
-      if (type == 'Boolean') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Number') {
-      if (type == 'Number') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Object') {
-      if (type == 'Object') {
-        !canUseObject ? errList.push('\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B' + type + '\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Object \u7C7B\u578B\u53C2\u6570\uFF1B') : errList = [];
-      } else if (type == 'CMLObject') {
-        errList = [];
-      } else {
-        // 这种情况的对象就是自定义的对象；
-        if (types[type]) {
-          var keys = Object.keys(types[type]); // todo 这里是同样的问题，可能多传递
-
-          keys.forEach(function (key) {
-            var subError = checkType(value[key], types[type][key], []);
-
-            if (subError && subError.length) {
-              errList = errList.concat(subError);
-            }
-          });
-
-          if (Object.keys(value).length > keys.length) {
-            errList.push('type [' + type + '] \u53C2\u6570\u4E2A\u6570\u4E0E\u5B9A\u4E49\u4E0D\u7B26');
-          }
-        } else {
-          errList.push('找不到定义的type [' + type + ']!');
-        }
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Array') {
-      if (type == 'Array') {
-        !canUseObject ? errList.push('\u4E0D\u80FD\u76F4\u63A5\u5B9A\u4E49\u7C7B\u578B' + type + '\uFF0C\u9700\u8981\u4F7F\u7528\u7B26\u5408\u7C7B\u578B\u5B9A\u4E49\uFF0C\u8BF7\u786E\u8BA4\u662F\u5426\u5F00\u542F\u4E86\u53EF\u4EE5\u76F4\u63A5\u5B9A\u4E49 Array \u7C7B\u578B\u53C2\u6570\uFF1B') : errList = [];
-      } else {
-        if (types[type]) {
-          // 数组元素的类型
-          var itemType = types[type][0];
-
-          for (var i = 0; i < value.length; i++) {
-            var subError = checkType(value[i], itemType, []);
-
-            if (subError && subError.length) {
-              errList = errList.concat(subError);
-            }
-          }
-        } else {
-          errList.push('找不到定义的type [' + type + ']!');
-        }
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Function') {
-      if (types[type]) {
-        if (!types[type].input && !types[type].output) {
-          errList.push('\u627E\u4E0D\u5230' + types[type] + ' \u51FD\u6570\u5B9A\u4E49\u7684\u8F93\u5165\u8F93\u51FA');
-        }
-      } else {
-        errList.push('找不到定义的type [' + type + ']!');
-      }
-    }
-
-    if (currentType == 'Promise') {
-      if (type == 'Promise') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'Date') {
-      if (type == 'Date') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    if (currentType == 'RegExp') {
-      if (type == 'RegExp') {
-        errList = [];
-      } else {
-        errList.push('\u5B9A\u4E49\u4E86' + type + '\u7C7B\u578B\u7684\u53C2\u6570\uFF0C\u4F20\u5165\u7684\u5374\u662F' + currentType + ',\u8BF7\u68C0\u67E5\u6240\u4F20\u53C2\u6570\u662F\u5426\u548C\u63A5\u53E3\u5B9A\u4E49\u7684\u4E00\u81F4');
-      }
-
-      return errList;
-    }
-
-    return errList;
-  };
-
-  return obj;
-};
-})
-cmldefine('166', function(require, exports, module) {
+cmldefine('164', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _regenerator = require("41");
+var _regenerator = require("39");
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -13729,63 +12128,6 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/scroller/scroller.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "scrollEventDetail": {
-      "deltaX": "Number",
-      "deltaY": "Number",
-      "scrollHeight": "Number",
-      "scrollLeft": "Number",
-      "scrollTop": "Number",
-      "scrollWidth": "Number"
-    },
-    "scrolltobottomEventDetail": {
-      "direction": "String"
-    }
-  },
-  "interfaces": {
-    "ScrollerInterface": {
-      "cstyle": "String",
-      "bottomOffset": "Number",
-      "scrollDirection": "String",
-      "bounce": "Boolean",
-      "height": "Number",
-      "width": "Number",
-      "scrollTop": "Number",
-      "scrollLeft": "Number",
-      "onscroll": {
-        "input": ["scrollEventDetail"],
-        "output": "Undefined"
-      },
-      "customscroll": {
-        "input": ["scrollEventDetail"],
-        "output": "Undefined"
-      },
-      "scrolltobottom": {
-        "input": ["scrolltobottomEventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Scroller": ["ScrollerInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
-
 var Scroller = function () {
   function Scroller() {
     _classCallCheck(this, Scroller);
@@ -13833,11 +12175,11 @@ var Scroller = function () {
       wrapperStyle: function wrapperStyle() {
         if (this.scrollDirection === 'vertical') {
           if (this.height >= 0) {
-            return this.cstyle + ";height:" + this.height + "rpx;";
+            return this.cstyle + ';height:' + this.height + 'rpx;';
           }
         } else {
           if (this.width >= 0) {
-            return this.cstyle + ";width:" + this.width + "rpx;white-space:nowrap;";
+            return this.cstyle + ';width:' + this.width + 'rpx;white-space:nowrap;';
           }
         } // 没有传递的情况
 
@@ -13870,7 +12212,7 @@ var Scroller = function () {
   }
 
   _createClass(Scroller, [{
-    key: "mounted",
+    key: 'mounted',
     value: function mounted() {
       var _this = this;
 
@@ -13888,7 +12230,7 @@ var Scroller = function () {
                 }
 
                 console.error('纵向滚动必须传递高度属性111');
-                return _context.abrupt("return");
+                return _context.abrupt('return');
 
               case 3:
                 if (!(_this.scrollDirection !== 'vertical' && !_this.width)) {
@@ -13897,7 +12239,7 @@ var Scroller = function () {
                 }
 
                 console.error('横向滚动必须传递宽度属性');
-                return _context.abrupt("return");
+                return _context.abrupt('return');
 
               case 6:
                 if (!(_this.height === -1 || _this.width === -1)) {
@@ -13918,14 +12260,14 @@ var Scroller = function () {
 
                 if (_this.scrollDirection === 'vertical') {
                   height = windowRect.viewportHeight - rectData.top;
-                  _this.cmtStyle = "height:" + height + "cpx;";
+                  _this.cmtStyle = 'height:' + height + 'cpx;';
                 } else {
                   width = windowRect.viewportWidth - rectData.left;
-                  _this.cmtStyle = "width:" + width + "cpx;white-space:nowrap;";
+                  _this.cmtStyle = 'width:' + width + 'cpx;white-space:nowrap;';
                 }
 
               case 14:
-              case "end":
+              case 'end':
                 return _context.stop();
             }
           }
@@ -13937,13 +12279,13 @@ var Scroller = function () {
   return Scroller;
 }();
 
-exports.default = __CML__WRAPPER__(new Scroller(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Scroller();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('41', function(require, exports, module) {
-  module.exports = require("167");
+cmldefine('39', function(require, exports, module) {
+  module.exports = require("165");
 })
-cmldefine('167', function(require, exports, module) {
+cmldefine('165', function(require, exports, module) {
   /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -13963,7 +12305,7 @@ var hadRuntime = g.regeneratorRuntime && Object.getOwnPropertyNames(g).indexOf("
 var oldRuntime = hadRuntime && g.regeneratorRuntime; // Force reevalutation of runtime.js.
 
 g.regeneratorRuntime = undefined;
-module.exports = require("168");
+module.exports = require("166");
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -13977,7 +12319,7 @@ if (hadRuntime) {
   }
 }
 })
-cmldefine('168', function(require, exports, module) {
+cmldefine('166', function(require, exports, module) {
   /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -14690,7 +13032,7 @@ function () {
   return this;
 }() || Function("return this")());
 })
-cmldefine('173', function(require, exports, module) {
+cmldefine('171', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -14717,7 +13059,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _routerConfig = require("42");
+var _routerConfig = require("40");
 
 var _routerConfig2 = _interopRequireDefault(_routerConfig);
 
@@ -14748,10 +13090,10 @@ var Home = function () {
     _classCallCheck(this, Home);
 
     this.data = {
-      iconApiUri: require("26"),
+      iconApiUri: require("24"),
       cells: [{
         title: '基础内容',
-        iconUri: require("43"),
+        iconUri: require("41"),
         list: [{
           method: '',
           url: routeObj["text"].path,
@@ -14763,7 +13105,7 @@ var Home = function () {
         }]
       }, {
         title: '视图容器',
-        iconUri: require("44"),
+        iconUri: require("42"),
         list: [{
           method: '',
           url: routeObj["list"].path,
@@ -14779,7 +13121,7 @@ var Home = function () {
         }]
       }, {
         title: '布局容器',
-        iconUri: require("44"),
+        iconUri: require("42"),
         list: [{
           method: '',
           url: routeObj["row"].path,
@@ -14791,7 +13133,7 @@ var Home = function () {
         }]
       }, {
         title: '表单组件',
-        iconUri: require("174"),
+        iconUri: require("172"),
         list: [{
           method: '',
           url: routeObj["button"].path,
@@ -14819,7 +13161,7 @@ var Home = function () {
         }]
       }, {
         title: '媒体组件',
-        iconUri: require("45"),
+        iconUri: require("43"),
         list: [{
           method: '',
           url: routeObj["image"].path,
@@ -14831,7 +13173,7 @@ var Home = function () {
         }]
       }, {
         title: '扩展组件',
-        iconUri: require("45"),
+        iconUri: require("43"),
         list: [{
           method: '',
           url: routeObj["c-dialog"].path,
@@ -14909,25 +13251,25 @@ var Home = function () {
 exports.default = new Home();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('42', function(require, exports, module) {
+cmldefine('40', function(require, exports, module) {
   module.exports = module.exports = {"mode":"hash","domain":"https://cmljs.org","routes":[{"url":"/","path":"/pages/index/index","name":"首页","mock":"index.php"},{"name":"com","url":"/pages/com/com","path":"/pages/com/com","mock":"index.php"},{"name":"api","url":"/pages/api/api","path":"/pages/api/api","mock":"index.php"},{"name":"demo","url":"/pages/demo/demo","path":"/pages/demo/demo","mock":"index.php"},{"name":"chooseImage","url":"/pages/api/sub-pages/chooseImage","path":"/pages/api/sub-pages/chooseImage","mock":"index.php"},{"name":"animation","url":"/pages/api/sub-pages/animation","path":"/pages/api/sub-pages/animation","mock":"index.php"},{"name":"request","url":"/pages/api/sub-pages/request","path":"/pages/api/sub-pages/request","mock":"index.php"},{"name":"webSocket","url":"/pages/api/sub-pages/webSocket","path":"/pages/api/sub-pages/webSocket","mock":"index.php"},{"name":"navigate","url":"/pages/api/sub-pages/navigate","path":"/pages/api/sub-pages/navigate","mock":"index.php"},{"name":"list","url":"/pages/com/base/list/list","path":"/pages/com/base/list/list","mock":"index.php"},{"name":"scroller","url":"/pages/com/base/scroller/scroller","path":"/pages/com/base/scroller/scroller","mock":"index.php"},{"name":"view","url":"/pages/com/base/view/view","path":"/pages/com/base/view/view","mock":"index.php"},{"name":"text","url":"/pages/com/base/text/text","path":"/pages/com/base/text/text","mock":"index.php"},{"name":"button","url":"/pages/com/base/button/button","path":"/pages/com/base/button/button","mock":"index.php"},{"name":"input","url":"/pages/com/base/input/input","path":"/pages/com/base/input/input","mock":"index.php"},{"name":"textarea","url":"/pages/com/base/textarea/textarea","path":"/pages/com/base/textarea/textarea","mock":"index.php"},{"name":"image","url":"/pages/com/base/image/image","path":"/pages/com/base/image/image","mock":"index.php"},{"name":"video","url":"/pages/com/base/video/video","path":"/pages/com/base/video/video","mock":"index.php"},{"name":"richtext","url":"/pages/com/base/richtext/richtext","path":"/pages/com/base/richtext/richtext"},{"name":"switch","url":"/pages/com/base/switch/switch","path":"/pages/com/base/switch/switch"},{"name":"radio","url":"/pages/com/base/radio/radio","path":"/pages/com/base/radio/radio"},{"name":"checkbox","url":"/pages/com/base/checkbox/checkbox","path":"/pages/com/base/checkbox/checkbox"},{"name":"carousel","url":"/pages/com/base/carousel/carousel","path":"/pages/com/base/carousel/carousel"},{"name":"row","url":"/pages/com/base/row/row","path":"/pages/com/base/row/row","mock":"index.php"},{"name":"layout","url":"/pages/com/base/layout/layout","path":"/pages/com/base/layout/layout","mock":"index.php"},{"name":"c-dialog","url":"/pages/com/spread/c-dialog/c-dialog","path":"/pages/com/spread/c-dialog/c-dialog","mock":"index.php"},{"name":"c-loading","url":"/pages/com/spread/c-loading/c-loading","path":"/pages/com/spread/c-loading/c-loading","mock":"index.php"},{"name":"c-toast","url":"/pages/com/spread/c-toast/c-toast","path":"/pages/com/spread/c-toast/c-toast","mock":"index.php"},{"name":"c-tip","url":"/pages/com/spread/c-tip/c-tip","path":"/pages/com/spread/c-tip/c-tip","mock":"index.php"},{"name":"c-popup","url":"/pages/com/spread/c-popup/c-popup","path":"/pages/com/spread/c-popup/c-popup","mock":"index.php"},{"name":"c-actionsheet","url":"/pages/com/spread/c-actionsheet/c-actionsheet","path":"/pages/com/spread/c-actionsheet/c-actionsheet","mock":"index.php"},{"name":"c-picker","url":"/pages/com/spread/c-picker/c-picker","path":"/pages/com/spread/c-picker/c-picker","mock":"index.php"},{"name":"c-tab","url":"/pages/com/spread/c-tab/c-tab","path":"/pages/com/spread/c-tab/c-tab","mock":"index.php"},{"name":"c-refresh","url":"/pages/com/spread/c-refresh/c-refresh","path":"/pages/com/spread/c-refresh/c-refresh","mock":"index.php"},{"name":"c-checkbox-group","url":"/pages/com/spread/c-checkbox-group/c-checkbox-group","path":"/pages/com/spread/c-checkbox-group/c-checkbox-group","mock":"index.php"},{"name":"c-radio-group","url":"/pages/com/spread/c-radio-group/c-radio-group","path":"/pages/com/spread/c-radio-group/c-radio-group","mock":"index.php"},{"url":"/cml/demo/yanxuan","path":"/pages/demo/yanxuan/pages/index/index","name":"yanxuan","mock":"index.php"},{"url":"/cml/demo/yanxuan/list","path":"/pages/demo/yanxuan/pages/list/list","name":"yanxuan_list","mock":"index.php"},{"url":"/cml/demo/yanxuan/detail","path":"/pages/demo/yanxuan/pages/detail/detail","name":"yanxuan_detail","mock":"index.php"},{"url":"/cml/demo/yanxuan/map","path":"/pages/demo/yanxuan/pages/map/map","name":"yanxuan_map","mock":"index.php"}]}
 })
-cmldefine('26', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/icon-api_e8d66df.png";
+cmldefine('24', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/icon-api_e8d66df.png";
+})
+cmldefine('41', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/content_615612b.png";
+})
+cmldefine('42', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/view_b6fa835.png";
+})
+cmldefine('172', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/form_1d8d4bd.png";
 })
 cmldefine('43', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/content_615612b.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/media_1c79816.png";
 })
-cmldefine('44', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/view_b6fa835.png";
-})
-cmldefine('174', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/form_1d8d4bd.png";
-})
-cmldefine('45', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/media_1c79816.png";
-})
-cmldefine('178', function(require, exports, module) {
+cmldefine('176', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -14973,9 +13315,9 @@ var CompCollapse = function CompCollapse() {
   };
   this.data = {
     isOpen: false,
-    iconUpUri: require("47"),
-    iconDownUri: require("179"),
-    iconRightUri: require("180"),
+    iconUpUri: require("45"),
+    iconDownUri: require("177"),
+    iconRightUri: require("178"),
     listHeight: 0
   };
   this.methods = {
@@ -14996,16 +13338,16 @@ var CompCollapse = function CompCollapse() {
 exports.default = new CompCollapse();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('47', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/icon-arrow-up_56472bc.png";
+cmldefine('45', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/icon-arrow-up_56472bc.png";
 })
-cmldefine('179', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/icon-arrow-down_b02079e.png";
+cmldefine('177', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/icon-arrow-down_b02079e.png";
 })
-cmldefine('180', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/icon-solid-arrow-right_5e159e1.png";
+cmldefine('178', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/icon-solid-arrow-right_5e159e1.png";
 })
-cmldefine('184', function(require, exports, module) {
+cmldefine('182', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -15025,36 +13367,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/layout/row/row.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "RowInterface": {
-      "justify": "String",
-      "align": "String",
-      "height": "Number",
-      "wrap": "Boolean",
-      "margin": "Number"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CRow": ["RowInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CRow = function CRow() {
   _classCallCheck(this, CRow);
@@ -15085,21 +13397,21 @@ var CRow = function CRow() {
   };
   this.computed = {
     rowClass: function rowClass() {
-      return "flex-row-" + this.justify + "-" + this.align;
+      return 'flex-row-' + this.justify + '-' + this.align;
     },
     rowStyle: function rowStyle() {
       var style = '';
 
       if (this.height) {
-        style += "height:" + this.height + "cpx;";
+        style += 'height:' + this.height + 'cpx;';
       }
 
       if (this.wrap) {
-        style += "flex-wrap:wrap;";
+        style += 'flex-wrap:wrap;';
       }
 
       if (this.margin) {
-        style += "margin:" + this.margin / 2 + "cpx 0;";
+        style += 'margin:' + this.margin / 2 + 'cpx 0;';
       }
 
       return style;
@@ -15107,10 +13419,10 @@ var CRow = function CRow() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CRow(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CRow();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('189', function(require, exports, module) {
+cmldefine('187', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -15138,7 +13450,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _unsupported = require("190");
+var _unsupported = require("188");
 
 var _unsupported2 = _interopRequireDefault(_unsupported);
 
@@ -15163,10 +13475,10 @@ var Home = function () {
     _classCallCheck(this, Home);
 
     this.data = {
-      iconApiUri: require("26"),
+      iconApiUri: require("24"),
       cells: [{
         title: '启动参数',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           method: 'getLaunchOptionsSync',
           url: '',
@@ -15174,7 +13486,7 @@ var Home = function () {
         }]
       }, {
         title: 'CanIUse',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           method: 'canIUse',
           url: '',
@@ -15192,7 +13504,7 @@ var Home = function () {
         }]
       }, {
         title: '设置页面标题',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: '设置标题为: 自定义标题',
           method: 'setTitle',
@@ -15202,7 +13514,7 @@ var Home = function () {
         }]
       }, {
         title: '交互反馈',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: 'toast 弹框',
           method: 'showUx',
@@ -15227,7 +13539,7 @@ var Home = function () {
         }]
       }, {
         title: '选取照片',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: '从相机获取',
           method: 'chooseImage',
@@ -15249,7 +13561,7 @@ var Home = function () {
         }]
       }, {
         title: '路由导航',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: 'cml.navigateTo',
           method: 'navigateTo'
@@ -15259,7 +13571,7 @@ var Home = function () {
         }]
       }, {
         title: '网络请求',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: 'cml.get 请求',
           method: 'request',
@@ -15281,14 +13593,14 @@ var Home = function () {
         }]
       }, {
         title: 'WebSocket',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: '查看 WebSocket 展示',
           method: 'webSocket'
         }]
       }, {
         title: '数据存储',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: '存储 name: "ironman"',
           method: 'storage',
@@ -15310,21 +13622,21 @@ var Home = function () {
         }]
       }, {
         title: '地理位置',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: '获取地理位置',
           method: 'getGeo'
         }]
       }, {
         title: '系统信息',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: '获取系统信息',
           method: 'getSystemInfo'
         }]
       }, {
         title: '单位转换',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: 'px 转 cpx',
           method: 'px2cpx'
@@ -15334,7 +13646,7 @@ var Home = function () {
         }]
       }, {
         title: '剪贴板',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: '设置剪贴板为 AA',
           method: 'clipBoard',
@@ -15351,14 +13663,14 @@ var Home = function () {
         }]
       }, {
         title: '元素属性',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: '获取页面顶部API文本的属性',
           method: 'getRect'
         }]
       }, {
         title: '动画',
-        iconUri: require("8"),
+        iconUri: require("6"),
         list: [{
           title: '查看动画展示',
           method: 'goAnimation'
@@ -15582,7 +13894,7 @@ var Home = function () {
 exports.default = new Home();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('190', function(require, exports, module) {
+cmldefine('188', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -15611,39 +13923,13 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/src/components/unsupported/unsupported.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "res": ["String"]
-  },
-  "interfaces": {
-    "UnsupportedInterface": {
-      "getUnsupportApis": {
-        "input": [],
-        "output": "res"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["UnsupportedInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
   }
 
   _createClass(Method, [{
-    key: "getUnsupportApis",
+    key: 'getUnsupportApis',
     value: function getUnsupportApis() {
       // 线上版微信小程序未配置demo请求的域名为可信域名，发版时去掉'网络请求'
       // return ['网络请求', 'WebSocket'];
@@ -15654,16 +13940,16 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('8', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/icon-default_aeb0517.png";
+cmldefine('6', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/icon-default_aeb0517.png";
 })
-cmldefine('195', function(require, exports, module) {
+cmldefine('193', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -15690,7 +13976,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _routerConfig = require("42");
+var _routerConfig = require("40");
 
 var _routerConfig2 = _interopRequireDefault(_routerConfig);
 
@@ -15721,10 +14007,10 @@ var Demo = function () {
     _classCallCheck(this, Demo);
 
     this.data = {
-      iconApiUri: require("26"),
+      iconApiUri: require("24"),
       lists: [{
         title: '网易严选',
-        iconUri: require("43"),
+        iconUri: require("41"),
         path: routeObj['yanxuan'].path
       }]
     };
@@ -15765,7 +14051,7 @@ var Demo = function () {
 exports.default = new Demo();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('200', function(require, exports, module) {
+cmldefine('198', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -15809,7 +14095,7 @@ var DemoList = function DemoList() {
   };
   this.data = {
     isOpen: false,
-    iconUpUri: require("47"),
+    iconUpUri: require("45"),
     listHeight: 0
   };
   this.methods = {
@@ -15824,7 +14110,7 @@ var DemoList = function DemoList() {
 exports.default = new DemoList();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('205', function(require, exports, module) {
+cmldefine('203', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -15884,7 +14170,7 @@ exports.default = {
 };
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('209', function(require, exports, module) {
+cmldefine('207', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -15913,7 +14199,7 @@ exports.default = {
 };
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('213', function(require, exports, module) {
+cmldefine('211', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -15951,12 +14237,12 @@ exports.default = {
 };
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('217', function(require, exports, module) {
+cmldefine('215', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _util = require("218");
+var _util = require("216");
 
 var _cmlTtRuntime = require("0");
 
@@ -15973,104 +14259,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/button/button.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "type": "String",
-      "disabled": "Boolean"
-    },
-    "getuserinfoEventDetail": {
-      "errMsg": "String",
-      "rawData": "String",
-      "signature": "String",
-      "encryptedData": "String",
-      "iv": "String",
-      "userInfo": "userInfo"
-    },
-    "userInfo": {
-      "nickName": "String",
-      "avatarUrl": "String",
-      "gender": "Number",
-      "country": "String",
-      "province": "String",
-      "city": "String",
-      "language": "String"
-    },
-    "getphonenumberEventDetail": {
-      "errMsg": "String",
-      "encryptedData": "String",
-      "iv": "String"
-    },
-    "errorEventDetail": {
-      "errMsg": "String"
-    }
-  },
-  "interfaces": {
-    "ButtonInterface": {
-      "text": "String",
-      "size": "String",
-      "width": "Number",
-      "type": "String",
-      "disabled": "Boolean",
-      "btnStyle": "String",
-      "textStyle": "String",
-      "textStyleDisabled": "String",
-      "disabledStyle": "String",
-      "btnHoverStyle": "String",
-      "textHoverStyle": "String",
-      "openType": "String",
-      "lang": "String",
-      "sessionFrom": "String",
-      "sendMessageTitle": "String",
-      "sendMessagePath": "String",
-      "sendMessageImg": "String",
-      "showMessageCard": "Boolean",
-      "appParameter": "String",
-      "onclick": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      },
-      "getuserinfo": {
-        "input": ["getuserinfoEventDetail"],
-        "output": "Undefined"
-      },
-      "contact": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "getphonenumber": {
-        "input": ["getphonenumberEventDetail"],
-        "output": "Undefined"
-      },
-      "error": {
-        "input": ["errorEventDetail"],
-        "output": "Undefined"
-      },
-      "opensetting": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Button": ["ButtonInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var Button = function Button() {
   _classCallCheck(this, Button);
@@ -16233,10 +14421,10 @@ var Button = function Button() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new Button(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Button();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('218', function(require, exports, module) {
+cmldefine('216', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -16277,7 +14465,7 @@ function transCls(base, ctx) {
   return classList.join(' ');
 }
 })
-cmldefine('223', function(require, exports, module) {
+cmldefine('221', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -16416,7 +14604,7 @@ var Animation = function Animation() {
 exports.default = new Animation();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('228', function(require, exports, module) {
+cmldefine('226', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -16539,7 +14727,7 @@ exports.default = {
 };
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('232', function(require, exports, module) {
+cmldefine('230', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -16566,7 +14754,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _cLoadingfunc = require("233");
+var _cLoadingfunc = require("231");
 
 var _cLoadingfunc2 = _interopRequireDefault(_cLoadingfunc);
 
@@ -16585,34 +14773,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-loading/c-loading.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "CLoadingInterface": {
-      "tip": "String",
-      "prefixCls": "String",
-      "loading": "Boolean"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CLoading": ["CLoadingInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CLoading = function () {
   function CLoading() {
@@ -16633,7 +14793,7 @@ var CLoading = function () {
       }
     };
     this.data = {
-      icon: require("28"),
+      icon: require("26"),
       rectStyle: "",
       loadingWrapStyle: "",
       containerStyle: "position: absolute; visibility: hidden",
@@ -16720,10 +14880,10 @@ var CLoading = function () {
   return CLoading;
 }();
 
-exports.default = __CML__WRAPPER__(new CLoading(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CLoading();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('233', function(require, exports, module) {
+cmldefine('231', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -16752,39 +14912,6 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-tt-ui/components/c-loading/c-loadingfunc.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = "";
-var __CHECK__DEFINES__ = {
-  "types": {
-    "loadStyleCb": {
-      "input": ["String"],
-      "output": "Undefined"
-    }
-  },
-  "interfaces": {
-    "CLoadingInterface": {
-      "move": {
-        "input": ["CMLObject"],
-        "output": "Undefined"
-      },
-      "loadingWrapStyle": {
-        "input": ["loadStyleCb"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {
-    "Method": ["CLoadingInterface"]
-  }
-};
-
-var __OBJECT__WRAPPER__ = require("4");
-
 var Method = function () {
   function Method() {
     _classCallCheck(this, Method);
@@ -16793,10 +14920,10 @@ var Method = function () {
   }
 
   _createClass(Method, [{
-    key: "move",
+    key: 'move',
     value: function move(context) {}
   }, {
-    key: "loadingWrapStyle",
+    key: 'loadingWrapStyle',
     value: function loadingWrapStyle(cb) {
       cb('position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 998;');
     }
@@ -16805,16 +14932,16 @@ var Method = function () {
   return Method;
 }();
 
-exports.default = __OBJECT__WRAPPER__(new Method(), __CML_ERROR__, __enableTypes__, __CHECK__DEFINES__);
+exports.default = new Method();
 
-var copyProtoProperty = require("5");
+var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('28', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/loading_1f26c50.gif";
+cmldefine('26', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/loading_1f26c50.gif";
 })
-cmldefine('238', function(require, exports, module) {
+cmldefine('236', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -16982,7 +15109,7 @@ exports.default = {
 };
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('243', function(require, exports, module) {
+cmldefine('241', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -17033,7 +15160,7 @@ exports.default = {
 };
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('248', function(require, exports, module) {
+cmldefine('246', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -17145,7 +15272,7 @@ var List = function () {
 exports.default = new List();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('252', function(require, exports, module) {
+cmldefine('250', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -17230,12 +15357,12 @@ var Header = function () {
 exports.default = new Header();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('256', function(require, exports, module) {
+cmldefine('254', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _regenerator = require("41");
+var _regenerator = require("39");
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -17306,60 +15433,6 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/list/list.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "scrollDetail": {
-      "scrollHeight": "Number",
-      "scrollLeft": "Number",
-      "scrollTop": "Number",
-      "scrollWidth": "Number",
-      "deltaX": "Number",
-      "deltaY": "Number"
-    },
-    "bottomDetail": {
-      "direction": "String"
-    }
-  },
-  "interfaces": {
-    "ListInterface": {
-      "bottomOffset": "Number",
-      "toElement": "String",
-      "bounce": "Boolean",
-      "height": "Number",
-      "cstyle": "String",
-      "onscroll": {
-        "input": ["scrollDetail"],
-        "output": "Undefined"
-      },
-      "customscroll": {
-        "input": ["scrollDetail"],
-        "output": "Undefined"
-      },
-      "scrolltobottom": {
-        "input": ["bottomDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "List": ["ListInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
-
 var List = function () {
   function List() {
     _classCallCheck(this, List);
@@ -17393,7 +15466,7 @@ var List = function () {
     this.computed = {
       wrapperStyle: function wrapperStyle() {
         if (this.height >= 0) {
-          return this.cstyle + ";height:" + this.height + "cpx;";
+          return this.cstyle + ';height:' + this.height + 'cpx;';
         }
 
         return this.cmtstyle + this.cstyle;
@@ -17417,7 +15490,7 @@ var List = function () {
   }
 
   _createClass(List, [{
-    key: "mounted",
+    key: 'mounted',
     value: function mounted() {
       var _this = this;
 
@@ -17435,7 +15508,7 @@ var List = function () {
                 }
 
                 console.error('list组件必须传递高度属性');
-                return _context.abrupt("return");
+                return _context.abrupt('return');
 
               case 3:
                 if (!(_this.height === -1)) {
@@ -17454,10 +15527,10 @@ var List = function () {
               case 9:
                 windowRect = _context.sent;
                 height = windowRect.viewportHeight - rectData.top;
-                _this.cmtstyle = "height:" + height + "cpx;";
+                _this.cmtstyle = 'height:' + height + 'cpx;';
 
               case 12:
-              case "end":
+              case 'end':
                 return _context.stop();
             }
           }
@@ -17469,10 +15542,10 @@ var List = function () {
   return List;
 }();
 
-exports.default = __CML__WRAPPER__(new List(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new List();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('261', function(require, exports, module) {
+cmldefine('259', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -17594,7 +15667,7 @@ var Scroller = function () {
 exports.default = new Scroller();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('266', function(require, exports, module) {
+cmldefine('264', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -17673,7 +15746,7 @@ var View = function () {
 exports.default = new View();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('271', function(require, exports, module) {
+cmldefine('269', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -17788,7 +15861,7 @@ var Text = function () {
 exports.default = new Text();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('276', function(require, exports, module) {
+cmldefine('274', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -17862,7 +15935,7 @@ var Button = function () {
 exports.default = new Button();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('281', function(require, exports, module) {
+cmldefine('279', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -17972,7 +16045,7 @@ var Input = function () {
 exports.default = new Input();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('286', function(require, exports, module) {
+cmldefine('284', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -17995,7 +16068,7 @@ var _createClass = function () {
   };
 }();
 
-var _utils = require("287");
+var _utils = require("285");
 
 var _cmlTtRuntime = require("0");
 
@@ -18012,81 +16085,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/input/input.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "inputEventDetail": {
-      "value": "String"
-    },
-    "blurEventDetail": {},
-    "focusEventDetail": {},
-    "confirEventDetail": {}
-  },
-  "interfaces": {
-    "InputInterface": {
-      "cStyle": "String",
-      "cstyle": "String",
-      "value": "String",
-      "type": "String",
-      "placeholder": "String",
-      "disabled": "Boolean",
-      "focus": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "maxlength": "Number",
-      "returnKeyType": "String",
-      "placerHolderColor": "String",
-      "maxValue": "Number",
-      "minValue": "Number",
-      "inputevent": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "blurevent": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "focusevent": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "confirmevent": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "input": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "blur": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "confirm": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Input": ["InputInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var Input = function () {
   function Input() {
@@ -18157,7 +16155,7 @@ var Input = function () {
     };
     this.computed = {
       wxPlaceHolderStyle: function wxPlaceHolderStyle() {
-        return "color: " + this.placerHolderColor + ";";
+        return 'color: ' + this.placerHolderColor + ';';
       },
       isInputNumber: function isInputNumber() {
         return this.type === 'number';
@@ -18227,7 +16225,7 @@ var Input = function () {
   }
 
   _createClass(Input, [{
-    key: "mounted",
+    key: 'mounted',
     value: function mounted() {
       this.inputValue = this.value;
     }
@@ -18236,10 +16234,10 @@ var Input = function () {
   return Input;
 }();
 
-exports.default = __CML__WRAPPER__(new Input(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Input();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('287', function(require, exports, module) {
+cmldefine('285', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18318,7 +16316,7 @@ function getValBetweenMaxAndMin(value, maxValue, minValue) {
   return value;
 }
 })
-cmldefine('292', function(require, exports, module) {
+cmldefine('290', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18336,7 +16334,7 @@ function _interopRequireDefault(obj) {
 exports.default = {};
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('297', function(require, exports, module) {
+cmldefine('295', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18375,32 +16373,6 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/src/components/textareademo/textareademo.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {}
-  },
-  "interfaces": {
-    "TextareaInterface": {}
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Textarea": ["TextareaInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
-
 var Textarea = function () {
   function Textarea() {
     _classCallCheck(this, Textarea);
@@ -18426,7 +16398,7 @@ var Textarea = function () {
   }
 
   _createClass(Textarea, [{
-    key: "mounted",
+    key: 'mounted',
     value: function mounted() {
       var _this = this;
 
@@ -18435,20 +16407,20 @@ var Textarea = function () {
       }, 300);
     }
   }, {
-    key: "beforeDestroy",
+    key: 'beforeDestroy',
     value: function beforeDestroy() {}
   }, {
-    key: "destroyed",
+    key: 'destroyed',
     value: function destroyed() {}
   }]);
 
   return Textarea;
 }();
 
-exports.default = __CML__WRAPPER__(new Textarea(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Textarea();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('302', function(require, exports, module) {
+cmldefine('300', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18468,76 +16440,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/textarea/textarea.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "inputEventDetail": {
-      "value": "String"
-    }
-  },
-  "interfaces": {
-    "TextareaInterface": {
-      "cStyle": "String",
-      "cstyle": "String",
-      "value": "String",
-      "placeholder": "String",
-      "disabled": "Boolean",
-      "focus": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "maxlength": "Number",
-      "returnKeyType": "String",
-      "placerHolderColor": "String",
-      "rows": "Number",
-      "inputevent": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "blurevent": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "focusevent": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "confirmevent": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "input": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "blur": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      },
-      "confirm": {
-        "input": ["inputEventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Textarea": ["TextareaInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 /*
 event: cinput cblur cfocus cconfirm
 */
@@ -18598,7 +16500,7 @@ var Textarea = function Textarea() {
   this.data = {};
   this.computed = {
     wxPlaceHolderStyle: function wxPlaceHolderStyle() {
-      return "color: " + this.placerHolderColor;
+      return 'color: ' + this.placerHolderColor;
     },
     computedStyle: function computedStyle() {
       // props 必须经过计算属性，否则没有经过 cpx 转换
@@ -18644,10 +16546,10 @@ var Textarea = function Textarea() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new Textarea(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Textarea();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('307', function(require, exports, module) {
+cmldefine('305', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18672,7 +16574,7 @@ var Image = function Image() {
   _classCallCheck(this, Image);
 
   this.data = {
-    imageSrc: require("308")
+    imageSrc: require("306")
   };
   this.methods = {
     imageLoad: function imageLoad(e) {},
@@ -18683,10 +16585,10 @@ var Image = function Image() {
 exports.default = new Image();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('308', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/chameleon_39b423e.jpg";
+cmldefine('306', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/chameleon_39b423e.jpg";
 })
-cmldefine('313', function(require, exports, module) {
+cmldefine('311', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18797,7 +16699,7 @@ var Video = function () {
 exports.default = new Video();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('318', function(require, exports, module) {
+cmldefine('316', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18817,70 +16719,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/video/video.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {}
-  },
-  "interfaces": {
-    "VideoInterface": {
-      "controls": "Boolean",
-      "autoplay": "Boolean",
-      "loop": "Boolean",
-      "src": "String",
-      "cstyle": "String",
-      "customstart": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "custompause": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "customfinish": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "customfail": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "start": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "pause": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "finish": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "fail": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Video": ["VideoInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var Video = function Video() {
   _classCallCheck(this, Video);
@@ -18933,10 +16771,10 @@ var Video = function Video() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new Video(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Video();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('323', function(require, exports, module) {
+cmldefine('321', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19026,12 +16864,12 @@ var Richtext = function () {
 exports.default = new Richtext();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('328', function(require, exports, module) {
+cmldefine('326', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _richHandle = require("329");
+var _richHandle = require("327");
 
 var _richHandle2 = _interopRequireDefault(_richHandle);
 
@@ -19050,44 +16888,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/richtext/richtext.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "richConfig": {
-      "color": "String",
-      "font_size": "Number",
-      "start": "Number",
-      "end": "Number"
-    },
-    "richMessageArray": ["richConfig"],
-    "richData": {
-      "message": "String",
-      "rich_message": "richMessageArray"
-    }
-  },
-  "interfaces": {
-    "RichtextInterface": {
-      "richData": "richData"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Richtext": ["RichtextInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var Richtext = function Richtext() {
   _classCallCheck(this, Richtext);
@@ -19111,7 +16911,7 @@ var Richtext = function Richtext() {
       var richList = (0, _richHandle2.default)(this.richData);
       richList = richList.map(function (item) {
         if (item.color && item.font_size) {
-          item.style = "color:" + item.color + ";font-size:" + item.font_size + "cpx;";
+          item.style = 'color:' + item.color + ';font-size:' + item.font_size + 'cpx;';
         } else {
           item.style = '';
         }
@@ -19123,10 +16923,10 @@ var Richtext = function Richtext() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new Richtext(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Richtext();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('329', function(require, exports, module) {
+cmldefine('327', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19192,7 +16992,7 @@ function richHandle(richData) {
   return richList;
 }
 })
-cmldefine('334', function(require, exports, module) {
+cmldefine('332', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19240,7 +17040,7 @@ var Switch = function Switch() {
 exports.default = new Switch();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('339', function(require, exports, module) {
+cmldefine('337', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19260,47 +17060,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/switch/switch.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "valueDetail": {
-      "value": "Boolean"
-    }
-  },
-  "interfaces": {
-    "SwitchInterface": {
-      "checked": "Boolean",
-      "disabled": "Boolean",
-      "label": "String",
-      "opencolor": "String",
-      "changeevent": {
-        "input": ["valueDetail"],
-        "output": "Undefined"
-      },
-      "change": {
-        "input": ["valueDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Switch": ["SwitchInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var Switch = function Switch() {
   _classCallCheck(this, Switch);
@@ -19335,10 +17094,10 @@ var Switch = function Switch() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new Switch(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Switch();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('344', function(require, exports, module) {
+cmldefine('342', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19381,7 +17140,7 @@ var Radio = function Radio() {
 exports.default = new Radio();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('348', function(require, exports, module) {
+cmldefine('346', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19419,51 +17178,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/radio/radio.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "value": "Boolean",
-      "index": "Number"
-    }
-  },
-  "interfaces": {
-    "RadioInterface": {
-      "cstyle": "String",
-      "checked": "Boolean",
-      "label": "String",
-      "disabled": "Boolean",
-      "position": "String",
-      "groupIndex": "Number",
-      "color": "String",
-      "change": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      },
-      "changeevent": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Radio": ["RadioInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var Radio = function () {
   function Radio() {
@@ -19518,9 +17232,9 @@ var Radio = function () {
         var style = '';
 
         if (this.innerChecked) {
-          style += "border:10cpx solid " + this.color + ";";
+          style += 'border:10cpx solid ' + this.color + ';';
         } else {
-          style += "border:1px solid #ccc;";
+          style += 'border:1px solid #ccc;';
         }
 
         return style;
@@ -19553,7 +17267,7 @@ var Radio = function () {
   }
 
   _createClass(Radio, [{
-    key: "mounted",
+    key: 'mounted',
     value: function mounted() {
       this.innerChecked = this.checked;
     }
@@ -19562,10 +17276,10 @@ var Radio = function () {
   return Radio;
 }();
 
-exports.default = __CML__WRAPPER__(new Radio(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Radio();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('353', function(require, exports, module) {
+cmldefine('351', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19651,7 +17365,7 @@ var Checkbox = function () {
 exports.default = new Checkbox();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('357', function(require, exports, module) {
+cmldefine('355', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19690,52 +17404,6 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/checkbox/checkbox.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "value": "Boolean",
-      "index": "Number"
-    }
-  },
-  "interfaces": {
-    "CheckboxInterface": {
-      "cstyle": "String",
-      "checked": "Boolean",
-      "label": "String",
-      "disabled": "Boolean",
-      "position": "String",
-      "groupIndex": "Number",
-      "checkedIcon": "String",
-      "uncheckIcon": "String",
-      "change": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      },
-      "changeevent": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Checkbox": ["CheckboxInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
-
 var Checkbox = function () {
   function Checkbox() {
     _classCallCheck(this, Checkbox);
@@ -19763,8 +17431,8 @@ var Checkbox = function () {
       }
     };
     this.data = {
-      checkedImg: require("358"),
-      uncheckImg: require("359"),
+      checkedImg: require("356"),
+      uncheckImg: require("357"),
       innerChecked: false
     };
     this.computed = {
@@ -19814,7 +17482,7 @@ var Checkbox = function () {
   }
 
   _createClass(Checkbox, [{
-    key: "created",
+    key: 'created',
     value: function created() {
       var checked = this.checked;
       this.innerChecked = checked;
@@ -19824,16 +17492,16 @@ var Checkbox = function () {
   return Checkbox;
 }();
 
-exports.default = __CML__WRAPPER__(new Checkbox(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Checkbox();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('358', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/selected_520dcc8.png";
+cmldefine('356', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/selected_520dcc8.png";
 })
-cmldefine('359', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/unselected_4e38c39.png";
+cmldefine('357', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/unselected_4e38c39.png";
 })
-cmldefine('364', function(require, exports, module) {
+cmldefine('362', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19861,7 +17529,7 @@ var Carousel = function Carousel() {
 exports.default = new Carousel();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('367', function(require, exports, module) {
+cmldefine('365', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19881,39 +17549,15 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/carousel-item/carousel-item.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "CCarouselItemInterface": {}
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CCarouselItem": ["CCarouselItemInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CCarouselItem = function CCarouselItem() {
   _classCallCheck(this, CCarouselItem);
 };
 
-exports.default = __CML__WRAPPER__(new CCarouselItem(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CCarouselItem();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('371', function(require, exports, module) {
+cmldefine('369', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19933,46 +17577,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/carousel/carousel.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "current": "Number"
-    }
-  },
-  "interfaces": {
-    "CCarouselInterface": {
-      "autoplay": "Boolean",
-      "interval": "Number",
-      "circular": "Boolean",
-      "current": "Number",
-      "indicatorDots": "Boolean",
-      "indicatorColor": "String",
-      "indicatorActiveColor": "String",
-      "change": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CCarousel": ["CCarouselInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CCarousel = function CCarousel() {
   _classCallCheck(this, CCarousel);
@@ -20009,10 +17613,10 @@ var CCarousel = function CCarousel() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CCarousel(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CCarousel();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('376', function(require, exports, module) {
+cmldefine('374', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20040,7 +17644,7 @@ var Row = function Row() {
 exports.default = new Row();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('381', function(require, exports, module) {
+cmldefine('379', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20060,35 +17664,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/layout/col/col.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "ColInterface": {
-      "width": "Number",
-      "height": "Number",
-      "backgroundColor": "String",
-      "margin": "Number"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CCol": ["ColInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CCol = function CCol() {
   _classCallCheck(this, CCol);
@@ -20116,20 +17691,20 @@ var CCol = function CCol() {
       var style = '';
 
       if (this.height) {
-        style = "height:" + this.height + "cpx;";
+        style = 'height:' + this.height + 'cpx;';
       }
 
       if (this.width) {
-        style += "width:" + this.width + "cpx;";
+        style += 'width:' + this.width + 'cpx;';
       }
 
       if (this.backgroundColor) {
-        style += "background-color:" + this.backgroundColor + ";";
+        style += 'background-color:' + this.backgroundColor + ';';
       }
 
       if (this.margin) {
         var mr = this.margin / 2;
-        style += "margin-right:" + mr + "cpx;margin-left:" + mr + "cpx;";
+        style += 'margin-right:' + mr + 'cpx;margin-left:' + mr + 'cpx;';
       }
 
       return style;
@@ -20137,10 +17712,10 @@ var CCol = function CCol() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CCol(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CCol();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('386', function(require, exports, module) {
+cmldefine('384', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20208,7 +17783,7 @@ var CLayout = function () {
 exports.default = new CLayout();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('391', function(require, exports, module) {
+cmldefine('389', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20228,32 +17803,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/layout/aside/aside.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "AsideInterface": {
-      "asideStyle": "String"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CAside": ["AsideInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CAside = function CAside() {
   _classCallCheck(this, CAside);
@@ -20274,10 +17823,10 @@ var CAside = function CAside() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CAside(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CAside();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('396', function(require, exports, module) {
+cmldefine('394', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20297,32 +17846,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/layout/container/container.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "ContainerInterface": {
-      "direction": "String"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CContainer": ["ContainerInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CContainer = function CContainer() {
   _classCallCheck(this, CContainer);
@@ -20353,10 +17876,10 @@ var CContainer = function CContainer() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CContainer(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CContainer();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('401', function(require, exports, module) {
+cmldefine('399', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20376,32 +17899,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/layout/foot/foot.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "FootInterface": {
-      "footStyle": "String"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CFoot": ["FootInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CFoot = function CFoot() {
   _classCallCheck(this, CFoot);
@@ -20422,10 +17919,10 @@ var CFoot = function CFoot() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CFoot(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CFoot();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('406', function(require, exports, module) {
+cmldefine('404', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20445,32 +17942,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/layout/head/head.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "HeadInterface": {
-      "headStyle": "String"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CHead": ["HeadInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CHead = function CHead() {
   _classCallCheck(this, CHead);
@@ -20491,10 +17962,10 @@ var CHead = function CHead() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CHead(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CHead();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('411', function(require, exports, module) {
+cmldefine('409', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20515,32 +17986,6 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/chameleon-ui-builtin/components/layout/main/main.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "MainInterface": {
-      "mainStyle": "String"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CMain": ["MainInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
-
 var CMain = function CMain() {
   _classCallCheck(this, CMain);
 
@@ -20558,10 +18003,10 @@ var CMain = function CMain() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CMain(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CMain();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('416', function(require, exports, module) {
+cmldefine('414', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20691,12 +18136,12 @@ var CDialog = function () {
 exports.default = new CDialog();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('421', function(require, exports, module) {
+cmldefine('419', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _style = require("422");
+var _style = require("420");
 
 var _cmlTtRuntime = require("0");
 
@@ -20714,68 +18159,10 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-dialog/c-dialog.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "value": "Boolean"
-    }
-  },
-  "interfaces": {
-    "CDialogInterface": {
-      "show": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      },
-      "mask": "Boolean",
-      "title": "String",
-      "content": "String",
-      "type": "String",
-      "showClose": "Boolean",
-      "closeSrc": "String",
-      "cancelText": "String",
-      "confirmText": "String",
-      "iconType": "String",
-      "iconUrl": "String",
-      "iconStyle": "CMLObject",
-      "confirmStyle": "CMLObject",
-      "cancelStyle": "CMLObject",
-      "cancel": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "confirm": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "close": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CDialog": ["CDialogInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
-
 var IconMap = {
-  network: require("423"),
-  warn: require("424"),
-  success: require("425")
+  network: require("421"),
+  warn: require("422"),
+  success: require("423")
 };
 
 var CDialog = function CDialog() {
@@ -20809,7 +18196,7 @@ var CDialog = function CDialog() {
     },
     closeSrc: {
       type: String,
-      default: require("51")
+      default: require("49")
     },
     cancelText: {
       type: String,
@@ -20859,7 +18246,7 @@ var CDialog = function CDialog() {
     }
   };
   this.data = {
-    defaultCloseIcon: require("51")
+    defaultCloseIcon: require("49")
   };
   this.computed = {
     iconSrc: function iconSrc() {
@@ -20907,10 +18294,10 @@ var CDialog = function CDialog() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CDialog(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CDialog();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('422', function(require, exports, module) {
+cmldefine('420', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20923,19 +18310,19 @@ function obj2str() {
   }).join(";");
 }
 })
+cmldefine('421', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/network_5ae2413.png";
+})
+cmldefine('422', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/warn_7953d27.png";
+})
 cmldefine('423', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/network_5ae2413.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/success_1674452.png";
 })
-cmldefine('424', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/warn_7953d27.png";
+cmldefine('49', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/close_816a4e2.png";
 })
-cmldefine('425', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/success_1674452.png";
-})
-cmldefine('51', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/close_816a4e2.png";
-})
-cmldefine('429', function(require, exports, module) {
+cmldefine('427', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20959,39 +18346,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-popup/c-popup.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "CPopupInterface": {
-      "mask": "Boolean",
-      "show": "Boolean",
-      "center": "Boolean",
-      "position": "String",
-      "close": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CPopup": ["CPopupInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var createAnimation = _cmlTtApi2.default.createAnimation;
 
@@ -21090,10 +18444,10 @@ var CPopup = function CPopup() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CPopup(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CPopup();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('434', function(require, exports, module) {
+cmldefine('432', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21171,7 +18525,7 @@ var CLoading = function () {
 exports.default = new CLoading();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('439', function(require, exports, module) {
+cmldefine('437', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21296,7 +18650,7 @@ var CToast = function () {
 exports.default = new CToast();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('444', function(require, exports, module) {
+cmldefine('442', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21316,44 +18670,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-toast/c-toast.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "value": "Boolean"
-    }
-  },
-  "interfaces": {
-    "CToastInterface": {
-      "type": "String",
-      "message": "String",
-      "duration": "Number",
-      "show": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      },
-      "mask": "Boolean",
-      "needIcon": "Boolean"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CToast": ["CToastInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CToast = function CToast() {
   _classCallCheck(this, CToast);
@@ -21387,9 +18703,9 @@ var CToast = function CToast() {
   this.data = {
     transitionStyle: "",
     IconMap: {
-      loading: require("28"),
-      success: require("445"),
-      warn: require("446")
+      loading: require("26"),
+      success: require("443"),
+      warn: require("444")
     }
   };
   this.computed = {
@@ -21415,16 +18731,16 @@ var CToast = function CToast() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CToast(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CToast();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('445', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/succ_1ecca56.png";
+cmldefine('443', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/succ_1ecca56.png";
 })
-cmldefine('446', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/warn_da3ad45.png";
+cmldefine('444', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/warn_da3ad45.png";
 })
-cmldefine('451', function(require, exports, module) {
+cmldefine('449', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21557,7 +18873,7 @@ var CTip = function () {
 exports.default = new CTip();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('456', function(require, exports, module) {
+cmldefine('454', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21578,42 +18894,6 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-tip/c-tip.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "CTipInterface": {
-      "show": "Boolean",
-      "direction": "String",
-      "closeUrl": "String",
-      "offsetLeft": "Number",
-      "offsetTop": "Number",
-      "offsetRight": "Number",
-      "offsetBottom": "Number",
-      "close": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CTip": ["CTipInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
-
 var CTip = function CTip() {
   _classCallCheck(this, CTip);
 
@@ -21629,7 +18909,7 @@ var CTip = function CTip() {
     },
     closeUrl: {
       type: String,
-      default: require("457")
+      default: require("455")
     },
     offsetLeft: {
       type: Number,
@@ -21650,10 +18930,10 @@ var CTip = function CTip() {
   };
   this.data = {
     iconMap: {
-      left: require("458"),
-      right: require("459"),
-      top: require("460"),
-      bottom: require("461")
+      left: require("456"),
+      right: require("457"),
+      top: require("458"),
+      bottom: require("459")
     }
   };
   this.computed = {
@@ -21787,25 +19067,25 @@ var CTip = function CTip() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CTip(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CTip();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
+cmldefine('455', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/close_49a1751.png";
+})
+cmldefine('456', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/left_0ac0eaf.png";
+})
 cmldefine('457', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/close_49a1751.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/right_c8f477d.png";
 })
 cmldefine('458', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/left_0ac0eaf.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/top_a17a0e7.png";
 })
 cmldefine('459', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/right_c8f477d.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/bottom_4f4eed1.png";
 })
-cmldefine('460', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/top_a17a0e7.png";
-})
-cmldefine('461', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/bottom_4f4eed1.png";
-})
-cmldefine('466', function(require, exports, module) {
+cmldefine('464', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21826,34 +19106,6 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-tip/com/c-tip-angle/c-tip-angle.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "CTipAngleInterface": {
-      "direction": "String",
-      "angleStyle": "String",
-      "angleImg": "String"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CTipAngle": ["CTipAngleInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
-
 var CTipAngle = function CTipAngle() {
   _classCallCheck(this, CTipAngle);
 
@@ -21873,10 +19125,10 @@ var CTipAngle = function CTipAngle() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CTipAngle(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CTipAngle();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('471', function(require, exports, module) {
+cmldefine('469', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21999,7 +19251,7 @@ var CPopup = function () {
 exports.default = new CPopup();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('476', function(require, exports, module) {
+cmldefine('474', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22111,7 +19363,7 @@ var CActionsheet = function () {
 exports.default = new CActionsheet();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('481', function(require, exports, module) {
+cmldefine('479', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22131,54 +19383,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-actionsheet/c-actionsheet.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "index": "String",
-      "value": "String"
-    },
-    "ArrayType": ["String"]
-  },
-  "interfaces": {
-    "CActionsheetInterface": {
-      "show": "Boolean",
-      "title": "String",
-      "cancelTxt": "String",
-      "headerStyle": "String",
-      "contentStyle": "String",
-      "activeStyle": "String",
-      "pickerStyle": "Boolean",
-      "active": "Number",
-      "list": "ArrayType",
-      "cancel": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "select": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CActionsheet": ["CActionsheetInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CActionsheet = function CActionsheet() {
   _classCallCheck(this, CActionsheet);
@@ -22259,10 +19463,10 @@ var CActionsheet = function CActionsheet() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CActionsheet(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CActionsheet();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('486', function(require, exports, module) {
+cmldefine('484', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22285,7 +19489,7 @@ var _createClass = function () {
   };
 }();
 
-var _data = require("487");
+var _data = require("485");
 
 var _cmlTtRuntime = require("0");
 
@@ -22357,13 +19561,13 @@ var CPicker = function () {
 exports.default = new CPicker();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('487', function(require, exports, module) {
+cmldefine('485', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var provins = exports.provins = ["北京市", "天津市", "河北省", "山西省", "内蒙古", "辽宁省", "吉林省", "黑龙江省", "上海市", "江苏省", "浙江省", "安徽省", "福建省", "江西省", "山东省", "河南省", "湖北省", "湖南省", "广东省", "广西", "海南省", "重庆市", "四川省", "贵州省", "云南省", "西藏", "陕西省", "甘肃省", "青海", "宁夏", "新疆"];
 })
-cmldefine('492', function(require, exports, module) {
+cmldefine('490', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22383,58 +19587,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-picker/c-picker.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "index": "Number"
-    },
-    "ArrayType": ["String"]
-  },
-  "interfaces": {
-    "CPickerInterface": {
-      "show": "Boolean",
-      "height": "Number",
-      "headerHeight": "Number",
-      "textAlign": "String",
-      "dataScrollerHeight": "Number",
-      "list": "ArrayType",
-      "defaultIndex": "Number",
-      "cancelBtnStyle": "String",
-      "confirmBtnStyle": "String",
-      "itemStyle": "String",
-      "cancel": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "confirm": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "selectchange": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CPicker": ["CPickerInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CPicker = function CPicker() {
   _classCallCheck(this, CPicker);
@@ -22495,10 +19647,10 @@ var CPicker = function CPicker() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CPicker(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CPicker();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('497', function(require, exports, module) {
+cmldefine('495', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22518,45 +19670,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-picker-panel/c-picker-panel.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "CPickerPanelInterface": {
-      "show": "Boolean",
-      "height": "Number",
-      "title": "String",
-      "headerHeight": "Number",
-      "cancelBtnStyle": "String",
-      "confirmBtnStyle": "String",
-      "cancel": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      },
-      "confirm": {
-        "input": ["Undefined"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CPickerPanel": ["CPickerPanelInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CPickerPanel = function CPickerPanel() {
   _classCallCheck(this, CPickerPanel);
@@ -22590,11 +19703,11 @@ var CPickerPanel = function CPickerPanel() {
   this.data = {};
   this.computed = {
     wraperStyle: function wraperStyle() {
-      var style = "height: " + this.height + "cpx";
+      var style = 'height: ' + this.height + 'cpx';
       return style;
     },
     headerStyle: function headerStyle() {
-      var style = "height: " + this.headerHeight + "cpx";
+      var style = 'height: ' + this.headerHeight + 'cpx';
       return style;
     },
     computedCancelBtn: function computedCancelBtn() {
@@ -22614,10 +19727,10 @@ var CPickerPanel = function CPickerPanel() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CPickerPanel(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CPickerPanel();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('502', function(require, exports, module) {
+cmldefine('500', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22637,45 +19750,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-picker-item/c-picker-item.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "index": "Number"
-    },
-    "ArrayType": ["String"]
-  },
-  "interfaces": {
-    "CPickerItemInterface": {
-      "list": "ArrayType",
-      "defaultIndex": "Number",
-      "height": "Number",
-      "textAlign": "String",
-      "itemStyle": "String",
-      "selectchange": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CPickerItem": ["CPickerItemInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CPickerItem = function CPickerItem() {
   _classCallCheck(this, CPickerItem);
@@ -22721,10 +19795,10 @@ var CPickerItem = function CPickerItem() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CPickerItem(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CPickerItem();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('507', function(require, exports, module) {
+cmldefine('505', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22790,7 +19864,7 @@ var CTab = function CTab() {
 exports.default = new CTab();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('512', function(require, exports, module) {
+cmldefine('510', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22810,48 +19884,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-tab/c-tab.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "label": "String",
-      "activeIndex": "Number"
-    },
-    "ArrayType": ["CMLObject"]
-  },
-  "interfaces": {
-    "CTabsInterface": {
-      "tabs": "ArrayType",
-      "activeLabel": "String",
-      "inline": "Boolean",
-      "lineStyle": "String",
-      "hasUnderline": "Boolean",
-      "activeLabelStyle": "String",
-      "activeIconStyle": "String",
-      "tabclick": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CTabs": ["CTabsInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CTabs = function CTabs() {
   _classCallCheck(this, CTabs);
@@ -22906,7 +19938,7 @@ var CTabs = function CTabs() {
       });
       var leftIndex = foundIndex == -1 ? 0 : foundIndex;
       var leftOffset = leftIndex * width;
-      var style = ";width:" + width + "cpx;transform: translateX(" + leftOffset + "cpx);";
+      var style = ';width:' + width + 'cpx;transform: translateX(' + leftOffset + 'cpx);';
       return this.lineStyle + style;
     }
   };
@@ -22924,10 +19956,10 @@ var CTabs = function CTabs() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CTabs(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CTabs();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('517', function(require, exports, module) {
+cmldefine('515', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22947,40 +19979,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-tab-item/c-tab-item.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "CTabsItemInterface": {
-      "tab": "CMLObject",
-      "activeLabel": "String",
-      "inline": "Boolean",
-      "activeLabelStyle": "String",
-      "activeIconStyle": "String",
-      "tabclick": {
-        "input": ["CMLObject"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CTabsItem": ["CTabsItemInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CTabsItem = function CTabsItem() {
   _classCallCheck(this, CTabsItem);
@@ -23043,10 +20041,10 @@ var CTabsItem = function CTabsItem() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CTabsItem(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CTabsItem();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('522', function(require, exports, module) {
+cmldefine('520', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -23066,35 +20064,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-tab-pane/c-tab-pane.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "ArrayType": ["CMLObject"]
-  },
-  "interfaces": {
-    "CTabPaneInterface": {
-      "tabs": "ArrayType",
-      "activeLabel": "String"
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CTabPane": ["CTabPaneInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CTabPane = function CTabPane() {
   _classCallCheck(this, CTabPane);
@@ -23123,16 +20092,16 @@ var CTabPane = function CTabPane() {
       });
       var leftIndex = foundIndex == -1 ? 0 : foundIndex;
       var leftOffset = leftIndex * 750;
-      var style = "width:" + width + "cpx;transform: translateX(" + -leftOffset + "cpx)";
+      var style = 'width:' + width + 'cpx;transform: translateX(' + -leftOffset + 'cpx)';
       return style;
     }
   };
 };
 
-exports.default = __CML__WRAPPER__(new CTabPane(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CTabPane();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('526', function(require, exports, module) {
+cmldefine('524', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -23153,30 +20122,6 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-tab-pane-item/c-tab-pane-item.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {},
-  "interfaces": {
-    "CTabPaneItemInterface": {}
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CTabPaneItem": ["CTabPaneItemInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
-
 var CTabPaneItem = function CTabPaneItem() {
   _classCallCheck(this, CTabPaneItem);
 
@@ -23187,10 +20132,10 @@ var CTabPaneItem = function CTabPaneItem() {
   this.methods = {};
 };
 
-exports.default = __CML__WRAPPER__(new CTabPaneItem(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CTabPaneItem();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('531', function(require, exports, module) {
+cmldefine('529', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -23346,7 +20291,7 @@ var Refresh = function () {
 exports.default = new Refresh();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('535', function(require, exports, module) {
+cmldefine('533', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -23366,46 +20311,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-refresh/c-refresh.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "valueDetail": {
-      "value": "Boolean"
-    }
-  },
-  "interfaces": {
-    "CRefreshInterface": {
-      "display": "Boolean",
-      "direction": "String",
-      "customUi": "Boolean",
-      "refreshevent": {
-        "input": ["valueDetail"],
-        "output": "Undefined"
-      },
-      "refresh": {
-        "input": ["valueDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "CRefresh": ["CRefreshInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var CRefresh = function CRefresh() {
   _classCallCheck(this, CRefresh);
@@ -23427,7 +20332,7 @@ var CRefresh = function CRefresh() {
     }
   };
   this.data = {
-    icon: require("28")
+    icon: require("26")
   };
   this.watch = {
     display: function display(val) {
@@ -23441,10 +20346,10 @@ var CRefresh = function CRefresh() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new CRefresh(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new CRefresh();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('540', function(require, exports, module) {
+cmldefine('538', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -23533,7 +20438,7 @@ var CCheckbox = function CCheckbox() {
 exports.default = new CCheckbox();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('545', function(require, exports, module) {
+cmldefine('543', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -23553,50 +20458,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-checkbox-group/c-checkbox-group.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "index": "Number",
-      "value": "ArrayType",
-      "selected": "selectedType"
-    },
-    "ArrayType": ["CMLObject"],
-    "selectedType": ["String"]
-  },
-  "interfaces": {
-    "CheckboxgroupInterface": {
-      "cstyle": "String",
-      "option": "ArrayType",
-      "position": "String",
-      "horizontal": "Boolean",
-      "uncheckIcon": "String",
-      "checkedIcon": "String",
-      "itemStyle": "String",
-      "groupchange": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Checkboxgroup": ["CheckboxgroupInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var Checkboxgroup = function Checkboxgroup() {
   _classCallCheck(this, Checkboxgroup);
@@ -23675,10 +20536,10 @@ var Checkboxgroup = function Checkboxgroup() {
   };
 };
 
-exports.default = __CML__WRAPPER__(new Checkboxgroup(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Checkboxgroup();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('550', function(require, exports, module) {
+cmldefine('548', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -23800,7 +20661,7 @@ var CRadio = function () {
 exports.default = new CRadio();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('555', function(require, exports, module) {
+cmldefine('553', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -23838,47 +20699,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-radio-group/c-radio-group.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "index": "Number",
-      "value": "ArrayType"
-    },
-    "ArrayType": ["CMLObject"]
-  },
-  "interfaces": {
-    "RadiogroupInterface": {
-      "cstyle": "String",
-      "option": "ArrayType",
-      "position": "String",
-      "horizontal": "Boolean",
-      "color": "String",
-      "itemStyle": "String",
-      "groupchange": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Radiogroup": ["RadiogroupInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var Radiogroup = function () {
   function Radiogroup() {
@@ -23959,7 +20779,7 @@ var Radiogroup = function () {
   }
 
   _createClass(Radiogroup, [{
-    key: "mounted",
+    key: 'mounted',
     value: function mounted() {
       try {
         this.radioList = JSON.parse(JSON.stringify(this.option));
@@ -23972,10 +20792,10 @@ var Radiogroup = function () {
   return Radiogroup;
 }();
 
-exports.default = __CML__WRAPPER__(new Radiogroup(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Radiogroup();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('560', function(require, exports, module) {
+cmldefine('558', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24002,7 +20822,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _getHomeImgList = require("19");
+var _getHomeImgList = require("17");
 
 var _getHomeImgList2 = _interopRequireDefault(_getHomeImgList);
 
@@ -24024,7 +20844,7 @@ function _classCallCheck(instance, Constructor) {
 
 var animation = _cmlTtApi2.default.createAnimation();
 
-var chameleonIcon = require("54");
+var chameleonIcon = require("52");
 
 var Index = function () {
   function Index() {
@@ -24107,13 +20927,13 @@ var Index = function () {
 exports.default = new Index();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('19', function(require, exports, module) {
+cmldefine('17', function(require, exports, module) {
   module.exports = module.exports = {"code":0,"data":{"bannerImgList":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/288bf88910aeba6d89689b99bec93133.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3804d6f02516e59927e07f091c8f1b27.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ce535663c045b5e877540b0e0be16bb3.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/06af49f2a59b00ad080aeb03fb8d408f.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/7c94908d8e197cc99e942324c5cc526e.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/96cf611743d7b382c11031f29152fa04.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/973e299ac2e80c03acfb5d2d4501231c.jpg"}],"classifyImgList":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/9cdedb90a09cf061cfa19f3e21321c73.png","title":"居家"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/57e39dc404f1ce90b959d76b9abe4314.png","title":"鞋包分配"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2b580df265124836dcd96b1c88068127.png","title":"服装"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a53fff4d3cf0f4dedd78a8a0f2b129c9.png","title":"电器"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/6147b31404d5ddf1207a8363605aebf9.png","title":"婴童"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/8d29af79c24d78a3dcf7d61249702dcf.png","title":"饮食"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2b9a25b6ea81655eb431944d3d57185f.png","title":"洗护"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/293f2341415d70bf7c6460c77fa07f41.png","title":"餐厨"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2fbba45f945ee592d5470269d9e61f1c.png","title":"文体"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/54947b070f8af594dd46069f2d3bdd34.png","title":"特色区"}],"disscountPriceImgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468670774810413.gif","special":{"newPerson":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671496890421.png","temai":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671650860425.png","qingdan":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671650860425.png"}}}
 })
-cmldefine('54', function(require, exports, module) {
-  module.exports = "http://172.24.40.90:5556/tt/static/img/chameleon_83ee00e.png";
+cmldefine('52', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/chameleon_83ee00e.png";
 })
-cmldefine('564', function(require, exports, module) {
+cmldefine('562', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24141,7 +20961,7 @@ var Home = function Home() {
 exports.default = new Home();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('569', function(require, exports, module) {
+cmldefine('567', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24168,7 +20988,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _getHomeImgList = require("19");
+var _getHomeImgList = require("17");
 
 var _getHomeImgList2 = _interopRequireDefault(_getHomeImgList);
 
@@ -24217,7 +21037,7 @@ var List = function () {
 exports.default = new List();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('574', function(require, exports, module) {
+cmldefine('572', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24245,7 +21065,7 @@ var Service = function Service() {
 exports.default = new Service();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('579', function(require, exports, module) {
+cmldefine('577', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24272,7 +21092,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _getHomeImgList = require("19");
+var _getHomeImgList = require("17");
 
 var _getHomeImgList2 = _interopRequireDefault(_getHomeImgList);
 
@@ -24322,7 +21142,7 @@ var Classlist = function () {
 exports.default = new Classlist();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('584', function(require, exports, module) {
+cmldefine('582', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24349,7 +21169,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _getHomeImgList = require("19");
+var _getHomeImgList = require("17");
 
 var _getHomeImgList2 = _interopRequireDefault(_getHomeImgList);
 
@@ -24403,7 +21223,7 @@ var Special = function () {
 exports.default = new Special();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('589', function(require, exports, module) {
+cmldefine('587', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24430,7 +21250,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _yanxuan = require("31");
+var _yanxuan = require("29");
 
 var _yanxuan2 = _interopRequireDefault(_yanxuan);
 
@@ -24497,10 +21317,10 @@ var Yanxuan = function () {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('31', function(require, exports, module) {
+cmldefine('29', function(require, exports, module) {
   module.exports = module.exports = {"errno":"0","errmsg":"","data":{"result":{"banners":[{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/630439320dae9f1ce3afef3c39721383.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/5100f0176e27a167cc2aea08b1bd11d8.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-1.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-8.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-2.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-4.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-6.jpg"}],"makers":{"title":"品牌制造商直供","list":[{"name":"新秀丽制造商","price":"59","state":"上新","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ppbg-1.jpg","url":""},{"name":"MUJI制造商","price":"12.9","state":"上新","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ppbg-2.jpg","url":""},{"name":"CK制造商","price":"29","state":"上新","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ppbg-3.jpg","url":""},{"name":"Adidas制造商","price":"29","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/75523d4274d85825ece16370cdb1693f.jpg","url":""}]},"recommend":{"head1":{"tlt":"周一周四 · 新品发布","tltBg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/bg-new.png","url":""},"goods1":[{"tlt":"日式和风声波式电动牙刷","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png","info":"进口刷毛，专利技术","price":"119"},{"tlt":"小馒头 多色双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png","info":"奶油色泽，小巧减龄","price":"79"},{"tlt":"多功能商务双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png","info":"17个功能分区，内置分层收纳","price":"334"},{"tlt":"切尔西牛皮女靴","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png","info":"经典牛皮切尔西，时尚帅气","price":"289"},{"tlt":"清心花茶壶套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a2a0f13385d67220b29e7a1124a361e6.png","info":"明亮通透，滤茶迅速","price":"119"},{"tlt":"全棉色织磨毛四件套","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png","info":"优雅色织，温暖磨毛","price":"299"},{"tlt":"黑凤梨 20寸PC膜拉链登机箱","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png","info":"热卖9万只，网易人手1只","price":"185"},{"tlt":"日式和风敞口保温杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png","info":"真空隔热，保温保冷","price":"32"}],"head2":{"tlt":"周一周四 · 新品发布","tltBg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/bg-new.png","url":""},"goods2":[{"tlt":"日式和风声波式电动牙刷","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png","info":"进口刷毛，专利技术","price":"119"},{"tlt":"小馒头 多色双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png","info":"奶油色泽，小巧减龄","price":"79"},{"tlt":"多功能商务双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png","info":"17个功能分区，内置分层收纳","price":"334"},{"tlt":"切尔西牛皮女靴","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png","info":"经典牛皮切尔西，时尚帅气","price":"289"},{"tlt":"清心花茶壶套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a2a0f13385d67220b29e7a1124a361e6.png","info":"明亮通透，滤茶迅速","price":"119"},{"tlt":"全棉色织磨毛四件套","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png","info":"优雅色织，温暖磨毛","price":"299"},{"tlt":"黑凤梨 20寸PC膜拉链登机箱","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png","info":"热卖9万只，网易人手1只","price":"185"},{"tlt":"日式和风敞口保温杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png","info":"真空隔热，保温保冷","price":"32"}]},"goods":[{"tlt":"日式和风敞口保温杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png","info":"真空隔热，保温保冷","url":"","price":"32"},{"tlt":"切尔西牛皮女靴","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png","info":"奶油色泽，小巧减龄","url":"","price":"32"},{"tlt":"小馒头多色双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png","info":"奶油色泽，小巧减龄","url":"","price":"79"},{"tlt":"全棉色织磨毛四件套","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png","info":"优雅色织，温暖磨毛","url":"","price":"299"},{"tlt":"日式和风声波式电动牙刷","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png","info":"进口刷毛，专利技术","url":"","price":"119"},{"tlt":"多功能商务双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png","info":"17个功能分区，内置分层收纳","url":"","price":"334"},{"tlt":"黑凤梨20寸PC膜拉链登机箱","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png","info":"热卖9万只，网易人手1只","url":"","price":"185"},{"tlt":"日式蓬软太鼓抱枕","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ad953e16ad8c33b714e7af941ce8cd56.png","info":"萌趣太鼓造型 软糯轻柔回弹","url":"","price":"29"},{"tlt":"可水洗抗菌防螨丝羽绒枕","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a6c9e142fd008b3734c690a71a78ae5b.png","info":"进口防螨布，热销50万件","url":"","price":"99"},{"tlt":"双宫茧桑蚕丝被 空调被","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/6b341648f59d0c3eb48fa81e1d2de06e.png","info":"一级桑蚕丝，吸湿透气柔软","url":"","price":"479"},{"tlt":"怀抱休闲椅组合（皮款）","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/b5289125e9b55cf72e9a9623d006415e.png","info":"葛优躺神器皮款","url":"","price":"3999"},{"tlt":"欧式哑光餐具套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/431e86c88b4a6c9f065d1d8abea6b603.png","info":"德化白瓷，坚实耐用","url":"","price":"189"},{"tlt":"清新两用杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/431f5d142e3dd9946dc8e38c2aa3cd34.png","info":"办公杯优选 轻松饮茶","url":"","price":"52"},{"tlt":"两带式男/女款拖鞋","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/7d1c130c7d80edf824e4218c6829b7c8.png","info":"鞋杯随脚型而变，舒适呵护","url":"","price":"69.9"}],"topics":[{"name":"严选look","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15030393722652401.jpg"},{"name":"严选推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/d943675462a06f817d33062d4eb059f5.jpg"},{"name":"丁磊私物推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/1de4da49367dd7c01af1f7a2b23b0237.jpg"},{"name":"挑款师推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/437cc656ff529f8f84db6efc48df9bf4.png"}],"articles":[{"auther":"严选推荐","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3d860cbf663253590da6a64ff07f9919.png","tlt":"年中扫一扫，下半年运势好","info":"6个家庭清洁小技巧","price":"6.9","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/5a1df92d48fa3214bec9bb40ab067683.jpg"},{"auther":"服装组：小服","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772608140418.png","tlt":"小姐姐们的运动衣提前上架啦","info":"前两天推男式运动T恤时，就有小伙伴在专题评论里，问小姐姐们的运动衣在哪儿。","price":"","img":["https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772896010423.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772808640420.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772808640420.jpg"]},{"auther":"居家组：朵朵","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040896357740404.png","tlt":"初秋，最想用它来裸睡","info":"连续下了几场雨，杭州的早晚，已透出几丝凉意。再睡席子便有点凉了，于是周末从柜子翻...","price":"","img":["https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040927525260414.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040927586650416.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040927556820415.jpg"]},{"auther":"严选推荐","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3d860cbf663253590da6a64ff07f9919.png","tlt":"不为繁华易匠心","info":"那些值得珍藏的严选手作好物","price":"29","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/4d72145e48e65ee3deaf2e1403e6ec73.jpg"}],"classes":["推荐区","家装区","居家","餐厨","配件","服装","电器","洗护","杂货","饮食","婴童","志趣"],"subclasses":[{"name":"中秋系列","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/82ae05c313b93355239ca1795917a5ac.png"},{"name":"超值套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/bd6f7deba69c8af2f6bb80025d7b98de.png"},{"name":"热卖爆品","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/c3418cc60d3968263c5b2ac7fb153c34.png"},{"name":"999+好评","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/87d1cb1bc196c5775b17788aea1c2239.png"},{"name":"boss推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/fbee769af73c0f63f6120eb27ff3ce96.png"},{"name":"明星推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/7dea8f7e0e706804c3307504e2e7c463.png"},{"name":"黑凤梨系列","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a4a14669ce1fa497aece9a20c669196e.png"},{"name":"趣味粉系列","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/87fc01e5876482d521ecca13aea42653.png"}]}}}
 })
-cmldefine('594', function(require, exports, module) {
+cmldefine('592', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24528,7 +21348,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('599', function(require, exports, module) {
+cmldefine('597', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24555,7 +21375,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _yanxuan = require("31");
+var _yanxuan = require("29");
 
 var _yanxuan2 = _interopRequireDefault(_yanxuan);
 
@@ -24623,7 +21443,7 @@ var Yanxuan = function () {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('604', function(require, exports, module) {
+cmldefine('602', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24663,7 +21483,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('609', function(require, exports, module) {
+cmldefine('607', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24705,7 +21525,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('614', function(require, exports, module) {
+cmldefine('612', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24758,7 +21578,7 @@ var Yanxuan = function () {
       classes: [],
       subclasses: [],
       scrollerHeight: -1,
-      headerImg: require("54")
+      headerImg: require("52")
     };
     this.methods = {
       jumpWeb: function jumpWeb(_url) {}
@@ -24785,7 +21605,7 @@ var Yanxuan = function () {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('619', function(require, exports, module) {
+cmldefine('617', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24812,7 +21632,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _yanxuan = require("31");
+var _yanxuan = require("29");
 
 var _yanxuan2 = _interopRequireDefault(_yanxuan);
 
@@ -24873,7 +21693,7 @@ var Yanxuan = function () {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('624', function(require, exports, module) {
+cmldefine('622', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24913,7 +21733,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('629', function(require, exports, module) {
+cmldefine('627', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -24948,7 +21768,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('634', function(require, exports, module) {
+cmldefine('632', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -25012,7 +21832,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('639', function(require, exports, module) {
+cmldefine('637', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -25050,67 +21870,25 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/node_modules/cml-ui/components/c-tabbar/c-tabbar.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "clickDetail": {
-      "compName": "String"
-    },
-    "inputDetail": {
-      "value": "String"
-    }
-  },
-  "interfaces": {
-    "TabbarInterface": {
-      "tabbar": "CMLObject",
-      "value": "String",
-      "onclick": {
-        "input": ["clickDetail"],
-        "output": "Undefined"
-      },
-      "input": {
-        "input": ["inputDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Tabbar": ["TabbarInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 /*** 
 以下列举下tabbar的一些默认值
 tabbar:{
-  "tabbarStyle": "";
-  "tabLineStyle":"background-color:#FC9153;height:2cpx;", //当选择tabbar在top的时候，会显示出来一个下划线，用来设置下划线的颜色和高度；
-  "textStyle":'color:#000000', //文案默认style ,可以这里控制文案的大小，样式等
-  "selectedTextStyle":'color:#61c7fc',//文案被选择style
-  "position":"bottom", //tabbar的位置 top/bottom
-  "useFixedLayout":默认不使用fixed布局,  //是否通过fixed布局进行tabbar的布局
-  "list":[
-    { 
-      "compName":"bar-detail", //这里如果外部组件通过component is进行关联，则这个值必须传，且要和useingComponents中的key的保持一致；
-      "text": "detail",//tabbar的文案
-      "icon": require("../../../assets/images/index/icon_API.png"),
-      "selectedIcon": require("../../../assets/images/index/icon_API_HL.png"),
-      // "iconStyle":"width:50cpx;height:50cpx;",//默认的icon的宽高是40cpx;这里可以自定义
-      // "selectedIconStyle":"width:70cpx;height:70cpx;",//默认的icon的宽高是40cpx;这里可以自定义
-  ]
-},*/
+      "tabbarStyle": "";
+      "tabLineStyle":"background-color:#FC9153;height:2cpx;", //当选择tabbar在top的时候，会显示出来一个下划线，用来设置下划线的颜色和高度；
+      "textStyle":'color:#000000', //文案默认style ,可以这里控制文案的大小，样式等
+      "selectedTextStyle":'color:#61c7fc',//文案被选择style
+      "position":"bottom", //tabbar的位置 top/bottom
+      "useFixedLayout":默认不使用fixed布局,  //是否通过fixed布局进行tabbar的布局
+      "list":[
+        { 
+          "compName":"bar-detail", //这里如果外部组件通过component is进行关联，则这个值必须传，且要和useingComponents中的key的保持一致；
+          "text": "detail",//tabbar的文案
+          "icon": require("../../../assets/images/index/icon_API.png"),
+          "selectedIcon": require("../../../assets/images/index/icon_API_HL.png"),
+          // "iconStyle":"width:50cpx;height:50cpx;",//默认的icon的宽高是40cpx;这里可以自定义
+          // "selectedIconStyle":"width:70cpx;height:70cpx;",//默认的icon的宽高是40cpx;这里可以自定义
+      ]
+    },*/
 
 
 var Tabbar = function () {
@@ -25158,7 +21936,7 @@ var Tabbar = function () {
         var width = 750 / this.tabbar.list.length; //line的总宽度；
 
         var leftOffset = this.tapedIndex * width;
-        var style = ";width:" + width + "cpx;transform: translateX(" + leftOffset + "cpx);" + (this.tabbar.tabLineStyle || 'background-color:#FC9153;height:2cpx;');
+        var style = ';width:' + width + 'cpx;transform: translateX(' + leftOffset + 'cpx);' + (this.tabbar.tabLineStyle || 'background-color:#FC9153;height:2cpx;');
         return style;
       },
       hasIcon: function hasIcon() {
@@ -25210,7 +21988,7 @@ var Tabbar = function () {
   }
 
   _createClass(Tabbar, [{
-    key: "mounted",
+    key: 'mounted',
     value: function mounted() {
       this.tapedIndex = this.activeIndex;
 
@@ -25221,17 +21999,17 @@ var Tabbar = function () {
       var width = 750 / this.tabbar.length; //line的总宽度；
 
       var leftOffset = this.activeIndex * width;
-      this.tabLineStyle = ";width:" + width + "cpx;transform: translateX(" + leftOffset + "cpx);";
+      this.tabLineStyle = ';width:' + width + 'cpx;transform: translateX(' + leftOffset + 'cpx);';
     }
   }]);
 
   return Tabbar;
 }();
 
-exports.default = __CML__WRAPPER__(new Tabbar(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Tabbar();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('644', function(require, exports, module) {
+cmldefine('642', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -25258,7 +22036,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _listImages = require("645");
+var _listImages = require("643");
 
 var _listImages2 = _interopRequireDefault(_listImages);
 
@@ -25349,10 +22127,10 @@ var Refresh = function () {
 exports.default = new Refresh();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('645', function(require, exports, module) {
+cmldefine('643', function(require, exports, module) {
   module.exports = module.exports = {"code":0,"data":{"topImgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/4972949f269e7295a4f37e99a303553e.jpg","list":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/8635c42f2b3a92768b12015c491821b5.png","des":"400跟纯棉贡缎","name":"60s锦绵贡缎四件套","money":"￥400","tag":["APP特惠"]},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/4a00fd1035efe874d70d51dfc04c5cee.png","des":"少女粉润贡缎","name":"朱莉.粉唐四件套","money":"￥359","tag":["年货节特卖","满赠"]},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/9f3c89c8b98fb06968c67edb12a195cf.png","des":"少女粉润贡缎","name":"朱莉.粉唐四件套","money":"￥359","tag":[]},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/cc863b46d890633445fb2a1354b01841.png","des":"入门享受奢华感受","name":"60s锦绵贡缎四件套","money":"￥400"}]}}
 })
-cmldefine('650', function(require, exports, module) {
+cmldefine('648', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -25379,7 +22157,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _detailInfo = require("651");
+var _detailInfo = require("649");
 
 var _detailInfo2 = _interopRequireDefault(_detailInfo);
 
@@ -25453,10 +22231,10 @@ var Detail = function () {
 exports.default = new Detail();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('651', function(require, exports, module) {
+cmldefine('649', function(require, exports, module) {
   module.exports = module.exports = {"code":0,"data":{"carouselList":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/5240f52c0f410054fe9c20abc54aa7b9.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/5142255cef97dafd012bb73423eff4d4.png"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/0e72c98273b50c0959d34662c2fad4e8.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/44334a3a100aa6fa974c17e352969a6f.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/bf216b5af1dc8cdb5a70e87b8271028c.png"}],"description":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/17e5327561f5b9df04f7d000a8c71bb2.jpg","tag1":"贡缎细糯","tag2":"如绸光泽"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/459cfd6a33991746fc2cf452642c7c68.jpg","tag1":"高支纯棉","tag2":"新贵臻密"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/964045a4796d70488adfef26a3093e35.jpg","tag1":"同色边框","tag2":"精致恰好"}],"money":"￥469","tag":"App特惠￥455.00"}}
 })
-cmldefine('656', function(require, exports, module) {
+cmldefine('654', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -25477,42 +22255,14 @@ function _classCallCheck(instance, Constructor) {
   }
 }
 
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/src/pages/demo/yanxuan/pages/detail/myscroller/myscroller.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "value": "String"
-    }
-  },
-  "interfaces": {
-    "MyscrollerInterface": {}
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Myscroller": ["MyscrollerInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
-
 var Myscroller = function Myscroller() {
   _classCallCheck(this, Myscroller);
 };
 
-exports.default = __CML__WRAPPER__(new Myscroller(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Myscroller();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('660', function(require, exports, module) {
+cmldefine('658', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -25539,7 +22289,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _amapWx = require("661");
+var _amapWx = require("659");
 
 var _amapWx2 = _interopRequireDefault(_amapWx);
 
@@ -25558,40 +22308,6 @@ function _classCallCheck(instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-
-var __INTERFACE__FILEPATH = "/Users/didi/work/chameleon-space/cml-open-demos/cml-demo/src/pages/demo/yanxuan/components/map/map.interface";
-
-var __CML_ERROR__ = function throwError(content) {
-  throw new Error("\u6587\u4EF6\u4F4D\u7F6E: " + __INTERFACE__FILEPATH + "\n            " + content);
-};
-
-var __enableTypes__ = [];
-var __INTERFAE__DEFINES__ = {
-  "types": {
-    "EventDetail": {
-      "value": "String"
-    }
-  },
-  "interfaces": {
-    "MapInterface": {
-      "name": "String",
-      "onshow": {
-        "input": ["EventDetail"],
-        "output": "Undefined"
-      }
-    }
-  },
-  "classes": {}
-};
-var __CML__DEFINES__ = {
-  "types": {},
-  "interfaces": {},
-  "classes": {
-    "Map": ["MapInterface"]
-  }
-};
-
-var __CML__WRAPPER__ = require("2");
 
 var markersData = [];
 
@@ -25633,7 +22349,7 @@ var Map = function () {
   }
 
   _createClass(Map, [{
-    key: "mounted",
+    key: 'mounted',
     value: function mounted() {
       var me = this;
       this.$cmlEmit('onshow', {
@@ -25662,10 +22378,10 @@ var Map = function () {
   return Map;
 }();
 
-exports.default = __CML__WRAPPER__(new Map(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
+exports.default = new Map();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('661', function(require, exports, module) {
+cmldefine('659', function(require, exports, module) {
   function AMapWX(a) {
   this.key = a.key, this.requestConfig = {
     key: a.key,
@@ -26087,7 +22803,7 @@ AMapWX.prototype.getWxLocation = function (a, b) {
   });
 }, module.exports.AMapWX = AMapWX;
 })
-cmldefine('666', function(require, exports, module) {
+cmldefine('664', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });

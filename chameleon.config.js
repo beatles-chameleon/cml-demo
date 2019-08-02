@@ -46,6 +46,14 @@ cml.config.merge({
       publicPath: `${publicPath}/wx/`,
     }
   },
+  tt: {
+    dev: {
+    },
+    build: {
+      apiPrefix,
+      publicPath: `${publicPath}/tt/`,
+    }
+  },
   web: {
     dev: {
       analysis: false,

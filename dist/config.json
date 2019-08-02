@@ -3,960 +3,240 @@
         "wx": {
             "appId": "123456",
             "path": "/pages/index/index"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/index/index"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/index/index"
-        },
-        "web": {
-            "url": "https://cmljs.org#/"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/index/index"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/com"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/com"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/com"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/com"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/com"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/api/api"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/api/api"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/api/api"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/api/api"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/api/api"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/demo/demo"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/demo/demo"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/demo/demo"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/demo/demo"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/demo/demo"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/api/sub-pages/chooseImage"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/api/sub-pages/chooseImage"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/api/sub-pages/chooseImage"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/api/sub-pages/chooseImage"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/api/sub-pages/chooseImage"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/api/sub-pages/animation"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/api/sub-pages/animation"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/api/sub-pages/animation"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/api/sub-pages/animation"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/api/sub-pages/animation"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/api/sub-pages/request"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/api/sub-pages/request"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/api/sub-pages/request"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/api/sub-pages/request"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/api/sub-pages/request"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/api/sub-pages/webSocket"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/api/sub-pages/webSocket"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/api/sub-pages/webSocket"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/api/sub-pages/webSocket"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/api/sub-pages/webSocket"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/api/sub-pages/navigate"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/api/sub-pages/navigate"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/api/sub-pages/navigate"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/api/sub-pages/navigate"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/api/sub-pages/navigate"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/list/list"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/list/list"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/list/list"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/list/list"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/list/list"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/scroller/scroller"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/scroller/scroller"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/scroller/scroller"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/scroller/scroller"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/scroller/scroller"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/view/view"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/view/view"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/view/view"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/view/view"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/view/view"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/text/text"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/text/text"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/text/text"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/text/text"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/text/text"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/button/button"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/button/button"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/button/button"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/button/button"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/button/button"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/input/input"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/input/input"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/input/input"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/input/input"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/input/input"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/textarea/textarea"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/textarea/textarea"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/textarea/textarea"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/textarea/textarea"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/textarea/textarea"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/image/image"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/image/image"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/image/image"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/image/image"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/image/image"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/video/video"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/video/video"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/video/video"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/video/video"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/video/video"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/richtext/richtext"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/richtext/richtext"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/richtext/richtext"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/richtext/richtext"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/richtext/richtext"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/switch/switch"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/switch/switch"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/switch/switch"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/switch/switch"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/switch/switch"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/radio/radio"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/radio/radio"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/radio/radio"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/radio/radio"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/radio/radio"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/checkbox/checkbox"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/checkbox/checkbox"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/checkbox/checkbox"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/checkbox/checkbox"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/checkbox/checkbox"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/carousel/carousel"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/carousel/carousel"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/carousel/carousel"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/carousel/carousel"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/carousel/carousel"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/row/row"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/row/row"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/row/row"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/row/row"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/row/row"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/base/layout/layout"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/base/layout/layout"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/base/layout/layout"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/base/layout/layout"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/base/layout/layout"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/spread/c-dialog/c-dialog"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/spread/c-dialog/c-dialog"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/spread/c-dialog/c-dialog"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/spread/c-dialog/c-dialog"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/spread/c-dialog/c-dialog"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/spread/c-loading/c-loading"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/spread/c-loading/c-loading"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/spread/c-loading/c-loading"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/spread/c-loading/c-loading"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/spread/c-loading/c-loading"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/spread/c-toast/c-toast"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/spread/c-toast/c-toast"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/spread/c-toast/c-toast"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/spread/c-toast/c-toast"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/spread/c-toast/c-toast"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/spread/c-tip/c-tip"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/spread/c-tip/c-tip"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/spread/c-tip/c-tip"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/spread/c-tip/c-tip"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/spread/c-tip/c-tip"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/spread/c-popup/c-popup"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/spread/c-popup/c-popup"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/spread/c-popup/c-popup"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/spread/c-popup/c-popup"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/spread/c-popup/c-popup"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/spread/c-actionsheet/c-actionsheet"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/spread/c-actionsheet/c-actionsheet"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/spread/c-actionsheet/c-actionsheet"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/spread/c-actionsheet/c-actionsheet"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/spread/c-actionsheet/c-actionsheet"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/spread/c-picker/c-picker"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/spread/c-picker/c-picker"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/spread/c-picker/c-picker"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/spread/c-picker/c-picker"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/spread/c-picker/c-picker"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/spread/c-tab/c-tab"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/spread/c-tab/c-tab"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/spread/c-tab/c-tab"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/spread/c-tab/c-tab"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/spread/c-tab/c-tab"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/spread/c-refresh/c-refresh"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/spread/c-refresh/c-refresh"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/spread/c-refresh/c-refresh"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/spread/c-refresh/c-refresh"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/spread/c-refresh/c-refresh"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/spread/c-checkbox-group/c-checkbox-group"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/spread/c-checkbox-group/c-checkbox-group"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/spread/c-checkbox-group/c-checkbox-group"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/spread/c-checkbox-group/c-checkbox-group"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/spread/c-checkbox-group/c-checkbox-group"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/com/spread/c-radio-group/c-radio-group"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/com/spread/c-radio-group/c-radio-group"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/com/spread/c-radio-group/c-radio-group"
-        },
-        "web": {
-            "url": "https://cmljs.org#/pages/com/spread/c-radio-group/c-radio-group"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/com/spread/c-radio-group/c-radio-group"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/demo/yanxuan/pages/index/index"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/demo/yanxuan/pages/index/index"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/demo/yanxuan/pages/index/index"
-        },
-        "web": {
-            "url": "https://cmljs.org#/cml/demo/yanxuan"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/demo/yanxuan/pages/index/index"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/demo/yanxuan/pages/list/list"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/demo/yanxuan/pages/list/list"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/demo/yanxuan/pages/list/list"
-        },
-        "web": {
-            "url": "https://cmljs.org#/cml/demo/yanxuan/list"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/demo/yanxuan/pages/list/list"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/demo/yanxuan/pages/detail/detail"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/demo/yanxuan/pages/detail/detail"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/demo/yanxuan/pages/detail/detail"
-        },
-        "web": {
-            "url": "https://cmljs.org#/cml/demo/yanxuan/detail"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/demo/yanxuan/pages/detail/detail"
-            }
         }
     },
     {
         "wx": {
             "appId": "123456",
             "path": "/pages/demo/yanxuan/pages/map/map"
-        },
-        "baidu": {
-            "appId": "",
-            "path": "/pages/demo/yanxuan/pages/map/map"
-        },
-        "alipay": {
-            "appId": "",
-            "path": "/pages/demo/yanxuan/pages/map/map"
-        },
-        "web": {
-            "url": "https://cmljs.org#/cml/demo/yanxuan/map"
-        },
-        "weex": {
-            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
-            "md5": "54BBBA08565CC699EA718023616AF90B",
-            "query": {
-                "path": "/pages/demo/yanxuan/pages/map/map"
-            }
         }
     }
 ]
