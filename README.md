@@ -6,6 +6,7 @@
 - clone 当前项目
 - 在项目根目录执行`npm install`
 - 启动项目`cml dev`
+- 本例子使用的是 github 源的图片地址，可能加载速度较慢
 
 ### 注意：dist 不可删除，chameleon SDK 需访问
 
