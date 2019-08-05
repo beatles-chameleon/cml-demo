@@ -5,7 +5,7 @@
         "shop": "./../../components/shop/shop",
         "my": "./../../components/my/my",
         "topic": "./../../components/topic/topic",
-        "c-tabbar": "./../../../../../npm/cml-tt-ui/components/c-tabbar/c-tabbar",
+        "c-tabbar": "./../../../../../npm/cml-ui/components/c-tabbar/c-tabbar",
         "cml-buildin-page": "./../../../../../npm/chameleon-ui-builtin/components/page/page",
         "cml-buildin-scroller": "./../../../../../npm/chameleon-ui-builtin/components/scroller/scroller"
     },

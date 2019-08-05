@@ -1,6 +1,7 @@
 {
     "usingComponents": {
         "c-header": "./../../../../components/header/header",
+        "cml-buildin-checkbox": "./../../../../npm/chameleon-ui-builtin/components/checkbox/checkbox",
         "cml-buildin-page": "./../../../../npm/chameleon-ui-builtin/components/page/page"
     },
     "navigationBarTitleText": "checkbox",

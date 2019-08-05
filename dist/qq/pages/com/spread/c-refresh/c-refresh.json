@@ -1,7 +1,7 @@
 {
     "usingComponents": {
         "c-header": "./../../../../components/header/header",
-        "c-refresh": "./../../../../npm/cml-tt-ui/components/c-refresh/c-refresh",
+        "c-refresh": "./../../../../npm/cml-ui/components/c-refresh/c-refresh",
         "cml-buildin-page": "./../../../../npm/chameleon-ui-builtin/components/page/page",
         "cml-buildin-scroller": "./../../../../npm/chameleon-ui-builtin/components/scroller/scroller"
     },

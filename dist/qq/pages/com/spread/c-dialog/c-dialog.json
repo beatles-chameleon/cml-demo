@@ -1,7 +1,7 @@
 {
     "usingComponents": {
         "c-header": "./../../../../components/header/header",
-        "c-dialog": "./../../../../npm/cml-tt-ui/components/c-dialog/c-dialog",
+        "c-dialog": "./../../../../npm/cml-ui/components/c-dialog/c-dialog",
         "cml-buildin-button": "./../../../../npm/chameleon-ui-builtin/components/button/button",
         "cml-buildin-page": "./../../../../npm/chameleon-ui-builtin/components/page/page"
     },

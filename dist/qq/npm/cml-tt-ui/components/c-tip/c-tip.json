@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "c-tip-angle": "./../../../../npm/cml-tt-ui/components/c-tip/com/c-tip-angle/c-tip-angle"
-    },
-    "component": true
-}

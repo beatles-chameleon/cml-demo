@@ -4,153 +4,153 @@
     <view class="title  cml-base cml-view"><text class=" cml-base cml-text">以下是demo</text></view>
     
     <view class="container-wrap  cml-base cml-view">
-      <container direction="column" class=" cml-base cml-container">
+      <cml-buildin-container direction="column" class=" cml-base cml-container">
         <head class=" cml-base cml-head">
           <view class="container-item  cml-base cml-view">
             <text class=" cml-base cml-text">header</text>
           </view>
         </head>
-        <main main-style="{{mainStyle}}" class=" cml-base cml-main">
+        <cml-buildin-main main-style="{{mainStyle}}" class=" cml-base cml-main">
           <view class="container-item  cml-base cml-view">
             <text class=" cml-base cml-text">main</text>
           </view>
-        </main>
-      </container>
+        </cml-buildin-main>
+      </cml-buildin-container>
     </view>
     
     <view class="container-wrap  cml-base cml-view">
-      <container direction="column" class=" cml-base cml-container">
+      <cml-buildin-container direction="column" class=" cml-base cml-container">
         <head class=" cml-base cml-head">
           <view class="container-item  cml-base cml-view">
             <text class=" cml-base cml-text">header</text>
           </view>
         </head>
-        <main main-style="{{mainStyle}}" class=" cml-base cml-main">
+        <cml-buildin-main main-style="{{mainStyle}}" class=" cml-base cml-main">
           <view class="container-item  cml-base cml-view">
             <text class=" cml-base cml-text">main</text>
           </view>
-        </main>
-        <foot class=" cml-base cml-foot">
+        </cml-buildin-main>
+        <cml-buildin-foot class=" cml-base cml-foot">
           <view class="container-item  cml-base cml-view">
             <text class=" cml-base cml-text">footer</text>
           </view>
-        </foot>
-      </container>
+        </cml-buildin-foot>
+      </cml-buildin-container>
     </view>
     
     <view class="container-wrap  cml-base cml-view">
-      <container direction="row" class=" cml-base cml-container">
-        <aside aside-style="{{asideStyle}}" class=" cml-base cml-aside">
+      <cml-buildin-container direction="row" class=" cml-base cml-container">
+        <cml-buildin-aside aside-style="{{asideStyle}}" class=" cml-base cml-aside">
           <view class="container-item  cml-base cml-view">
             <text class=" cml-base cml-text">aside</text>
           </view>
-        </aside>
-        <main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main">
+        </cml-buildin-aside>
+        <cml-buildin-main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main">
           <view class="container-item  cml-base cml-view">
             <text class=" cml-base cml-text">main</text>
           </view>
-        </main>
-      </container>
+        </cml-buildin-main>
+      </cml-buildin-container>
     </view>
     
     <view class="container-wrap  cml-base cml-view">
-      <container direction="column" class=" cml-base cml-container">
+      <cml-buildin-container direction="column" class=" cml-base cml-container">
         <head class=" cml-base cml-head">
           <view class="container-item  cml-base cml-view">
             <text class=" cml-base cml-text">header</text>
           </view>
         </head>
-        <container direction="row" style="flex:1" class=" cml-base cml-container">
-          <aside aside-style="{{asideStyle}}" class=" cml-base cml-aside">
+        <cml-buildin-container direction="row" style="flex:1" class=" cml-base cml-container">
+          <cml-buildin-aside aside-style="{{asideStyle}}" class=" cml-base cml-aside">
             <view class="container-item  cml-base cml-view">
               <text class=" cml-base cml-text">aside</text>
             </view>
-          </aside>
-          <main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main">
+          </cml-buildin-aside>
+          <cml-buildin-main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main">
             <view class="container-item  cml-base cml-view">
               <text class=" cml-base cml-text">main</text>
             </view>
-          </main>
-        </container>
-      </container>
+          </cml-buildin-main>
+        </cml-buildin-container>
+      </cml-buildin-container>
     </view>
     
     <view class="container-wrap  cml-base cml-view">
-      <container direction="column" class=" cml-base cml-container">
+      <cml-buildin-container direction="column" class=" cml-base cml-container">
         <head class=" cml-base cml-head">
           <view class="container-item  cml-base cml-view">
             <text class=" cml-base cml-text">header</text>
           </view>
         </head>
-        <container direction="row" style="flex:1" class=" cml-base cml-container">
-          <aside aside-style="{{'height:380cpx'}}" class=" cml-base cml-aside">
+        <cml-buildin-container direction="row" style="flex:1" class=" cml-base cml-container">
+          <cml-buildin-aside aside-style="{{'height:380cpx'}}" class=" cml-base cml-aside">
             <view class="container-item  cml-base cml-view">
               <text class=" cml-base cml-text">aside</text>
             </view>
-          </aside>
-          <container direction="column" style="flex:1" class=" cml-base cml-container">
-            <main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main">
+          </cml-buildin-aside>
+          <cml-buildin-container direction="column" style="flex:1" class=" cml-base cml-container">
+            <cml-buildin-main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main">
               <view class="container-item  cml-base cml-view">
                 <text class=" cml-base cml-text">main</text>
               </view>
-            </main>
-            <foot class=" cml-base cml-foot">
+            </cml-buildin-main>
+            <cml-buildin-foot class=" cml-base cml-foot">
               <view class="container-item  cml-base cml-view">
                 <text class=" cml-base cml-text">foot</text>
               </view>
-            </foot>
-          </container>
-        </container>
-      </container>
+            </cml-buildin-foot>
+          </cml-buildin-container>
+        </cml-buildin-container>
+      </cml-buildin-container>
     </view>
     
     <view class="container-wrap  cml-base cml-view">
-      <container direction="row" class=" cml-base cml-container">
-        <aside aside-style="{{'height:380cpx'}}" class=" cml-base cml-aside">
+      <cml-buildin-container direction="row" class=" cml-base cml-container">
+        <cml-buildin-aside aside-style="{{'height:380cpx'}}" class=" cml-base cml-aside">
           <view class="container-item  cml-base cml-view">
               <text class=" cml-base cml-text">aside</text>
           </view>
-        </aside>
-        <container direction="column" style="flex:1" class=" cml-base cml-container">
+        </cml-buildin-aside>
+        <cml-buildin-container direction="column" style="flex:1" class=" cml-base cml-container">
           <head class=" cml-base cml-head">
             <view class="container-item  cml-base cml-view">
                 <text class=" cml-base cml-text">header</text>
               </view>
           </head>
-          <main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main">
+          <cml-buildin-main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main">
             <view class="container-item  cml-base cml-view">
                 <text class=" cml-base cml-text">main</text>
             </view>
-          </main>
-        </container>
-      </container>
+          </cml-buildin-main>
+        </cml-buildin-container>
+      </cml-buildin-container>
     </view>
     
     <view class="container-wrap  cml-base cml-view">
-      <container direction="row" class=" cml-base cml-container">
-        <aside aside-style="{{'height:460cpx'}}" class=" cml-base cml-aside">
+      <cml-buildin-container direction="row" class=" cml-base cml-container">
+        <cml-buildin-aside aside-style="{{'height:460cpx'}}" class=" cml-base cml-aside">
           <view class="container-item  cml-base cml-view">
               <text class=" cml-base cml-text">aside</text>
           </view>
-        </aside>
-        <container direction="column" style="flex:1" class=" cml-base cml-container">
+        </cml-buildin-aside>
+        <cml-buildin-container direction="column" style="flex:1" class=" cml-base cml-container">
           <head class=" cml-base cml-head">
             <view class="container-item  cml-base cml-view">
               <text class=" cml-base cml-text">header</text>
             </view>
           </head>
-          <main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main">
+          <cml-buildin-main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main">
             <view class="container-item  cml-base cml-view">
                 <text class=" cml-base cml-text">main</text>
             </view>
-          </main>
-          <foot class=" cml-base cml-foot">
+          </cml-buildin-main>
+          <cml-buildin-foot class=" cml-base cml-foot">
             <view class="container-item  cml-base cml-view">
               <text class=" cml-base cml-text">footer</text>
             </view>
-          </foot>
-        </container>
-      </container>
+          </cml-buildin-foot>
+        </cml-buildin-container>
+      </cml-buildin-container>
     </view>
   </cml-buildin-scroller>
 </cml-buildin-page>

@@ -2,7 +2,7 @@
     "usingComponents": {
         "secondary-header": "./../../../components/secondaryHeader/secondaryHeader",
         "secondary-cell": "./../../../components/secondaryCell/secondaryCell",
-        "c-loading": "./../../../npm/cml-tt-ui/components/c-loading/c-loading",
+        "c-loading": "./../../../npm/cml-ui/components/c-loading/c-loading",
         "cml-buildin-page": "./../../../npm/chameleon-ui-builtin/components/page/page"
     },
     "navigationBarTitleText": "WebSocket",

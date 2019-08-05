@@ -2,10 +2,10 @@
     <view class="page  cml-base cml-view">
       <cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller">
         <view class="title-row  cml-base cml-view">
-          <row justify="start" class=" cml-base cml-row">
+          <cml-buildin-row justify="start" class=" cml-base cml-row">
             <image class="title-icon  cml-base cml-image" src="{{iconApiUri}}"></image>
             <text class="title-text  cml-base cml-text  _cml_ref_lmc_" id="titleText">实例</text>
-          </row>
+          </cml-buildin-row>
         </view>
         <view class="page-list  cml-base cml-view">
           <view qq:for="{{lists}}" class=" cml-base cml-view">
