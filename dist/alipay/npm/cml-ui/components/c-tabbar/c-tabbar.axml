@@ -1,7 +1,7 @@
 <view class="tab-bar-root {{layoutClass}}  cml-base cml-view cml-6a97c082">
   <view class="tab-bar-wrap   cml-base cml-view cml-6a97c082" style="{{tabbar.tabbarStyle || ';'}}">
     <view a:for="{{tabbar.list }}" a:key="text" class="tab-item-wrap  cml-base cml-view cml-6a97c082">
-      <view class="tab-content  cml-base cml-view cml-6a97c082" onTap="_cmlInlineStatementEventProxy" data-arg0="{{index}}" data-args="index" data-eventtap="onTabbarItemTap">
+      <view class="tab-content  cml-base cml-view cml-6a97c082" onTap="_cmlInline" data-eventtap="{{['onTabbarItemTap',index]}}">
         <view class="tab-icon-wrap  cml-base cml-view cml-6a97c082" a:if="{{!top && hasIcon}}">
           <image a:if="{{!(index === tapedIndex)}}" class="tab-icon  cml-base cml-image cml-6a97c082" src="{{item.icon}}" style="{{!(index === tapedIndex) ? item.iconStyle || '' : ';'}}"></image>
           <image a:if="{{index === tapedIndex}}" class="tab-icon  cml-base cml-image cml-6a97c082" src="{{item.selectedIcon || item.icon}}" style="{{index === tapedIndex ? item.selectedIconStyle || '' : ''}}"></image>

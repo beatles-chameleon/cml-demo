@@ -1,7 +1,7 @@
 <view class=" cml-base cml-view cml-25337eab"><cml-buildin-page title="webSocket" class=" cml-base cml-page cml-25337eab">
   <view class="page-websocket  cml-base cml-view cml-25337eab">
     <view class=" cml-base cml-view cml-25337eab"><secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-base cml-secondary-header cml-25337eab"></secondary-header></view>
-    <view class=" cml-base cml-view cml-25337eab"><secondary-cell title="{{cell.title}}" list="{{cell.list}}" onBtnclicked="_cmlEventProxy" data-eventbtnclicked="onBtnClicked" class=" cml-base cml-secondary-cell cml-25337eab"></secondary-cell></view>
+    <view class=" cml-base cml-view cml-25337eab"><secondary-cell title="{{cell.title}}" list="{{cell.list}}" onBtnclicked="_cmlEventProxy" data-eventbtnclicked="{{['onBtnClicked']}}" class=" cml-base cml-secondary-cell cml-25337eab"></secondary-cell></view>
     <view class="preview-container  cml-base cml-view cml-25337eab">
       <text class="preview-text preview-font  cml-base cml-text cml-25337eab">WebSocket 状态输出</text>
       <view a:for="{{respones}}" a:for-item="res" a:for-index="idx" class=" cml-base cml-view cml-25337eab">

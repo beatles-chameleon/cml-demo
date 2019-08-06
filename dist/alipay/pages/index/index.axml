@@ -6,7 +6,7 @@
           <text class="logo-desc  cml-base cml-text cml-1b9b98b4">Chameleon</text>
         </view>
         <view class="list  cml-base cml-view cml-1b9b98b4">
-          <view class="list-cell  cml-base cml-view cml-1b9b98b4" a:for="{{pageList}}" a:for-item="pageInfo" onTap="_cmlInlineStatementEventProxy" data-arg0="{{pageInfo.url}}" data-args="pageInfo.url" data-eventtap="onItemSelected">
+          <view class="list-cell  cml-base cml-view cml-1b9b98b4" a:for="{{pageList}}" a:for-item="pageInfo" onTap="_cmlInline" data-eventtap="{{['onItemSelected',pageInfo.url]}}">
             <view class="content-item row  cml-base cml-view cml-1b9b98b4">
               <image class="content-item-left-icon  cml-base cml-image cml-1b9b98b4" src="{{pageInfo.icon}}"></image>
               <view class="text-group  cml-base cml-view cml-1b9b98b4">

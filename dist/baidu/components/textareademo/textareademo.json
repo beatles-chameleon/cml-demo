@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "cml-buildin-page": "./../../npm/chameleon-ui-builtin/components/page/page",
+        "cml-buildin-textarea": "./../../npm/chameleon-ui-builtin/components/textarea/textarea"
+    }
+}

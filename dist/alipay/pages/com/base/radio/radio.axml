@@ -1,14 +1,14 @@
 <view class=" cml-base cml-view cml-6dc75b24"><cml-buildin-page title="radio演示" class=" cml-base cml-page cml-6dc75b24">
   <view class=" cml-base cml-view cml-6dc75b24"><c-header title="radio" class=" cml-base cml-c-header cml-6dc75b24"></c-header></view>
   <view class="box  cml-base cml-view cml-6dc75b24">
-    <cml-buildin-radio checked="{{ radioValue1 }}" label="Option1" onChange="_cmlEventProxy" data-eventchange="valueChange1" class=" cml-base cml-radio cml-6dc75b24">
+    <cml-buildin-radio checked="{{ radioValue1 }}" label="Option1" onChange="_cmlEventProxy" data-eventchange="{{['valueChange1']}}" class=" cml-base cml-radio cml-6dc75b24">
     </cml-buildin-radio>
   </view>
   <view class="title  cml-base cml-view cml-6dc75b24">
     <text class=" cml-base cml-text cml-6dc75b24">value: {{radioValue1}}</text>
   </view>
   <view class="box  cml-base cml-view cml-6dc75b24">
-    <cml-buildin-radio checked="{{ radioValue2 }}" label="Option3" position="right" onChange="_cmlEventProxy" data-eventchange="valueChange2" class=" cml-base cml-radio cml-6dc75b24">
+    <cml-buildin-radio checked="{{ radioValue2 }}" label="Option3" position="right" onChange="_cmlEventProxy" data-eventchange="{{['valueChange2']}}" class=" cml-base cml-radio cml-6dc75b24">
     </cml-buildin-radio>
   </view>
   <view class="title  cml-base cml-view cml-6dc75b24">

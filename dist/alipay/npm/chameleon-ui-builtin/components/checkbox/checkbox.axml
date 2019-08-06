@@ -1,5 +1,5 @@
 <view class="cml-checkbox  cml-base cml-view cml-d1cd7554" style="{{computedCstyle}}">
-  <view class="cml-checkbox-wrap  cml-base cml-view cml-d1cd7554" onTap="_cmlEventProxy" data-eventtap="changeCheck">
+  <view class="cml-checkbox-wrap  cml-base cml-view cml-d1cd7554" onTap="_cmlEventProxy" data-eventtap="{{['changeCheck']}}">
     <view class="cml-checkbox-check  cml-base cml-view cml-d1cd7554" style="{{checkStyle}}">
       <view class="{{ checkClass }}  cml-base cml-view cml-d1cd7554">
         <image class="inner-icon  cml-base cml-image cml-d1cd7554" src="{{ checkImg }}" />

@@ -1,6 +1,6 @@
 <view class=" cml-base cml-view cml-e5bada20"><cml-buildin-page title="列表" class=" cml-base cml-page cml-e5bada20">
   <view class="container  cml-base cml-view cml-e5bada20">
-    <view class=" cml-base cml-view cml-e5bada20"><cml-buildin-scroller scroll-direction="{{scrollDirection}}" bottom-offset="{{bottomOffset}}" onScrolltobottom="_cmlEventProxy" data-eventscrolltobottom="onBottom" onCustomscroll="_cmlEventProxy" data-eventcustomscroll="onScroll" height="{{-1}}" class=" cml-base cml-scroller cml-e5bada20">
+    <view class=" cml-base cml-view cml-e5bada20"><cml-buildin-scroller scroll-direction="{{scrollDirection}}" bottom-offset="{{bottomOffset}}" onScrolltobottom="_cmlEventProxy" data-eventscrolltobottom="{{['onBottom']}}" onCustomscroll="_cmlEventProxy" data-eventcustomscroll="{{['onScroll']}}" height="{{-1}}" class=" cml-base cml-scroller cml-e5bada20">
       <view class=" cml-base cml-view cml-e5bada20">
         <view class="bannerImg  cml-base cml-view cml-e5bada20">
           <image src="{{topImg}}" class="topImg  cml-base cml-image cml-e5bada20" />
@@ -15,7 +15,7 @@
 
           <view class="scroll-content-list  cml-base cml-view cml-e5bada20">
 
-            <view class="scroll-content-list-item  cml-base cml-view cml-e5bada20" a:for="{{list}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="change" data-idx="{{i}}">
+            <view class="scroll-content-list-item  cml-base cml-view cml-e5bada20" a:for="{{list}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="{{['change']}}" data-idx="{{i}}">
               <view class="scroll-content-list-item-content  cml-base cml-view cml-e5bada20">
                 <image src="{{item.imgUrl}}" class="scroll-content-list-item-content-img  cml-base cml-image cml-e5bada20" />
                 <view class="scroll-content-list-item-content-des  cml-base cml-view cml-e5bada20">

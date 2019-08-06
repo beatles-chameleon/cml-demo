@@ -1,0 +1,10 @@
+<cml-buildin-page title="chooseImage" class=" cml-base cml-page">
+  <view class="page-choose-image  cml-base cml-view">
+    <secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-view cml-secondary-header"></secondary-header>
+    <secondary-cell title="{{cell.title}}" list="{{cell.list}}" bindbtnclicked="_cmlEventProxy" data-eventbtnclicked="{{['onBtnClicked']}}" class=" cml-view cml-secondary-cell"></secondary-cell>
+    <view class="preview-container  cml-base cml-view">
+      <text class="preview-text  cml-base cml-text">预览图片</text>
+      <image class="preview-image  cml-base cml-image" src="{{imgSrc}}"></image>
+    </view>
+  </view>
+</cml-buildin-page>

@@ -2,15 +2,15 @@
     <view class="page-demo  cml-base cml-view cml-7de65b84">
         <view class="input-wrap  cml-base cml-view cml-7de65b84">
             <text class="title-text  cml-base cml-text cml-7de65b84">focus聚焦</text>
-            <view class=" cml-base cml-view cml-7de65b84"><cml-buildin-textarea placeholder="focus聚焦 web端不支持自动" focus="{{isfocus}}" onBlur="_cmlEventProxy" data-eventblur="bindblurevent" class=" cml-base cml-textarea cml-7de65b84"></cml-buildin-textarea></view>
+            <view class=" cml-base cml-view cml-7de65b84"><cml-buildin-textarea placeholder="focus聚焦 web端不支持自动" focus="{{isfocus}}" onBlur="_cmlEventProxy" data-eventblur="{{['bindblurevent']}}" class=" cml-base cml-textarea cml-7de65b84"></cml-buildin-textarea></view>
         </view>
         <view class="input-wrap  cml-base cml-view cml-7de65b84">
             <text class="title-text  cml-base cml-text cml-7de65b84">数据绑定,value:{{inputValue}}</text>
-            <view class=" cml-base cml-view cml-7de65b84"><cml-buildin-textarea placeholder="数据绑定" value="{{inputValue}}" onInput="_cmlEventProxy" data-eventinput="inputEvent" class=" cml-base cml-textarea cml-7de65b84"></cml-buildin-textarea></view>
+            <view class=" cml-base cml-view cml-7de65b84"><cml-buildin-textarea placeholder="数据绑定" value="{{inputValue}}" onInput="_cmlEventProxy" data-eventinput="{{['inputEvent']}}" class=" cml-base cml-textarea cml-7de65b84"></cml-buildin-textarea></view>
         </view>
         <view class="input-wrap  cml-base cml-view cml-7de65b84">
             <text class="title-text  cml-base cml-text cml-7de65b84">监听input事件,当前事件：{{eventName}}</text>
-            <view class=" cml-base cml-view cml-7de65b84"><cml-buildin-textarea placeholder="监听textarea事件" onInput="_cmlEventProxy" data-eventinput="testEvent" onBlur="_cmlEventProxy" data-eventblur="testEvent" onFocus="_cmlEventProxy" data-eventfocus="testEvent" onConfirm="_cmlEventProxy" data-eventconfirm="testEvent" class=" cml-base cml-textarea cml-7de65b84"></cml-buildin-textarea></view>
+            <view class=" cml-base cml-view cml-7de65b84"><cml-buildin-textarea placeholder="监听textarea事件" onInput="_cmlEventProxy" data-eventinput="{{['testEvent']}}" onBlur="_cmlEventProxy" data-eventblur="{{['testEvent']}}" onFocus="_cmlEventProxy" data-eventfocus="{{['testEvent']}}" onConfirm="_cmlEventProxy" data-eventconfirm="{{['testEvent']}}" class=" cml-base cml-textarea cml-7de65b84"></cml-buildin-textarea></view>
         </view>
         <view class="input-wrap  cml-base cml-view cml-7de65b84">
             <text class="title-text  cml-base cml-text cml-7de65b84">最大长度是5</text>

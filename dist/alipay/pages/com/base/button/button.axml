@@ -6,22 +6,22 @@
       </view>
       <view class="button-list  cml-base cml-view cml-fac36514">
         <text class="button-text  cml-base cml-text cml-fac36514">default/blue</text>
-        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button text="确定" onOnclick="_cmlEventProxy" data-eventonclick="testclick" class=" cml-base cml-button cml-fac36514"></cml-buildin-button></view>
+        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button text="确定" onOnclick="_cmlEventProxy" data-eventonclick="{{['testclick']}}" class=" cml-base cml-button cml-fac36514"></cml-buildin-button></view>
 
         <text class="button-text  cml-base cml-text cml-fac36514">disabled</text>
-        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="blue" text="确定" disabled="{{true}}" onOnclick="_cmlEventProxy" data-eventonclick="testclick" class=" cml-base cml-button cml-fac36514">
+        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="blue" text="确定" disabled="{{true}}" onOnclick="_cmlEventProxy" data-eventonclick="{{['testclick']}}" class=" cml-base cml-button cml-fac36514">
         </cml-buildin-button></view>
 
         <text class="button-text  cml-base cml-text cml-fac36514">orange</text>
-        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="orange" text="确定" onOnclick="_cmlEventProxy" data-eventonclick="testclick" class=" cml-base cml-button cml-fac36514">
+        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="orange" text="确定" onOnclick="_cmlEventProxy" data-eventonclick="{{['testclick']}}" class=" cml-base cml-button cml-fac36514">
         </cml-buildin-button></view>
 
         <text class="button-text  cml-base cml-text cml-fac36514">red && disabled</text>
-        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="red" text="确定" disabled="{{true}}" onOnclick="_cmlEventProxy" data-eventonclick="testclick" class=" cml-base cml-button cml-fac36514">
+        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="red" text="确定" disabled="{{true}}" onOnclick="_cmlEventProxy" data-eventonclick="{{['testclick']}}" class=" cml-base cml-button cml-fac36514">
         </cml-buildin-button></view>
 
         <text class="button-text  cml-base cml-text cml-fac36514">green</text>
-        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="green" text="确定" onOnclick="_cmlEventProxy" data-eventonclick="testclick" class=" cml-base cml-button cml-fac36514">
+        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="green" text="确定" onOnclick="_cmlEventProxy" data-eventonclick="{{['testclick']}}" class=" cml-base cml-button cml-fac36514">
         </cml-buildin-button></view>
       </view>
 
@@ -30,14 +30,14 @@
       </view>
       <view class="button-list  cml-base cml-view cml-fac36514">
         <text class="button-text  cml-base cml-text cml-fac36514">big</text>
-        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button text="确定" onOnclick="_cmlEventProxy" data-eventonclick="testclick" class=" cml-base cml-button cml-fac36514"></cml-buildin-button></view>
+        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button text="确定" onOnclick="_cmlEventProxy" data-eventonclick="{{['testclick']}}" class=" cml-base cml-button cml-fac36514"></cml-buildin-button></view>
 
         <text class="button-text  cml-base cml-text cml-fac36514">medium</text>
-        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="orange" text="确定" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="testclick" class=" cml-base cml-button cml-fac36514">
+        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="orange" text="确定" size="medium" onOnclick="_cmlEventProxy" data-eventonclick="{{['testclick']}}" class=" cml-base cml-button cml-fac36514">
         </cml-buildin-button></view>
 
         <text class="button-text  cml-base cml-text cml-fac36514">small</text>
-        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="red" text="确定" size="small" disabled="{{true}}" onOnclick="_cmlEventProxy" data-eventonclick="testclick" class=" cml-base cml-button cml-fac36514">
+        <view class=" cml-base cml-view cml-fac36514"><cml-buildin-button type="red" text="确定" size="small" disabled="{{true}}" onOnclick="_cmlEventProxy" data-eventonclick="{{['testclick']}}" class=" cml-base cml-button cml-fac36514">
         </cml-buildin-button></view>
       </view>
     </cml-buildin-scroller></view>

@@ -4,15 +4,15 @@
             <view class=" cml-base cml-view cml-2b2b23cc"><c-header title="input" class=" cml-base cml-c-header cml-2b2b23cc"></c-header></view>
             <text class="title-text  cml-base cml-text cml-2b2b23cc">focus聚焦 web端不支持</text>
             <view class="input-wrap  cml-base cml-view cml-2b2b23cc">
-                <view class=" cml-base cml-view cml-2b2b23cc"><cml-buildin-input placeholder="focus聚焦 web端不支持" focus="{{isfocus}}" onBlur="_cmlEventProxy" data-eventblur="bindblurevent" class=" cml-base cml-input cml-2b2b23cc"></cml-buildin-input></view>
+                <view class=" cml-base cml-view cml-2b2b23cc"><cml-buildin-input placeholder="focus聚焦 web端不支持" focus="{{isfocus}}" onBlur="_cmlEventProxy" data-eventblur="{{['bindblurevent']}}" class=" cml-base cml-input cml-2b2b23cc"></cml-buildin-input></view>
             </view>
             <text class="title-text  cml-base cml-text cml-2b2b23cc">数据绑定,value:{{inputValue}}</text>
             <view class="input-wrap  cml-base cml-view cml-2b2b23cc">
-                <view class=" cml-base cml-view cml-2b2b23cc"><cml-buildin-input placeholder="数据绑定" value="{{inputValue}}" onInput="_cmlEventProxy" data-eventinput="inputEvent" class=" cml-base cml-input cml-2b2b23cc"></cml-buildin-input></view>
+                <view class=" cml-base cml-view cml-2b2b23cc"><cml-buildin-input placeholder="数据绑定" value="{{inputValue}}" onInput="_cmlEventProxy" data-eventinput="{{['inputEvent']}}" class=" cml-base cml-input cml-2b2b23cc"></cml-buildin-input></view>
             </view>
             <text class="title-text  cml-base cml-text cml-2b2b23cc">监听input事件,当前事件：{{eventName}}</text>
             <view class="input-wrap  cml-base cml-view cml-2b2b23cc">
-                <view class=" cml-base cml-view cml-2b2b23cc"><cml-buildin-input placeholder="监听input事件" onInput="_cmlEventProxy" data-eventinput="testEvent" onBlur="_cmlEventProxy" data-eventblur="testEvent" onFocus="_cmlEventProxy" data-eventfocus="testEvent" onConfirm="_cmlEventProxy" data-eventconfirm="testEvent" class=" cml-base cml-input cml-2b2b23cc"></cml-buildin-input></view>
+                <view class=" cml-base cml-view cml-2b2b23cc"><cml-buildin-input placeholder="监听input事件" onInput="_cmlEventProxy" data-eventinput="{{['testEvent']}}" onBlur="_cmlEventProxy" data-eventblur="{{['testEvent']}}" onFocus="_cmlEventProxy" data-eventfocus="{{['testEvent']}}" onConfirm="_cmlEventProxy" data-eventconfirm="{{['testEvent']}}" class=" cml-base cml-input cml-2b2b23cc"></cml-buildin-input></view>
             </view>
             <text class="title-text  cml-base cml-text cml-2b2b23cc">最大长度是5</text>
             <view class="input-wrap  cml-base cml-view cml-2b2b23cc">
@@ -30,7 +30,7 @@
 
             <text class="title-text  cml-base cml-text cml-2b2b23cc">number类型的input 支持最大值 最小值</text>
             <view class="input-wrap  cml-base cml-view cml-2b2b23cc">
-                <view class=" cml-base cml-view cml-2b2b23cc"><cml-buildin-input placeholder="最大值200 最小值10" value="{{testMaxMinVal}}" type="number" maxValue="{{200}}" minValue="{{10}}" onBlur="_cmlEventProxy" data-eventblur="testMaxMinEvent" class=" cml-base cml-input cml-2b2b23cc"></cml-buildin-input></view>
+                <view class=" cml-base cml-view cml-2b2b23cc"><cml-buildin-input placeholder="最大值200 最小值10" value="{{testMaxMinVal}}" type="number" maxValue="{{200}}" minValue="{{10}}" onBlur="_cmlEventProxy" data-eventblur="{{['testMaxMinEvent']}}" class=" cml-base cml-input cml-2b2b23cc"></cml-buildin-input></view>
             </view>
 
             <text class="title-text  cml-base cml-text cml-2b2b23cc">password类型的input</text>

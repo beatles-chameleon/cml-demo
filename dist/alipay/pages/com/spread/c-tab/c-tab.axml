@@ -3,11 +3,11 @@
      <view class=" cml-base cml-view cml-1d53c9a0"><c-header title="{{headerTitle}}" desc="{{headerDesc}}" class=" cml-base cml-c-header cml-1d53c9a0"></c-header></view>
      
      <view class="title  cml-base cml-view cml-1d53c9a0"><text class=" cml-base cml-text cml-1d53c9a0">单tab案例</text></view>
-     <view class=" cml-base cml-view cml-1d53c9a0"><c-tab tabs="{{tabsAlone}}" onTabclick="_cmlEventProxy" data-eventtabclick="handleTabTapAlone" active-label="{{activeLabelAlone}}" has-underline="{{false}}" inline="{{false}}" class=" cml-base cml-c-tab cml-1d53c9a0">
+     <view class=" cml-base cml-view cml-1d53c9a0"><c-tab tabs="{{tabsAlone}}" onTabclick="_cmlEventProxy" data-eventtabclick="{{['handleTabTapAlone']}}" active-label="{{activeLabelAlone}}" has-underline="{{false}}" inline="{{false}}" class=" cml-base cml-c-tab cml-1d53c9a0">
      </c-tab></view>
 
      <view class="title  cml-base cml-view cml-1d53c9a0"><text class="title  cml-base cml-text cml-1d53c9a0">tab+pane案例</text></view>
-     <view class=" cml-base cml-view cml-1d53c9a0"><c-tab tabs="{{tabs}}" onTabclick="_cmlEventProxy" data-eventtabclick="handleTabTap" active-label="{{activeLabel}}" inline="{{false}}" class=" cml-base cml-c-tab cml-1d53c9a0">
+     <view class=" cml-base cml-view cml-1d53c9a0"><c-tab tabs="{{tabs}}" onTabclick="_cmlEventProxy" data-eventtabclick="{{['handleTabTap']}}" active-label="{{activeLabel}}" inline="{{false}}" class=" cml-base cml-c-tab cml-1d53c9a0">
      </c-tab></view>
      <view class=" cml-base cml-view cml-1d53c9a0"><c-tab-pane tabs="{{tabs}}" active-label="{{activeLabel}}" class=" cml-base cml-c-tab-pane cml-1d53c9a0">
        

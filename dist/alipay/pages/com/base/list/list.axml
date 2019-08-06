@@ -1,6 +1,6 @@
 <view class=" cml-base cml-view cml-33b01db6"><cml-buildin-page title="list" class=" cml-base cml-page cml-33b01db6">
   <view class="list-eg  cml-base cml-view cml-33b01db6">
-    <view class=" cml-base cml-view cml-33b01db6"><cml-buildin-list bottom-offset="{{bottomOffset}}" onScrolltobottom="_cmlEventProxy" data-eventscrolltobottom="onBottom" onOnscroll="_cmlEventProxy" data-eventonscroll="onScroll" to-element="{{toElement}}" height="{{-1}}" class=" cml-base cml-list cml-33b01db6">
+    <view class=" cml-base cml-view cml-33b01db6"><cml-buildin-list bottom-offset="{{bottomOffset}}" onScrolltobottom="_cmlEventProxy" data-eventscrolltobottom="{{['onBottom']}}" onOnscroll="_cmlEventProxy" data-eventonscroll="{{['onScroll']}}" to-element="{{toElement}}" height="{{-1}}" class=" cml-base cml-list cml-33b01db6">
         <view class=" cml-base cml-cell cml-33b01db6">
           <view class=" cml-base cml-view cml-33b01db6"><c-header title="list" class=" cml-base cml-c-header cml-33b01db6"></c-header></view>
         </view>

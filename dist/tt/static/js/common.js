@@ -11958,16 +11958,16 @@ var copyProtoProperty = require("3");
 copyProtoProperty(exports.default);
 })
 cmldefine('154', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/home-ui_ff6eff2.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/home-ui_ff6eff2.png";
 })
 cmldefine('38', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/home-api_f4f07d0.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/home-api_f4f07d0.png";
 })
 cmldefine('155', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/home-chameleon_4bdd159.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/home-chameleon_4bdd159.png";
 })
 cmldefine('156', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/arrow-right_481e0c4.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/arrow-right_481e0c4.png";
 })
 cmldefine('160', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -13255,19 +13255,19 @@ cmldefine('40', function(require, exports, module) {
   module.exports = module.exports = {"mode":"hash","domain":"https://cmljs.org","routes":[{"url":"/","path":"/pages/index/index","name":"首页","mock":"index.php"},{"name":"com","url":"/pages/com/com","path":"/pages/com/com","mock":"index.php"},{"name":"api","url":"/pages/api/api","path":"/pages/api/api","mock":"index.php"},{"name":"demo","url":"/pages/demo/demo","path":"/pages/demo/demo","mock":"index.php"},{"name":"chooseImage","url":"/pages/api/sub-pages/chooseImage","path":"/pages/api/sub-pages/chooseImage","mock":"index.php"},{"name":"animation","url":"/pages/api/sub-pages/animation","path":"/pages/api/sub-pages/animation","mock":"index.php"},{"name":"request","url":"/pages/api/sub-pages/request","path":"/pages/api/sub-pages/request","mock":"index.php"},{"name":"webSocket","url":"/pages/api/sub-pages/webSocket","path":"/pages/api/sub-pages/webSocket","mock":"index.php"},{"name":"navigate","url":"/pages/api/sub-pages/navigate","path":"/pages/api/sub-pages/navigate","mock":"index.php"},{"name":"list","url":"/pages/com/base/list/list","path":"/pages/com/base/list/list","mock":"index.php"},{"name":"scroller","url":"/pages/com/base/scroller/scroller","path":"/pages/com/base/scroller/scroller","mock":"index.php"},{"name":"view","url":"/pages/com/base/view/view","path":"/pages/com/base/view/view","mock":"index.php"},{"name":"text","url":"/pages/com/base/text/text","path":"/pages/com/base/text/text","mock":"index.php"},{"name":"button","url":"/pages/com/base/button/button","path":"/pages/com/base/button/button","mock":"index.php"},{"name":"input","url":"/pages/com/base/input/input","path":"/pages/com/base/input/input","mock":"index.php"},{"name":"textarea","url":"/pages/com/base/textarea/textarea","path":"/pages/com/base/textarea/textarea","mock":"index.php"},{"name":"image","url":"/pages/com/base/image/image","path":"/pages/com/base/image/image","mock":"index.php"},{"name":"video","url":"/pages/com/base/video/video","path":"/pages/com/base/video/video","mock":"index.php"},{"name":"richtext","url":"/pages/com/base/richtext/richtext","path":"/pages/com/base/richtext/richtext"},{"name":"switch","url":"/pages/com/base/switch/switch","path":"/pages/com/base/switch/switch"},{"name":"radio","url":"/pages/com/base/radio/radio","path":"/pages/com/base/radio/radio"},{"name":"checkbox","url":"/pages/com/base/checkbox/checkbox","path":"/pages/com/base/checkbox/checkbox"},{"name":"carousel","url":"/pages/com/base/carousel/carousel","path":"/pages/com/base/carousel/carousel"},{"name":"row","url":"/pages/com/base/row/row","path":"/pages/com/base/row/row","mock":"index.php"},{"name":"layout","url":"/pages/com/base/layout/layout","path":"/pages/com/base/layout/layout","mock":"index.php"},{"name":"c-dialog","url":"/pages/com/spread/c-dialog/c-dialog","path":"/pages/com/spread/c-dialog/c-dialog","mock":"index.php"},{"name":"c-loading","url":"/pages/com/spread/c-loading/c-loading","path":"/pages/com/spread/c-loading/c-loading","mock":"index.php"},{"name":"c-toast","url":"/pages/com/spread/c-toast/c-toast","path":"/pages/com/spread/c-toast/c-toast","mock":"index.php"},{"name":"c-tip","url":"/pages/com/spread/c-tip/c-tip","path":"/pages/com/spread/c-tip/c-tip","mock":"index.php"},{"name":"c-popup","url":"/pages/com/spread/c-popup/c-popup","path":"/pages/com/spread/c-popup/c-popup","mock":"index.php"},{"name":"c-actionsheet","url":"/pages/com/spread/c-actionsheet/c-actionsheet","path":"/pages/com/spread/c-actionsheet/c-actionsheet","mock":"index.php"},{"name":"c-picker","url":"/pages/com/spread/c-picker/c-picker","path":"/pages/com/spread/c-picker/c-picker","mock":"index.php"},{"name":"c-tab","url":"/pages/com/spread/c-tab/c-tab","path":"/pages/com/spread/c-tab/c-tab","mock":"index.php"},{"name":"c-refresh","url":"/pages/com/spread/c-refresh/c-refresh","path":"/pages/com/spread/c-refresh/c-refresh","mock":"index.php"},{"name":"c-checkbox-group","url":"/pages/com/spread/c-checkbox-group/c-checkbox-group","path":"/pages/com/spread/c-checkbox-group/c-checkbox-group","mock":"index.php"},{"name":"c-radio-group","url":"/pages/com/spread/c-radio-group/c-radio-group","path":"/pages/com/spread/c-radio-group/c-radio-group","mock":"index.php"},{"url":"/cml/demo/yanxuan","path":"/pages/demo/yanxuan/pages/index/index","name":"yanxuan","mock":"index.php"},{"url":"/cml/demo/yanxuan/list","path":"/pages/demo/yanxuan/pages/list/list","name":"yanxuan_list","mock":"index.php"},{"url":"/cml/demo/yanxuan/detail","path":"/pages/demo/yanxuan/pages/detail/detail","name":"yanxuan_detail","mock":"index.php"},{"url":"/cml/demo/yanxuan/map","path":"/pages/demo/yanxuan/pages/map/map","name":"yanxuan_map","mock":"index.php"}]}
 })
 cmldefine('24', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/icon-api_e8d66df.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/icon-api_e8d66df.png";
 })
 cmldefine('41', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/content_615612b.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/content_615612b.png";
 })
 cmldefine('42', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/view_b6fa835.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/view_b6fa835.png";
 })
 cmldefine('172', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/form_1d8d4bd.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/form_1d8d4bd.png";
 })
 cmldefine('43', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/media_1c79816.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/media_1c79816.png";
 })
 cmldefine('176', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -13339,13 +13339,13 @@ exports.default = new CompCollapse();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
 cmldefine('45', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/icon-arrow-up_56472bc.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/icon-arrow-up_56472bc.png";
 })
 cmldefine('177', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/icon-arrow-down_b02079e.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/icon-arrow-down_b02079e.png";
 })
 cmldefine('178', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/icon-solid-arrow-right_5e159e1.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/icon-solid-arrow-right_5e159e1.png";
 })
 cmldefine('182', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -13947,7 +13947,7 @@ var copyProtoProperty = require("3");
 copyProtoProperty(exports.default);
 })
 cmldefine('6', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/icon-default_aeb0517.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/icon-default_aeb0517.png";
 })
 cmldefine('193', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -14939,7 +14939,7 @@ var copyProtoProperty = require("3");
 copyProtoProperty(exports.default);
 })
 cmldefine('26', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/loading_1f26c50.gif";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/loading_1f26c50.gif";
 })
 cmldefine('236', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -16586,7 +16586,7 @@ exports.default = new Image();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
 cmldefine('306', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/chameleon_39b423e.jpg";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/chameleon_39b423e.jpg";
 })
 cmldefine('311', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -17496,10 +17496,10 @@ exports.default = new Checkbox();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
 cmldefine('356', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/selected_520dcc8.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/selected_520dcc8.png";
 })
 cmldefine('357', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/unselected_4e38c39.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/unselected_4e38c39.png";
 })
 cmldefine('362', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -18311,16 +18311,16 @@ function obj2str() {
 }
 })
 cmldefine('421', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/network_5ae2413.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/network_5ae2413.png";
 })
 cmldefine('422', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/warn_7953d27.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/warn_7953d27.png";
 })
 cmldefine('423', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/success_1674452.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/success_1674452.png";
 })
 cmldefine('49', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/close_816a4e2.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/close_816a4e2.png";
 })
 cmldefine('427', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -18735,10 +18735,10 @@ exports.default = new CToast();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
 cmldefine('443', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/succ_1ecca56.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/succ_1ecca56.png";
 })
 cmldefine('444', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/warn_da3ad45.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/warn_da3ad45.png";
 })
 cmldefine('449', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -19071,19 +19071,19 @@ exports.default = new CTip();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
 cmldefine('455', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/close_49a1751.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/close_49a1751.png";
 })
 cmldefine('456', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/left_0ac0eaf.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/left_0ac0eaf.png";
 })
 cmldefine('457', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/right_c8f477d.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/right_c8f477d.png";
 })
 cmldefine('458', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/top_a17a0e7.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/top_a17a0e7.png";
 })
 cmldefine('459', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/bottom_4f4eed1.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/bottom_4f4eed1.png";
 })
 cmldefine('464', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
@@ -20931,7 +20931,7 @@ cmldefine('17', function(require, exports, module) {
   module.exports = module.exports = {"code":0,"data":{"bannerImgList":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/288bf88910aeba6d89689b99bec93133.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3804d6f02516e59927e07f091c8f1b27.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ce535663c045b5e877540b0e0be16bb3.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/06af49f2a59b00ad080aeb03fb8d408f.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/7c94908d8e197cc99e942324c5cc526e.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/96cf611743d7b382c11031f29152fa04.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/973e299ac2e80c03acfb5d2d4501231c.jpg"}],"classifyImgList":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/9cdedb90a09cf061cfa19f3e21321c73.png","title":"居家"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/57e39dc404f1ce90b959d76b9abe4314.png","title":"鞋包分配"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2b580df265124836dcd96b1c88068127.png","title":"服装"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a53fff4d3cf0f4dedd78a8a0f2b129c9.png","title":"电器"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/6147b31404d5ddf1207a8363605aebf9.png","title":"婴童"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/8d29af79c24d78a3dcf7d61249702dcf.png","title":"饮食"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2b9a25b6ea81655eb431944d3d57185f.png","title":"洗护"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/293f2341415d70bf7c6460c77fa07f41.png","title":"餐厨"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2fbba45f945ee592d5470269d9e61f1c.png","title":"文体"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/54947b070f8af594dd46069f2d3bdd34.png","title":"特色区"}],"disscountPriceImgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468670774810413.gif","special":{"newPerson":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671496890421.png","temai":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671650860425.png","qingdan":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671650860425.png"}}}
 })
 cmldefine('52', function(require, exports, module) {
-  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/wx/static/img/chameleon_83ee00e.png";
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/chameleon_83ee00e.png";
 })
 cmldefine('562', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {

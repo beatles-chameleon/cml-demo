@@ -9,7 +9,7 @@
         </view>
         <view class="page-list  cml-base cml-view cml-4da951c0">
           <view a:for="{{lists}}" class=" cml-base cml-view cml-4da951c0">
-            <view class=" cml-base cml-view cml-4da951c0"><demo-list title="{{item.title}}" icon-uri="{{item.iconUri}}" path="{{item.path}}" onItemtap="_cmlEventProxy" data-eventitemtap="itemTap" class=" cml-base cml-demo-list cml-4da951c0"></demo-list></view>
+            <view class=" cml-base cml-view cml-4da951c0"><demo-list title="{{item.title}}" icon-uri="{{item.iconUri}}" path="{{item.path}}" onItemtap="_cmlEventProxy" data-eventitemtap="{{['itemTap']}}" class=" cml-base cml-demo-list cml-4da951c0"></demo-list></view>
           </view>
         </view>
       </cml-buildin-scroller></view>

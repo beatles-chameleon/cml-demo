@@ -5,7 +5,7 @@
             <view class="content  cml-base cml-view cml-c93a8c84"></view>  
         </c-loading></view>
         <view class="button-wrapper  cml-base cml-view cml-c93a8c84">
-            <view class="button  cml-base cml-view cml-c93a8c84"><cml-buildin-button class="button  cml-base cml-button cml-c93a8c84" text="更改loading态" onOnclick="_cmlEventProxy" data-eventonclick="changeLoading"></cml-buildin-button></view> 
+            <view class="button  cml-base cml-view cml-c93a8c84"><cml-buildin-button class="button  cml-base cml-button cml-c93a8c84" text="更改loading态" onOnclick="_cmlEventProxy" data-eventonclick="{{['changeLoading']}}"></cml-buildin-button></view> 
         </view>
     </view>
   </cml-buildin-page></view>

@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "c-header": "./../../../../components/header/header",
+        "cml-buildin-aside": "./../../../../npm/chameleon-ui-builtin/components/layout/aside/aside",
+        "cml-buildin-container": "./../../../../npm/chameleon-ui-builtin/components/layout/container/container",
+        "cml-buildin-foot": "./../../../../npm/chameleon-ui-builtin/components/layout/foot/foot",
+        "cml-buildin-main": "./../../../../npm/chameleon-ui-builtin/components/layout/main/main",
+        "cml-buildin-page": "./../../../../npm/chameleon-ui-builtin/components/page/page",
+        "cml-buildin-scroller": "./../../../../npm/chameleon-ui-builtin/components/scroller/scroller"
+    },
+    "navigationBarTitleText": "layout",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

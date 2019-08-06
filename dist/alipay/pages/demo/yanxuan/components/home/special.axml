@@ -1,4 +1,4 @@
-<view class="special  cml-base cml-view cml-ce644224" onTap="_cmlEventProxy" data-eventtap="test">
+<view class="special  cml-base cml-view cml-ce644224" onTap="_cmlEventProxy" data-eventtap="{{['test']}}">
   <view class="special-door  cml-base cml-view cml-ce644224">
     <image src="{{disscountPriceImgUrl}}" class="special-door-img  cml-base cml-image cml-ce644224"></image>
   </view>

@@ -1,5 +1,5 @@
 <view class="classList  cml-base cml-view cml-bfd21cea">
-  <view class="classList-item  cml-base cml-view cml-bfd21cea" a:for="{{classifyImgList}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="change" data-idx="{{i}}">
+  <view class="classList-item  cml-base cml-view cml-bfd21cea" a:for="{{classifyImgList}}" a:for-index="i" a:for-item="item" onTap="_cmlEventProxy" data-eventtap="{{['change']}}" data-idx="{{i}}">
     <image src="{{item.imgUrl}}" style="width:110rpx;height:110rpx" class="classList-item-img  cml-base cml-image cml-bfd21cea"></image>
     <view class="classList-item-title  cml-base cml-view cml-bfd21cea">
       <text class=" cml-base cml-text cml-bfd21cea">{{item.title}}</text>

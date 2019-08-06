@@ -5,11 +5,11 @@
     
     <view class="container-wrap  cml-base cml-view cml-2609e676">
       <view class=" cml-base cml-view cml-2609e676"><cml-buildin-container direction="column" class=" cml-base cml-container cml-2609e676">
-        <view class=" cml-base cml-view cml-2609e676"><cml-buildin-head class=" cml-base cml-head cml-2609e676">
+        <head class=" cml-base cml-head cml-2609e676">
           <view class="container-item  cml-base cml-view cml-2609e676">
             <text class=" cml-base cml-text cml-2609e676">header</text>
           </view>
-        </cml-buildin-head></view>
+        </head>
         <view class=" cml-base cml-view cml-2609e676"><cml-buildin-main main-style="{{mainStyle}}" class=" cml-base cml-main cml-2609e676">
           <view class="container-item  cml-base cml-view cml-2609e676">
             <text class=" cml-base cml-text cml-2609e676">main</text>
@@ -20,11 +20,11 @@
     
     <view class="container-wrap  cml-base cml-view cml-2609e676">
       <view class=" cml-base cml-view cml-2609e676"><cml-buildin-container direction="column" class=" cml-base cml-container cml-2609e676">
-        <view class=" cml-base cml-view cml-2609e676"><cml-buildin-head class=" cml-base cml-head cml-2609e676">
+        <head class=" cml-base cml-head cml-2609e676">
           <view class="container-item  cml-base cml-view cml-2609e676">
             <text class=" cml-base cml-text cml-2609e676">header</text>
           </view>
-        </cml-buildin-head></view>
+        </head>
         <view class=" cml-base cml-view cml-2609e676"><cml-buildin-main main-style="{{mainStyle}}" class=" cml-base cml-main cml-2609e676">
           <view class="container-item  cml-base cml-view cml-2609e676">
             <text class=" cml-base cml-text cml-2609e676">main</text>
@@ -55,11 +55,11 @@
     
     <view class="container-wrap  cml-base cml-view cml-2609e676">
       <view class=" cml-base cml-view cml-2609e676"><cml-buildin-container direction="column" class=" cml-base cml-container cml-2609e676">
-        <view class=" cml-base cml-view cml-2609e676"><cml-buildin-head class=" cml-base cml-head cml-2609e676">
+        <head class=" cml-base cml-head cml-2609e676">
           <view class="container-item  cml-base cml-view cml-2609e676">
             <text class=" cml-base cml-text cml-2609e676">header</text>
           </view>
-        </cml-buildin-head></view>
+        </head>
         <view style="flex:1" class=" cml-base cml-view cml-2609e676"><cml-buildin-container direction="row" style="flex:1" class=" cml-base cml-container cml-2609e676">
           <view class=" cml-base cml-view cml-2609e676"><cml-buildin-aside aside-style="{{asideStyle}}" class=" cml-base cml-aside cml-2609e676">
             <view class="container-item  cml-base cml-view cml-2609e676">
@@ -77,11 +77,11 @@
     
     <view class="container-wrap  cml-base cml-view cml-2609e676">
       <view class=" cml-base cml-view cml-2609e676"><cml-buildin-container direction="column" class=" cml-base cml-container cml-2609e676">
-        <view class=" cml-base cml-view cml-2609e676"><cml-buildin-head class=" cml-base cml-head cml-2609e676">
+        <head class=" cml-base cml-head cml-2609e676">
           <view class="container-item  cml-base cml-view cml-2609e676">
             <text class=" cml-base cml-text cml-2609e676">header</text>
           </view>
-        </cml-buildin-head></view>
+        </head>
         <view style="flex:1" class=" cml-base cml-view cml-2609e676"><cml-buildin-container direction="row" style="flex:1" class=" cml-base cml-container cml-2609e676">
           <view class=" cml-base cml-view cml-2609e676"><cml-buildin-aside aside-style="{{'height:380cpx'}}" class=" cml-base cml-aside cml-2609e676">
             <view class="container-item  cml-base cml-view cml-2609e676">
@@ -112,11 +112,11 @@
           </view>
         </cml-buildin-aside></view>
         <view style="flex:1" class=" cml-base cml-view cml-2609e676"><cml-buildin-container direction="column" style="flex:1" class=" cml-base cml-container cml-2609e676">
-          <view class=" cml-base cml-view cml-2609e676"><cml-buildin-head class=" cml-base cml-head cml-2609e676">
+          <head class=" cml-base cml-head cml-2609e676">
             <view class="container-item  cml-base cml-view cml-2609e676">
                 <text class=" cml-base cml-text cml-2609e676">header</text>
               </view>
-          </cml-buildin-head></view>
+          </head>
           <view style="flex:1" class=" cml-base cml-view cml-2609e676"><cml-buildin-main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main cml-2609e676">
             <view class="container-item  cml-base cml-view cml-2609e676">
                 <text class=" cml-base cml-text cml-2609e676">main</text>
@@ -134,11 +134,11 @@
           </view>
         </cml-buildin-aside></view>
         <view style="flex:1" class=" cml-base cml-view cml-2609e676"><cml-buildin-container direction="column" style="flex:1" class=" cml-base cml-container cml-2609e676">
-          <view class=" cml-base cml-view cml-2609e676"><cml-buildin-head class=" cml-base cml-head cml-2609e676">
+          <head class=" cml-base cml-head cml-2609e676">
             <view class="container-item  cml-base cml-view cml-2609e676">
               <text class=" cml-base cml-text cml-2609e676">header</text>
             </view>
-          </cml-buildin-head></view>
+          </head>
           <view style="flex:1" class=" cml-base cml-view cml-2609e676"><cml-buildin-main main-style="{{mainStyle}}" style="flex:1" class=" cml-base cml-main cml-2609e676">
             <view class="container-item  cml-base cml-view cml-2609e676">
                 <text class=" cml-base cml-text cml-2609e676">main</text>
