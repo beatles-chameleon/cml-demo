@@ -140,3 +140,6 @@ page,
 .preview-text {
   margin-bottom: 24rpx;
 }
+.text-info {
+  white-space: pre-wrap;
+}

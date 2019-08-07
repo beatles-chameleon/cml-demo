@@ -14609,12 +14609,6 @@ cmldefine('226', function(require, exports, module) {
   value: true
 });
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
-  return typeof obj;
-} : function (obj) {
-  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-};
-
 var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
@@ -14662,14 +14656,14 @@ exports.default = {
       var method = this.method;
       this.showLoading();
       method === 'get' && _cmlTtApi2.default.get({
-        url: 'https://postman-echo.com/get?name=get'
+        url: 'https://m.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=wise&from=wise_web&sugsid=126120,100806,133335,131887,133676,120188,132909,133045,131247,132440,130762,132378,131518,118879,118866,118847,118828,118800,107318,133158,132782,133351,132553,129655,134433,132250,128968,133472,133838,133847,132551,134463,134320,134656,134213,129643,131423,133781,133009,133191,134049,134722,110085,134525,134153,127969,131296,127417,134151,133573,134351&net=&os=1&sp=null&rm_brand=0&wd=bian%27se%27lon&pwd=bian%27se%27l&lid=7765373915710683512&_=1565093019110'
       }).then(function (res) {
         _this.respones = _this.flatResponses(res);
 
         _this.hideLoading();
       });
       method === 'post' && _cmlTtApi2.default.post({
-        url: 'https://postman-echo.com/post?name=post',
+        url: 'https://ufosdk.baidu.com',
         data: {
           name: 'cml'
         }
@@ -14679,7 +14673,7 @@ exports.default = {
         _this.hideLoading();
       });
       method === 'request' && _cmlTtApi2.default.request({
-        url: 'https://postman-echo.com/put?name=request',
+        url: 'https://ufosdk.baidu.com',
         data: {
           name: 'cml'
         },
@@ -14694,25 +14688,21 @@ exports.default = {
       var results = [];
 
       if (!!res) {
-        Object.keys(res).filter(function (key) {
-          return ~['args', 'headers', 'url', 'data'].indexOf(key);
-        }).forEach(function (key) {
-          if (typeof res[key] === 'string') {
-            results.push({
-              name: key,
-              value: res[key]
-            });
-          }
-
-          if (_typeof(res[key]) === 'object') {
-            results.push({
-              name: key,
-              child: Object.entries(res[key]).map(function (pairs) {
-                return pairs.join(":");
-              })
-            });
-          }
-        });
+        // Object.keys(res).filter(key => ~['args', 'headers', 'url', 'data'].indexOf(key)).forEach((key) => {
+        //   if (typeof res[key] === 'string') {
+        //     results.push({
+        //       name: key,
+        //       value: res[key]
+        //     });
+        //   }
+        //   if (typeof res[key] === 'object') {
+        //     results.push({
+        //       name: key,
+        //       child: Object.entries(res[key]).map((pairs) => pairs.join(":"))
+        //     });
+        //   }
+        // });
+        results = JSON.stringify(res, null, 2);
       }
 
       return results;
@@ -15058,11 +15048,11 @@ exports.default = {
     open: function open() {
       var _this = this;
 
-      var ws = this.ws = _cmlTtApi2.default.initSocket('ws://echo.websocket.org');
+      var ws = this.ws = _cmlTtApi2.default.initSocket('wss://www.deskry.com:8008/');
 
       this.showLoading();
       this.flushMsg();
-      this.appendMsg('建立链接', 'ws://echo.websocket.org');
+      this.appendMsg('建立链接', 'wss://www.deskry.com:8008/');
       ws.onopen(function () {
         _this.hideLoading();
 
