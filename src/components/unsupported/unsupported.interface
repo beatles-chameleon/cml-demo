@@ -45,7 +45,8 @@ export default new Method();
 
 class Method implements UnsupportedInterface {
   getUnsupportApis() {
-    return ['启动参数', 'beatles-bridge能力']
+    // 企业级小程序才提供  剪贴板  能力
+    return ['启动参数', 'beatles-bridge能力', '剪贴板']
   }
 }
 

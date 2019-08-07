@@ -98,10 +98,10 @@ export default {
     },
 
     open() {
-      let ws = this.ws = cml.initSocket('ws://echo.websocket.org');
+      let ws = this.ws = cml.initSocket('wss://www.deskry.com:8008/');
       this.showLoading();
       this.flushMsg();
-      this.appendMsg('建立链接', 'ws://echo.websocket.org');
+      this.appendMsg('建立链接', 'wss://www.deskry.com:8008/');
       ws.onopen(() => {
         this.hideLoading();
         this.appendMsg('建立链接', '链接成功');
