@@ -2,7 +2,7 @@
     "usingComponents": {
         "c-header": "./../../../../components/header/header",
         "c-checkbox-group": "./../../../../npm/cml-tt-ui/components/c-checkbox-group/c-checkbox-group",
-        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/package/components/page/page"
+        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/components/page/page"
     },
     "navigationBarTitleText": "c-checkbox-group",
     "backgroundTextStyle": "dark",

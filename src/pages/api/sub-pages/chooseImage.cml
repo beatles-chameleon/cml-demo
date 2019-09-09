@@ -36,7 +36,8 @@ export default {
   methods: {
     onBtnClicked(e) {
       cml.chooseImage({
-        type: this.chooseType
+        type: this.chooseType,
+        quality:'100'
       }).then(res => {
         this.imgSrc = res.base64 || res.tempFilePaths[0];
       });

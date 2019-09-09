@@ -1,4 +1,4 @@
-<view height="{{0}}" class="secondary-header  cml-base cml-view cml-cd698e74">
-  <text class="header-title  cml-base cml-text cml-cd698e74">{{title}}</text>
-  <text class="header-subtitle  cml-base cml-text cml-cd698e74">{{subtitle}}</text>    
+<view height="{{0}}" class="secondary-header  cml-base cml-view cml-634b1785">
+  <text class="header-title  cml-base cml-text cml-634b1785">{{title}}</text>
+  <text class="header-subtitle  cml-base cml-text cml-634b1785">{{subtitle}}</text>    
 </view>

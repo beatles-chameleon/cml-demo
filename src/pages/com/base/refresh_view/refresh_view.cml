@@ -1,0 +1,117 @@
+<template>
+  <page title="refresh-view">
+    <refresh-view enablePullUpLoad="{{true}}"
+                  pullingDown="{{pullingDown}}"
+                  pullingUp="{{pullingUp}}"
+                  c-bind:onPullDownRefresh="pullDownRefreshHandle"
+                  c-bind:onPullUpLoad="pullUploadHandle">
+        <view class="content">
+          <c-header title="refresh-view"></c-header>
+          <text c-for="{{texts}}" class="text-item">{{item}}</text>
+        </view>
+        <text class="loading-text">{{loadingText}}</text>
+    </refresh-view>
+  </page>
+</template>
+
+<script>
+import cml from 'chameleon-api';
+class Refresh_view   {
+
+  data = {
+    imgGif: require('./loading.gif'),
+    texts: [0,1,2,3,4,5,6],
+    pullingDown: false,
+    pullingUp: false,
+    loadingText: '上拉加载'
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+    pullDownRefreshHandle(e) {
+      this.pullingDown = true;
+      setTimeout(() => {
+        let length = this.texts.length;
+        for (let i = length; i < length + 5; i ++) {
+          this.texts.unshift(i);
+        }
+        this.pullingDown = false;
+      }, 2000);
+    },
+    pullUploadHandle(e) {
+      this.pullingUp = true;
+      this.loadingText = '加载中...'
+      setTimeout(() => {
+        this.loadingText = '加载完成'
+        let length = this.texts.length;
+        for (let i = length; i < length + 5; i ++) {
+          this.texts.push(i);
+        }
+        this.loadingText = '上拉加载'
+        this.pullingUp = false;
+      }, 2000);
+    }
+  }
+
+}
+
+export default new Refresh_view();
+</script>
+
+<style>
+.text-item {
+  width: 710cpx;
+  text-align: center;
+  line-height: 160cpx;
+  height: 160cpx;
+  background: #69BE96;
+  border: 1px solid #666;
+  border-radius: 10cpx;
+  align-self: center;
+  font-size: 60cpx;
+  color: white;
+  margin: 20cpx;
+}
+.loading-text {
+  height: 80cpx;
+  line-height: 80cpx;
+  text-align: center;
+  color: #999;
+  font-size: 24cpx;
+}
+</style>
+
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {
+      "c-header": "/components/header/header"
+    },
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+  },
+  "wx": {
+    "navigationBarTitleText": "index",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  },
+  "alipay": {
+    "defaultTitle": "index",
+    "pullRefresh": true,
+    "allowsBounceVertical": "YES",
+    "titleBarColor": "#ffffff",
+    "onReachBottomDistance": 50
+  },
+  "baidu": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "index",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  }
+}
+</script>

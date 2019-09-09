@@ -1,15 +1,15 @@
-<view class="wrapper  cml-base cml-view cml-27d8e310">
-  <view class="cont  cml-base cml-view cml-27d8e310">
-    <view class="i-tp  cml-base cml-view cml-27d8e310" a:for="{{topics}}">
-      <image class="tp-img  cml-base cml-image cml-27d8e310" resize="cover" src="{{item.img}}"></image>
-      <text class="tp-name  cml-base cml-text cml-27d8e310">{{item.name}}</text>
+<view class="wrapper  cml-base cml-view cml-3d101492">
+  <view class="cont  cml-base cml-view cml-3d101492">
+    <view class="i-tp  cml-base cml-view cml-3d101492" a:for="{{topics}}">
+      <image class="tp-img  cml-base cml-image cml-3d101492" resize="cover" src="{{item.img}}"></image>
+      <text class="tp-name  cml-base cml-text cml-3d101492">{{item.name}}</text>
     </view>
   </view>
-  <view class="tp-box  cml-base cml-view cml-27d8e310"><cml-buildin-scroller class="tp-box  cml-base cml-scroller cml-27d8e310" scroll-direction="{{'horizontal'}}" width="{{-1}}">
-    <view class="cont  cml-base cml-view cml-27d8e310">
-      <view class="i-tp  cml-base cml-view cml-27d8e310" a:for="{{topics}}">
-        <image class="tp-img  cml-base cml-image cml-27d8e310" resize="cover" src="{{item.img}}"></image>
-        <text class="tp-name  cml-base cml-text cml-27d8e310">{{item.name}}</text>
+  <view class="tp-box  cml-base cml-view cml-3d101492"><cml-buildin-scroller class="tp-box  cml-base cml-scroller cml-3d101492" scroll-direction="{{'horizontal'}}" width="{{-1}}">
+    <view class="cont  cml-base cml-view cml-3d101492">
+      <view class="i-tp  cml-base cml-view cml-3d101492" a:for="{{topics}}">
+        <image class="tp-img  cml-base cml-image cml-3d101492" resize="cover" src="{{item.img}}"></image>
+        <text class="tp-name  cml-base cml-text cml-3d101492">{{item.name}}</text>
       </view>
     </view>
   </cml-buildin-scroller></view>

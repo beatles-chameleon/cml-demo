@@ -1,11 +1,11 @@
-<view class=" cml-base cml-view cml-403a4598"><cml-buildin-page title="c-dialog演示" class=" cml-base cml-page cml-403a4598">
-  <view class="container  cml-base cml-view cml-403a4598">
-    <view class=" cml-base cml-view cml-403a4598"><c-header title="c-dialog" class=" cml-base cml-c-header cml-403a4598"></c-header></view>
-    <view class=" cml-base cml-view cml-403a4598"><c-dialog show="{{show}}" type="{{type}}" onShow="_cmlEventProxy" data-eventshow="{{['changeShow']}}" title="{{title}}" mask="{{mask}}" content="{{content}}" show-close="{{showClose}}" icon-type="{{iconType}}" icon-style="{{iconStyle}}" onClose="_cmlEventProxy" data-eventclose="{{['closeEvent']}}" onConfirm="_cmlEventProxy" data-eventconfirm="{{['confirmEvent']}}" onCancel="_cmlEventProxy" data-eventcancel="{{['cancelEvent']}}" class=" cml-base cml-c-dialog cml-403a4598"></c-dialog></view>
+<view class=" cml-base cml-view cml-1f885357"><cml-buildin-page title="c-dialog演示" class=" cml-base cml-page cml-1f885357">
+  <view class="container  cml-base cml-view cml-1f885357">
+    <view class=" cml-base cml-view cml-1f885357"><c-header title="c-dialog" class=" cml-base cml-c-header cml-1f885357"></c-header></view>
+    <view class=" cml-base cml-view cml-1f885357"><c-dialog show="{{show}}" type="{{type}}" onShow="_cmlEventProxy" data-eventshow="{{['changeShow']}}" title="{{title}}" mask="{{mask}}" content="{{content}}" show-close="{{showClose}}" icon-type="{{iconType}}" icon-style="{{iconStyle}}" onClose="_cmlEventProxy" data-eventclose="{{['closeEvent']}}" onConfirm="_cmlEventProxy" data-eventconfirm="{{['confirmEvent']}}" onCancel="_cmlEventProxy" data-eventcancel="{{['cancelEvent']}}" class=" cml-base cml-c-dialog cml-1f885357"></c-dialog></view>
     
-    <view class="btn  cml-base cml-view cml-403a4598"><cml-buildin-button class="btn  cml-base cml-button cml-403a4598" onOnclick="_cmlEventProxy" data-eventonclick="{{['showAlert']}}" text="alert dialog"></cml-buildin-button></view>
-    <view class="btn  cml-base cml-view cml-403a4598"><cml-buildin-button class="btn  cml-base cml-button cml-403a4598" onOnclick="_cmlEventProxy" data-eventonclick="{{['showConfirm']}}" text="confirm dialog"></cml-buildin-button></view>
-    <view class="btn  cml-base cml-view cml-403a4598"><cml-buildin-button class="btn  cml-base cml-button cml-403a4598" onOnclick="_cmlEventProxy" data-eventonclick="{{['showCloseIcon']}}" text="show close dialog"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view cml-1f885357"><cml-buildin-button class="btn  cml-base cml-button cml-1f885357" onOnclick="_cmlEventProxy" data-eventonclick="{{['showAlert']}}" text="alert dialog"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view cml-1f885357"><cml-buildin-button class="btn  cml-base cml-button cml-1f885357" onOnclick="_cmlEventProxy" data-eventonclick="{{['showConfirm']}}" text="confirm dialog"></cml-buildin-button></view>
+    <view class="btn  cml-base cml-view cml-1f885357"><cml-buildin-button class="btn  cml-base cml-button cml-1f885357" onOnclick="_cmlEventProxy" data-eventonclick="{{['showCloseIcon']}}" text="show close dialog"></cml-buildin-button></view>
     
   </view>
   </cml-buildin-page></view>

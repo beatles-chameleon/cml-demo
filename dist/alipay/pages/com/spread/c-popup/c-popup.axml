@@ -1,9 +1,9 @@
-<view class=" cml-base cml-view cml-78ed6ade"><cml-buildin-page title="c-popup演示" class=" cml-base cml-page cml-78ed6ade">
-  <view class=" cml-base cml-view cml-78ed6ade"><c-header title="c-popup" class=" cml-base cml-c-header cml-78ed6ade"></c-header></view>
-  <view class=" cml-base cml-view cml-78ed6ade"><c-popup show="{{show}}" mask="{{mask}}" onClose="_cmlEventProxy" data-eventclose="{{['closePopup']}}" class=" cml-base cml-c-popup cml-78ed6ade"></c-popup></view>
-  <view class=" cml-base cml-view cml-78ed6ade"><c-popup show="{{show2}}" mask="{{mask}}" onClose="_cmlEventProxy" data-eventclose="{{['closePopup']}}" position="{{position}}" class=" cml-base cml-c-popup cml-78ed6ade">
-    <view style="{{contentStyle}}" class=" cml-base cml-view cml-78ed6ade"><text style="font-size:28rpx" class=" cml-base cml-text cml-78ed6ade">content</text></view>
+<view class=" cml-base cml-view cml-6f91dc5d"><cml-buildin-page title="c-popup演示" class=" cml-base cml-page cml-6f91dc5d">
+  <view class=" cml-base cml-view cml-6f91dc5d"><c-header title="c-popup" class=" cml-base cml-c-header cml-6f91dc5d"></c-header></view>
+  <view class=" cml-base cml-view cml-6f91dc5d"><c-popup show="{{show}}" mask="{{mask}}" onClose="_cmlEventProxy" data-eventclose="{{['closePopup']}}" class=" cml-base cml-c-popup cml-6f91dc5d"></c-popup></view>
+  <view class=" cml-base cml-view cml-6f91dc5d"><c-popup show="{{show2}}" mask="{{mask}}" onClose="_cmlEventProxy" data-eventclose="{{['closePopup']}}" position="{{position}}" class=" cml-base cml-c-popup cml-6f91dc5d">
+    <view style="{{contentStyle}}" class=" cml-base cml-view cml-6f91dc5d"><text style="font-size:28rpx" class=" cml-base cml-text cml-6f91dc5d">content</text></view>
   </c-popup></view>
-  <view class="btn  cml-base cml-view cml-78ed6ade"><cml-buildin-button onOnclick="_cmlEventProxy" data-eventonclick="{{['showPopup']}}" class="btn  cml-base cml-button cml-78ed6ade" text="show popup"></cml-buildin-button></view>
-  <view class="btn  cml-base cml-view cml-78ed6ade"><cml-buildin-button onOnclick="_cmlEventProxy" data-eventonclick="{{['showPopup2']}}" class="btn  cml-base cml-button cml-78ed6ade" text="left/top/right/bottom/center"></cml-buildin-button></view>
+  <view class="btn  cml-base cml-view cml-6f91dc5d"><cml-buildin-button onOnclick="_cmlEventProxy" data-eventonclick="{{['showPopup']}}" class="btn  cml-base cml-button cml-6f91dc5d" text="show popup"></cml-buildin-button></view>
+  <view class="btn  cml-base cml-view cml-6f91dc5d"><cml-buildin-button onOnclick="_cmlEventProxy" data-eventonclick="{{['showPopup2']}}" class="btn  cml-base cml-button cml-6f91dc5d" text="left/top/right/bottom/center"></cml-buildin-button></view>
   </cml-buildin-page></view>

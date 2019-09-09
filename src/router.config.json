@@ -148,6 +148,12 @@
       "mock": "index.php"
     },
     {
+      "name": "refresh-view",
+      "url": "/pages/com/base/refresh_view/refresh_view",
+      "path": "/pages/com/base/refresh_view/refresh_view",
+      "mock": "index.php"
+    },
+    {
       "name": "c-dialog",
       "url": "/pages/com/spread/c-dialog/c-dialog",
       "path": "/pages/com/spread/c-dialog/c-dialog",

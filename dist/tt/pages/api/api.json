@@ -1,9 +1,9 @@
 {
     "usingComponents": {
         "collapse": "./../../components/collapse/collapse",
-        "cml-buildin-row": "./../../npm/cml-tt-ui-builtin/package/components/layout/row/row",
-        "cml-buildin-page": "./../../npm/cml-tt-ui-builtin/package/components/page/page",
-        "cml-buildin-scroller": "./../../npm/cml-tt-ui-builtin/package/components/scroller/scroller"
+        "cml-buildin-row": "./../../npm/cml-tt-ui-builtin/components/layout/row/row",
+        "cml-buildin-page": "./../../npm/cml-tt-ui-builtin/components/page/page",
+        "cml-buildin-scroller": "./../../npm/cml-tt-ui-builtin/components/scroller/scroller"
     },
     "navigationBarTitleText": "API",
     "backgroundTextStyle": "dark",

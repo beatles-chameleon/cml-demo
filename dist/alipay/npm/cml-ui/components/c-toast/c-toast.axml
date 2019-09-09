@@ -1,6 +1,6 @@
-<view class=" cml-base cml-view cml-13b53704"><c-popup show="{{show}}" mask="{{mask}}" class=" cml-base cml-c-popup cml-13b53704">
-  <view class="toast-content  cml-base cml-view cml-13b53704">
-    <image a:if="{{needIcon}}" src="{{typeImg}}" class="toast-icon  cml-base cml-image cml-13b53704" />
-    <text class="toast-text  cml-base cml-text cml-13b53704">{{message}}</text>
+<view class=" cml-base cml-view cml-7fb57986"><c-popup show="{{show}}" mask="{{mask}}" class=" cml-base cml-c-popup cml-7fb57986">
+  <view class="toast-content  cml-base cml-view cml-7fb57986">
+    <image a:if="{{needIcon}}" src="{{typeImg}}" class="toast-icon  cml-base cml-image cml-7fb57986" />
+    <text class="toast-text  cml-base cml-text cml-7fb57986">{{message}}</text>
   </view>
   </c-popup></view>

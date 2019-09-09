@@ -1,8 +1,8 @@
 {
     "usingComponents": {
         "c-refresh": "./../../../../../npm/cml-tt-ui/components/c-refresh/c-refresh",
-        "cml-buildin-page": "./../../../../../npm/cml-tt-ui-builtin/package/components/page/page",
-        "cml-buildin-scroller": "./../../../../../npm/cml-tt-ui-builtin/package/components/scroller/scroller"
+        "cml-buildin-page": "./../../../../../npm/cml-tt-ui-builtin/components/page/page",
+        "cml-buildin-scroller": "./../../../../../npm/cml-tt-ui-builtin/components/scroller/scroller"
     },
     "navigationBarTitleText": "列表",
     "backgroundTextStyle": "dark",

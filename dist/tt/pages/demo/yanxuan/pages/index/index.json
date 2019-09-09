@@ -6,8 +6,8 @@
         "my": "./../../components/my/my",
         "topic": "./../../components/topic/topic",
         "c-tabbar": "./../../../../../npm/cml-tt-ui/components/c-tabbar/c-tabbar",
-        "cml-buildin-page": "./../../../../../npm/cml-tt-ui-builtin/package/components/page/page",
-        "cml-buildin-scroller": "./../../../../../npm/cml-tt-ui-builtin/package/components/scroller/scroller"
+        "cml-buildin-page": "./../../../../../npm/cml-tt-ui-builtin/components/page/page",
+        "cml-buildin-scroller": "./../../../../../npm/cml-tt-ui-builtin/components/scroller/scroller"
     },
     "navigationBarTitleText": "首页",
     "backgroundTextStyle": "dark",

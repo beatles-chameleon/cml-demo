@@ -57,12 +57,14 @@ cml.config.merge({
   web: {
     dev: {
       analysis: false,
-      console: false
+      console: false,
+      isWrapComponent: false
     },
     build: {
       analysis: false,
       publicPath: `${publicPath}/web/`,
-      apiPrefix
+      apiPrefix,
+      isWrapComponent: false,
     }
   },
   weex: {

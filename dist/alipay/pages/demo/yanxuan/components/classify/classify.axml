@@ -1,21 +1,21 @@
-<view class="wrapper  cml-base cml-view cml-12ea8592">
-  <view class=" cml-base cml-view cml-12ea8592"><classify-header class=" cml-base cml-classify-header cml-12ea8592"></classify-header></view>
-  <view class="wrapper-content  cml-base cml-view cml-12ea8592">
-    <view class="class-list  cml-base cml-view cml-12ea8592" style="{{scrollerHeight}}rpx">
-      <view class=" cml-base cml-view cml-12ea8592"><cml-buildin-scroller height="{{scrollerHeight}}" class=" cml-base cml-scroller cml-12ea8592">
-        <view class="class-wrapper  cml-base cml-view cml-12ea8592" onTap="_cmlEventProxy" data-eventtap="{{['forbinding']}}">
-          <text class="class-txt  cml-base cml-text cml-12ea8592" a:for="{{classes}}">{{item}}</text>
+<view class="wrapper  cml-base cml-view cml-6bd9f39a">
+  <view class=" cml-base cml-view cml-6bd9f39a"><classify-header class=" cml-base cml-classify-header cml-6bd9f39a"></classify-header></view>
+  <view class="wrapper-content  cml-base cml-view cml-6bd9f39a">
+    <view class="class-list  cml-base cml-view cml-6bd9f39a" style="{{scrollerHeight}}rpx">
+      <view class=" cml-base cml-view cml-6bd9f39a"><cml-buildin-scroller height="{{scrollerHeight}}" class=" cml-base cml-scroller cml-6bd9f39a">
+        <view class="class-wrapper  cml-base cml-view cml-6bd9f39a" onTap="_cmlEventProxy" data-eventtap="{{['forbinding']}}">
+          <text class="class-txt  cml-base cml-text cml-6bd9f39a" a:for="{{classes}}">{{item}}</text>
         </view>
       </cml-buildin-scroller></view>
     </view>
 
-    <view class="main-list  cml-base cml-view cml-12ea8592" style="{{scrollerHeight}}rpx">
-      <image class="ad-img  cml-base cml-image cml-12ea8592" resize="cover" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/3ebd7addcc0d101d116052a57cec2f16.png"></image>
-      <text class="sub-tlt  cml-base cml-text cml-12ea8592"> --- 推荐区分类 --- </text>
-      <view class="sub-box  cml-base cml-view cml-12ea8592">
-        <view class="sub-i  cml-base cml-view cml-12ea8592" a:for="{{subclasses}}" onTap="_cmlEventProxy" data-eventtap="{{['godetail']}}">
-          <image class="i-img  cml-base cml-image cml-12ea8592" resize="contain" src="{{item.img}}"></image>
-          <text class="i-name  cml-base cml-text cml-12ea8592">{{item.name}}</text>
+    <view class="main-list  cml-base cml-view cml-6bd9f39a" style="{{scrollerHeight}}rpx">
+      <image class="ad-img  cml-base cml-image cml-6bd9f39a" resize="cover" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/3ebd7addcc0d101d116052a57cec2f16.png"></image>
+      <text class="sub-tlt  cml-base cml-text cml-6bd9f39a"> --- 推荐区分类 --- </text>
+      <view class="sub-box  cml-base cml-view cml-6bd9f39a">
+        <view class="sub-i  cml-base cml-view cml-6bd9f39a" a:for="{{subclasses}}" onTap="_cmlEventProxy" data-eventtap="{{['godetail']}}">
+          <image class="i-img  cml-base cml-image cml-6bd9f39a" resize="contain" src="{{item.img}}"></image>
+          <text class="i-name  cml-base cml-text cml-6bd9f39a">{{item.name}}</text>
         </view>
       </view>
     </view>

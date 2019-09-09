@@ -1,0 +1,9 @@
+<cml-buildin-page title="refresh-view" class=" cml-base cml-page">
+  <cml-buildin-refresh-view enablePullUpLoad="{{true}}" pullingDown="{{pullingDown}}" pullingUp="{{pullingUp}}" bindonPullDownRefresh="_cmlEventProxy" data-eventonpulldownrefresh="{{['pullDownRefreshHandle']}}" bindonPullUpLoad="_cmlEventProxy" data-eventonpullupload="{{['pullUploadHandle']}}" class=" cml-base cml-refresh-view">
+      <view class="content  cml-base cml-view">
+        <c-header title="refresh-view" class=" cml-view cml-c-header"></c-header>
+        <text wx:for="{{texts}}" class="text-item  cml-base cml-text">{{item}}</text>
+      </view>
+      <text class="loading-text  cml-base cml-text">{{loadingText}}</text>
+  </cml-buildin-refresh-view>
+</cml-buildin-page>

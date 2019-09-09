@@ -1,9 +1,9 @@
 {
     "usingComponents": {
         "c-header": "./../../../../components/header/header",
-        "cml-buildin-carousel-item": "./../../../../npm/cml-tt-ui-builtin/package/components/carousel-item/carousel-item",
-        "cml-buildin-carousel": "./../../../../npm/cml-tt-ui-builtin/package/components/carousel/carousel",
-        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/package/components/page/page"
+        "cml-buildin-carousel-item": "./../../../../npm/cml-tt-ui-builtin/components/carousel-item/carousel-item",
+        "cml-buildin-carousel": "./../../../../npm/cml-tt-ui-builtin/components/carousel/carousel",
+        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/components/page/page"
     },
     "navigationBarTitleText": "carousel",
     "backgroundTextStyle": "dark",

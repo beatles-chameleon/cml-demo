@@ -56,18 +56,15 @@ class Animation {
   methods = {
     rotate () {
       let animationCreation = animation;
-      while (this.current_rotate !== 360) {
-        this.current_rotate += 90;
-        animationCreation = animationCreation
-          .rotate(this.current_rotate)
-          .step({
-            duration: 500,
-            timingFunction: 'ease-in-out',
-            delay: 0,
-          })
-      }
+      this.current_rotate += 20;
+      animationCreation = animationCreation
+        .rotate(this.current_rotate)
+        .step({
+          duration: 500,
+          timingFunction: 'ease-in-out',
+          delay: 0,
+        })
       this.animationData = animationCreation.export();
-      this.current_rotate = 0
     },
     scale () {
       this.current_scale = this.current_scale === 2 ? 1 : 2
@@ -104,7 +101,7 @@ class Animation {
         .rotate("-90deg")
         .scale(1.2)
         .step({
-          duration: 500,
+          duration: 3000,
           timingFunction: 'ease-out',
           delay: 0
         })

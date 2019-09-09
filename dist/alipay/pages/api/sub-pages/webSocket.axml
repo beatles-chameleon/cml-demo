@@ -1,17 +1,17 @@
-<view class=" cml-base cml-view cml-25337eab"><cml-buildin-page title="webSocket" class=" cml-base cml-page cml-25337eab">
-  <view class="page-websocket  cml-base cml-view cml-25337eab">
-    <view class=" cml-base cml-view cml-25337eab"><secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-base cml-secondary-header cml-25337eab"></secondary-header></view>
-    <view class=" cml-base cml-view cml-25337eab"><secondary-cell title="{{cell.title}}" list="{{cell.list}}" onBtnclicked="_cmlEventProxy" data-eventbtnclicked="{{['onBtnClicked']}}" class=" cml-base cml-secondary-cell cml-25337eab"></secondary-cell></view>
-    <view class="preview-container  cml-base cml-view cml-25337eab">
-      <text class="preview-text preview-font  cml-base cml-text cml-25337eab">WebSocket 状态输出</text>
-      <view a:for="{{respones}}" a:for-item="res" a:for-index="idx" class=" cml-base cml-view cml-25337eab">
-        <text class="preview-font  cml-base cml-text cml-25337eab">{{res.name}}</text>
-        <text a:if="{{res.value}}" class="preview-font indent  cml-base cml-text cml-25337eab">{{res.value}}</text>
-        <block a:if="{{res.child}}" class=" cml-base cml-block cml-25337eab">
-          <text a:for="{{res.child}}" a:for-item="str" class="preview-font indent  cml-base cml-text cml-25337eab">{{str}}</text>
+<view class=" cml-base cml-view cml-5c94d4e8"><cml-buildin-page title="webSocket" class=" cml-base cml-page cml-5c94d4e8">
+  <view class="page-websocket  cml-base cml-view cml-5c94d4e8">
+    <view class=" cml-base cml-view cml-5c94d4e8"><secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-base cml-secondary-header cml-5c94d4e8"></secondary-header></view>
+    <view class=" cml-base cml-view cml-5c94d4e8"><secondary-cell title="{{cell.title}}" list="{{cell.list}}" onBtnclicked="_cmlEventProxy" data-eventbtnclicked="{{['onBtnClicked']}}" class=" cml-base cml-secondary-cell cml-5c94d4e8"></secondary-cell></view>
+    <view class="preview-container  cml-base cml-view cml-5c94d4e8">
+      <text class="preview-text preview-font  cml-base cml-text cml-5c94d4e8">WebSocket 状态输出</text>
+      <view a:for="{{respones}}" a:for-item="res" a:for-index="idx" class=" cml-base cml-view cml-5c94d4e8">
+        <text class="preview-font  cml-base cml-text cml-5c94d4e8">{{res.name}}</text>
+        <text a:if="{{res.value}}" class="preview-font indent  cml-base cml-text cml-5c94d4e8">{{res.value}}</text>
+        <block a:if="{{res.child}}" class=" cml-base cml-block cml-5c94d4e8">
+          <text a:for="{{res.child}}" a:for-item="str" class="preview-font indent  cml-base cml-text cml-5c94d4e8">{{str}}</text>
         </block>        
       </view>
     </view>
-    <view class=" cml-base cml-view cml-25337eab"><c-loading loading="{{isShowLoading}}" class=" cml-base cml-c-loading cml-25337eab"></c-loading></view>
+    <view class=" cml-base cml-view cml-5c94d4e8"><c-loading loading="{{isShowLoading}}" class=" cml-base cml-c-loading cml-5c94d4e8"></c-loading></view>
   </view>
   </cml-buildin-page></view>

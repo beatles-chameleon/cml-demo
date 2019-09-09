@@ -1,3 +1,3 @@
-<view class="pane-item-root  cml-base cml-view cml-48bedd20">
-  <slot class=" cml-base cml-slot cml-48bedd20"></slot>
+<view class="pane-item-root  cml-base cml-view cml-44e1122f">
+  <slot class=" cml-base cml-slot cml-44e1122f"></slot>
 </view>

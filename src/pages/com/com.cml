@@ -58,6 +58,10 @@ class Home {
         method: '',
         url: routeObj["carousel"].path,
         title: routeObj["carousel"].name
+      },{
+        method: '',
+        url: routeObj["refresh-view"].path,
+        title: routeObj["refresh-view"].name
       }]
     },{
       title: '布局容器',

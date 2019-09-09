@@ -1,17 +1,17 @@
-<view class="wrapper  cml-base cml-view cml-315e6952">
-  <view class=" cml-base cml-view cml-315e6952"><shop-header title="{{'购物车'}}" rightbtn="{{rightbtn}}" class=" cml-base cml-shop-header cml-315e6952"></shop-header></view>
-  <view class="slogan  cml-base cml-view cml-315e6952">
-    <text class="i-slg iconfont  cml-base cml-text cml-315e6952"> 30天无忧退换货</text>
-    <text class="i-slg iconfont  cml-base cml-text cml-315e6952"> 48小时快速退款</text>
-    <text class="i-slg iconfont  cml-base cml-text cml-315e6952"> 满88元免邮费</text>
+<view class="wrapper  cml-base cml-view cml-27be1af3">
+  <view class=" cml-base cml-view cml-27be1af3"><shop-header title="{{'购物车'}}" rightbtn="{{rightbtn}}" class=" cml-base cml-shop-header cml-27be1af3"></shop-header></view>
+  <view class="slogan  cml-base cml-view cml-27be1af3">
+    <text class="i-slg iconfont  cml-base cml-text cml-27be1af3"> 30天无忧退换货</text>
+    <text class="i-slg iconfont  cml-base cml-text cml-27be1af3"> 48小时快速退款</text>
+    <text class="i-slg iconfont  cml-base cml-text cml-27be1af3"> 满88元免邮费</text>
   </view>
-  <view class="shop-cart  cml-base cml-view cml-315e6952">
-    <view a:if="{{!goodslist || goodslist.length<=0}}" class="cart-empty  cml-base cml-view cml-315e6952">
-      <view class="center  cml-base cml-view cml-315e6952" onTap="_cmlEventProxy" data-eventtap="{{['godetail']}}">
-        <image class="img-empty  cml-base cml-image cml-315e6952" resize="contain" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/noCart-a8fe3f12e5.png"></image>
+  <view class="shop-cart  cml-base cml-view cml-27be1af3">
+    <view a:if="{{!goodslist || goodslist.length<=0}}" class="cart-empty  cml-base cml-view cml-27be1af3">
+      <view class="center  cml-base cml-view cml-27be1af3" onTap="_cmlEventProxy" data-eventtap="{{['godetail']}}">
+        <image class="img-empty  cml-base cml-image cml-27be1af3" resize="contain" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/noCart-a8fe3f12e5.png"></image>
       </view>
-      <text class="txt-empty  cml-base cml-text cml-315e6952">去添加点什么吧</text>
+      <text class="txt-empty  cml-base cml-text cml-27be1af3">去添加点什么吧</text>
     </view>
   </view>
-  <view class=" cml-base cml-view cml-315e6952"><shop-list goods="{{goods}}" class=" cml-base cml-shop-list cml-315e6952"></shop-list></view>
+  <view class=" cml-base cml-view cml-27be1af3"><shop-list goods="{{goods}}" class=" cml-base cml-shop-list cml-27be1af3"></shop-list></view>
 </view>

@@ -1,0 +1,4 @@
+<view class=" cml-base cml-origin-view">
+  <slot class=" cml-base cml-slot">
+  </slot>
+</view>

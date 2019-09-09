@@ -36,6 +36,7 @@
         "pages/com/base/carousel/carousel",
         "pages/com/base/row/row",
         "pages/com/base/layout/layout",
+        "pages/com/base/refresh_view/refresh_view",
         "pages/com/spread/c-dialog/c-dialog",
         "pages/com/spread/c-loading/c-loading",
         "pages/com/spread/c-toast/c-toast",

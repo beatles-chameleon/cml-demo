@@ -2,7 +2,7 @@
     "usingComponents": {
         "secondary-header": "./../../../components/secondaryHeader/secondaryHeader",
         "secondary-cell": "./../../../components/secondaryCell/secondaryCell",
-        "cml-buildin-page": "./../../../npm/cml-tt-ui-builtin/package/components/page/page"
+        "cml-buildin-page": "./../../../npm/cml-tt-ui-builtin/components/page/page"
     },
     "navigationBarTitleText": "选择图片",
     "backgroundTextStyle": "dark",

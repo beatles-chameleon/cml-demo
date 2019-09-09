@@ -1,8 +1,8 @@
 {
     "usingComponents": {
         "c-header": "./../../../../components/header/header",
-        "cml-buildin-checkbox": "./../../../../npm/cml-tt-ui-builtin/package/components/checkbox/checkbox",
-        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/package/components/page/page"
+        "cml-buildin-checkbox": "./../../../../npm/cml-tt-ui-builtin/components/checkbox/checkbox",
+        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/components/page/page"
     },
     "navigationBarTitleText": "checkbox",
     "backgroundTextStyle": "dark",

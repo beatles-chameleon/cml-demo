@@ -1,8 +1,8 @@
 {
     "usingComponents": {
         "c-header": "./../../../../components/header/header",
-        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/package/components/page/page",
-        "cml-buildin-radio": "./../../../../npm/cml-tt-ui-builtin/package/components/radio/radio"
+        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/components/page/page",
+        "cml-buildin-radio": "./../../../../npm/cml-tt-ui-builtin/components/radio/radio"
     },
     "navigationBarTitleText": "radio",
     "backgroundTextStyle": "dark",

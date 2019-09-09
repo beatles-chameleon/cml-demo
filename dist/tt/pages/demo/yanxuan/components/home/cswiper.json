@@ -1,7 +1,7 @@
 {
     "component": true,
     "usingComponents": {
-        "cml-buildin-carousel-item": "./../../../../../npm/cml-tt-ui-builtin/package/components/carousel-item/carousel-item",
-        "cml-buildin-carousel": "./../../../../../npm/cml-tt-ui-builtin/package/components/carousel/carousel"
+        "cml-buildin-carousel-item": "./../../../../../npm/cml-tt-ui-builtin/components/carousel-item/carousel-item",
+        "cml-buildin-carousel": "./../../../../../npm/cml-tt-ui-builtin/components/carousel/carousel"
     }
 }

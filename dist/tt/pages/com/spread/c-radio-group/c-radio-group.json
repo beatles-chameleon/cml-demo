@@ -2,7 +2,7 @@
     "usingComponents": {
         "c-header": "./../../../../components/header/header",
         "c-radio-group": "./../../../../npm/cml-tt-ui/components/c-radio-group/c-radio-group",
-        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/package/components/page/page"
+        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/components/page/page"
     },
     "navigationBarTitleText": "c-radio-group",
     "backgroundTextStyle": "dark",

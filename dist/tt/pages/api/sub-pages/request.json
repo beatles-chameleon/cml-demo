@@ -3,7 +3,7 @@
         "secondary-header": "./../../../components/secondaryHeader/secondaryHeader",
         "secondary-cell": "./../../../components/secondaryCell/secondaryCell",
         "c-loading": "./../../../npm/cml-tt-ui/components/c-loading/c-loading",
-        "cml-buildin-page": "./../../../npm/cml-tt-ui-builtin/package/components/page/page"
+        "cml-buildin-page": "./../../../npm/cml-tt-ui-builtin/components/page/page"
     },
     "navigationBarTitleText": "网络请求",
     "backgroundTextStyle": "dark",

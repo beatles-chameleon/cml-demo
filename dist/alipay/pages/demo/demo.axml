@@ -1,15 +1,15 @@
-<view class=" cml-base cml-view cml-4da951c0"><cml-buildin-page title="实例" class=" cml-base cml-page cml-4da951c0">
-    <view class="page  cml-base cml-view cml-4da951c0">
-      <view class=" cml-base cml-view cml-4da951c0"><cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller cml-4da951c0">
-        <view class="title-row  cml-base cml-view cml-4da951c0">
-          <view class=" cml-base cml-view cml-4da951c0"><cml-buildin-row justify="start" class=" cml-base cml-row cml-4da951c0">
-            <image class="title-icon  cml-base cml-image cml-4da951c0" src="{{iconApiUri}}"></image>
-            <text class="title-text  cml-base cml-text cml-4da951c0  _cml_ref_lmc_" id="titleText">实例</text>
+<view class=" cml-base cml-view cml-09b69bc1"><cml-buildin-page title="实例" class=" cml-base cml-page cml-09b69bc1">
+    <view class="page  cml-base cml-view cml-09b69bc1">
+      <view class=" cml-base cml-view cml-09b69bc1"><cml-buildin-scroller height="{{-1}}" class=" cml-base cml-scroller cml-09b69bc1">
+        <view class="title-row  cml-base cml-view cml-09b69bc1">
+          <view class=" cml-base cml-view cml-09b69bc1"><cml-buildin-row justify="start" class=" cml-base cml-row cml-09b69bc1">
+            <image class="title-icon  cml-base cml-image cml-09b69bc1" src="{{iconApiUri}}"></image>
+            <text class="title-text  cml-base cml-text cml-09b69bc1  _cml_ref_lmc_" id="titleText">实例</text>
           </cml-buildin-row></view>
         </view>
-        <view class="page-list  cml-base cml-view cml-4da951c0">
-          <view a:for="{{lists}}" class=" cml-base cml-view cml-4da951c0">
-            <view class=" cml-base cml-view cml-4da951c0"><demo-list title="{{item.title}}" icon-uri="{{item.iconUri}}" path="{{item.path}}" onItemtap="_cmlEventProxy" data-eventitemtap="{{['itemTap']}}" class=" cml-base cml-demo-list cml-4da951c0"></demo-list></view>
+        <view class="page-list  cml-base cml-view cml-09b69bc1">
+          <view a:for="{{lists}}" class=" cml-base cml-view cml-09b69bc1">
+            <view class=" cml-base cml-view cml-09b69bc1"><demo-list title="{{item.title}}" icon-uri="{{item.iconUri}}" path="{{item.path}}" onItemtap="_cmlEventProxy" data-eventitemtap="{{['itemTap']}}" class=" cml-base cml-demo-list cml-09b69bc1"></demo-list></view>
           </view>
         </view>
       </cml-buildin-scroller></view>

@@ -1,0 +1,9 @@
+<view class=" cml-base cml-view cml-c1c2c1d6"><cml-buildin-page title="refresh-view" class=" cml-base cml-page cml-c1c2c1d6">
+  <view class=" cml-base cml-view cml-c1c2c1d6"><cml-buildin-refresh-view enablePullUpLoad="{{true}}" pullingDown="{{pullingDown}}" pullingUp="{{pullingUp}}" onOnPullDownRefresh="_cmlEventProxy" data-eventonpulldownrefresh="{{['pullDownRefreshHandle']}}" onOnPullUpLoad="_cmlEventProxy" data-eventonpullupload="{{['pullUploadHandle']}}" class=" cml-base cml-refresh-view cml-c1c2c1d6">
+      <view class="content  cml-base cml-view cml-c1c2c1d6">
+        <view class=" cml-base cml-view cml-c1c2c1d6"><c-header title="refresh-view" class=" cml-base cml-c-header cml-c1c2c1d6"></c-header></view>
+        <text a:for="{{texts}}" class="text-item  cml-base cml-text cml-c1c2c1d6">{{item}}</text>
+      </view>
+      <text class="loading-text  cml-base cml-text cml-c1c2c1d6">{{loadingText}}</text>
+  </cml-buildin-refresh-view></view>
+  </cml-buildin-page></view>

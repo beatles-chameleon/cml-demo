@@ -1,13 +1,13 @@
 {
     "usingComponents": {
         "c-header": "./../../../../components/header/header",
-        "cml-buildin-aside": "./../../../../npm/cml-tt-ui-builtin/package/components/layout/aside/aside",
-        "cml-buildin-container": "./../../../../npm/cml-tt-ui-builtin/package/components/layout/container/container",
-        "cml-buildin-foot": "./../../../../npm/cml-tt-ui-builtin/package/components/layout/foot/foot",
-        "cml-buildin-head": "./../../../../npm/cml-tt-ui-builtin/package/components/layout/head/head",
-        "cml-buildin-main": "./../../../../npm/cml-tt-ui-builtin/package/components/layout/main/main",
-        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/package/components/page/page",
-        "cml-buildin-scroller": "./../../../../npm/cml-tt-ui-builtin/package/components/scroller/scroller"
+        "cml-buildin-aside": "./../../../../npm/cml-tt-ui-builtin/components/layout/aside/aside",
+        "cml-buildin-container": "./../../../../npm/cml-tt-ui-builtin/components/layout/container/container",
+        "cml-buildin-foot": "./../../../../npm/cml-tt-ui-builtin/components/layout/foot/foot",
+        "cml-buildin-head": "./../../../../npm/cml-tt-ui-builtin/components/layout/head/head",
+        "cml-buildin-main": "./../../../../npm/cml-tt-ui-builtin/components/layout/main/main",
+        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/components/page/page",
+        "cml-buildin-scroller": "./../../../../npm/cml-tt-ui-builtin/components/scroller/scroller"
     },
     "navigationBarTitleText": "layout",
     "backgroundTextStyle": "dark",

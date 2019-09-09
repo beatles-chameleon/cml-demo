@@ -1,7 +1,7 @@
 var manifest = require('./manifest.js');
 var cmldefine = manifest.cmldefine;
 
-cmldefine('58', function(require, exports, module) {
+cmldefine('59', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -63,11 +63,11 @@ cmldefine('0', function(require, exports, module) {
   value: true
 });
 
-var _index = require("59");
+var _index = require("60");
 
-var _index2 = require("83");
+var _index2 = require("84");
 
-var _index3 = require("85");
+var _index3 = require("86");
 
 exports.default = {
   createApp: _index.createApp,
@@ -75,13 +75,13 @@ exports.default = {
   createComponent: _index3.createComponent
 };
 })
-cmldefine('59', function(require, exports, module) {
+cmldefine('60', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.createApp = createApp;
 
-var _index = require("60");
+var _index = require("61");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -95,7 +95,7 @@ function createApp(options) {
   return _index2.default.createApp(options);
 }
 })
-cmldefine('60', function(require, exports, module) {
+cmldefine('61', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -153,7 +153,7 @@ cmldefine('18', function(require, exports, module) {
   value: true
 });
 
-var _instance = require("61");
+var _instance = require("62");
 
 Object.defineProperty(exports, 'App', {
   enumerable: true,
@@ -174,12 +174,12 @@ Object.defineProperty(exports, 'Component', {
   }
 });
 })
-cmldefine('61', function(require, exports, module) {
+cmldefine('62', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _app = require("62");
+var _app = require("63");
 
 Object.defineProperty(exports, 'App', {
   enumerable: true,
@@ -188,7 +188,7 @@ Object.defineProperty(exports, 'App', {
   }
 });
 
-var _page = require("81");
+var _page = require("82");
 
 Object.defineProperty(exports, 'Page', {
   enumerable: true,
@@ -197,7 +197,7 @@ Object.defineProperty(exports, 'Page', {
   }
 });
 
-var _component = require("82");
+var _component = require("83");
 
 Object.defineProperty(exports, 'Component', {
   enumerable: true,
@@ -206,7 +206,7 @@ Object.defineProperty(exports, 'Component', {
   }
 });
 })
-cmldefine('62', function(require, exports, module) {
+cmldefine('63', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -309,11 +309,11 @@ cmldefine('19', function(require, exports, module) {
   value: true
 });
 
-var _MiniVmAdapter2 = require("63");
+var _MiniVmAdapter2 = require("64");
 
 var _MiniVmAdapter3 = _interopRequireDefault(_MiniVmAdapter2);
 
-var _cmlTtMixins = require("69");
+var _cmlTtMixins = require("70");
 
 var _cmlTtMixins2 = _interopRequireDefault(_cmlTtMixins);
 
@@ -376,7 +376,7 @@ var VmAdapter = function (_MiniVmAdapter) {
 
 exports.default = VmAdapter;
 })
-cmldefine('63', function(require, exports, module) {
+cmldefine('64', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -399,7 +399,7 @@ var _createClass = function () {
   };
 }();
 
-var _BaseVmAdapter2 = require("64");
+var _BaseVmAdapter2 = require("65");
 
 var _BaseVmAdapter3 = _interopRequireDefault(_BaseVmAdapter2);
 
@@ -407,11 +407,11 @@ var _util = require("12");
 
 var _type = require("7");
 
-var _resolve = require("66");
+var _resolve = require("67");
 
 var _mobx = require("13");
 
-var _KEY = require("31");
+var _KEY = require("32");
 
 var _KEY2 = _interopRequireDefault(_KEY);
 
@@ -419,7 +419,7 @@ var _lifecycle = require("10");
 
 var _lifecycle2 = _interopRequireDefault(_lifecycle);
 
-var _options = require("68");
+var _options = require("69");
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -866,7 +866,7 @@ var MiniVmAdapter = function (_BaseVmAdapter) {
 
 exports.default = MiniVmAdapter;
 })
-cmldefine('64', function(require, exports, module) {
+cmldefine('65', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -1050,7 +1050,7 @@ exports.flatten = flatten;
 
 var _type = require("7");
 
-var _clone = require("65");
+var _clone = require("66");
 /**
  * Check whether an object has the property.
  */
@@ -1407,7 +1407,7 @@ function flatten() {
   return ret;
 }
 })
-cmldefine('65', function(require, exports, module) {
+cmldefine('66', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -1468,7 +1468,7 @@ function deepClone(obj) {
   return copy;
 }
 })
-cmldefine('66', function(require, exports, module) {
+cmldefine('67', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -1589,121 +1589,904 @@ function __extends(d, b) {
 
   d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 }
+
+var __assign = Object.assign || function __assign(t) {
+  for (var s, i = 1, n = arguments.length; i < n; i++) {
+    s = arguments[i];
+
+    for (var p in s) {
+      if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+  }
+
+  return t;
+};
+
+function __read(o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o),
+      r,
+      ar = [],
+      e;
+
+  try {
+    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+      ar.push(r.value);
+    }
+  } catch (error) {
+    e = {
+      error: error
+    };
+  } finally {
+    try {
+      if (r && !r.done && (m = i["return"])) m.call(i);
+    } finally {
+      if (e) throw e.error;
+    }
+  }
+
+  return ar;
+}
+
+function __spread() {
+  for (var ar = [], i = 0; i < arguments.length; i++) {
+    ar = ar.concat(__read(arguments[i]));
+  }
+
+  return ar;
+}
+
+var enumerableDescriptorCache = {};
+var nonEnumerableDescriptorCache = {};
+
+function createPropertyInitializerDescriptor(prop, enumerable) {
+  var cache = enumerable ? enumerableDescriptorCache : nonEnumerableDescriptorCache;
+  return cache[prop] || (cache[prop] = {
+    configurable: true,
+    enumerable: enumerable,
+    get: function get() {
+      initializeInstance(this);
+      return this[prop];
+    },
+    set: function set(value) {
+      initializeInstance(this);
+      this[prop] = value;
+    }
+  });
+}
+
+function initializeInstance(target) {
+  if (target.__mobxDidRunLazyInitializers === true) return;
+  var decorators = target.__mobxDecorators;
+
+  if (decorators) {
+    addHiddenProp(target, "__mobxDidRunLazyInitializers", true);
+
+    for (var key in decorators) {
+      var d = decorators[key];
+      d.propertyCreator(target, d.prop, d.descriptor, d.decoratorTarget, d.decoratorArguments);
+    }
+  }
+}
+
+function createPropDecorator(propertyInitiallyEnumerable, propertyCreator) {
+  return function decoratorFactory() {
+    var decoratorArguments;
+
+    var decorator = function decorate(target, prop, descriptor, applyImmediately // This is a special parameter to signal the direct application of a decorator, allow extendObservable to skip the entire type decoration part,
+    // as the instance to apply the decorator to equals the target
+    ) {
+      if (applyImmediately === true) {
+        propertyCreator(target, prop, descriptor, target, decoratorArguments);
+        return null;
+      }
+
+      if (process.env.NODE_ENV !== "production" && !quacksLikeADecorator(arguments)) fail$1("This function is a decorator, but it wasn't invoked like a decorator");
+
+      if (!Object.prototype.hasOwnProperty.call(target, "__mobxDecorators")) {
+        var inheritedDecorators = target.__mobxDecorators;
+        addHiddenProp(target, "__mobxDecorators", __assign({}, inheritedDecorators));
+      }
+
+      target.__mobxDecorators[prop] = {
+        prop: prop,
+        propertyCreator: propertyCreator,
+        descriptor: descriptor,
+        decoratorTarget: target,
+        decoratorArguments: decoratorArguments
+      };
+      return createPropertyInitializerDescriptor(prop, propertyInitiallyEnumerable);
+    };
+
+    if (quacksLikeADecorator(arguments)) {
+      // @decorator
+      decoratorArguments = EMPTY_ARRAY;
+      return decorator.apply(null, arguments);
+    } else {
+      // @decorator(args)
+      decoratorArguments = Array.prototype.slice.call(arguments);
+      return decorator;
+    }
+  };
+}
+
+function quacksLikeADecorator(args) {
+  return (args.length === 2 || args.length === 3) && typeof args[1] === "string" || args.length === 4 && args[3] === true;
+}
+
+function isSpyEnabled() {
+  return !!globalState.spyListeners.length;
+}
+
+function spyReport(event) {
+  if (!globalState.spyListeners.length) return;
+  var listeners = globalState.spyListeners;
+
+  for (var i = 0, l = listeners.length; i < l; i++) {
+    listeners[i](event);
+  }
+}
+
+function spyReportStart(event) {
+  var change = __assign({}, event, {
+    spyReportStart: true
+  });
+
+  spyReport(change);
+}
+
+var END_EVENT = {
+  spyReportEnd: true
+};
+
+function spyReportEnd(change) {
+  if (change) spyReport(__assign({}, change, {
+    spyReportEnd: true
+  }));else spyReport(END_EVENT);
+}
+
+function spy(listener) {
+  globalState.spyListeners.push(listener);
+  return once(function () {
+    globalState.spyListeners = globalState.spyListeners.filter(function (l) {
+      return l !== listener;
+    });
+  });
+}
+
+function createAction(actionName, fn) {
+  if (process.env.NODE_ENV !== "production") {
+    invariant(typeof fn === "function", "`action` can only be invoked on functions");
+    if (typeof actionName !== "string" || !actionName) fail$1("actions should have valid names, got: '" + actionName + "'");
+  }
+
+  var res = function res() {
+    return executeAction(actionName, fn, this, arguments);
+  };
+
+  res.isMobxAction = true;
+  return res;
+}
+
+function executeAction(actionName, fn, scope, args) {
+  var runInfo = startAction(actionName, fn, scope, args);
+
+  try {
+    return fn.apply(scope, args);
+  } finally {
+    endAction(runInfo);
+  }
+}
+
+function startAction(actionName, fn, scope, args) {
+  var notifySpy = isSpyEnabled() && !!actionName;
+  var startTime = 0;
+
+  if (notifySpy) {
+    startTime = Date.now();
+    var l = args && args.length || 0;
+    var flattendArgs = new Array(l);
+    if (l > 0) for (var i = 0; i < l; i++) {
+      flattendArgs[i] = args[i];
+    }
+    spyReportStart({
+      type: "action",
+      name: actionName,
+      object: scope,
+      arguments: flattendArgs
+    });
+  }
+
+  var prevDerivation = untrackedStart();
+  startBatch();
+  var prevAllowStateChanges = allowStateChangesStart(true);
+  return {
+    prevDerivation: prevDerivation,
+    prevAllowStateChanges: prevAllowStateChanges,
+    notifySpy: notifySpy,
+    startTime: startTime
+  };
+}
+
+function endAction(runInfo) {
+  allowStateChangesEnd(runInfo.prevAllowStateChanges);
+  endBatch();
+  untrackedEnd(runInfo.prevDerivation);
+  if (runInfo.notifySpy) spyReportEnd({
+    time: Date.now() - runInfo.startTime
+  });
+}
+
+function allowStateChanges(allowStateChanges, func) {
+  var prev = allowStateChangesStart(allowStateChanges);
+  var res;
+
+  try {
+    res = func();
+  } finally {
+    allowStateChangesEnd(prev);
+  }
+
+  return res;
+}
+
+function allowStateChangesStart(allowStateChanges) {
+  var prev = globalState.allowStateChanges;
+  globalState.allowStateChanges = allowStateChanges;
+  return prev;
+}
+
+function allowStateChangesEnd(prev) {
+  globalState.allowStateChanges = prev;
+}
+
+function allowStateChangesInsideComputed(func) {
+  var prev = globalState.computationDepth;
+  globalState.computationDepth = 0;
+  var res;
+
+  try {
+    res = func();
+  } finally {
+    globalState.computationDepth = prev;
+  }
+
+  return res;
+}
+
+function dontReassignFields() {
+  fail$1(process.env.NODE_ENV !== "production" && "@action fields are not reassignable");
+}
+
+function namedActionDecorator(name) {
+  return function (target, prop, descriptor) {
+    if (descriptor) {
+      if (process.env.NODE_ENV !== "production" && descriptor.get !== undefined) {
+        return fail$1("@action cannot be used with getters");
+      } // babel / typescript
+      // @action method() { }
+
+
+      if (descriptor.value) {
+        // typescript
+        return {
+          value: createAction(name, descriptor.value),
+          enumerable: false,
+          configurable: true,
+          writable: true // for typescript, this must be writable, otherwise it cannot inherit :/ (see inheritable actions test)
+
+        };
+      } // babel only: @action method = () => {}
+
+
+      var initializer_1 = descriptor.initializer;
+      return {
+        enumerable: false,
+        configurable: true,
+        writable: true,
+        initializer: function initializer() {
+          // N.B: we can't immediately invoke initializer; this would be wrong
+          return createAction(name, initializer_1.call(this));
+        }
+      };
+    } // bound instance methods
+
+
+    return actionFieldDecorator(name).apply(this, arguments);
+  };
+}
+
+function actionFieldDecorator(name) {
+  // Simple property that writes on first invocation to the current instance
+  return function (target, prop, descriptor) {
+    Object.defineProperty(target, prop, {
+      configurable: true,
+      enumerable: false,
+      get: function get() {
+        return undefined;
+      },
+      set: function set(value) {
+        addHiddenProp(this, prop, action(name, value));
+      }
+    });
+  };
+}
+
+function boundActionDecorator(target, propertyName, descriptor, applyToInstance) {
+  if (applyToInstance === true) {
+    defineBoundAction(target, propertyName, descriptor.value);
+    return null;
+  }
+
+  if (descriptor) {
+    // if (descriptor.value)
+    // Typescript / Babel: @action.bound method() { }
+    // also: babel @action.bound method = () => {}
+    return {
+      configurable: true,
+      enumerable: false,
+      get: function get() {
+        defineBoundAction(this, propertyName, descriptor.value || descriptor.initializer.call(this));
+        return this[propertyName];
+      },
+      set: dontReassignFields
+    };
+  } // field decorator Typescript @action.bound method = () => {}
+
+
+  return {
+    enumerable: false,
+    configurable: true,
+    set: function set(v) {
+      defineBoundAction(this, propertyName, v);
+    },
+    get: function get() {
+      return undefined;
+    }
+  };
+}
+
+var action = function action(arg1, arg2, arg3, arg4) {
+  // action(fn() {})
+  if (arguments.length === 1 && typeof arg1 === "function") return createAction(arg1.name || "<unnamed action>", arg1); // action("name", fn() {})
+
+  if (arguments.length === 2 && typeof arg2 === "function") return createAction(arg1, arg2); // @action("name") fn() {}
+
+  if (arguments.length === 1 && typeof arg1 === "string") return namedActionDecorator(arg1); // @action fn() {}
+
+  if (arg4 === true) {
+    // apply to instance immediately
+    arg1[arg2] = createAction(arg1.name || arg2, arg3.value);
+  } else {
+    return namedActionDecorator(arg2).apply(null, arguments);
+  }
+};
+
+action.bound = boundActionDecorator;
+
+function runInAction(arg1, arg2) {
+  // TODO: deprecate?
+  var actionName = typeof arg1 === "string" ? arg1 : arg1.name || "<unnamed action>";
+  var fn = typeof arg1 === "function" ? arg1 : arg2;
+
+  if (process.env.NODE_ENV !== "production") {
+    invariant(typeof fn === "function" && fn.length === 0, "`runInAction` expects a function without arguments");
+    if (typeof actionName !== "string" || !actionName) fail$1("actions should have valid names, got: '" + actionName + "'");
+  }
+
+  return executeAction(actionName, fn, this, undefined);
+}
+
+function isAction(thing) {
+  return typeof thing === "function" && thing.isMobxAction === true;
+}
+
+function defineBoundAction(target, propertyName, fn) {
+  addHiddenProp(target, propertyName, createAction(propertyName, fn.bind(target)));
+}
+
+var toString = Object.prototype.toString;
+
+function deepEqual(a, b) {
+  return eq(a, b);
+} // Copied from https://github.com/jashkenas/underscore/blob/5c237a7c682fb68fd5378203f0bf22dce1624854/underscore.js#L1186-L1289
+// Internal recursive comparison function for `isEqual`.
+
+
+function eq(a, b, aStack, bStack) {
+  // Identical objects are equal. `0 === -0`, but they aren't identical.
+  // See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?id=harmony:egal).
+  if (a === b) return a !== 0 || 1 / a === 1 / b; // `null` or `undefined` only equal to itself (strict comparison).
+
+  if (a == null || b == null) return false; // `NaN`s are equivalent, but non-reflexive.
+
+  if (a !== a) return b !== b; // Exhaust primitive checks
+
+  var type = typeof a === "undefined" ? "undefined" : _typeof(a);
+  if (type !== "function" && type !== "object" && (typeof b === "undefined" ? "undefined" : _typeof(b)) != "object") return false;
+  return deepEq(a, b, aStack, bStack);
+} // Internal recursive comparison function for `isEqual`.
+
+
+function deepEq(a, b, aStack, bStack) {
+  // Unwrap any wrapped objects.
+  a = unwrap(a);
+  b = unwrap(b); // Compare `[[Class]]` names.
+
+  var className = toString.call(a);
+  if (className !== toString.call(b)) return false;
+
+  switch (className) {
+    // Strings, numbers, regular expressions, dates, and booleans are compared by value.
+    case "[object RegExp]": // RegExps are coerced to strings for comparison (Note: '' + /a/i === '/a/i')
+
+    case "[object String]":
+      // Primitives and their corresponding object wrappers are equivalent; thus, `"5"` is
+      // equivalent to `new String("5")`.
+      return "" + a === "" + b;
+
+    case "[object Number]":
+      // `NaN`s are equivalent, but non-reflexive.
+      // Object(NaN) is equivalent to NaN.
+      if (+a !== +a) return +b !== +b; // An `egal` comparison is performed for other numeric values.
+
+      return +a === 0 ? 1 / +a === 1 / b : +a === +b;
+
+    case "[object Date]":
+    case "[object Boolean]":
+      // Coerce dates and booleans to numeric primitive values. Dates are compared by their
+      // millisecond representations. Note that invalid dates with millisecond representations
+      // of `NaN` are not equivalent.
+      return +a === +b;
+
+    case "[object Symbol]":
+      return typeof Symbol !== "undefined" && Symbol.valueOf.call(a) === Symbol.valueOf.call(b);
+  }
+
+  var areArrays = className === "[object Array]";
+
+  if (!areArrays) {
+    if ((typeof a === "undefined" ? "undefined" : _typeof(a)) != "object" || (typeof b === "undefined" ? "undefined" : _typeof(b)) != "object") return false; // Objects with different constructors are not equivalent, but `Object`s or `Array`s
+    // from different frames are.
+
+    var aCtor = a.constructor,
+        bCtor = b.constructor;
+
+    if (aCtor !== bCtor && !(typeof aCtor === "function" && aCtor instanceof aCtor && typeof bCtor === "function" && bCtor instanceof bCtor) && "constructor" in a && "constructor" in b) {
+      return false;
+    }
+  } // Assume equality for cyclic structures. The algorithm for detecting cyclic
+  // structures is adapted from ES 5.1 section 15.12.3, abstract operation `JO`.
+  // Initializing stack of traversed objects.
+  // It's done here since we only need them for objects and arrays comparison.
+
+
+  aStack = aStack || [];
+  bStack = bStack || [];
+  var length = aStack.length;
+
+  while (length--) {
+    // Linear search. Performance is inversely proportional to the number of
+    // unique nested structures.
+    if (aStack[length] === a) return bStack[length] === b;
+  } // Add the first object to the stack of traversed objects.
+
+
+  aStack.push(a);
+  bStack.push(b); // Recursively compare objects and arrays.
+
+  if (areArrays) {
+    // Compare array lengths to determine if a deep comparison is necessary.
+    length = a.length;
+    if (length !== b.length) return false; // Deep compare the contents, ignoring non-numeric properties.
+
+    while (length--) {
+      if (!eq(a[length], b[length], aStack, bStack)) return false;
+    }
+  } else {
+    // Deep compare objects.
+    var keys$$1 = Object.keys(a),
+        key;
+    length = keys$$1.length; // Ensure that both objects contain the same number of properties before comparing deep equality.
+
+    if (Object.keys(b).length !== length) return false;
+
+    while (length--) {
+      // Deep compare each member
+      key = keys$$1[length];
+      if (!(has$$1(b, key) && eq(a[key], b[key], aStack, bStack))) return false;
+    }
+  } // Remove the first object from the stack of traversed objects.
+
+
+  aStack.pop();
+  bStack.pop();
+  return true;
+}
+
+function unwrap(a) {
+  if (isObservableArray(a)) return a.peek();
+  if (isES6Map(a) || isObservableMap(a)) return iteratorToArray(a.entries());
+  return a;
+}
+
+function has$$1(a, key) {
+  return Object.prototype.hasOwnProperty.call(a, key);
+}
+
+function identityComparer(a, b) {
+  return a === b;
+}
+
+function structuralComparer(a, b) {
+  return deepEqual(a, b);
+}
+
+function defaultComparer(a, b) {
+  return areBothNaN(a, b) || identityComparer(a, b);
+}
+
+var comparer = {
+  identity: identityComparer,
+  structural: structuralComparer,
+  default: defaultComparer
+};
 /**
- * Anything that can be used to _store_ state is an Atom in mobx. Atoms have two important jobs
+ * Creates a named reactive view and keeps it alive, so that the view is always
+ * updated if one of the dependencies changes, even when the view is not further used by something else.
+ * @param view The reactive view
+ * @returns disposer function, which can be used to stop the view from being updated in the future.
+ */
+
+function autorun(view, opts) {
+  if (opts === void 0) {
+    opts = EMPTY_OBJECT;
+  }
+
+  if (process.env.NODE_ENV !== "production") {
+    invariant(typeof view === "function", "Autorun expects a function as first argument");
+    invariant(isAction(view) === false, "Autorun does not accept actions since actions are untrackable");
+  }
+
+  var name = opts && opts.name || view.name || "Autorun@" + getNextId();
+  var runSync = !opts.scheduler && !opts.delay;
+  var reaction;
+
+  if (runSync) {
+    // normal autorun
+    reaction = new Reaction(name, function () {
+      this.track(reactionRunner);
+    }, opts.onError);
+  } else {
+    var scheduler_1 = createSchedulerFromOptions(opts); // debounced autorun
+
+    var isScheduled_1 = false;
+    reaction = new Reaction(name, function () {
+      if (!isScheduled_1) {
+        isScheduled_1 = true;
+        scheduler_1(function () {
+          isScheduled_1 = false;
+          if (!reaction.isDisposed) reaction.track(reactionRunner);
+        });
+      }
+    }, opts.onError);
+  }
+
+  function reactionRunner() {
+    view(reaction);
+  }
+
+  reaction.schedule();
+  return reaction.getDisposer();
+}
+
+var run = function run(f) {
+  return f();
+};
+
+function createSchedulerFromOptions(opts) {
+  return opts.scheduler ? opts.scheduler : opts.delay ? function (f) {
+    return setTimeout(f, opts.delay);
+  } : run;
+}
+
+function reaction(expression, effect, opts) {
+  if (opts === void 0) {
+    opts = EMPTY_OBJECT;
+  }
+
+  if (typeof opts === "boolean") {
+    opts = {
+      fireImmediately: opts
+    };
+    deprecated("Using fireImmediately as argument is deprecated. Use '{ fireImmediately: true }' instead");
+  }
+
+  if (process.env.NODE_ENV !== "production") {
+    invariant(typeof expression === "function", "First argument to reaction should be a function");
+    invariant((typeof opts === "undefined" ? "undefined" : _typeof(opts)) === "object", "Third argument of reactions should be an object");
+  }
+
+  var name = opts.name || "Reaction@" + getNextId();
+  var effectAction = action(name, opts.onError ? wrapErrorHandler(opts.onError, effect) : effect);
+  var runSync = !opts.scheduler && !opts.delay;
+  var scheduler = createSchedulerFromOptions(opts);
+  var firstTime = true;
+  var isScheduled = false;
+  var value;
+  var equals = opts.compareStructural ? comparer.structural : opts.equals || comparer.default;
+  var r = new Reaction(name, function () {
+    if (firstTime || runSync) {
+      reactionRunner();
+    } else if (!isScheduled) {
+      isScheduled = true;
+      scheduler(reactionRunner);
+    }
+  }, opts.onError);
+
+  function reactionRunner() {
+    isScheduled = false; // Q: move into reaction runner?
+
+    if (r.isDisposed) return;
+    var changed = false;
+    r.track(function () {
+      var nextValue = expression(r);
+      changed = firstTime || !equals(value, nextValue);
+      value = nextValue;
+    });
+    if (firstTime && opts.fireImmediately) effectAction(value, r);
+    if (!firstTime && changed === true) effectAction(value, r);
+    if (firstTime) firstTime = false;
+  }
+
+  r.schedule();
+  return r.getDisposer();
+}
+
+function wrapErrorHandler(errorHandler, baseFn) {
+  return function () {
+    try {
+      return baseFn.apply(this, arguments);
+    } catch (e) {
+      errorHandler.call(this, e);
+    }
+  };
+}
+/**
+ * A node in the state dependency root that observes other nodes, and can be observed itself.
  *
- * 1) detect when they are being _used_ and report this (using reportObserved). This allows mobx to make the connection between running functions and the data they used
- * 2) they should notify mobx whenever they have _changed_. This way mobx can re-run any functions (derivations) that are using this atom.
+ * ComputedValue will remember the result of the computation for the duration of the batch, or
+ * while being observed.
+ *
+ * During this time it will recompute only when one of its direct dependencies changed,
+ * but only when it is being accessed with `ComputedValue.get()`.
+ *
+ * Implementation description:
+ * 1. First time it's being accessed it will compute and remember result
+ *    give back remembered result until 2. happens
+ * 2. First time any deep dependency change, propagate POSSIBLY_STALE to all observers, wait for 3.
+ * 3. When it's being accessed, recompute if any shallow dependency changed.
+ *    if result changed: propagate STALE to all observers, that were POSSIBLY_STALE from the last step.
+ *    go to step 2. either way
+ *
+ * If at any point it's outside batch and it isn't observed: reset everything and go to 1.
  */
 
 
-var BaseAtom = function () {
+var ComputedValue =
+/** @class */
+function () {
   /**
-   * Create a new atom. For debugging purposes it is recommended to give it a name.
-   * The onBecomeObserved and onBecomeUnobserved callbacks can be used for resource management.
+   * Create a new computed value based on a function expression.
+   *
+   * The `name` property is for debug purposes only.
+   *
+   * The `equals` property specifies the comparer function to use to determine if a newly produced
+   * value differs from the previous value. Two comparers are provided in the library; `defaultComparer`
+   * compares based on identity comparison (===), and `structualComparer` deeply compares the structure.
+   * Structural comparison can be convenient if you always produce a new aggregated object and
+   * don't want to notify observers if it is structurally the same.
+   * This is useful for working with vectors, mouse coordinates etc.
    */
-  function BaseAtom(name) {
-    if (name === void 0) {
-      name = "Atom@" + getNextId();
-    }
+  function ComputedValue(options) {
+    this.dependenciesState = IDerivationState.NOT_TRACKING;
+    this.observing = []; // nodes we are looking at. Our value depends on these nodes
 
-    this.name = name;
-    this.isPendingUnobservation = true; // for effective unobserving. BaseAtom has true, for extra optimization, so its onBecomeUnobserved never gets called, because it's not needed
+    this.newObserving = null; // during tracking it's an array with new observed observers
 
+    this.isBeingObserved = false;
+    this.isPendingUnobservation = false;
     this.observers = [];
     this.observersIndexes = {};
     this.diffValue = 0;
+    this.runId = 0;
     this.lastAccessedBy = 0;
-    this.lowestObserverState = IDerivationState.NOT_TRACKING;
+    this.lowestObserverState = IDerivationState.UP_TO_DATE;
+    this.unboundDepsCount = 0;
+    this.__mapid = "#" + getNextId();
+    this.value = new CaughtException(null);
+    this.isComputing = false; // to check for cycles
+
+    this.isRunningSetter = false;
+    this.isTracing = TraceMode.NONE;
+    if (process.env.NODE_ENV !== "production" && !options.get) return fail$1("missing option for computed: get");
+    this.derivation = options.get;
+    this.name = options.name || "ComputedValue@" + getNextId();
+    if (options.set) this.setter = createAction(this.name + "-setter", options.set);
+    this.equals = options.equals || (options.compareStructural || options.struct ? comparer.structural : comparer.default);
+    this.scope = options.context;
+    this.requiresReaction = !!options.requiresReaction;
+    this.keepAlive = !!options.keepAlive;
   }
 
-  BaseAtom.prototype.onBecomeUnobserved = function () {// noop
+  ComputedValue.prototype.onBecomeStale = function () {
+    propagateMaybeChanged(this);
   };
+
+  ComputedValue.prototype.onBecomeUnobserved = function () {};
+
+  ComputedValue.prototype.onBecomeObserved = function () {};
   /**
-   * Invoke this method to notify mobx that your atom has been used somehow.
+   * Returns the current value of this computed value.
+   * Will evaluate its computation first if needed.
    */
 
 
-  BaseAtom.prototype.reportObserved = function () {
-    reportObserved(this);
+  ComputedValue.prototype.get = function () {
+    if (this.isComputing) fail$1("Cycle detected in computation " + this.name + ": " + this.derivation);
+
+    if (globalState.inBatch === 0 && this.observers.length === 0 && !this.keepAlive) {
+      if (shouldCompute(this)) {
+        this.warnAboutUntrackedRead();
+        startBatch(); // See perf test 'computed memoization'
+
+        this.value = this.computeValue(false);
+        endBatch();
+      }
+    } else {
+      reportObserved(this);
+      if (shouldCompute(this)) if (this.trackAndCompute()) propagateChangeConfirmed(this);
+    }
+
+    var result = this.value;
+    if (isCaughtException(result)) throw result.cause;
+    return result;
   };
-  /**
-   * Invoke this method _after_ this method has changed to signal mobx that all its observers should invalidate.
-   */
 
-
-  BaseAtom.prototype.reportChanged = function () {
-    startBatch();
-    propagateChanged(this);
-    endBatch();
+  ComputedValue.prototype.peek = function () {
+    var res = this.computeValue(false);
+    if (isCaughtException(res)) throw res.cause;
+    return res;
   };
 
-  BaseAtom.prototype.toString = function () {
-    return this.name;
+  ComputedValue.prototype.set = function (value) {
+    if (this.setter) {
+      invariant(!this.isRunningSetter, "The setter of computed value '" + this.name + "' is trying to update itself. Did you intend to update an _observable_ value, instead of the computed property?");
+      this.isRunningSetter = true;
+
+      try {
+        this.setter.call(this.scope, value);
+      } finally {
+        this.isRunningSetter = false;
+      }
+    } else invariant(false, process.env.NODE_ENV !== "production" && "[ComputedValue '" + this.name + "'] It is not possible to assign a new value to a computed value.");
   };
 
-  return BaseAtom;
+  ComputedValue.prototype.trackAndCompute = function () {
+    if (isSpyEnabled()) {
+      spyReport({
+        object: this.scope,
+        type: "compute",
+        name: this.name
+      });
+    }
+
+    var oldValue = this.value;
+    var wasSuspended =
+    /* see #1208 */
+    this.dependenciesState === IDerivationState.NOT_TRACKING;
+    var newValue = this.computeValue(true);
+    var changed = wasSuspended || isCaughtException(oldValue) || isCaughtException(newValue) || !this.equals(oldValue, newValue);
+
+    if (changed) {
+      this.value = newValue;
+    }
+
+    return changed;
+  };
+
+  ComputedValue.prototype.computeValue = function (track) {
+    this.isComputing = true;
+    globalState.computationDepth++;
+    var res;
+
+    if (track) {
+      res = trackDerivedFunction(this, this.derivation, this.scope);
+    } else {
+      if (globalState.disableErrorBoundaries === true) {
+        res = this.derivation.call(this.scope);
+      } else {
+        try {
+          res = this.derivation.call(this.scope);
+        } catch (e) {
+          res = new CaughtException(e);
+        }
+      }
+    }
+
+    globalState.computationDepth--;
+    this.isComputing = false;
+    return res;
+  };
+
+  ComputedValue.prototype.suspend = function () {
+    if (!this.keepAlive) {
+      clearObserving(this);
+      this.value = undefined; // don't hold on to computed value!
+    }
+  };
+
+  ComputedValue.prototype.observe = function (listener, fireImmediately) {
+    var _this = this;
+
+    var firstTime = true;
+    var prevValue = undefined;
+    return autorun(function () {
+      var newValue = _this.get();
+
+      if (!firstTime || fireImmediately) {
+        var prevU = untrackedStart();
+        listener({
+          type: "update",
+          object: _this,
+          newValue: newValue,
+          oldValue: prevValue
+        });
+        untrackedEnd(prevU);
+      }
+
+      firstTime = false;
+      prevValue = newValue;
+    });
+  };
+
+  ComputedValue.prototype.warnAboutUntrackedRead = function () {
+    if (process.env.NODE_ENV === "production") return;
+
+    if (this.requiresReaction === true) {
+      fail$1("[mobx] Computed value " + this.name + " is read outside a reactive context");
+    }
+
+    if (this.isTracing !== TraceMode.NONE) {
+      console.log("[mobx.trace] '" + this.name + "' is being read outside a reactive context. Doing a full recompute");
+    }
+
+    if (globalState.computedRequiresReaction) {
+      console.warn("[mobx] Computed value " + this.name + " is being read outside a reactive context. Doing a full recompute");
+    }
+  };
+
+  ComputedValue.prototype.toJSON = function () {
+    return this.get();
+  };
+
+  ComputedValue.prototype.toString = function () {
+    return this.name + "[" + this.derivation.toString() + "]";
+  };
+
+  ComputedValue.prototype.valueOf = function () {
+    return toPrimitive(this.get());
+  };
+
+  return ComputedValue;
 }();
 
-var Atom = function (_super) {
-  __extends(Atom, _super);
-  /**
-   * Create a new atom. For debugging purposes it is recommended to give it a name.
-   * The onBecomeObserved and onBecomeUnobserved callbacks can be used for resource management.
-   */
-
-
-  function Atom(name, onBecomeObservedHandler, onBecomeUnobservedHandler) {
-    if (name === void 0) {
-      name = "Atom@" + getNextId();
-    }
-
-    if (onBecomeObservedHandler === void 0) {
-      onBecomeObservedHandler = noop;
-    }
-
-    if (onBecomeUnobservedHandler === void 0) {
-      onBecomeUnobservedHandler = noop;
-    }
-
-    var _this = _super.call(this, name) || this;
-
-    _this.name = name;
-    _this.onBecomeObservedHandler = onBecomeObservedHandler;
-    _this.onBecomeUnobservedHandler = onBecomeUnobservedHandler;
-    _this.isPendingUnobservation = false; // for effective unobserving.
-
-    _this.isBeingTracked = false;
-    return _this;
-  }
-
-  Atom.prototype.reportObserved = function () {
-    startBatch();
-
-    _super.prototype.reportObserved.call(this);
-
-    if (!this.isBeingTracked) {
-      this.isBeingTracked = true;
-      this.onBecomeObservedHandler();
-    }
-
-    endBatch();
-    return !!globalState.trackingDerivation; // return doesn't really give useful info, because it can be as well calling computed which calls atom (no reactions)
-    // also it could not trigger when calculating reaction dependent on Atom because Atom's value was cached by computed called by given reaction.
-  };
-
-  Atom.prototype.onBecomeUnobserved = function () {
-    this.isBeingTracked = false;
-    this.onBecomeUnobservedHandler();
-  };
-
-  return Atom;
-}(BaseAtom);
-
-var isAtom = createInstanceofPredicate("Atom", BaseAtom);
+ComputedValue.prototype[primitiveSymbol()] = ComputedValue.prototype.valueOf;
+var isComputedValue = createInstanceofPredicate("ComputedValue", ComputedValue);
 
 function hasInterceptors(interceptable) {
-  return interceptable.interceptors && interceptable.interceptors.length > 0;
+  return interceptable.interceptors !== undefined && interceptable.interceptors.length > 0;
 }
 
 function registerInterceptor(interceptable, handler) {
@@ -1732,7 +2515,7 @@ function interceptChange(interceptable, change) {
 }
 
 function hasListeners(listenable) {
-  return listenable.changeListeners && listenable.changeListeners.length > 0;
+  return listenable.changeListeners !== undefined && listenable.changeListeners.length > 0;
 }
 
 function registerListener(listenable, handler) {
@@ -1757,67 +2540,1339 @@ function notifyListeners(listenable, change) {
   untrackedEnd(prevU);
 }
 
-function isSpyEnabled() {
-  return !!globalState.spyListeners.length;
-}
+declareAtom();
 
-function spyReport(event) {
-  if (!globalState.spyListeners.length) return;
-  var listeners = globalState.spyListeners;
+var ObservableValue =
+/** @class */
+function (_super) {
+  __extends(ObservableValue, _super);
 
-  for (var i = 0, l = listeners.length; i < l; i++) {
-    listeners[i](event);
+  function ObservableValue(value, enhancer, name, notifySpy) {
+    if (name === void 0) {
+      name = "ObservableValue@" + getNextId();
+    }
+
+    if (notifySpy === void 0) {
+      notifySpy = true;
+    }
+
+    var _this = _super.call(this, name) || this;
+
+    _this.enhancer = enhancer;
+    _this.hasUnreportedChange = false;
+    _this.value = enhancer(value, undefined, name);
+
+    if (notifySpy && isSpyEnabled()) {
+      // only notify spy if this is a stand-alone observable
+      spyReport({
+        type: "create",
+        name: _this.name,
+        newValue: "" + _this.value
+      });
+    }
+
+    return _this;
   }
+
+  ObservableValue.prototype.dehanceValue = function (value) {
+    if (this.dehancer !== undefined) return this.dehancer(value);
+    return value;
+  };
+
+  ObservableValue.prototype.set = function (newValue) {
+    var oldValue = this.value;
+    newValue = this.prepareNewValue(newValue);
+
+    if (newValue !== globalState.UNCHANGED) {
+      var notifySpy = isSpyEnabled();
+
+      if (notifySpy) {
+        spyReportStart({
+          type: "update",
+          name: this.name,
+          newValue: newValue,
+          oldValue: oldValue
+        });
+      }
+
+      this.setNewValue(newValue);
+      if (notifySpy) spyReportEnd();
+    }
+  };
+
+  ObservableValue.prototype.prepareNewValue = function (newValue) {
+    checkIfStateModificationsAreAllowed(this);
+
+    if (hasInterceptors(this)) {
+      var change = interceptChange(this, {
+        object: this,
+        type: "update",
+        newValue: newValue
+      });
+      if (!change) return globalState.UNCHANGED;
+      newValue = change.newValue;
+    } // apply modifier
+
+
+    newValue = this.enhancer(newValue, this.value, this.name);
+    return this.value !== newValue ? newValue : globalState.UNCHANGED;
+  };
+
+  ObservableValue.prototype.setNewValue = function (newValue) {
+    var oldValue = this.value;
+    this.value = newValue;
+    this.reportChanged();
+
+    if (hasListeners(this)) {
+      notifyListeners(this, {
+        type: "update",
+        object: this,
+        newValue: newValue,
+        oldValue: oldValue
+      });
+    }
+  };
+
+  ObservableValue.prototype.get = function () {
+    this.reportObserved();
+    return this.dehanceValue(this.value);
+  };
+
+  ObservableValue.prototype.intercept = function (handler) {
+    return registerInterceptor(this, handler);
+  };
+
+  ObservableValue.prototype.observe = function (listener, fireImmediately) {
+    if (fireImmediately) listener({
+      object: this,
+      type: "update",
+      newValue: this.value,
+      oldValue: undefined
+    });
+    return registerListener(this, listener);
+  };
+
+  ObservableValue.prototype.toJSON = function () {
+    return this.get();
+  };
+
+  ObservableValue.prototype.toString = function () {
+    return this.name + "[" + this.value + "]";
+  };
+
+  ObservableValue.prototype.valueOf = function () {
+    return toPrimitive(this.get());
+  };
+
+  return ObservableValue;
+}(Atom);
+
+ObservableValue.prototype[primitiveSymbol()] = ObservableValue.prototype.valueOf;
+var isObservableValue = createInstanceofPredicate("ObservableValue", ObservableValue);
+
+var ObservableObjectAdministration =
+/** @class */
+function () {
+  function ObservableObjectAdministration(target, name, defaultEnhancer) {
+    this.target = target;
+    this.name = name;
+    this.defaultEnhancer = defaultEnhancer;
+    this.values = {};
+  }
+
+  ObservableObjectAdministration.prototype.read = function (owner, key) {
+    if (process.env.NODE_ENV === "production" && this.target !== owner) {
+      this.illegalAccess(owner, key);
+      if (!this.values[key]) return undefined;
+    }
+
+    return this.values[key].get();
+  };
+
+  ObservableObjectAdministration.prototype.write = function (owner, key, newValue) {
+    var instance = this.target;
+
+    if (process.env.NODE_ENV === "production" && instance !== owner) {
+      this.illegalAccess(owner, key);
+    }
+
+    var observable = this.values[key];
+
+    if (observable instanceof ComputedValue) {
+      observable.set(newValue);
+      return;
+    } // intercept
+
+
+    if (hasInterceptors(this)) {
+      var change = interceptChange(this, {
+        type: "update",
+        object: instance,
+        name: key,
+        newValue: newValue
+      });
+      if (!change) return;
+      newValue = change.newValue;
+    }
+
+    newValue = observable.prepareNewValue(newValue); // notify spy & observers
+
+    if (newValue !== globalState.UNCHANGED) {
+      var notify = hasListeners(this);
+      var notifySpy = isSpyEnabled();
+      var change = notify || notifySpy ? {
+        type: "update",
+        object: instance,
+        oldValue: observable.value,
+        name: key,
+        newValue: newValue
+      } : null;
+      if (notifySpy) spyReportStart(__assign({}, change, {
+        name: this.name,
+        key: key
+      }));
+      observable.setNewValue(newValue);
+      if (notify) notifyListeners(this, change);
+      if (notifySpy) spyReportEnd();
+    }
+  };
+
+  ObservableObjectAdministration.prototype.remove = function (key) {
+    if (!this.values[key]) return;
+    var target = this.target;
+
+    if (hasInterceptors(this)) {
+      var change = interceptChange(this, {
+        object: target,
+        name: key,
+        type: "remove"
+      });
+      if (!change) return;
+    }
+
+    try {
+      startBatch();
+      var notify = hasListeners(this);
+      var notifySpy = isSpyEnabled();
+      var oldValue = this.values[key].get();
+      if (this.keys) this.keys.remove(key);
+      delete this.values[key];
+      delete this.target[key];
+      var change = notify || notifySpy ? {
+        type: "remove",
+        object: target,
+        oldValue: oldValue,
+        name: key
+      } : null;
+      if (notifySpy) spyReportStart(__assign({}, change, {
+        name: this.name,
+        key: key
+      }));
+      if (notify) notifyListeners(this, change);
+      if (notifySpy) spyReportEnd();
+    } finally {
+      endBatch();
+    }
+  };
+
+  ObservableObjectAdministration.prototype.illegalAccess = function (owner, propName) {
+    /**
+     * This happens if a property is accessed through the prototype chain, but the property was
+     * declared directly as own property on the prototype.
+     *
+     * E.g.:
+     * class A {
+     * }
+     * extendObservable(A.prototype, { x: 1 })
+     *
+     * classB extens A {
+     * }
+     * console.log(new B().x)
+     *
+     * It is unclear whether the property should be considered 'static' or inherited.
+     * Either use `console.log(A.x)`
+     * or: decorate(A, { x: observable })
+     *
+     * When using decorate, the property will always be redeclared as own property on the actual instance
+     */
+    console.warn("Property '" + propName + "' of '" + owner + "' was accessed through the prototype chain. Use 'decorate' instead to declare the prop or access it statically through it's owner");
+  };
+  /**
+   * Observes this object. Triggers for the events 'add', 'update' and 'delete'.
+   * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe
+   * for callback details
+   */
+
+
+  ObservableObjectAdministration.prototype.observe = function (callback, fireImmediately) {
+    process.env.NODE_ENV !== "production" && invariant(fireImmediately !== true, "`observe` doesn't support the fire immediately property for observable objects.");
+    return registerListener(this, callback);
+  };
+
+  ObservableObjectAdministration.prototype.intercept = function (handler) {
+    return registerInterceptor(this, handler);
+  };
+
+  ObservableObjectAdministration.prototype.getKeys = function () {
+    var _this = this;
+
+    if (this.keys === undefined) {
+      this.keys = new ObservableArray(Object.keys(this.values).filter(function (key) {
+        return _this.values[key] instanceof ObservableValue;
+      }), referenceEnhancer, "keys(" + this.name + ")", true);
+    }
+
+    return this.keys.slice();
+  };
+
+  return ObservableObjectAdministration;
+}();
+
+function asObservableObject(target, name, defaultEnhancer) {
+  if (name === void 0) {
+    name = "";
+  }
+
+  if (defaultEnhancer === void 0) {
+    defaultEnhancer = deepEnhancer;
+  }
+
+  var adm = target.$mobx;
+  if (adm) return adm;
+  process.env.NODE_ENV !== "production" && invariant(Object.isExtensible(target), "Cannot make the designated object observable; it is not extensible");
+  if (!isPlainObject(target)) name = (target.constructor.name || "ObservableObject") + "@" + getNextId();
+  if (!name) name = "ObservableObject@" + getNextId();
+  adm = new ObservableObjectAdministration(target, name, defaultEnhancer);
+  addHiddenFinalProp(target, "$mobx", adm);
+  return adm;
 }
 
-function spyReportStart(event) {
-  var change = objectAssign({}, event, {
-    spyReportStart: true
+function defineObservableProperty(target, propName, newValue, enhancer) {
+  var adm = asObservableObject(target);
+  assertPropertyConfigurable(target, propName);
+
+  if (hasInterceptors(adm)) {
+    var change = interceptChange(adm, {
+      object: target,
+      name: propName,
+      type: "add",
+      newValue: newValue
+    });
+    if (!change) return;
+    newValue = change.newValue;
+  }
+
+  var observable = adm.values[propName] = new ObservableValue(newValue, enhancer, adm.name + "." + propName, false);
+  newValue = observable.value; // observableValue might have changed it
+
+  Object.defineProperty(target, propName, generateObservablePropConfig(propName));
+  if (adm.keys) adm.keys.push(propName);
+  notifyPropertyAddition(adm, target, propName, newValue);
+}
+
+function defineComputedProperty(target, // which objects holds the observable and provides `this` context?
+propName, options) {
+  var adm = asObservableObject(target);
+  options.name = adm.name + "." + propName;
+  options.context = target;
+  adm.values[propName] = new ComputedValue(options);
+  Object.defineProperty(target, propName, generateComputedPropConfig(propName));
+}
+
+var observablePropertyConfigs = Object.create(null);
+var computedPropertyConfigs = Object.create(null);
+
+function generateObservablePropConfig(propName) {
+  return observablePropertyConfigs[propName] || (observablePropertyConfigs[propName] = {
+    configurable: true,
+    enumerable: true,
+    get: function get() {
+      return this.$mobx.read(this, propName);
+    },
+    set: function set(v) {
+      this.$mobx.write(this, propName, v);
+    }
   });
-  spyReport(change);
 }
 
-var END_EVENT = {
-  spyReportEnd: true
+function getAdministrationForComputedPropOwner(owner) {
+  var adm = owner.$mobx;
+
+  if (!adm) {
+    // because computed props are declared on proty,
+    // the current instance might not have been initialized yet
+    initializeInstance(owner);
+    return owner.$mobx;
+  }
+
+  return adm;
+}
+
+function generateComputedPropConfig(propName) {
+  return computedPropertyConfigs[propName] || (computedPropertyConfigs[propName] = {
+    configurable: true,
+    enumerable: false,
+    get: function get() {
+      return getAdministrationForComputedPropOwner(this).read(this, propName);
+    },
+    set: function set(v) {
+      getAdministrationForComputedPropOwner(this).write(this, propName, v);
+    }
+  });
+}
+
+function notifyPropertyAddition(adm, object, key, newValue) {
+  var notify = hasListeners(adm);
+  var notifySpy = isSpyEnabled();
+  var change = notify || notifySpy ? {
+    type: "add",
+    object: object,
+    name: key,
+    newValue: newValue
+  } : null;
+  if (notifySpy) spyReportStart(__assign({}, change, {
+    name: adm.name,
+    key: key
+  }));
+  if (notify) notifyListeners(adm, change);
+  if (notifySpy) spyReportEnd();
+}
+
+var isObservableObjectAdministration = createInstanceofPredicate("ObservableObjectAdministration", ObservableObjectAdministration);
+
+function isObservableObject(thing) {
+  if (isObject(thing)) {
+    // Initializers run lazily when transpiling to babel, so make sure they are run...
+    initializeInstance(thing);
+    return isObservableObjectAdministration(thing.$mobx);
+  }
+
+  return false;
+}
+
+function createDecoratorForEnhancer(enhancer) {
+  var decorator = createPropDecorator(true, function (target, propertyName, descriptor, _decoratorTarget, decoratorArgs) {
+    if (process.env.NODE_ENV !== "production") {
+      invariant(!descriptor || !descriptor.get, "@observable cannot be used on getter (property \"" + propertyName + "\"), use @computed instead.");
+    }
+
+    var initialValue = descriptor ? descriptor.initializer ? descriptor.initializer.call(target) : descriptor.value : undefined;
+    defineObservableProperty(target, propertyName, initialValue, enhancer);
+  });
+  var res = // Extra process checks, as this happens during module initialization
+  typeof process !== "undefined" && process.env && process.env.NODE_ENV !== "production" ? function observableDecorator() {
+    // This wrapper function is just to detect illegal decorator invocations, deprecate in a next version
+    // and simply return the created prop decorator
+    if (arguments.length < 2) return fail$1("Incorrect decorator invocation. @observable decorator doesn't expect any arguments");
+    return decorator.apply(null, arguments);
+  } : decorator;
+  res.enhancer = enhancer;
+  return res;
+}
+
+function _isObservable(value, property) {
+  if (value === null || value === undefined) return false;
+
+  if (property !== undefined) {
+    if (process.env.NODE_ENV !== "production" && (isObservableMap(value) || isObservableArray(value))) return fail$1("isObservable(object, propertyName) is not supported for arrays and maps. Use map.has or array.length instead.");
+
+    if (isObservableObject(value)) {
+      var o = value.$mobx;
+      return o.values && !!o.values[property];
+    }
+
+    return false;
+  } // For first check, see #701
+
+
+  return isObservableObject(value) || !!value.$mobx || isAtom(value) || isReaction(value) || isComputedValue(value);
+}
+
+function isObservable(value) {
+  if (arguments.length !== 1) fail$1(process.env.NODE_ENV !== "production" && "isObservable expects only 1 argument. Use isObservableProp to inspect the observability of a property");
+  return _isObservable(value);
+}
+
+function isObservableProp(value, propName) {
+  if (typeof propName !== "string") return fail$1(process.env.NODE_ENV !== "production" && "expected a property name as second argument");
+  return _isObservable(value, propName);
+}
+
+function _isComputed(value, property) {
+  if (value === null || value === undefined) return false;
+
+  if (property !== undefined) {
+    if (isObservableObject(value) === false) return false;
+    if (!value.$mobx.values[property]) return false;
+    var atom = getAtom(value, property);
+    return isComputedValue(atom);
+  }
+
+  return isComputedValue(value);
+}
+
+function isComputed(value) {
+  if (arguments.length > 1) return fail$1(process.env.NODE_ENV !== "production" && "isComputed expects only 1 argument. Use isObservableProp to inspect the observability of a property");
+  return _isComputed(value);
+}
+
+function isComputedProp(value, propName) {
+  if (typeof propName !== "string") return fail$1(process.env.NODE_ENV !== "production" && "isComputed expected a property name as second argument");
+  return _isComputed(value, propName);
+}
+
+var computedDecorator = createPropDecorator(false, function (instance, propertyName, descriptor, decoratorTarget, decoratorArgs) {
+  var get = descriptor.get,
+      set = descriptor.set; // initialValue is the descriptor for get / set props
+  // Optimization: faster on decorator target or instance? Assuming target
+  // Optimization: find out if declaring on instance isn't just faster. (also makes the property descriptor simpler). But, more memory usage..
+  // Forcing instance now, fixes hot reloadig issues on React Native:
+
+  var options = decoratorArgs[0] || {};
+  defineComputedProperty(instance, propertyName, __assign({
+    get: get,
+    set: set
+  }, options));
+});
+var computedStructDecorator = computedDecorator({
+  equals: comparer.structural
+});
+/**
+ * Decorator for class properties: @computed get value() { return expr; }.
+ * For legacy purposes also invokable as ES5 observable created: `computed(() => expr)`;
+ */
+
+var computed = function computed(arg1, arg2, arg3) {
+  if (typeof arg2 === "string") {
+    // @computed
+    return computedDecorator.apply(null, arguments);
+  }
+
+  if (arg1 !== null && (typeof arg1 === "undefined" ? "undefined" : _typeof(arg1)) === "object" && arguments.length === 1) {
+    // @computed({ options })
+    return computedDecorator.apply(null, arguments);
+  } // computed(expr, options?)
+
+
+  if (process.env.NODE_ENV !== "production") {
+    invariant(typeof arg1 === "function", "First argument to `computed` should be an expression.");
+    invariant(arguments.length < 3, "Computed takes one or two arguments if used as function");
+  }
+
+  var opts = (typeof arg2 === "undefined" ? "undefined" : _typeof(arg2)) === "object" ? arg2 : {};
+  opts.get = arg1;
+  opts.set = typeof arg2 === "function" ? arg2 : opts.set;
+  opts.name = opts.name || arg1.name || "";
+  /* for generated name */
+
+  return new ComputedValue(opts);
 };
 
-function spyReportEnd(change) {
-  if (change) spyReport(objectAssign({}, change, END_EVENT));else spyReport(END_EVENT);
+computed.struct = computedStructDecorator;
+
+function extendShallowObservable(target, properties, decorators) {
+  deprecated("'extendShallowObservable' is deprecated, use 'extendObservable(target, props, { deep: false })' instead");
+  return extendObservable(target, properties, decorators, shallowCreateObservableOptions);
 }
 
-function spy(listener) {
-  globalState.spyListeners.push(listener);
-  return once(function () {
-    var idx = globalState.spyListeners.indexOf(listener);
-    if (idx !== -1) globalState.spyListeners.splice(idx, 1);
+function extendObservable(target, properties, decorators, options) {
+  if (process.env.NODE_ENV !== "production") {
+    invariant(arguments.length >= 2 && arguments.length <= 4, "'extendObservable' expected 2-4 arguments");
+    invariant((typeof target === "undefined" ? "undefined" : _typeof(target)) === "object", "'extendObservable' expects an object as first argument");
+    invariant(!isObservableMap(target), "'extendObservable' should not be used on maps, use map.merge instead");
+    invariant(!isObservable(properties), "Extending an object with another observable (object) is not supported. Please construct an explicit propertymap, using `toJS` if need. See issue #540");
+    if (decorators) for (var key in decorators) {
+      if (!(key in properties)) fail$1("Trying to declare a decorator for unspecified property '" + key + "'");
+    }
+  }
+
+  options = asCreateObservableOptions(options);
+  var defaultDecorator = options.defaultDecorator || (options.deep === false ? refDecorator : deepDecorator);
+  initializeInstance(target);
+  asObservableObject(target, options.name, defaultDecorator.enhancer); // make sure object is observable, even without initial props
+
+  startBatch();
+
+  try {
+    for (var key in properties) {
+      var descriptor = Object.getOwnPropertyDescriptor(properties, key);
+
+      if (process.env.NODE_ENV !== "production") {
+        if (Object.getOwnPropertyDescriptor(target, key)) fail$1("'extendObservable' can only be used to introduce new properties. Use 'set' or 'decorate' instead. The property '" + key + "' already exists on '" + target + "'");
+        if (isComputed(descriptor.value)) fail$1("Passing a 'computed' as initial property value is no longer supported by extendObservable. Use a getter or decorator instead");
+      }
+
+      var decorator = decorators && key in decorators ? decorators[key] : descriptor.get ? computedDecorator : defaultDecorator;
+      if (process.env.NODE_ENV !== "production" && typeof decorator !== "function") return fail$1("Not a valid decorator for '" + key + "', got: " + decorator);
+      var resultDescriptor = decorator(target, key, descriptor, true);
+      if (resultDescriptor // otherwise, assume already applied, due to `applyToInstance`
+      ) Object.defineProperty(target, key, resultDescriptor);
+    }
+  } finally {
+    endBatch();
+  }
+
+  return target;
+} // Predefined bags of create observable options, to avoid allocating temporarily option objects
+// in the majority of cases
+
+
+var defaultCreateObservableOptions = {
+  deep: true,
+  name: undefined,
+  defaultDecorator: undefined
+};
+var shallowCreateObservableOptions = {
+  deep: false,
+  name: undefined,
+  defaultDecorator: undefined
+};
+Object.freeze(defaultCreateObservableOptions);
+Object.freeze(shallowCreateObservableOptions);
+
+function assertValidOption(key) {
+  if (!/^(deep|name|defaultDecorator)$/.test(key)) fail$1("invalid option for (extend)observable: " + key);
+}
+
+function asCreateObservableOptions(thing) {
+  if (thing === null || thing === undefined) return defaultCreateObservableOptions;
+  if (typeof thing === "string") return {
+    name: thing,
+    deep: true
+  };
+
+  if (process.env.NODE_ENV !== "production") {
+    if ((typeof thing === "undefined" ? "undefined" : _typeof(thing)) !== "object") return fail$1("expected options object");
+    Object.keys(thing).forEach(assertValidOption);
+  }
+
+  return thing;
+}
+
+function getEnhancerFromOptions(options) {
+  return options.defaultDecorator ? options.defaultDecorator.enhancer : options.deep === false ? referenceEnhancer : deepEnhancer;
+}
+
+var deepDecorator = createDecoratorForEnhancer(deepEnhancer);
+var shallowDecorator = createDecoratorForEnhancer(shallowEnhancer);
+var refDecorator = createDecoratorForEnhancer(referenceEnhancer);
+var refStructDecorator = createDecoratorForEnhancer(refStructEnhancer);
+/**
+ * Turns an object, array or function into a reactive structure.
+ * @param v the value which should become observable.
+ */
+
+function createObservable(v, arg2, arg3) {
+  // @observable someProp;
+  if (typeof arguments[1] === "string") {
+    return deepDecorator.apply(null, arguments);
+  } // it is an observable already, done
+
+
+  if (isObservable(v)) return v; // something that can be converted and mutated?
+
+  var res = isPlainObject(v) ? observable.object(v, arg2, arg3) : Array.isArray(v) ? observable.array(v, arg2) : isES6Map(v) ? observable.map(v, arg2) : v; // this value could be converted to a new observable data structure, return it
+
+  if (res !== v) return res; // otherwise, just box it
+
+  fail$1(process.env.NODE_ENV !== "production" && "The provided value could not be converted into an observable. If you want just create an observable reference to the object use 'observable.box(value)'");
+}
+
+var observableFactories = {
+  box: function box(value, options) {
+    if (arguments.length > 2) incorrectlyUsedAsDecorator("box");
+    var o = asCreateObservableOptions(options);
+    return new ObservableValue(value, getEnhancerFromOptions(o), o.name);
+  },
+  shallowBox: function shallowBox(value, name) {
+    if (arguments.length > 2) incorrectlyUsedAsDecorator("shallowBox");
+    deprecated("observable.shallowBox", "observable.box(value, { deep: false })");
+    return observable.box(value, {
+      name: name,
+      deep: false
+    });
+  },
+  array: function array(initialValues, options) {
+    if (arguments.length > 2) incorrectlyUsedAsDecorator("array");
+    var o = asCreateObservableOptions(options);
+    return new ObservableArray(initialValues, getEnhancerFromOptions(o), o.name);
+  },
+  shallowArray: function shallowArray(initialValues, name) {
+    if (arguments.length > 2) incorrectlyUsedAsDecorator("shallowArray");
+    deprecated("observable.shallowArray", "observable.array(values, { deep: false })");
+    return observable.array(initialValues, {
+      name: name,
+      deep: false
+    });
+  },
+  map: function map(initialValues, options) {
+    if (arguments.length > 2) incorrectlyUsedAsDecorator("map");
+    var o = asCreateObservableOptions(options);
+    return new ObservableMap(initialValues, getEnhancerFromOptions(o), o.name);
+  },
+  shallowMap: function shallowMap(initialValues, name) {
+    if (arguments.length > 2) incorrectlyUsedAsDecorator("shallowMap");
+    deprecated("observable.shallowMap", "observable.map(values, { deep: false })");
+    return observable.map(initialValues, {
+      name: name,
+      deep: false
+    });
+  },
+  object: function object(props, decorators, options) {
+    if (typeof arguments[1] === "string") incorrectlyUsedAsDecorator("object");
+    var o = asCreateObservableOptions(options);
+    return extendObservable({}, props, decorators, o);
+  },
+  shallowObject: function shallowObject(props, name) {
+    if (typeof arguments[1] === "string") incorrectlyUsedAsDecorator("shallowObject");
+    deprecated("observable.shallowObject", "observable.object(values, {}, { deep: false })");
+    return observable.object(props, {}, {
+      name: name,
+      deep: false
+    });
+  },
+  ref: refDecorator,
+  shallow: shallowDecorator,
+  deep: deepDecorator,
+  struct: refStructDecorator
+};
+var observable = createObservable; // weird trick to keep our typings nicely with our funcs, and still extend the observable function
+
+Object.keys(observableFactories).forEach(function (name) {
+  return observable[name] = observableFactories[name];
+});
+
+function incorrectlyUsedAsDecorator(methodName) {
+  fail$1( // process.env.NODE_ENV !== "production" &&
+  "Expected one or two arguments to observable." + methodName + ". Did you accidentally try to use observable." + methodName + " as decorator?");
+}
+
+function deepEnhancer(v, _, name) {
+  // it is an observable already, done
+  if (isObservable(v)) return v; // something that can be converted and mutated?
+
+  if (Array.isArray(v)) return observable.array(v, {
+    name: name
   });
+  if (isPlainObject(v)) return observable.object(v, undefined, {
+    name: name
+  });
+  if (isES6Map(v)) return observable.map(v, {
+    name: name
+  });
+  return v;
+}
+
+function shallowEnhancer(v, _, name) {
+  if (v === undefined || v === null) return v;
+  if (isObservableObject(v) || isObservableArray(v) || isObservableMap(v)) return v;
+  if (Array.isArray(v)) return observable.array(v, {
+    name: name,
+    deep: false
+  });
+  if (isPlainObject(v)) return observable.object(v, undefined, {
+    name: name,
+    deep: false
+  });
+  if (isES6Map(v)) return observable.map(v, {
+    name: name,
+    deep: false
+  });
+  return fail$1(process.env.NODE_ENV !== "production" && "The shallow modifier / decorator can only used in combination with arrays, objects and maps");
+}
+
+function referenceEnhancer(newValue) {
+  // never turn into an observable
+  return newValue;
+}
+
+function refStructEnhancer(v, oldValue, name) {
+  if (process.env.NODE_ENV !== "production" && isObservable(v)) throw "observable.struct should not be used with observable values";
+  if (deepEqual(v, oldValue)) return oldValue;
+  return v;
 }
 
 function iteratorSymbol() {
   return typeof Symbol === "function" && Symbol.iterator || "@@iterator";
 }
 
-var IS_ITERATING_MARKER = "__$$iterating";
-
-function arrayAsIterator(array) {
-  // returning an array for entries(), values() etc for maps was a mis-interpretation of the specs..,
-  // yet it is quite convenient to be able to use the response both as array directly and as iterator
-  // it is suboptimal, but alas...
-  invariant(array[IS_ITERATING_MARKER] !== true, "Illegal state: cannot recycle array as iterator");
-  addHiddenFinalProp(array, IS_ITERATING_MARKER, true);
-  var idx = -1;
-  addHiddenFinalProp(array, "next", function next() {
-    idx++;
-    return {
-      done: idx >= this.length,
-      value: idx < this.length ? this[idx] : undefined
-    };
-  });
-  return array;
-}
-
 function declareIterator(prototType, iteratorFactory) {
   addHiddenFinalProp(prototType, iteratorSymbol(), iteratorFactory);
+}
+
+function makeIterable(iterator) {
+  iterator[iteratorSymbol()] = self;
+  return iterator;
+}
+
+function self() {
+  return this;
+}
+/**
+ * During a transaction no views are updated until the end of the transaction.
+ * The transaction will be run synchronously nonetheless.
+ *
+ * @param action a function that updates some reactive state
+ * @returns any value that was returned by the 'action' parameter.
+ */
+
+
+function transaction(action, thisArg) {
+  if (thisArg === void 0) {
+    thisArg = undefined;
+  }
+
+  startBatch();
+
+  try {
+    return action.apply(thisArg);
+  } finally {
+    endBatch();
+  }
+}
+
+var ObservableMapMarker = {};
+
+var ObservableMap =
+/** @class */
+function () {
+  function ObservableMap(initialData, enhancer, name) {
+    if (enhancer === void 0) {
+      enhancer = deepEnhancer;
+    }
+
+    if (name === void 0) {
+      name = "ObservableMap@" + getNextId();
+    }
+
+    this.enhancer = enhancer;
+    this.name = name;
+    this.$mobx = ObservableMapMarker;
+    this._keys = new ObservableArray(undefined, referenceEnhancer, this.name + ".keys()", true);
+
+    if (typeof Map !== "function") {
+      throw new Error("mobx.map requires Map polyfill for the current browser. Check babel-polyfill or core-js/es6/map.js");
+    }
+
+    this._data = new Map();
+    this._hasMap = new Map();
+    this.merge(initialData);
+  }
+
+  ObservableMap.prototype._has = function (key) {
+    return this._data.has(key);
+  };
+
+  ObservableMap.prototype.has = function (key) {
+    if (this._hasMap.has(key)) return this._hasMap.get(key).get();
+    return this._updateHasMapEntry(key, false).get();
+  };
+
+  ObservableMap.prototype.set = function (key, value) {
+    var hasKey = this._has(key);
+
+    if (hasInterceptors(this)) {
+      var change = interceptChange(this, {
+        type: hasKey ? "update" : "add",
+        object: this,
+        newValue: value,
+        name: key
+      });
+      if (!change) return this;
+      value = change.newValue;
+    }
+
+    if (hasKey) {
+      this._updateValue(key, value);
+    } else {
+      this._addValue(key, value);
+    }
+
+    return this;
+  };
+
+  ObservableMap.prototype.delete = function (key) {
+    var _this = this;
+
+    if (hasInterceptors(this)) {
+      var change = interceptChange(this, {
+        type: "delete",
+        object: this,
+        name: key
+      });
+      if (!change) return false;
+    }
+
+    if (this._has(key)) {
+      var notifySpy = isSpyEnabled();
+      var notify = hasListeners(this);
+      var change = notify || notifySpy ? {
+        type: "delete",
+        object: this,
+        oldValue: this._data.get(key).value,
+        name: key
+      } : null;
+      if (notifySpy) spyReportStart(__assign({}, change, {
+        name: this.name,
+        key: key
+      }));
+      transaction(function () {
+        _this._keys.remove(key);
+
+        _this._updateHasMapEntry(key, false);
+
+        var observable = _this._data.get(key);
+
+        observable.setNewValue(undefined);
+
+        _this._data.delete(key);
+      });
+      if (notify) notifyListeners(this, change);
+      if (notifySpy) spyReportEnd();
+      return true;
+    }
+
+    return false;
+  };
+
+  ObservableMap.prototype._updateHasMapEntry = function (key, value) {
+    // optimization; don't fill the hasMap if we are not observing, or remove entry if there are no observers anymore
+    var entry = this._hasMap.get(key);
+
+    if (entry) {
+      entry.setNewValue(value);
+    } else {
+      entry = new ObservableValue(value, referenceEnhancer, this.name + "." + key + "?", false);
+
+      this._hasMap.set(key, entry);
+    }
+
+    return entry;
+  };
+
+  ObservableMap.prototype._updateValue = function (key, newValue) {
+    var observable = this._data.get(key);
+
+    newValue = observable.prepareNewValue(newValue);
+
+    if (newValue !== globalState.UNCHANGED) {
+      var notifySpy = isSpyEnabled();
+      var notify = hasListeners(this);
+      var change = notify || notifySpy ? {
+        type: "update",
+        object: this,
+        oldValue: observable.value,
+        name: key,
+        newValue: newValue
+      } : null;
+      if (notifySpy) spyReportStart(__assign({}, change, {
+        name: this.name,
+        key: key
+      }));
+      observable.setNewValue(newValue);
+      if (notify) notifyListeners(this, change);
+      if (notifySpy) spyReportEnd();
+    }
+  };
+
+  ObservableMap.prototype._addValue = function (key, newValue) {
+    var _this = this;
+
+    transaction(function () {
+      var observable = new ObservableValue(newValue, _this.enhancer, _this.name + "." + key, false);
+
+      _this._data.set(key, observable);
+
+      newValue = observable.value; // value might have been changed
+
+      _this._updateHasMapEntry(key, true);
+
+      _this._keys.push(key);
+    });
+    var notifySpy = isSpyEnabled();
+    var notify = hasListeners(this);
+    var change = notify || notifySpy ? {
+      type: "add",
+      object: this,
+      name: key,
+      newValue: newValue
+    } : null;
+    if (notifySpy) spyReportStart(__assign({}, change, {
+      name: this.name,
+      key: key
+    }));
+    if (notify) notifyListeners(this, change);
+    if (notifySpy) spyReportEnd();
+  };
+
+  ObservableMap.prototype.get = function (key) {
+    if (this.has(key)) return this.dehanceValue(this._data.get(key).get());
+    return this.dehanceValue(undefined);
+  };
+
+  ObservableMap.prototype.dehanceValue = function (value) {
+    if (this.dehancer !== undefined) {
+      return this.dehancer(value);
+    }
+
+    return value;
+  };
+
+  ObservableMap.prototype.keys = function () {
+    return this._keys[iteratorSymbol()]();
+  };
+
+  ObservableMap.prototype.values = function () {
+    var self = this;
+    var nextIndex = 0;
+    return makeIterable({
+      next: function next() {
+        return nextIndex < self._keys.length ? {
+          value: self.get(self._keys[nextIndex++]),
+          done: false
+        } : {
+          value: undefined,
+          done: true
+        };
+      }
+    });
+  };
+
+  ObservableMap.prototype.entries = function () {
+    var self = this;
+    var nextIndex = 0;
+    return makeIterable({
+      next: function next() {
+        if (nextIndex < self._keys.length) {
+          var key = self._keys[nextIndex++];
+          return {
+            value: [key, self.get(key)],
+            done: false
+          };
+        }
+
+        return {
+          done: true
+        };
+      }
+    });
+  };
+
+  ObservableMap.prototype.forEach = function (callback, thisArg) {
+    var _this = this;
+
+    this._keys.forEach(function (key) {
+      return callback.call(thisArg, _this.get(key), key, _this);
+    });
+  };
+  /** Merge another object into this object, returns this. */
+
+
+  ObservableMap.prototype.merge = function (other) {
+    var _this = this;
+
+    if (isObservableMap(other)) {
+      other = other.toJS();
+    }
+
+    transaction(function () {
+      if (isPlainObject(other)) Object.keys(other).forEach(function (key) {
+        return _this.set(key, other[key]);
+      });else if (Array.isArray(other)) other.forEach(function (_a) {
+        var _b = __read(_a, 2),
+            key = _b[0],
+            value = _b[1];
+
+        return _this.set(key, value);
+      });else if (isES6Map(other)) other.forEach(function (value, key) {
+        return _this.set(key, value);
+      });else if (other !== null && other !== undefined) fail$1("Cannot initialize map from " + other);
+    });
+    return this;
+  };
+
+  ObservableMap.prototype.clear = function () {
+    var _this = this;
+
+    transaction(function () {
+      untracked(function () {
+        _this._keys.slice().forEach(function (key) {
+          return _this.delete(key);
+        });
+      });
+    });
+  };
+
+  ObservableMap.prototype.replace = function (values) {
+    var _this = this;
+
+    transaction(function () {
+      // grab all the keys that are present in the new map but not present in the current map
+      // and delete them from the map, then merge the new map
+      // this will cause reactions only on changed values
+      var newKeys = getMapLikeKeys(values);
+      var oldKeys = _this._keys;
+      var missingKeys = oldKeys.filter(function (k) {
+        return newKeys.indexOf(k) === -1;
+      });
+      missingKeys.forEach(function (k) {
+        return _this.delete(k);
+      });
+
+      _this.merge(values);
+    });
+    return this;
+  };
+
+  Object.defineProperty(ObservableMap.prototype, "size", {
+    get: function get() {
+      return this._keys.length;
+    },
+    enumerable: true,
+    configurable: true
+  });
+  /**
+   * Returns a plain object that represents this map.
+   * Note that all the keys being stringified.
+   * If there are duplicating keys after converting them to strings, behaviour is undetermined.
+   */
+
+  ObservableMap.prototype.toPOJO = function () {
+    var _this = this;
+
+    var res = {};
+
+    this._keys.forEach(function (key) {
+      return res["" + key] = _this.get(key);
+    });
+
+    return res;
+  };
+  /**
+   * Returns a shallow non observable object clone of this map.
+   * Note that the values migth still be observable. For a deep clone use mobx.toJS.
+   */
+
+
+  ObservableMap.prototype.toJS = function () {
+    var _this = this;
+
+    var res = new Map();
+
+    this._keys.forEach(function (key) {
+      return res.set(key, _this.get(key));
+    });
+
+    return res;
+  };
+
+  ObservableMap.prototype.toJSON = function () {
+    // Used by JSON.stringify
+    return this.toPOJO();
+  };
+
+  ObservableMap.prototype.toString = function () {
+    var _this = this;
+
+    return this.name + "[{ " + this._keys.map(function (key) {
+      return key + ": " + ("" + _this.get(key));
+    }).join(", ") + " }]";
+  };
+  /**
+   * Observes this object. Triggers for the events 'add', 'update' and 'delete'.
+   * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe
+   * for callback details
+   */
+
+
+  ObservableMap.prototype.observe = function (listener, fireImmediately) {
+    process.env.NODE_ENV !== "production" && invariant(fireImmediately !== true, "`observe` doesn't support fireImmediately=true in combination with maps.");
+    return registerListener(this, listener);
+  };
+
+  ObservableMap.prototype.intercept = function (handler) {
+    return registerInterceptor(this, handler);
+  };
+
+  return ObservableMap;
+}();
+
+declareIterator(ObservableMap.prototype, function () {
+  return this.entries();
+});
+addHiddenFinalProp(ObservableMap.prototype, typeof Symbol !== "undefined" ? Symbol.toStringTag : "@@toStringTag", "Map");
+/* 'var' fixes small-build issue */
+
+var isObservableMap = createInstanceofPredicate("ObservableMap", ObservableMap);
+
+function getAtom(thing, property) {
+  if ((typeof thing === "undefined" ? "undefined" : _typeof(thing)) === "object" && thing !== null) {
+    if (isObservableArray(thing)) {
+      if (property !== undefined) fail$1(process.env.NODE_ENV !== "production" && "It is not possible to get index atoms from arrays");
+      return thing.$mobx.atom;
+    }
+
+    if (isObservableMap(thing)) {
+      var anyThing = thing;
+      if (property === undefined) return getAtom(anyThing._keys);
+
+      var observable = anyThing._data.get(property) || anyThing._hasMap.get(property);
+
+      if (!observable) fail$1(process.env.NODE_ENV !== "production" && "the entry '" + property + "' does not exist in the observable map '" + getDebugName(thing) + "'");
+      return observable;
+    } // Initializers run lazily when transpiling to babel, so make sure they are run...
+
+
+    initializeInstance(thing);
+    if (property && !thing.$mobx) thing[property]; // See #1072
+
+    if (isObservableObject(thing)) {
+      if (!property) return fail$1(process.env.NODE_ENV !== "production" && "please specify a property");
+      var observable = thing.$mobx.values[property];
+      if (!observable) fail$1(process.env.NODE_ENV !== "production" && "no observable property '" + property + "' found on the observable object '" + getDebugName(thing) + "'");
+      return observable;
+    }
+
+    if (isAtom(thing) || isComputedValue(thing) || isReaction(thing)) {
+      return thing;
+    }
+  } else if (typeof thing === "function") {
+    if (isReaction(thing.$mobx)) {
+      // disposer function
+      return thing.$mobx;
+    }
+  }
+
+  return fail$1(process.env.NODE_ENV !== "production" && "Cannot obtain atom from " + thing);
+}
+
+function getAdministration(thing, property) {
+  if (!thing) fail$1("Expecting some object");
+  if (property !== undefined) return getAdministration(getAtom(thing, property));
+  if (isAtom(thing) || isComputedValue(thing) || isReaction(thing)) return thing;
+  if (isObservableMap(thing)) return thing; // Initializers run lazily when transpiling to babel, so make sure they are run...
+
+  initializeInstance(thing);
+  if (thing.$mobx) return thing.$mobx;
+  fail$1(process.env.NODE_ENV !== "production" && "Cannot obtain administration from " + thing);
+}
+
+function getDebugName(thing, property) {
+  var named;
+  if (property !== undefined) named = getAtom(thing, property);else if (isObservableObject(thing) || isObservableMap(thing)) named = getAdministration(thing);else named = getAtom(thing); // valid for arrays as well
+
+  return named.name;
+}
+
+function onBecomeObserved(thing, arg2, arg3) {
+  return interceptHook("onBecomeObserved", thing, arg2, arg3);
+}
+
+function onBecomeUnobserved(thing, arg2, arg3) {
+  return interceptHook("onBecomeUnobserved", thing, arg2, arg3);
+}
+
+function interceptHook(hook, thing, arg2, arg3) {
+  var atom = typeof arg2 === "string" ? getAtom(thing, arg2) : getAtom(thing);
+  var cb = typeof arg2 === "string" ? arg3 : arg2;
+  var orig = atom[hook];
+  if (typeof orig !== "function") return fail$1(process.env.NODE_ENV !== "production" && "Not an atom that can be (un)observed");
+
+  atom[hook] = function () {
+    orig.call(this);
+    cb.call(this);
+  };
+
+  return function () {
+    atom[hook] = orig;
+  };
+}
+/**
+ * Anything that can be used to _store_ state is an Atom in mobx. Atoms have two important jobs
+ *
+ * 1) detect when they are being _used_ and report this (using reportObserved). This allows mobx to make the connection between running functions and the data they used
+ * 2) they should notify mobx whenever they have _changed_. This way mobx can re-run any functions (derivations) that are using this atom.
+ */
+
+
+var Atom;
+var isAtom;
+
+function declareAtom() {
+  if (Atom) return;
+
+  Atom =
+  /** @class */
+  function () {
+    /**
+     * Create a new atom. For debugging purposes it is recommended to give it a name.
+     * The onBecomeObserved and onBecomeUnobserved callbacks can be used for resource management.
+     */
+    function AtomImpl(name) {
+      if (name === void 0) {
+        name = "Atom@" + getNextId();
+      }
+
+      this.name = name;
+      this.isPendingUnobservation = false; // for effective unobserving. BaseAtom has true, for extra optimization, so its onBecomeUnobserved never gets called, because it's not needed
+
+      this.isBeingObserved = false;
+      this.observers = [];
+      this.observersIndexes = {};
+      this.diffValue = 0;
+      this.lastAccessedBy = 0;
+      this.lowestObserverState = IDerivationState.NOT_TRACKING;
+    }
+
+    AtomImpl.prototype.onBecomeUnobserved = function () {// noop
+    };
+
+    AtomImpl.prototype.onBecomeObserved = function () {
+      /* noop */
+    };
+    /**
+    * Invoke this method to notify mobx that your atom has been used somehow.
+    * Returns true if there is currently a reactive context.
+    */
+
+
+    AtomImpl.prototype.reportObserved = function () {
+      return reportObserved(this);
+    };
+    /**
+    * Invoke this method _after_ this method has changed to signal mobx that all its observers should invalidate.
+    */
+
+
+    AtomImpl.prototype.reportChanged = function () {
+      startBatch();
+      propagateChanged(this);
+      endBatch();
+    };
+
+    AtomImpl.prototype.toString = function () {
+      return this.name;
+    };
+
+    return AtomImpl;
+  }();
+
+  isAtom = createInstanceofPredicate("Atom", Atom);
+}
+
+function createAtom(name, onBecomeObservedHandler, onBecomeUnobservedHandler) {
+  if (onBecomeObservedHandler === void 0) {
+    onBecomeObservedHandler = noop;
+  }
+
+  if (onBecomeUnobservedHandler === void 0) {
+    onBecomeUnobservedHandler = noop;
+  }
+
+  var atom = new Atom(name);
+  onBecomeObserved(atom, onBecomeObservedHandler);
+  onBecomeUnobserved(atom, onBecomeUnobservedHandler);
+  return atom;
 }
 
 var MAX_SPLICE_SIZE = 10000; // See e.g. https://github.com/mobxjs/mobx/issues/859
@@ -1843,7 +3898,9 @@ var safariPrototypeSetterInheritanceBug = function () {
 
 var OBSERVABLE_ARRAY_BUFFER_SIZE = 0; // Typescript workaround to make sure ObservableArray extends Array
 
-var StubArray = function () {
+var StubArray =
+/** @class */
+function () {
   function StubArray() {}
 
   return StubArray;
@@ -1873,15 +3930,15 @@ if (Object.isFrozen(Array)) {
   });
 }
 
-var ObservableArrayAdministration = function () {
+var ObservableArrayAdministration =
+/** @class */
+function () {
   function ObservableArrayAdministration(name, enhancer, array, owned) {
     this.array = array;
     this.owned = owned;
     this.values = [];
     this.lastKnownLength = 0;
-    this.interceptors = null;
-    this.changeListeners = null;
-    this.atom = new BaseAtom(name || "ObservableArray@" + getNextId());
+    this.atom = new Atom(name || "ObservableArray@" + getNextId());
 
     this.enhancer = function (newV, oldV) {
       return enhancer(newV, oldV, name + "[..]");
@@ -1894,7 +3951,7 @@ var ObservableArrayAdministration = function () {
   };
 
   ObservableArrayAdministration.prototype.dehanceValues = function (values) {
-    if (this.dehancer !== undefined) return values.map(this.dehancer);
+    if (this.dehancer !== undefined && values.length > 0) return values.map(this.dehancer);
     return values;
   };
 
@@ -1956,7 +4013,7 @@ var ObservableArrayAdministration = function () {
     var length = this.values.length;
     if (index === undefined) index = 0;else if (index > length) index = length;else if (index < 0) index = Math.max(0, length + index);
     if (arguments.length === 1) deleteCount = length - index;else if (deleteCount === undefined || deleteCount === null) deleteCount = 0;else deleteCount = Math.max(0, Math.min(deleteCount, length - index));
-    if (newItems === undefined) newItems = [];
+    if (newItems === undefined) newItems = EMPTY_ARRAY;
 
     if (hasInterceptors(this)) {
       var change = interceptChange(this, {
@@ -1971,7 +4028,7 @@ var ObservableArrayAdministration = function () {
       newItems = change.added;
     }
 
-    newItems = newItems.map(function (v) {
+    newItems = newItems.length === 0 ? newItems : newItems.map(function (v) {
       return _this.enhancer(v, undefined);
     });
     var lengthDelta = newItems.length - deleteCount;
@@ -1983,15 +4040,15 @@ var ObservableArrayAdministration = function () {
   };
 
   ObservableArrayAdministration.prototype.spliceItemsIntoValues = function (index, deleteCount, newItems) {
+    var _a;
+
     if (newItems.length < MAX_SPLICE_SIZE) {
-      return (_a = this.values).splice.apply(_a, [index, deleteCount].concat(newItems));
+      return (_a = this.values).splice.apply(_a, __spread([index, deleteCount], newItems));
     } else {
       var res = this.values.slice(index, index + deleteCount);
       this.values = this.values.slice(0, index).concat(newItems, this.values.slice(index + deleteCount));
       return res;
     }
-
-    var _a;
   };
 
   ObservableArrayAdministration.prototype.notifyArrayChildUpdate = function (index, newValue, oldValue) {
@@ -2004,7 +4061,9 @@ var ObservableArrayAdministration = function () {
       newValue: newValue,
       oldValue: oldValue
     } : null;
-    if (notifySpy) spyReportStart(change);
+    if (notifySpy) spyReportStart(__assign({}, change, {
+      name: this.atom.name
+    }));
     this.atom.reportChanged();
     if (notify) notifyListeners(this, change);
     if (notifySpy) spyReportEnd();
@@ -2022,7 +4081,9 @@ var ObservableArrayAdministration = function () {
       removedCount: removed.length,
       addedCount: added.length
     } : null;
-    if (notifySpy) spyReportStart(change);
+    if (notifySpy) spyReportStart(__assign({}, change, {
+      name: this.atom.name
+    }));
     this.atom.reportChanged(); // conform: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/observe
 
     if (notify) notifyListeners(this, change);
@@ -2032,7 +4093,9 @@ var ObservableArrayAdministration = function () {
   return ObservableArrayAdministration;
 }();
 
-var ObservableArray = function (_super) {
+var ObservableArray =
+/** @class */
+function (_super) {
   __extends(ObservableArray, _super);
 
   function ObservableArray(initialValues, enhancer, name, owned) {
@@ -2050,7 +4113,11 @@ var ObservableArray = function (_super) {
     addHiddenFinalProp(_this, "$mobx", adm);
 
     if (initialValues && initialValues.length) {
+      var prev = allowStateChangesStart(true);
+
       _this.spliceWithArray(0, 0, initialValues);
+
+      allowStateChangesEnd(prev);
     }
 
     if (safariPrototypeSetterInheritanceBug) {
@@ -2120,6 +4187,7 @@ var ObservableArray = function (_super) {
       fromIndex = 0;
     }
 
+    if (arguments.length === 3) deprecated("The array.find fromIndex argument to find will not be supported anymore in the next major");
     var idx = this.findIndex.apply(this, arguments);
     return idx === -1 ? undefined : this.get(idx);
   }; // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
@@ -2130,6 +4198,7 @@ var ObservableArray = function (_super) {
       fromIndex = 0;
     }
 
+    if (arguments.length === 3) deprecated("The array.findIndex fromIndex argument to find will not be supported anymore in the next major");
     var items = this.peek(),
         l = items.length;
 
@@ -2231,6 +4300,8 @@ var ObservableArray = function (_super) {
   };
 
   ObservableArray.prototype.move = function (fromIndex, toIndex) {
+    deprecated("observableArray.move is deprecated, use .slice() & .replace() instead");
+
     function checkIndex(index) {
       if (index < 0) {
         throw new Error("[mobx.array] Index out of bounds: " + index + " is negative");
@@ -2254,10 +4325,10 @@ var ObservableArray = function (_super) {
     var newItems;
 
     if (fromIndex < toIndex) {
-      newItems = oldItems.slice(0, fromIndex).concat(oldItems.slice(fromIndex + 1, toIndex + 1), [oldItems[fromIndex]], oldItems.slice(toIndex + 1));
+      newItems = __spread(oldItems.slice(0, fromIndex), oldItems.slice(fromIndex + 1, toIndex + 1), [oldItems[fromIndex]], oldItems.slice(toIndex + 1));
     } else {
       // toIndex < fromIndex
-      newItems = oldItems.slice(0, toIndex).concat([oldItems[fromIndex]], oldItems.slice(toIndex, fromIndex), oldItems.slice(fromIndex + 1));
+      newItems = __spread(oldItems.slice(0, toIndex), [oldItems[fromIndex]], oldItems.slice(toIndex, fromIndex), oldItems.slice(fromIndex + 1));
     }
 
     this.replace(newItems);
@@ -2320,7 +4391,20 @@ var ObservableArray = function (_super) {
 }(StubArray);
 
 declareIterator(ObservableArray.prototype, function () {
-  return arrayAsIterator(this.slice());
+  this.$mobx.atom.reportObserved();
+  var self = this;
+  var nextIndex = 0;
+  return makeIterable({
+    next: function next() {
+      return nextIndex < self.length ? {
+        value: self[nextIndex++],
+        done: false
+      } : {
+        done: true,
+        value: undefined
+      };
+    }
+  });
 });
 Object.defineProperty(ObservableArray.prototype, "length", {
   enumerable: false,
@@ -2332,6 +4416,27 @@ Object.defineProperty(ObservableArray.prototype, "length", {
     this.$mobx.setArrayLength(newLength);
   }
 });
+
+if (typeof Symbol !== "undefined" && Symbol.toStringTag) {
+  addHiddenProp(ObservableArray.prototype, typeof Symbol !== "undefined" ? Symbol.toStringTag : "@@toStringTag", "Array");
+} // Internet Explorer on desktop doesn't support this.....
+// So, let's don't do this to avoid different semantics
+// See #1395
+// addHiddenProp(
+//     ObservableArray.prototype,
+//     typeof Symbol !== "undefined" ? Symbol.isConcatSpreadable as any : "@@isConcatSpreadable",
+//     {
+//         enumerable: false,
+//         configurable: true,
+//         value: true
+//     }
+// )
+
+/**
+ * Wrap function from prototype
+ */
+
+
 ["every", "filter", "forEach", "indexOf", "join", "lastIndexOf", "map", "reduce", "reduceRight", "slice", "some", "toString", "toLocaleString"].forEach(function (funcName) {
   var baseFunc = Array.prototype[funcName];
   invariant(typeof baseFunc === "function", "Base function not defined on Array prototype: '" + funcName + "'");
@@ -2352,7 +4457,6 @@ function createArrayEntryDescriptor(index) {
     enumerable: false,
     configurable: false,
     get: function get() {
-      // TODO: Check `this`?, see #752?
       return this.get(index);
     },
     set: function set(value) {
@@ -2380,1819 +4484,11 @@ function isObservableArray(thing) {
   return isObject(thing) && isObservableArrayAdministration(thing.$mobx);
 }
 
-var UNCHANGED = {};
-
-var ObservableValue = function (_super) {
-  __extends(ObservableValue, _super);
-
-  function ObservableValue(value, enhancer, name, notifySpy) {
-    if (name === void 0) {
-      name = "ObservableValue@" + getNextId();
-    }
-
-    if (notifySpy === void 0) {
-      notifySpy = true;
-    }
-
-    var _this = _super.call(this, name) || this;
-
-    _this.enhancer = enhancer;
-    _this.hasUnreportedChange = false;
-    _this.dehancer = undefined;
-    _this.value = enhancer(value, undefined, name);
-
-    if (notifySpy && isSpyEnabled()) {
-      // only notify spy if this is a stand-alone observable
-      spyReport({
-        type: "create",
-        object: _this,
-        newValue: _this.value
-      });
-    }
-
-    return _this;
-  }
-
-  ObservableValue.prototype.dehanceValue = function (value) {
-    if (this.dehancer !== undefined) return this.dehancer(value);
-    return value;
-  };
-
-  ObservableValue.prototype.set = function (newValue) {
-    var oldValue = this.value;
-    newValue = this.prepareNewValue(newValue);
-
-    if (newValue !== UNCHANGED) {
-      var notifySpy = isSpyEnabled();
-
-      if (notifySpy) {
-        spyReportStart({
-          type: "update",
-          object: this,
-          newValue: newValue,
-          oldValue: oldValue
-        });
-      }
-
-      this.setNewValue(newValue);
-      if (notifySpy) spyReportEnd();
-    }
-  };
-
-  ObservableValue.prototype.prepareNewValue = function (newValue) {
-    checkIfStateModificationsAreAllowed(this);
-
-    if (hasInterceptors(this)) {
-      var change = interceptChange(this, {
-        object: this,
-        type: "update",
-        newValue: newValue
-      });
-      if (!change) return UNCHANGED;
-      newValue = change.newValue;
-    } // apply modifier
-
-
-    newValue = this.enhancer(newValue, this.value, this.name);
-    return this.value !== newValue ? newValue : UNCHANGED;
-  };
-
-  ObservableValue.prototype.setNewValue = function (newValue) {
-    var oldValue = this.value;
-    this.value = newValue;
-    this.reportChanged();
-
-    if (hasListeners(this)) {
-      notifyListeners(this, {
-        type: "update",
-        object: this,
-        newValue: newValue,
-        oldValue: oldValue
-      });
-    }
-  };
-
-  ObservableValue.prototype.get = function () {
-    this.reportObserved();
-    return this.dehanceValue(this.value);
-  };
-
-  ObservableValue.prototype.intercept = function (handler) {
-    return registerInterceptor(this, handler);
-  };
-
-  ObservableValue.prototype.observe = function (listener, fireImmediately) {
-    if (fireImmediately) listener({
-      object: this,
-      type: "update",
-      newValue: this.value,
-      oldValue: undefined
-    });
-    return registerListener(this, listener);
-  };
-
-  ObservableValue.prototype.toJSON = function () {
-    return this.get();
-  };
-
-  ObservableValue.prototype.toString = function () {
-    return this.name + "[" + this.value + "]";
-  };
-
-  ObservableValue.prototype.valueOf = function () {
-    return toPrimitive(this.get());
-  };
-
-  return ObservableValue;
-}(BaseAtom);
-
-ObservableValue.prototype[primitiveSymbol()] = ObservableValue.prototype.valueOf;
-var isObservableValue = createInstanceofPredicate("ObservableValue", ObservableValue);
-var messages = {
-  m001: "It is not allowed to assign new values to @action fields",
-  m002: "`runInAction` expects a function",
-  m003: "`runInAction` expects a function without arguments",
-  m004: "autorun expects a function",
-  m005: "Warning: attempted to pass an action to autorun. Actions are untracked and will not trigger on state changes. Use `reaction` or wrap only your state modification code in an action.",
-  m006: "Warning: attempted to pass an action to autorunAsync. Actions are untracked and will not trigger on state changes. Use `reaction` or wrap only your state modification code in an action.",
-  m007: "reaction only accepts 2 or 3 arguments. If migrating from MobX 2, please provide an options object",
-  m008: "wrapping reaction expression in `asReference` is no longer supported, use options object instead",
-  m009: "@computed can only be used on getter functions, like: '@computed get myProps() { return ...; }'. It looks like it was used on a property.",
-  m010: "@computed can only be used on getter functions, like: '@computed get myProps() { return ...; }'",
-  m011: "First argument to `computed` should be an expression. If using computed as decorator, don't pass it arguments",
-  m012: "computed takes one or two arguments if used as function",
-  m013: "[mobx.expr] 'expr' should only be used inside other reactive functions.",
-  m014: "extendObservable expected 2 or more arguments",
-  m015: "extendObservable expects an object as first argument",
-  m016: "extendObservable should not be used on maps, use map.merge instead",
-  m017: "all arguments of extendObservable should be objects",
-  m018: "extending an object with another observable (object) is not supported. Please construct an explicit propertymap, using `toJS` if need. See issue #540",
-  m019: "[mobx.isObservable] isObservable(object, propertyName) is not supported for arrays and maps. Use map.has or array.length instead.",
-  m020: "modifiers can only be used for individual object properties",
-  m021: "observable expects zero or one arguments",
-  m022: "@observable can not be used on getters, use @computed instead",
-  m024: "whyRun() can only be used if a derivation is active, or by passing an computed value / reaction explicitly. If you invoked whyRun from inside a computation; the computation is currently suspended but re-evaluating because somebody requested its value.",
-  m025: "whyRun can only be used on reactions and computed values",
-  m026: "`action` can only be invoked on functions",
-  m028: "It is not allowed to set `useStrict` when a derivation is running",
-  m029: "INTERNAL ERROR only onBecomeUnobserved shouldn't be called twice in a row",
-  m030a: "Since strict-mode is enabled, changing observed observable values outside actions is not allowed. Please wrap the code in an `action` if this change is intended. Tried to modify: ",
-  m030b: "Side effects like changing state are not allowed at this point. Are you trying to modify state from, for example, the render function of a React component? Tried to modify: ",
-  m031: "Computed values are not allowed to cause side effects by changing observables that are already being observed. Tried to modify: ",
-  m032: "* This computation is suspended (not in use by any reaction) and won't run automatically.\n	Didn't expect this computation to be suspended at this point?\n	  1. Make sure this computation is used by a reaction (reaction, autorun, observer).\n	  2. Check whether you are using this computation synchronously (in the same stack as they reaction that needs it).",
-  m033: "`observe` doesn't support the fire immediately property for observable maps.",
-  m034: "`mobx.map` is deprecated, use `new ObservableMap` or `mobx.observable.map` instead",
-  m035: "Cannot make the designated object observable; it is not extensible",
-  m036: "It is not possible to get index atoms from arrays",
-  m037: "Hi there! I'm sorry you have just run into an exception.\nIf your debugger ends up here, know that some reaction (like the render() of an observer component, autorun or reaction)\nthrew an exception and that mobx caught it, to avoid that it brings the rest of your application down.\nThe original cause of the exception (the code that caused this reaction to run (again)), is still in the stack.\n\nHowever, more interesting is the actual stack trace of the error itself.\nHopefully the error is an instanceof Error, because in that case you can inspect the original stack of the error from where it was thrown.\nSee `error.stack` property, or press the very subtle \"(...)\" link you see near the console.error message that probably brought you here.\nThat stack is more interesting than the stack of this console.error itself.\n\nIf the exception you see is an exception you created yourself, make sure to use `throw new Error(\"Oops\")` instead of `throw \"Oops\"`,\nbecause the javascript environment will only preserve the original stack trace in the first form.\n\nYou can also make sure the debugger pauses the next time this very same exception is thrown by enabling \"Pause on caught exception\".\n(Note that it might pause on many other, unrelated exception as well).\n\nIf that all doesn't help you out, feel free to open an issue https://github.com/mobxjs/mobx/issues!\n",
-  m038: "Missing items in this list?\n    1. Check whether all used values are properly marked as observable (use isObservable to verify)\n    2. Make sure you didn't dereference values too early. MobX observes props, not primitives. E.g: use 'person.name' instead of 'name' in your computation.\n"
-};
-
-function getMessage(id) {
-  return messages[id];
-}
-
-function createAction(actionName, fn) {
-  invariant(typeof fn === "function", getMessage("m026"));
-  invariant(typeof actionName === "string" && actionName.length > 0, "actions should have valid names, got: '" + actionName + "'");
-
-  var res = function res() {
-    return executeAction(actionName, fn, this, arguments);
-  };
-
-  res.originalFn = fn;
-  res.isMobxAction = true;
-  return res;
-}
-
-function executeAction(actionName, fn, scope, args) {
-  var runInfo = startAction(actionName, fn, scope, args);
-
-  try {
-    return fn.apply(scope, args);
-  } finally {
-    endAction(runInfo);
-  }
-}
-
-function startAction(actionName, fn, scope, args) {
-  var notifySpy = isSpyEnabled() && !!actionName;
-  var startTime = 0;
-
-  if (notifySpy) {
-    startTime = Date.now();
-    var l = args && args.length || 0;
-    var flattendArgs = new Array(l);
-    if (l > 0) for (var i = 0; i < l; i++) {
-      flattendArgs[i] = args[i];
-    }
-    spyReportStart({
-      type: "action",
-      name: actionName,
-      fn: fn,
-      object: scope,
-      arguments: flattendArgs
-    });
-  }
-
-  var prevDerivation = untrackedStart();
-  startBatch();
-  var prevAllowStateChanges = allowStateChangesStart(true);
-  return {
-    prevDerivation: prevDerivation,
-    prevAllowStateChanges: prevAllowStateChanges,
-    notifySpy: notifySpy,
-    startTime: startTime
-  };
-}
-
-function endAction(runInfo) {
-  allowStateChangesEnd(runInfo.prevAllowStateChanges);
-  endBatch();
-  untrackedEnd(runInfo.prevDerivation);
-  if (runInfo.notifySpy) spyReportEnd({
-    time: Date.now() - runInfo.startTime
-  });
-}
-
-function useStrict(strict) {
-  invariant(globalState.trackingDerivation === null, getMessage("m028"));
-  globalState.strictMode = strict;
-  globalState.allowStateChanges = !strict;
-}
-
-function isStrictModeEnabled() {
-  return globalState.strictMode;
-}
-
-function allowStateChanges(allowStateChanges, func) {
-  // TODO: deprecate / refactor this function in next major
-  // Currently only used by `@observer`
-  // Proposed change: remove first param, rename to `forbidStateChanges`,
-  // require error callback instead of the hardcoded error message now used
-  // Use `inAction` instead of allowStateChanges in derivation.ts to check strictMode
-  var prev = allowStateChangesStart(allowStateChanges);
-  var res;
-
-  try {
-    res = func();
-  } finally {
-    allowStateChangesEnd(prev);
-  }
-
-  return res;
-}
-
-function allowStateChangesStart(allowStateChanges) {
-  var prev = globalState.allowStateChanges;
-  globalState.allowStateChanges = allowStateChanges;
-  return prev;
-}
-
-function allowStateChangesEnd(prev) {
-  globalState.allowStateChanges = prev;
-}
-/**
- * Constructs a decorator, that normalizes the differences between
- * TypeScript and Babel. Mainly caused by the fact that legacy-decorator cannot assign
- * values during instance creation to properties that have a getter setter.
- *
- * - Sigh -
- *
- * Also takes care of the difference between @decorator field and @decorator(args) field, and different forms of values.
- * For performance (cpu and mem) reasons the properties are always defined on the prototype (at least initially).
- * This means that these properties despite being enumerable might not show up in Object.keys() (but they will show up in for...in loops).
- */
-
-
-function createClassPropertyDecorator(
-/**
- * This function is invoked once, when the property is added to a new instance.
- * When this happens is not strictly determined due to differences in TS and Babel:
- * Typescript: Usually when constructing the new instance
- * Babel, sometimes Typescript: during the first get / set
- * Both: when calling `runLazyInitializers(instance)`
- */
-onInitialize, _get, _set, enumerable,
-/**
- * Can this decorator invoked with arguments? e.g. @decorator(args)
- */
-allowCustomArguments) {
-  function classPropertyDecorator(target, key, descriptor, customArgs, argLen) {
-    if (argLen === void 0) {
-      argLen = 0;
-    }
-
-    invariant(allowCustomArguments || quacksLikeADecorator(arguments), "This function is a decorator, but it wasn't invoked like a decorator");
-
-    if (!descriptor) {
-      // typescript (except for getter / setters)
-      var newDescriptor = {
-        enumerable: enumerable,
-        configurable: true,
-        get: function get() {
-          if (!this.__mobxInitializedProps || this.__mobxInitializedProps[key] !== true) typescriptInitializeProperty(this, key, undefined, onInitialize, customArgs, descriptor);
-          return _get.call(this, key);
-        },
-        set: function set(v) {
-          if (!this.__mobxInitializedProps || this.__mobxInitializedProps[key] !== true) {
-            typescriptInitializeProperty(this, key, v, onInitialize, customArgs, descriptor);
-          } else {
-            _set.call(this, key, v);
-          }
-        }
-      };
-
-      if (arguments.length < 3 || arguments.length === 5 && argLen < 3) {
-        // Typescript target is ES3, so it won't define property for us
-        // or using Reflect.decorate polyfill, which will return no descriptor
-        // (see https://github.com/mobxjs/mobx/issues/333)
-        Object.defineProperty(target, key, newDescriptor);
-      }
-
-      return newDescriptor;
-    } else {
-      // babel and typescript getter / setter props
-      if (!hasOwnProperty(target, "__mobxLazyInitializers")) {
-        addHiddenProp(target, "__mobxLazyInitializers", target.__mobxLazyInitializers && target.__mobxLazyInitializers.slice() || [] // support inheritance
-        );
-      }
-
-      var value_1 = descriptor.value,
-          initializer_1 = descriptor.initializer;
-
-      target.__mobxLazyInitializers.push(function (instance) {
-        onInitialize(instance, key, initializer_1 ? initializer_1.call(instance) : value_1, customArgs, descriptor);
-      });
-
-      return {
-        enumerable: enumerable,
-        configurable: true,
-        get: function get() {
-          if (this.__mobxDidRunLazyInitializers !== true) runLazyInitializers(this);
-          return _get.call(this, key);
-        },
-        set: function set(v) {
-          if (this.__mobxDidRunLazyInitializers !== true) runLazyInitializers(this);
-
-          _set.call(this, key, v);
-        }
-      };
-    }
-  }
-
-  if (allowCustomArguments) {
-    /** If custom arguments are allowed, we should return a function that returns a decorator */
-    return function () {
-      /** Direct invocation: @decorator bla */
-      if (quacksLikeADecorator(arguments)) return classPropertyDecorator.apply(null, arguments);
-      /** Indirect invocation: @decorator(args) bla */
-
-      var outerArgs = arguments;
-      var argLen = arguments.length;
-      return function (target, key, descriptor) {
-        return classPropertyDecorator(target, key, descriptor, outerArgs, argLen);
-      };
-    };
-  }
-
-  return classPropertyDecorator;
-}
-
-function typescriptInitializeProperty(instance, key, v, onInitialize, customArgs, baseDescriptor) {
-  if (!hasOwnProperty(instance, "__mobxInitializedProps")) addHiddenProp(instance, "__mobxInitializedProps", {});
-  instance.__mobxInitializedProps[key] = true;
-  onInitialize(instance, key, v, customArgs, baseDescriptor);
-}
-
-function runLazyInitializers(instance) {
-  if (instance.__mobxDidRunLazyInitializers === true) return;
-
-  if (instance.__mobxLazyInitializers) {
-    addHiddenProp(instance, "__mobxDidRunLazyInitializers", true);
-    instance.__mobxDidRunLazyInitializers && instance.__mobxLazyInitializers.forEach(function (initializer) {
-      return initializer(instance);
-    });
-  }
-}
-
-function quacksLikeADecorator(args) {
-  return (args.length === 2 || args.length === 3) && typeof args[1] === "string";
-}
-
-var actionFieldDecorator = createClassPropertyDecorator(function (target, key, value, args, originalDescriptor) {
-  var actionName = args && args.length === 1 ? args[0] : value.name || key || "<unnamed action>";
-  var wrappedAction = action(actionName, value);
-  addHiddenProp(target, key, wrappedAction);
-}, function (key) {
-  return this[key];
-}, function () {
-  invariant(false, getMessage("m001"));
-}, false, true);
-var boundActionDecorator = createClassPropertyDecorator(function (target, key, value) {
-  defineBoundAction(target, key, value);
-}, function (key) {
-  return this[key];
-}, function () {
-  invariant(false, getMessage("m001"));
-}, false, false);
-
-var action = function action(arg1, arg2, arg3, arg4) {
-  if (arguments.length === 1 && typeof arg1 === "function") return createAction(arg1.name || "<unnamed action>", arg1);
-  if (arguments.length === 2 && typeof arg2 === "function") return createAction(arg1, arg2);
-  if (arguments.length === 1 && typeof arg1 === "string") return namedActionDecorator(arg1);
-  return namedActionDecorator(arg2).apply(null, arguments);
-};
-
-action.bound = function boundAction(arg1, arg2, arg3) {
-  if (typeof arg1 === "function") {
-    var action_1 = createAction("<not yet bound action>", arg1);
-    action_1.autoBind = true;
-    return action_1;
-  }
-
-  return boundActionDecorator.apply(null, arguments);
-};
-
-function namedActionDecorator(name) {
-  return function (target, prop, descriptor) {
-    if (descriptor && typeof descriptor.value === "function") {
-      // TypeScript @action method() { }. Defined on proto before being decorated
-      // Don't use the field decorator if we are just decorating a method
-      descriptor.value = createAction(name, descriptor.value);
-      descriptor.enumerable = false;
-      descriptor.configurable = true;
-      return descriptor;
-    }
-
-    if (descriptor !== undefined && descriptor.get !== undefined) {
-      throw new Error("[mobx] action is not expected to be used with getters");
-    } // bound instance methods
-
-
-    return actionFieldDecorator(name).apply(this, arguments);
-  };
-}
-
-function runInAction(arg1, arg2, arg3) {
-  var actionName = typeof arg1 === "string" ? arg1 : arg1.name || "<unnamed action>";
-  var fn = typeof arg1 === "function" ? arg1 : arg2;
-  var scope = typeof arg1 === "function" ? arg2 : arg3;
-  invariant(typeof fn === "function", getMessage("m002"));
-  invariant(fn.length === 0, getMessage("m003"));
-  invariant(typeof actionName === "string" && actionName.length > 0, "actions should have valid names, got: '" + actionName + "'");
-  return executeAction(actionName, fn, scope, undefined);
-}
-
-function isAction(thing) {
-  return typeof thing === "function" && thing.isMobxAction === true;
-}
-
-function defineBoundAction(target, propertyName, fn) {
-  var res = function res() {
-    return executeAction(propertyName, fn, target, arguments);
-  };
-
-  res.isMobxAction = true;
-  addHiddenProp(target, propertyName, res);
-} // Copied from https://github.com/jashkenas/underscore/blob/5c237a7c682fb68fd5378203f0bf22dce1624854/underscore.js#L1186-L1289
-
-
-function deepEqual(a, b) {
-  return eq(a, b);
-} // Internal recursive comparison function for `isEqual`.
-
-
-function eq(a, b, aStack, bStack) {
-  // Identical objects are equal. `0 === -0`, but they aren't identical.
-  // See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?id=harmony:egal).
-  if (a === b) return a !== 0 || 1 / a === 1 / b; // `null` or `undefined` only equal to itself (strict comparison).
-
-  if (a == null || b == null) return false; // `NaN`s are equivalent, but non-reflexive.
-
-  if (a !== a) return b !== b; // Exhaust primitive checks
-
-  var type = typeof a === "undefined" ? "undefined" : _typeof(a);
-  if (type !== "function" && type !== "object" && (typeof b === "undefined" ? "undefined" : _typeof(b)) != "object") return false;
-  return deepEq(a, b, aStack, bStack);
-}
-
-var toString = Object.prototype.toString; // Internal recursive comparison function for `isEqual`.
-
-function deepEq(a, b, aStack, bStack) {
-  // Unwrap any wrapped objects.
-  a = unwrap(a);
-  b = unwrap(b); // Compare `[[Class]]` names.
-
-  var className = toString.call(a);
-  if (className !== toString.call(b)) return false;
-
-  switch (className) {
-    // Strings, numbers, regular expressions, dates, and booleans are compared by value.
-    case "[object RegExp]": // RegExps are coerced to strings for comparison (Note: '' + /a/i === '/a/i')
-
-    case "[object String]":
-      // Primitives and their corresponding object wrappers are equivalent; thus, `"5"` is
-      // equivalent to `new String("5")`.
-      return "" + a === "" + b;
-
-    case "[object Number]":
-      // `NaN`s are equivalent, but non-reflexive.
-      // Object(NaN) is equivalent to NaN.
-      if (+a !== +a) return +b !== +b; // An `egal` comparison is performed for other numeric values.
-
-      return +a === 0 ? 1 / +a === 1 / b : +a === +b;
-
-    case "[object Date]":
-    case "[object Boolean]":
-      // Coerce dates and booleans to numeric primitive values. Dates are compared by their
-      // millisecond representations. Note that invalid dates with millisecond representations
-      // of `NaN` are not equivalent.
-      return +a === +b;
-
-    case "[object Symbol]":
-      return typeof Symbol !== "undefined" && Symbol.valueOf.call(a) === Symbol.valueOf.call(b);
-  }
-
-  var areArrays = className === "[object Array]";
-
-  if (!areArrays) {
-    if ((typeof a === "undefined" ? "undefined" : _typeof(a)) != "object" || (typeof b === "undefined" ? "undefined" : _typeof(b)) != "object") return false; // Objects with different constructors are not equivalent, but `Object`s or `Array`s
-    // from different frames are.
-
-    var aCtor = a.constructor,
-        bCtor = b.constructor;
-
-    if (aCtor !== bCtor && !(typeof aCtor === "function" && aCtor instanceof aCtor && typeof bCtor === "function" && bCtor instanceof bCtor) && "constructor" in a && "constructor" in b) {
-      return false;
-    }
-  } // Assume equality for cyclic structures. The algorithm for detecting cyclic
-  // structures is adapted from ES 5.1 section 15.12.3, abstract operation `JO`.
-  // Initializing stack of traversed objects.
-  // It's done here since we only need them for objects and arrays comparison.
-
-
-  aStack = aStack || [];
-  bStack = bStack || [];
-  var length = aStack.length;
-
-  while (length--) {
-    // Linear search. Performance is inversely proportional to the number of
-    // unique nested structures.
-    if (aStack[length] === a) return bStack[length] === b;
-  } // Add the first object to the stack of traversed objects.
-
-
-  aStack.push(a);
-  bStack.push(b); // Recursively compare objects and arrays.
-
-  if (areArrays) {
-    // Compare array lengths to determine if a deep comparison is necessary.
-    length = a.length;
-    if (length !== b.length) return false; // Deep compare the contents, ignoring non-numeric properties.
-
-    while (length--) {
-      if (!eq(a[length], b[length], aStack, bStack)) return false;
-    }
-  } else {
-    // Deep compare objects.
-    var keys = Object.keys(a),
-        key;
-    length = keys.length; // Ensure that both objects contain the same number of properties before comparing deep equality.
-
-    if (Object.keys(b).length !== length) return false;
-
-    while (length--) {
-      // Deep compare each member
-      key = keys[length];
-      if (!(has(b, key) && eq(a[key], b[key], aStack, bStack))) return false;
-    }
-  } // Remove the first object from the stack of traversed objects.
-
-
-  aStack.pop();
-  bStack.pop();
-  return true;
-}
-
-function unwrap(a) {
-  if (isObservableArray(a)) return a.peek();
-  if (isObservableMap(a)) return a.entries();
-  if (isES6Map(a)) return iteratorToArray(a.entries());
-  return a;
-}
-
-function has(a, key) {
-  return Object.prototype.hasOwnProperty.call(a, key);
-}
-
-function identityComparer(a, b) {
-  return a === b;
-}
-
-function structuralComparer(a, b) {
-  return deepEqual(a, b);
-}
-
-function defaultComparer(a, b) {
-  return areBothNaN(a, b) || identityComparer(a, b);
-}
-
-var comparer = {
-  identity: identityComparer,
-  structural: structuralComparer,
-  default: defaultComparer
-};
-
-function autorun(arg1, arg2, arg3) {
-  var name, view, scope;
-
-  if (typeof arg1 === "string") {
-    name = arg1;
-    view = arg2;
-    scope = arg3;
-  } else {
-    name = arg1.name || "Autorun@" + getNextId();
-    view = arg1;
-    scope = arg2;
-  }
-
-  invariant(typeof view === "function", getMessage("m004"));
-  invariant(isAction(view) === false, getMessage("m005"));
-  if (scope) view = view.bind(scope);
-  var reaction = new Reaction(name, function () {
-    this.track(reactionRunner);
-  });
-
-  function reactionRunner() {
-    view(reaction);
-  }
-
-  reaction.schedule();
-  return reaction.getDisposer();
-}
-
-function when(arg1, arg2, arg3, arg4) {
-  var name, predicate, effect, scope;
-
-  if (typeof arg1 === "string") {
-    name = arg1;
-    predicate = arg2;
-    effect = arg3;
-    scope = arg4;
-  } else {
-    name = "When@" + getNextId();
-    predicate = arg1;
-    effect = arg2;
-    scope = arg3;
-  }
-
-  var disposer = autorun(name, function (r) {
-    if (predicate.call(scope)) {
-      r.dispose();
-      var prevUntracked = untrackedStart();
-      effect.call(scope);
-      untrackedEnd(prevUntracked);
-    }
-  });
-  return disposer;
-}
-
-function autorunAsync(arg1, arg2, arg3, arg4) {
-  var name, func, delay, scope;
-
-  if (typeof arg1 === "string") {
-    name = arg1;
-    func = arg2;
-    delay = arg3;
-    scope = arg4;
-  } else {
-    name = arg1.name || "AutorunAsync@" + getNextId();
-    func = arg1;
-    delay = arg2;
-    scope = arg3;
-  }
-
-  invariant(isAction(func) === false, getMessage("m006"));
-  if (delay === void 0) delay = 1;
-  if (scope) func = func.bind(scope);
-  var isScheduled = false;
-  var r = new Reaction(name, function () {
-    if (!isScheduled) {
-      isScheduled = true;
-      setTimeout(function () {
-        isScheduled = false;
-        if (!r.isDisposed) r.track(reactionRunner);
-      }, delay);
-    }
-  });
-
-  function reactionRunner() {
-    func(r);
-  }
-
-  r.schedule();
-  return r.getDisposer();
-}
-
-function reaction(expression, effect, arg3) {
-  if (arguments.length > 3) {
-    fail(getMessage("m007"));
-  }
-
-  if (isModifierDescriptor(expression)) {
-    fail(getMessage("m008"));
-  }
-
-  var opts;
-
-  if ((typeof arg3 === "undefined" ? "undefined" : _typeof(arg3)) === "object") {
-    opts = arg3;
-  } else {
-    opts = {};
-  }
-
-  opts.name = opts.name || expression.name || effect.name || "Reaction@" + getNextId();
-  opts.fireImmediately = arg3 === true || opts.fireImmediately === true;
-  opts.delay = opts.delay || 0;
-  opts.compareStructural = opts.compareStructural || opts.struct || false; // TODO: creates ugly spy events, use `effect = (r) => runInAction(opts.name, () => effect(r))` instead
-
-  effect = action(opts.name, opts.context ? effect.bind(opts.context) : effect);
-
-  if (opts.context) {
-    expression = expression.bind(opts.context);
-  }
-
-  var firstTime = true;
-  var isScheduled = false;
-  var value;
-  var equals = opts.equals ? opts.equals : opts.compareStructural || opts.struct ? comparer.structural : comparer.default;
-  var r = new Reaction(opts.name, function () {
-    if (firstTime || opts.delay < 1) {
-      reactionRunner();
-    } else if (!isScheduled) {
-      isScheduled = true;
-      setTimeout(function () {
-        isScheduled = false;
-        reactionRunner();
-      }, opts.delay);
-    }
-  });
-
-  function reactionRunner() {
-    if (r.isDisposed) return;
-    var changed = false;
-    r.track(function () {
-      var nextValue = expression(r);
-      changed = firstTime || !equals(value, nextValue);
-      value = nextValue;
-    });
-    if (firstTime && opts.fireImmediately) effect(value, r);
-    if (!firstTime && changed === true) effect(value, r);
-    if (firstTime) firstTime = false;
-  }
-
-  r.schedule();
-  return r.getDisposer();
-}
-/**
- * A node in the state dependency root that observes other nodes, and can be observed itself.
- *
- * ComputedValue will remember the result of the computation for the duration of the batch, or
- * while being observed.
- *
- * During this time it will recompute only when one of its direct dependencies changed,
- * but only when it is being accessed with `ComputedValue.get()`.
- *
- * Implementation description:
- * 1. First time it's being accessed it will compute and remember result
- *    give back remembered result until 2. happens
- * 2. First time any deep dependency change, propagate POSSIBLY_STALE to all observers, wait for 3.
- * 3. When it's being accessed, recompute if any shallow dependency changed.
- *    if result changed: propagate STALE to all observers, that were POSSIBLY_STALE from the last step.
- *    go to step 2. either way
- *
- * If at any point it's outside batch and it isn't observed: reset everything and go to 1.
- */
-
-
-var ComputedValue = function () {
-  /**
-   * Create a new computed value based on a function expression.
-   *
-   * The `name` property is for debug purposes only.
-   *
-   * The `equals` property specifies the comparer function to use to determine if a newly produced
-   * value differs from the previous value. Two comparers are provided in the library; `defaultComparer`
-   * compares based on identity comparison (===), and `structualComparer` deeply compares the structure.
-   * Structural comparison can be convenient if you always produce an new aggregated object and
-   * don't want to notify observers if it is structurally the same.
-   * This is useful for working with vectors, mouse coordinates etc.
-   */
-  function ComputedValue(derivation, scope, equals, name, setter) {
-    this.derivation = derivation;
-    this.scope = scope;
-    this.equals = equals;
-    this.dependenciesState = IDerivationState.NOT_TRACKING;
-    this.observing = []; // nodes we are looking at. Our value depends on these nodes
-
-    this.newObserving = null; // during tracking it's an array with new observed observers
-
-    this.isPendingUnobservation = false;
-    this.observers = [];
-    this.observersIndexes = {};
-    this.diffValue = 0;
-    this.runId = 0;
-    this.lastAccessedBy = 0;
-    this.lowestObserverState = IDerivationState.UP_TO_DATE;
-    this.unboundDepsCount = 0;
-    this.__mapid = "#" + getNextId();
-    this.value = new CaughtException(null);
-    this.isComputing = false; // to check for cycles
-
-    this.isRunningSetter = false;
-    this.isTracing = TraceMode.NONE;
-    this.name = name || "ComputedValue@" + getNextId();
-    if (setter) this.setter = createAction(name + "-setter", setter);
-  }
-
-  ComputedValue.prototype.onBecomeStale = function () {
-    propagateMaybeChanged(this);
-  };
-
-  ComputedValue.prototype.onBecomeUnobserved = function () {
-    clearObserving(this);
-    this.value = undefined;
-  };
-  /**
-   * Returns the current value of this computed value.
-   * Will evaluate its computation first if needed.
-   */
-
-
-  ComputedValue.prototype.get = function () {
-    invariant(!this.isComputing, "Cycle detected in computation " + this.name, this.derivation);
-
-    if (globalState.inBatch === 0) {
-      // This is an minor optimization which could be omitted to simplify the code
-      // The computedValue is accessed outside of any mobx stuff. Batch observing should be enough and don't need
-      // tracking as it will never be called again inside this batch.
-      startBatch();
-
-      if (shouldCompute(this)) {
-        if (this.isTracing !== TraceMode.NONE) {
-          console.log("[mobx.trace] '" + this.name + "' is being read outside a reactive context and doing a full recompute");
-        }
-
-        this.value = this.computeValue(false);
-      }
-
-      endBatch();
-    } else {
-      reportObserved(this);
-      if (shouldCompute(this)) if (this.trackAndCompute()) propagateChangeConfirmed(this);
-    }
-
-    var result = this.value;
-    if (isCaughtException(result)) throw result.cause;
-    return result;
-  };
-
-  ComputedValue.prototype.peek = function () {
-    var res = this.computeValue(false);
-    if (isCaughtException(res)) throw res.cause;
-    return res;
-  };
-
-  ComputedValue.prototype.set = function (value) {
-    if (this.setter) {
-      invariant(!this.isRunningSetter, "The setter of computed value '" + this.name + "' is trying to update itself. Did you intend to update an _observable_ value, instead of the computed property?");
-      this.isRunningSetter = true;
-
-      try {
-        this.setter.call(this.scope, value);
-      } finally {
-        this.isRunningSetter = false;
-      }
-    } else invariant(false, "[ComputedValue '" + this.name + "'] It is not possible to assign a new value to a computed value.");
-  };
-
-  ComputedValue.prototype.trackAndCompute = function () {
-    if (isSpyEnabled()) {
-      spyReport({
-        object: this.scope,
-        type: "compute",
-        fn: this.derivation
-      });
-    }
-
-    var oldValue = this.value;
-    var wasSuspended =
-    /* see #1208 */
-    this.dependenciesState === IDerivationState.NOT_TRACKING;
-    var newValue = this.value = this.computeValue(true);
-    return wasSuspended || isCaughtException(oldValue) || isCaughtException(newValue) || !this.equals(oldValue, newValue);
-  };
-
-  ComputedValue.prototype.computeValue = function (track) {
-    this.isComputing = true;
-    globalState.computationDepth++;
-    var res;
-
-    if (track) {
-      res = trackDerivedFunction(this, this.derivation, this.scope);
-    } else {
-      try {
-        res = this.derivation.call(this.scope);
-      } catch (e) {
-        res = new CaughtException(e);
-      }
-    }
-
-    globalState.computationDepth--;
-    this.isComputing = false;
-    return res;
-  };
-
-  ComputedValue.prototype.observe = function (listener, fireImmediately) {
-    var _this = this;
-
-    var firstTime = true;
-    var prevValue = undefined;
-    return autorun(function () {
-      var newValue = _this.get();
-
-      if (!firstTime || fireImmediately) {
-        var prevU = untrackedStart();
-        listener({
-          type: "update",
-          object: _this,
-          newValue: newValue,
-          oldValue: prevValue
-        });
-        untrackedEnd(prevU);
-      }
-
-      firstTime = false;
-      prevValue = newValue;
-    });
-  };
-
-  ComputedValue.prototype.toJSON = function () {
-    return this.get();
-  };
-
-  ComputedValue.prototype.toString = function () {
-    return this.name + "[" + this.derivation.toString() + "]";
-  };
-
-  ComputedValue.prototype.valueOf = function () {
-    return toPrimitive(this.get());
-  };
-
-  ComputedValue.prototype.whyRun = function () {
-    var isTracking = Boolean(globalState.trackingDerivation);
-    var observing = unique(this.isComputing ? this.newObserving : this.observing).map(function (dep) {
-      return dep.name;
-    });
-    var observers = unique(getObservers(this).map(function (dep) {
-      return dep.name;
-    }));
-    return "\nWhyRun? computation '" + this.name + "':\n * Running because: " + (isTracking ? "[active] the value of this computation is needed by a reaction" : this.isComputing ? "[get] The value of this computed was requested outside a reaction" : "[idle] not running at the moment") + "\n" + (this.dependenciesState === IDerivationState.NOT_TRACKING ? getMessage("m032") : " * This computation will re-run if any of the following observables changes:\n    " + joinStrings(observing) + "\n    " + (this.isComputing && isTracking ? " (... or any observable accessed during the remainder of the current run)" : "") + "\n    " + getMessage("m038") + "\n\n  * If the outcome of this computation changes, the following observers will be re-run:\n    " + joinStrings(observers) + "\n");
-  };
-
-  return ComputedValue;
-}();
-
-ComputedValue.prototype[primitiveSymbol()] = ComputedValue.prototype.valueOf;
-var isComputedValue = createInstanceofPredicate("ComputedValue", ComputedValue);
-
-var ObservableObjectAdministration = function () {
-  function ObservableObjectAdministration(target, name) {
-    this.target = target;
-    this.name = name;
-    this.values = {};
-    this.changeListeners = null;
-    this.interceptors = null;
-  }
-  /**
-   * Observes this object. Triggers for the events 'add', 'update' and 'delete'.
-   * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe
-   * for callback details
-   */
-
-
-  ObservableObjectAdministration.prototype.observe = function (callback, fireImmediately) {
-    invariant(fireImmediately !== true, "`observe` doesn't support the fire immediately property for observable objects.");
-    return registerListener(this, callback);
-  };
-
-  ObservableObjectAdministration.prototype.intercept = function (handler) {
-    return registerInterceptor(this, handler);
-  };
-
-  return ObservableObjectAdministration;
-}();
-
-function asObservableObject(target, name) {
-  if (isObservableObject(target) && target.hasOwnProperty("$mobx")) return target.$mobx;
-  invariant(Object.isExtensible(target), getMessage("m035"));
-  if (!isPlainObject(target)) name = (target.constructor.name || "ObservableObject") + "@" + getNextId();
-  if (!name) name = "ObservableObject@" + getNextId();
-  var adm = new ObservableObjectAdministration(target, name);
-  addHiddenFinalProp(target, "$mobx", adm);
-  return adm;
-}
-
-function defineObservablePropertyFromDescriptor(adm, propName, descriptor, defaultEnhancer) {
-  if (adm.values[propName] && !isComputedValue(adm.values[propName])) {
-    // already observable property
-    invariant("value" in descriptor, "The property " + propName + " in " + adm.name + " is already observable, cannot redefine it as computed property");
-    adm.target[propName] = descriptor.value; // the property setter will make 'value' reactive if needed.
-
-    return;
-  } // not yet observable property
-
-
-  if ("value" in descriptor) {
-    // not a computed value
-    if (isModifierDescriptor(descriptor.value)) {
-      // x : ref(someValue)
-      var modifierDescriptor = descriptor.value;
-      defineObservableProperty(adm, propName, modifierDescriptor.initialValue, modifierDescriptor.enhancer);
-    } else if (isAction(descriptor.value) && descriptor.value.autoBind === true) {
-      defineBoundAction(adm.target, propName, descriptor.value.originalFn);
-    } else if (isComputedValue(descriptor.value)) {
-      // x: computed(someExpr)
-      defineComputedPropertyFromComputedValue(adm, propName, descriptor.value);
-    } else {
-      // x: someValue
-      defineObservableProperty(adm, propName, descriptor.value, defaultEnhancer);
-    }
-  } else {
-    // get x() { return 3 } set x(v) { }
-    defineComputedProperty(adm, propName, descriptor.get, descriptor.set, comparer.default, true);
-  }
-}
-
-function defineObservableProperty(adm, propName, newValue, enhancer) {
-  assertPropertyConfigurable(adm.target, propName);
-
-  if (hasInterceptors(adm)) {
-    var change = interceptChange(adm, {
-      object: adm.target,
-      name: propName,
-      type: "add",
-      newValue: newValue
-    });
-    if (!change) return;
-    newValue = change.newValue;
-  }
-
-  var observable = adm.values[propName] = new ObservableValue(newValue, enhancer, adm.name + "." + propName, false);
-  newValue = observable.value; // observableValue might have changed it
-
-  Object.defineProperty(adm.target, propName, generateObservablePropConfig(propName));
-  notifyPropertyAddition(adm, adm.target, propName, newValue);
-}
-
-function defineComputedProperty(adm, propName, getter, setter, equals, asInstanceProperty) {
-  if (asInstanceProperty) assertPropertyConfigurable(adm.target, propName);
-  adm.values[propName] = new ComputedValue(getter, adm.target, equals, adm.name + "." + propName, setter);
-
-  if (asInstanceProperty) {
-    Object.defineProperty(adm.target, propName, generateComputedPropConfig(propName));
-  }
-}
-
-function defineComputedPropertyFromComputedValue(adm, propName, computedValue) {
-  var name = adm.name + "." + propName;
-  computedValue.name = name;
-  if (!computedValue.scope) computedValue.scope = adm.target;
-  adm.values[propName] = computedValue;
-  Object.defineProperty(adm.target, propName, generateComputedPropConfig(propName));
-}
-
-var observablePropertyConfigs = {};
-var computedPropertyConfigs = {};
-
-function generateObservablePropConfig(propName) {
-  return observablePropertyConfigs[propName] || (observablePropertyConfigs[propName] = {
-    configurable: true,
-    enumerable: true,
-    get: function get() {
-      return this.$mobx.values[propName].get();
-    },
-    set: function set(v) {
-      setPropertyValue(this, propName, v);
-    }
-  });
-}
-
-function generateComputedPropConfig(propName) {
-  return computedPropertyConfigs[propName] || (computedPropertyConfigs[propName] = {
-    configurable: true,
-    enumerable: false,
-    get: function get() {
-      return this.$mobx.values[propName].get();
-    },
-    set: function set(v) {
-      return this.$mobx.values[propName].set(v);
-    }
-  });
-}
-
-function setPropertyValue(instance, name, newValue) {
-  var adm = instance.$mobx;
-  var observable = adm.values[name]; // intercept
-
-  if (hasInterceptors(adm)) {
-    var change = interceptChange(adm, {
-      type: "update",
-      object: instance,
-      name: name,
-      newValue: newValue
-    });
-    if (!change) return;
-    newValue = change.newValue;
-  }
-
-  newValue = observable.prepareNewValue(newValue); // notify spy & observers
-
-  if (newValue !== UNCHANGED) {
-    var notify = hasListeners(adm);
-    var notifySpy = isSpyEnabled();
-    var change = notify || notifySpy ? {
-      type: "update",
-      object: instance,
-      oldValue: observable.value,
-      name: name,
-      newValue: newValue
-    } : null;
-    if (notifySpy) spyReportStart(change);
-    observable.setNewValue(newValue);
-    if (notify) notifyListeners(adm, change);
-    if (notifySpy) spyReportEnd();
-  }
-}
-
-function notifyPropertyAddition(adm, object, name, newValue) {
-  var notify = hasListeners(adm);
-  var notifySpy = isSpyEnabled();
-  var change = notify || notifySpy ? {
-    type: "add",
-    object: object,
-    name: name,
-    newValue: newValue
-  } : null;
-  if (notifySpy) spyReportStart(change);
-  if (notify) notifyListeners(adm, change);
-  if (notifySpy) spyReportEnd();
-}
-
-var isObservableObjectAdministration = createInstanceofPredicate("ObservableObjectAdministration", ObservableObjectAdministration);
-
-function isObservableObject(thing) {
-  if (isObject(thing)) {
-    // Initializers run lazily when transpiling to babel, so make sure they are run...
-    runLazyInitializers(thing);
-    return isObservableObjectAdministration(thing.$mobx);
-  }
-
-  return false;
-}
-/**
- * Returns true if the provided value is reactive.
- * @param value object, function or array
- * @param property if property is specified, checks whether value.property is reactive.
- */
-
-
-function isObservable(value, property) {
-  if (value === null || value === undefined) return false;
-
-  if (property !== undefined) {
-    if (isObservableArray(value) || isObservableMap(value)) throw new Error(getMessage("m019"));else if (isObservableObject(value)) {
-      var o = value.$mobx;
-      return o.values && !!o.values[property];
-    }
-    return false;
-  } // For first check, see #701
-
-
-  return isObservableObject(value) || !!value.$mobx || isAtom(value) || isReaction(value) || isComputedValue(value);
-}
-
-function createDecoratorForEnhancer(enhancer) {
-  invariant(!!enhancer, ":(");
-  return createClassPropertyDecorator(function (target, name, baseValue, _, baseDescriptor) {
-    assertPropertyConfigurable(target, name);
-    invariant(!baseDescriptor || !baseDescriptor.get, getMessage("m022"));
-    var adm = asObservableObject(target, undefined);
-    defineObservableProperty(adm, name, baseValue, enhancer);
-  }, function (name) {
-    var observable = this.$mobx.values[name];
-    if (observable === undefined // See #505
-    ) return undefined;
-    return observable.get();
-  }, function (name, value) {
-    setPropertyValue(this, name, value);
-  }, true, false);
-}
-
-function extendObservable(target) {
-  var properties = [];
-
-  for (var _i = 1; _i < arguments.length; _i++) {
-    properties[_i - 1] = arguments[_i];
-  }
-
-  return extendObservableHelper(target, deepEnhancer, properties);
-}
-
-function extendShallowObservable(target) {
-  var properties = [];
-
-  for (var _i = 1; _i < arguments.length; _i++) {
-    properties[_i - 1] = arguments[_i];
-  }
-
-  return extendObservableHelper(target, referenceEnhancer, properties);
-}
-
-function extendObservableHelper(target, defaultEnhancer, properties) {
-  invariant(arguments.length >= 2, getMessage("m014"));
-  invariant((typeof target === "undefined" ? "undefined" : _typeof(target)) === "object", getMessage("m015"));
-  invariant(!isObservableMap(target), getMessage("m016"));
-  properties.forEach(function (propSet) {
-    invariant((typeof propSet === "undefined" ? "undefined" : _typeof(propSet)) === "object", getMessage("m017"));
-    invariant(!isObservable(propSet), getMessage("m018"));
-  });
-  var adm = asObservableObject(target);
-  var definedProps = {}; // Note could be optimised if properties.length === 1
-
-  for (var i = properties.length - 1; i >= 0; i--) {
-    var propSet = properties[i];
-
-    for (var key in propSet) {
-      if (definedProps[key] !== true && hasOwnProperty(propSet, key)) {
-        definedProps[key] = true;
-        if (target === propSet && !isPropertyConfigurable(target, key)) continue; // see #111, skip non-configurable or non-writable props for `observable(object)`.
-
-        var descriptor = Object.getOwnPropertyDescriptor(propSet, key);
-        defineObservablePropertyFromDescriptor(adm, key, descriptor, defaultEnhancer);
-      }
-    }
-  }
-
-  return target;
-}
-
-var deepDecorator = createDecoratorForEnhancer(deepEnhancer);
-var shallowDecorator = createDecoratorForEnhancer(shallowEnhancer);
-var refDecorator = createDecoratorForEnhancer(referenceEnhancer);
-var deepStructDecorator = createDecoratorForEnhancer(deepStructEnhancer);
-var refStructDecorator = createDecoratorForEnhancer(refStructEnhancer);
-/**
- * Turns an object, array or function into a reactive structure.
- * @param v the value which should become observable.
- */
-
-function createObservable(v) {
-  if (v === void 0) {
-    v = undefined;
-  } // @observable someProp;
-
-
-  if (typeof arguments[1] === "string") return deepDecorator.apply(null, arguments);
-  invariant(arguments.length <= 1, getMessage("m021"));
-  invariant(!isModifierDescriptor(v), getMessage("m020")); // it is an observable already, done
-
-  if (isObservable(v)) return v; // something that can be converted and mutated?
-
-  var res = deepEnhancer(v, undefined, undefined); // this value could be converted to a new observable data structure, return it
-
-  if (res !== v) return res; // otherwise, just box it
-
-  return observable.box(v);
-}
-
-var observableFactories = {
-  box: function box(value, name) {
-    if (arguments.length > 2) incorrectlyUsedAsDecorator("box");
-    return new ObservableValue(value, deepEnhancer, name);
-  },
-  shallowBox: function shallowBox(value, name) {
-    if (arguments.length > 2) incorrectlyUsedAsDecorator("shallowBox");
-    return new ObservableValue(value, referenceEnhancer, name);
-  },
-  array: function array(initialValues, name) {
-    if (arguments.length > 2) incorrectlyUsedAsDecorator("array");
-    return new ObservableArray(initialValues, deepEnhancer, name);
-  },
-  shallowArray: function shallowArray(initialValues, name) {
-    if (arguments.length > 2) incorrectlyUsedAsDecorator("shallowArray");
-    return new ObservableArray(initialValues, referenceEnhancer, name);
-  },
-  map: function map(initialValues, name) {
-    if (arguments.length > 2) incorrectlyUsedAsDecorator("map");
-    return new ObservableMap(initialValues, deepEnhancer, name);
-  },
-  shallowMap: function shallowMap(initialValues, name) {
-    if (arguments.length > 2) incorrectlyUsedAsDecorator("shallowMap");
-    return new ObservableMap(initialValues, referenceEnhancer, name);
-  },
-  object: function object(props, name) {
-    if (arguments.length > 2) incorrectlyUsedAsDecorator("object");
-    var res = {}; // convert to observable object
-
-    asObservableObject(res, name); // add properties
-
-    extendObservable(res, props);
-    return res;
-  },
-  shallowObject: function shallowObject(props, name) {
-    if (arguments.length > 2) incorrectlyUsedAsDecorator("shallowObject");
-    var res = {};
-    asObservableObject(res, name);
-    extendShallowObservable(res, props);
-    return res;
-  },
-  ref: function ref() {
-    if (arguments.length < 2) {
-      // although ref creates actually a modifier descriptor, the type of the resultig properties
-      // of the object is `T` in the end, when the descriptors are interpreted
-      return createModifierDescriptor(referenceEnhancer, arguments[0]);
-    } else {
-      return refDecorator.apply(null, arguments);
-    }
-  },
-  shallow: function shallow() {
-    if (arguments.length < 2) {
-      // although ref creates actually a modifier descriptor, the type of the resultig properties
-      // of the object is `T` in the end, when the descriptors are interpreted
-      return createModifierDescriptor(shallowEnhancer, arguments[0]);
-    } else {
-      return shallowDecorator.apply(null, arguments);
-    }
-  },
-  deep: function deep() {
-    if (arguments.length < 2) {
-      // although ref creates actually a modifier descriptor, the type of the resultig properties
-      // of the object is `T` in the end, when the descriptors are interpreted
-      return createModifierDescriptor(deepEnhancer, arguments[0]);
-    } else {
-      return deepDecorator.apply(null, arguments);
-    }
-  },
-  struct: function struct() {
-    if (arguments.length < 2) {
-      // although ref creates actually a modifier descriptor, the type of the resultig properties
-      // of the object is `T` in the end, when the descriptors are interpreted
-      return createModifierDescriptor(deepStructEnhancer, arguments[0]);
-    } else {
-      return deepStructDecorator.apply(null, arguments);
-    }
-  }
-};
-var observable = createObservable; // weird trick to keep our typings nicely with our funcs, and still extend the observable function
-
-Object.keys(observableFactories).forEach(function (name) {
-  return observable[name] = observableFactories[name];
-});
-observable.deep.struct = observable.struct;
-
-observable.ref.struct = function () {
-  if (arguments.length < 2) {
-    return createModifierDescriptor(refStructEnhancer, arguments[0]);
-  } else {
-    return refStructDecorator.apply(null, arguments);
-  }
-};
-
-function incorrectlyUsedAsDecorator(methodName) {
-  fail("Expected one or two arguments to observable." + methodName + ". Did you accidentally try to use observable." + methodName + " as decorator?");
-}
-
-function isModifierDescriptor(thing) {
-  return (typeof thing === "undefined" ? "undefined" : _typeof(thing)) === "object" && thing !== null && thing.isMobxModifierDescriptor === true;
-}
-
-function createModifierDescriptor(enhancer, initialValue) {
-  invariant(!isModifierDescriptor(initialValue), "Modifiers cannot be nested");
-  return {
-    isMobxModifierDescriptor: true,
-    initialValue: initialValue,
-    enhancer: enhancer
-  };
-}
-
-function deepEnhancer(v, _, name) {
-  if (isModifierDescriptor(v)) fail("You tried to assign a modifier wrapped value to a collection, please define modifiers when creating the collection, not when modifying it"); // it is an observable already, done
-
-  if (isObservable(v)) return v; // something that can be converted and mutated?
-
-  if (Array.isArray(v)) return observable.array(v, name);
-  if (isPlainObject(v)) return observable.object(v, name);
-  if (isES6Map(v)) return observable.map(v, name);
-  return v;
-}
-
-function shallowEnhancer(v, _, name) {
-  if (isModifierDescriptor(v)) fail("You tried to assign a modifier wrapped value to a collection, please define modifiers when creating the collection, not when modifying it");
-  if (v === undefined || v === null) return v;
-  if (isObservableObject(v) || isObservableArray(v) || isObservableMap(v)) return v;
-  if (Array.isArray(v)) return observable.shallowArray(v, name);
-  if (isPlainObject(v)) return observable.shallowObject(v, name);
-  if (isES6Map(v)) return observable.shallowMap(v, name);
-  return fail("The shallow modifier / decorator can only used in combination with arrays, objects and maps");
-}
-
-function referenceEnhancer(newValue) {
-  // never turn into an observable
-  return newValue;
-}
-
-function deepStructEnhancer(v, oldValue, name) {
-  // don't confuse structurally compare enhancer with ref enhancer! The latter is probably
-  // more suited for immutable objects
-  if (deepEqual(v, oldValue)) return oldValue; // it is an observable already, done
-
-  if (isObservable(v)) return v; // something that can be converted and mutated?
-
-  if (Array.isArray(v)) return new ObservableArray(v, deepStructEnhancer, name);
-  if (isES6Map(v)) return new ObservableMap(v, deepStructEnhancer, name);
-
-  if (isPlainObject(v)) {
-    var res = {};
-    asObservableObject(res, name);
-    extendObservableHelper(res, deepStructEnhancer, [v]);
-    return res;
-  }
-
-  return v;
-}
-
-function refStructEnhancer(v, oldValue, name) {
-  if (deepEqual(v, oldValue)) return oldValue;
-  return v;
-}
-/**
- * During a transaction no views are updated until the end of the transaction.
- * The transaction will be run synchronously nonetheless.
- *
- * @param action a function that updates some reactive state
- * @returns any value that was returned by the 'action' parameter.
- */
-
-
-function transaction(action, thisArg) {
-  if (thisArg === void 0) {
-    thisArg = undefined;
-  }
-
-  startBatch();
-
-  try {
-    return action.apply(thisArg);
-  } finally {
-    endBatch();
-  }
-}
-
-var ObservableMapMarker = {};
-
-var ObservableMap = function () {
-  function ObservableMap(initialData, enhancer, name) {
-    if (enhancer === void 0) {
-      enhancer = deepEnhancer;
-    }
-
-    if (name === void 0) {
-      name = "ObservableMap@" + getNextId();
-    }
-
-    this.enhancer = enhancer;
-    this.name = name;
-    this.$mobx = ObservableMapMarker;
-    this._data = Object.create(null);
-    this._hasMap = Object.create(null); // hasMap, not hashMap >-).
-
-    this._keys = new ObservableArray(undefined, referenceEnhancer, this.name + ".keys()", true);
-    this.interceptors = null;
-    this.changeListeners = null;
-    this.dehancer = undefined;
-    this.merge(initialData);
-  }
-
-  ObservableMap.prototype._has = function (key) {
-    return typeof this._data[key] !== "undefined";
-  };
-
-  ObservableMap.prototype.has = function (key) {
-    if (!this.isValidKey(key)) return false;
-    key = "" + key;
-    if (this._hasMap[key]) return this._hasMap[key].get();
-    return this._updateHasMapEntry(key, false).get();
-  };
-
-  ObservableMap.prototype.set = function (key, value) {
-    this.assertValidKey(key);
-    key = "" + key;
-
-    var hasKey = this._has(key);
-
-    if (hasInterceptors(this)) {
-      var change = interceptChange(this, {
-        type: hasKey ? "update" : "add",
-        object: this,
-        newValue: value,
-        name: key
-      });
-      if (!change) return this;
-      value = change.newValue;
-    }
-
-    if (hasKey) {
-      this._updateValue(key, value);
-    } else {
-      this._addValue(key, value);
-    }
-
-    return this;
-  };
-
-  ObservableMap.prototype.delete = function (key) {
-    var _this = this;
-
-    this.assertValidKey(key);
-    key = "" + key;
-
-    if (hasInterceptors(this)) {
-      var change = interceptChange(this, {
-        type: "delete",
-        object: this,
-        name: key
-      });
-      if (!change) return false;
-    }
-
-    if (this._has(key)) {
-      var notifySpy = isSpyEnabled();
-      var notify = hasListeners(this);
-      var change = notify || notifySpy ? {
-        type: "delete",
-        object: this,
-        oldValue: this._data[key].value,
-        name: key
-      } : null;
-      if (notifySpy) spyReportStart(change);
-      transaction(function () {
-        _this._keys.remove(key);
-
-        _this._updateHasMapEntry(key, false);
-
-        var observable$$1 = _this._data[key];
-        observable$$1.setNewValue(undefined);
-        _this._data[key] = undefined;
-      });
-      if (notify) notifyListeners(this, change);
-      if (notifySpy) spyReportEnd();
-      return true;
-    }
-
-    return false;
-  };
-
-  ObservableMap.prototype._updateHasMapEntry = function (key, value) {
-    // optimization; don't fill the hasMap if we are not observing, or remove entry if there are no observers anymore
-    var entry = this._hasMap[key];
-
-    if (entry) {
-      entry.setNewValue(value);
-    } else {
-      entry = this._hasMap[key] = new ObservableValue(value, referenceEnhancer, this.name + "." + key + "?", false);
-    }
-
-    return entry;
-  };
-
-  ObservableMap.prototype._updateValue = function (name, newValue) {
-    var observable$$1 = this._data[name];
-    newValue = observable$$1.prepareNewValue(newValue);
-
-    if (newValue !== UNCHANGED) {
-      var notifySpy = isSpyEnabled();
-      var notify = hasListeners(this);
-      var change = notify || notifySpy ? {
-        type: "update",
-        object: this,
-        oldValue: observable$$1.value,
-        name: name,
-        newValue: newValue
-      } : null;
-      if (notifySpy) spyReportStart(change);
-      observable$$1.setNewValue(newValue);
-      if (notify) notifyListeners(this, change);
-      if (notifySpy) spyReportEnd();
-    }
-  };
-
-  ObservableMap.prototype._addValue = function (name, newValue) {
-    var _this = this;
-
-    transaction(function () {
-      var observable$$1 = _this._data[name] = new ObservableValue(newValue, _this.enhancer, _this.name + "." + name, false);
-      newValue = observable$$1.value; // value might have been changed
-
-      _this._updateHasMapEntry(name, true);
-
-      _this._keys.push(name);
-    });
-    var notifySpy = isSpyEnabled();
-    var notify = hasListeners(this);
-    var change = notify || notifySpy ? {
-      type: "add",
-      object: this,
-      name: name,
-      newValue: newValue
-    } : null;
-    if (notifySpy) spyReportStart(change);
-    if (notify) notifyListeners(this, change);
-    if (notifySpy) spyReportEnd();
-  };
-
-  ObservableMap.prototype.get = function (key) {
-    key = "" + key;
-    if (this.has(key)) return this.dehanceValue(this._data[key].get());
-    return this.dehanceValue(undefined);
-  };
-
-  ObservableMap.prototype.dehanceValue = function (value) {
-    if (this.dehancer !== undefined) {
-      return this.dehancer(value);
-    }
-
-    return value;
-  };
-
-  ObservableMap.prototype.keys = function () {
-    return arrayAsIterator(this._keys.slice());
-  };
-
-  ObservableMap.prototype.values = function () {
-    return arrayAsIterator(this._keys.map(this.get, this));
-  };
-
-  ObservableMap.prototype.entries = function () {
-    var _this = this;
-
-    return arrayAsIterator(this._keys.map(function (key) {
-      return [key, _this.get(key)];
-    }));
-  };
-
-  ObservableMap.prototype.forEach = function (callback, thisArg) {
-    var _this = this;
-
-    this.keys().forEach(function (key) {
-      return callback.call(thisArg, _this.get(key), key, _this);
-    });
-  };
-  /** Merge another object into this object, returns this. */
-
-
-  ObservableMap.prototype.merge = function (other) {
-    var _this = this;
-
-    if (isObservableMap(other)) {
-      other = other.toJS();
-    }
-
-    transaction(function () {
-      if (isPlainObject(other)) Object.keys(other).forEach(function (key) {
-        return _this.set(key, other[key]);
-      });else if (Array.isArray(other)) other.forEach(function (_a) {
-        var key = _a[0],
-            value = _a[1];
-        return _this.set(key, value);
-      });else if (isES6Map(other)) other.forEach(function (value, key) {
-        return _this.set(key, value);
-      });else if (other !== null && other !== undefined) fail("Cannot initialize map from " + other);
-    });
-    return this;
-  };
-
-  ObservableMap.prototype.clear = function () {
-    var _this = this;
-
-    transaction(function () {
-      untracked(function () {
-        _this.keys().forEach(_this.delete, _this);
-      });
-    });
-  };
-
-  ObservableMap.prototype.replace = function (values) {
-    var _this = this;
-
-    transaction(function () {
-      // grab all the keys that are present in the new map but not present in the current map
-      // and delete them from the map, then merge the new map
-      // this will cause reactions only on changed values
-      var newKeys = getMapLikeKeys(values);
-
-      var oldKeys = _this.keys();
-
-      var missingKeys = oldKeys.filter(function (k) {
-        return newKeys.indexOf(k) === -1;
-      });
-      missingKeys.forEach(function (k) {
-        return _this.delete(k);
-      });
-
-      _this.merge(values);
-    });
-    return this;
-  };
-
-  Object.defineProperty(ObservableMap.prototype, "size", {
-    get: function get() {
-      return this._keys.length;
-    },
-    enumerable: true,
-    configurable: true
-  });
-  /**
-   * Returns a shallow non observable object clone of this map.
-   * Note that the values might still be observable. For a deep clone use mobx.toJS.
-   */
-
-  ObservableMap.prototype.toJS = function () {
-    var _this = this;
-
-    var res = {};
-    this.keys().forEach(function (key) {
-      return res[key] = _this.get(key);
-    });
-    return res;
-  };
-
-  ObservableMap.prototype.toJSON = function () {
-    // Used by JSON.stringify
-    return this.toJS();
-  };
-
-  ObservableMap.prototype.isValidKey = function (key) {
-    if (key === null || key === undefined) return false;
-    if (typeof key === "string" || typeof key === "number" || typeof key === "boolean") return true;
-    return false;
-  };
-
-  ObservableMap.prototype.assertValidKey = function (key) {
-    if (!this.isValidKey(key)) throw new Error("[mobx.map] Invalid key: '" + key + "', only strings, numbers and booleans are accepted as key in observable maps.");
-  };
-
-  ObservableMap.prototype.toString = function () {
-    var _this = this;
-
-    return this.name + "[{ " + this.keys().map(function (key) {
-      return key + ": " + ("" + _this.get(key));
-    }).join(", ") + " }]";
-  };
-  /**
-   * Observes this object. Triggers for the events 'add', 'update' and 'delete'.
-   * See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe
-   * for callback details
-   */
-
-
-  ObservableMap.prototype.observe = function (listener, fireImmediately) {
-    invariant(fireImmediately !== true, getMessage("m033"));
-    return registerListener(this, listener);
-  };
-
-  ObservableMap.prototype.intercept = function (handler) {
-    return registerInterceptor(this, handler);
-  };
-
-  return ObservableMap;
-}();
-
-declareIterator(ObservableMap.prototype, function () {
-  return this.entries();
-});
-
-function map(initialValues) {
-  deprecated("`mobx.map` is deprecated, use `new ObservableMap` or `mobx.observable.map` instead");
-  return observable.map(initialValues);
-}
-/* 'var' fixes small-build issue */
-
-
-var isObservableMap = createInstanceofPredicate("ObservableMap", ObservableMap);
+var OBFUSCATED_ERROR = "An invariant failed, however the error is obfuscated because this is an production build.";
 var EMPTY_ARRAY = [];
 Object.freeze(EMPTY_ARRAY);
+var EMPTY_OBJECT = {};
+Object.freeze(EMPTY_OBJECT);
 
 function getGlobal() {
   return typeof window !== "undefined" ? window : global;
@@ -4202,13 +4498,13 @@ function getNextId() {
   return ++globalState.mobxGuid;
 }
 
-function fail(message, thing) {
-  invariant(false, message, thing);
+function fail$1(message) {
+  invariant(false, message);
   throw "X"; // unreachable
 }
 
-function invariant(check, message, thing) {
-  if (!check) throw new Error("[mobx] Invariant failed: " + message + (thing ? " in '" + thing + "'" : ""));
+function invariant(check, message) {
+  if (!check) throw new Error("[mobx] " + (message || OBFUSCATED_ERROR));
 }
 /**
  * Prints a deprecation message, but only one time.
@@ -4218,7 +4514,13 @@ function invariant(check, message, thing) {
 
 var deprecatedMessages = [];
 
-function deprecated(msg) {
+function deprecated(msg, thing) {
+  if (process.env.NODE_ENV === "production") return false;
+
+  if (thing) {
+    return deprecated("'" + msg + "', use '" + thing + "' instead.");
+  }
+
   if (deprecatedMessages.indexOf(msg) !== -1) return false;
   deprecatedMessages.push(msg);
   console.error("[mobx] Deprecated: " + msg);
@@ -4248,20 +4550,6 @@ function unique(list) {
   return res;
 }
 
-function joinStrings(things, limit, separator) {
-  if (limit === void 0) {
-    limit = 100;
-  }
-
-  if (separator === void 0) {
-    separator = " - ";
-  }
-
-  if (!things) return "";
-  var sliced = things.slice(0, limit);
-  return "" + sliced.join(separator) + (things.length > limit ? " (... and " + (things.length - limit) + "more)" : "");
-}
-
 function isObject(value) {
   return value !== null && (typeof value === "undefined" ? "undefined" : _typeof(value)) === "object";
 }
@@ -4270,28 +4558,6 @@ function isPlainObject(value) {
   if (value === null || (typeof value === "undefined" ? "undefined" : _typeof(value)) !== "object") return false;
   var proto = Object.getPrototypeOf(value);
   return proto === Object.prototype || proto === null;
-}
-
-function objectAssign() {
-  var res = arguments[0];
-
-  for (var i = 1, l = arguments.length; i < l; i++) {
-    var source = arguments[i];
-
-    for (var key in source) {
-      if (hasOwnProperty(source, key)) {
-        res[key] = source[key];
-      }
-    }
-  }
-
-  return res;
-}
-
-var prototypeHasOwnProperty = Object.prototype.hasOwnProperty;
-
-function hasOwnProperty(object, propName) {
-  return prototypeHasOwnProperty.call(object, propName);
 }
 
 function makeNonEnumerable(object, propNames) {
@@ -4324,7 +4590,7 @@ function isPropertyConfigurable(object, prop) {
 }
 
 function assertPropertyConfigurable(object, prop) {
-  invariant(isPropertyConfigurable(object, prop), "Cannot make property '" + prop + "' observable, it is not configurable and writable in the target object");
+  if (process.env.NODE_ENV !== "production" && !isPropertyConfigurable(object, prop)) fail$1("Cannot make property '" + prop + "' observable, it is not configurable and writable in the target object");
 }
 
 function createInstanceofPredicate(name, clazz) {
@@ -4352,16 +4618,18 @@ function isES6Map(thing) {
   return false;
 }
 
-function getMapLikeKeys(map$$1) {
-  if (isPlainObject(map$$1)) return Object.keys(map$$1);
-  if (Array.isArray(map$$1)) return map$$1.map(function (_a) {
-    var key = _a[0];
+function getMapLikeKeys(map) {
+  if (isPlainObject(map)) return Object.keys(map);
+  if (Array.isArray(map)) return map.map(function (_a) {
+    var _b = __read(_a, 1),
+        key = _b[0];
+
     return key;
   });
-  if (isES6Map(map$$1)) return Array.from(map$$1.keys());
-  if (isObservableMap(map$$1)) return map$$1.keys();
-  return fail("Cannot get keys from " + map$$1);
-}
+  if (isES6Map(map) || isObservableMap(map)) return iteratorToArray(map.keys());
+  return fail$1("Cannot get keys from '" + map + "'");
+} // use Array.from in Mobx 5
+
 
 function iteratorToArray(it) {
   var res = [];
@@ -4387,16 +4655,26 @@ function toPrimitive(value) {
  */
 
 
-var persistentKeys = ["mobxGuid", "resetId", "spyListeners", "strictMode", "runId"];
+var persistentKeys = ["mobxGuid", "spyListeners", "enforceActions", "computedRequiresReaction", "disableErrorBoundaries", "runId", "UNCHANGED"];
 
-var MobXGlobals = function () {
+var MobXGlobals =
+/** @class */
+function () {
   function MobXGlobals() {
     /**
      * MobXGlobals version.
      * MobX compatiblity with other versions loaded in memory as long as this version matches.
      * It indicates that the global state still stores similar information
+     *
+     * N.B: this version is unrelated to the package version of MobX, and is only the version of the
+     * internal state storage of MobX, and can be the same across many different package versions
      */
     this.version = 5;
+    /**
+     * globally unique token to signal unchanged
+     */
+
+    this.UNCHANGED = {};
     /**
      * Currently running derivation
      */
@@ -4451,12 +4729,7 @@ var MobXGlobals = function () {
      * If strict mode is enabled, state changes are by default not allowed
      */
 
-    this.strictMode = false;
-    /**
-     * Used by createTransformer to detect that the global state has been reset.
-     */
-
-    this.resetId = 0;
+    this.enforceActions = false;
     /**
      * Spy callbacks
      */
@@ -4467,49 +4740,56 @@ var MobXGlobals = function () {
      */
 
     this.globalReactionErrorHandlers = [];
+    /**
+     * Warn if computed values are accessed outside a reactive context
+     */
+
+    this.computedRequiresReaction = false;
+    /*
+     * Don't catch and rethrow exceptions. This is useful for inspecting the state of
+     * the stack when an exception occurs while debugging.
+     */
+
+    this.disableErrorBoundaries = false;
   }
 
   return MobXGlobals;
 }();
 
-var globalState = new MobXGlobals();
-var shareGlobalStateCalled = false;
-var runInIsolationCalled = false;
-var warnedAboutMultipleInstances = false;
-{
-  var global_1 = getGlobal();
+var canMergeGlobalState = true;
+var isolateCalled = false;
 
-  if (!global_1.__mobxInstanceCount) {
-    global_1.__mobxInstanceCount = 1;
-  } else {
-    global_1.__mobxInstanceCount++;
+var globalState = function () {
+  var global = getGlobal();
+  if (global.__mobxInstanceCount > 0 && !global.__mobxGlobals) canMergeGlobalState = false;
+  if (global.__mobxGlobals && global.__mobxGlobals.version !== new MobXGlobals().version) canMergeGlobalState = false;
+
+  if (!canMergeGlobalState) {
     setTimeout(function () {
-      if (!shareGlobalStateCalled && !runInIsolationCalled && !warnedAboutMultipleInstances) {
-        warnedAboutMultipleInstances = true;
-        console.warn("[mobx] Warning: there are multiple mobx instances active. This might lead to unexpected results. See https://github.com/mobxjs/mobx/issues/1082 for details.");
+      if (!isolateCalled) {
+        fail$1("There are multiple, different versions of MobX active. Make sure MobX is loaded only once or use `configure({ isolateGlobalState: true })`");
       }
-    });
+    }, 1);
+    return new MobXGlobals();
+  } else if (global.__mobxGlobals) {
+    global.__mobxInstanceCount += 1;
+    if (!global.__mobxGlobals.UNCHANGED) global.__mobxGlobals.UNCHANGED = {}; // make merge backward compatible
+
+    return global.__mobxGlobals;
+  } else {
+    global.__mobxInstanceCount = 1;
+    return global.__mobxGlobals = new MobXGlobals();
   }
-}
+}();
 
 function isolateGlobalState() {
-  runInIsolationCalled = true;
-  getGlobal().__mobxInstanceCount--;
-}
+  if (globalState.pendingReactions.length || globalState.inBatch || globalState.isRunningReactions) fail$1("isolateGlobalState should be called before MobX is running any reactions");
+  isolateCalled = true;
 
-function shareGlobalState() {
-  // TODO: remove in 4.0; just use peer dependencies instead.
-  deprecated("Using `shareGlobalState` is not recommended, use peer dependencies instead. See https://github.com/mobxjs/mobx/issues/1082 for details.");
-  shareGlobalStateCalled = true;
-  var global = getGlobal();
-  var ownState = globalState;
-  /**
-   * Backward compatibility check
-   */
-
-  if (global.__mobservableTrackingStack || global.__mobservableViewStack) throw new Error("[mobx] An incompatible version of mobservable is already loaded.");
-  if (global.__mobxGlobal && global.__mobxGlobal.version !== ownState.version) throw new Error("[mobx] An incompatible version of mobx is already loaded.");
-  if (global.__mobxGlobal) globalState = global.__mobxGlobal;else global.__mobxGlobal = ownState;
+  if (canMergeGlobalState) {
+    if (--getGlobal().__mobxInstanceCount === 0) getGlobal().__mobxGlobals = undefined;
+    globalState = new MobXGlobals();
+  }
 }
 
 function getGlobalState() {
@@ -4522,71 +4802,13 @@ function getGlobalState() {
 
 
 function resetGlobalState() {
-  globalState.resetId++;
   var defaultGlobals = new MobXGlobals();
 
   for (var key in defaultGlobals) {
     if (persistentKeys.indexOf(key) === -1) globalState[key] = defaultGlobals[key];
   }
 
-  globalState.allowStateChanges = !globalState.strictMode;
-}
-
-function getAtom(thing, property) {
-  if ((typeof thing === "undefined" ? "undefined" : _typeof(thing)) === "object" && thing !== null) {
-    if (isObservableArray(thing)) {
-      invariant(property === undefined, getMessage("m036"));
-      return thing.$mobx.atom;
-    }
-
-    if (isObservableMap(thing)) {
-      var anyThing = thing;
-      if (property === undefined) return getAtom(anyThing._keys);
-      var observable = anyThing._data[property] || anyThing._hasMap[property];
-      invariant(!!observable, "the entry '" + property + "' does not exist in the observable map '" + getDebugName(thing) + "'");
-      return observable;
-    } // Initializers run lazily when transpiling to babel, so make sure they are run...
-
-
-    runLazyInitializers(thing);
-    if (property && !thing.$mobx) thing[property]; // See #1072 // TODO: remove in 4.0
-
-    if (isObservableObject(thing)) {
-      if (!property) return fail("please specify a property");
-      var observable = thing.$mobx.values[property];
-      invariant(!!observable, "no observable property '" + property + "' found on the observable object '" + getDebugName(thing) + "'");
-      return observable;
-    }
-
-    if (isAtom(thing) || isComputedValue(thing) || isReaction(thing)) {
-      return thing;
-    }
-  } else if (typeof thing === "function") {
-    if (isReaction(thing.$mobx)) {
-      // disposer function
-      return thing.$mobx;
-    }
-  }
-
-  return fail("Cannot obtain atom from " + thing);
-}
-
-function getAdministration(thing, property) {
-  invariant(thing, "Expecting some object");
-  if (property !== undefined) return getAdministration(getAtom(thing, property));
-  if (isAtom(thing) || isComputedValue(thing) || isReaction(thing)) return thing;
-  if (isObservableMap(thing)) return thing; // Initializers run lazily when transpiling to babel, so make sure they are run...
-
-  runLazyInitializers(thing);
-  if (thing.$mobx) return thing.$mobx;
-  invariant(false, "Cannot obtain administration from " + thing);
-}
-
-function getDebugName(thing, property) {
-  var named;
-  if (property !== undefined) named = getAtom(thing, property);else if (isObservableObject(thing) || isObservableMap(thing)) named = getAdministration(thing);else named = getAtom(thing); // valid for arrays as well
-
-  return named.name;
+  globalState.allowStateChanges = !globalState.enforceActions;
 }
 
 function getDependencyTree(thing, property) {
@@ -4619,7 +4841,24 @@ function hasObservers(observable) {
 
 function getObservers(observable) {
   return observable.observers;
-}
+} // function invariantObservers(observable: IObservable) {
+//     const list = observable.observers
+//     const map = observable.observersIndexes
+//     const l = list.length
+//     for (let i = 0; i < l; i++) {
+//         const id = list[i].__mapid
+//         if (i) {
+//             invariant(map[id] === i, "INTERNAL ERROR maps derivation.__mapid to index in list") // for performance
+//         } else {
+//             invariant(!(id in map), "INTERNAL ERROR observer on index 0 shouldn't be held in map.") // for performance
+//         }
+//     }
+//     invariant(
+//         list.length === 0 || Object.keys(map).length === list.length - 1,
+//         "INTERNAL ERROR there is no junk in map"
+//     )
+// }
+
 
 function addObserver(observable, node) {
   // invariant(node.dependenciesState !== -1, "INTERNAL ERROR, can add only dependenciesState !== -1");
@@ -4672,8 +4911,7 @@ function removeObserver(observable, node) {
 }
 
 function queueForUnobservation(observable) {
-  if (!observable.isPendingUnobservation) {
-    // invariant(globalState.inBatch > 0, "INTERNAL ERROR, remove should be called only inside batch");
+  if (observable.isPendingUnobservation === false) {
     // invariant(observable._observers.length === 0, "INTERNAL ERROR, should only queue for unobservation unobserved observables");
     observable.isPendingUnobservation = true;
     globalState.pendingUnobservations.push(observable);
@@ -4701,7 +4939,17 @@ function endBatch() {
       observable.isPendingUnobservation = false;
 
       if (observable.observers.length === 0) {
-        observable.onBecomeUnobserved(); // NOTE: onBecomeUnobserved might push to `pendingUnobservations`
+        if (observable.isBeingObserved) {
+          // if this observable had reactive observers, trigger the hooks
+          observable.isBeingObserved = false;
+          observable.onBecomeUnobserved();
+        }
+
+        if (observable instanceof ComputedValue) {
+          // computed values are automatically teared down when the last observer leaves
+          // this process happens recursively, this computed might be the last observabe of another, etc..
+          observable.suspend();
+        }
       }
     }
 
@@ -4721,11 +4969,33 @@ function reportObserved(observable) {
     if (derivation.runId !== observable.lastAccessedBy) {
       observable.lastAccessedBy = derivation.runId;
       derivation.newObserving[derivation.unboundDepsCount++] = observable;
+
+      if (!observable.isBeingObserved) {
+        observable.isBeingObserved = true;
+        observable.onBecomeObserved();
+      }
     }
-  } else if (observable.observers.length === 0) {
+
+    return true;
+  } else if (observable.observers.length === 0 && globalState.inBatch > 0) {
     queueForUnobservation(observable);
   }
-}
+
+  return false;
+} // function invariantLOS(observable: IObservable, msg: string) {
+//     // it's expensive so better not run it in produciton. but temporarily helpful for testing
+//     const min = getObservers(observable).reduce((a, b) => Math.min(a, b.dependenciesState), 2)
+//     if (min >= observable.lowestObserverState) return // <- the only assumption about `lowestObserverState`
+//     throw new Error(
+//         "lowestObserverState is wrong for " +
+//             msg +
+//             " because " +
+//             min +
+//             " < " +
+//             observable.lowestObserverState
+//     )
+// }
+
 /**
  * NOTE: current propagation mechanism will in case of self reruning autoruns behave unexpectedly
  * It will propagate changes to observers from previous run
@@ -4853,7 +5123,9 @@ var TraceMode;
   TraceMode[TraceMode["BREAK"] = 2] = "BREAK";
 })(TraceMode || (TraceMode = {}));
 
-var CaughtException = function () {
+var CaughtException =
+/** @class */
+function () {
   function CaughtException(cause) {
     this.cause = cause; // Empty
   }
@@ -4897,14 +5169,19 @@ function shouldCompute(derivation) {
           var obj = obs[i];
 
           if (isComputedValue(obj)) {
-            try {
+            if (globalState.disableErrorBoundaries) {
               obj.get();
-            } catch (e) {
-              // we are not interested in the value *or* exception at this moment, but if there is one, notify all
-              untrackedEnd(prevUntracked);
-              return true;
+            } else {
+              try {
+                obj.get();
+              } catch (e) {
+                // we are not interested in the value *or* exception at this moment, but if there is one, notify all
+                untrackedEnd(prevUntracked);
+                return true;
+              }
             } // if ComputedValue `obj` actually changed it will be computed and propagated to its observers.
             // and `derivation` is an observer of `obj`
+            // invariantShouldCompute(derivation)
 
 
             if (derivation.dependenciesState === IDerivationState.STALE) {
@@ -4919,7 +5196,16 @@ function shouldCompute(derivation) {
         return false;
       }
   }
-}
+} // function invariantShouldCompute(derivation: IDerivation) {
+//     const newDepState = (derivation as any).dependenciesState
+//     if (
+//         process.env.NODE_ENV === "production" &&
+//         (newDepState === IDerivationState.POSSIBLY_STALE ||
+//             newDepState === IDerivationState.NOT_TRACKING)
+//     )
+//         fail("Illegal dependency state")
+// }
+
 
 function isComputingDerivation() {
   return globalState.trackingDerivation !== null; // filter out actions inside computations
@@ -4928,9 +5214,9 @@ function isComputingDerivation() {
 function checkIfStateModificationsAreAllowed(atom) {
   var hasObservers$$1 = atom.observers.length > 0; // Should never be possible to change an observed observable from inside computed, see #798
 
-  if (globalState.computationDepth > 0 && hasObservers$$1) fail(getMessage("m031") + atom.name); // Should not be possible to change observed state outside strict mode, except during initialization, see #563
+  if (globalState.computationDepth > 0 && hasObservers$$1) fail$1(process.env.NODE_ENV !== "production" && "Computed values are not allowed to cause side effects by changing observables that are already being observed. Tried to modify: " + atom.name); // Should not be possible to change observed state outside strict mode, except during initialization, see #563
 
-  if (!globalState.allowStateChanges && hasObservers$$1) fail(getMessage(globalState.strictMode ? "m030a" : "m030b") + atom.name);
+  if (!globalState.allowStateChanges && (hasObservers$$1 || globalState.enforceActions === "strict")) fail$1(process.env.NODE_ENV !== "production" && (globalState.enforceActions ? "Since strict-mode is enabled, changing observed observable values outside actions is not allowed. Please wrap the code in an `action` if this change is intended. Tried to modify: " : "Side effects like changing state are not allowed at this point. Are you trying to modify state from, for example, the render function of a React component? Tried to modify: ") + atom.name);
 }
 /**
  * Executes the provided function `f` and tracks which observables are being accessed.
@@ -4950,10 +5236,14 @@ function trackDerivedFunction(derivation, f, context) {
   globalState.trackingDerivation = derivation;
   var result;
 
-  try {
+  if (globalState.disableErrorBoundaries === true) {
     result = f.call(context);
-  } catch (e) {
-    result = new CaughtException(e);
+  } else {
+    try {
+      result = f.call(context);
+    } catch (e) {
+      result = new CaughtException(e);
+    }
   }
 
   globalState.trackingDerivation = prevTracking;
@@ -5078,19 +5368,6 @@ function changeDependenciesStateTo0(derivation) {
   }
 }
 
-function log(msg) {
-  console.log(msg);
-  return msg;
-}
-
-function whyRun(thing, prop) {
-  deprecated("`whyRun` is deprecated in favor of `trace`");
-  thing = getAtomFromArgs(arguments);
-  if (!thing) return log(getMessage("m024"));
-  if (isComputedValue(thing) || isReaction(thing)) return log(thing.whyRun());
-  return fail(getMessage("m025"));
-}
-
 function trace() {
   var args = [];
 
@@ -5103,7 +5380,7 @@ function trace() {
   var derivation = getAtomFromArgs(args);
 
   if (!derivation) {
-    return fail("'trace(break?)' can only be used inside a tracked computed value or a Reaction. Consider passing in the computed value or reaction explicitly");
+    return fail$1(process.env.NODE_ENV !== "production" && "'trace(break?)' can only be used inside a tracked computed value or a Reaction. Consider passing in the computed value or reaction explicitly");
   }
 
   if (derivation.isTracing === TraceMode.NONE) {
@@ -5126,14 +5403,17 @@ function getAtomFromArgs(args) {
   }
 }
 
-var Reaction = function () {
-  function Reaction(name, onInvalidate) {
+var Reaction =
+/** @class */
+function () {
+  function Reaction(name, onInvalidate, errorHandler) {
     if (name === void 0) {
       name = "Reaction@" + getNextId();
     }
 
     this.name = name;
     this.onInvalidate = onInvalidate;
+    this.errorHandler = errorHandler;
     this.observing = []; // nodes we are looking at. Our value depends on these nodes
 
     this.newObserving = [];
@@ -5176,14 +5456,19 @@ var Reaction = function () {
 
       if (shouldCompute(this)) {
         this._isTrackPending = true;
-        this.onInvalidate();
 
-        if (this._isTrackPending && isSpyEnabled()) {
-          // onInvalidate didn't trigger track right away..
-          spyReport({
-            object: this,
-            type: "scheduled-reaction"
-          });
+        try {
+          this.onInvalidate();
+
+          if (this._isTrackPending && isSpyEnabled()) {
+            // onInvalidate didn't trigger track right away..
+            spyReport({
+              name: this.name,
+              type: "scheduled-reaction"
+            });
+          }
+        } catch (e) {
+          this.reportExceptionInDerivation(e);
         }
       }
 
@@ -5199,9 +5484,8 @@ var Reaction = function () {
     if (notify) {
       startTime = Date.now();
       spyReportStart({
-        object: this,
-        type: "reaction",
-        fn: fn
+        name: this.name,
+        type: "reaction"
       });
     }
 
@@ -5234,19 +5518,17 @@ var Reaction = function () {
       return;
     }
 
+    if (globalState.disableErrorBoundaries) throw error;
     var message = "[mobx] Encountered an uncaught exception that was thrown by a reaction or observer component, in: '" + this;
-    var messageToUser = getMessage("m037");
-    console.error(message || messageToUser
-    /* latter will not be true, make sure uglify doesn't remove */
-    , error);
+    console.error(message, error);
     /** If debugging brought you here, please, read the above message :-). Tnx! */
 
     if (isSpyEnabled()) {
       spyReport({
         type: "error",
+        name: this.name,
         message: message,
-        error: error,
-        object: this
+        error: "" + error
       });
     }
 
@@ -5271,19 +5553,11 @@ var Reaction = function () {
   Reaction.prototype.getDisposer = function () {
     var r = this.dispose.bind(this);
     r.$mobx = this;
-    r.onError = registerErrorHandler;
     return r;
   };
 
   Reaction.prototype.toString = function () {
     return "Reaction[" + this.name + "]";
-  };
-
-  Reaction.prototype.whyRun = function () {
-    var observing = unique(this._isRunning ? this.newObserving : this.observing).map(function (dep) {
-      return dep.name;
-    });
-    return "\nWhyRun? reaction '" + this.name + "':\n * Status: [" + (this.isDisposed ? "stopped" : this._isRunning ? "running" : this.isScheduled() ? "scheduled" : "idle") + "]\n * This reaction will re-run if any of the following observables changes:\n    " + joinStrings(observing) + "\n    " + (this._isRunning ? " (... or any observable accessed during the remainder of the current run)" : "") + "\n\t" + getMessage("m038") + "\n";
   };
 
   Reaction.prototype.trace = function (enterBreakPoint) {
@@ -5296,12 +5570,6 @@ var Reaction = function () {
 
   return Reaction;
 }();
-
-function registerErrorHandler(handler) {
-  invariant(this && this.$mobx && isReaction(this.$mobx), "Invalid `this`");
-  invariant(!this.$mobx.errorHandler, "Only one onErrorHandler can be registered");
-  this.$mobx.errorHandler = handler;
-}
 
 function onReactionError(handler) {
   globalState.globalReactionErrorHandlers.push(handler);
@@ -5364,78 +5632,6 @@ function setReactionScheduler(fn) {
   };
 }
 
-function asReference(value) {
-  deprecated("asReference is deprecated, use observable.ref instead");
-  return observable.ref(value);
-}
-
-function asStructure(value) {
-  deprecated("asStructure is deprecated. Use observable.struct, computed.struct or reaction options instead.");
-  return observable.struct(value);
-}
-
-function asFlat(value) {
-  deprecated("asFlat is deprecated, use observable.shallow instead");
-  return observable.shallow(value);
-}
-
-function asMap(data) {
-  deprecated("asMap is deprecated, use observable.map or observable.shallowMap instead");
-  return observable.map(data || {});
-}
-
-function createComputedDecorator(equals) {
-  return createClassPropertyDecorator(function (target, name, _, __, originalDescriptor) {
-    invariant(typeof originalDescriptor !== "undefined", getMessage("m009"));
-    invariant(typeof originalDescriptor.get === "function", getMessage("m010"));
-    var adm = asObservableObject(target, "");
-    defineComputedProperty(adm, name, originalDescriptor.get, originalDescriptor.set, equals, false);
-  }, function (name) {
-    var observable = this.$mobx.values[name];
-    if (observable === undefined // See #505
-    ) return undefined;
-    return observable.get();
-  }, function (name, value) {
-    this.$mobx.values[name].set(value);
-  }, false, false);
-}
-
-var computedDecorator = createComputedDecorator(comparer.default);
-var computedStructDecorator = createComputedDecorator(comparer.structural);
-/**
- * Decorator for class properties: @computed get value() { return expr; }.
- * For legacy purposes also invokable as ES5 observable created: `computed(() => expr)`;
- */
-
-var computed = function computed(arg1, arg2, arg3) {
-  if (typeof arg2 === "string") {
-    return computedDecorator.apply(null, arguments);
-  }
-
-  invariant(typeof arg1 === "function", getMessage("m011"));
-  invariant(arguments.length < 3, getMessage("m012"));
-  var opts = (typeof arg2 === "undefined" ? "undefined" : _typeof(arg2)) === "object" ? arg2 : {};
-  opts.setter = typeof arg2 === "function" ? arg2 : opts.setter;
-  var equals = opts.equals ? opts.equals : opts.compareStructural || opts.struct ? comparer.structural : comparer.default;
-  return new ComputedValue(arg1, opts.context, equals, opts.name || arg1.name || "", opts.setter);
-};
-
-computed.struct = computedStructDecorator;
-computed.equals = createComputedDecorator;
-
-function isComputed(value, property) {
-  if (value === null || value === undefined) return false;
-
-  if (property !== undefined) {
-    if (isObservableObject(value) === false) return false;
-    if (!value.$mobx.values[property]) return false;
-    var atom = getAtom(value, property);
-    return isComputedValue(atom);
-  }
-
-  return isComputedValue(value);
-}
-
 function observe(thing, propOrCb, cbOrFire, fireImmediately) {
   if (typeof cbOrFire === "function") return observeObservableProperty(thing, propOrCb, cbOrFire, fireImmediately);else return observeObservable(thing, propOrCb, cbOrFire);
 }
@@ -5459,152 +5655,442 @@ function interceptInterceptable(thing, handler) {
 function interceptProperty(thing, property, handler) {
   return getAdministration(thing, property).intercept(handler);
 }
-/**
- * expr can be used to create temporarily views inside views.
- * This can be improved to improve performance if a value changes often, but usually doesn't affect the outcome of an expression.
- *
- * In the following example the expression prevents that a component is rerender _each time_ the selection changes;
- * instead it will only rerenders when the current todo is (de)selected.
- *
- * reactiveComponent((props) => {
- *     const todo = props.todo;
- *     const isSelected = mobx.expr(() => props.viewState.selection === todo);
- *     return <div className={isSelected ? "todo todo-selected" : "todo"}>{todo.title}</div>
- * });
- *
- */
 
-
-function expr(expr, scope) {
-  if (!isComputingDerivation()) console.warn(getMessage("m013")); // optimization: would be more efficient if the expr itself wouldn't be evaluated first on the next change, but just a 'changed' signal would be fired
-
-  return computed(expr, {
-    context: scope
-  }).get();
+function when(predicate, arg1, arg2) {
+  if (arguments.length === 1 || arg1 && (typeof arg1 === "undefined" ? "undefined" : _typeof(arg1)) === "object") return whenPromise(predicate, arg1);
+  return _when(predicate, arg1, arg2 || {});
 }
 
-function toJS(source, detectCycles, __alreadySeen) {
-  if (detectCycles === void 0) {
-    detectCycles = true;
+function _when(predicate, effect, opts) {
+  var timeoutHandle;
+
+  if (typeof opts.timeout === "number") {
+    timeoutHandle = setTimeout(function () {
+      if (!disposer.$mobx.isDisposed) {
+        disposer();
+        var error = new Error("WHEN_TIMEOUT");
+        if (opts.onError) opts.onError(error);else throw error;
+      }
+    }, opts.timeout);
   }
 
-  if (__alreadySeen === void 0) {
-    __alreadySeen = [];
-  } // optimization: using ES6 map would be more efficient!
-  // optimization: lift this function outside toJS, this makes recursion expensive
-
-
-  function cache(value) {
-    if (detectCycles) __alreadySeen.push([source, value]);
-    return value;
-  }
-
-  if (isObservable(source)) {
-    if (detectCycles && __alreadySeen === null) __alreadySeen = [];
-
-    if (detectCycles && source !== null && (typeof source === "undefined" ? "undefined" : _typeof(source)) === "object") {
-      for (var i = 0, l = __alreadySeen.length; i < l; i++) {
-        if (__alreadySeen[i][0] === source) return __alreadySeen[i][1];
-      }
+  opts.name = opts.name || "When@" + getNextId();
+  var effectAction = createAction(opts.name + "-effect", effect);
+  var disposer = autorun(function (r) {
+    if (predicate()) {
+      r.dispose();
+      if (timeoutHandle) clearTimeout(timeoutHandle);
+      effectAction();
     }
-
-    if (isObservableArray(source)) {
-      var res = cache([]);
-      var toAdd = source.map(function (value) {
-        return toJS(value, detectCycles, __alreadySeen);
-      });
-      res.length = toAdd.length;
-
-      for (var i = 0, l = toAdd.length; i < l; i++) {
-        res[i] = toAdd[i];
-      }
-
-      return res;
-    }
-
-    if (isObservableObject(source)) {
-      var res = cache({});
-
-      for (var key in source) {
-        res[key] = toJS(source[key], detectCycles, __alreadySeen);
-      }
-
-      return res;
-    }
-
-    if (isObservableMap(source)) {
-      var res_1 = cache({});
-      source.forEach(function (value, key) {
-        return res_1[key] = toJS(value, detectCycles, __alreadySeen);
-      });
-      return res_1;
-    }
-
-    if (isObservableValue(source)) return toJS(source.get(), detectCycles, __alreadySeen);
-  }
-
-  return source;
+  }, opts);
+  return disposer;
 }
 
-function createTransformer(transformer, onCleanup) {
-  invariant(typeof transformer === "function" && transformer.length < 2, "createTransformer expects a function that accepts one argument"); // Memoizes: object id -> reactive view that applies transformer to the object
+function whenPromise(predicate, opts) {
+  if (process.env.NODE_ENV !== "production" && opts && opts.onError) return fail$1("the options 'onError' and 'promise' cannot be combined");
+  var cancel;
+  var res = new Promise(function (resolve, reject) {
+    var disposer = _when(predicate, resolve, __assign({}, opts, {
+      onError: reject
+    }));
 
-  var objectCache = {}; // If the resetId changes, we will clear the object cache, see #163
-  // This construction is used to avoid leaking refs to the objectCache directly
-
-  var resetId = globalState.resetId; // Local transformer class specifically for this transformer
-
-  var Transformer = function (_super) {
-    __extends(Transformer, _super);
-
-    function Transformer(sourceIdentifier, sourceObject) {
-      var _this = _super.call(this, function () {
-        return transformer(sourceObject);
-      }, undefined, comparer.default, "Transformer-" + transformer.name + "-" + sourceIdentifier, undefined) || this;
-
-      _this.sourceIdentifier = sourceIdentifier;
-      _this.sourceObject = sourceObject;
-      return _this;
-    }
-
-    Transformer.prototype.onBecomeUnobserved = function () {
-      var lastValue = this.value;
-
-      _super.prototype.onBecomeUnobserved.call(this);
-
-      delete objectCache[this.sourceIdentifier];
-      if (onCleanup) onCleanup(lastValue, this.sourceObject);
+    cancel = function cancel() {
+      disposer();
+      reject("WHEN_CANCELLED");
     };
+  });
+  res.cancel = cancel;
+  return res;
+}
 
-    return Transformer;
-  }(ComputedValue);
+function keys(obj) {
+  if (isObservableObject(obj)) {
+    return obj.$mobx.getKeys();
+  }
 
-  return function (object) {
-    if (resetId !== globalState.resetId) {
-      objectCache = {};
-      resetId = globalState.resetId;
+  if (isObservableMap(obj)) {
+    return obj._keys.slice();
+  }
+
+  if (isObservableArray(obj)) {
+    return obj.map(function (_, index) {
+      return index;
+    });
+  }
+
+  return fail$1(process.env.NODE_ENV !== "production" && "'keys()' can only be used on observable objects, arrays and maps");
+}
+
+function values(obj) {
+  if (isObservableObject(obj)) {
+    return keys(obj).map(function (key) {
+      return obj[key];
+    });
+  }
+
+  if (isObservableMap(obj)) {
+    return keys(obj).map(function (key) {
+      return obj.get(key);
+    });
+  }
+
+  if (isObservableArray(obj)) {
+    return obj.slice();
+  }
+
+  return fail$1(process.env.NODE_ENV !== "production" && "'values()' can only be used on observable objects, arrays and maps");
+}
+
+function entries(obj) {
+  if (isObservableObject(obj)) {
+    return keys(obj).map(function (key) {
+      return [key, obj[key]];
+    });
+  }
+
+  if (isObservableMap(obj)) {
+    return keys(obj).map(function (key) {
+      return [key, obj.get(key)];
+    });
+  }
+
+  if (isObservableArray(obj)) {
+    return obj.map(function (key, index) {
+      return [index, key];
+    });
+  }
+
+  return fail$1(process.env.NODE_ENV !== "production" && "'entries()' can only be used on observable objects, arrays and maps");
+}
+
+function set(obj, key, value) {
+  if (arguments.length === 2) {
+    startBatch();
+    var values_1 = key;
+
+    try {
+      for (var key_1 in values_1) {
+        set(obj, key_1, values_1[key_1]);
+      }
+    } finally {
+      endBatch();
     }
 
-    var identifier = getMemoizationId(object);
-    var reactiveTransformer = objectCache[identifier];
-    if (reactiveTransformer) return reactiveTransformer.get(); // Not in cache; create a reactive view
+    return;
+  }
 
-    reactiveTransformer = objectCache[identifier] = new Transformer(identifier, object);
-    return reactiveTransformer.get();
+  if (isObservableObject(obj)) {
+    var adm = obj.$mobx;
+    var existingObservable = adm.values[key];
+
+    if (existingObservable) {
+      adm.write(obj, key, value);
+    } else {
+      defineObservableProperty(obj, key, value, adm.defaultEnhancer);
+    }
+  } else if (isObservableMap(obj)) {
+    obj.set(key, value);
+  } else if (isObservableArray(obj)) {
+    if (typeof key !== "number") key = parseInt(key, 10);
+    invariant(key >= 0, "Not a valid index: '" + key + "'");
+    startBatch();
+    if (key >= obj.length) obj.length = key + 1;
+    obj[key] = value;
+    endBatch();
+  } else {
+    return fail$1(process.env.NODE_ENV !== "production" && "'set()' can only be used on observable objects, arrays and maps");
+  }
+}
+
+function remove(obj, key) {
+  if (isObservableObject(obj)) {
+    obj.$mobx.remove(key);
+  } else if (isObservableMap(obj)) {
+    obj.delete(key);
+  } else if (isObservableArray(obj)) {
+    if (typeof key !== "number") key = parseInt(key, 10);
+    invariant(key >= 0, "Not a valid index: '" + key + "'");
+    obj.splice(key, 1);
+  } else {
+    return fail$1(process.env.NODE_ENV !== "production" && "'remove()' can only be used on observable objects, arrays and maps");
+  }
+}
+
+function has$1(obj, key) {
+  if (isObservableObject(obj)) {
+    // return keys(obj).indexOf(key) >= 0
+    var adm = getAdministration(obj);
+    adm.getKeys(); // make sure we get notified of key changes, but for performance, use the values map to look up existence
+
+    return !!adm.values[key];
+  } else if (isObservableMap(obj)) {
+    return obj.has(key);
+  } else if (isObservableArray(obj)) {
+    return key >= 0 && key < obj.length;
+  } else {
+    return fail$1(process.env.NODE_ENV !== "production" && "'has()' can only be used on observable objects, arrays and maps");
+  }
+}
+
+function get(obj, key) {
+  if (!has$1(obj, key)) return undefined;
+
+  if (isObservableObject(obj)) {
+    return obj[key];
+  } else if (isObservableMap(obj)) {
+    return obj.get(key);
+  } else if (isObservableArray(obj)) {
+    return obj[key];
+  } else {
+    return fail$1(process.env.NODE_ENV !== "production" && "'get()' can only be used on observable objects, arrays and maps");
+  }
+}
+
+function decorate(thing, decorators) {
+  process.env.NODE_ENV !== "production" && invariant(isPlainObject(decorators), "Decorators should be a key value map");
+  var target = typeof thing === "function" ? thing.prototype : thing;
+
+  var _loop_1 = function _loop_1(prop) {
+    var propertyDecorators = decorators[prop];
+
+    if (!Array.isArray(propertyDecorators)) {
+      propertyDecorators = [propertyDecorators];
+    }
+
+    process.env.NODE_ENV !== "production" && invariant(propertyDecorators.every(function (decorator) {
+      return typeof decorator === "function";
+    }), "Decorate: expected a decorator function or array of decorator functions for '" + prop + "'");
+    var descriptor = Object.getOwnPropertyDescriptor(target, prop);
+    var newDescriptor = propertyDecorators.reduce(function (accDescriptor, decorator) {
+      return decorator(target, prop, accDescriptor);
+    }, descriptor);
+    if (newDescriptor) Object.defineProperty(target, prop, newDescriptor);
+  };
+
+  for (var prop in decorators) {
+    _loop_1(prop);
+  }
+
+  return thing;
+}
+
+function configure(options) {
+  var enforceActions = options.enforceActions,
+      computedRequiresReaction = options.computedRequiresReaction,
+      disableErrorBoundaries = options.disableErrorBoundaries,
+      arrayBuffer = options.arrayBuffer,
+      reactionScheduler = options.reactionScheduler;
+
+  if (enforceActions !== undefined) {
+    if (typeof enforceActions === "boolean" || enforceActions === "strict") deprecated("Deprecated value for 'enforceActions', use 'false' => '\"never\"', 'true' => '\"observed\"', '\"strict\"' => \"'always'\" instead");
+    var ea = void 0;
+
+    switch (enforceActions) {
+      case true:
+      case "observed":
+        ea = true;
+        break;
+
+      case false:
+      case "never":
+        ea = false;
+        break;
+
+      case "strict":
+      case "always":
+        ea = "strict";
+        break;
+
+      default:
+        fail("Invalid value for 'enforceActions': '" + enforceActions + "', expected 'never', 'always' or 'observed'");
+    }
+
+    globalState.enforceActions = ea;
+    globalState.allowStateChanges = ea === true || ea === "strict" ? false : true;
+  }
+
+  if (computedRequiresReaction !== undefined) {
+    globalState.computedRequiresReaction = !!computedRequiresReaction;
+  }
+
+  if (options.isolateGlobalState === true) {
+    isolateGlobalState();
+  }
+
+  if (disableErrorBoundaries !== undefined) {
+    if (disableErrorBoundaries === true) console.warn("WARNING: Debug feature only. MobX will NOT recover from errors if this is on.");
+    globalState.disableErrorBoundaries = !!disableErrorBoundaries;
+  }
+
+  if (typeof arrayBuffer === "number") {
+    reserveArrayBuffer(arrayBuffer);
+  }
+
+  if (reactionScheduler) {
+    setReactionScheduler(reactionScheduler);
+  }
+}
+
+var generatorId = 0;
+
+function flow(generator) {
+  if (arguments.length !== 1) fail$1(process.env.NODE_ENV && "Flow expects one 1 argument and cannot be used as decorator");
+  var name = generator.name || "<unnamed flow>"; // Implementation based on https://github.com/tj/co/blob/master/index.js
+
+  return function () {
+    var ctx = this;
+    var args = arguments;
+    var runId = ++generatorId;
+    var gen = action(name + " - runid: " + runId + " - init", generator).apply(ctx, args);
+    var rejector;
+    var pendingPromise = undefined;
+    var res = new Promise(function (resolve, reject) {
+      var stepId = 0;
+      rejector = reject;
+
+      function onFulfilled(res) {
+        pendingPromise = undefined;
+        var ret;
+
+        try {
+          ret = action(name + " - runid: " + runId + " - yield " + stepId++, gen.next).call(gen, res);
+        } catch (e) {
+          return reject(e);
+        }
+
+        next(ret);
+      }
+
+      function onRejected(err) {
+        pendingPromise = undefined;
+        var ret;
+
+        try {
+          ret = action(name + " - runid: " + runId + " - yield " + stepId++, gen.throw).call(gen, err);
+        } catch (e) {
+          return reject(e);
+        }
+
+        next(ret);
+      }
+
+      function next(ret) {
+        if (ret && typeof ret.then === "function") {
+          // an async iterator
+          ret.then(next, reject);
+          return;
+        }
+
+        if (ret.done) return resolve(ret.value);
+        pendingPromise = Promise.resolve(ret.value);
+        return pendingPromise.then(onFulfilled, onRejected);
+      }
+
+      onFulfilled(undefined); // kick off the process
+    });
+    res.cancel = action(name + " - runid: " + runId + " - cancel", function () {
+      try {
+        if (pendingPromise) cancelPromise(pendingPromise); // Finally block can return (or yield) stuff..
+
+        var res_1 = gen.return(); // eat anything that promise would do, it's cancelled!
+
+        var yieldedPromise = Promise.resolve(res_1.value);
+        yieldedPromise.then(noop, noop);
+        cancelPromise(yieldedPromise); // maybe it can be cancelled :)
+        // reject our original promise
+
+        rejector(new Error("FLOW_CANCELLED"));
+      } catch (e) {
+        rejector(e); // there could be a throwing finally block
+      }
+    });
+    return res;
   };
 }
 
-function getMemoizationId(object) {
-  if (typeof object === "string" || typeof object === "number") return object;
-  if (object === null || (typeof object === "undefined" ? "undefined" : _typeof(object)) !== "object") throw new Error("[mobx] transform expected some kind of object or primitive value, got: " + object);
-  var tid = object.$transformId;
+function cancelPromise(promise) {
+  if (typeof promise.cancel === "function") promise.cancel();
+}
 
-  if (tid === undefined) {
-    tid = getNextId();
-    addHiddenProp(object, "$transformId", tid);
+var defaultOptions = {
+  detectCycles: true,
+  exportMapsAsObjects: true,
+  recurseEverything: false
+};
+
+function cache(map, key, value, options) {
+  if (options.detectCycles) map.set(key, value);
+  return value;
+}
+
+function toJSHelper(source, options, __alreadySeen) {
+  if (!options.recurseEverything && !isObservable(source)) return source;
+  if ((typeof source === "undefined" ? "undefined" : _typeof(source)) !== "object") return source; // Directly return null if source is null
+
+  if (source === null) return null; // Directly return the Date object itself if contained in the observable
+
+  if (source instanceof Date) return source;
+  if (isObservableValue(source)) return toJSHelper(source.get(), options, __alreadySeen); // make sure we track the keys of the object
+
+  if (isObservable(source)) keys(source);
+  var detectCycles = options.detectCycles === true;
+
+  if (detectCycles && source !== null && __alreadySeen.has(source)) {
+    return __alreadySeen.get(source);
   }
 
-  return tid;
+  if (isObservableArray(source) || Array.isArray(source)) {
+    var res_1 = cache(__alreadySeen, source, [], options);
+    var toAdd = source.map(function (value) {
+      return toJSHelper(value, options, __alreadySeen);
+    });
+    res_1.length = toAdd.length;
+
+    for (var i = 0, l = toAdd.length; i < l; i++) {
+      res_1[i] = toAdd[i];
+    }
+
+    return res_1;
+  }
+
+  if (isObservableMap(source) || Object.getPrototypeOf(source) === Map.prototype) {
+    if (options.exportMapsAsObjects === false) {
+      var res_2 = cache(__alreadySeen, source, new Map(), options);
+      source.forEach(function (value, key) {
+        res_2.set(key, toJSHelper(value, options, __alreadySeen));
+      });
+      return res_2;
+    } else {
+      var res_3 = cache(__alreadySeen, source, {}, options);
+      source.forEach(function (value, key) {
+        res_3[key] = toJSHelper(value, options, __alreadySeen);
+      });
+      return res_3;
+    }
+  } // Fallback to the situation that source is an ObservableObject or a plain object
+
+
+  var res = cache(__alreadySeen, source, {}, options);
+
+  for (var key in source) {
+    res[key] = toJSHelper(source[key], options, __alreadySeen);
+  }
+
+  return res;
+}
+
+function toJS(source, options) {
+  // backward compatibility
+  if (typeof options === "boolean") options = {
+    detectCycles: options
+  };
+  if (!options) options = defaultOptions;
+  options.detectCycles = options.detectCycles === undefined ? options.recurseEverything === true : options.detectCycles === true;
+
+  var __alreadySeen;
+
+  if (options.detectCycles) __alreadySeen = new Map();
+  return toJSHelper(source, options, __alreadySeen);
 }
 
 function interceptReads(thing, propOrHandler, handler) {
@@ -5613,13 +6099,13 @@ function interceptReads(thing, propOrHandler, handler) {
   if (isObservableMap(thing) || isObservableArray(thing) || isObservableValue(thing)) {
     target = getAdministration(thing);
   } else if (isObservableObject(thing)) {
-    if (typeof propOrHandler !== "string") return fail("InterceptReads can only be used with a specific property, not with an object in general");
+    if (typeof propOrHandler !== "string") return fail$1(process.env.NODE_ENV !== "production" && "InterceptReads can only be used with a specific property, not with an object in general");
     target = getAdministration(thing, propOrHandler);
   } else {
-    return fail("Expected observable map, object or array as first array");
+    return fail$1(process.env.NODE_ENV !== "production" && "Expected observable map, object or array as first array");
   }
 
-  if (target.dehancer !== undefined) return fail("An intercept reader was already established");
+  if (target.dehancer !== undefined) return fail$1(process.env.NODE_ENV !== "production" && "An intercept reader was already established");
   target.dehancer = typeof propOrHandler === "function" ? propOrHandler : handler;
   return function () {
     target.dehancer = undefined;
@@ -5644,149 +6130,120 @@ function interceptReads(thing, propOrHandler, handler) {
  */
 
 
-var extras = {
-  allowStateChanges: allowStateChanges,
-  deepEqual: deepEqual,
-  getAtom: getAtom,
-  getDebugName: getDebugName,
-  getDependencyTree: getDependencyTree,
-  getAdministration: getAdministration,
-  getGlobalState: getGlobalState,
-  getObserverTree: getObserverTree,
-  interceptReads: interceptReads,
-  isComputingDerivation: isComputingDerivation,
-  isSpyEnabled: isSpyEnabled,
-  onReactionError: onReactionError,
-  reserveArrayBuffer: reserveArrayBuffer,
-  resetGlobalState: resetGlobalState,
-  isolateGlobalState: isolateGlobalState,
-  shareGlobalState: shareGlobalState,
-  spyReport: spyReport,
-  spyReportEnd: spyReportEnd,
-  spyReportStart: spyReportStart,
-  setReactionScheduler: setReactionScheduler
-};
-var everything = {
-  Reaction: Reaction,
-  untracked: untracked,
-  Atom: Atom,
-  BaseAtom: BaseAtom,
-  useStrict: useStrict,
-  isStrictModeEnabled: isStrictModeEnabled,
-  spy: spy,
-  comparer: comparer,
-  asReference: asReference,
-  asFlat: asFlat,
-  asStructure: asStructure,
-  asMap: asMap,
-  isModifierDescriptor: isModifierDescriptor,
-  isObservableObject: isObservableObject,
-  isBoxedObservable: isObservableValue,
-  isObservableArray: isObservableArray,
-  ObservableMap: ObservableMap,
-  isObservableMap: isObservableMap,
-  map: map,
-  transaction: transaction,
-  observable: observable,
-  computed: computed,
-  isObservable: isObservable,
-  isComputed: isComputed,
-  extendObservable: extendObservable,
-  extendShallowObservable: extendShallowObservable,
-  observe: observe,
-  intercept: intercept,
-  autorun: autorun,
-  autorunAsync: autorunAsync,
-  when: when,
-  reaction: reaction,
-  action: action,
-  isAction: isAction,
-  runInAction: runInAction,
-  expr: expr,
-  toJS: toJS,
-  createTransformer: createTransformer,
-  whyRun: whyRun,
-  isArrayLike: isArrayLike,
-  extras: extras
-};
-var warnedAboutDefaultExport = false;
+try {
+  // define process.env if needed
+  // if this is not a production build in the first place
+  // (in which case the expression below would be substituted with 'production')
+  process.env.NODE_ENV;
+} catch (e) {
+  var g = typeof window !== "undefined" ? window : global;
+  if (typeof process === "undefined") g.process = {};
+  g.process.env = {};
+} // This line should come after all the imports as well, for the same reason
+// as noted above. I will file a bug with rollupjs - @rossipedia
+// Devtools support
 
-var _loop_1 = function _loop_1(p) {
-  var val = everything[p];
-  Object.defineProperty(everything, p, {
-    get: function get() {
-      if (!warnedAboutDefaultExport) {
-        warnedAboutDefaultExport = true;
-        console.warn("Using default export (`import mobx from 'mobx'`) is deprecated " + "and won’t work in mobx@4.0.0\n" + "Use `import * as mobx from 'mobx'` instead");
-      }
-
-      return val;
-    }
-  });
-};
-
-for (var p in everything) {
-  _loop_1(p);
-}
 
 if ((typeof __MOBX_DEVTOOLS_GLOBAL_HOOK__ === "undefined" ? "undefined" : _typeof(__MOBX_DEVTOOLS_GLOBAL_HOOK__)) === "object") {
+  // See: https://github.com/andykog/mobx-devtools/
   __MOBX_DEVTOOLS_GLOBAL_HOOK__.injectMobx({
     spy: spy,
-    extras: extras
+    extras: {
+      getDebugName: getDebugName
+    }
   });
-}
+} // TODO: remove in some future build
 
-exports.extras = extras;
+
+if (process.env.NODE_ENV !== "production" && typeof module !== "undefined" && typeof module.exports !== "undefined") {
+  var warnedAboutDefaultExport_1 = false;
+  Object.defineProperty(module.exports, "default", {
+    enumerable: false,
+    get: function get() {
+      if (!warnedAboutDefaultExport_1) {
+        warnedAboutDefaultExport_1 = true;
+        console.warn("The MobX package does not have a default export. Use 'import { thing } from \"mobx\"' (recommended) or 'import * as mobx from \"mobx\"' instead.\"");
+      }
+
+      return undefined;
+    }
+  });
+  ["extras", "Atom", "BaseAtom", "asFlat", "asMap", "asReference", "asStructure", "autorunAsync", "createTranformer", "expr", "isModifierDescriptor", "isStrictModeEnabled", "map", "useStrict", "whyRun"].forEach(function (prop) {
+    Object.defineProperty(module.exports, prop, {
+      enumerable: false,
+      get: function get() {
+        fail$1("'" + prop + "' is no longer part of the public MobX api. Please consult the changelog to find out where this functionality went");
+      },
+      set: function set() {}
+    });
+  });
+} // forward compatibility with mobx, so that packages can easily support mobx 4 & 5
+
+
+var $mobx = "$mobx";
+exports.$mobx = $mobx;
 exports.Reaction = Reaction;
 exports.untracked = untracked;
 exports.IDerivationState = IDerivationState;
-exports.Atom = Atom;
-exports.BaseAtom = BaseAtom;
-exports.useStrict = useStrict;
-exports.isStrictModeEnabled = isStrictModeEnabled;
+exports.createAtom = createAtom;
 exports.spy = spy;
 exports.comparer = comparer;
-exports.asReference = asReference;
-exports.asFlat = asFlat;
-exports.asStructure = asStructure;
-exports.asMap = asMap;
-exports.isModifierDescriptor = isModifierDescriptor;
 exports.isObservableObject = isObservableObject;
 exports.isBoxedObservable = isObservableValue;
 exports.isObservableArray = isObservableArray;
 exports.ObservableMap = ObservableMap;
 exports.isObservableMap = isObservableMap;
-exports.map = map;
 exports.transaction = transaction;
 exports.observable = observable;
 exports.computed = computed;
 exports.isObservable = isObservable;
+exports.isObservableProp = isObservableProp;
 exports.isComputed = isComputed;
+exports.isComputedProp = isComputedProp;
 exports.extendObservable = extendObservable;
 exports.extendShallowObservable = extendShallowObservable;
 exports.observe = observe;
 exports.intercept = intercept;
 exports.autorun = autorun;
-exports.autorunAsync = autorunAsync;
-exports.when = when;
 exports.reaction = reaction;
+exports.when = when;
 exports.action = action;
 exports.isAction = isAction;
 exports.runInAction = runInAction;
-exports.expr = expr;
+exports.keys = keys;
+exports.values = values;
+exports.entries = entries;
+exports.set = set;
+exports.remove = remove;
+exports.has = has$1;
+exports.get = get;
+exports.decorate = decorate;
+exports.configure = configure;
+exports.onBecomeObserved = onBecomeObserved;
+exports.onBecomeUnobserved = onBecomeUnobserved;
+exports.flow = flow;
 exports.toJS = toJS;
-exports.createTransformer = createTransformer;
-exports.whyRun = whyRun;
 exports.trace = trace;
+exports.getDependencyTree = getDependencyTree;
+exports.getObserverTree = getObserverTree;
+exports._resetGlobalState = resetGlobalState;
+exports._getGlobalState = getGlobalState;
+exports.getDebugName = getDebugName;
+exports.getAtom = getAtom;
+exports._getAdministration = getAdministration;
+exports._allowStateChanges = allowStateChanges;
+exports._allowStateChangesInsideComputed = allowStateChangesInsideComputed;
 exports.isArrayLike = isArrayLike;
-exports.default = everything;
+exports._isComputingDerivation = isComputingDerivation;
+exports.onReactionError = onReactionError;
+exports._interceptReads = interceptReads;
 })
-cmldefine('31', function(require, exports, module) {
+cmldefine('32', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _config = require("32");
+var _config = require("33");
 
 var _config2 = _interopRequireDefault(_config);
 
@@ -5804,7 +6261,7 @@ var KEY = {
 };
 exports.default = new _config2.default(KEY);
 })
-cmldefine('32', function(require, exports, module) {
+cmldefine('33', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -5903,7 +6360,7 @@ cmldefine('10', function(require, exports, module) {
   value: true
 });
 
-var _config = require("32");
+var _config = require("33");
 
 var _config2 = _interopRequireDefault(_config);
 
@@ -5976,7 +6433,7 @@ var LIFECYCLE = {
 };
 exports.default = new _config2.default(LIFECYCLE);
 })
-cmldefine('68', function(require, exports, module) {
+cmldefine('69', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -6075,7 +6532,7 @@ function mergeOptions(parent, child, vm) {
   return options;
 }
 })
-cmldefine('69', function(require, exports, module) {
+cmldefine('70', function(require, exports, module) {
   var _methods;
 
 function _defineProperty(obj, key, value) {
@@ -6105,11 +6562,11 @@ function _toConsumableArray(arr) {
   }
 }
 
-var utils = require("70");
+var utils = require("71");
 
 var _ = module.exports = {};
 
-var wxStyleHandle = require("72");
+var wxStyleHandle = require("73");
 
 _.eventProxyName = '_cmlEventProxy';
 _.modelEventProxyName = '_cmlModelEventProxy'; // c-model的事件代理
@@ -6265,10 +6722,10 @@ _.mixins = {
   }), _methods)
 };
 })
-cmldefine('70', function(require, exports, module) {
+cmldefine('71', function(require, exports, module) {
   var _ = module.exports = {};
 
-var _require = require("71"),
+var _require = require("72"),
     px2cpx = _require.px2cpx;
 
 _.getStyleKeyValue = function (declaration) {
@@ -6347,7 +6804,7 @@ _.getNewEvent = function (e) {
   return newEvent;
 };
 })
-cmldefine('71', function(require, exports, module) {
+cmldefine('72', function(require, exports, module) {
   var _ = module.exports = {};
 
 var viewportWidth = void 0;
@@ -6365,10 +6822,10 @@ _.px2cpx = function (px, platform) {
   return cpx;
 };
 })
-cmldefine('72', function(require, exports, module) {
-  var utils = require("73");
+cmldefine('73', function(require, exports, module) {
+  var utils = require("74");
 
-var lines = require("74"); // 运行时的cpx2rpx不能使用postcss处理，因为$cmlStyle方法用到了该方法，在运行时使用postcss 会出现Cannot find module "fs"的错误
+var lines = require("75"); // 运行时的cpx2rpx不能使用postcss处理，因为$cmlStyle方法用到了该方法，在运行时使用postcss 会出现Cannot find module "fs"的错误
 
 
 module.exports = function (content) {
@@ -6408,7 +6865,7 @@ module.exports = function (content) {
   }
 };
 })
-cmldefine('73', function(require, exports, module) {
+cmldefine('74', function(require, exports, module) {
   var _ = {};
 module.exports = _; // 将字符串中的 单引号变成 双引号；
 
@@ -6458,7 +6915,7 @@ _.getStyleKeyValue = function (declaration) {
   };
 };
 })
-cmldefine('74', function(require, exports, module) {
+cmldefine('75', function(require, exports, module) {
   // 静态编译和运行时 web和小程序端对lines属性特殊处理
 module.exports = function (linesNumber) {
   // 作为一个属性注意最后不能添加分号
@@ -6510,7 +6967,7 @@ var _createClass = function () {
 
 var _mobx = require("13");
 
-var _toJS = require("75");
+var _toJS = require("76");
 
 var _toJS2 = _interopRequireDefault(_toJS);
 
@@ -6522,17 +6979,17 @@ var _lifecycle = require("10");
 
 var _lifecycle2 = _interopRequireDefault(_lifecycle);
 
-var _KEY = require("31");
+var _KEY = require("32");
 
 var _KEY2 = _interopRequireDefault(_KEY);
 
-var _diff = require("77");
+var _diff = require("78");
 
 var _diff2 = _interopRequireDefault(_diff);
 
 var _warn = require("30");
 
-var _EventBus = require("78");
+var _EventBus = require("79");
 
 var _EventBus2 = _interopRequireDefault(_EventBus);
 
@@ -6982,7 +7439,7 @@ function createWatcher(vm, expOrFn, handler, options) {
   return vm.$watch(expOrFn, handler, options);
 }
 })
-cmldefine('75', function(require, exports, module) {
+cmldefine('76', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -6999,7 +7456,7 @@ var _mobx = require("13");
 
 var _type = require("7");
 
-var _style = require("76");
+var _style = require("77");
 
 function toJS(source) {
   var detectCycles = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
@@ -7094,7 +7551,7 @@ function toJS(source) {
   }
 }
 })
-cmldefine('76', function(require, exports, module) {
+cmldefine('77', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7172,7 +7629,7 @@ function pxTransform(s) {
   });
 }
 })
-cmldefine('77', function(require, exports, module) {
+cmldefine('78', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7270,12 +7727,12 @@ function isNum(value) {
   return !isNaN(Number(value));
 }
 })
-cmldefine('78', function(require, exports, module) {
+cmldefine('79', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Event = require("79");
+var _Event = require("80");
 
 var _Event2 = _interopRequireDefault(_Event);
 
@@ -7288,7 +7745,7 @@ function _interopRequireDefault(obj) {
 var EventBus = new _Event2.default();
 exports.default = EventBus;
 })
-cmldefine('79', function(require, exports, module) {
+cmldefine('80', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7534,7 +7991,7 @@ var _createClass = function () {
   };
 }();
 
-var _proto = require("80");
+var _proto = require("81");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -7572,7 +8029,7 @@ var BaseCtor = function () {
 
 exports.default = BaseCtor;
 })
-cmldefine('80', function(require, exports, module) {
+cmldefine('81', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7603,7 +8060,7 @@ function copyProtoProperty() {
   return EXPORT_OBJ;
 }
 })
-cmldefine('81', function(require, exports, module) {
+cmldefine('82', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7715,7 +8172,7 @@ var CmlPage = exports.CmlPage = function (_BaseCtor) {
   return CmlPage;
 }(_BaseCtor3.default);
 })
-cmldefine('82', function(require, exports, module) {
+cmldefine('83', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7845,13 +8302,13 @@ cmldefine('3', function(require, exports, module) {
   return EXPORT_OBJ;
 };
 })
-cmldefine('83', function(require, exports, module) {
+cmldefine('84', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.createPage = createPage;
 
-var _index = require("84");
+var _index = require("85");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -7865,7 +8322,7 @@ function createPage(options) {
   return _index2.default.createPage(options);
 }
 })
-cmldefine('84', function(require, exports, module) {
+cmldefine('85', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7918,13 +8375,13 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('85', function(require, exports, module) {
+cmldefine('86', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.createComponent = createComponent;
 
-var _index = require("86");
+var _index = require("87");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -7938,7 +8395,7 @@ function createComponent(options) {
   return _index2.default.createComponent(options);
 }
 })
-cmldefine('86', function(require, exports, module) {
+cmldefine('87', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7991,7 +8448,7 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('91', function(require, exports, module) {
+cmldefine('92', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8026,12 +8483,12 @@ var Home = function Home() {
       desc: '基础内容、表单组建、导航、视图容器等',
       url: '/pages/com/com'
     }, {
-      icon: require("38"),
+      icon: require("39"),
       title: '接口',
       desc: '界面、网络、数据、weex端扩展能力',
       url: '/pages/api/api'
     }, {
-      icon: require("38"),
+      icon: require("39"),
       title: '实例',
       desc: '网易严选等更多实例',
       url: '/pages/demo/demo'
@@ -8056,51 +8513,51 @@ cmldefine('1', function(require, exports, module) {
   value: true
 });
 
-var _index = require("92");
+var _index = require("93");
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = require("94");
+var _index3 = require("95");
 
 var _index4 = _interopRequireDefault(_index3);
 
-var _index5 = require("96");
+var _index5 = require("97");
 
 var _index6 = _interopRequireDefault(_index5);
 
-var _index7 = require("98");
+var _index7 = require("99");
 
 var _index8 = _interopRequireDefault(_index7);
 
-var _index9 = require("100");
+var _index9 = require("101");
 
 var _index10 = _interopRequireDefault(_index9);
 
-var _index11 = require("102");
+var _index11 = require("103");
 
 var _index12 = _interopRequireDefault(_index11);
 
-var _index13 = require("104");
+var _index13 = require("105");
 
 var _index14 = _interopRequireDefault(_index13);
 
-var _index15 = require("106");
+var _index15 = require("107");
 
 var _index16 = _interopRequireDefault(_index15);
 
-var _index17 = require("108");
+var _index17 = require("109");
 
 var _index18 = _interopRequireDefault(_index17);
 
-var _index19 = require("110");
+var _index19 = require("111");
 
 var _index20 = _interopRequireDefault(_index19);
 
-var _index21 = require("112");
+var _index21 = require("113");
 
 var _index22 = _interopRequireDefault(_index21);
 
-var _index23 = require("114");
+var _index23 = require("115");
 
 var _index24 = _interopRequireDefault(_index23);
 
@@ -8225,13 +8682,13 @@ exports.default = {
   createInnerAudioContext: _index64.default
 };
 })
-cmldefine('92', function(require, exports, module) {
+cmldefine('93', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = alert;
 
-var _index = require("93");
+var _index = require("94");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -8258,7 +8715,7 @@ function alert(opt) {
   });
 }
 })
-cmldefine('93', function(require, exports, module) {
+cmldefine('94', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8320,13 +8777,13 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('94', function(require, exports, module) {
+cmldefine('95', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = confirm;
 
-var _index = require("95");
+var _index = require("96");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -8356,7 +8813,7 @@ function confirm(opt) {
   });
 }
 })
-cmldefine('95', function(require, exports, module) {
+cmldefine('96', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8424,13 +8881,13 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('96', function(require, exports, module) {
+cmldefine('97', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = showToast;
 
-var _index = require("97");
+var _index = require("98");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -8452,7 +8909,7 @@ function showToast(opt) {
   });
 }
 })
-cmldefine('97', function(require, exports, module) {
+cmldefine('98', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8508,13 +8965,13 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('98', function(require, exports, module) {
+cmldefine('99', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = setTitle;
 
-var _index = require("99");
+var _index = require("100");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -8530,7 +8987,7 @@ function setTitle() {
   _index2.default.setTitle(title);
 }
 })
-cmldefine('99', function(require, exports, module) {
+cmldefine('100', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8582,12 +9039,12 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('100', function(require, exports, module) {
+cmldefine('101', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = require("101");
+var _index = require("102");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -8602,7 +9059,7 @@ var RequestAnimationFactory = _index2.default.init();
 var animationFrame = new RequestAnimationFactory();
 exports.default = animationFrame.requestAnimationFrame();
 })
-cmldefine('101', function(require, exports, module) {
+cmldefine('102', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8625,7 +9082,7 @@ var _createClass = function () {
   };
 }();
 
-var _animationShim = require("33");
+var _animationShim = require("34");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -8667,7 +9124,7 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('33', function(require, exports, module) {
+cmldefine('34', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8707,12 +9164,12 @@ var cancelAnimationFrame = exports.cancelAnimationFrame = function cancelAnimati
   }
 };
 })
-cmldefine('102', function(require, exports, module) {
+cmldefine('103', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = require("103");
+var _index = require("104");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -8727,7 +9184,7 @@ var CancelAnimationFactory = _index2.default.init();
 var animationFrame = new CancelAnimationFactory();
 exports.default = animationFrame.cancelAnimationFrame();
 })
-cmldefine('103', function(require, exports, module) {
+cmldefine('104', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8750,7 +9207,7 @@ var _createClass = function () {
   };
 }();
 
-var _animationShim = require("33");
+var _animationShim = require("34");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -8792,13 +9249,13 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('104', function(require, exports, module) {
+cmldefine('105', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = inSDK;
 
-var _index = require("105");
+var _index = require("106");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -8812,7 +9269,7 @@ function inSDK() {
   return _index2.default.inSDK();
 }
 })
-cmldefine('105', function(require, exports, module) {
+cmldefine('106', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8862,13 +9319,13 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('106', function(require, exports, module) {
+cmldefine('107', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = chooseImage;
 
-var _index = require("107");
+var _index = require("108");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -8891,7 +9348,7 @@ function chooseImage() {
   });
 }
 })
-cmldefine('107', function(require, exports, module) {
+cmldefine('108', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8969,13 +9426,13 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('108', function(require, exports, module) {
+cmldefine('109', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = close;
 
-var _index = require("109");
+var _index = require("110");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -8989,7 +9446,7 @@ function close() {
   _index2.default.close();
 }
 })
-cmldefine('109', function(require, exports, module) {
+cmldefine('110', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9041,13 +9498,13 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('110', function(require, exports, module) {
+cmldefine('111', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = open;
 
-var _index = require("111");
+var _index = require("112");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -9067,7 +9524,7 @@ function open() {
   _index2.default.open(url, commonPatchParams, extraOptions);
 }
 })
-cmldefine('111', function(require, exports, module) {
+cmldefine('112', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9115,7 +9572,7 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('112', function(require, exports, module) {
+cmldefine('113', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9128,7 +9585,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.default = setStorage;
 
-var _index = require("113");
+var _index = require("114");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -9161,7 +9618,7 @@ function setStorage(key, value) {
   });
 }
 })
-cmldefine('113', function(require, exports, module) {
+cmldefine('114', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9244,13 +9701,13 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('114', function(require, exports, module) {
+cmldefine('115', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = getStorage;
 
-var _index = require("115");
+var _index = require("116");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -9275,7 +9732,7 @@ function getStorage(key) {
   });
 }
 })
-cmldefine('115', function(require, exports, module) {
+cmldefine('116', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9823,7 +10280,7 @@ cmldefine('119', function(require, exports, module) {
 });
 exports.default = getClipBoardData;
 
-var _index = require("34");
+var _index = require("35");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -9845,7 +10302,7 @@ function getClipBoardData() {
   });
 }
 })
-cmldefine('34', function(require, exports, module) {
+cmldefine('35', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9937,7 +10394,7 @@ cmldefine('120', function(require, exports, module) {
 });
 exports.default = setClipBoardData;
 
-var _index = require("34");
+var _index = require("35");
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -10572,7 +11029,7 @@ cmldefine('135', function(require, exports, module) {
 });
 exports.default = px2cpx;
 
-var _getWidth = require("35");
+var _getWidth = require("36");
 
 var _getWidth2 = _interopRequireDefault(_getWidth);
 
@@ -10594,7 +11051,7 @@ function px2cpx(px) {
   return cpx;
 }
 })
-cmldefine('35', function(require, exports, module) {
+cmldefine('36', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10653,7 +11110,7 @@ cmldefine('136', function(require, exports, module) {
 });
 exports.default = cpx2px;
 
-var _getWidth = require("35");
+var _getWidth = require("36");
 
 var _getWidth2 = _interopRequireDefault(_getWidth);
 
@@ -11424,13 +11881,13 @@ var _createClass = function () {
   };
 }();
 
-var _common = require("36");
+var _common = require("37");
 
 var _tt = require("149");
 
 var _common2 = require("150");
 
-var _util = require("37");
+var _util = require("38");
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -11508,7 +11965,7 @@ var copyProtoProperty = require("3");
 
 copyProtoProperty(exports.default);
 })
-cmldefine('36', function(require, exports, module) {
+cmldefine('37', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -11578,11 +12035,11 @@ cmldefine('149', function(require, exports, module) {
 });
 exports.transformLoader = undefined;
 
-var _util = require("37");
+var _util = require("38");
 
 var _utils = require("9");
 
-var _common = require("36");
+var _common = require("37");
 
 var transformLoader = exports.transformLoader = function transformLoader(styles, description) {
   var returnStyles = {};
@@ -11617,7 +12074,7 @@ var transformLoader = exports.transformLoader = function transformLoader(styles,
   return returnStyles;
 }; // import { cpx2px } from 'chameleon-api/src/interfaces/createAnimation/_util';
 })
-cmldefine('37', function(require, exports, module) {
+cmldefine('38', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -11960,7 +12417,7 @@ copyProtoProperty(exports.default);
 cmldefine('154', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/home-ui_ff6eff2.png";
 })
-cmldefine('38', function(require, exports, module) {
+cmldefine('39', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/home-api_f4f07d0.png";
 })
 cmldefine('155', function(require, exports, module) {
@@ -12057,7 +12514,7 @@ cmldefine('164', function(require, exports, module) {
   value: true
 });
 
-var _regenerator = require("39");
+var _regenerator = require("40");
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -12282,7 +12739,7 @@ var Scroller = function () {
 exports.default = new Scroller();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('39', function(require, exports, module) {
+cmldefine('40', function(require, exports, module) {
   module.exports = require("165");
 })
 cmldefine('165', function(require, exports, module) {
@@ -13059,7 +13516,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _routerConfig = require("40");
+var _routerConfig = require("41");
 
 var _routerConfig2 = _interopRequireDefault(_routerConfig);
 
@@ -13093,7 +13550,7 @@ var Home = function () {
       iconApiUri: require("24"),
       cells: [{
         title: '基础内容',
-        iconUri: require("41"),
+        iconUri: require("42"),
         list: [{
           method: '',
           url: routeObj["text"].path,
@@ -13105,7 +13562,7 @@ var Home = function () {
         }]
       }, {
         title: '视图容器',
-        iconUri: require("42"),
+        iconUri: require("43"),
         list: [{
           method: '',
           url: routeObj["list"].path,
@@ -13118,10 +13575,14 @@ var Home = function () {
           method: '',
           url: routeObj["carousel"].path,
           title: routeObj["carousel"].name
+        }, {
+          method: '',
+          url: routeObj["refresh-view"].path,
+          title: routeObj["refresh-view"].name
         }]
       }, {
         title: '布局容器',
-        iconUri: require("42"),
+        iconUri: require("43"),
         list: [{
           method: '',
           url: routeObj["row"].path,
@@ -13161,7 +13622,7 @@ var Home = function () {
         }]
       }, {
         title: '媒体组件',
-        iconUri: require("43"),
+        iconUri: require("44"),
         list: [{
           method: '',
           url: routeObj["image"].path,
@@ -13173,7 +13634,7 @@ var Home = function () {
         }]
       }, {
         title: '扩展组件',
-        iconUri: require("43"),
+        iconUri: require("44"),
         list: [{
           method: '',
           url: routeObj["c-dialog"].path,
@@ -13251,22 +13712,22 @@ var Home = function () {
 exports.default = new Home();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('40', function(require, exports, module) {
-  module.exports = module.exports = {"mode":"hash","domain":"https://cmljs.org","routes":[{"url":"/","path":"/pages/index/index","name":"首页","mock":"index.php"},{"name":"com","url":"/pages/com/com","path":"/pages/com/com","mock":"index.php"},{"name":"api","url":"/pages/api/api","path":"/pages/api/api","mock":"index.php"},{"name":"demo","url":"/pages/demo/demo","path":"/pages/demo/demo","mock":"index.php"},{"name":"chooseImage","url":"/pages/api/sub-pages/chooseImage","path":"/pages/api/sub-pages/chooseImage","mock":"index.php"},{"name":"animation","url":"/pages/api/sub-pages/animation","path":"/pages/api/sub-pages/animation","mock":"index.php"},{"name":"request","url":"/pages/api/sub-pages/request","path":"/pages/api/sub-pages/request","mock":"index.php"},{"name":"webSocket","url":"/pages/api/sub-pages/webSocket","path":"/pages/api/sub-pages/webSocket","mock":"index.php"},{"name":"navigate","url":"/pages/api/sub-pages/navigate","path":"/pages/api/sub-pages/navigate","mock":"index.php"},{"name":"list","url":"/pages/com/base/list/list","path":"/pages/com/base/list/list","mock":"index.php"},{"name":"scroller","url":"/pages/com/base/scroller/scroller","path":"/pages/com/base/scroller/scroller","mock":"index.php"},{"name":"view","url":"/pages/com/base/view/view","path":"/pages/com/base/view/view","mock":"index.php"},{"name":"text","url":"/pages/com/base/text/text","path":"/pages/com/base/text/text","mock":"index.php"},{"name":"button","url":"/pages/com/base/button/button","path":"/pages/com/base/button/button","mock":"index.php"},{"name":"input","url":"/pages/com/base/input/input","path":"/pages/com/base/input/input","mock":"index.php"},{"name":"textarea","url":"/pages/com/base/textarea/textarea","path":"/pages/com/base/textarea/textarea","mock":"index.php"},{"name":"image","url":"/pages/com/base/image/image","path":"/pages/com/base/image/image","mock":"index.php"},{"name":"video","url":"/pages/com/base/video/video","path":"/pages/com/base/video/video","mock":"index.php"},{"name":"richtext","url":"/pages/com/base/richtext/richtext","path":"/pages/com/base/richtext/richtext"},{"name":"switch","url":"/pages/com/base/switch/switch","path":"/pages/com/base/switch/switch"},{"name":"radio","url":"/pages/com/base/radio/radio","path":"/pages/com/base/radio/radio"},{"name":"checkbox","url":"/pages/com/base/checkbox/checkbox","path":"/pages/com/base/checkbox/checkbox"},{"name":"carousel","url":"/pages/com/base/carousel/carousel","path":"/pages/com/base/carousel/carousel"},{"name":"row","url":"/pages/com/base/row/row","path":"/pages/com/base/row/row","mock":"index.php"},{"name":"layout","url":"/pages/com/base/layout/layout","path":"/pages/com/base/layout/layout","mock":"index.php"},{"name":"c-dialog","url":"/pages/com/spread/c-dialog/c-dialog","path":"/pages/com/spread/c-dialog/c-dialog","mock":"index.php"},{"name":"c-loading","url":"/pages/com/spread/c-loading/c-loading","path":"/pages/com/spread/c-loading/c-loading","mock":"index.php"},{"name":"c-toast","url":"/pages/com/spread/c-toast/c-toast","path":"/pages/com/spread/c-toast/c-toast","mock":"index.php"},{"name":"c-tip","url":"/pages/com/spread/c-tip/c-tip","path":"/pages/com/spread/c-tip/c-tip","mock":"index.php"},{"name":"c-popup","url":"/pages/com/spread/c-popup/c-popup","path":"/pages/com/spread/c-popup/c-popup","mock":"index.php"},{"name":"c-actionsheet","url":"/pages/com/spread/c-actionsheet/c-actionsheet","path":"/pages/com/spread/c-actionsheet/c-actionsheet","mock":"index.php"},{"name":"c-picker","url":"/pages/com/spread/c-picker/c-picker","path":"/pages/com/spread/c-picker/c-picker","mock":"index.php"},{"name":"c-tab","url":"/pages/com/spread/c-tab/c-tab","path":"/pages/com/spread/c-tab/c-tab","mock":"index.php"},{"name":"c-refresh","url":"/pages/com/spread/c-refresh/c-refresh","path":"/pages/com/spread/c-refresh/c-refresh","mock":"index.php"},{"name":"c-checkbox-group","url":"/pages/com/spread/c-checkbox-group/c-checkbox-group","path":"/pages/com/spread/c-checkbox-group/c-checkbox-group","mock":"index.php"},{"name":"c-radio-group","url":"/pages/com/spread/c-radio-group/c-radio-group","path":"/pages/com/spread/c-radio-group/c-radio-group","mock":"index.php"},{"url":"/cml/demo/yanxuan","path":"/pages/demo/yanxuan/pages/index/index","name":"yanxuan","mock":"index.php"},{"url":"/cml/demo/yanxuan/list","path":"/pages/demo/yanxuan/pages/list/list","name":"yanxuan_list","mock":"index.php"},{"url":"/cml/demo/yanxuan/detail","path":"/pages/demo/yanxuan/pages/detail/detail","name":"yanxuan_detail","mock":"index.php"},{"url":"/cml/demo/yanxuan/map","path":"/pages/demo/yanxuan/pages/map/map","name":"yanxuan_map","mock":"index.php"}]}
+cmldefine('41', function(require, exports, module) {
+  module.exports = module.exports = {"mode":"hash","domain":"https://cmljs.org","routes":[{"url":"/","path":"/pages/index/index","name":"首页","mock":"index.php"},{"name":"com","url":"/pages/com/com","path":"/pages/com/com","mock":"index.php"},{"name":"api","url":"/pages/api/api","path":"/pages/api/api","mock":"index.php"},{"name":"demo","url":"/pages/demo/demo","path":"/pages/demo/demo","mock":"index.php"},{"name":"chooseImage","url":"/pages/api/sub-pages/chooseImage","path":"/pages/api/sub-pages/chooseImage","mock":"index.php"},{"name":"animation","url":"/pages/api/sub-pages/animation","path":"/pages/api/sub-pages/animation","mock":"index.php"},{"name":"request","url":"/pages/api/sub-pages/request","path":"/pages/api/sub-pages/request","mock":"index.php"},{"name":"webSocket","url":"/pages/api/sub-pages/webSocket","path":"/pages/api/sub-pages/webSocket","mock":"index.php"},{"name":"navigate","url":"/pages/api/sub-pages/navigate","path":"/pages/api/sub-pages/navigate","mock":"index.php"},{"name":"list","url":"/pages/com/base/list/list","path":"/pages/com/base/list/list","mock":"index.php"},{"name":"scroller","url":"/pages/com/base/scroller/scroller","path":"/pages/com/base/scroller/scroller","mock":"index.php"},{"name":"view","url":"/pages/com/base/view/view","path":"/pages/com/base/view/view","mock":"index.php"},{"name":"text","url":"/pages/com/base/text/text","path":"/pages/com/base/text/text","mock":"index.php"},{"name":"button","url":"/pages/com/base/button/button","path":"/pages/com/base/button/button","mock":"index.php"},{"name":"input","url":"/pages/com/base/input/input","path":"/pages/com/base/input/input","mock":"index.php"},{"name":"textarea","url":"/pages/com/base/textarea/textarea","path":"/pages/com/base/textarea/textarea","mock":"index.php"},{"name":"image","url":"/pages/com/base/image/image","path":"/pages/com/base/image/image","mock":"index.php"},{"name":"video","url":"/pages/com/base/video/video","path":"/pages/com/base/video/video","mock":"index.php"},{"name":"richtext","url":"/pages/com/base/richtext/richtext","path":"/pages/com/base/richtext/richtext"},{"name":"switch","url":"/pages/com/base/switch/switch","path":"/pages/com/base/switch/switch"},{"name":"radio","url":"/pages/com/base/radio/radio","path":"/pages/com/base/radio/radio"},{"name":"checkbox","url":"/pages/com/base/checkbox/checkbox","path":"/pages/com/base/checkbox/checkbox"},{"name":"carousel","url":"/pages/com/base/carousel/carousel","path":"/pages/com/base/carousel/carousel"},{"name":"row","url":"/pages/com/base/row/row","path":"/pages/com/base/row/row","mock":"index.php"},{"name":"layout","url":"/pages/com/base/layout/layout","path":"/pages/com/base/layout/layout","mock":"index.php"},{"name":"refresh-view","url":"/pages/com/base/refresh_view/refresh_view","path":"/pages/com/base/refresh_view/refresh_view","mock":"index.php"},{"name":"c-dialog","url":"/pages/com/spread/c-dialog/c-dialog","path":"/pages/com/spread/c-dialog/c-dialog","mock":"index.php"},{"name":"c-loading","url":"/pages/com/spread/c-loading/c-loading","path":"/pages/com/spread/c-loading/c-loading","mock":"index.php"},{"name":"c-toast","url":"/pages/com/spread/c-toast/c-toast","path":"/pages/com/spread/c-toast/c-toast","mock":"index.php"},{"name":"c-tip","url":"/pages/com/spread/c-tip/c-tip","path":"/pages/com/spread/c-tip/c-tip","mock":"index.php"},{"name":"c-popup","url":"/pages/com/spread/c-popup/c-popup","path":"/pages/com/spread/c-popup/c-popup","mock":"index.php"},{"name":"c-actionsheet","url":"/pages/com/spread/c-actionsheet/c-actionsheet","path":"/pages/com/spread/c-actionsheet/c-actionsheet","mock":"index.php"},{"name":"c-picker","url":"/pages/com/spread/c-picker/c-picker","path":"/pages/com/spread/c-picker/c-picker","mock":"index.php"},{"name":"c-tab","url":"/pages/com/spread/c-tab/c-tab","path":"/pages/com/spread/c-tab/c-tab","mock":"index.php"},{"name":"c-refresh","url":"/pages/com/spread/c-refresh/c-refresh","path":"/pages/com/spread/c-refresh/c-refresh","mock":"index.php"},{"name":"c-checkbox-group","url":"/pages/com/spread/c-checkbox-group/c-checkbox-group","path":"/pages/com/spread/c-checkbox-group/c-checkbox-group","mock":"index.php"},{"name":"c-radio-group","url":"/pages/com/spread/c-radio-group/c-radio-group","path":"/pages/com/spread/c-radio-group/c-radio-group","mock":"index.php"},{"url":"/cml/demo/yanxuan","path":"/pages/demo/yanxuan/pages/index/index","name":"yanxuan","mock":"index.php"},{"url":"/cml/demo/yanxuan/list","path":"/pages/demo/yanxuan/pages/list/list","name":"yanxuan_list","mock":"index.php"},{"url":"/cml/demo/yanxuan/detail","path":"/pages/demo/yanxuan/pages/detail/detail","name":"yanxuan_detail","mock":"index.php"},{"url":"/cml/demo/yanxuan/map","path":"/pages/demo/yanxuan/pages/map/map","name":"yanxuan_map","mock":"index.php"}]}
 })
 cmldefine('24', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/icon-api_e8d66df.png";
 })
-cmldefine('41', function(require, exports, module) {
+cmldefine('42', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/content_615612b.png";
 })
-cmldefine('42', function(require, exports, module) {
+cmldefine('43', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/view_b6fa835.png";
 })
 cmldefine('172', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/form_1d8d4bd.png";
 })
-cmldefine('43', function(require, exports, module) {
+cmldefine('44', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/media_1c79816.png";
 })
 cmldefine('176', function(require, exports, module) {
@@ -13315,7 +13776,7 @@ var CompCollapse = function CompCollapse() {
   };
   this.data = {
     isOpen: false,
-    iconUpUri: require("45"),
+    iconUpUri: require("46"),
     iconDownUri: require("177"),
     iconRightUri: require("178"),
     listHeight: 0
@@ -13338,7 +13799,7 @@ var CompCollapse = function CompCollapse() {
 exports.default = new CompCollapse();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('45', function(require, exports, module) {
+cmldefine('46', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/icon-arrow-up_56472bc.png";
 })
 cmldefine('177', function(require, exports, module) {
@@ -13976,7 +14437,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _routerConfig = require("40");
+var _routerConfig = require("41");
 
 var _routerConfig2 = _interopRequireDefault(_routerConfig);
 
@@ -14010,7 +14471,7 @@ var Demo = function () {
       iconApiUri: require("24"),
       lists: [{
         title: '网易严选',
-        iconUri: require("41"),
+        iconUri: require("42"),
         path: routeObj['yanxuan'].path
       }]
     };
@@ -14095,7 +14556,7 @@ var DemoList = function DemoList() {
   };
   this.data = {
     isOpen: false,
-    iconUpUri: require("45"),
+    iconUpUri: require("46"),
     listHeight: 0
   };
   this.methods = {
@@ -14154,7 +14615,8 @@ exports.default = {
       var _this = this;
 
       _cmlTtApi2.default.chooseImage({
-        type: this.chooseType
+        type: this.chooseType,
+        quality: '100'
       }).then(function (res) {
         _this.imgSrc = res.base64 || res.tempFilePaths[0];
       });
@@ -14512,18 +14974,13 @@ var Animation = function Animation() {
   this.methods = {
     rotate: function rotate() {
       var animationCreation = animation;
-
-      while (this.current_rotate !== 360) {
-        this.current_rotate += 90;
-        animationCreation = animationCreation.rotate(this.current_rotate).step({
-          duration: 500,
-          timingFunction: 'ease-in-out',
-          delay: 0
-        });
-      }
-
+      this.current_rotate += 20;
+      animationCreation = animationCreation.rotate(this.current_rotate).step({
+        duration: 500,
+        timingFunction: 'ease-in-out',
+        delay: 0
+      });
       this.animationData = animationCreation.export();
-      this.current_rotate = 0;
     },
     scale: function scale() {
       this.current_scale = this.current_scale === 2 ? 1 : 2;
@@ -14548,7 +15005,7 @@ var Animation = function Animation() {
         timingFunction: 'ease-out',
         delay: 0
       }).rotate("-90deg").scale(1.2).step({
-        duration: 500,
+        duration: 3000,
         timingFunction: 'ease-out',
         delay: 0
       }).export();
@@ -15352,7 +15809,7 @@ cmldefine('254', function(require, exports, module) {
   value: true
 });
 
-var _regenerator = require("39");
+var _regenerator = require("40");
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -18001,6 +18458,203 @@ cmldefine('414', function(require, exports, module) {
   value: true
 });
 
+var _cmlTtRuntime = require("0");
+
+var _cmlTtRuntime2 = _interopRequireDefault(_cmlTtRuntime);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+var Refresh_view = function Refresh_view() {
+  _classCallCheck(this, Refresh_view);
+
+  this.data = {
+    imgGif: require("415"),
+    texts: [0, 1, 2, 3, 4, 5, 6],
+    pullingDown: false,
+    pullingUp: false,
+    loadingText: '上拉加载'
+  };
+  this.computed = {};
+  this.watch = {};
+  this.methods = {
+    pullDownRefreshHandle: function pullDownRefreshHandle(e) {
+      var _this = this;
+
+      this.pullingDown = true;
+      setTimeout(function () {
+        var length = _this.texts.length;
+
+        for (var i = length; i < length + 5; i++) {
+          _this.texts.unshift(i);
+        }
+
+        _this.pullingDown = false;
+      }, 2000);
+    },
+    pullUploadHandle: function pullUploadHandle(e) {
+      var _this2 = this;
+
+      this.pullingUp = true;
+      this.loadingText = '加载中...';
+      setTimeout(function () {
+        _this2.loadingText = '加载完成';
+        var length = _this2.texts.length;
+
+        for (var i = length; i < length + 5; i++) {
+          _this2.texts.push(i);
+        }
+
+        _this2.loadingText = '上拉加载';
+        _this2.pullingUp = false;
+      }, 2000);
+    }
+  };
+};
+
+exports.default = new Refresh_view();
+exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
+})
+cmldefine('415', function(require, exports, module) {
+  module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/loading_1f26c50.gif";
+})
+cmldefine('420', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var _cmlTtRuntime = require("0");
+
+var _cmlTtRuntime2 = _interopRequireDefault(_cmlTtRuntime);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+var RefreshView = function () {
+  function RefreshView() {
+    _classCallCheck(this, RefreshView);
+
+    this.props = {
+      enablePullUpLoad: {
+        type: Boolean,
+        default: false
+      },
+      pullUpLoadComplete: {
+        type: Boolean,
+        default: false
+      },
+      pullingUp: {
+        type: Boolean,
+        default: false
+      },
+      pullUpStop: {
+        type: Number,
+        default: 80
+      },
+      pullUpStart: {
+        type: Number,
+        default: 50
+      },
+      pullDownStart: {
+        type: Number,
+        default: 50
+      },
+      pullDownStop: {
+        type: Number,
+        default: 80
+      },
+      pullingDown: {
+        type: Boolean,
+        default: false
+      }
+    };
+    this.methods = {
+      onPullDownRefresh: function onPullDownRefresh() {
+        this.$cmlEmit('onPullDownRefresh');
+      },
+      onPullUpLoad: function onPullUpLoad() {
+        this.$cmlEmit('onPullUpLoad');
+      }
+    };
+    this.watch = {
+      pullingDown: function pullingDown(v) {
+        if (!v) {
+          wx.stopPullDownRefresh();
+        }
+      }
+    };
+  }
+
+  _createClass(RefreshView, [{
+    key: 'created',
+    value: function created() {
+      var _this = this;
+
+      var currentPages = getCurrentPages();
+      var currentPath = currentPages.pop().route;
+      this.$cmlEventBus.on(currentPath + '_onPullDownRefresh', function () {
+        if (_this.pullingDown) return;
+
+        _this.onPullDownRefresh();
+      });
+
+      if (this.enablePullUpLoad) {
+        this.$cmlEventBus.on(currentPath + '_onReachBottom', function () {
+          if (_this.pullUpLoadComplete || _this.pullingUp) return;
+
+          _this.onPullUpLoad();
+        });
+      }
+    }
+  }]);
+
+  return RefreshView;
+}();
+
+exports.default = new RefreshView();
+exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
+})
+cmldefine('425', function(require, exports, module) {
+  Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _createClass = function () {
   function defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -18126,12 +18780,12 @@ var CDialog = function () {
 exports.default = new CDialog();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('419', function(require, exports, module) {
+cmldefine('430', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _style = require("420");
+var _style = require("431");
 
 var _cmlTtRuntime = require("0");
 
@@ -18150,9 +18804,9 @@ function _classCallCheck(instance, Constructor) {
 }
 
 var IconMap = {
-  network: require("421"),
-  warn: require("422"),
-  success: require("423")
+  network: require("432"),
+  warn: require("433"),
+  success: require("434")
 };
 
 var CDialog = function CDialog() {
@@ -18186,7 +18840,7 @@ var CDialog = function CDialog() {
     },
     closeSrc: {
       type: String,
-      default: require("49")
+      default: require("50")
     },
     cancelText: {
       type: String,
@@ -18236,7 +18890,7 @@ var CDialog = function CDialog() {
     }
   };
   this.data = {
-    defaultCloseIcon: require("49")
+    defaultCloseIcon: require("50")
   };
   this.computed = {
     iconSrc: function iconSrc() {
@@ -18287,7 +18941,7 @@ var CDialog = function CDialog() {
 exports.default = new CDialog();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('420', function(require, exports, module) {
+cmldefine('431', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18300,19 +18954,19 @@ function obj2str() {
   }).join(";");
 }
 })
-cmldefine('421', function(require, exports, module) {
+cmldefine('432', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/network_5ae2413.png";
 })
-cmldefine('422', function(require, exports, module) {
+cmldefine('433', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/warn_7953d27.png";
 })
-cmldefine('423', function(require, exports, module) {
+cmldefine('434', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/success_1674452.png";
 })
-cmldefine('49', function(require, exports, module) {
+cmldefine('50', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/close_816a4e2.png";
 })
-cmldefine('427', function(require, exports, module) {
+cmldefine('438', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18437,7 +19091,7 @@ var CPopup = function CPopup() {
 exports.default = new CPopup();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('432', function(require, exports, module) {
+cmldefine('443', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18515,7 +19169,7 @@ var CLoading = function () {
 exports.default = new CLoading();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('437', function(require, exports, module) {
+cmldefine('448', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18640,7 +19294,7 @@ var CToast = function () {
 exports.default = new CToast();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('442', function(require, exports, module) {
+cmldefine('453', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18694,8 +19348,8 @@ var CToast = function CToast() {
     transitionStyle: "",
     IconMap: {
       loading: require("26"),
-      success: require("443"),
-      warn: require("444")
+      success: require("454"),
+      warn: require("455")
     }
   };
   this.computed = {
@@ -18724,13 +19378,13 @@ var CToast = function CToast() {
 exports.default = new CToast();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('443', function(require, exports, module) {
+cmldefine('454', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/succ_1ecca56.png";
 })
-cmldefine('444', function(require, exports, module) {
+cmldefine('455', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/warn_da3ad45.png";
 })
-cmldefine('449', function(require, exports, module) {
+cmldefine('460', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18863,7 +19517,7 @@ var CTip = function () {
 exports.default = new CTip();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('454', function(require, exports, module) {
+cmldefine('465', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -18899,7 +19553,7 @@ var CTip = function CTip() {
     },
     closeUrl: {
       type: String,
-      default: require("455")
+      default: require("466")
     },
     offsetLeft: {
       type: Number,
@@ -18920,10 +19574,10 @@ var CTip = function CTip() {
   };
   this.data = {
     iconMap: {
-      left: require("456"),
-      right: require("457"),
-      top: require("458"),
-      bottom: require("459")
+      left: require("467"),
+      right: require("468"),
+      top: require("469"),
+      bottom: require("470")
     }
   };
   this.computed = {
@@ -19060,22 +19714,22 @@ var CTip = function CTip() {
 exports.default = new CTip();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('455', function(require, exports, module) {
+cmldefine('466', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/close_49a1751.png";
 })
-cmldefine('456', function(require, exports, module) {
+cmldefine('467', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/left_0ac0eaf.png";
 })
-cmldefine('457', function(require, exports, module) {
+cmldefine('468', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/right_c8f477d.png";
 })
-cmldefine('458', function(require, exports, module) {
+cmldefine('469', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/top_a17a0e7.png";
 })
-cmldefine('459', function(require, exports, module) {
+cmldefine('470', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/bottom_4f4eed1.png";
 })
-cmldefine('464', function(require, exports, module) {
+cmldefine('475', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19118,7 +19772,7 @@ var CTipAngle = function CTipAngle() {
 exports.default = new CTipAngle();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('469', function(require, exports, module) {
+cmldefine('480', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19241,7 +19895,7 @@ var CPopup = function () {
 exports.default = new CPopup();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('474', function(require, exports, module) {
+cmldefine('485', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19353,7 +20007,7 @@ var CActionsheet = function () {
 exports.default = new CActionsheet();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('479', function(require, exports, module) {
+cmldefine('490', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19456,7 +20110,7 @@ var CActionsheet = function CActionsheet() {
 exports.default = new CActionsheet();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('484', function(require, exports, module) {
+cmldefine('495', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19479,7 +20133,7 @@ var _createClass = function () {
   };
 }();
 
-var _data = require("485");
+var _data = require("496");
 
 var _cmlTtRuntime = require("0");
 
@@ -19551,13 +20205,13 @@ var CPicker = function () {
 exports.default = new CPicker();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('485', function(require, exports, module) {
+cmldefine('496', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var provins = exports.provins = ["北京市", "天津市", "河北省", "山西省", "内蒙古", "辽宁省", "吉林省", "黑龙江省", "上海市", "江苏省", "浙江省", "安徽省", "福建省", "江西省", "山东省", "河南省", "湖北省", "湖南省", "广东省", "广西", "海南省", "重庆市", "四川省", "贵州省", "云南省", "西藏", "陕西省", "甘肃省", "青海", "宁夏", "新疆"];
 })
-cmldefine('490', function(require, exports, module) {
+cmldefine('501', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19640,7 +20294,7 @@ var CPicker = function CPicker() {
 exports.default = new CPicker();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('495', function(require, exports, module) {
+cmldefine('506', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19720,7 +20374,7 @@ var CPickerPanel = function CPickerPanel() {
 exports.default = new CPickerPanel();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('500', function(require, exports, module) {
+cmldefine('511', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19788,7 +20442,7 @@ var CPickerItem = function CPickerItem() {
 exports.default = new CPickerItem();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('505', function(require, exports, module) {
+cmldefine('516', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19854,7 +20508,7 @@ var CTab = function CTab() {
 exports.default = new CTab();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('510', function(require, exports, module) {
+cmldefine('521', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -19949,7 +20603,7 @@ var CTabs = function CTabs() {
 exports.default = new CTabs();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('515', function(require, exports, module) {
+cmldefine('526', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20034,7 +20688,7 @@ var CTabsItem = function CTabsItem() {
 exports.default = new CTabsItem();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('520', function(require, exports, module) {
+cmldefine('531', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20091,7 +20745,7 @@ var CTabPane = function CTabPane() {
 exports.default = new CTabPane();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('524', function(require, exports, module) {
+cmldefine('535', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20125,7 +20779,7 @@ var CTabPaneItem = function CTabPaneItem() {
 exports.default = new CTabPaneItem();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('529', function(require, exports, module) {
+cmldefine('540', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20281,7 +20935,7 @@ var Refresh = function () {
 exports.default = new Refresh();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('533', function(require, exports, module) {
+cmldefine('544', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20339,7 +20993,7 @@ var CRefresh = function CRefresh() {
 exports.default = new CRefresh();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('538', function(require, exports, module) {
+cmldefine('549', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20428,7 +21082,7 @@ var CCheckbox = function CCheckbox() {
 exports.default = new CCheckbox();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('543', function(require, exports, module) {
+cmldefine('554', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20529,7 +21183,7 @@ var Checkboxgroup = function Checkboxgroup() {
 exports.default = new Checkboxgroup();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('548', function(require, exports, module) {
+cmldefine('559', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20651,7 +21305,7 @@ var CRadio = function () {
 exports.default = new CRadio();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('553', function(require, exports, module) {
+cmldefine('564', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20785,7 +21439,7 @@ var Radiogroup = function () {
 exports.default = new Radiogroup();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('558', function(require, exports, module) {
+cmldefine('569', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20834,7 +21488,7 @@ function _classCallCheck(instance, Constructor) {
 
 var animation = _cmlTtApi2.default.createAnimation();
 
-var chameleonIcon = require("52");
+var chameleonIcon = require("53");
 
 var Index = function () {
   function Index() {
@@ -20920,10 +21574,10 @@ exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions(
 cmldefine('17', function(require, exports, module) {
   module.exports = module.exports = {"code":0,"data":{"bannerImgList":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/288bf88910aeba6d89689b99bec93133.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3804d6f02516e59927e07f091c8f1b27.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ce535663c045b5e877540b0e0be16bb3.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/06af49f2a59b00ad080aeb03fb8d408f.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/7c94908d8e197cc99e942324c5cc526e.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/96cf611743d7b382c11031f29152fa04.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/973e299ac2e80c03acfb5d2d4501231c.jpg"}],"classifyImgList":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/9cdedb90a09cf061cfa19f3e21321c73.png","title":"居家"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/57e39dc404f1ce90b959d76b9abe4314.png","title":"鞋包分配"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2b580df265124836dcd96b1c88068127.png","title":"服装"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a53fff4d3cf0f4dedd78a8a0f2b129c9.png","title":"电器"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/6147b31404d5ddf1207a8363605aebf9.png","title":"婴童"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/8d29af79c24d78a3dcf7d61249702dcf.png","title":"饮食"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2b9a25b6ea81655eb431944d3d57185f.png","title":"洗护"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/293f2341415d70bf7c6460c77fa07f41.png","title":"餐厨"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/2fbba45f945ee592d5470269d9e61f1c.png","title":"文体"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/54947b070f8af594dd46069f2d3bdd34.png","title":"特色区"}],"disscountPriceImgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468670774810413.gif","special":{"newPerson":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671496890421.png","temai":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671650860425.png","qingdan":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15468671650860425.png"}}}
 })
-cmldefine('52', function(require, exports, module) {
+cmldefine('53', function(require, exports, module) {
   module.exports = "https://beatles-chameleon.github.io/cml-demo/dist/tt/static/img/chameleon_83ee00e.png";
 })
-cmldefine('562', function(require, exports, module) {
+cmldefine('573', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20951,7 +21605,7 @@ var Home = function Home() {
 exports.default = new Home();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('567', function(require, exports, module) {
+cmldefine('578', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21027,7 +21681,7 @@ var List = function () {
 exports.default = new List();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('572', function(require, exports, module) {
+cmldefine('583', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21055,7 +21709,7 @@ var Service = function Service() {
 exports.default = new Service();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('577', function(require, exports, module) {
+cmldefine('588', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21132,7 +21786,7 @@ var Classlist = function () {
 exports.default = new Classlist();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('582', function(require, exports, module) {
+cmldefine('593', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21213,7 +21867,7 @@ var Special = function () {
 exports.default = new Special();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('587', function(require, exports, module) {
+cmldefine('598', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21310,7 +21964,7 @@ exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOpt
 cmldefine('29', function(require, exports, module) {
   module.exports = module.exports = {"errno":"0","errmsg":"","data":{"result":{"banners":[{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/630439320dae9f1ce3afef3c39721383.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/5100f0176e27a167cc2aea08b1bd11d8.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-1.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-8.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-2.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-4.jpg"},{"title":"","url":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/banner-6.jpg"}],"makers":{"title":"品牌制造商直供","list":[{"name":"新秀丽制造商","price":"59","state":"上新","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ppbg-1.jpg","url":""},{"name":"MUJI制造商","price":"12.9","state":"上新","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ppbg-2.jpg","url":""},{"name":"CK制造商","price":"29","state":"上新","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ppbg-3.jpg","url":""},{"name":"Adidas制造商","price":"29","bg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/75523d4274d85825ece16370cdb1693f.jpg","url":""}]},"recommend":{"head1":{"tlt":"周一周四 · 新品发布","tltBg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/bg-new.png","url":""},"goods1":[{"tlt":"日式和风声波式电动牙刷","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png","info":"进口刷毛，专利技术","price":"119"},{"tlt":"小馒头 多色双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png","info":"奶油色泽，小巧减龄","price":"79"},{"tlt":"多功能商务双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png","info":"17个功能分区，内置分层收纳","price":"334"},{"tlt":"切尔西牛皮女靴","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png","info":"经典牛皮切尔西，时尚帅气","price":"289"},{"tlt":"清心花茶壶套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a2a0f13385d67220b29e7a1124a361e6.png","info":"明亮通透，滤茶迅速","price":"119"},{"tlt":"全棉色织磨毛四件套","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png","info":"优雅色织，温暖磨毛","price":"299"},{"tlt":"黑凤梨 20寸PC膜拉链登机箱","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png","info":"热卖9万只，网易人手1只","price":"185"},{"tlt":"日式和风敞口保温杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png","info":"真空隔热，保温保冷","price":"32"}],"head2":{"tlt":"周一周四 · 新品发布","tltBg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/bg-new.png","url":""},"goods2":[{"tlt":"日式和风声波式电动牙刷","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png","info":"进口刷毛，专利技术","price":"119"},{"tlt":"小馒头 多色双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png","info":"奶油色泽，小巧减龄","price":"79"},{"tlt":"多功能商务双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png","info":"17个功能分区，内置分层收纳","price":"334"},{"tlt":"切尔西牛皮女靴","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png","info":"经典牛皮切尔西，时尚帅气","price":"289"},{"tlt":"清心花茶壶套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a2a0f13385d67220b29e7a1124a361e6.png","info":"明亮通透，滤茶迅速","price":"119"},{"tlt":"全棉色织磨毛四件套","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png","info":"优雅色织，温暖磨毛","price":"299"},{"tlt":"黑凤梨 20寸PC膜拉链登机箱","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png","info":"热卖9万只，网易人手1只","price":"185"},{"tlt":"日式和风敞口保温杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png","info":"真空隔热，保温保冷","price":"32"}]},"goods":[{"tlt":"日式和风敞口保温杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3aa67fee1c7d046a09f4ce878f4485ac.png","info":"真空隔热，保温保冷","url":"","price":"32"},{"tlt":"切尔西牛皮女靴","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/0e9ddf1a0ed5af78e8ec12cb9489df17.png","info":"奶油色泽，小巧减龄","url":"","price":"32"},{"tlt":"小馒头多色双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/455eee1712358dbcb2e33d54ab287808.png","info":"奶油色泽，小巧减龄","url":"","price":"79"},{"tlt":"全棉色织磨毛四件套","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3e1c00ce7b49a78e645538a8c45cabcb.png","info":"优雅色织，温暖磨毛","url":"","price":"299"},{"tlt":"日式和风声波式电动牙刷","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/e5474a8f4fd5748079e2ba2ead806b51.png","info":"进口刷毛，专利技术","url":"","price":"119"},{"tlt":"多功能商务双肩包","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/795884dc6d995eca9a091a6358e3634d.png","info":"17个功能分区，内置分层收纳","url":"","price":"334"},{"tlt":"黑凤梨20寸PC膜拉链登机箱","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3108aaae80416b1cf27c3d7cc5661cea.png","info":"热卖9万只，网易人手1只","url":"","price":"185"},{"tlt":"日式蓬软太鼓抱枕","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/ad953e16ad8c33b714e7af941ce8cd56.png","info":"萌趣太鼓造型 软糯轻柔回弹","url":"","price":"29"},{"tlt":"可水洗抗菌防螨丝羽绒枕","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a6c9e142fd008b3734c690a71a78ae5b.png","info":"进口防螨布，热销50万件","url":"","price":"99"},{"tlt":"双宫茧桑蚕丝被 空调被","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/6b341648f59d0c3eb48fa81e1d2de06e.png","info":"一级桑蚕丝，吸湿透气柔软","url":"","price":"479"},{"tlt":"怀抱休闲椅组合（皮款）","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/b5289125e9b55cf72e9a9623d006415e.png","info":"葛优躺神器皮款","url":"","price":"3999"},{"tlt":"欧式哑光餐具套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/431e86c88b4a6c9f065d1d8abea6b603.png","info":"德化白瓷，坚实耐用","url":"","price":"189"},{"tlt":"清新两用杯","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/431f5d142e3dd9946dc8e38c2aa3cd34.png","info":"办公杯优选 轻松饮茶","url":"","price":"52"},{"tlt":"两带式男/女款拖鞋","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/7d1c130c7d80edf824e4218c6829b7c8.png","info":"鞋杯随脚型而变，舒适呵护","url":"","price":"69.9"}],"topics":[{"name":"严选look","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15030393722652401.jpg"},{"name":"严选推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/d943675462a06f817d33062d4eb059f5.jpg"},{"name":"丁磊私物推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/1de4da49367dd7c01af1f7a2b23b0237.jpg"},{"name":"挑款师推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/437cc656ff529f8f84db6efc48df9bf4.png"}],"articles":[{"auther":"严选推荐","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3d860cbf663253590da6a64ff07f9919.png","tlt":"年中扫一扫，下半年运势好","info":"6个家庭清洁小技巧","price":"6.9","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/5a1df92d48fa3214bec9bb40ab067683.jpg"},{"auther":"服装组：小服","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772608140418.png","tlt":"小姐姐们的运动衣提前上架啦","info":"前两天推男式运动T恤时，就有小伙伴在专题评论里，问小姐姐们的运动衣在哪儿。","price":"","img":["https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772896010423.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772808640420.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15041772808640420.jpg"]},{"auther":"居家组：朵朵","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040896357740404.png","tlt":"初秋，最想用它来裸睡","info":"连续下了几场雨，杭州的早晚，已透出几丝凉意。再睡席子便有点凉了，于是周末从柜子翻...","price":"","img":["https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040927525260414.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040927586650416.jpg","https://cmljs.org/cml-demo/src/assets/images/yanxuan/15040927556820415.jpg"]},{"auther":"严选推荐","autherimg":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/3d860cbf663253590da6a64ff07f9919.png","tlt":"不为繁华易匠心","info":"那些值得珍藏的严选手作好物","price":"29","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/4d72145e48e65ee3deaf2e1403e6ec73.jpg"}],"classes":["推荐区","家装区","居家","餐厨","配件","服装","电器","洗护","杂货","饮食","婴童","志趣"],"subclasses":[{"name":"中秋系列","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/82ae05c313b93355239ca1795917a5ac.png"},{"name":"超值套装","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/bd6f7deba69c8af2f6bb80025d7b98de.png"},{"name":"热卖爆品","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/c3418cc60d3968263c5b2ac7fb153c34.png"},{"name":"999+好评","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/87d1cb1bc196c5775b17788aea1c2239.png"},{"name":"boss推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/fbee769af73c0f63f6120eb27ff3ce96.png"},{"name":"明星推荐","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/7dea8f7e0e706804c3307504e2e7c463.png"},{"name":"黑凤梨系列","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/a4a14669ce1fa497aece9a20c669196e.png"},{"name":"趣味粉系列","img":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/87fc01e5876482d521ecca13aea42653.png"}]}}}
 })
-cmldefine('592', function(require, exports, module) {
+cmldefine('603', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21338,7 +21992,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('597', function(require, exports, module) {
+cmldefine('608', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21433,7 +22087,7 @@ var Yanxuan = function () {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('602', function(require, exports, module) {
+cmldefine('613', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21473,7 +22127,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('607', function(require, exports, module) {
+cmldefine('618', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21515,7 +22169,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('612', function(require, exports, module) {
+cmldefine('623', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21568,7 +22222,7 @@ var Yanxuan = function () {
       classes: [],
       subclasses: [],
       scrollerHeight: -1,
-      headerImg: require("52")
+      headerImg: require("53")
     };
     this.methods = {
       jumpWeb: function jumpWeb(_url) {}
@@ -21595,7 +22249,7 @@ var Yanxuan = function () {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('617', function(require, exports, module) {
+cmldefine('628', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21683,7 +22337,7 @@ var Yanxuan = function () {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('622', function(require, exports, module) {
+cmldefine('633', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21723,7 +22377,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('627', function(require, exports, module) {
+cmldefine('638', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21758,7 +22412,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('632', function(require, exports, module) {
+cmldefine('643', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21822,7 +22476,7 @@ var Yanxuan = function Yanxuan() {
 exports.default = new Yanxuan();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('637', function(require, exports, module) {
+cmldefine('648', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -21999,7 +22653,7 @@ var Tabbar = function () {
 exports.default = new Tabbar();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('642', function(require, exports, module) {
+cmldefine('653', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22026,7 +22680,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _listImages = require("643");
+var _listImages = require("654");
 
 var _listImages2 = _interopRequireDefault(_listImages);
 
@@ -22117,10 +22771,10 @@ var Refresh = function () {
 exports.default = new Refresh();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('643', function(require, exports, module) {
+cmldefine('654', function(require, exports, module) {
   module.exports = module.exports = {"code":0,"data":{"topImgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/4972949f269e7295a4f37e99a303553e.jpg","list":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/8635c42f2b3a92768b12015c491821b5.png","des":"400跟纯棉贡缎","name":"60s锦绵贡缎四件套","money":"￥400","tag":["APP特惠"]},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/4a00fd1035efe874d70d51dfc04c5cee.png","des":"少女粉润贡缎","name":"朱莉.粉唐四件套","money":"￥359","tag":["年货节特卖","满赠"]},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/9f3c89c8b98fb06968c67edb12a195cf.png","des":"少女粉润贡缎","name":"朱莉.粉唐四件套","money":"￥359","tag":[]},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/cc863b46d890633445fb2a1354b01841.png","des":"入门享受奢华感受","name":"60s锦绵贡缎四件套","money":"￥400"}]}}
 })
-cmldefine('648', function(require, exports, module) {
+cmldefine('659', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22147,7 +22801,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _detailInfo = require("649");
+var _detailInfo = require("660");
 
 var _detailInfo2 = _interopRequireDefault(_detailInfo);
 
@@ -22221,10 +22875,10 @@ var Detail = function () {
 exports.default = new Detail();
 exports.default = _cmlTtRuntime2.default.createPage(exports.default).getOptions();
 })
-cmldefine('649', function(require, exports, module) {
+cmldefine('660', function(require, exports, module) {
   module.exports = module.exports = {"code":0,"data":{"carouselList":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/5240f52c0f410054fe9c20abc54aa7b9.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/5142255cef97dafd012bb73423eff4d4.png"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/0e72c98273b50c0959d34662c2fad4e8.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/44334a3a100aa6fa974c17e352969a6f.jpg"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/bf216b5af1dc8cdb5a70e87b8271028c.png"}],"description":[{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/17e5327561f5b9df04f7d000a8c71bb2.jpg","tag1":"贡缎细糯","tag2":"如绸光泽"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/459cfd6a33991746fc2cf452642c7c68.jpg","tag1":"高支纯棉","tag2":"新贵臻密"},{"imgUrl":"https://cmljs.org/cml-demo/src/assets/images/yanxuan/964045a4796d70488adfef26a3093e35.jpg","tag1":"同色边框","tag2":"精致恰好"}],"money":"￥469","tag":"App特惠￥455.00"}}
 })
-cmldefine('654', function(require, exports, module) {
+cmldefine('665', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22252,7 +22906,7 @@ var Myscroller = function Myscroller() {
 exports.default = new Myscroller();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('658', function(require, exports, module) {
+cmldefine('669', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -22279,7 +22933,7 @@ var _cmlTtApi = require("1");
 
 var _cmlTtApi2 = _interopRequireDefault(_cmlTtApi);
 
-var _amapWx = require("659");
+var _amapWx = require("670");
 
 var _amapWx2 = _interopRequireDefault(_amapWx);
 
@@ -22371,7 +23025,7 @@ var Map = function () {
 exports.default = new Map();
 exports.default = _cmlTtRuntime2.default.createComponent(exports.default).getOptions();
 })
-cmldefine('659', function(require, exports, module) {
+cmldefine('670', function(require, exports, module) {
   function AMapWX(a) {
   this.key = a.key, this.requestConfig = {
     key: a.key,
@@ -22793,7 +23447,7 @@ AMapWX.prototype.getWxLocation = function (a, b) {
   });
 }, module.exports.AMapWX = AMapWX;
 })
-cmldefine('664', function(require, exports, module) {
+cmldefine('675', function(require, exports, module) {
   Object.defineProperty(exports, "__esModule", {
   value: true
 });

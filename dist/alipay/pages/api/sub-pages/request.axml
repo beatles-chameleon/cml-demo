@@ -1,12 +1,12 @@
-<view class=" cml-base cml-view cml-3f5c1153"><cml-buildin-page title="request" class=" cml-base cml-page cml-3f5c1153">
-  <view class="page-request  cml-base cml-view cml-3f5c1153">
-    <view class=" cml-base cml-view cml-3f5c1153"><secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-base cml-secondary-header cml-3f5c1153"></secondary-header></view>
-    <view class=" cml-base cml-view cml-3f5c1153"><secondary-cell title="{{cell.title}}" list="{{cell.list}}" onBtnclicked="_cmlEventProxy" data-eventbtnclicked="{{['onBtnClicked']}}" class=" cml-base cml-secondary-cell cml-3f5c1153"></secondary-cell></view>
-    <view class="preview-container  cml-base cml-view cml-3f5c1153">
-      <text class="preview-text preview-font  cml-base cml-text cml-3f5c1153">请求信息</text>
+<view class=" cml-base cml-view cml-74ef2718"><cml-buildin-page title="request" class=" cml-base cml-page cml-74ef2718">
+  <view class="page-request  cml-base cml-view cml-74ef2718">
+    <view class=" cml-base cml-view cml-74ef2718"><secondary-header title="{{title}}" subtitle="{{subtitle}}" class=" cml-base cml-secondary-header cml-74ef2718"></secondary-header></view>
+    <view class=" cml-base cml-view cml-74ef2718"><secondary-cell title="{{cell.title}}" list="{{cell.list}}" onBtnclicked="_cmlEventProxy" data-eventbtnclicked="{{['onBtnClicked']}}" class=" cml-base cml-secondary-cell cml-74ef2718"></secondary-cell></view>
+    <view class="preview-container  cml-base cml-view cml-74ef2718">
+      <text class="preview-text preview-font  cml-base cml-text cml-74ef2718">请求信息</text>
       
-      <text class="text-info  cml-base cml-text cml-3f5c1153">{{respones}}</text>
+      <text class="text-info  cml-base cml-text cml-74ef2718">{{respones}}</text>
     </view>
-    <view class=" cml-base cml-view cml-3f5c1153"><c-loading loading="{{isShowLoading}}" class=" cml-base cml-c-loading cml-3f5c1153"></c-loading></view>
+    <view class=" cml-base cml-view cml-74ef2718"><c-loading loading="{{isShowLoading}}" class=" cml-base cml-c-loading cml-74ef2718"></c-loading></view>
   </view>
   </cml-buildin-page></view>

@@ -1,9 +1,9 @@
-<view class="cml-radio  cml-base cml-view cml-be553824" style="{{computedCstyle}}">
-  <view class="cml-radio-wrap  cml-base cml-view cml-be553824" onTap="_cmlEventProxy" data-eventtap="{{['changeSelect']}}">
-    <view class="cml-radio-select  cml-base cml-view cml-be553824" style="{{radioStyle}}">
-      <view class="{{ radioClass }}  cml-base cml-view cml-be553824" style="{{radioInnerStyle}}">
+<view class="cml-radio  cml-base cml-view cml-bc8dc026" style="{{computedCstyle}}">
+  <view class="cml-radio-wrap  cml-base cml-view cml-bc8dc026" onTap="_cmlEventProxy" data-eventtap="{{['changeSelect']}}">
+    <view class="cml-radio-select  cml-base cml-view cml-bc8dc026" style="{{radioStyle}}">
+      <view class="{{ radioClass }}  cml-base cml-view cml-bc8dc026" style="{{radioInnerStyle}}">
       </view>
     </view>
-    <text class="cml-radio-label  cml-base cml-text cml-be553824">{{label}}</text>
+    <text class="cml-radio-label  cml-base cml-text cml-bc8dc026">{{label}}</text>
   </view>
 </view>

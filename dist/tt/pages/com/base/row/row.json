@@ -1,9 +1,9 @@
 {
     "usingComponents": {
         "c-header": "./../../../../components/header/header",
-        "cml-buildin-col": "./../../../../npm/cml-tt-ui-builtin/package/components/layout/col/col",
-        "cml-buildin-row": "./../../../../npm/cml-tt-ui-builtin/package/components/layout/row/row",
-        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/package/components/page/page"
+        "cml-buildin-col": "./../../../../npm/cml-tt-ui-builtin/components/layout/col/col",
+        "cml-buildin-row": "./../../../../npm/cml-tt-ui-builtin/components/layout/row/row",
+        "cml-buildin-page": "./../../../../npm/cml-tt-ui-builtin/components/page/page"
     },
     "navigationBarTitleText": "row",
     "backgroundTextStyle": "dark",
