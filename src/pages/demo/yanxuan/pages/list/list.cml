@@ -84,13 +84,13 @@
       onBottom(e) {
         if (this.bottomRefreshing || this.page >= this.sumPage) return
         setTimeout(() => {
-          this.getData();
+          this._getData();
         }, 200)
       },
       onScroll() {
-
+        
       },
-      getData() {
+      _getData() {
         const {topImgUrl, list} = listData.data;
         this.list = [...this.list, ...list];
         this.topImg = topImgUrl;
@@ -100,7 +100,7 @@
 
     created(res) {
       this.loadingTextStyle = 'color:#666;font-size:36cpx;margin:30cpx auto;';
-      this.getData();
+      this._getData();
     }
   }
 

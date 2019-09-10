@@ -22742,11 +22742,11 @@ var Refresh = function () {
 
         if (this.bottomRefreshing || this.page >= this.sumPage) return;
         setTimeout(function () {
-          _this.getData();
+          _this._getData();
         }, 200);
       },
       onScroll: function onScroll() {},
-      getData: function getData() {
+      _getData: function _getData() {
         var _listData$data = _listImages2.default.data,
             topImgUrl = _listData$data.topImgUrl,
             list = _listData$data.list;
@@ -22761,7 +22761,8 @@ var Refresh = function () {
     key: 'created',
     value: function created(res) {
       this.loadingTextStyle = 'color:#666;font-size:36cpx;margin:30cpx auto;';
-      this.getData();
+
+      this._getData();
     }
   }]);
 

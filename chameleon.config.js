@@ -46,6 +46,22 @@ cml.config.merge({
       publicPath: `${publicPath}/wx/`,
     }
   },
+  alipay: {
+    dev: {
+    },
+    build: {
+      apiPrefix,
+      publicPath: `${publicPath}/alipay/`,
+    }
+  },
+  baidu: {
+    dev: {
+    },
+    build: {
+      apiPrefix,
+      publicPath: `${publicPath}/baidu/`,
+    }
+  },
   tt: {
     dev: {
     },
@@ -64,7 +80,7 @@ cml.config.merge({
       analysis: false,
       publicPath: `${publicPath}/web/`,
       apiPrefix,
-      isWrapComponent: false,
+      isWrapComponent: false
     }
   },
   weex: {

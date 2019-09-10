@@ -1,7 +1,0 @@
-<view class="collapse-cell  cml-base cml-view">
-  <view class="collapse-title-row row  cml-base cml-view" bindtap="_cmlEventProxy" data-eventtap="{{['itemTap']}}">
-    <image class="title-left-icon  cml-base cml-image" src="{{iconUri}}"></image>
-    <text class="cell-title  cml-base cml-text">{{title}}</text>
-    <image class="title-right-icon  cml-base cml-image" src="{{iconUpUri}}"></image>
-  </view>
-</view>
