@@ -1,9 +1,0 @@
-{
-    "usingComponents": {
-        "cml-buildin-scroller": "./../../../../../npm/cml-tt-ui-builtin/components/scroller/scroller"
-    },
-    "navigationBarTitleText": "我的",
-    "backgroundTextStyle": "dark",
-    "backgroundColor": "#E2E2E2",
-    "component": true
-}

@@ -1,2 +1,0 @@
-<video style="{{computedStyle}}" controls="{{controls}}" autoplay="{{autoplay}}" loop="{{loop}}" src="{{src}}" bindplay="_cmlEventProxy" bindpause="_cmlEventProxy" bindended="_cmlEventProxy" binderror="_cmlEventProxy" data-eventplay="{{['onstart']}}" data-eventpause="{{['onpause']}}" data-eventended="{{['onfinish']}}" data-eventerror="{{['onfail']}}" class=" cml-base cml-video">
-</video>

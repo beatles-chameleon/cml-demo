@@ -1,6 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "cml-buildin-radio": "./../../../../npm/cml-tt-ui-builtin/components/radio/radio"
-    }
-}

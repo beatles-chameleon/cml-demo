@@ -1,7 +1,0 @@
-{
-    "usingComponents": {
-        "classify-header": "./../common/classify-header",
-        "cml-buildin-scroller": "./../../../../../npm/chameleon-ui-builtin/components/scroller/scroller"
-    },
-    "component": true
-}

@@ -1,4 +1,0 @@
-<button class="{{btnClasses}}  cml-base cml-button" style="{{mrBtnStyle}}" bindtap="_cmlEventProxy" data-eventtap="{{['onclick']}}" bindtouchstart="_cmlEventProxy" data-eventtouchstart="{{['touchstart']}}" bindtouchend="_cmlEventProxy" data-eventtouchend="{{['touchend']}}" open-type="{{openType}}" lang="{{lang}}" bindgetuserinfo="_cmlEventProxy" data-eventgetuserinfo="{{['getuserinfo']}}" bindopensetting="_cmlEventProxy" data-eventopensetting="{{['opensetting']}}" binderror="_cmlEventProxy" data-eventerror="{{['error']}}">
-  <text qq:if="{{text}}" class="{{textClasses}}  cml-base cml-text" style="{{mrTextStyle}}">{{text}}</text>
-  <slot qq:else class=" cml-base cml-slot"></slot>
-</button>

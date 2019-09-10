@@ -1,7 +1,0 @@
-{
-    "usingComponents": {
-        "c-popup": "./../../../../npm/cml-tt-ui/components/c-popup/c-popup",
-        "cml-buildin-list": "./../../../../npm/cml-tt-ui-builtin/components/list/list"
-    },
-    "component": true
-}

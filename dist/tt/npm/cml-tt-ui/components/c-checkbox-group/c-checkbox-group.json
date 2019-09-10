@@ -1,6 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "cml-buildin-checkbox": "./../../../../npm/cml-tt-ui-builtin/components/checkbox/checkbox"
-    }
-}

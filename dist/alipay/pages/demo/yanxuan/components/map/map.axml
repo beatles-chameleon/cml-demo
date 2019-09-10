@@ -1,3 +1,0 @@
-<view class=" cml-base cml-view cml-34aca8d3">
-  <map id="map" class="map  cml-base cml-origin-map cml-34aca8d3" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="{{true}}"></map>
-</view>

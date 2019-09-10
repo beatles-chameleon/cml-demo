@@ -1,4 +1,0 @@
-<view class="{{ disabled?'cml-switch-disabled':'cml-switch' }}  cml-base cml-view cml-ff991eea">
-  <switch checked="{{ checked }}" disabled="{{ disabled }}" onChange="_cmlEventProxy" data-eventchange="{{['switchChange']}}" color="{{ opencolor }}" class=" cml-base cml-switch cml-ff991eea" />
-    <text class="cml-switch-label  cml-base cml-text cml-ff991eea" a:if="{{ label }}">{{label}}</text>
-</view>

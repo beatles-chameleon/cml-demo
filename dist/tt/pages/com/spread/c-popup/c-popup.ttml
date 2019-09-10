@@ -1,9 +1,0 @@
-<cml-buildin-page title="c-popup演示" class=" cml-base cml-cml-buildin-page">
-  <c-header title="c-popup" class=" cml-view cml-c-header"></c-header>
-  <c-popup show="{{show}}" mask="{{mask}}" bindclose="_cmlEventProxy" data-eventclose="{{['closePopup']}}" class=" cml-view cml-c-popup"></c-popup>
-  <c-popup show="{{show2}}" mask="{{mask}}" bindclose="_cmlEventProxy" position="{{position}}" data-eventclose="{{['closePopup']}}" class=" cml-view cml-c-popup">
-    <view style="{{contentStyle}}" class=" cml-base cml-view"><text style="font-size:28rpx" class=" cml-base cml-text">content</text></view>
-  </c-popup>
-  <cml-buildin-button class=" btn  cml-base cml-cml-buildin-button" bindonclick="_cmlEventProxy" text="show popup" data-eventonclick="{{['showPopup']}}"></cml-buildin-button>
-  <cml-buildin-button class=" btn  cml-base cml-cml-buildin-button" bindonclick="_cmlEventProxy" text="left/top/right/bottom/center" data-eventonclick="{{['showPopup2']}}"></cml-buildin-button>
-</cml-buildin-page>

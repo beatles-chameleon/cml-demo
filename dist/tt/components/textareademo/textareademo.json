@@ -1,7 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "cml-buildin-page": "./../../npm/cml-tt-ui-builtin/components/page/page",
-        "cml-buildin-textarea": "./../../npm/cml-tt-ui-builtin/components/textarea/textarea"
-    }
-}

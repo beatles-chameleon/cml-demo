@@ -1,2 +1,0 @@
-<textarea class="textarea-wrap  cml-base cml-textarea" style="{{computedStyle}}" value="{{value}}" placeholder="{{placeholder}}" disabled="{{disabled}}" maxlength="{{maxlength}}" bindinput="_cmlEventProxy" data-eventinput="{{['inputEvent']}}" bindblur="_cmlEventProxy" data-eventblur="{{['blurEvent']}}" bindfocus="_cmlEventProxy" data-eventfocus="{{['focusEvent']}}" bindconfirm="_cmlEventProxy" data-eventconfirm="{{['confirmEvent']}}" focus="{{focus}}" confirm-type="{{returnKeyType}}" placeholder-style="{{wxPlaceHolderStyle}}">
-</textarea>

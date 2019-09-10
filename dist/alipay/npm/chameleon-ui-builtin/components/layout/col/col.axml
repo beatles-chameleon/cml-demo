@@ -1,3 +1,0 @@
-<view class="flex-item  cml-base cml-view cml-25625d24" style="{{colStyle}}">
-  <slot class=" cml-base cml-slot cml-25625d24"></slot>
-</view>

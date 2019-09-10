@@ -1,6 +1,0 @@
-<view wx:if="{{show}}" class=" cml-base cml-view">
-    <c-picker-panel show="{{show}}" height="{{height}}" header-height="{{headerHeight}}" cancel-btn-style="{{cancelBtnStyle}}" confirm-btn-style="{{confirmBtnStyle}}" bindcancel="_cmlEventProxy" data-eventcancel="{{['cancel']}}" bindconfirm="_cmlEventProxy" data-eventconfirm="{{['confirm']}}" class=" cml-view cml-c-picker-panel">
-        <c-picker-item text-align="{{textAlign}}" height="{{dataScrollerHeight}}" list="{{list}}" item-style="{{itemStyle}}" default-index="{{defaultIndex}}" bindselectchange="_cmlEventProxy" data-eventselectchange="{{['selectchange']}}" class=" cml-view cml-c-picker-item">
-        </c-picker-item>
-    </c-picker-panel>
-</view>

@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "cml-buildin-scroller": "./../../../../../npm/cml-tt-ui-builtin/components/scroller/scroller"
-    },
-    "component": true
-}

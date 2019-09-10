@@ -1,9 +1,0 @@
-{
-    "usingComponents": {
-        "cml-buildin-page": "./../../npm/cml-tt-ui-builtin/components/page/page",
-        "cml-buildin-scroller": "./../../npm/cml-tt-ui-builtin/components/scroller/scroller"
-    },
-    "navigationBarTitleText": "Chameleon Demos",
-    "backgroundTextStyle": "dark",
-    "backgroundColor": "#F0F2F7"
-}
