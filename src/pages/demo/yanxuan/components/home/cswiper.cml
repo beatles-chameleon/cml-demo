@@ -1,16 +1,10 @@
 <template>
   <view class="carousel" c-bind:touchmove="forbinding">
     <carousel class="carousel-container" indicator-dots="{{true}}" current="{{1}}" circular="{{true}}"
-              autoplay="{{true}}">
-      <carousel-item
-        class="carousel-carousel-item"
-        c-for="{{bannerImgList}}"
-        c-for-index="i"
-        c-for-item="item"
-        data-idx="{{i}}"
-        c-key="{{i}}"
-      >
-        <image src="{{item.imgUrl}}" class="Img"/>
+      autoplay="{{true}}">
+      <carousel-item class="carousel-carousel-item" c-for="{{bannerImgList}}" c-for-index="i" c-for-item="item"
+        data-idx="{{i}}" c-key="{{i}}">
+        <image src="{{item.imgUrl}}" class="Img" />
       </carousel-item>
 
     </carousel>
@@ -18,22 +12,24 @@
 </template>
 
 <script>
-  import cml from 'cml-tt-api';
+  import cml from 'cml-quickapp-api';
   import homeData from '../../assets/getHomeImgList.json';
   class List {
     data = {
-      bannerImgList: []
+      bannerImgList: homeData.data.bannerImgList
     }
     methods = {
-      forbinding(e){
-        console.log(e)
-        e._originEvent.stopPropagation && e._originEvent.stopPropagation()
+      forbinding(e) {
+        e._originEvent && e._originEvent.stopPropagation && e._originEvent.stopPropagation()
       }
     }
-    created() {
-      const {bannerImgList} = homeData.data;
-      this.bannerImgList = bannerImgList;
-    }
+    // created() {
+    //   const {
+    //     bannerImgList
+    //   } = homeData.data;
+    //   this.bannerImgList = bannerImgList;
+    //   console.log('### ', this.bannerImgList)
+    // }
   }
 
   export default new List();
@@ -42,15 +38,17 @@
   .carousel-container {
     height: 370cpx;
   }
+
   .carousel-carousel-item {
     width: 750cpx;
     height: 370cpx;
   }
+
   .Img {
     width: 750cpx;
     height: 370cpx;
   }
 </style>
 <script cml-type="json">
-  { }
+  {}
 </script>

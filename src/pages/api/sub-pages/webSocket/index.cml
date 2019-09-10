@@ -1,0 +1,191 @@
+<template>
+<page title="webSocket">
+  <view class="page-websocket">
+    <secondary-header title="{{title}}" subtitle="{{subtitle}}"></secondary-header>
+    <secondary-cell title="{{cell.title}}" list="{{cell.list}}" c-bind:btnclicked="onBtnClicked"></secondary-cell>
+    <view class="preview-container">
+      <text class="preview-text preview-font">WebSocket 状态输出</text>
+      <view c-for="{{respones}}" c-for-item="res" c-for-index="idx">
+        <text class="preview-font">{{res.name}}</text>
+        <text c-if="{{res.value}}" class="preview-font indent">{{res.value}}</text>
+        <block c-if="{{res.child}}">
+          <text c-for="{{res.child}}" c-for-item="str" class="preview-font indent">{{str}}</text>
+        </block>        
+      </view>
+    </view>
+    <c-loading loading="{{isShowLoading}}"></c-loading>
+  </view>
+</page>
+</template>
+
+<script>
+import cml from 'cml-quickapp-api';
+
+export default {
+  data: {
+    title: 'cml.initSocket',
+    subtitle: '演示 websocket 链接，发送，接收和关闭',
+    respones: [],
+    isShowLoading: false,
+    msgs: {},
+    ws: null,
+    cell: {
+      title: 'WebSocket 演示',
+      list: [{
+        title: '初始化一个 socket 链接',
+        btnText: '点击开启',
+        extraData: {
+          action: 'open'
+        }
+      },{
+        title: '发送数据',
+        btnText: '点击发送',
+        extraData: {
+          action: 'send'
+        }
+      },{
+        title: '关闭 socket 链接',
+        btnText: '点击关闭',
+        extraData: {
+          action: 'close'
+        }        
+      }]
+    }
+  },
+
+  methods: {
+    onBtnClicked(e) {
+      let { action = 'open' } = e.detail.extraData;
+      this[action]();
+    },
+    showLoading() {
+      this.isShowLoading = true;
+    },
+
+    hideLoading() {
+      this.isShowLoading = false;
+    }, 
+
+    flushMsg() {
+      this.msgs = {};
+      this.flatten2Responses();
+    },
+
+    flatten2Responses() {
+      this.respones = Object.entries(this.msgs).map((msg) => {
+        return {
+          name: msg[0],
+          value: (typeof msg[1] === 'string') ? msg[1] : false,
+          child: (typeof msg[1] === 'object') ? msg[1] : false
+        };
+      });
+    },
+
+    appendMsg(name, value = '') {
+      if (name in this.msgs) {
+        if (typeof this.msgs[name] === 'string') {
+          this.msgs[name] = [this.msgs[name]];
+        }
+        if (typeof value === 'string') {
+          this.msgs[name].push(value);
+        } else {
+          this.msgs[name].push(...value);
+        }
+      } else {
+        this.msgs[name] = value;
+      }
+      this.flatten2Responses();
+    },
+
+    open() {
+      let ws = this.ws = cml.initSocket('ws://echo.websocket.org');
+      this.showLoading();
+      this.flushMsg();
+      this.appendMsg('建立链接', 'ws://echo.websocket.org');
+      ws.onopen(() => {
+        this.hideLoading();
+        this.appendMsg('建立链接', '链接成功');
+      });
+      ws.onmessage(res => {
+        this.hideLoading();
+        this.appendMsg('接收透传信息', res.data);
+      });
+      ws.onerror(err => {
+        this.hideLoading();
+        this.appendMsg('链接错误', err.message);
+      });
+      ws.onclose(() => {
+        this.hideLoading();
+        this.appendMsg('链接关闭', '关闭成功');
+        this.ws = null;
+      });
+    },
+
+    send() {
+      if (!this.ws) {
+        return this.appendMsg('错误提示', '请先开启 socket 链接');
+      }
+      this.showLoading();
+      this.appendMsg('发送信息', [
+        '一段文本信息: Hi, this is cml',
+        '一个数组: 1,2,3'
+      ]);    
+      this.ws.send({
+        text: 'Hi, this is cml',
+        arr: ['1', '2', '3']
+      });
+    },
+
+    close() {
+      if (!this.ws) {
+        return this.appendMsg('错误提示', '请先开启 socket 链接');
+      }
+      this.ws.close();
+    }
+  }
+}
+</script>
+
+
+<style scoped>
+.page-websocket {
+  background-color: #F0F2F7;
+}
+
+.preview-container {
+  width: 750cpx;
+  min-height: 350cpx;
+  padding: 40cpx 46cpx 70cpx;
+  background-color: white;
+  margin-top: 20cpx;
+}
+
+.preview-font {
+  font-size: 28cpx;
+  color: #192944;
+}
+
+.indent {
+  padding-left: 20cpx;
+}
+
+.preview-text {
+  margin-bottom: 24cpx;
+}
+
+</style>
+
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+          "secondary-header": "/components/secondaryHeader/secondaryHeader",
+          "secondary-cell": "/components/secondaryCell/secondaryCell",
+          "c-loading": "cml-quickapp-ui/components/c-loading/c-loading"
+        },
+        "navigationBarTitleText": "WebSocket",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#F0F2F7"
+    }
+}
+</script>

@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "chameleon 示例展示",
   "scripts": {
-    "build": "cml wx build && cml web build && cml weex build",
-    "deploy": "sh deploy.sh weex && sh deploy.sh web"
+    "build": "cml wx build && cml web build && cml weex build && cml quickapp build",
+    "deploy": "sh deploy.sh weex && sh deploy.sh web && sh deploy.sh quickapp"
   },
   "author": "Chameleon-Team",
   "license": "Apache",
@@ -16,12 +16,12 @@
     "chameleon-store": "1.0.0",
     "chameleon-ui-builtin": "^1.0.1",
     "cml-ui": "1.0.0",
-    "cml-tt-api": "0.2.3",
-    "cml-tt-plugin": "0.2.3",
-    "cml-tt-runtime": "0.2.3",
-    "cml-tt-store": "0.2.3",
-    "cml-tt-ui": "0.2.3",
-    "cml-tt-ui-builtin": "0.2.3-alpha.0",
+    "cml-quickapp-api": "1.0.0",
+    "cml-quickapp-plugin": "1.0.0",
+    "cml-quickapp-runtime": "1.0.0",
+    "cml-quickapp-ui-builtin": "1.0.0",
+    "cml-quickapp-ui": "1.0.0",
+    "cml-quickapp-store": "1.0.0",
     "vue-amap": "^0.5.10"
   }
 }

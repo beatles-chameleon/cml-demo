@@ -9,7 +9,8 @@
     <view class="shop-cart">
       <view c-if="{{!goodslist || goodslist.length<=0}}" class="cart-empty">
         <view class="center" c-bind:tap="godetail">
-          <image class="img-empty" resize="contain" src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/noCart-a8fe3f12e5.png"></image>
+          <image class="img-empty" resize="contain"
+            src="https://cmljs.org/cml-demo/src/assets/images/yanxuan/noCart-a8fe3f12e5.png"></image>
         </view>
         <text class="txt-empty">去添加点什么吧</text>
       </view>
@@ -18,35 +19,35 @@
   </view>
 </template>
 <script>
-  import cml from "cml-tt-api";
+  import cml from 'cml-quickapp-api';
   import yanxuanData from '../../assets/yanxuan.json'
   const headerHeight = 114;
   const tabbarHeight = 90;
   const sloganHeight = 66;
-  class Yanxuan   {
+  class Yanxuan {
     data = {
-      rightbtn:{
-        name:"编辑"
+      rightbtn: {
+        name: "编辑"
       },
-      goods:[],
-      goodslist:[],
+      goods: yanxuanData.data.result.goods,
+      goodslist: [],
       scrollerHeight: 0
     }
-    created() {
-      let result = yanxuanData.data.result;
-      this.goods = result.goods;
-    }
+    // created() {
+    //   let result = yanxuanData.data.result;
+    //   this.goods = result.goods;
+    // }
 
     methods = {
-      godetail(){
+      godetail() {
         cml.navigateTo({
-          "path": "/pages/demo/yanxuan/pages/detail/detail"
+          "path": "/pages/demo/yanxuan/pages/detail/index"
         });
       }
     }
 
     mounted() {
-      cml.getSystemInfo().then((info)=>{
+      cml.getSystemInfo().then((info) => {
         this.scrollerHeight = Number(info.viewportHeight) - headerHeight - tabbarHeight - sloganHeight
       })
     }
@@ -56,22 +57,23 @@
   export default new Yanxuan();
 </script>
 <style scoped>
-
-  .wrapper{
+  .wrapper {
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
   }
-  .slogan{
-    margin-top:114cpx;
+
+  .slogan {
+    margin-top: 114cpx;
     width: 750cpx;
-    height:66cpx;
+    height: 66cpx;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     background-color: #ffffff;
   }
-  .i-slg{
+
+  .i-slg {
     height: 66cpx;
     font-size: 26cpx;
     padding-top: 16cpx;
@@ -79,38 +81,43 @@
     text-align: center;
     color: #b4282d;
   }
-  .shop-cart{
+
+  .shop-cart {
     display: flex;
     flex-direction: row;
     background-color: #ffffff;
     position: relative;
   }
-  .cart-empty{
+
+  .cart-empty {
     height: 350cpx;
     text-align: center;
   }
-  .center{
+
+  .center {
     width: 750cpx;
     height: 230cpx;
-    top:20cpx;
+    top: 20cpx;
     left: 0;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
   }
-  .img-empty{
+
+  .img-empty {
     width: 248cpx;
     height: 230cpx;
     text-align: center;
   }
-  .txt-empty{
+
+  .txt-empty {
     position: absolute;
     text-align: center;
     font-size: 30cpx;
     width: 750cpx;
     left: 0;
-    top:250cpx;
-    color:#999;
+    top: 250cpx;
+    color: #999;
   }
 </style>
 <script cml-type="json">

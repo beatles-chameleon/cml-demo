@@ -1,27 +1,22 @@
 <template>
   <page title="chameleon">
-    <view class="chameleon-content" style="height:{{scrollHeight}}cpx;">
-      <scroller
-        scroll-direction="vertical"
-        bottom-offset="{{20}}"
-        height="{{scrollHeight}}"
-      >
-        <component is="{{currentCom}}"></component>
+    <view class="chameleon-content" style="height:{{scrollHeight}}px;">
+      <scroller scroll-direction="vertical" bottom-offset="{{20}}" height="{{scrollHeight}}">
+        <component is="{{currentCom}}" shrinkcomponents="home, classify, topic, shop, my"></component>
       </scroller>
     </view>
 
     <view class="footer-zhanwei">
-      <c-tabbar c-model="{{currentCom}}"
-                tabbar="{{tabbar}}"></c-tabbar>
+      <c-tabbar c-model="{{currentCom}}" tabbar="{{tabbar}}" c-bind:input="toggleTab"></c-tabbar>
     </view>
   </page>
 </template>
 
 <script>
-  import cml from 'cml-tt-api';
+  import cml from 'cml-quickapp-api';
   import homePageData from '../../assets/getHomeImgList.json';
   const animation = cml.createAnimation();
-  let chameleonIcon  = require('../../../../../assets/images/chameleon.png');
+  let chameleonIcon = require('../../../../../assets/images/chameleon.png');
   class Index {
     data = {
       title: "chameleon",
@@ -31,56 +26,61 @@
       currentCom: 'home',
       selectedIndex: 0,
       tabbar: {
-        tabbarStyle: "height:120cpx;",
-        textStyle: "font-size: 24cpx",
-        selectedTextStyle: "font-size: 24cpx;color:#61c7fc;",
-        list: [
-          {
+        tabbarStyle: "height:120px;",
+        textStyle: "font-size: 24px",
+        selectedTextStyle: "font-size: 24px;color:#61c7fc;",
+        list: [{
             compName: 'home',
             text: '首页',
             icon: chameleonIcon,
-            "iconStyle":"width:40cpx;height:40cpx;",
-            "selectedIconStyle":"width:45cpx;height:45cpx;"
+            "iconStyle": "width:40px;height:40px;",
+            "selectedIconStyle": "width:45px;height:45px;"
           },
           {
             compName: 'classify',
             text: '分类',
             icon: chameleonIcon,
-            "iconStyle":"width:40cpx;height:40cpx;",
-            "selectedIconStyle":"width:45cpx;height:45cpx;"
+            "iconStyle": "width:40px;height:40px;",
+            "selectedIconStyle": "width:45px;height:45px;"
           },
           {
             compName: 'topic',
             text: '识物',
             icon: chameleonIcon,
-            "iconStyle":"width:40cpx;height:40cpx;",
-            "selectedIconStyle":"width:45cpx;height:45cpx;"
+            "iconStyle": "width:40px;height:40px;",
+            "selectedIconStyle": "width:45px;height:45px;"
           },
           {
             compName: 'shop',
             text: '购物车',
             icon: chameleonIcon,
-            "iconStyle":"width:40cpx;height:40cpx;",
-            "selectedIconStyle":"width:45cpx;height:45cpx;"
+            "iconStyle": "width:40px;height:40px;",
+            "selectedIconStyle": "width:45px;height:45px;"
           },
           {
             compName: 'my',
             text: '个人',
             icon: chameleonIcon,
-            "iconStyle":"width:40cpx;height:40cpx;",
-            "selectedIconStyle":"width:45cpx;height:45cpx;"
+            "iconStyle": "width:40px;height:40px;",
+            "selectedIconStyle": "width:45px;height:45px;"
           }
         ]
       }
     }
     methods = {
+      toggleTab(e) {
+        this.currentCom = e.detail.value
+      }
     }
 
-    created() {
-      const {special, disscountPriceImgUrl} = homePageData.data;
-      this.special = special;
-      this.disscountPriceImgUrl = disscountPriceImgUrl;
-    }
+    // created() {
+    //   const {
+    //     special,
+    //     disscountPriceImgUrl
+    //   } = homePageData.data;
+    //   this.special = special;
+    //   this.disscountPriceImgUrl = disscountPriceImgUrl;
+    // }
 
     mounted() {
       cml.getSystemInfo().then((info) => {
@@ -99,9 +99,10 @@
     width: 750cpx;
     overflow-x: hidden;
   }
+
   .content-main {
     width: 3750cpx;
-    background: #9F8A60;
+    background-color: #9F8A60;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -133,21 +134,20 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #fff;
+    background-color: #fff;
     border-top: 2cpx solid #E6E6E6;
   }
-
 </style>
 <script cml-type="json">
   {
-    "base":{
+    "base": {
       "usingComponents": {
         "home": "../../components/home/home",
         "classify": "../../components/classify/classify",
         "shop": "../../components/shop/shop",
         "my": "../../components/my/my",
         "topic": "../../components/topic/topic",
-        "c-tabbar": "cml-tt-ui/components/c-tabbar/c-tabbar"
+        "c-tabbar": "cml-quickapp-ui/components/c-tabbar/c-tabbar"
       },
       "navigationBarTitleText": "首页",
       "backgroundTextStyle": "dark",

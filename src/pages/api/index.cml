@@ -1,0 +1,475 @@
+<template>
+  <page title="API">
+    <view class="page">
+      <scroller height="{{-1}}">
+        <view class="title-row">
+          <row justify="start">
+            <image class="title-icon" src="{{iconApiUri}}"></image>
+            <text ref="titleText" class="title-text">API</text>
+          </row>
+        </view>
+        <view class="page-list">
+          <view c-for="{{cells}}" c-for-item="cellInfo">
+            <collapse title="{{cellInfo.title}}" icon-uri="{{cellInfo.iconUri}}" list="{{cellInfo.list}}"
+              c-bind:itemselected="cellItemSeleted"></collapse>
+          </view>
+        </view>
+      </scroller>
+    </view>
+  </page>
+</template>
+
+<script>
+  import cml from 'cml-quickapp-api';
+  import bridge from 'chameleon-bridge';
+  import supportChecker from '../../components/unsupported/unsupported.interface';
+
+  class Home {
+    data = {
+      iconApiUri: require(`../../assets/images/api/icon-api.png`),
+      cells: [{
+        title: '启动参数',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          method: 'getLaunchOptionsSync',
+          url: '',
+          title: '获取启动参数'
+        }]
+      }, {
+        title: 'CanIUse',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          method: 'canIUse',
+          url: '',
+          title: 'CanIUse:showToast',
+          extraData: {
+            apiName: 'showToast'
+          }
+        }, {
+          method: 'canIUse',
+          url: '',
+          title: 'CanIUse:showAnyToast',
+          extraData: {
+            apiName: 'showAnyToast'
+          }
+        }]
+      }, {
+        title: '设置页面标题',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: '设置标题为: 自定义标题',
+          method: 'setTitle',
+          extraData: {
+            title: '自定义标题'
+          }
+        }]
+      }, {
+        title: '交互反馈',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: 'toast 弹框',
+          method: 'showUx',
+          extraData: {
+            uX: 'showToast',
+            message: 'toast 弹框'
+          }
+        }, {
+          title: 'alert 弹框',
+          method: 'showUx',
+          extraData: {
+            uX: 'alert',
+            message: 'alert 弹框'
+          }
+        }, {
+          title: 'confirm 弹框',
+          method: 'showUx',
+          extraData: {
+            uX: 'confirm',
+            message: 'confirm 弹框'
+          }
+        }]
+      }, {
+        title: '选取照片',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: '从相机获取',
+          method: 'chooseImage',
+          extraData: {
+            type: 'camera'
+          }
+        }, {
+          title: '从相册获取',
+          method: 'chooseImage',
+          extraData: {
+            type: 'album'
+          }
+        }, {
+          title: '菜单选择',
+          method: 'chooseImage',
+          extraData: {
+            type: 'choice'
+          }
+        }]
+      }, {
+        title: '路由导航',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: 'cml.navigateTo',
+          method: 'navigateTo'
+        }, {
+          title: 'cml.redirectTo',
+          method: 'redirectTo'
+        }]
+      }, {
+        title: '网络请求',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: 'cml.get 请求',
+          method: 'request',
+          extraData: {
+            method: 'get'
+          }
+        }, {
+          title: 'cml.post 请求',
+          method: 'request',
+          extraData: {
+            method: 'post'
+          }
+        }, {
+          title: 'cml.request 发起 put 请求',
+          method: 'request',
+          extraData: {
+            method: 'request'
+          }
+        }]
+      }, {
+        title: 'WebSocket',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: '查看 WebSocket 展示',
+          method: 'webSocket'
+        }]
+      }, {
+        title: '数据存储',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: '存储 name: "ironman"',
+          method: 'storage',
+          extraData: {
+            action: 'set'
+          }
+        }, {
+          title: '获取 name 值',
+          method: 'storage',
+          extraData: {
+            action: 'get'
+          }
+        }, {
+          title: '删除 name 值',
+          method: 'storage',
+          extraData: {
+            action: 'remove'
+          }
+        }]
+      }, {
+        title: '地理位置',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: '获取地理位置',
+          method: 'getGeo'
+        }]
+      }, {
+        title: '系统信息',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: '获取系统信息',
+          method: 'getSystemInfo'
+        }]
+      }, {
+        title: '单位转换',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: 'px 转 cpx',
+          method: 'px2cpx'
+        }, {
+          title: 'cpx 转 px',
+          method: 'cpx2px'
+        }]
+      }, {
+        title: '剪贴板',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: '设置剪贴板为 AA',
+          method: 'clipBoard',
+          extraData: {
+            action: 'set',
+            text: 'AA'
+          }
+        }, {
+          title: '获取剪贴内容',
+          method: 'clipBoard',
+          extraData: {
+            action: 'get'
+          }
+        }]
+      }, {
+        title: '元素属性',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: '获取页面顶部API文本的属性',
+          method: 'getRect'
+        }]
+      }, {
+        title: '动画',
+        iconUri: require(`../../assets/images/api/icon-default.png`),
+        list: [{
+          title: '查看动画展示',
+          method: 'goAnimation'
+        }]
+      }]
+    }
+
+    created() {
+      let unsupportedApis = supportChecker.getUnsupportApis();
+      this.cells = this.cells.filter((cell) => {
+        return !~unsupportedApis.indexOf(cell.title);
+      });
+    }
+
+    methods = {
+      cellItemSeleted(e) {
+        let {
+          method,
+          extraData
+        } = e.detail;
+        this[method] && this[method](extraData);
+      },
+      getLaunchOptionsSync() {
+        const options = cml.getLaunchOptionsSync();
+        cml.showToast({
+          message: JSON.stringify(options),
+        });
+      },
+      openNewBeatlesPage() {
+        bridge.callNative('beatlesCommunicate', 'openNativeWebPage', {
+          close_web: false,
+          url: 'https://cmljs.org'
+        })
+      },
+      callNativeLogin() {
+        bridge.callNative('beatlesCommunicate', 'callNativeLogin', {}, res => {
+          cml.showToast({
+            message: '返回登录结果: ' + JSON.stringify(res)
+          })
+        })
+      },
+      onLoginChange() {
+        bridge.listenNative('beatlesCommunicate', 'onLoginChange', res => {
+          cml.showToast({
+            message: '登录状态发生变化: ' + JSON.stringify(res)
+          })
+        })
+        cml.showToast({
+          message: '注册登录状态变化事件成功'
+        })
+      },
+      canIUse({
+        apiName = ''
+      }) {
+        cml.canIUse(apiName).then(res => {
+          cml.showToast({
+            message: ['当前版本支持', apiName].join(" ")
+          });
+        }, err => {
+          cml.showToast({
+            message: ['当前版本不支持', apiName].join(" ")
+          });
+        });
+      },
+      setTitle({
+        title = ''
+      }) {
+        cml.setTitle(title);
+      },
+      showUx({
+        uX = '',
+        message = ''
+      }) {
+        uX === 'showToast' && cml.showToast({
+          message
+        });
+        uX === 'alert' && cml.alert({
+          message,
+          confirmTitle: '好的'
+        });
+        uX === 'confirm' && cml.confirm({
+          message
+        });
+      },
+      chooseImage({
+        type = ''
+      }) {
+        cml.navigateTo({
+          path: '/pages/api/sub-pages/chooseImage/index',
+          query: {
+            type
+          }
+        });
+      },
+      getGeo() {
+        cml.getLocationInfo().then((res) => {
+          cml.showToast({
+            message: JSON.stringify(res)
+          });
+        }).catch((err) => {
+          cml.showToast({
+            message: err.message
+          });
+        });
+      },
+      getSystemInfo() {
+        cml.getSystemInfo().then(res => {
+          cml.showToast({
+            message: JSON.stringify(res),
+            duration: 2000
+          })
+        });
+      },
+      px2cpx() {
+        cml.showToast({
+          message: ['1px 合 ', cml.px2cpx(1), 'cpx'].join("")
+        });
+      },
+      cpx2px() {
+        cml.showToast({
+          message: ['1cpx 合 ', cml.cpx2px(1), 'px'].join("")
+        });
+      },
+      clipBoard({
+        action = '',
+        text = ''
+      }) {
+        if (action === 'get') {
+          cml.getClipBoardData().then(res => {
+            cml.showToast({
+              message: JSON.stringify(res)
+            });
+          });
+        } else {
+          cml.setClipBoardData('AA').then((res) => {
+            cml.showToast({
+              message: '剪贴板内容已设置为:AA'
+            });
+          });
+        }
+      },
+      storage({
+        action = ''
+      }) {
+        (action === 'set') && cml.setStorage('name', 'ironman').then((res) => {
+          cml.showToast({
+            message: 'name 已设置为 ironman'
+          });
+        });
+        (action === 'get') && cml.getStorage('name').then((res) => {
+          cml.showToast({
+            message: res
+          });
+        }, (err) => {
+          cml.showToast({
+            message: err.message || 'name 值已不存在'
+          });
+        });
+        (action === 'remove') && cml.removeStorage('name').then((res) => {
+          cml.showToast({
+            message: 'name 值已删除'
+          });
+        });
+      },
+      getRect() {
+        cml.getRect('titleText', this).then(res => {
+          cml.showToast({
+            message: JSON.stringify(res)
+          });
+        });
+      },
+      goAnimation() {
+        cml.navigateTo({
+          path: '/pages/api/sub-pages/animation/index'
+        });
+      },
+      request({
+        method = ''
+      }) {
+        cml.navigateTo({
+          path: '/pages/api/sub-pages/request/index',
+          query: {
+            method
+          }
+        });
+      },
+      webSocket() {
+        cml.navigateTo({
+          path: '/pages/api/sub-pages/webSocket/index'
+        });
+      },
+      navigateTo() {
+        cml.navigateTo({
+          path: '/pages/api/sub-pages/navigate/index',
+          query: {
+            method: 'navigateTo'
+          }
+        });
+      },
+      redirectTo() {
+        cml.redirectTo({
+          path: '/pages/api/sub-pages/navigate/index',
+          query: {
+            method: 'redirectTo'
+          }
+        });
+      }
+    }
+  }
+
+  export default new Home();
+</script>
+
+<style scoped>
+  .page {
+    padding: 0 46cpx;
+    background-color: #F0F2F7;
+  }
+
+
+  .title-row {
+    padding: 80cpx 20cpx 20cpx 0;
+    margin-bottom: 60cpx;
+  }
+
+  .title-icon {
+    width: 70cpx;
+    height: 60cpx;
+    margin-right: 40cpx;
+  }
+
+  .title-text {
+    font-size: 38cpx;
+    color: #172742;
+    letter-spacing: 0;
+    text-align: left;
+  }
+</style>
+
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {
+        "collapse": "/components/collapse/collapse"
+      },
+      "navigationBarTitleText": "API",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#F0F2F7"
+    }
+  }
+</script>

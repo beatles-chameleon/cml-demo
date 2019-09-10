@@ -1,0 +1,69 @@
+<template>
+  <page title="navigate">
+    <view class="page-navigate">
+      <secondary-header title="{{title}}" subtitle="{{subtitle}}"></secondary-header>
+      <secondary-cell title="{{cell.title}}" list="{{cell.list}}" c-bind:btnclicked="onBtnClicked"></secondary-cell>
+    </view>
+  </page>
+</template>
+
+<script>
+  import cml from 'cml-quickapp-api';
+  let method = ''
+  export default {
+    data: {
+      title: '路由导航展示页',
+      subtitle: '',
+      cell: {
+        title: '路由导航返回演示',
+        list: [{
+          title: '点击返回上一页',
+          btnText: '点击返回'
+        }]
+      },
+      map: {
+        navigateTo: '返回上一个开启的页面',
+        redirectTo: '上一个开启的页面被关闭，返回上一个页面之前的页面'
+      },
+      method: ''
+    },
+
+
+    beforeCreate(res) {
+      this.method = res.method;
+
+    },
+
+    created() {
+      this.subtitle = this.map[this.method]
+    },
+
+    methods: {
+      onBtnClicked() {
+        cml.navigateBack(-1);
+      }
+    }
+  }
+</script>
+
+
+<style scoped>
+  .page-navigate {
+    background-color: #F0F2F7;
+  }
+</style>
+
+
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {
+        "secondary-header": "/components/secondaryHeader/secondaryHeader",
+        "secondary-cell": "/components/secondaryCell/secondaryCell"
+      },
+      "navigationBarTitleText": "路由导航",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#F0F2F7"
+    }
+  }
+</script>

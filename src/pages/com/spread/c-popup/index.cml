@@ -1,0 +1,111 @@
+<template>
+<page title="c-popup演示">
+  <c-header title="c-popup"></c-header>
+  <c-popup show="{{show}}" mask="{{mask}}" c-bind:close="closePopup"></c-popup>
+  <c-popup show="{{show2}}" mask="{{mask}}" c-bind:close="closePopup" position="{{position}}">
+    <view style="{{contentStyle}}"><text style="font-size: 28cpx;">content</text></view>
+  </c-popup>
+  <button btn-style="margin-top: 20px;align-self: center"  c-bind:onclick="showPopup" text="show popup"></button>
+  <button btn-style="margin-top: 20px;align-self: center"  c-bind:onclick="showPopup2" text="left/top/right/bottom/center"></button>
+</page>
+</template>
+<script>
+class CPopup {
+
+  data = {
+    mask: true,
+    show: false,
+    show2: false,
+    position: '',
+    pos: ['left', 'top', 'right', 'bottom', ''],
+    posi: 0
+  }
+
+  computed = {
+    contentStyle() {
+      let style;
+      switch (this.position) {
+        case 'left':
+          style = 'width:200cpx;background-color:#fff;'
+          break;
+        case 'top':
+          style = 'height:200cpx;background-color:#fff;'
+          break;
+        case 'right':
+          style = 'width:200cpx;background-color:#fff;'
+          break;
+        case 'bottom':
+          style = 'height:200cpx;background-color:#fff;'
+          break;
+        default: 
+          style="display:block;width: 500cpx;height: 200cpx;background-color: #fff;";
+          break;
+      }
+      return style;
+    }
+  }
+
+  watch  = {
+  }
+
+  methods = {
+    showPopup() {
+      this.show = true;
+    },
+    showPopup2() {
+      this.position = this.pos[this.posi++];
+      this.posi = this.posi % 5;
+      this.show2 = true;
+    },
+    closePopup() {
+      this.show = false;
+      this.show2 = false;
+    }
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new CPopup();
+</script>
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #f8f8f8;
+}
+.btn {
+  margin-top: 20cpx;
+  align-self: center;
+}
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+          "c-header": "/components/header/header",
+          "c-popup": "cml-quickapp-ui/components/c-popup/c-popup"
+        },
+        "navigationBarTitleText": "c-popup",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"
+    }
+}
+</script>

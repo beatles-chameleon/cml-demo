@@ -1,0 +1,290 @@
+<template>
+  <page title="详情页">
+    <view class="content">
+      <myscroller>
+        <view>
+          <carousel class="carousel-container" indicator-dots="{{true}}" current="{{1}}" circular="{{true}}">
+            <carousel-item class="carousel-carousel-item" c-for="{{bannerImg}}" c-for-index="i" c-for-item="item"
+              c-key="i" c-bind:tap="change" data-idx="{{i}}">
+              <image src="{{item.imgUrl}}" class="Img" />
+            </carousel-item>
+          </carousel>
+        </view>
+        <view class="description">
+          <view class="description-item" c-for="{{descriptionInfo}}" c-for-index="i" c-for-item="item" data-idx="{{i}}">
+            <view class="description-item-img">
+              <image src="{{item.imgUrl}}" class="description-item-img-con" />
+            </view>
+            <view class="description-item-des">
+              <text class="description-item-des-tag">{{item.tag1}}</text>
+              <text class="description-item-des-tag">{{item.tag2}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="section">
+          <view class="section-money">
+            <text class="class-money">{{money}}</text>
+          </view>
+          <view class="section-tag" c-bind:tap="goto">
+            <text class="section-tag-con">{{appTag}}</text>
+          </view>
+          <view class="section-evaluate">
+            <view class="section-evaluate-info">
+              <text class="section-evaluate-info-name">60s锦眠贡缎四件套</text>
+              <text class="section-evaluate-info-desc">400根纯棉贡缎，入门奢享高阶柔滑</text>
+            </view>
+            <view class="section-evaluate-number">
+              <text class="section-evaluate-number-total">26</text>
+              <text class="section-evaluate-number-ping">用户评价</text>
+            </view>
+          </view>
+        </view>
+        <view class="coupon">
+          <text class="coupon-tag">年货及时津贴</text>
+          <text class="coupon-money">领津贴每满300减15</text>
+          <text class="coupon-get">去领取</text>
+        </view>
+        <view class="map">
+          <_map></_map>
+        </view>
+      </myscroller>
+    </view>
+  </page>
+</template>
+
+<script>
+  import cml from 'cml-quickapp-api'
+  import detailData from '../../assets/detailInfo.json';
+  class Detail {
+    data = {
+      bannerImg: [],
+      descriptionInfo: [],
+      money: 0,
+      appTag: '',
+      scrollHeight: -1
+    }
+    methods = {
+      goto() {},
+      change() {
+        console.log('change');
+      },
+      forbinding(e) {}
+    }
+    created() {
+      const {
+        carouselList,
+        description,
+        money,
+        tag
+      } = detailData.data;
+      this.bannerImg = carouselList;
+      this.descriptionInfo = description;
+      this.money = money;
+      this.appTag = tag;
+    }
+
+    mounted() {
+      cml.getSystemInfo().then((info) => {
+        if (info.env == 'weex') {
+          this.scrollHeight = Number(info.viewportHeight) - 80 - 88;
+        } else {
+          this.scrollHeight = Number(info.viewportHeight) - 80;
+        }
+      })
+    }
+  }
+  export default new Detail();
+</script>
+
+<style scoped>
+  .content {
+    background-color: #f4f4f4;
+  }
+
+  .carousel-container {
+    height: 750cpx;
+  }
+
+  .carousel-carousel-item,
+  .Img {
+    height: 750cpx;
+    width: 750cpx;
+  }
+
+  .description {
+    width: 750cpx;
+    height: 128cpx;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .description-item {
+    width: 210cpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .description-item-img {
+    width: 72cpx;
+    height: 72cpx;
+    overflow: hidden;
+    border-radius: 36cpx;
+  }
+
+  .description-item-img-con {
+    width: 72cpx;
+    height: 72cpx;
+  }
+
+  .description-item-des {
+    height: 72cpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .description-item-des-tag {
+    font-size: 28cpx;
+    color: #666;
+  }
+
+  .section {
+    background-color: #fff;
+    padding: 30cpx 0 30cpx 30cpx;
+  }
+
+  .class-money {
+    color: #B4282D;
+    font-size: 50cpx;
+    font-weight: bold;
+  }
+
+  .section-tag {
+    width: 240cpx;
+    height: 40cpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6cpx;
+    border: 2cpx solid #B4282D;
+  }
+
+  .section-tag-con {
+    color: #B4282D;
+    font-size: 24cpx;
+  }
+
+  .section-evaluate {
+    margin-top: 20cpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .section-evaluate-info {
+    width: 550cpx;
+    height: 90cpx;
+    border-right: 2cpx dashed #666;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .section-evaluate-info-name {
+    font-size: 34cpx;
+    color: #333;
+  }
+
+  .section-evaluate-info-desc {
+    font-size: 24cpx;
+    color: #666666;
+  }
+
+  .section-evaluate-number {
+    width: 180cpx;
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-evaluate-number-total {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #B4282D;
+    font-size: 30cpx;
+  }
+
+  .section-evaluate-number-ping {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #666666;
+    font-size: 24cpx;
+  }
+
+  .coupon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    padding: 30cpx 20cpx;
+    margin: 15cpx 0;
+  }
+
+  .coupon-tag {
+    background-image: linear-gradient(90deg, #FF8659 0, #FF2C30 100%);
+    font-size: 22cpx;
+    color: #ffffff;
+    padding: 0 14cpx;
+    border-radius: 16cpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .coupon-money {
+    font-size: 30cpx;
+    color: #555555;
+    margin-left: 10cpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .coupon-get {
+    color: #FF2E31;
+    font-size: 26cpx;
+    padding: 4cpx 16cpx;
+    border-radius: 30cpx;
+    border: 2cpx solid #FF2E31;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 120cpx;
+  }
+
+  .map {
+    width: 750cpx;
+    height: 350cpx;
+  }
+</style>
+
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {
+        "myscroller": "./myscroller/myscroller",
+        "_map": "../../components/map/map"
+      },
+      "navigationBarTitleText": "详情页",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#E2E2E2"
+    }
+  }
+</script>

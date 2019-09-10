@@ -1,0 +1,44 @@
+<template>
+  <view class="tab">
+    <c-tabs tabs="{{tabs}}"
+      c-bind:tabclick="handleTabTap"
+      active-label="{{activeLabel}}"
+      inline="{{false}}"
+      has-underline="{{false}}"
+    >
+    </c-tabs>
+  </view>
+</template>
+
+<script>
+  import store from '../../../../../store'
+  class Index {
+    data = {
+      animationData: {},
+      tabs: [],
+      activeLabel: '首页',
+    }
+    methods = {
+      handleTabTap(e) {
+        const oIndex = e.detail.activeIndex;
+        this.activeLabel = e.detail.label;
+        this.$cmlEmit('translate', {oIndex});
+      }
+    }
+    created() {
+      this.tabs = store.state.yanxuan.tabs;
+    }
+  }
+  export default new Index();
+</script>
+
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {
+          "c-tabs": "cml-quickapp-ui/components/c-tab/c-tab"
+      }
+    }
+  }
+</script>
+

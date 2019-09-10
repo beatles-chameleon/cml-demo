@@ -1,0 +1,90 @@
+<template>
+  <view>
+    <page title="switch演示">
+      <c-header title="switch"></c-header>
+      <view class="box">
+        <switch checked="{{ switchValue1 }}" label="Switch" c-bind:change="switchChange1">
+        </switch>
+      </view>
+      <view class="title">
+        <text>switch value: {{ switchValue1 }}</text>
+      </view>
+      <view class="box">
+        <switch checked="{{ switchValue2 }}" label="Switch" c-bind:change="switchChange2">
+        </switch>
+      </view>
+      <view class="title">
+        <text>switch value: {{ switchValue2 }}</text>
+      </view>
+      <view class="box">
+        <switch checked="{{ switchValue3 }}" label="Disabled Switch" disabled="{{true}}">
+        </switch>
+      </view>
+      <view class="title">
+        <text>switch value: {{ switchValue3 }}</text>
+      </view>
+      <view class="box">
+        <switch checked="{{ switchValue4 }}" label="Disabled Switch" disabled="{{true}}">
+        </switch>
+      </view>
+      <view class="title">
+        <text>switch value: {{ switchValue4 }}</text>
+      </view>
+    </page>
+  </view>
+</template>
+<script>
+  import cml from 'cml-quickapp-api'
+  class Switch {
+
+    data = {
+      switchValue1: false,
+      switchValue2: true,
+      switchValue3: false,
+      switchValue4: true
+    }
+
+    computed = {}
+
+    methods = {
+      switchChange1(e) {
+        this.switchValue1 = e.detail.value
+      },
+      switchChange2(e) {
+        this.switchValue2 = e.detail.value
+      },
+    }
+
+  }
+
+  export default new Switch();
+</script>
+<style scoped>
+  .title {
+    font-size: 38cpx;
+    font-weight: 400;
+    margin: 20cpx 0;
+    padding: 10cpx 30cpx;
+    background-color: #eee
+  }
+
+  .radio-value {
+    font-size: 32cpx;
+  }
+
+  .box {
+    margin: 0cpx 50cpx;
+  }
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {
+        "c-header": "/components/header/header"
+      },
+      "navigationBarTitleText": "switch",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#E2E2E2"
+    }
+  }
+</script>

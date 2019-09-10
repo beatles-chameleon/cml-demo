@@ -1,70 +1,58 @@
-
 //设置静态资源的线上路径
 const publicPath = 'https://beatles-chameleon.github.io/cml-demo/dist';
 //设置api请求前缀
 const apiPrefix = 'https://cmljs.org';
 const path = require('path');
 cml.config.merge({
-  cmlNpm: [
-  ],
-  builtinNpmName: 'cml-tt-ui-builtin',
+  templateLang: "cml",
+  templateType: "html",
+  builtinNpmName: 'cml-quickapp-ui-builtin',
   extPlatform: {
-    tt: 'cml-tt-plugin',
+    quickapp: 'cml-quickapp-plugin',
   },
   babelPath: [
-    path.join(__dirname,'node_modules/cml-tt-ui-builtin'),
-    path.join(__dirname,'node_modules/cml-tt-runtime'),
-    path.join(__dirname,'node_modules/cml-tt-api'),
-    path.join(__dirname,'node_modules/cml-tt-ui'),
-    path.join(__dirname,'node_modules/cml-tt-store'),
-    path.join(__dirname,'node_modules/cml-tt-mixins'),
+    path.join(__dirname,'node_modules/cml-quickapp-ui-builtin'),
+    path.join(__dirname,'node_modules/cml-quickapp-runtime'),
+    path.join(__dirname,'node_modules/cml-quickapp-api'),
+    path.join(__dirname,'node_modules/cml-quickapp-ui'),
+    path.join(__dirname,'node_modules/cml-quickapp-store'),
+    path.join(__dirname,'node_modules/cml-quickapp-mixins'),
+    path.join(__dirname,'node_modules/mobx'),
   ],
-  baseStyle:{
-    wx: true,
-    web: true,
-    weex: true,
-    alipay: true,
-    baidu: true,
-    qq: true,
-    tt:true,
-  },
-  platforms: ['web','weex','wx','alipay','tt','baidu'],
-  devPort: 5556,
-  templateType: 'html',
-  cmlComponents: [
-  ],
+  platforms: ["web","weex","wx","alipay","baidu", "quickapp"],
   buildInfo: {
-    wxAppId: '123456',
-    wxEntryPage: '',
-    webPath: 'https://cmljs.org/h5/commentinfo'
+    wxAppId: '123456'
+  },
+  baseStyle: {
+    quickapp: true
+  },
+  quickapp: {
+    dev: {
+      // moduleIdType: 'name',
+      minimize: false,
+      increase: true
+    },
+    build: {
+      minimize: true,
+      hash: false
+    }
   },
   wx: {
     dev: {
     },
     build: {
-      apiPrefix,
-      publicPath: `${publicPath}/wx/`,
-    }
-  },
-  tt: {
-    dev: {
-    },
-    build: {
-      apiPrefix,
-      publicPath: `${publicPath}/tt/`,
+      apiPrefix
     }
   },
   web: {
     dev: {
       analysis: false,
-      console: false,
-      isWrapComponent: false
+      console: false
     },
     build: {
       analysis: false,
       publicPath: `${publicPath}/web/`,
-      apiPrefix,
-      isWrapComponent: false,
+      apiPrefix
     }
   },
   weex: {
@@ -72,8 +60,7 @@ cml.config.merge({
     },
     build: {
       publicPath: `${publicPath}/weex/`,
-      apiPrefix,
-      hash: false
+      apiPrefix
     },
     custom: {
       publicPath: `${publicPath}/wx/`,
@@ -81,4 +68,3 @@ cml.config.merge({
     }
   }
 })
-

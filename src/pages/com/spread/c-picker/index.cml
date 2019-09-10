@@ -1,0 +1,110 @@
+<template>
+<page title="c-picker演示">
+    <c-header title="c-picker"></c-header>
+    <view>
+        <text class="select-text" c-bind:tap="showClick">点击选择：{{provins[provinsIndex]}}</text>
+        <c-picker
+            show="{{pickerShow}}"
+            height="{{500}}"
+            header-height="{{100}}"
+            text-align="center"
+            data-scroller-height="{{400}}"
+            list="{{provins}}"
+            default-index="{{defaultIndex}}"
+            confirm-btn-style="color:red"
+            cancel-btn-style="color:red"
+            c-bind:cancel="cancel"
+            c-bind:confirm="confirm"
+            c-bind:selectchange="selectchange">
+        </c-picker>
+    </view>
+</page>
+</template>
+<script>
+import { provins } from "./data";
+class CPicker {
+  data = {
+    provins,
+    defaultIndex: 0,
+    provinsIndex: 0,
+    pickerShow: false
+  }
+
+  computed = {}
+  watch = {}
+
+  methods = {
+    selectchange(e) {
+      this.provinsIndex = this.defaultIndex = e.detail.index;
+    },
+    showClick() {
+      this.pickerShow = true;
+    },
+    cancel() {
+      this.pickerShow = false;
+    },
+    confirm() {
+      this.pickerShow = false;
+    }
+  }
+
+  beforeCreate() {}
+  created() {}
+  beforeMount() {}
+  mounted() {}
+  beforeDestroy() {}
+  destroyed() {}
+}
+
+export default new CPicker();
+</script>
+<style scoped>
+.title-text {
+  color: #999;
+  margin: 30cpx 20cpx 10cpx;
+  display: block;
+  font-size: 28cpx;
+}
+.picker-item {
+  background-color: #fff;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  flex-direction: row;
+}
+.picker-text-left {
+  font-size: 40cpx;
+  height: 70cpx;
+  line-height: 70cpx;
+  margin-left: 20cpx;
+  width: 300cpx;
+}
+.picker-text-right {
+  font-size: 40cpx;
+  height: 70cpx;
+  line-height: 70cpx;
+  margin-left: 20cpx;
+  flex: 1;
+  text-align: center;
+}
+.select-text {
+  font-size: 32cpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+            "c-header": "/components/header/header",
+            "c-picker": "cml-quickapp-ui/components/c-picker/c-picker"
+        },
+        "navigationBarTitleText": "c-picker",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"
+    }
+}
+</script>

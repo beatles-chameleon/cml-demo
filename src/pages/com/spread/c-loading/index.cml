@@ -1,0 +1,71 @@
+<template>
+  <page title="c-loading演示">
+    <view>
+      <c-header title="c-loading"></c-header>
+      <c-loading loading="{{loading}}">
+        <view class="content"></view>
+      </c-loading>
+      <view class="button-wrapper">
+        <button text="更改loading态" c-bind:onclick="changeLoading"></button>
+      </view>
+    </view>
+  </page>
+</template>
+<script>
+  class CLoading {
+    data = {
+      loading: true,
+    }
+
+    computed = {}
+
+    watch = {}
+
+    methods = {
+      changeLoading() {
+        this.loading = !this.loading;
+      },
+    }
+
+    beforeCreate() {}
+
+    created() {}
+
+    beforeMount() {}
+
+    beforeDestroy() {}
+
+    destroyed() {}
+  }
+
+  export default new CLoading();
+</script>
+<style scoped>
+  .content {
+    width: 750cpx;
+    height: 300cpx;
+    background-color: peru;
+  }
+
+  .button-wrapper {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50cpx;
+  }
+
+  .loading {}
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {
+        "c-header": "/components/header/header",
+        "c-loading": "cml-quickapp-ui/components/c-loading/c-loading"
+      },
+      "navigationBarTitleText": "loading",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#E2E2E2"
+    }
+  }
+</script>

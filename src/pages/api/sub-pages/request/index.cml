@@ -1,0 +1,155 @@
+<template>
+<page title="request">
+  <view class="page-request">
+    <secondary-header title="{{title}}" subtitle="{{subtitle}}"></secondary-header>
+    <secondary-cell title="{{cell.title}}" list="{{cell.list}}" c-bind:btnclicked="onBtnClicked"></secondary-cell>
+    <view class="preview-container">
+      <text class="preview-text preview-font">请求信息</text>
+      <view c-for="{{respones}}" c-for-item="res" c-for-index="idx">
+        <text class="preview-font">{{res.name}}</text>
+        <text c-if="{{res.value}}" class="preview-font indent">{{res.value}}</text>
+        <block c-if="{{res.child}}">
+          <text c-for="{{res.child}}" c-for-item="str" class="preview-font indent">{{str}}</text>
+        </block>
+      </view>
+    </view>
+    <c-loading loading="{{isShowLoading}}"></c-loading>
+  </view>
+</page>
+</template>
+
+<script>
+import cml from 'cml-quickapp-api';
+
+export default {
+  data: {
+    title: '',
+    subtitle: '网络请求',
+    respones: [],
+    cell: {
+      title: '网络请求',
+      list: [{
+        title: '',
+        btnText: '点击发起'
+      }]
+    },
+    map: {
+      get: '以 cml.get 发起请求',
+      post: '以 cml.post 发起请求',
+      request: '以 cml.request 发起 put 请求'
+    },
+    isShowLoading: false
+  },
+  beforeCreate(res) {
+    this.method = res.method;
+    this.title = ['cml', this.method].join(".");
+  },
+  created() {
+    this.cell.list[0].title = this.map[this.method];
+  },  
+  methods: {
+    onBtnClicked(e) {
+      let method = this.method;
+      this.showLoading();
+      (method === 'get') && cml.get({
+        url: 'https://postman-echo.com/get?name=get'
+      }).then(res => {
+        this.respones = this.flatResponses(res);
+        this.hideLoading();
+      });
+      (method === 'post') && cml.post({
+        url: 'https://postman-echo.com/post?name=post',
+        data: {
+          name: 'cml'
+        }
+      }).then(res => {
+        this.respones = this.flatResponses(res);
+        this.hideLoading();
+      });
+      (method === 'request') && cml.request({
+        url: 'https://postman-echo.com/put?name=request',
+        data: {
+          name: 'cml'
+        },
+        method: 'PUT'
+      }).then(res => {
+        this.respones = this.flatResponses(res);  
+        this.hideLoading();    
+      });
+    },
+    flatResponses(res) {
+      let results = [];
+      if (!!res) {
+        Object.keys(res).filter(key => ~['args', 'headers', 'url', 'data'].indexOf(key)).forEach((key) => {
+          if (typeof res[key] === 'string') {
+            results.push({
+              name: key,
+              value: res[key]
+            });
+          }
+          if (typeof res[key] === 'object') {
+            results.push({
+              name: key,
+              child: Object.entries(res[key]).map((pairs) => pairs.join(":"))
+            });
+          }
+        });
+      }
+      return results;
+    },
+    showLoading() {
+      this.isShowLoading = true;
+    },
+    hideLoading() {
+      this.isShowLoading = false;
+    }    
+  }
+}
+</script>
+
+
+<style scoped>
+/* page {
+  background-color: #F0F2F7;
+} */
+
+.page-request {
+  background-color: #F0F2F7;
+}
+
+.preview-container {
+  width: 750cpx;
+  min-height: 350cpx;
+  padding: 40cpx 46cpx 70cpx;
+  background-color: white;
+  margin-top: 20cpx;
+}
+
+.preview-font {
+  font-size: 28cpx;
+  color: #192944;
+}
+
+.indent {
+  padding-left: 20cpx;
+}
+
+.preview-text {
+  margin-bottom: 24cpx;
+}
+</style>
+
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+          "secondary-header": "/components/secondaryHeader/secondaryHeader",
+          "secondary-cell": "/components/secondaryCell/secondaryCell",
+          "c-loading": "cml-quickapp-ui/components/c-loading/c-loading"
+        },
+        "navigationBarTitleText": "网络请求",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#F0F2F7"
+    }
+}
+</script>

@@ -1,13 +1,7 @@
 <template>
   <view class="classList">
-    <view
-      class="classList-item"
-      c-for="{{classifyImgList}}"
-      c-for-index="i"
-      c-for-item="item"
-      c-bind:tap="change"
-      data-idx="{{i}}"
-    >
+    <view class="classList-item" c-for="{{classifyImgList}}" c-for-index="i" c-for-item="item" c-bind:tap="change"
+      data-idx="{{i}}">
       <image src="{{item.imgUrl}}" style="width: 110cpx;height:110cpx;" class="classList-item-img"></image>
       <view class="classList-item-title">
         <text>{{item.title}}</text>
@@ -17,27 +11,29 @@
 </template>
 
 <script>
-import cml from "cml-tt-api";
-import homeData from '../../assets/getHomeImgList.json'
-class Classlist {
-  data = {
-    classifyImgList: []
-  }
-  methods = {
-    change() {
-      cml.navigateTo({
-        "path": "/pages/demo/yanxuan/pages/list/list"
-      });
+  import cml from 'cml-quickapp-api';
+  import homeData from '../../assets/getHomeImgList.json'
+  class Classlist {
+    data = {
+      classifyImgList: homeData.data.classifyImgList
     }
+    methods = {
+      change() {
+        cml.navigateTo({
+          "path": "/pages/demo/yanxuan/pages/list/index"
+        });
+      }
+    }
+
+    // created() {
+    //   const {
+    //     classifyImgList
+    //   } = homeData.data;
+    //   this.classifyImgList = classifyImgList;
+    // }
   }
 
-  created() {
-    const {classifyImgList} = homeData.data;
-    this.classifyImgList = classifyImgList;
-  }
-}
-
-export default new Classlist();
+  export default new Classlist();
 </script>
 <style scoped>
   .classList {
@@ -48,17 +44,20 @@ export default new Classlist();
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 20cpx;
-    background: #ffecdd;
+    background-color: #ffecdd;
   }
+
   .classList-item {
     width: 110cpx;
     margin: 20cpx 10cpx 0;
   }
+
   .classList-item-img {
     width: 110cpx;
     height: 110cpx;
   }
-  .classList-item-title{
+
+  .classList-item-title {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -67,5 +66,5 @@ export default new Classlist();
   }
 </style>
 <script cml-type="json">
- { }
+  {}
 </script>

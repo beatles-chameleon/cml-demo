@@ -1,0 +1,117 @@
+<template>
+  <page title="c-toast演示">
+    <view class="container">
+      <c-header title="c-toast"></c-header>
+      <c-toast duration="{{duration}}" show="{{show}}" btn-style="margin-top: 20px;align-self: center"  c-bind:show="changeShow" message="{{message}}" type="{{type}}"
+        need-icon="{{needIcon}}" mask="{{mask}}"></c-toast>
+      <button btn-style="margin-top: 20px;align-self: center"  c-bind:onclick="showLoading" text="loading toast"></button>
+      <button btn-style="margin-top: 20px;align-self: center"  c-bind:onclick="showMask" text="loading toast with mask"></button>
+      <button btn-style="margin-top: 20px;align-self: center"  c-bind:onclick="showSuccess" text="success toast"></button>
+      <button btn-style="margin-top: 20px;align-self: center"  c-bind:onclick="showWarn" text="warn toast"></button>
+      <button btn-style="margin-top: 20px;align-self: center"  c-bind:onclick="showWithout" text="toast without icon"></button>
+    </view>
+  </page>
+</template>
+<script>
+  class CToast {
+
+    data = {
+      show: false,
+      message: "",
+      type: "loading",
+      mask: false,
+      duration: 1000,
+      needIcon: true
+    }
+
+    computed = {}
+
+    watch = {}
+
+    methods = {
+      changeShow(e) {
+        this.show = e.detail.value;
+      },
+      showLoading() {
+        this.message = "loading";
+        this.type = "loading";
+        this.mask = false;
+        this.duration = 1000;
+        this.needIcon = true;
+        this.show = true;
+      },
+      showMask() {
+        this.message = "mask toast";
+        this.type = "loading";
+        this.mask = true;
+        this.duration = 1000;
+        this.needIcon = true;
+        this.show = true;
+      },
+      showSuccess() {
+        this.message = "success toast";
+        this.type = "success";
+        this.mask = true;
+        this.duration = 1000;
+        this.needIcon = true;
+        this.show = true;
+      },
+      showWarn() {
+        this.message = "warn toast";
+        this.type = "warn";
+        this.duration = 1000;
+        this.mask = true;
+        this.needIcon = true;
+        this.show = true;
+      },
+      showWithout() {
+        this.message = "toast without icon";
+        this.duration = 1000;
+        this.mask = false;
+        this.needIcon = false;
+        this.show = true;
+      }
+    }
+
+
+    beforeCreate() {}
+
+    created() {}
+
+    beforeMount() {}
+
+    mounted() {}
+
+    beforeDestroy() {}
+
+    destroyed() {}
+  }
+
+  export default new CToast();
+</script>
+<style scoped>
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #f8f8f8;
+  }
+
+  .btn {
+    margin-top: 20cpx;
+    align-self: center;
+  }
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {
+        "c-header": "/components/header/header",
+        "c-toast": "cml-quickapp-ui/components/c-toast/c-toast"
+      },
+      "navigationBarTitleText": "c-toast",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#E2E2E2"
+    }
+  }
+</script>

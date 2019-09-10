@@ -8,11 +8,14 @@
 </template>
 
 <script>
-  class Home {
-  }
+  class Home {}
   export default new Home();
 </script>
-
+<style>
+.home {
+  flex-direction: column;
+}
+</style>
 <script cml-type="json">
   {
     "base": {

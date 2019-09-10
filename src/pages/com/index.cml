@@ -1,0 +1,231 @@
+<template>
+  <page title="组件">
+    <view class="page">
+      <scroller height="{{-1}}">
+        <view class="title-row">
+          <row justify="start">
+            <image class="title-icon" src="{{iconApiUri}}"></image>
+            <text ref="titleText" class="title-text">组件</text>
+          </row>
+        </view>
+        <view class="page-list">
+          <view c-for="{{cells}}" c-for-item="cellInfo">
+            <collapse title="{{cellInfo.title}}" icon-uri="{{cellInfo.iconUri}}" list="{{cellInfo.list}}"
+              c-bind:itemselected="cellItemSeleted"></collapse>
+          </view>
+        </view>
+      </scroller>
+    </view>
+  </page>
+</template>
+
+<script>
+  import cml from 'cml-quickapp-api';
+  import routerConfig from '../../router.config.json'
+  let routes = routerConfig.routes;
+
+  let routeObj = {}
+  routes.forEach(route => {
+    routeObj[route['name']] = route
+  })
+
+  class Home {
+    data = {
+      iconApiUri: require(`../../assets/images/api/icon-api.png`),
+      cells: [{
+        title: '基础内容',
+        iconUri: require(`../../assets/images/component/kind/content.png`),
+        list: [{
+          method: '',
+          url: routeObj["text"].path,
+          title: routeObj["text"].name
+        }, {
+          method: '',
+          url: routeObj["view"].path,
+          title: routeObj["view"].name
+        }]
+      }, {
+        title: '视图容器',
+        iconUri: require(`../../assets/images/component/kind/view.png`),
+        list: [{
+          method: '',
+          url: routeObj["list"].path,
+          title: routeObj["list"].name
+        }, {
+          method: '',
+          url: routeObj["scroller"].path,
+          title: routeObj["scroller"].name
+        }, {
+          method: '',
+          url: routeObj["carousel"].path,
+          title: routeObj["carousel"].name
+        }]
+      }, {
+        title: '布局容器',
+        iconUri: require(`../../assets/images/component/kind/view.png`),
+        list: [{
+          method: '',
+          url: routeObj["row"].path,
+          title: routeObj["row"].name
+        }, {
+          method: '',
+          url: routeObj["layout"].path,
+          title: routeObj["layout"].name
+        }]
+      }, {
+        title: '表单组件',
+        iconUri: require(`../../assets/images/component/kind/form.png`),
+        list: [{
+          method: '',
+          url: routeObj["button"].path,
+          title: routeObj["button"].name
+        }, {
+          method: '',
+          url: routeObj["input"].path,
+          title: routeObj["input"].name
+        }, {
+          method: '',
+          url: routeObj["textarea"].path,
+          title: routeObj["textarea"].name
+        }, {
+          method: '',
+          url: routeObj["switch"].path,
+          title: routeObj["switch"].name
+        }, {
+          method: '',
+          url: routeObj["radio"].path,
+          title: routeObj["radio"].name
+        }, {
+          method: '',
+          url: routeObj["checkbox"].path,
+          title: routeObj["checkbox"].name
+        }]
+      }, {
+        title: '媒体组件',
+        iconUri: require(`../../assets/images/component/kind/media.png`),
+        list: [{
+          method: '',
+          url: routeObj["image"].path,
+          title: routeObj["image"].name
+        }, {
+          method: '',
+          url: routeObj["video"].path,
+          title: routeObj["video"].name
+        }]
+      }, {
+        title: '扩展组件',
+        iconUri: require(`../../assets/images/component/kind/media.png`),
+        list: [{
+            method: '',
+            url: routeObj["c-dialog"].path,
+            title: routeObj["c-dialog"].name
+          }, {
+            method: '',
+            url: routeObj["c-loading"].path,
+            title: routeObj["c-loading"].name
+          }, {
+            method: '',
+            url: routeObj["c-toast"].path,
+            title: routeObj["c-toast"].name
+          }, {
+            method: '',
+            url: routeObj["c-tip"].path,
+            title: routeObj["c-tip"].name
+          }, {
+            method: '',
+            url: routeObj["c-popup"].path,
+            title: routeObj["c-popup"].name
+          }, {
+            method: '',
+            url: routeObj["c-actionsheet"].path,
+            title: routeObj["c-actionsheet"].name
+          }, {
+            method: '',
+            url: routeObj["c-picker"].path,
+            title: routeObj["c-picker"].name
+          }, {
+            method: '',
+            url: routeObj["c-tab"].path,
+            title: routeObj["c-tab"].name
+          },
+          // {
+          //   method: '',
+          //   url: routeObj["c-refresh"].path,
+          //   title: routeObj["c-refresh"].name
+          // },
+          {
+            method: '',
+            url: routeObj["c-checkbox-group"].path,
+            title: routeObj["c-checkbox-group"].name
+          }, {
+            method: '',
+            url: routeObj["c-radio-group"].path,
+            title: routeObj["c-radio-group"].name
+          }
+        ]
+      }]
+    }
+
+    created() {}
+
+    methods = {
+      cellItemSeleted(e) {
+        let {
+          method,
+          extraData,
+          url
+        } = e.detail;
+        if (url) {
+          cml.navigateTo({
+            path: url
+          })
+        } else {
+          this[method] && this[method](extraData);
+        }
+      }
+    }
+  }
+
+  export default new Home();
+</script>
+
+<style scoped>
+  .page {
+    padding: 0 46cpx;
+    background-color: #F0F2F7;
+  }
+
+  .page-list {
+    flex: 1;
+  }
+  .title-row {
+    padding: 80cpx 20cpx 20cpx 0;
+    margin-bottom: 60cpx;
+  }
+
+  .title-icon {
+    width: 70cpx;
+    height: 60cpx;
+    margin-right: 40cpx;
+  }
+
+  .title-text {
+    font-size: 38cpx;
+    color: #172742;
+    letter-spacing: 0;
+    text-align: left;
+  }
+</style>
+
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {
+        "collapse": "/components/collapse/collapse"
+      },
+      "navigationBarTitleText": "组件",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#F0F2F7"
+    }
+  }
+</script>

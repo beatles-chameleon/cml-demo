@@ -1,51 +1,54 @@
 <template>
-  <view height="{{0}}" class="secondary-header">
-    <text class="header-title">{{title}}</text>
-    <text class="header-subtitle">{{subtitle}}</text>    
+  <view class="secondary-header">
+    <div>
+      <text class="header-title">{{title}}</text>
+    </div>
+    <div>
+      <text class="header-subtitle">{{subtitle}}</text>
+    </div>
   </view>
 </template>
 
 <style scoped>
-.secondary-header {
-  padding: 46cpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.header-title {
-  font-size: 38cpx;
-  color: #172742;
-  margin-bottom: 12cpx;
-}
+  .secondary-header {
+    padding: 46cpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
 
-.header-subtitle {
-  font-size: 24cpx;
-  color: #A4ADC2;
-}
+  .header-title {
+    font-size: 38cpx;
+    color: #172742;
+    margin-bottom: 12cpx;
+  }
+
+  .header-subtitle {
+    font-size: 24cpx;
+    color: #A4ADC2;
+  }
 </style>
 
 <script>
-export default {
-  props: {
-    title: {
-      type: String,
-      default: ''
-    },
-    subtitle: {
-      type: String,
-      default: ''
+  export default {
+    props: {
+      title: {
+        type: String,
+        default: ''
+      },
+      subtitle: {
+        type: String,
+        default: ''
+      }
     }
   }
-}
 </script>
 
 <script cml-type="json">
-{
+  {
     "base": {
-        "usingComponents": {
-        }
+      "usingComponents": {}
     }
-}
+  }
 </script>
-

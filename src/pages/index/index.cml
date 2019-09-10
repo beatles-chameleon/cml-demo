@@ -1,5 +1,5 @@
 <template>
-<page title="Chameleon">
+  <page title="Chameleon">
     <view class="page-home">
       <scroller height="{{-1}}">
         <view class="logo-row">
@@ -13,143 +13,143 @@
               <view class="text-group">
                 <text class="text-title">{{pageInfo.title}}</text>
                 <text class="text-desc">{{pageInfo.desc}}</text>
-              </view>         
+              </view>
               <image class="content-item-right-icon" src="{{arrowRight}}"></image>
             </view>
-          </view>    
+          </view>
         </view>
       </scroller>
     </view>
-</page>
+  </page>
 </template>
 
 <script>
-import cml from 'cml-tt-api';
+  import cml from 'cml-quickapp-api';
 
-class Home {
-  data = {
-    pageList: [{
+  class Home {
+    data = {
+      pageList: [{
         icon: require(`../../assets/images/home/home-ui.png`),
         title: '组件',
         desc: '基础内容、表单组建、导航、视图容器等',
-        url: '/pages/com/com'
+        url: '/pages/com/index'
       }, {
         icon: require(`../../assets/images/home/home-api.png`),
         title: '接口',
         desc: '界面、网络、数据、weex端扩展能力',
-        url: '/pages/api/api'
+        url: '/pages/api/index'
       }, {
         icon: require(`../../assets/images/home/home-api.png`),
         title: '实例',
         desc: '网易严选等更多实例',
-        url: '/pages/demo/demo'
+        url: '/pages/demo/index'
       }],
-    homeLogo: require(`../../assets/images/home/home-chameleon.png`),
-    arrowRight: require(`../../assets/images/home/arrow-right.png`)
-  }
+      homeLogo: require(`../../assets/images/home/home-chameleon.png`),
+      arrowRight: require(`../../assets/images/home/arrow-right.png`)
+    }
 
-  methods = {
-    onItemSelected(url) {
-      cml.navigateTo({
-        path: url
-      });
+    methods = {
+      onItemSelected(url) {
+        cml.navigateTo({
+          path: url
+        });
+      }
     }
   }
-}
-export default new Home();
+  export default new Home();
 </script>
 
 <style scoped>
-@import "../../assets/css/var.less";
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+  @import "../../assets/css/var.less";
 
-.page-home {
-  background-color: #F0F2F7;
-}
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 
-.logo-row {
-  align-items: center;
-}
+  .page-home {
+    background-color: #F0F2F7;
+    flex: 1;
+  }
 
-.logo-desc {
-  color: #A2ACC1;
-  font-size: 50cpx;
-  margin-bottom: 100cpx;
-}
+  .logo-row {
+    align-items: center;
+  }
 
-.logo-icon {
-  width: 210cpx;
-  height: 210cpx;
-  margin-top: 100cpx;
-  margin-bottom: 37cpx;
-}
+  .logo-desc {
+    color: #A2ACC1;
+    font-size: 50cpx;
+    margin-bottom: 100cpx;
+  }
 
-.list {
-  padding: 0 46cpx;
-  margin-bottom: 30cpx;
-}
+  .logo-icon {
+    width: 210cpx;
+    height: 210cpx;
+    margin-top: 100cpx;
+    margin-bottom: 37cpx;
+  }
+
+  .list {
+    padding: 0 46cpx;
+    margin-bottom: 30cpx;
+  }
+
+  .content-item {
+    height: 280cpx;
+    background-color: #FFFFFF;
+    box-shadow: 0 2cpx 16cpx 0 rgba(146, 167, 215, 0.12);
+    border-radius: 4cpx;
+    background-color: white;
+    margin-bottom: 30cpx;
+  }
 
 
-.content-item {
-  height: 280cpx;
-  background: #FFFFFF;
-  box-shadow: 0 2cpx 16cpx 0 rgba(146,167,215,0.12);
-  border-radius: 4cpx;
-  background-color: white;
-  margin-bottom: 30cpx;
-}
+  .content-item-left-icon {
+    width: 100cpx;
+    height: 100cpx;
+    margin-left: 40cpx;
+  }
 
+  .text-group {
+    padding: 0 55cpx;
+    flex: 1;
+  }
 
-.content-item-left-icon {
-  width: 100cpx;
-  height: 100cpx;
-  margin-left: 40cpx;
-}
+  .text-title {
+    font-size: 32cpx;
+    color: #172742;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 5cpx;
+  }
 
-.text-group {
-  padding: 0 55cpx;
-  flex:1;
-}
+  .text-desc {
+    font-size: 24cpx;
+    color: #A2ACC1;
+    letter-spacing: 0;
+    height: 66cpx;
+    line-height: 33cpx;
+    text-align: left;
+  }
 
-.text-title {
-  font-size: 32cpx;
-  color: #172742;
-  letter-spacing: 0;
-  text-align: left;
-  margin-bottom: 5cpx;
-}
-
-.text-desc {
-  font-size: 24cpx;
-  color: #A2ACC1;
-  letter-spacing: 0;
-  height: 66cpx;
-  line-height: 33cpx;
-  text-align: left;
-}
-
-.content-item-right-icon {
-  width: 35cpx;
-  height: 35cpx;
-  margin-right: 44cpx;
-}
-
+  .content-item-right-icon {
+    width: 35cpx;
+    height: 35cpx;
+    margin-right: 44cpx;
+  }
 </style>
 
 
 <script cml-type="json">
-{
+  {
     "base": {
-        "usingComponents": {
-        },
-        "navigationBarTitleText": "Chameleon Demos",
-        "backgroundTextStyle": "dark",
-        "backgroundColor": "#F0F2F7"
+      "usingComponents": {},
+      "navigationBarTitleText": "Chameleon Demos",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#F0F2F7"
     }
-}
+  }
 </script>

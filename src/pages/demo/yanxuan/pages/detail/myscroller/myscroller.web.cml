@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import cml from 'cml-tt-api'
+import cml from 'cml-quickapp-api'
 
   class Myscroller implements MyscrollerInterface {
     data = {

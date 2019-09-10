@@ -1,40 +1,40 @@
 <template>
   <view class="wrapper">
     <topic-header title="{{'专题'}}"></topic-header>
-      <view class="scroller-view-box">
-        <!--<view  class="cell-button">-->
-          <!--<topic-top topics="{{topics}}"></topic-top>-->
-        <!--</view>-->
-        <view c-for="{{articles}}" class="cell-button">
-          <topic-main article="{{item}}" url=""></topic-main>
-        </view>
+    <view class="scroller-view-box">
+      <!--<view  class="cell-button">-->
+      <!--<topic-top topics="{{topics}}"></topic-top>-->
+      <!--</view>-->
+      <view c-for="{{articles}}" class="cell-button">
+        <topic-main article="{{item}}" url=""></topic-main>
       </view>
+    </view>
   </view>
 </template>
 <script>
-  import cml from "cml-tt-api";
+  import cml from 'cml-quickapp-api';
   import yanxuanData from '../../assets/yanxuan.json';
   const headerHeight = 114;
   const tabbarHeight = 90;
-  class Yanxuan   {
+  class Yanxuan {
 
     data = {
-      rightbtn:{
-        name:"编辑"
+      rightbtn: {
+        name: "编辑"
       },
-      topics:[],
-      articles:[],
+      topics: yanxuanData.data.result.topics,
+      articles: yanxuanData.data.result.articles,
       scrollerHeight: 0
 
     }
-    created() {
-      let result = yanxuanData.data.result;
-      this.topics = result.topics;
-      this.articles = result.articles;
-    }
+    // created() {
+    //   let result = yanxuanData.data.result;
+    //   this.topics = result.topics;
+    //   this.articles = result.articles;
+    // }
 
     mounted() {
-      cml.getSystemInfo().then((info)=>{
+      cml.getSystemInfo().then((info) => {
         this.scrollerHeight = Number(info.viewportHeight) - headerHeight - tabbarHeight
       })
     }
@@ -43,7 +43,7 @@
   export default new Yanxuan();
 </script>
 <style scoped>
-  .wrapper{
+  .wrapper {
     background-color: #f4f4f4;
   }
 </style>

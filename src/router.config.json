@@ -1,8 +1,7 @@
 {
   "mode": "hash",
   "domain": "https://cmljs.org",
-  "routes":[
-    {
+  "routes": [{
       "url": "/",
       "path": "/pages/index/index",
       "name": "首页",
@@ -10,213 +9,207 @@
     },
     {
       "name": "com",
-      "url": "/pages/com/com",
-      "path": "/pages/com/com",
+      "url": "/pages/com/index",
+      "path": "/pages/com/index",
       "mock": "index.php"
     },
     {
       "name": "api",
-      "url": "/pages/api/api",
-      "path": "/pages/api/api",
+      "url": "/pages/api/index",
+      "path": "/pages/api/index",
       "mock": "index.php"
     },
     {
       "name": "demo",
-      "url": "/pages/demo/demo",
-      "path": "/pages/demo/demo",
+      "url": "/pages/demo/index",
+      "path": "/pages/demo/index",
       "mock": "index.php"
     },
     {
       "name": "chooseImage",
-      "url": "/pages/api/sub-pages/chooseImage",
-      "path": "/pages/api/sub-pages/chooseImage",
+      "url": "/pages/api/sub-pages/chooseImage/index",
+      "path": "/pages/api/sub-pages/chooseImage/index",
       "mock": "index.php"
-    },    
+    },
     {
       "name": "animation",
-      "url": "/pages/api/sub-pages/animation",
-      "path": "/pages/api/sub-pages/animation",
+      "url": "/pages/api/sub-pages/animation/index",
+      "path": "/pages/api/sub-pages/animation/index",
       "mock": "index.php"
     },
     {
       "name": "request",
-      "url": "/pages/api/sub-pages/request",
-      "path": "/pages/api/sub-pages/request",
+      "url": "/pages/api/sub-pages/request/index",
+      "path": "/pages/api/sub-pages/request/index",
       "mock": "index.php"
-    },    
+    },
     {
       "name": "webSocket",
-      "url": "/pages/api/sub-pages/webSocket",
-      "path": "/pages/api/sub-pages/webSocket",
+      "url": "/pages/api/sub-pages/webSocket/index",
+      "path": "/pages/api/sub-pages/webSocket/index",
       "mock": "index.php"
-    },    
+    },
     {
       "name": "navigate",
-      "url": "/pages/api/sub-pages/navigate",
-      "path": "/pages/api/sub-pages/navigate",
+      "url": "/pages/api/sub-pages/navigate/index",
+      "path": "/pages/api/sub-pages/navigate/index",
       "mock": "index.php"
     },
     {
       "name": "list",
-      "url": "/pages/com/base/list/list",
-      "path": "/pages/com/base/list/list",
+      "url": "/pages/com/base/list/index",
+      "path": "/pages/com/base/list/index",
       "mock": "index.php"
     },
     {
       "name": "scroller",
-      "url": "/pages/com/base/scroller/scroller",
-      "path": "/pages/com/base/scroller/scroller",
+      "url": "/pages/com/base/scroller/index",
+      "path": "/pages/com/base/scroller/index",
       "mock": "index.php"
     },
     {
       "name": "view",
-      "url": "/pages/com/base/view/view",
-      "path": "/pages/com/base/view/view",
+      "url": "/pages/com/base/view/index",
+      "path": "/pages/com/base/view/index",
       "mock": "index.php"
     },
     {
       "name": "text",
-      "url": "/pages/com/base/text/text",
-      "path": "/pages/com/base/text/text",
+      "url": "/pages/com/base/text/index",
+      "path": "/pages/com/base/text/index",
       "mock": "index.php"
     },
     {
       "name": "button",
-      "url": "/pages/com/base/button/button",
-      "path": "/pages/com/base/button/button",
+      "url": "/pages/com/base/button/index",
+      "path": "/pages/com/base/button/index",
       "mock": "index.php"
     },
     {
       "name": "input",
-      "url": "/pages/com/base/input/input",
-      "path": "/pages/com/base/input/input",
+      "url": "/pages/com/base/input/index",
+      "path": "/pages/com/base/input/index",
       "mock": "index.php"
     },
     {
       "name": "textarea",
-      "url": "/pages/com/base/textarea/textarea",
-      "path": "/pages/com/base/textarea/textarea",
+      "url": "/pages/com/base/textarea/index",
+      "path": "/pages/com/base/textarea/index",
       "mock": "index.php"
     },
     {
       "name": "image",
-      "url": "/pages/com/base/image/image",
-      "path": "/pages/com/base/image/image",
+      "url": "/pages/com/base/image/index",
+      "path": "/pages/com/base/image/index",
       "mock": "index.php"
     },
     {
       "name": "video",
-      "url": "/pages/com/base/video/video",
-      "path": "/pages/com/base/video/video",
+      "url": "/pages/com/base/video/index",
+      "path": "/pages/com/base/video/index",
       "mock": "index.php"
     },
     {
       "name": "richtext",
-      "url": "/pages/com/base/richtext/richtext",
-      "path": "/pages/com/base/richtext/richtext"
+      "url": "/pages/com/base/richtext/index",
+      "path": "/pages/com/base/richtext/index"
     },
     {
       "name": "switch",
-      "url": "/pages/com/base/switch/switch",
-      "path": "/pages/com/base/switch/switch"
+      "url": "/pages/com/base/switch/index",
+      "path": "/pages/com/base/switch/index"
     },
     {
       "name": "radio",
-      "url": "/pages/com/base/radio/radio",
-      "path": "/pages/com/base/radio/radio"
+      "url": "/pages/com/base/radio/index",
+      "path": "/pages/com/base/radio/index"
     },
     {
       "name": "checkbox",
-      "url": "/pages/com/base/checkbox/checkbox",
-      "path": "/pages/com/base/checkbox/checkbox"
+      "url": "/pages/com/base/checkbox/index",
+      "path": "/pages/com/base/checkbox/index"
     },
     {
       "name": "carousel",
-      "url": "/pages/com/base/carousel/carousel",
-      "path": "/pages/com/base/carousel/carousel"
+      "url": "/pages/com/base/carousel/index",
+      "path": "/pages/com/base/carousel/index"
     },
     {
       "name": "row",
-      "url": "/pages/com/base/row/row",
-      "path": "/pages/com/base/row/row",
+      "url": "/pages/com/base/row/index",
+      "path": "/pages/com/base/row/index",
       "mock": "index.php"
     },
     {
       "name": "layout",
-      "url": "/pages/com/base/layout/layout",
-      "path": "/pages/com/base/layout/layout",
-      "mock": "index.php"
-    },
-    {
-      "name": "refresh-view",
-      "url": "/pages/com/base/refresh_view/refresh_view",
-      "path": "/pages/com/base/refresh_view/refresh_view",
+      "url": "/pages/com/base/layout/index",
+      "path": "/pages/com/base/layout/index",
       "mock": "index.php"
     },
     {
       "name": "c-dialog",
-      "url": "/pages/com/spread/c-dialog/c-dialog",
-      "path": "/pages/com/spread/c-dialog/c-dialog",
+      "url": "/pages/com/spread/c-dialog/index",
+      "path": "/pages/com/spread/c-dialog/index",
       "mock": "index.php"
     },
     {
       "name": "c-loading",
-      "url": "/pages/com/spread/c-loading/c-loading",
-      "path": "/pages/com/spread/c-loading/c-loading",
+      "url": "/pages/com/spread/c-loading/index",
+      "path": "/pages/com/spread/c-loading/index",
       "mock": "index.php"
     },
     {
       "name": "c-toast",
-      "url": "/pages/com/spread/c-toast/c-toast",
-      "path": "/pages/com/spread/c-toast/c-toast",
+      "url": "/pages/com/spread/c-toast/index",
+      "path": "/pages/com/spread/c-toast/index",
       "mock": "index.php"
     },
     {
       "name": "c-tip",
-      "url": "/pages/com/spread/c-tip/c-tip",
-      "path": "/pages/com/spread/c-tip/c-tip",
+      "url": "/pages/com/spread/c-tip/index",
+      "path": "/pages/com/spread/c-tip/index",
       "mock": "index.php"
     },
     {
       "name": "c-popup",
-      "url": "/pages/com/spread/c-popup/c-popup",
-      "path": "/pages/com/spread/c-popup/c-popup",
+      "url": "/pages/com/spread/c-popup/index",
+      "path": "/pages/com/spread/c-popup/index",
       "mock": "index.php"
     },
     {
       "name": "c-actionsheet",
-      "url": "/pages/com/spread/c-actionsheet/c-actionsheet",
-      "path": "/pages/com/spread/c-actionsheet/c-actionsheet",
+      "url": "/pages/com/spread/c-actionsheet/index",
+      "path": "/pages/com/spread/c-actionsheet/index",
       "mock": "index.php"
     },
     {
       "name": "c-picker",
-      "url": "/pages/com/spread/c-picker/c-picker",
-      "path": "/pages/com/spread/c-picker/c-picker",
+      "url": "/pages/com/spread/c-picker/index",
+      "path": "/pages/com/spread/c-picker/index",
       "mock": "index.php"
     },
     {
       "name": "c-tab",
-      "url": "/pages/com/spread/c-tab/c-tab",
-      "path": "/pages/com/spread/c-tab/c-tab",
+      "url": "/pages/com/spread/c-tab/index",
+      "path": "/pages/com/spread/c-tab/index",
       "mock": "index.php"
     },
     {
       "name": "c-refresh",
-      "url": "/pages/com/spread/c-refresh/c-refresh",
-      "path": "/pages/com/spread/c-refresh/c-refresh",
+      "url": "/pages/com/spread/c-refresh/index",
+      "path": "/pages/com/spread/c-refresh/index",
       "mock": "index.php"
     },
     {
       "name": "c-checkbox-group",
-      "url": "/pages/com/spread/c-checkbox-group/c-checkbox-group",
-      "path": "/pages/com/spread/c-checkbox-group/c-checkbox-group",
+      "url": "/pages/com/spread/c-checkbox-group/index",
+      "path": "/pages/com/spread/c-checkbox-group/index",
       "mock": "index.php"
     },
     {
       "name": "c-radio-group",
-      "url": "/pages/com/spread/c-radio-group/c-radio-group",
-      "path": "/pages/com/spread/c-radio-group/c-radio-group",
+      "url": "/pages/com/spread/c-radio-group/index",
+      "path": "/pages/com/spread/c-radio-group/index",
       "mock": "index.php"
     },
     {
@@ -227,19 +220,19 @@
     },
     {
       "url": "/cml/demo/yanxuan/list",
-      "path": "/pages/demo/yanxuan/pages/list/list",
+      "path": "/pages/demo/yanxuan/pages/list/index",
       "name": "yanxuan_list",
       "mock": "index.php"
     },
     {
       "url": "/cml/demo/yanxuan/detail",
-      "path": "/pages/demo/yanxuan/pages/detail/detail",
+      "path": "/pages/demo/yanxuan/pages/detail/index",
       "name": "yanxuan_detail",
       "mock": "index.php"
     },
     {
       "url": "/cml/demo/yanxuan/map",
-      "path": "/pages/demo/yanxuan/pages/map/map",
+      "path": "/pages/demo/yanxuan/pages/map/index",
       "name": "yanxuan_map",
       "mock": "index.php"
     }

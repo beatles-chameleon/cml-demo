@@ -1,0 +1,152 @@
+<template>
+  <page title="c-tip演示">
+    <c-header title="c-tip"></c-header>
+    <view class="tip-eg">
+      <view style="position:absolute;top:0;left:300px;">
+        <c-tip show="{{showtip1}}" direction="top" c-bind:close="closeTip1">
+          <text style="color: #fff">Tip</text>
+        </c-tip>
+      </view>
+
+      <text class="tip-btn" c-bind:tap="showTip1">Show tip</text>
+    </view>
+
+    <view style="align-items: center;padding: 100cpx 0;position: relative;" >
+      <view style="{{tipStyle}}">
+        <c-tip show="{{showtip2}}" direction="{{direction}}" c-bind:close="closeTip2">
+          <text style="color: #fff">Awesome!</text>
+        </c-tip>
+      </view>
+      <text style="padding: 10px;border: 1px solid #fc9153;border-radius: 4px;color: #fc9153;font-size: 24px;" c-bind:tap="showTip2">chameleon-ui</text>
+    </view>
+    <button btn-style="margin-top: 20px;align-self: center"  c-bind:onclick="showTip2Top" text="top"></button>
+    <button btn-style="margin-top: 20px;align-self: center"  c-bind:onclick="showTip2Bottom" text="bottom"></button>
+    <button btn-style="margin-top: 20px;align-self: center"  c-bind:onclick="showTip2Left" text="left"></button>
+    <button btn-style="margin-top: 20px;align-self: center"  c-bind:onclick="showTip2Right" text="right"></button>
+  </page>
+</template>
+<script>
+  class CTip {
+    data = {
+      showtip1: false,
+      showtip2: false,
+      direction: "top"
+    }
+
+    computed = {
+      tipStyle() {
+        let style;
+        switch (this.direction) {
+          case "top":
+            style =
+              "position:absolute;top:0;left: 260px;";
+            break;
+          case "bottom":
+            style =
+              "position:absolute;top:164px;left: 260px;";
+            break;
+          case "left":
+            style = "position:absolute;left:-10px;top:93px;";
+            break;
+          case "right":
+            style = "position:absolute;left:480px;top:93px;";
+            break;
+        }
+        return style;
+      }
+    }
+
+    watch = {}
+
+    methods = {
+      closeTip1() {
+        this.showtip1 = false;
+      },
+      showTip1() {
+        this.showtip1 = true;
+      },
+      closeTip2() {
+        this.showtip2 = false;
+      },
+      showTip2() {
+        this.direction = "top";
+        this.showtip2 = true;
+      },
+      showTip2Top() {
+        this.direction = "top";
+        this.showtip2 = true;
+      },
+      showTip2Bottom() {
+        this.direction = "bottom";
+        this.showtip2 = true;
+      },
+      showTip2Left() {
+        this.direction = "left";
+        this.showtip2 = true;
+      },
+      showTip2Right() {
+        this.direction = "right";
+        this.showtip2 = true;
+      }
+    }
+
+    beforeCreate() {}
+
+    created() {}
+
+    beforeMount() {}
+
+    mounted() {}
+
+    beforeDestroy() {}
+
+    destroyed() {}
+  }
+
+  export default new CTip();
+</script>
+<style scoped>
+  .container {
+    flex: 1;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tip-eg {
+    width: 740cpx;
+    align-self: center;
+    padding: 100cpx 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tip-btn {
+    padding: 9cpx 10cpx;
+    border: 1px solid #fc9153;
+    border-radius: 4cpx;
+    font-size: 24cpx;
+    color: #fc9153;
+    align-self: center;
+  }
+
+  .btn {
+    margin-top: 20cpx;
+    align-self: center;
+  }
+</style>
+<script cml-type="json">
+  {
+    "base": {
+      "usingComponents": {
+        "c-header": "/components/header/header",
+        "c-tip": "cml-quickapp-ui/components/c-tip/c-tip"
+      },
+      "navigationBarTitleText": "c-tip",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#E2E2E2"
+    }
+  }
+</script>

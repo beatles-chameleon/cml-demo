@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import cml from 'cml-tt-api';
+  import cml from 'cml-quickapp-api';
   
   var markersData = [];
   class Map implements MapInterface {

@@ -26,7 +26,7 @@
   </view>
 </template>
 <script>
-  import cml from "cml-tt-api";
+  import cml from 'cml-quickapp-api';
 
   class Yanxuan {
     props = {
@@ -52,7 +52,7 @@
     methods = {
       godetail() {
         cml.navigateTo({
-          "path": "/pages/demo/yanxuan/pages/detail/detail"
+          "path": "/pages/demo/yanxuan/pages/detail/index"
         });
       }
     }

@@ -45,8 +45,7 @@ export default new Method();
 
 class Method implements UnsupportedInterface {
   getUnsupportApis() {
-    // 企业级小程序才提供  剪贴板  能力
-    return ['启动参数', 'beatles-bridge能力', '剪贴板']
+    return ['启动参数', 'beatles-bridge能力']
   }
 }
 
@@ -75,7 +74,8 @@ class Method implements UnsupportedInterface {
 
 export default new Method();
 </script>
-<script cml-type="tt">
+
+<script cml-type="quickapp">
 
 class Method implements UnsupportedInterface {
   getUnsupportApis() {
@@ -87,6 +87,3 @@ class Method implements UnsupportedInterface {
 
 export default new Method();
 </script>
-
-
-
