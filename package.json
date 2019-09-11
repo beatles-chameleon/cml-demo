@@ -14,7 +14,7 @@
     "chameleon-bridge": "^0.2.0",
     "chameleon-runtime": "1.0.0",
     "chameleon-store": "1.0.0",
-    "chameleon-ui-builtin": "^1.0.2",
+    "chameleon-ui-builtin": "^1.0.3",
     "cml-ui": "1.0.0",
     "cml-tt-api": "0.2.3",
     "cml-tt-plugin": "0.2.3",
