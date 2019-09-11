@@ -1,248 +1,371 @@
 [
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/index/index"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/index/index"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/com"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/com"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/api/api"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/api/api"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/demo/demo"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/demo/demo"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/api/sub-pages/chooseImage"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/api/sub-pages/chooseImage"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/api/sub-pages/animation"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/api/sub-pages/animation"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/api/sub-pages/request"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/api/sub-pages/request"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/api/sub-pages/webSocket"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/api/sub-pages/webSocket"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/api/sub-pages/navigate"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/api/sub-pages/navigate"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/list/list"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/list/list"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/scroller/scroller"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/scroller/scroller"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/view/view"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/view/view"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/text/text"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/text/text"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/button/button"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/button/button"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/input/input"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/input/input"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/textarea/textarea"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/textarea/textarea"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/image/image"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/image/image"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/video/video"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/video/video"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/richtext/richtext"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/richtext/richtext"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/switch/switch"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/switch/switch"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/radio/radio"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/radio/radio"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/checkbox/checkbox"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/checkbox/checkbox"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/carousel/carousel"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/carousel/carousel"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/row/row"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/row/row"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/layout/layout"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/layout/layout"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/base/refresh_view/refresh_view"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/base/refresh_view/refresh_view"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/spread/c-dialog/c-dialog"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/spread/c-dialog/c-dialog"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/spread/c-loading/c-loading"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/spread/c-loading/c-loading"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/spread/c-toast/c-toast"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/spread/c-toast/c-toast"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/spread/c-tip/c-tip"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/spread/c-tip/c-tip"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/spread/c-popup/c-popup"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/spread/c-popup/c-popup"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/spread/c-actionsheet/c-actionsheet"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/spread/c-actionsheet/c-actionsheet"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/spread/c-picker/c-picker"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/spread/c-picker/c-picker"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/spread/c-tab/c-tab"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/spread/c-tab/c-tab"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/spread/c-refresh/c-refresh"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/spread/c-refresh/c-refresh"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/spread/c-checkbox-group/c-checkbox-group"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/spread/c-checkbox-group/c-checkbox-group"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/com/spread/c-radio-group/c-radio-group"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/com/spread/c-radio-group/c-radio-group"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/demo/yanxuan/pages/index/index"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/demo/yanxuan/pages/index/index"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/demo/yanxuan/pages/list/list"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/demo/yanxuan/pages/list/list"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/demo/yanxuan/pages/detail/detail"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/demo/yanxuan/pages/detail/detail"
+            }
         }
     },
     {
-        "wx": {
-            "appId": "123456",
-            "path": "/pages/demo/yanxuan/pages/map/map"
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-demo/dist/weex/cml-demo.js",
+            "md5": "00607D5B786C2B59F9ABD5E22A90A839",
+            "query": {
+                "path": "/pages/demo/yanxuan/pages/map/map"
+            }
         }
     }
 ]
