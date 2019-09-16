@@ -24,7 +24,7 @@
   {
     "quickapp": {
       "package": "com.application.demo",
-      "name": "demo",
+      "name": "cml-demo",
       "versionName": "1.0.0",
       "versionCode": "1",
       "minPlatformVersion": "1020",
