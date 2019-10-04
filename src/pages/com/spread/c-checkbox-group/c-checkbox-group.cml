@@ -130,7 +130,7 @@ export default new CCheckbox();
     "base": {
         "usingComponents": {
           "c-header": "/components/header/header",
-          "c-checkbox-group": "cml-ui/components/c-checkbox-group/c-checkbox-group"
+          "c-checkbox-group": "cml-tt-ui/components/c-checkbox-group/c-checkbox-group"
         },
         "navigationBarTitleText": "c-checkbox-group",
         "backgroundTextStyle": "dark",

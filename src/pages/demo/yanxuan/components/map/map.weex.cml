@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import cml from "chameleon-api";
+  import cml from "cml-tt-api";
   const webview = weex.requireModule('webview');
   class Mapnew implements MapInterface {
     props = {

@@ -99,8 +99,8 @@ export default new CPickerPanel();
     "base": {
         "usingComponents": {
             "c-header": "/components/header/header",
-            "c-picker-panel": "cml-ui/components/c-picker-panel/c-picker-panel",
-            "c-picker-item": "cml-ui/components/c-picker-item/c-picker-item"
+            "c-picker-panel": "cml-tt-ui/components/c-picker-panel/c-picker-panel",
+            "c-picker-item": "cml-tt-ui/components/c-picker-item/c-picker-item"
         },
         "navigationBarTitleText": "c-picker-panel",
         "backgroundTextStyle": "dark",

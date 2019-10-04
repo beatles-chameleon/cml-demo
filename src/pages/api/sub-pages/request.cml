@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import cml from 'chameleon-api';
+import cml from 'cml-tt-api';
 
 export default {
   data: {
@@ -145,7 +145,7 @@ export default {
         "usingComponents": {
           "secondary-header": "/components/secondaryHeader/secondaryHeader",
           "secondary-cell": "/components/secondaryCell/secondaryCell",
-          "c-loading": "cml-ui/components/c-loading/c-loading"
+          "c-loading": "cml-tt-ui/components/c-loading/c-loading"
         },
         "navigationBarTitleText": "网络请求",
         "backgroundTextStyle": "dark",

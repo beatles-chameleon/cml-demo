@@ -56,7 +56,7 @@
   </page>
 </template>
 <script>
-  import cml from 'chameleon-api'
+  import cml from 'cml-tt-api'
   import listData from '../../assets/listImages.json';
 
   class Refresh {
@@ -232,7 +232,7 @@
   {
     "base": {
       "usingComponents":{
-        "c-refresh": "cml-ui/components/c-refresh/c-refresh"
+        "c-refresh": "cml-tt-ui/components/c-refresh/c-refresh"
       },
       "navigationBarTitleText": "列表",
       "backgroundTextStyle": "dark",

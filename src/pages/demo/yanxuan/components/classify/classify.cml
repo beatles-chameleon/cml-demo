@@ -25,7 +25,7 @@
   </view>
 </template>
 <script>
-  import cml from "chameleon-api";
+  import cml from "cml-tt-api";
   import yanxuanData from '../../assets/yanxuan.json'
   const headerHeight = 114;
   const tabbarHeight = 90;

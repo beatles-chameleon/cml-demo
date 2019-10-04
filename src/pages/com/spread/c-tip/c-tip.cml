@@ -140,7 +140,7 @@ export default new CTip();
     "base": {
         "usingComponents": {
           "c-header": "/components/header/header",
-          "c-tip": "cml-ui/components/c-tip/c-tip"
+          "c-tip": "cml-tt-ui/components/c-tip/c-tip"
         },
         "navigationBarTitleText": "c-tip",
         "backgroundTextStyle": "dark",
