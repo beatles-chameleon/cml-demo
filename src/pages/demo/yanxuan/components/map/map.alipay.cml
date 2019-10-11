@@ -46,6 +46,9 @@ class Map implements MapInterface {
   }
 
   mounted() {
+    this.$cmlEmit('onshow', {
+      value: this.name
+    })
     // this.mapCtx = my.createMapContext('map');
     cml.getLocationInfo().then(info => {
       this.latitude = info.lat;
