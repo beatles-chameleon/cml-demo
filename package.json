@@ -16,12 +16,12 @@
     "chameleon-store": "1.0.0",
     "chameleon-ui-builtin": "^1.0.3",
     "cml-ui": "1.0.0",
-    "cml-tt-api": "0.2.3",
-    "cml-tt-plugin": "0.2.3",
-    "cml-tt-runtime": "0.2.3",
-    "cml-tt-store": "0.2.3",
-    "cml-tt-ui": "0.2.3",
-    "cml-tt-ui-builtin": "0.2.3-alpha.0",
+    "cml-tt-api": "0.2.4",
+    "cml-tt-plugin": "0.2.4",
+    "cml-tt-runtime": "0.2.4",
+    "cml-tt-store": "0.2.4",
+    "cml-tt-ui": "0.2.4",
+    "cml-tt-ui-builtin": "0.2.4",
     "vue-amap": "^0.5.10"
   }
 }

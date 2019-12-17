@@ -64,10 +64,17 @@ cml.config.merge({
   },
   tt: {
     dev: {
+      moduleIdType: "name",
+      definePlugin: {
+        'process.env.NODE_ENV': JSON.stringify('development')
+      }
     },
     build: {
       apiPrefix,
-      publicPath: `${publicPath}/tt/`,
+      moduleIdType: "name",
+      definePlugin: {
+        'process.env.NODE_ENV': JSON.stringify('production')
+      }
     }
   },
   web: {
